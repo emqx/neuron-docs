@@ -1,0 +1,66 @@
+{
+  "plugins": [
+    "-highlight",
+    "prism",
+    "hints",
+    "simpletabs",
+    "expandable-chapters",
+    "chapter-fold",
+    "code",
+    "splitter",
+    "edit-link",
+    "scripts",
+    "anchors",
+    "anchor-navigation-ex",
+    "emqx",
+    "-lunr",
+    "-search",
+    "search-pro"
+  ],
+  "pluginsConfig": {
+    "anchor-navigation-ex": {
+      "showLevel": false,
+      "multipleH1": false,
+      "mode": "float"
+    },
+    "styles": {
+      "website": "styles/website.css",
+      "ebook": "styles/ebook.css",
+      "pdf": "styles/pdf.css",
+      "mobi": "styles/mobi.css",
+      "epub": "styles/epub.css"
+    },
+    "scripts": {
+      "files": [
+        "./_js/emqx-docs.js"
+      ]
+    },
+    "github": {
+      "url": "https://github.com/emqx/emqx"
+    },
+    "edit-link": {
+      "base": "https://github.com/emqx/neuron-docs-cn",
+      "label": "Edit"
+    },
+    "local-pagefooter": {
+      "copyright": "© Copyright 2016-2020, EMQ Technologies Co., Ltd.",
+      "islocal": true,
+      "modify_label": "The document reversion time: ",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    }
+  },
+  "title": "EMQ X Neuron",
+  "description": "MQTT Messaging Broker documentation",
+  "author": "EMQX Team",
+  "language": "en",
+  "structure": {
+    "readme": "introduction.md"
+  },
+  "redirects": {},
+  "links": {
+    "sharing": {
+      "facebook": false,
+      "twitter": "emqtt"
+    }
+  }
+}
