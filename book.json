@@ -50,9 +50,9 @@
     }
   },
   "title": "EMQ X Neuron",
-  "description": "MQTT Messaging Broker documentation",
+  "description": "物联网边缘工业协议网关，数十种工业协议一站式接入，支持构建 5G 时代工业 4.0 平台",
   "author": "EMQX Team",
-  "language": "en",
+  "language": "cn",
   "structure": {
     "readme": "introduction.md"
   },
