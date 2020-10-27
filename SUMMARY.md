@@ -5,12 +5,13 @@
 - [安装](getting-started/install.md)
 
   - [下载](getting-started/install.md#endpoint-download)
-  - [前提条件](getting-started/install.md#endpoint-pre-requisites)
+  - [安装条件](getting-started/install.md#endpoint-pre-requisites)
   - [安装](getting-started/install.md#endpoint-new-installation)
-  - [设置 Shell 路径](getting-started/install.md#endpoint-setting)
   - [启动系统](getting-started/install.md#endpoint-starting)
   - [停止系统](getting-started/install.md#endpoint-stopping)
-  - [命令开关](getting-started/install.md#endpoint-command)
+  - [检查系统](getting-started/install.md#endpoint-checking)
+  - [命令参数](getting-started/install.md#endpoint-command)
+  - [在Docker运行](getting-started/install.md#endpoint-docker)
 
 - 网页使用介绍
 
