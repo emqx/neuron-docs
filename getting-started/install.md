@@ -94,5 +94,7 @@ docker 镜像请从 docker hub 网站下载 [https://hub.docker.com](https://hub
 ~\$ docker run -d --name neuron -p 7000:7000 emqx/neuron:1.0.0
 ```
 
+## 申请试用软件授权
 
+Neuron 缺省安装包提供了
 
