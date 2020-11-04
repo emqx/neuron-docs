@@ -26,9 +26,9 @@ Neuron 软件包可从 EMQ 网站 [https://www.emqx.io](https://www.emqx.io/) �
 | armv7l Ubuntu Linux System                                                           | neuron-x.y.z-linux-armv7l.tar.gz  |
 | aarch64 Ubuntu Linux System                                                          | neuron-x.y.z-linux-aarch64.tar.gz |
 
-Note: 一些Linux发行版要求安装 **openssl1.1**.
-For Debian package, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)
-For Redhat package, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)
+注意: 一些Linux发行版要求安装 **openssl1.1**.
+Debian 包, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)
+Redhat 包, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)
 
 ### 安装 {#endpoint-new-installation}
 
@@ -44,6 +44,18 @@ For Redhat package, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9
 
    ```bash
    ~\$ {PATH}/neuron start
+   Directory {PATH}/dat created
+   Directory {PATH}/dat/0 created
+   Directory {PATH}/dat/0/adm created
+   Directory {PATH}/dat/0/adm/usr created
+   Directory {PATH}/dat/0/alm created
+   Directory {PATH}/dat/0/cfg created
+   Directory {PATH}/dat/0/log created
+   Directory {PATH}/dat/0/scp created
+   Directory {PATH}/dat/0/scp/subr created
+   Directory {PATH}/dat/0/obj created
+   Directory {PATH}/dat/0/trd created
+   Neuron instance 0 is now running with PID:6312 Port:7000
    ```
 
 ### 启动系统 {#endpoint-starting}
@@ -52,6 +64,7 @@ Neuron 可以通过以下方式启动
 
 ```bash
 ~\$ {PATH}/neuron start
+Neuron instance 0 is now running with PID:6037 Port:7000
 ```
 
 ### 停止系统 {#endpoint-stopping}
@@ -60,6 +73,58 @@ Neuron 可以通过以下方式启动
 
 ```bash
 ~\$ {PATH}/neuron stop
+Neuron instance 0 is stopping ...
+Stopped !
+```
+
+## 启动特定系统 {#endpoint-specific-starting}
+
+特定 Neuron 可以通过以下方式启动
+
+```bash
+~\$ {PATH}/neuron start -i7
+Neuron instance 7 is now running with PID:8097 Port:7007
+```
+
+## 停止特定系统 {#endpoint-specific-stopping}
+
+输入以下命令，特定 Neuron 将停止运行
+
+```bash
+~\$ {PATH}/neuron stop -i7
+Neuron instance 7 is stopping ...
+Stopped !
+```
+
+## 启动多个系统 (#endpoint-multi-starting)
+
+多个 Neuron 可以通过以下方式启动
+
+```bash
+~\$ {PATH}/neuron start -a5
+Neuron instance 0 is now running with PID:6066 Port:7000
+Neuron instance 1 is now running with PID:6069 Port:7001
+Neuron instance 2 is now running with PID:6076 Port:7002
+Neuron instance 3 is now running with PID:6087 Port:7003
+Neuron instance 4 is now running with PID:6090 Port:7004
+```
+
+## 停止多个系统 {#endpoint-multi-stopping}
+
+输入以下命令，多个 Neuron 将停止运行
+
+```bash
+~\$ {PATH}/neuron stop -a5
+Neuron instance 0 is stopping ...
+Stopped !
+Neuron instance 1 is stopping ...
+Stopped !
+Neuron instance 2 is stopping ...
+Stopped !
+Neuron instance 3 is stopping ...
+Stopped !
+Neuron instance 4 is stopping ...
+Stopped !
 ```
 
 ### 检查系统 {#endpoint-checking}
@@ -68,6 +133,11 @@ Neuron 可以通过以下方式启动
 
 ```bash
 ~\$ {PATH}/neuron status
+Neuron instance 0 is running with PID:6118 Port:7000
+Neuron instance 1 is running with PID:6121 Port:7001
+Neuron instance 2 is running with PID:6132 Port:7002
+Neuron instance 3 is running with PID:6139 Port:7003
+Neuron instance 4 is running with PID:6144 Port:7004
 ```
 
 ### 命令参数 {#endpoint-command}
@@ -75,10 +145,12 @@ Neuron 可以通过以下方式启动
 本节介绍了 "neuron" 命令的可用参数。
 
 用法: neuron [start|stop|status] [options]
-| 参数 							  | 描述                  				  |
+| 参数 							        | 描述                  				  |
 | ------------------------------- | ------------------------------------- |
-| -i or --instance `<instanceno>` |实例号 `<0-9>`                         |
-| -u or --uuid `<uuid>`           |通用唯一ID `<max 36 chars>`            |
+| -a 或 --allinstance `<number>`  | 数量 `<2-10>`
+| -i 或 --instance `<instanceno>` | 实例号 `<0-9>`                         |
+| -u 或 --uuid `<uuid>`           | 通用唯一ID `<最大36字符>`            |
+在两者 [-a|-i] 之间，只能选择其中之一
 
 ## 在Docker运行 {#endpoint-docker}
 
@@ -88,7 +160,7 @@ docker 镜像请从 docker hub 网站下载 [https://hub.docker.com](https://hub
 ~\$ docker pull emqx/neuron:1.0.0
 ```
 
-启动 docker container
+启动 docker 容器
 
 ```bash
 ~\$ docker run -d --name neuron -p 7000:7000 emqx/neuron:1.0.0
