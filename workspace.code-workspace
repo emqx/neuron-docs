@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../cloud-docs"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../neuron-docs-en"
+		}
+	],
+	"settings": {}
+}
