@@ -1,16 +1,13 @@
 {
-  "name": "emqx-docs-cn",
+  "name": "neuron-docs",
   "version": "1.0.0",
   "main": "index.js",
   "license": "Apache 2.0",
   "scripts": {
     "init": "npx gitbook install",
     "docs": "npx gitbook serve",
-    "docs-ee": "npx gitbook serve -e emqxee",
-    "make": "node _scripts/make.js",
     "lint": "node _scripts/stylelint.js",
-    "html": "node _scripts/make.js && npx gitbook build && node _scripts/after_build.js",
-    "html-ee": "node _scripts/make.js -e emqxee &&  npx gitbook build -e emqxee && node _scripts/after_build.js"
+    "html": "npx gitbook build && node _scripts/after_build.js"
   },
   "dependencies": {
     "dateformat": "^3.0.3",

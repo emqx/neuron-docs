@@ -1,6 +1,6 @@
 - 概览
 
-  - [EMQ X Neuron 简介](introduction.md)
+  - [EMQ X Neuron 简介](README.md)
 
 - [安装](getting-started/install.md)
 
