@@ -17,11 +17,11 @@
   - [命令参数](getting-started/install.md#endpoint-command)
   - [在Docker运行](getting-started/install.md#endpoint-docker)
 
-- [快速教程](getting-started/install.md#endpoint-quick_started)
+- [快速教程](getting-started/quick_start.md)
 
-  - [环境搭建](getting-started/install.md#endpoint-intall)
-  - [资源准备](getting-started/install.md#endpoint-resources)
-  - [运行和使用](getting-started/install.md#endpoint-running)
+  - [环境搭建](getting-started/quick_start.md#endpoint-intall)
+  - [资源准备](getting-started/quick_start.md#endpoint-resources)
+  - [运行和使用](getting-started/quick_start.md#endpoint-running)
 
 - 网页使用介绍
 
