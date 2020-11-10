@@ -150,7 +150,8 @@ Neuron instance 4 is running with PID:6144 Port:7004
 | -a 或 --allinstance `<number>`  | 数量 `<2-10>`
 | -i 或 --instance `<instanceno>` | 实例号 `<0-9>`                         |
 | -u 或 --uuid `<uuid>`           | 通用唯一ID `<最大36字符>`            |
-在两者 [-a|-i] 之间，只能选择其中之一
+
+在两者 `[-a|-i]` 之间，只能选择其中之一
 
 ## 在Docker运行 {#endpoint-docker}
 
