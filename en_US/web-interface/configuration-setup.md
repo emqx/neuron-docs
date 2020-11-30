@@ -1,9 +1,7 @@
-# Configuration Setup {#endpoint-configuration-setup}
-
+# Configuration Setup 
 These functions are used to setup the protocol communication details in terms of channel, object, attributes and tag address for data exchange with machine. Events and alarms are also defined in configuration for advance functions.
 
-### Channel/Object/Attribute/Tag Setup {#endpoint-tag-setup}
-
+### Channel/Object/Attribute/Tag Setup 
 By pressing &quot;New Driver&quot; button, there are two kinds of channel, hardware communication channel and cloud platform communication channel as shown.
 
 ![](./assets/tagsetup.png)
@@ -71,8 +69,7 @@ After clicking on the &quot;Address&quot; button, a dialog box will be prompted.
 
 ![](./assets/hardware.png)
 
-### Alarm/Event Message Setup {#endpoint-message-setup}
-
+### Alarm/Event Message Setup 
 Some object attribute values can be setup to trigger an alarm or event by checking up its condition or comparing its own value with other preset values.
 
 ![](./assets/event-setup.png)
@@ -87,12 +84,10 @@ Some object attribute values can be setup to trigger an alarm or event by checki
 | Cat        | This column is to distinguish the level of importance of each alarm such as, alarm, warning, event, log, command, etc.              |
 | Sub        | If the field has Tag type, it would store the subroutine number of being called when there is a change to this tag in running mode. |
 
-### Configuration Overview {#endpoint-configuration-overview}
-
+### Configuration Overview 
 The configuration overview page is only for overall configuration checking.
 
 ![](./assets/configuration-overview.png)
 
-### Save New Configuration {#endpoint-new-configuration}
-
+### Save New Configuration 
 After finishing the configuration setup, press the &quot;Send&quot; button to transfer the configuration settings the Neuron system would check up. If it passes the checkup, it would restarts the system to initiate the new configuration. The web interface would be forcibly to logout once system restarts.

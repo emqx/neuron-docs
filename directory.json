@@ -1,0 +1,176 @@
+{
+  "cn": [
+    {
+      "title": "概览",
+      "children": [
+        {
+          "title": "EMQ X Neuron 简介",
+          "path": "./"
+        }
+      ]
+    },
+    {
+      "title": "安装",
+      "path": "getting-started/install"
+    },
+    {
+      "title": "快速教程",
+      "path": "getting-started/quick_start"
+    },
+    {
+      "title": "网页使用介绍",
+      "children": [
+        {
+          "title": "登录",
+          "path": "web-interface/login"
+        },
+        {
+          "title": "整体布局",
+          "path": "web-interface/screen-layout"
+        },
+        {
+          "title": "关于",
+          "path": "web-interface/about"
+        },
+        {
+          "title": "配置设置",
+          "path": "web-interface/configuration-setup"
+        },
+        {
+          "title": "脚本编程",
+          "path": "web-interface/script-programming"
+        },
+        {
+          "title": "事件/报警信息",
+          "path": "web-interface/message"
+        },
+        {
+          "title": "状态监测",
+          "path": "web-interface/status-monitoring"
+        },
+        {
+          "title": "用户管理",
+          "path": "web-interface/user-administration"
+        }
+      ]
+    },
+    {
+      "title": "Neuron 脚本",
+      "children": [
+        {
+          "title": "脚本程序",
+          "path": "neuron-scripts/script-routines"
+        },
+        {
+          "title": "脚本语句",
+          "path": "neuron-scripts/script-statements"
+        },
+        {
+          "title": "脚本表达式",
+          "path": "neuron-scripts/script-expressions"
+        },
+        {
+          "title": "脚本运算符",
+          "path": "neuron-scripts/script-operators"
+        },
+        {
+          "title": "脚本操作数",
+          "path": "neuron-scripts/script-operands"
+        },
+        {
+          "title": "脚本指令",
+          "path": "neuron-scripts/script-instructions"
+        }
+      ]
+    },
+    {
+      "title": "Neuron 驱动地址格式",
+      "path": "address-format/address-format"
+    }
+  ],
+  "en": [
+    {
+      "title": "Introduction",
+      "children": [
+        {
+          "title": "EMQ X Neuron",
+          "path": "./"
+        }
+      ]
+    },
+    {
+      "title": "Installation",
+      "path": "getting-started/install"
+    },
+    {
+      "title": "Web Interface",
+      "children": [
+        {
+          "title": "Login",
+          "path": "web-interface/login"
+        },
+        {
+          "title": "Screen Layout",
+          "path": "web-interface/screen-layout"
+        },
+        {
+          "title": "About",
+          "path": "web-interface/about"
+        },
+        {
+          "title": "Configuration Setup",
+          "path": "web-interface/configuration-setup"
+        },
+        {
+          "title": "Script Programming",
+          "path": "web-interface/script-programming"
+        },
+        {
+          "title": "Event/Alarm Message",
+          "path": "web-interface/message"
+        },
+        {
+          "title": "Status Monitoring",
+          "path": "web-interface/status-monitoring"
+        },
+        {
+          "title": "User Administration",
+          "path": "web-interface/user-administration"
+        }
+      ]
+    },
+    {
+      "title": "Neuron Scripts",
+      "children": [
+        {
+          "title": "Script Routines",
+          "path": "neuron-scripts/script-routines"
+        },
+        {
+          "title": "Script Statements",
+          "path": "neuron-scripts/script-statements"
+        },
+        {
+          "title": "Script Expressions",
+          "path": "neuron-scripts/script-expressions"
+        },
+        {
+          "title": "Script Operators",
+          "path": "neuron-scripts/script-operators"
+        },
+        {
+          "title": "Script Operands",
+          "path": "neuron-scripts/script-operands"
+        },
+        {
+          "title": "Script Instructions",
+          "path": "neuron-scripts/script-instructions"
+        }
+      ]
+    },
+    {
+      "title": "Neuron Driver Address Format",
+      "path": "address-format/address-format"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
-# Script Operands {#endpoint-script-operands}
+# Script Operands
 
-### Local variables {#endpoint-local-variables}
+## Local variables
 
 A local variable is a variable that only the current script can use and must be declared by &quot;DECLARE&quot; comment. When starting the program, the variable gets the value 0. When a Neuron script ends (returns), all local variables are disconnected, so next time this script starts again, all its local variables are 0. To save data until next execution time, global variables should be used.
 
 A local variable is a lower-case letter name. \_ and digits (except as first characters) can also be used as a part of the name. The name can consist up to 30 characters.
 
-### Global variables {#endpoint-global-variables}
+## Global variables
 
 A global variable is a variable that all Neuron scripts can use and must be defined in global variables setup environment. When starting the Neuron program, the variable gets the value 0. When the Neuron program ends, all global variables are disconnected, so next time the Neuron program starts, all its global variables are 0 again. To save data until next execution time, data base variables should be used.
 
@@ -14,7 +14,7 @@ A global variable starts with the upper-case letter G followed by a dot and a lo
 
 Global variables can be used with an index. When declaring a global variable, also the number of words is entered. Attempt to try to address outside the array will fail.
 
-### Object variables {#endpoint-object-variables}
+## Object variables
 
 An object variable is the attribute of object. It can be used thought all the Neuron subroutines. When starting the Neuron instance, the variable gets the previous value. When the Neuron instance ends, all tag variables are saved on the hard disk for next start.
 
@@ -26,11 +26,11 @@ The last element is the attribute of the object. An object can have as many as a
 
 Therefore, the actual temperature of temperature object would be SENSORA[ix].TEMPERATURE. This is the object variable.
 
-### Constants {#endpoint-constants}
+## Constants
 
 A constant is numeric value in the range -2,147,483,648 to 2,147,483,647. The constant can be a signed decimal (as above), unsigned hexadecimal in case of a leading 0x (0x0 to 0xffffffff) or unsigned octal in case of a leading 0 (0 to 037777777777). A constant with decimal place is also accepted as a double value in script. For example, pi is 3.1415. Script constant supports two value type.
 
-### System variables {#endpoint-system-variables}
+## System variables
 
 In the system, there are some system global variables that are used by the system. A system global variable is a global variable, with its syntax. The variables are prepared/used every time before starting the main program.
 

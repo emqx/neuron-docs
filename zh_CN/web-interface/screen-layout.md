@@ -1,5 +1,4 @@
-# 整体布局 {#endpoint-screen-layout}
-
+# 整体布局 
 这是进入 Neuron 后显示的第一个画面。在上半部分，有一个菜单选择栏，其中包含 3 种功能。首先是状态菜单，包含数据、事件、报警监控功能。第二个菜单是配置菜单，用于设置 PLC 或设备的通信细节。最后是管理菜单。右上角有三个命令按钮，用于控制 Neuron 系统。下方是状态栏，用于显示 Neuron 的当前状态。
 
 ![](./assets/screenlayout.png)
@@ -15,8 +14,7 @@
 **管理菜单**
 ![](./assets/administrationmenu.png)
 
-## 命令按钮 {#endpoint-command-button}
-
+## 命令按钮 
 右上角有 3 个命令按钮来控制 Neuron。
 
 <table>
@@ -38,8 +36,7 @@
 
 ![](./assets/commdown.png)
 
-## 状态栏 {#endpoint-status-bar}
-
+## 状态栏 
 Neuron 中的系统状态有五种。
 
 | 状态                                  | 描述                                                                                                         |
