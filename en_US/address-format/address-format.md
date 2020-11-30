@@ -1,11 +1,9 @@
 # Neuron Driver Address Format
 
-## General {#endpoint-general}
-
+## General 
 This document describes the tag address formats for Neuron to setup with various kind of industrial protocol drivers. Each Neuron driver has its own address format that will be parsed in configuration process for machine or device communication.
 
-## Allen-Bradley PLC2 (half duplex) {#endpoint-PLC2}
-
+## Allen-Bradley PLC2 (half duplex) 
 ### General Details
 
 | Settings            | Parameters      |
@@ -38,8 +36,7 @@ Example: 16!16 (slave number 20 octal)
 
 Set 8 (10 octal) for 1771-KG and set 0 for 1785-KE and 1770-KF2 in KG mode
 
-## Allen-Bradley PLC5 (half duplex) {#endpoint-PLC5}
-
+## Allen-Bradley PLC5 (half duplex) 
 ### General Details
 
 | Settings            | Parameters      |
@@ -70,8 +67,7 @@ Example: 28!16 (KE/KF2 module number 34 octal and destination node=CPU number 20
 
 Set 8 (10 octal) for 1771-KG and set 0 for 1785-KE and 1770-KF2 in KG mode
 
-## Schneider TSX7 SCM (Modbus RTU) {#endpoint-TSX7-SCM}
-
+## Schneider TSX7 SCM (Modbus RTU) 
 ### General Details
 
 | Settings            | Parameters      |
@@ -96,8 +92,7 @@ Set 8 (10 octal) for 1771-KG and set 0 for 1785-KE and 1770-KF2 in KG mode
 
 Example: **10!W100** means word 100 in slave station 10.
 
-## Schneider TSX7 SCM (Modbus TCP) {#endpoint-TCP}
-
+## Schneider TSX7 SCM (Modbus TCP) 
 ### General Details
 
 | Settings            | Parameters      |
@@ -120,8 +115,7 @@ Example: **10!W100** means word 100 in slave station 10.
 
 Example:**W4000** means word address 4000.
 
-## Schneider Telemecanique UNI-TE {#endpoint-UNI-TE}
-
+## Schneider Telemecanique UNI-TE 
 ### General Details
 
 | Settings            | Parameters     |
@@ -146,8 +140,7 @@ Example:**W4000** means word address 4000.
 
 Example: **1!W100** means word 100 in slave number 1.
 
-## ABB SattControl Comli {#endpoint-Comli}
-
+## ABB SattControl Comli 
 ### General Details
 
 | Settings            | Parameters     |
@@ -172,8 +165,7 @@ Example: **1!W100** means word 100 in slave number 1.
 
 Example: **1!R100** means word 100 in slave number 1.
 
-## Omron Single HostLink (Point to Point) {#endpoint-Single-HostLink}
-
+## Omron Single HostLink (Point to Point) 
 ### General Details
 
 | Settings           | Parameters     |
@@ -201,8 +193,7 @@ Example: **1!R100** means word 100 in slave number 1.
 
 Example: **DM100** means word 100 in DM data memory area.
 
-## Omron Multiple HostLink (MasterSlave) {#endpoint-HostLink}
-
+## Omron Multiple HostLink (MasterSlave) 
 ### General Details
 
 | Settings           | Parameters     |
@@ -232,8 +223,7 @@ Example: **DM100** means word 100 in DM data memory area.
 
 Example: **10!DM100** means word 100 in data memory in slave 10.
 
-## Siemens S5 3964R/RK512 {#endpoint-siemens-s5}
-
+## Siemens S5 3964R/RK512 
 ### General Details
 
 | Settings           | Parameters     |
@@ -267,8 +257,7 @@ Example: DB100 (data block 100)
 
 **DB100.DBW20** (DBddd.DBWddddd) means data word 20 in data block 100
 
-## Siemens S7 3964R/RK512 {#endpoint-siemens-s7}
-
+## Siemens S7 3964R/RK512 
 ### General Details
 
 | Settings            | Parameters     |
@@ -304,8 +293,7 @@ Example: DB100 (data block 100)
 
 **DB100.DBW20** (DBddd.DBWddddd) means data word 20 in data block 100
 
-## Siemens FETCH/WRITE {#endpoint-siemens-fetch}
-
+## Siemens FETCH/WRITE 
 ### General Details
 
 | Settings           | Parameters     |
@@ -341,8 +329,7 @@ Note: In the Simatic PLC you just define a TCP/IP connection for either FETCH pa
 
 Example: **DB200.DBW20** (DBddd.DBWddddd) means data word 20 in data block 200.
 
-## Siemens Industrial Ethernet S7 ISOTCP {#endpoint-siemens-industrial}
-
+## Siemens Industrial Ethernet S7 ISOTCP 
 ### General Details
 
 | Settings            | Parameters     |
@@ -378,8 +365,7 @@ S7P_SCRTSAP is the source TSAP for S7 protocol
 
 S7P_DSTTSAP is the destination TSAP for S7 protocol
 
-## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2 {#endpoint-mitsubishi-fx0s}
-
+## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2 
 ### General Details
 
 | Settings           | Parameters     |
@@ -413,8 +399,7 @@ S7P_DSTTSAP is the destination TSAP for S7 protocol
 
 Example: **D100** means word 100 in D data memory area.
 
-## Mitsubishi FX2N/FX3U/FX3G Series {#endpoint-mitsubishi-fx2n}
-
+## Mitsubishi FX2N/FX3U/FX3G Series 
 ### General Details
 
 | Settings           | Parameters     |
@@ -449,8 +434,7 @@ Example: **D100** means word 100 in D data memory area.
 
 Example: **D100** means word 100 in D data memory area.
 
-## Mitsubishi Melsec E71 for Q Series {#endpoint-mitsubishi-melsec}
-
+## Mitsubishi Melsec E71 for Q Series 
 ### General Details
 
 | Settings           | Parameters     |
@@ -497,8 +481,7 @@ Example: **D100** means word 100 in D data memory area.
 
 Example: **D100** means word 100 in D data memory area.
 
-## Modbus RTU {#endpoint-modbus-rtu}
-
+## Modbus RTU 
 ### General Details
 
 | Settings           | Parameters     |
@@ -524,8 +507,7 @@ Example: **D100** means word 100 in D data memory area.
 | Word | 04       | DDDDDD | 300001 ~ 365536 | Analog Input Registers          |
 | Word | 03/06/16 | DDDDDD | 400001 ~ 465536 | Analog Output Holding Registers |
 
-## Modbus TCP {#endpoint-modbus-tcp}
-
+## Modbus TCP 
 ### General Details
 
 | Settings           | Parameters     |
@@ -553,8 +535,7 @@ Example: **D100** means word 100 in D data memory area.
 
 Example:**2!404001** means word address 4000 with in slave number 2.
 
-## Modbus RTU over TCP {#endpoint-modbus-rtu-tcp}
-
+## Modbus RTU over TCP 
 ### General Details
 
 | Settings           | Parameters     |
@@ -582,8 +563,7 @@ Example:**2!404001** means word address 4000 with in slave number 2.
 
 Example:**2!404001** means word address 4000 with in slave number 2.
 
-## IEC 61850 {#endpoint-iec-61850}
-
+## IEC 61850 
 ### General Details
 
 | Settings           | Parameters     |
@@ -639,8 +619,7 @@ Example:**1!testmodelSENSORS/TTMP1.TmpSv.instMag.f**
 
 means the functional constraint of this tag is 1 (IEC61850_FC_MX –analog measurands). The object reference address string are (IED) – testmodel, (LD) – SENSORS, (LN) – TTMP1, (DO) – TmpSv, (DA) – instMag.f for floating value.
 
-## OPC UA {#endpoint-opc-ua}
-
+## OPC UA 
 ### General Details
 
 | Settings           | Parameters     |

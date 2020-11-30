@@ -1,11 +1,9 @@
 # Neuron 驱动地址格式
 
-## 总则 {#endpoint-general}
-
+## 总则 
 本文档描述了 Neuron 与各种工业协议驱动程序之间的标签地址格式。每个 Neuron 驱动程序都有自己的地址格式，在配置过程中会被解析，用于机器或设备的通信。
 
-## Allen-Bradley PLC2（半双工） {#endpoint-PLC2}
-
+## Allen-Bradley PLC2（半双工） 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -37,8 +35,7 @@
 
 在 KG 模式下，1771-KG 设置为 8（10 八进制），1785-KE 和 1770-KF2 设置为 0。
 
-## Allen-Bradley PLC5（半双工） {#endpoint-PLC5}
-
+## Allen-Bradley PLC5（半双工） 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -70,8 +67,7 @@
 
 在 KG 模式下，1771-KG 设置为 8（10 八进制），1785-KE 和 1770-KF2 设置为 0。
 
-## Schneider TSX7 SCM (Modbus RTU) {#endpoint-TSX7-SCM}
-
+## Schneider TSX7 SCM (Modbus RTU) 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -95,8 +91,7 @@
 
 例如：**10！W100** 表示从站 10 中的字 100。
 
-## Schneider TSX7 SCM (Modbus TCP) {#endpoint-TCP}
-
+## Schneider TSX7 SCM (Modbus TCP) 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -118,8 +113,7 @@
 
 例如：**W4000** 表示字地址 4000。
 
-## Schneider Telemecanique UNI-TE {#endpoint-UNI-TE}
-
+## Schneider Telemecanique UNI-TE 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -143,8 +137,7 @@
 
 例如：**1！W100** 表示从站 1 中的字 100。
 
-## ABB SattControl Comli {#endpoint-Comli}
-
+## ABB SattControl Comli 
 ### 一般资讯
 
 | 設定			 | 参数		      |
@@ -168,8 +161,7 @@
 
 例如：**1！R100** 表示从站 1 中的字 100。
 
-## Omron Single HostLink (点对点) {#endpoint-Single-HostLink}
-
+## Omron Single HostLink (点对点) 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -196,8 +188,7 @@
 
 例如：**DM100** 表示 DM 数据存储区的字 100。
 
-## Omron Multiple HostLink (主从模式) {#endpoint-HostLink}
-
+## Omron Multiple HostLink (主从模式) 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -226,8 +217,7 @@
 
 例如：**10！DM100** 表示从机 10 的数据存储器中的字 100。
 
-## Siemens S5 3964R/RK512 {#endpoint-siemens-s5}
-
+## Siemens S5 3964R/RK512 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -260,8 +250,7 @@ DBW（**字偏移量**）是该数据块中的数据字
 
 **DB100.DBW20** (DBddd.DBWddddd) 指数据块 100 中的数据字 20
 
-## Siemens S7 3964R/RK512 {#endpoint-siemens-s7}
-
+## Siemens S7 3964R/RK512 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -296,8 +285,7 @@ DBW（**字偏移量**）是该数据块中的数据字
 
 **DB100.DBW20** (DBddd.DBWddddd) 指数据块 100 中的数据字 20
 
-## Siemens FETCH/WRITE {#endpoint-siemens-fetch}
-
+## Siemens FETCH/WRITE 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -332,8 +320,7 @@ DBW（**字偏移量**）是该数据块中的数据字（起始）
 
 例如：**DB100.DBW20** (DBddd.DBWddddd) 指数据块 200 中的数据字 20
 
-## Siemens 工业以太网 S7 ISOTCP {#endpoint-siemens-industrial}
-
+## Siemens 工业以太网 S7 ISOTCP 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -368,8 +355,7 @@ S7P_SCRTSAP 是 S7 协议的源 TSAP
 
 S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
-## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2 {#endpoint-mitsubishi-fx0s}
-
+## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -402,8 +388,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**D100** 表示在 D 数据存储区的字 100。
 
-## Mitsubishi FX2N/FX3U/FX3G 系列 {#endpoint-mitsubishi-fx2n}
-
+## Mitsubishi FX2N/FX3U/FX3G 系列 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -437,8 +422,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**D100** 表示在 D 数据存储区的字 100。
 
-## Mitsubishi Melsec E71 for Q 系列 {#endpoint-mitsubishi-melsec}
-
+## Mitsubishi Melsec E71 for Q 系列 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -484,8 +468,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**D100** 表示在 D 数据存储区的字 100。
 
-## Modbus RTU {#endpoint-modbus-rtu}
-
+## Modbus RTU 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -510,8 +493,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 | 字   | 04       | DDDDDD | 300001 ~ 365536 | 模拟输入寄存器     |
 | 字   | 03/06/16 | DDDDDD | 400001 ~ 465536 | 模拟输出保持寄存器 |
 
-## Modbus TCP {#endpoint-modbus-tcp}
-
+## Modbus TCP 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -538,8 +520,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**2！404001** 表示字地址 4000，在子号 2 中。
 
-## Modbus RTU over TCP {#endpoint-modbus-rtu-tcp}
-
+## Modbus RTU over TCP 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -566,8 +547,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**2！404001** 表示字地址 4000，在子号 2 中。
 
-## IEC 61850 {#endpoint-iec-61850}
-
+## IEC 61850 
 ### 一般资讯
 
 | 設定			 | 参数			   |
@@ -621,8 +601,7 @@ EC61850 数据分层模型通常有以下几种：
 
 例如：**1!testmodelSENSORS/TTMP1.TmpSv.instMag.f** 表示该标签的功能约束为 1（IEC61850_FC_MX--模拟测量器）。对象参考地址串为 (IED)--测试模型，(LD)--传感器，(LN)--TTMP1，(DO)--TmpSv，(DA)--instMag.f 为浮动值。
 
-## OPC UA {#endpoint-opc-ua}
-
+## OPC UA 
 ### 一般资讯
 
 | 設定			 | 参数			   |

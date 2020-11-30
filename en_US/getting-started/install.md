@@ -1,5 +1,4 @@
-# Installation {#endpoint-download}
-
+# Installation 
 Following section describes how to install the Neuron software package on a Linux system device.
 
 ## Download
@@ -14,8 +13,7 @@ Neuron software package is available in EMQ website [https://www.emqx.io](https:
 
 For the version number x.y.z, x is major version number which may change if the entire system structure enhancement, y is minor version number which may change if there will be some additional features. z is the patch number for bug fix in the Neuron software.
 
-## Pre-requisites {#endpoint-pre-requisites}
-
+## Pre-requisites 
 The following Linux distros or devices have been tested for Neuron.
 
 | Linux distros or devices                                                             | Neuron package required           |
@@ -30,8 +28,7 @@ Note: Some Linux distros require **openssl1.1** installation.
 For Debian package, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)
 For Redhat package, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)
 
-## New Installation {#endpoint-new-installation}
-
+## New Installation 
 New Neuron software can be installed in a home directory of any user account. In case a user account is needed, we recommand &quot;neuron&quot; for installation.
 
 1. Extracting the software package to any directory, (i.e. /home/neuron ):
@@ -58,8 +55,7 @@ New Neuron software can be installed in a home directory of any user account. In
    Neuron instance 0 is now running with PID:6312 Port:7000
    ```
 
-## Starting the Neuron System {#endpoint-starting}
-
+## Starting the Neuron System 
 To start Neuron system by the command:
 
 ```bash
@@ -67,8 +63,7 @@ To start Neuron system by the command:
 Neuron instance 0 is now running with PID:6037 Port:7000
 ```
 
-## Stopping the Neuron System {#endpoint-stopping}
-
+## Stopping the Neuron System 
 To stop the running of Neuron System by the command:
 
 ```bash
@@ -77,8 +72,7 @@ Neuron instance 0 is stopping ...
 Stopped !
 ```
 
-## Starting the specific Neuron System {#endpoint-specific-starting}
-
+## Starting the specific Neuron System 
 To start specific Neuron instance by the command:
 
 ```bash
@@ -86,8 +80,7 @@ To start specific Neuron instance by the command:
 Neuron instance 7 is now running with PID:8097 Port:7007
 ```
 
-## Stopping the specific Neuron System {#endpoint-specific-stopping}
-
+## Stopping the specific Neuron System 
 To stop the running of specific Neuron by the command:
 
 ```bash
@@ -96,7 +89,7 @@ Neuron instance 7 is stopping ...
 Stopped !
 ```
 
-## Starting multiple Neuron Systems (#endpoint-multi-starting)
+## Starting multiple Neuron Systems
 
 To start multiple Neuron system instances by the command
 
@@ -109,8 +102,7 @@ Neuron instance 3 is now running with PID:6087 Port:7003
 Neuron instance 4 is now running with PID:6090 Port:7004
 ```
 
-## Stopping multiple Neuron Systems {#endpoint-multi-stopping}
-
+## Stopping multiple Neuron Systems 
 To stop the running of multiple Neuron systems by the command:
 
 ```bash
@@ -127,8 +119,7 @@ Neuron instance 4 is stopping ...
 Stopped !
 ```
 
-## Checking the Neuron System {#endpoint-checking}
-
+## Checking the Neuron System 
 To checkup the status of Neuron systems:
 
 ```bash
@@ -140,8 +131,7 @@ Neuron instance 3 is running with PID:6139 Port:7003
 Neuron instance 4 is running with PID:6144 Port:7004
 ```
 
-## Optional Switches {#endpoint-command}
-
+## Optional Switches 
 Some more useful switches for &quot;neuron&quot; is available.
 
 Usage: neuron [start|stop|status] [options]
@@ -152,8 +142,7 @@ Usage: neuron [start|stop|status] [options]
 | -u or --uuid `<uuid>`           | universal unique id `<max 36 chars>`  |
 where [-a|-i] are exclusive options.
 
-## Running in Docker {#endpoint-docker}
-
+## Running in Docker 
 To get the docker image from [https://hub.docker.com](https://hub.docker.com)
 
 ```bash

@@ -1,9 +1,7 @@
-# Event/Alarm Message {#endpoint-alarm-message}
-
+# Event/Alarm Message 
 This Event/Alarm message is used to view the current active alarm points. The alarms are sorted the nature of the alarm. This is to easier determine how important an alarm is. The numbers of alarms are application dependent.
 
-### Event/Alarm Current Status {#endpoint-current-status}
-
+### Event/Alarm Current Status 
 This function is used to view the current active alarm points. The alarms are sorted in up to 6 different categories depending of the nature of the alarm. This is to easier determine how important an alarm is.
 
 There are six different show modes in dropdown box. ACTIVE ENABLED shows all enabled alarms that are currently on or unacknowledged. ACTIVE UNACK shows all alarms that are unacknowledged. ACTIVE ALL shows all alarms (including disabled alarms) that are currently on or unacknowledged. ALL ALARMS show all alarms in the system, whether they are on or off. ALL ENABLED shows all alarms in the system that are not disabled, whether they are on or off. ALL DISABLED show all alarms in the system that are disabled, whether they are on or off.
@@ -22,8 +20,7 @@ When an alarm occurs, a summary alarm indication lamp is activated. The summary 
 | Remark   | Alarm condition (Unack, Disabled or blank) |
 | Comment  | Alarm text including dynamic values        |
 
-### Event/Alarm Historical Log {#endpoint-historical-log}
-
+### Event/Alarm Historical Log 
 This function is used to view the alarm historical log. Every time an alarm is going on or off or ack, the event is logged to an alarm log file.
 
 This report contains date and time, category, status on or off and the alarm text, including dynamic values. The dynamic values will be 0 for alarm events with off status. The report displays the alarm events in time order.

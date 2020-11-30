@@ -1,8 +1,8 @@
-# Script Statements {#endpoint-script-statements}
+# Script Statements
 
 The statements are in the left column in object programming editor. Those statements perform the expression of the Neuron programs. Everything in the right column to the right of the statement (and on next row(s) if no new statement) belongs to this statement.
 
-### COMMENT {#endpoint-comment}
+## COMMENT
 
 This statement does not mean anything for the system. This is only comments for the operator. It can also be used to temporarily remove other statement to avoid some action.
 
@@ -12,11 +12,11 @@ Example:
 | ------- | -------------------------------------- |
 |         | \*\*\* how to use a COMMENT statement. |
 
-### DECLARE {#endpoint-declare}
+## DECLARE
 
 For all local variables, it should be declared before it can be used in the subroutine. All local variables are used in local script only.
 
-### POS {#endpoint-pos}
+## POS
 
 This statement marks a label number (1-999) at this location, which can be used for a GOTO instruction (see below). There is no action taken when reaching this statement. The text in the right column is treated as a comment.
 
@@ -26,7 +26,7 @@ Example:
 | ------- | ------------------------------ |
 | POS120  | \* goto here if end of routine |
 
-### DO {#endpoint-do}
+## DO
 
 This statement executes its expressions unconditionally. The expressions are separated with &quot;;&quot;.
 
@@ -36,7 +36,7 @@ Example:
 | ------- | -------------------------------------- |
 | DO      | valuein = 12; CALL SR210;              |
 
-### IF-THEN-ELSEIF-THEN-ELSE {#endpoint-if-then}
+## IF-THEN-ELSEIF-THEN-ELSE
 
 This statement executes its expressions conditionally. The expressions are separated with &quot;;&quot;.
 

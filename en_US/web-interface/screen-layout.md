@@ -1,5 +1,4 @@
-# Screen Layout {#endpoint-screen-layout}
-
+# Screen Layout 
 This is the first screen will be displayed when you get in the Neuron. In the upper part, there is a menu selection bar that contains 3 kind of features. First is Status menu which contains the data, event, alarm monitoring features. Second menu is configuration which is used to setup the PLC or device communication details. Last is administration menu. At the top right hand corner, there are three command button which are used to control the Neuron system. The lower part is the status bar that show the current status of Neuron.
 
 ![](./assets/screenlayout.png)
@@ -15,8 +14,7 @@ This is the first screen will be displayed when you get in the Neuron. In the up
 **Administration Menu**
 ![](./assets/administrationmenu.png)
 
-### Command Button {#endpoint-command-button}
-
+### Command Button 
 There are 3 command buttons at the top right corner to control the Neuron.
 
 <table>
@@ -38,8 +36,7 @@ There are 3 command buttons at the top right corner to control the Neuron.
 
 ![](./assets/commdown.png)
 
-### Status Bar {#endpoint-status-bar}
-
+### Status Bar 
 There are five kinds of system status in Neuron.
 
 | Status                                | Description                                                                                                                          |
