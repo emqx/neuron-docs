@@ -5,7 +5,7 @@ When creating a user, the system administrator selects a username, and assign a 
 
 There is one predefined user, (admin), which is the same as the Neuron administrator. The super user has its password set to a default at delivery, which for security reason, should be changed after installation. Normally, no one should be logged in as super user to run the Neuron, this should only be done when doing administration tasks.
 
-### User Setup 
+## User Setup 
 This page is used to manage the user. Press the &quot;Add&quot; button to add a user. To delete user, press the &quot;Delete&quot; to remove the current row.
 
 ![](./assets/user-setup.png)
@@ -14,7 +14,7 @@ When pressing the &quot;Add&quot; button, a Add New User dialog box will be show
 
 ![](./assets/pick-access.png)
 
-### New Password 
+## New Password 
 This function provides a possibility to change the password for the user currently logged in.
 
 ![](./assets/new-password.png)
