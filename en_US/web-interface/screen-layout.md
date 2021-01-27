@@ -3,7 +3,7 @@ This is the first screen will be displayed when you get in the Neuron. In the up
 
 ![](./assets/screenlayout.png)
 
-### Selection Menu
+## Selection Menu
 
 **Status Menu**
 ![](./assets/statusmenu.png)
@@ -36,7 +36,7 @@ There are 3 command buttons at the top right corner to control the Neuron.
 
 ![](./assets/commdown.png)
 
-### Status Bar 
+## Status Bar 
 There are five kinds of system status in Neuron.
 
 | Status                                | Description                                                                                                                          |
