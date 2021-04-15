@@ -23,25 +23,15 @@ Publish: Neuron/Broadcast
 
 ```json
 {
-
-"func": 92,
-
-"wtrm": "REGISTRY42",
-
-"uuid": "16538d28-4592-11e9-a787-00e067109f12",
-
-"wkey": 1,
-
-"time": 27784718,
-
-"data": 0.023928972,
-
-"expd": 1609300740,
-
-"natt": 20,
-
-"nalr": 6
-
+  "func": 92,
+  "wtrm": "REGISTRY42",
+  "uuid": "16538d28-4592-11e9-a787-00e067109f12",
+  "wkey": 1,
+  "time": 27784718,
+  "data": 0.023928972,
+  "expd": 1609300740,
+  "natt": 20,
+  "nalr": 6
 }
 ```
 

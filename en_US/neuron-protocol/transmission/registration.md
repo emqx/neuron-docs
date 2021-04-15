@@ -26,17 +26,17 @@ Publish: Neuron/Registry/%UUID%
 ```json
 {
 
-"srno": "SN010101200227",
+  "srno": "SN010101200227",
 
-"host": "Instance 0",
+  "host": "Instance 0",
 
-"uuid": "16538d28-4592-11e9-a787-00e067109f12"
+  "uuid": "16538d28-4592-11e9-a787-00e067109f12"
 
-"modl": "ENT-x86_64-1-0101",
+  "modl": "ENT-x86_64-1-0101",
 
-"bver": "1.1.1",
+  "bver": "1.1.1",
 
-"pver": 1,
+  "pver": 1,
 
 }
 ```
@@ -46,9 +46,9 @@ Publish: Neuron/Registry/%UUID%
 ```json
 {
 
-"func": 1,
+  "func": 1,
 
-"regr": 0
+  "regr": 0
 
 }
 ```
