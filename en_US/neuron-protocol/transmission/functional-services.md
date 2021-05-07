@@ -989,7 +989,8 @@ Request body syntax
 ```json
 {
   "func": 23,
-  "wtrm": "DEMO-Neuron-1001_1532421778824_1"
+  "wtrm": "DEMO-Neuron-1001_1532421778824_1",
+  "type": 1
 }
 ```
 
@@ -1025,6 +1026,7 @@ Response body syntax
 | -------- | ------------------------------------------------ |
 | **func** | Function code 23                                 |
 | **wtrm** | A water mark that copied to the response message |
+| **type** | 1:  Driver Channel<br>2:  Server Channel         |
 
 | Response |                                                   |
 | -------- | ------------------------------------------------- |
@@ -1167,6 +1169,59 @@ Response body syntax
 | **func** | Function code 25                                  |
 | **wtrm** | A water mark that copied from the request message |
 | **errc** | Compiler error code                               |
+
+## Function 26 Read Device List
+
+Websockets or MQTT Communication
+
+**Request body syntax**
+```json
+{
+  "func": 26,
+  "wtrm": "d0fdb943-cff1-44bc-887d-0a3b3ba856b0"
+}
+```
+
+**Response body syntax**
+```json
+{
+  "func": 26,
+  "wtrm": "d0fdb943-cff1-44bc-887d-0a3b3ba856b0",
+  "rows": [
+    {
+      "name": "/dev/tty",
+      "fdrw": 0
+    },
+    {
+      "name": "/dev/ttyS0",
+      "fdrw": 0
+    },
+    {
+      "name": "/dev/ttyS1",
+      "fdrw": -1
+    },
+    {
+      "name": "/dev/ttyUSB0",
+      "fdrw": -1
+    }
+  ],
+  "errc": 0
+}
+```
+
+| Request        |                                                              |
+| -------------- | ------------------------------------------------------------ |
+| func | Function code 26                                             |
+| wtrm | A water mark that copied from the request message            |
+
+| Response       |                                                              |
+| -------------- | ------------------------------------------------------------ |
+| func | Function code 26                                             |
+| wtrm | A water mark that copied from the request message            |
+| rows | Device list                                                  |
+| name | Device name                                                  |
+| fdrw | File descriptor read and write permission, <br>0: Got permission,<br>-1: No permission |
+| errc | Compiler error code                                          |
 
 ## Function 30 Read Global Variable
 
