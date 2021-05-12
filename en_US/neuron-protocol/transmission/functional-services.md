@@ -1125,8 +1125,6 @@ Response body syntax
 | **drvn** | driver name                                       |
 | **parm** | parameter array                                   |
 
-## 
-
 ## Function 25 Check PLC Addresses
 
 **_HTTP API Header_**
