@@ -959,11 +959,9 @@ Response body syntax
 {
   "func": 22,
   "wtrm": "DEMO-Neuron-1001_1532419775357_240",
-  "errc": 0,
-
-  ###The structure is same as Function 21 request message
-   Not repeat here ###
-
+  "errc": 0
+//  The structure is same as Function 21 request message
+//   Not repeat here
 }
 ```
 
@@ -1059,7 +1057,7 @@ Request body syntax
 
 ```json
 {
-  "func": 23,
+  "func": 24,
   "wtrm": "DEMO-Neuron-1001_1532421778824_1",
   "drvn": "i61850"
 }
@@ -1113,6 +1111,22 @@ Response body syntax
   ]
 }
 ```
+| Request  |                                                   |
+| -------- | ------------------------------------------------- |
+| **func** | Function code 24                                  |
+| **wtrm** | A water mark that copied from the request message |
+| **drvn** | driver name                                       |
+
+| Response |                                                   |
+| -------- | ------------------------------------------------- |
+| **func** | Function code 24                                  |
+| **wtrm** | A water mark that copied from the request message |
+| **errc** | Compiler error code                               |
+| **drvn** | driver name                                       |
+| **parm** | parameter array                                   |
+
+## 
+
 ## Function 25 Check PLC Addresses
 
 **_HTTP API Header_**
@@ -3911,7 +3925,8 @@ Request body syntax
   "logl": "all",
   "srtt": 1604311512,
   "stpt": 1604311517,
-  "srtl": 0
+  "srtl": 0,
+  "proc": "all"
 }
 ```
 
@@ -3926,22 +3941,26 @@ Response body syntax
     {
       "tstp": 1532419775,
       "logl": "warning",
-      "data": " CORE extractlicense: loading certificate into memory"
+      "proc": "CORE",
+      "data": "extractlicense: loading certificate into memory"
     },
     {
       "tstp": 1532419775,
       "logl": "debug",
-      "data": " DRV debuglog: Cannot connect"
+      "proc": "DRVR",
+      "data": "debuglog: Cannot connect"
     },
     {
       "tstp": 1532419775,
       "logl": "err",
-      "data": " SERV serverdisconnect: send disconnection request failed return code -3"
+      "proc": "SERV",
+      "data": "serverdisconnect: send disconnection request failed return code -3"
     },
     {
       "tstp": 1532419775,
       "logl": "warning",
-      "data": " CORE update_process: process /home/neuron/ /bin/neuron_o_mbstcp was killed by uncaught signal 9 "
+      "proc": "CORE",
+      "data": "update_process: process /home/neuron/ /bin/neuron_o_mbstcp was killed by uncaught signal 9 "
     }
   ],
   "last": 400,
@@ -3967,8 +3986,47 @@ Response body syntax
 | **tstp** | log timestamp (s)                                 |
 | **logl** | Log level                                         |
 | **data** | Log string data                                   |
-| **last** | Last line number , useful for "strl" of request <br> message                                           |
+| **last** | Last line number , useful for "strl" of request message                                           |
 | **errc** | Compiler error code                               |
+
+## Function 84 Log Switch
+
+**_Websockets or MQTT Communication_**
+
+**Request body syntax**
+
+```json
+{
+  "func": 84,
+  "wtrm": "DEMO-Neuron-1002_1532419775357_240",
+  "logn": "SCRIPTLOG",
+  "vars": 100
+} 
+```
+
+**Response body syntax**
+```json
+{
+  "func": 84,
+  "wtrm": "DEMO-Neuron-1002_1532419775357_240",
+  "errc": 0
+}
+```
+
+| Request        |                                                   |
+| -------------- | ------------------------------------------------- |
+| **func** | Function code 84                                  |
+| **wtrm** | A water mark that copied to the response message  |
+| **logn** | Log name:<br>SCRIPTLOG<br>DRIVERLOG<br>SERVICELOG             |
+| **vars** | Variable for maximum of log lines can be reported |
+
+| Response       |                                                   |
+| -------------- | ------------------------------------------------- |
+| **func** | Function code 84                                  |
+| **wtrm** | A water mark that copied from the request message |
+| **errc** | Compiler error code                               |
+
+ 
 
 ## License Update HTTP API only
 
