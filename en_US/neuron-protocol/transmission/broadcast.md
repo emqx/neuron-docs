@@ -1,9 +1,7 @@
 # Broadcast
 
-Broadcast services allow a group of Neuron and IIoT platform to
-broadcast the group message to each other. In fact, Neuron shows itself
-existence in the group. In addition, there are also some license
-information of sender in message.
+Broadcast services allow a group of Neuron and IIoT platform to broadcast the group message to each other. In fact,
+Neuron shows itself existence in the group. In addition, there are also some license information of sender in message.
 
 **_MQTT Topics for Neuron_**
 
@@ -23,25 +21,15 @@ Publish: Neuron/Broadcast
 
 ```json
 {
-
-"func": 92,
-
-"wtrm": "REGISTRY42",
-
-"uuid": "16538d28-4592-11e9-a787-00e067109f12",
-
-"wkey": 1,
-
-"time": 27784718,
-
-"data": 0.023928972,
-
-"expd": 1609300740,
-
-"natt": 20,
-
-"nalr": 6
-
+  "func": 92,
+  "wtrm": "REGISTRY42",
+  "uuid": "16538d28-4592-11e9-a787-00e067109f12",
+  "wkey": 1,
+  "time": 27784718,
+  "data": 0.023928972,
+  "expd": 1609300740,
+  "natt": 20,
+  "nalr": 6
 }
 ```
 
