@@ -130,7 +130,7 @@ Resource Path: /api/v1/funcno11
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 
 
@@ -178,7 +178,7 @@ Resource Path: /api/v1/funcno12
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -233,7 +233,7 @@ Resource Path: /api/v1/funcno13
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -290,7 +290,7 @@ Resource Path: /api/v1/funcno14
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -366,7 +366,7 @@ Resource Path: /api/v1/funcno15
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -433,7 +433,7 @@ Resource Path: /api/v1/funcno16
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -484,7 +484,7 @@ Resource Path: /api/v1/funcno21
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -966,7 +966,7 @@ Resource Path: /api/v1/funcno22
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1006,7 +1006,7 @@ Resource Path: /api/v1/funcno23
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1079,7 +1079,7 @@ Resource Path: /api/v1/funcno24
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1170,7 +1170,7 @@ Resource Path: /api/v1/funcno25
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1229,7 +1229,7 @@ Resource Path: /api/v1/funcno25
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 
 
@@ -1295,7 +1295,7 @@ Resource Path: /api/v1/funcno30
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 
 
@@ -1388,7 +1388,7 @@ Resource Path: /api/v1/funcno31
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 
 
@@ -1481,7 +1481,7 @@ Resource Path: /api/v1/funcno32
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1550,7 +1550,7 @@ Resource Path: /api/v1/funcno33
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1631,7 +1631,7 @@ Resource Path: /api/v1/funcno34
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1712,7 +1712,7 @@ Resource Path: /api/v1/funcno35
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1763,7 +1763,7 @@ Resource Path: /api/v1/funcno36
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1839,7 +1839,7 @@ Resource Path: /api/v1/funcno37
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1922,7 +1922,7 @@ Resource Path: /api/v1/funcno38
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -1973,7 +1973,7 @@ Resource Path: /api/v1/funcno50
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2052,7 +2052,7 @@ Resource Path: /api/v1/funcno51
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2107,7 +2107,7 @@ Resource Path: /api/v1/funcno60
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2201,7 +2201,7 @@ Resource Path: /api/v1/funcno61
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2313,7 +2313,7 @@ Resource Path: /api/v1/funcno62
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 ## Function 70 Gateway Control
 
@@ -2325,7 +2325,7 @@ Resource Path: /api/v1/funcno70
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2376,7 +2376,7 @@ Resource Path: /api/v1/funcno71
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2427,7 +2427,7 @@ Resource Path: /api/v1/funcno73
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2542,7 +2542,7 @@ Resource Path: /api/v1/funcno74
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2622,7 +2622,7 @@ Resource Path: /api/v1/funcno79
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2673,7 +2673,7 @@ Resource Path: /api/v1/funcno80
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2726,7 +2726,7 @@ Resource Path: /api/v1/funcno81
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -2893,7 +2893,7 @@ Resource Path: /api/v1/funcno82
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
@@ -3003,7 +3003,7 @@ Resource Path: /api/v1/funcno83
 
 Content-Type: application/json
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 **_HTTP API or Websockets or MQTT Communication_**
 
@@ -3125,7 +3125,7 @@ Resource Path: /api/v1/license
 
 Content-Type: multipart/form-data
 
-Authorization: Bearer <token>
+Authorization: Bearer \<token\>
 
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
