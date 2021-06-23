@@ -1037,17 +1037,44 @@ Response body syntax
     {
       "name": "mbsrtu",
       "desc": "Modbus RTU",
-      "type": "tty"
+      "type": "tty",
+      "attr": [
+        "r",
+        "w",
+        "rw"
+      ]
     },
     {
       "name": "mbstcp",
       "desc": "Modbus TCP",
-      "type": "tcp"
+      "type": "tcp",
+      "attr": [
+        "r",
+        "w",
+        "rw"
+      ]
     },
     {
       "name": "mbsrot",
       "desc": "Modbus RTU over TCP",
-      "type": "tcp"
+      "type": "tcp",
+      "attr": [
+        "r",
+        "w",
+        "rw"
+      ]
+    },
+    {
+      "name": "opcua",
+      "desc": "OPC UA",
+      "type": "tcp",
+      "attr": [
+        "r",
+        "w",
+        "rw",
+        "s",
+        "sw"
+      ]
     }
   ]
 }
@@ -1059,15 +1086,16 @@ Response body syntax
 | **wtrm** | A water mark that copied to the response message |
 | **type** | 1:  Driver Channel<br>2:  Server Channel         |
 
-| Response |                                                   |
-| -------- | ------------------------------------------------- |
-| **func** | Function code 23                                  |
-| **wtrm** | A water mark that copied from the request message |
-| **errc** | Compiler error code                               |
-| **nrow** | Number of rows                                    |
-| **name** | Short name of driver                              |
-| **desc** | Full description of driver                        |
-| **type** | Type of driver<br> tty Serial driver<br> tcp Network driver                                |
+| Response |                                                             |
+| -------- | ----------------------------------------------------------- |
+| **func** | Function code 23                                            |
+| **wtrm** | A water mark that copied from the request message           |
+| **errc** | Compiler error code                                         |
+| **nrow** | Number of rows                                              |
+| **name** | Short name of driver                                        |
+| **desc** | Full description of driver                                  |
+| **type** | Type of driver<br> tty Serial driver<br> tcp Network driver |
+| **attr** | Attribute Read/Write indicator<br>R<br>W<br>RW<br>S<br>SW   |
 
 ## Function 24 Read Driver Parameters
 
