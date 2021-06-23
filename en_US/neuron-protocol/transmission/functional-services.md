@@ -1039,9 +1039,9 @@ Response body syntax
       "desc": "Modbus RTU",
       "type": "tty",
       "attr": [
-        "r",
-        "w",
-        "rw"
+        "R",
+        "W",
+        "RW"
       ]
     },
     {
@@ -1049,9 +1049,9 @@ Response body syntax
       "desc": "Modbus TCP",
       "type": "tcp",
       "attr": [
-        "r",
-        "w",
-        "rw"
+        "R",
+        "W",
+        "RW"
       ]
     },
     {
@@ -1059,9 +1059,9 @@ Response body syntax
       "desc": "Modbus RTU over TCP",
       "type": "tcp",
       "attr": [
-        "r",
-        "w",
-        "rw"
+        "R",
+        "W",
+        "RW"
       ]
     },
     {
@@ -1069,11 +1069,11 @@ Response body syntax
       "desc": "OPC UA",
       "type": "tcp",
       "attr": [
-        "r",
-        "w",
-        "rw",
-        "s",
-        "sw"
+        "R",
+        "W",
+        "RW"
+        "S",
+        "SW"
       ]
     }
   ]
