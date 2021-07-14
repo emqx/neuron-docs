@@ -904,51 +904,51 @@ Response body syntax
 }
 ```
 
-| Request  |                                                               |
-| -------- | ------------------------------------------------------------- |
-| **func** | Function code 21                                              |
-| **wtrm** | A water mark that copied to the response message              |
-| **chnl** | Channel Details                                               |
-| **chdv** | Channel driver name                                           |
-| **tcph** | Hostname or IP address of PLC/hardware device                 |
-| **tcpp** | Port number of a device                                       |
-| **ttyc** | Linux device file name (ttyS0, ttyS1)                         |
+| Request  |                                                              |
+| -------- | ------------------------------------------------------------ |
+| **func** | Function code 21                                             |
+| **wtrm** | A water mark that copied to the response message             |
+| **chnl** | Channel Details                                              |
+| **chdv** | Channel driver name                                          |
+| **tcph** | Hostname or IP address of PLC/hardware device                |
+| **tcpp** | Port number of a device                                      |
+| **ttyc** | Linux device file name (ttyS0, ttyS1)                        |
 | **ttyb** | Baud rate <br>4800 <br>9600 <br>19200 <br>38400 <br>57600 <br>115200 |
-| **ttyd** | Data bit<br> 5<br> 6<br> 7<br> 8                              |
-| **ttys** | Stop bit (string)<br> 1<br> 1.5<br> 2                         |
-| **ttyp** | Parity bit (char)<br> E - Even<br> O - Odd<br> N - None                                                      |
-| **parm** | Parameter array Details                                       |
-| **vars** | Variables name                                                |
-| **pars** | Parameters                                                    |
-| **objd** | Object Details                                                |
-| **objn** | Object name                                                   |
-| **obsz** | Number of same objects                                        |
-| **updt** | Time interval for data transfer to platform cloud             |
-| **logt** | Time interval for data to be logged on file                   |
-| **tstd** | Timestamp display<br>0 (no display)<br>1 (display)                                                   |
-| **disp** | All object attributes need to be displayed<br> 0 (no display)<br> 1 (display)                                                   |
-| **logs** | Need logging once connection drop<br> 0 (no need)<br> 1 (need)                                                      |
-| **oatt** | Object Attribute Details                                      |
-| **attn** | Attribute name                                                |
-| **attt** | Attribute value type:<br> word<br> uword<br> dword<br> udword<br> float<br> double<br> bit<br> datetime                                                      |
-| **deci** | No of decimal place                                           |
-| **adis** | Attribute transferred to platform<br> 0 (no need)<br> 1 (need)                                                      |
-| **achg** | Attribute can be changed<br> 0 (not allow)<br> 1 (allow)                                                     |
-| **attr** | Attribute Read/Write indicator<br> R<br> W<br> R/W                                                           |
-| **rtim** | Read time (for only attr: R)                                  |
-| **aadd** | Attribute Address Details                                     |
-| **obix** | Start from 0 index number                                     |
-| **pref** | Object name prefix                                            |
-| **suff** | Object name suffix                                            |
+| **ttyd** | Data bit<br> 5<br> 6<br> 7<br> 8                             |
+| **ttys** | Stop bit (string)<br> 1<br> 1.5<br> 2                        |
+| **ttyp** | Parity bit (char)<br> E - Even<br> O - Odd<br> N - None      |
+| **parm** | Parameter array Details                                      |
+| **vars** | Variables name                                               |
+| **pars** | Parameters                                                   |
+| **objd** | Object Details                                               |
+| **objn** | Object name                                                  |
+| **obsz** | Number of same objects                                       |
+| **updt** | Time interval for data transfer to platform cloud            |
+| **logt** | Time interval for data to be logged on file                  |
+| **tstd** | Timestamp display<br>0 (no display)<br>1 (display)           |
+| **disp** | All object attributes need to be displayed<br> 0 (no display)<br> 1 (display) |
+| **logs** | Need logging once connection drop<br> 0 (no need)<br> 1 (need) |
+| **oatt** | Object Attribute Details                                     |
+| **attn** | Attribute name                                               |
+| **attt** | Attribute value type:<br> word<br> uword<br> dword<br> udword<br> float<br> double<br> bit<br> datetime |
+| **deci** | No of decimal place                                          |
+| **adis** | Attribute transferred to platform<br> 0 (no need)<br> 1 (need) |
+| **achg** | Attribute can be changed<br> 0 (not allow)<br> 1 (allow)     |
+| **attr** | Attribute Read/Write indicator<br> R<br> W<br> R/W<br>S<br>SW |
+| **rtim** | Read time (for only attr: R)                                 |
+| **aadd** | Attribute Address Details                                    |
+| **obix** | Start from 0 index number                                    |
+| **pref** | Object name prefix                                           |
+| **suff** | Object name suffix                                           |
 | **addr** | Tag address (device address) <br> Note: For internal register, both tagaddr and tagattr use "-" |
-| **msgd** | Message Details                                               |
-| **msgt** | Message type<br> <<br> <=<br> ><br> >=<br> ==<br> !=<br> &<br> \^<br> \|                                                            |
-| **sobj** | Source object name                                            |
-| **satt** | Source attribute name                                         |
-| **cobj** | Compared object name                                          |
-| **catt** | Compared attribute name                                       |
-| **acat** | Alarm Category<br> critical<br> alarm<br> warning<br> event<br> view                                                          |
-| **subr** | Subroutine number (1-999)                                     |
+| **msgd** | Message Details                                              |
+| **msgt** | Message type<br> <<br> <=<br> ><br> >=<br> ==<br> !=<br> &<br> \^<br> \| |
+| **sobj** | Source object name                                           |
+| **satt** | Source attribute name                                        |
+| **cobj** | Compared object name                                         |
+| **catt** | Compared attribute name                                      |
+| **acat** | Alarm Category<br> critical<br> alarm<br> warning<br> event<br> view |
+| **subr** | Subroutine number (1-999)                                    |
 
 | Response |                                                   |
 | -------- | ------------------------------------------------- |
@@ -3145,20 +3145,27 @@ Response body syntax
 | **wtrm** | A water mark that copied from the request message |
 | **errc** | Compiler error code                               |
 
-## License Update HTTP API only
+## File Update HTTP API only
 
 (POST)
 
-Resource Path: /api/v1/license
+Resource Path: /api/v1/{NAME}      
 
 Content-Type: multipart/form-data
 
 Authorization: Bearer \<token\>
 
+| NAME    | Description                |
+| ------- | -------------------------- |
+| license | neuron license file        |
+| logo    | neuron dashboard logo file |
+
 | **HTTP status code** | **Description**      |
 | -------------------- | -------------------- |
 | 200                  | Successful operation |
 | 400                  | Invalid Operation    |
+
+
 
 ## Error Response
 
