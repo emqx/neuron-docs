@@ -1,20 +1,22 @@
-# 整体布局 
-这是进入 Neuron 后显示的第一个画面。在上半部分，有一个菜单选择栏，其中包含 3 种功能。首先是状态菜单，包含数据、事件、报警监控功能。第二个菜单是配置菜单，用于设置 PLC 或设备的通信细节。最后是管理菜单。右上角有三个命令按钮，用于控制 Neuron 系统。下方是状态栏，用于显示 Neuron 的当前状态。
+# 整体布局
 
-![](./assets/screenlayout.png)
+进入 Neuron 后显示的第一个画面如下图所示。最上面第一栏左边为菜单选择栏，其中包含 3 种功能。第一个是状态菜单，其中包含数据监控、事件告警、日志等功能。第二个是配置菜单，用于设置 PLC 或设备的通信细节。最后一个是管理菜单。最上面第一栏右边为控制Neuron系统的三个命令按钮。最下方一栏为状态栏，用于显示 Neuron 当前状态。
 
-## 选择菜单
+![ ](./assets/screenlayout.png)
+
+## 菜单选择
 
 **状态菜单**
-![](./assets/statusmenu.png)
+![ ](./assets/statusmenu.png)
 
 **配置菜单**
-![](./assets/configurationmenu.png)
+![ ](./assets/configurationmenu.png)
 
 **管理菜单**
-![](./assets/administrationmenu.png)
+![ ](./assets/administrationmenu.png)
 
-## 命令按钮 
+## 命令按钮
+
 右上角有 3 个命令按钮来控制 Neuron。
 
 <table>
@@ -32,11 +34,12 @@
   </tr>
 </table>
 
-![](./assets/commandbutton.png)
+![ ](./assets/commandbutton.png)
 
-![](./assets/commdown.png)
+![ ](./assets/commdown.png)
 
-## 状态栏 
+## 状态栏
+
 Neuron 中的系统状态有五种。
 
 | 状态                                  | 描述                                                                                                         |
