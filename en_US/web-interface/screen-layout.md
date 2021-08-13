@@ -1,20 +1,22 @@
-# Screen Layout 
-This is the first screen will be displayed when you get in the Neuron. In the upper part, there is a menu selection bar that contains 3 kind of features. First is Status menu which contains the data, event, alarm monitoring features. Second menu is configuration which is used to setup the PLC or device communication details. Last is administration menu. At the top right hand corner, there are three command button which are used to control the Neuron system. The lower part is the status bar that show the current status of Neuron.
+# Screen Layout
 
-![](./assets/screenlayout.png)
+The first screen displayed after entering Neuron is shown below. The top first column on the left is the menu selection bar, which contains 3 functions. The first is the Status menu, which contains functions such as data monitoring, event alarms, and logs. The second is the configuration menu, which is used to set the communication details of the PLC or device. The last one is the Management menu. The first column at the top, on the right, contains the three command buttons that control the Neuron system. The bottom column is the status bar, which is used to display the current status of Neuron.
+
+![ ](./assets/screenlayout.png)
 
 ## Selection Menu
 
 **Status Menu**
-![](./assets/statusmenu.png)
+![ ](./assets/statusmenu.png)
 
 **Configuration Menu**
-![](./assets/configurationmenu.png)
+![ ](./assets/configurationmenu.png)
 
 **Administration Menu**
-![](./assets/administrationmenu.png)
+![ ](./assets/administrationmenu.png)
 
-### Command Button 
+## Command Button
+
 There are 3 command buttons at the top right corner to control the Neuron.
 
 <table>
@@ -32,15 +34,16 @@ There are 3 command buttons at the top right corner to control the Neuron.
   </tr>
 </table>
 
-![](./assets/commandbutton.png)
+![ ](./assets/commandbutton.png)
 
-![](./assets/commdown.png)
+![ ](./assets/commdown.png)
 
-## Status Bar 
+## Status Bar
+
 There are five kinds of system status in Neuron.
 
-| Status                                | Description                                                                                                                          |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Status                                | Description                           |
+| ------------------------------------- | ------------------------------------------------- |
 | COMM UP<br>COMM DOWN                  | device communication up<br> device communication down                                                                                |
 | MANU<br>AUTO<br>SERV                  | machine in manual mode<br>machine in auto mode<br>machine in service mode                                                            |
 | ACTIVE<br>INACTIVE<br>STANDBY<br>SEMI | Neuron system in active mode<br>Neuron system in inactive mode<br>Neuron system in standby mode<br>Neuron system in semi-active mode |
