@@ -86,6 +86,23 @@
     {
       "title": "Neuron 驱动地址格式",
       "path": "address-format/address-format"
+    },
+    {
+      "title": "功能应用",
+      "children": [
+        {
+          "title": "Logo上传设置",
+          "path": "function-application/upload-logo"
+        },
+        {
+          "title": "SSL和JWT的设置",
+          "path": "function-application/ssl-jwt"
+        },
+        {
+          "title": "DTU TCP Server的设置",
+          "path": "function-application/tcp-server"
+        }
+      ]
     }
   ],
   "en": [

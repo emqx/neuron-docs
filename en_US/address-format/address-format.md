@@ -1,9 +1,11 @@
 # Neuron Driver Address Format
 
-## General 
+## General
+
 This document describes the tag address formats for Neuron to setup with various kind of industrial protocol drivers. Each Neuron driver has its own address format that will be parsed in configuration process for machine or device communication.
 
-## Allen-Bradley PLC2 (half duplex) 
+## Allen-Bradley PLC2 (half duplex)
+
 ### General Details
 
 | Settings            | Parameters      |
@@ -36,7 +38,8 @@ Example: 16!16 (slave number 20 octal)
 
 Set 8 (10 octal) for 1771-KG and set 0 for 1785-KE and 1770-KF2 in KG mode
 
-## Allen-Bradley PLC5 (half duplex) 
+## Allen-Bradley PLC5 (half duplex)
+
 ### General Details
 
 | Settings            | Parameters      |
@@ -67,7 +70,8 @@ Example: 28!16 (KE/KF2 module number 34 octal and destination node=CPU number 20
 
 Set 8 (10 octal) for 1771-KG and set 0 for 1785-KE and 1770-KF2 in KG mode
 
-## Schneider TSX7 SCM (Modbus RTU) 
+## Schneider TSX7 SCM (Modbus RTU)
+
 ### General Details
 
 | Settings            | Parameters      |
@@ -92,7 +96,8 @@ Set 8 (10 octal) for 1771-KG and set 0 for 1785-KE and 1770-KF2 in KG mode
 
 Example: **10!W100** means word 100 in slave station 10.
 
-## Schneider TSX7 SCM (Modbus TCP) 
+## Schneider TSX7 SCM (Modbus TCP)
+
 ### General Details
 
 | Settings            | Parameters      |
@@ -115,7 +120,8 @@ Example: **10!W100** means word 100 in slave station 10.
 
 Example:**W4000** means word address 4000.
 
-## Schneider Telemecanique UNI-TE 
+## Schneider Telemecanique UNI-TE
+
 ### General Details
 
 | Settings            | Parameters     |
@@ -140,7 +146,8 @@ Example:**W4000** means word address 4000.
 
 Example: **1!W100** means word 100 in slave number 1.
 
-## ABB SattControl Comli 
+## ABB SattControl Comli
+
 ### General Details
 
 | Settings            | Parameters     |
@@ -165,7 +172,8 @@ Example: **1!W100** means word 100 in slave number 1.
 
 Example: **1!R100** means word 100 in slave number 1.
 
-## Omron Single HostLink (Point to Point) 
+## Omron Single HostLink (Point to Point)
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -193,7 +201,8 @@ Example: **1!R100** means word 100 in slave number 1.
 
 Example: **DM100** means word 100 in DM data memory area.
 
-## Omron Multiple HostLink (MasterSlave) 
+## Omron Multiple HostLink (MasterSlave)
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -223,7 +232,49 @@ Example: **DM100** means word 100 in DM data memory area.
 
 Example: **10!DM100** means word 100 in data memory in slave 10.
 
-## Siemens S5 3964R/RK512 
+## Omron FINS on TCP
+
+### General Details
+
+| Settings           | Parameters         |
+| ------------------ | ---------------    |
+| Runtime module     | neuron_o_finstc    |
+| Driver name        | finstc             |
+| Protocol           | FINS on TCP        |
+| Physical interface | Ethernet RJ45      |
+| Default settings   | port：2000          |
+
+### Address String
+
+> <span style="font-family:sans-serif; font-size:2em;">CH!ADDR</span>
+
+**CH** is channel number
+
+**ADDR**  is the data memory word address starting with “DM”
+
+| Type |           | Format    | Range       | Description       |
+| ---- | --------- | -----   | --------------| ------------------   |
+| B    | CIOb      | DDDDdd  | 0 ~ 614315    | CIO bit Area (word)           |
+| B    | WRb       | DDDDdd  | 0 ~ 51115     | Work bit Area (word)         |
+| B    | HRb       | DDDDdd  | 0 ~ 51115     | Holding Relay (word)          |
+| B    | ARb       | DDDDdd  | 0 ~ 95915     | Auxiliary Relay (word)           |
+| B    | TF        | DDDD    | 0 ~ 4095      | Timer Flag (bit)           |
+| B    | CF        | DDDD    | 0 ~ 4095      | Counter Flag (bit)           |
+| B    | DMb       | DDDDDdd | 0 ~ 3276715   | Data Memory bit (word)         |
+| B    | EM0~EM18  | DDDDDdd | 0 ~ W3276715  | Extended Memory bit, use W separate area and address(word)   |
+| Word | CIO       | DDDD    | 0 ~ 6143      | CIO Area (word)          |
+| Word | WR        | DDD     | 0 ~ 511       | Work Area (word)           |
+| Word | HR        | DDD     | 0 ~ 511       | Holding Bit Area (word)           |
+| Word | AR        | DDD     | 0 ~ 959       | Auxiliary Bit Area 0~447 read only (word)   |
+| Word | TIM       | DDDD    | 0 ~ 4095      | Timer (word)           |
+| Word | CNT       | DDDD    | 0 ~ 4095      | Counter (word)          |
+| Word | DM        | DDDDD   | 0 ~ 32767     | Data Memory (word)          |
+| Word | EM0~EM18  | DDDDD   | 0 ~ W32767    | Extended Memory, use W separate area and address(word)    |
+
+Example: 1!DM100 means word 100 in data memory in channel 1.
+
+## Siemens S5 3964R/RK512
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -575,7 +626,8 @@ Example:**2!404001** means word address 4000 with in slave number 2.
 
 Example:**2!404001** means word address 4000 with in slave number 2.
 
-## IEC 61850 
+## IEC 61850
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -631,7 +683,8 @@ Example:**1!testmodelSENSORS/TTMP1.TmpSv.instMag.f**
 
 means the functional constraint of this tag is 1 (IEC61850_FC_MX –analog measurands). The object reference address string are (IED) – testmodel, (LD) – SENSORS, (LN) – TTMP1, (DO) – TmpSv, (DA) – instMag.f for floating value.
 
-## OPC UA 
+## OPC UA
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -655,9 +708,10 @@ Example: 2!Device1.Module1.Tag1 represents namespace index is 2 and node ID is D
 Please refer to OPC UA standard for the explanation of namespace index and node id.
 
 ## IEC 60870-5-104
+
 ### General Details
 
-| Settings			 | Parameters		   |
+| Settings       | Parameters      |
 | -------------- | --------------- |
 | Runtime module | neuron_o_iec104 |
 | Driver name| IEC 60870-5-104  |
@@ -667,20 +721,52 @@ Please refer to OPC UA standard for the explanation of namespace index and node 
 
 ### Parameters
 
-| 设定			 | 参数			   | 备注
-| -------------- | --------------- | -------- | 
-| k | | default 12| 
-| w | | default 8|
-| t0 |Timeout of connection establishment| default 30|
-| t1 |Timeout for sending APDU| default 15|
-| t2 |Timeout for acknowledges in case of no data message t2 M t1| default 10|
-| t3 |Timeout for sending frames| default 20|
+| Settings    | Parameters            | Description      |
+| ------ | -------| -------- |
+| k   |        | default 12|
+| w   |        | default 8|
+| t0  |Timeout of connection establishment| default 30|
+| t1  |Timeout for sending APDU           | default 15     |
+| t2  |Timeout for acknowledges in case of no data message t2 M t1| default 10|
+| t3  |Timeout for sending frames| default 20     |
 
 ### Address String
+
 > <span style="font-family:sans-serif; font-size:2em;">CA!IOA</span>
 
 **CA** Station Address
 
 **IOA** Starting Information Object Address
 
-Example: 1!2 represents Station Address is 1 and IOA is 2 
+Example: 1!2 represents Station Address is 1 and IOA is 2
+
+## DL/T645-2007
+
+### General Details
+
+| Settings            | Parameters             |
+| -------------- | --------------- |
+| Runtime module | neuron_o_dlt645 |
+| Driver name    | dlt645          |
+| Protocol       | DL/T645-2007      |
+| Physical interface   | RS485           |
+| Default settings   | 9600/8/N/1      |
+The calibration method of general electricity meter is even calibration.
+
+### Address String
+
+> <span style="font-family:sans-serif; font-size:2em;">STN1!STN2!ADDR</span>
+
+**STN1** is the first three bytes of the communication address of the meter.
+
+**STN2** is the last three bytes of the communication address of the meter
+
+**ADDR** is the corresponding data identification:
+
+|  data identification    | Description                  |
+| ----------- | -------------------- |
+| 33343435    | Read A-phase voltage             |
+| 33343535    | Read A-phase current             |
+| 33333333    | Read the total active energy of the current combination   |
+
+Example：210220!003011!33343435 represents the voltage value of the device with communication address 210220003011

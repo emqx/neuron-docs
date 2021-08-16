@@ -1,12 +1,14 @@
 # Neuron 驱动地址格式
 
-## 总则 
+## 总则
+
 本文档描述了 Neuron 与各种工业协议驱动程序之间的标签地址格式。每个 Neuron 驱动程序都有自己的地址格式，在配置过程中会被解析，用于机器或设备的通信。
 
-## Allen-Bradley PLC2（半双工） 
+## Allen-Bradley PLC2（半双工）
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_df1hp2 |
 | 驱动名称       | df1hp2          |
@@ -15,6 +17,7 @@
 | 默认设置       | 9600/8/N/1      |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!DST!ADDR</span>
 
 **STN** 为从站设备号
@@ -35,10 +38,11 @@
 
 在 KG 模式下，1771-KG 设置为 8（10 八进制），1785-KE 和 1770-KF2 设置为 0。
 
-## Allen-Bradley PLC5（半双工） 
+## Allen-Bradley PLC5（半双工）
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_df1ph5 |
 | 驱动名称       | df1ph5          |
@@ -47,6 +51,7 @@
 | 默认设置       | 9600/8/N/1      |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!DST!ADDR</span>
 
 **STN** 为从站设备号（KE/KF2 模块地址）
@@ -67,10 +72,11 @@
 
 在 KG 模式下，1771-KG 设置为 8（10 八进制），1785-KE 和 1770-KF2 设置为 0。
 
-## Schneider TSX7 SCM (Modbus RTU) 
+## Schneider TSX7 SCM (Modbus RTU)
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_tsxmbr |
 | 驱动名称       | tsxmbr          |
@@ -79,6 +85,7 @@
 | 默认设置       | 9600/8/N/1      |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
 
 **STN** 为从站设备号（CPU）（1 – 247）
@@ -91,10 +98,11 @@
 
 例如：**10！W100** 表示从站 10 中的字 100。
 
-## Schneider TSX7 SCM (Modbus TCP) 
+## Schneider TSX7 SCM (Modbus TCP)
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_tsxmbt |
 | 驱动名称       | tsxmbt          |
@@ -103,6 +111,7 @@
 | 默认设置       | 端口：502       |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 是指如下的寄存器地址：
@@ -113,10 +122,11 @@
 
 例如：**W4000** 表示字地址 4000。
 
-## Schneider Telemecanique UNI-TE 
+## Schneider Telemecanique UNI-TE
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_unite                                                                     |
 | 驱动名称       | unite                                                                              |
@@ -125,6 +135,7 @@
 | 默认设置       | 9600/8/N/1                                                                         |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
 
 **STN** 为从站设备号（Ad0 in CPU）（1 – 31）
@@ -137,10 +148,11 @@
 
 例如：**1！W100** 表示从站 1 中的字 100。
 
-## ABB SattControl Comli 
+## ABB SattControl Comli
+
 ### 一般资讯
 
-| 設定			 | 参数		      |
+| 設定            | 参数            |
 | -------------- | -------------- |
 | 运行时模块     | neuron_o_comli |
 | 驱动名称       | comli          |
@@ -149,6 +161,7 @@
 | 默认设置       | 9600/8/N/1     |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
 
 **STN** 为从站设备号（CPU）（1 – 247）
@@ -161,10 +174,11 @@
 
 例如：**1！R100** 表示从站 1 中的字 100。
 
-## Omron Single HostLink (点对点) 
+## Omron Single HostLink (点对点)
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_omrhls           |
 | 驱动名称       | omrhls                    |
@@ -173,6 +187,7 @@
 | 默认设置       | 9600/8/N/1                |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 是指如下的<u>寄存器</u>地址：
@@ -188,10 +203,11 @@
 
 例如：**DM100** 表示 DM 数据存储区的字 100。
 
-## Omron Multiple HostLink (主从模式) 
+## Omron Multiple HostLink (主从模式)
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_omrhls           |
 | 驱动名称       | omrhls                    |
@@ -200,6 +216,7 @@
 | 默认设置       | 9600/8/N/1                |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
 
 **STN** 为站号/模块号（0-31）
@@ -217,10 +234,52 @@
 
 例如：**10！DM100** 表示从机 10 的数据存储器中的字 100。
 
-## Siemens S5 3964R/RK512 
+## Omron FINS on TCP
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
+| -------------- | ---------------  |
+| 运行时模块     | neuron_o_finstc    |
+| 驱动名称       | finstc             |
+| 协议           | FINS on TCP       |
+| 物理接口       | Ethernet RJ45      |
+| 默认设置       | 端口：2000          |
+
+### 地址格式
+
+> <span style="font-family:sans-serif; font-size:2em;">CH!ADDR</span>
+
+**CH** 为通道号
+
+**ADDR** 是指以 "DM "开头的数据存储器字地址：
+
+| 类    |           | 規格    | 範圍           | 描述                   |
+| ---- | --------- | -----   | --------------| ------------------     |
+| 比特  | CIOb      | DDDDdd  | 0 ~ 614315    | CIO位区(字)             |
+| 比特  | WRb       | DDDDdd  | 0 ~ 51115     | 工作位区(字)             |
+| 比特  | HRb       | DDDDdd  | 0 ~ 51115     | 保持继电器(字)           |
+| 比特  | ARb       | DDDDdd  | 0 ~ 95915     | 辅助继电器(字)           |
+| 比特  | TF        | DDDD    | 0 ~ 4095      | 定时器标志(位)           |
+| 比特  | CF        | DDDD    | 0 ~ 4095      | 计数器标志(位)           |
+| 比特  | DMb       | DDDDDdd | 0 ~ 3276715   | 数据存储器位(字)         |
+| 比特  | EM0~EM18  | DDDDDdd | 0 ~ W3276715  | 扩展内存位，使用W独立的区域和地址(字)   |
+| 字    | CIO       | DDDD    | 0 ~ 6143      | CIO区域(字)             |
+| 字    | WR        | DDD     | 0 ~ 511       | 工作区(字)              |
+| 字    | HR        | DDD     | 0 ~ 511       | 保持位区域(字)           |
+| 字    | AR        | DDD     | 0 ~ 959       | 辅助位区0~447只读(字)    |
+| 字    | TIM       | DDDD    | 0 ~ 4095      | 定时器(字)              |
+| 字    | CNT       | DDDD    | 0 ~ 4095      | 计数器(字)              |
+| 字    | DM        | DDDDD   | 0 ~ 32767     | 数据存储器(字)           |
+| 字    | EM0~EM18  | DDDDD   | 0 ~ W32767    | 扩展存储器，使用W独立的区域和地址(字)  |
+
+例如：**10！DM100** 表示通道1的数据存储器中的字100。
+
+## Siemens S5 3964R/RK512
+
+### 一般资讯
+
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_s539rk |
 | 驱动名称       | s539rk          |
@@ -229,6 +288,7 @@
 | 默认设置       | 9600/8/N/1      |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 为以下地址
@@ -250,10 +310,11 @@ DBW（**字偏移量**）是该数据块中的数据字
 
 **DB100.DBW20** (DBddd.DBWddddd) 指数据块 100 中的数据字 20
 
-## Siemens S7 3964R/RK512 
+## Siemens S7 3964R/RK512
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_s739rk |
 | 驱动名称       | S739rk          |
@@ -262,6 +323,7 @@ DBW（**字偏移量**）是该数据块中的数据字
 | 默认设置       | 9600/8/N/1      |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 为以下地址
@@ -285,10 +347,11 @@ DBW（**字偏移量**）是该数据块中的数据字
 
 **DB100.DBW20** (DBddd.DBWddddd) 指数据块 100 中的数据字 20
 
-## Siemens FETCH/WRITE 
+## Siemens FETCH/WRITE
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_siefw               |
 | 驱动名称       | siefw                        |
@@ -297,6 +360,7 @@ DBW（**字偏移量**）是该数据块中的数据字
 | 默认设置       | 端口：2200                   |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 为以下地址
@@ -320,10 +384,11 @@ DBW（**字偏移量**）是该数据块中的数据字（起始）
 
 例如：**DB100.DBW20** (DBddd.DBWddddd) 指数据块 200 中的数据字 20
 
-## Siemens 工业以太网 S7 ISOTCP 
+## Siemens 工业以太网 S7 ISOTCP
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_s7pro        |
 | 驱动名称       | s7pro                 |
@@ -332,6 +397,7 @@ DBW（**字偏移量**）是该数据块中的数据字（起始）
 | 默认设置       | 端口：102             |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 为以下地址
@@ -355,10 +421,11 @@ S7P_SCRTSAP 是 S7 协议的源 TSAP
 
 S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
-## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2 
+## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块 | neuron_o_fxnpro |
 | 驱动名称   | fxnpro          |
@@ -367,6 +434,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 | 默认设置   | 9600/7/E/1      |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 是<u>寄存器</u>地址
@@ -388,10 +456,11 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**D100** 表示在 D 数据存储区的字 100。
 
-## Mitsubishi FX2N/FX3U/FX3G 系列 
+## Mitsubishi FX2N/FX3U/FX3G 系列
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块 | neuron_o_fx3u3g |
 | 驱动名称   | fx3u3g          |
@@ -400,6 +469,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 | 默认设置   | 9600/7/E/1      |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 是如下<u>寄存器</u>地址：
@@ -422,10 +492,11 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**D100** 表示在 D 数据存储区的字 100。
 
-## Mitsubishi Melsec E71 for Q 系列 
+## Mitsubishi Melsec E71 for Q 系列
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块     | neuron_o_mele71 |
 | 驱动名称       | mele71          |
@@ -434,6 +505,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 | 默认设置       | 端口：2000      |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
 
 **ADDR** 是如下<u>寄存器</u>地址：
@@ -468,10 +540,11 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**D100** 表示在 D 数据存储区的字 100。
 
-## Modbus RTU 
+## Modbus RTU
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块 | neuron_o_mbsrtu |
 | 驱动名称   | mbsrtu          |
@@ -480,11 +553,13 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 | 默认设置   | 9600/8/N/1      |
 
 ### 参数配置
-| 参数			 | 说明 | 范围 |
+
+| 参数            | 说明 | 范围 |
 | -------------- | --------------- | ----------- |
 | BYTEORDER | 全局数据字节序 | DCBA： 0、CDAB：1、ABCD：2、BADC：3|
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
 
 **STN** 为从机号或设备 ID（0-247）
@@ -502,10 +577,11 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 **ENDIAN** 数值字节序，优先级高于全局字节序配置
 
-## Modbus TCP 
+## Modbus TCP
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块 | neuron_o_mbstcp |
 | 驱动名称   | mbstcp          |
@@ -514,12 +590,13 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 | 默认设置   | 端口：502       |
 
 ### 参数配置
-| 参数			 | 说明 | 范围 |
+
+| 参数            | 说明 | 范围 |
 | -------------- | --------------- | ----------- |
 | BYTEORDER | 数据字节序 | DCBA： 0、CDAB：1、ABCD：2、BADC：3|
 
-
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
 
 **STN** 为从机号或设备 ID（0-247）
@@ -539,10 +616,11 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 
 例如：**2！404001** 表示字地址 4000，在子号 2 中。
 
-## Modbus RTU over TCP 
+## Modbus RTU over TCP
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块 | neuron_o_mbstcp |
 | 驱动名称   | mbstcp          |
@@ -551,11 +629,13 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 | 默认设置   | 端口：502       |
 
 ### 参数配置
-| 参数			 | 说明 | 范围 |
+
+| 参数            | 说明 | 范围 |
 | -------------- | --------------- | ----------- |
 | BYTEORDER | 数据字节序 | DCBA： 0、CDAB：1、ABCD：2、BADC：3|
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
 
 **STN** 为从机号或设备 ID（0-247）
@@ -577,10 +657,11 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
      **2! 400001.1** 表示设备2，地址0000，第1位bit。
      **2! 400001.2** 表示设备2，地址0000，数据字节序为ABCD。
 
-## IEC 61850 
+## IEC 61850
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数            |
 | -------------- | --------------- |
 | 运行时模块 | neuron_o_i61850 |
 | 驱动名称   | i61850          |
@@ -589,6 +670,7 @@ S7P_DSTTSAP 是 S7 协议的目标 TSAP
 | 默认设置   | 端口：102       |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">FC!ADDR</span>
 
 **FC** 是功能约束值，如下所示：
@@ -631,10 +713,11 @@ EC61850 数据分层模型通常有以下几种：
 
 例如：**1!testmodelSENSORS/TTMP1.TmpSv.instMag.f** 表示该标签的功能约束为 1（IEC61850_FC_MX--模拟测量器）。对象参考地址串为 (IED)--测试模型，(LD)--传感器，(LN)--TTMP1，(DO)--TmpSv，(DA)--instMag.f 为浮动值。
 
-## OPC UA 
+## OPC UA
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块 | neuron_o_opcua |
 | 驱动名称   | opcua          |
@@ -643,6 +726,7 @@ EC61850 数据分层模型通常有以下几种：
 | 默认设置   | 端口：4840     |
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">IX!NODEID</span>
 
 **IX** 为命名空间索引（1-32767）
@@ -654,9 +738,10 @@ EC61850 数据分层模型通常有以下几种：
 命名空间索引和节点 ID 的解释请参考 OPC UA 标准。
 
 ## IEC 60870-5-104
+
 ### 一般资讯
 
-| 設定			 | 参数			   |
+| 設定            | 参数             |
 | -------------- | --------------- |
 | 运行时模块 | neuron_o_iec104 |
 | 驱动名称   | IEC 60870-5-104  |
@@ -666,9 +751,9 @@ EC61850 数据分层模型通常有以下几种：
 
 ### 参数设定
 
-| 设定			 | 参数			   | 备注
-| -------------- | --------------- | -------- | 
-| k | | default 12| 
+| 设定            | 参数             | 备注 |
+| -------------- | --------------- | -------- |
+| k | | default 12|
 | w | | default 8|
 | t0 |建立连接超时时间| default 30|
 | t1 |发送APDU超时时间| default 15|
@@ -676,6 +761,7 @@ EC61850 数据分层模型通常有以下几种：
 | t3 |发送frames超时时间| default 20|
 
 ### 地址格式
+
 > <span style="font-family:sans-serif; font-size:2em;">CA!IOA</span>
 
 **CA** 站地址
@@ -683,3 +769,34 @@ EC61850 数据分层模型通常有以下几种：
 **IOA** 数据对象地址
 
 例如：1!2 代表地址为1的站，数据地址为2
+
+## DL/T645-2007
+
+### 一般资讯
+
+| 設定            | 参数             |
+| -------------- | --------------- |
+| 运行时模块 | neuron_o_dlt645 |
+| 驱动名称   | dlt645          |
+| 协议       | DL/T645-2007      |
+| 物理接口   | RS485           |
+| 默认设置   | 9600/8/N/1      |
+一般电表的校验方式为偶校验（Even）
+
+### 地址格式
+
+> <span style="font-family:sans-serif; font-size:2em;">STN1!STN2!ADDR</span>
+
+**STN1** 为电表通讯地址前三个字节
+
+**STN2** 为电表通讯地址后三个字节
+
+**ADDR** 是对应的数据标识：
+
+|  数据标识    | 描述                  |
+| ----------- | -------------------- |
+| 33343435    | 读A相电压             |
+| 33343535    | 读A相电流             |
+| 33333333    | 读当前组合有功总电能    |
+
+例如：210220!003011!33343435 代表的是通讯地址为210220003011设备的电压值
