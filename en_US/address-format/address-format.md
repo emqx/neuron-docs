@@ -494,11 +494,15 @@ Example: **D100** means word 100 in D data memory area.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
+> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
 
 **STN** is slave number or device ID (0-247)
 
 **ADDR** is the register address as following:
+
+**BIT** Bit no.(0-15) 
+
+**ENDIAN** Endianness of the value
 
 | Type |     | Format | Range    | Description     |
 | ---- | --- | ------ | -------- | --------------- |
@@ -520,11 +524,15 @@ Example: **D100** means word 100 in D data memory area.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
+> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
 
 **STN** is slave number or device ID (0-247)
 
 **ADDR** is the register address as following:
+
+**BIT** Bit no.(0-15) 
+
+**ENDIAN** Endianness of the value
 
 | Type |     | Format | Range    | Description     |
 | ---- | --- | ------ | -------- | --------------- |
@@ -548,11 +556,15 @@ Example:**2!404001** means word address 4000 with in slave number 2.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
+> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
 
 **STN** is slave number or device ID (0-247)
 
 **ADDR** is the register address as following:
+
+**BIT** Bit no.(0-15) 
+
+**ENDIAN** Endianness of the value
 
 | Type |     | Format | Range    | Description     |
 | ---- | --- | ------ | -------- | --------------- |
@@ -641,3 +653,34 @@ means the functional constraint of this tag is 1 (IEC61850_FC_MX –analog measu
 Example: 2!Device1.Module1.Tag1 represents namespace index is 2 and node ID is Device1.Module1.Tag1
 
 Please refer to OPC UA standard for the explanation of namespace index and node id.
+
+## IEC 60870-5-104
+### General Details
+
+| Settings			 | Parameters		   |
+| -------------- | --------------- |
+| Runtime module | neuron_o_iec104 |
+| Driver name| IEC 60870-5-104  |
+| Protocol       | IEC 60870-5-104 |
+| Physical interface| Ethernet|
+| Default port no.| 2404     |
+
+### Parameters
+
+| 设定			 | 参数			   | 备注
+| -------------- | --------------- | -------- | 
+| k | | default 12| 
+| w | | default 8|
+| t0 |Timeout of connection establishment| default 30|
+| t1 |Timeout for sending APDU| default 15|
+| t2 |Timeout for acknowledges in case of no data message t2 M t1| default 10|
+| t3 |Timeout for sending frames| default 20|
+
+### Address String
+> <span style="font-family:sans-serif; font-size:2em;">CA!IOA</span>
+
+**CA** Station Address
+
+**IOA** Starting Information Object Address
+
+Example: 1!2 represents Station Address is 1 and IOA is 2 
