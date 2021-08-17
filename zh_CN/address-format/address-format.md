@@ -248,30 +248,24 @@
 
 ### 地址格式
 
-> <span style="font-family:sans-serif; font-size:2em;">CH!ADDR</span>
+> <span style="font-family:sans-serif; font-size:2em;">CH!ADDR[.BIT]</span>
 
-**CH** 为通道号
+**CH** 为通道号；
 
 **ADDR** 是指以 "DM "开头的数据存储器字地址：
 
+**BIT** 表示比特位，可选。
+
 | 类    |           | 規格    | 範圍           | 描述                   |
-| ---- | --------- | -----   | --------------| ------------------     |
-| 比特  | CIOb      | DDDDdd  | 0 ~ 614315    | CIO位区(字)             |
-| 比特  | WRb       | DDDDdd  | 0 ~ 51115     | 工作位区(字)             |
-| 比特  | HRb       | DDDDdd  | 0 ~ 51115     | 保持继电器(字)           |
-| 比特  | ARb       | DDDDdd  | 0 ~ 95915     | 辅助继电器(字)           |
-| 比特  | TF        | DDDD    | 0 ~ 4095      | 定时器标志(位)           |
-| 比特  | CF        | DDDD    | 0 ~ 4095      | 计数器标志(位)           |
-| 比特  | DMb       | DDDDDdd | 0 ~ 3276715   | 数据存储器位(字)         |
-| 比特  | EM0~EM18  | DDDDDdd | 0 ~ W3276715  | 扩展内存位，使用W独立的区域和地址(字)   |
-| 字    | CIO       | DDDD    | 0 ~ 6143      | CIO区域(字)             |
-| 字    | WR        | DDD     | 0 ~ 511       | 工作区(字)              |
-| 字    | HR        | DDD     | 0 ~ 511       | 保持位区域(字)           |
-| 字    | AR        | DDD     | 0 ~ 959       | 辅助位区0~447只读(字)    |
-| 字    | TIM       | DDDD    | 0 ~ 4095      | 定时器(字)              |
-| 字    | CNT       | DDDD    | 0 ~ 4095      | 计数器(字)              |
-| 字    | DM        | DDDDD   | 0 ~ 32767     | 数据存储器(字)           |
-| 字    | EM0~EM18  | DDDDD   | 0 ~ W32767    | 扩展存储器，使用W独立的区域和地址(字)  |
+| ---- | --------- | -----   | --------------| ------------------     |  |
+| 字    | CIO       | DDDD[.dd]    | 0 ~ 6143      | CIO区域(字/比特位)             |
+| 字    | WR        | DDD[.dd]     | 0 ~ 511       | 工作区(字/比特位)              |
+| 字    | HR        | DDD[.dd]     | 0 ~ 511       | 保持位区域(字/比特位)           |
+| 字    | AR        | DDD[.dd]     | 0 ~ 959       | 辅助位区0~447只读(字/比特位)    |
+| 字    | TIM       | DDDD[.dd]    | 0 ~ 4095      | 定时器(字/比特位)              |
+| 字    | CNT       | DDDD[.dd]    | 0 ~ 4095      | 计数器(字/比特位)              |
+| 字    | DM        | DDDDD[.dd]   | 0 ~ 32767     | 数据存储器(字/比特位)           |
+| 字    | EM0~EM18  | DDDDD[.dd]   | 0 ~ W32767    | 扩展存储器，使用W独立的区域和地址(字/比特位)  |
 
 例如：**10！DM100** 表示通道1的数据存储器中的字100。
 
@@ -417,9 +411,13 @@ DBW（**字偏移量**）是该数据块中的数据字（起始）
 
 例如：**DB100.DBW20** (DBddd.DBWddddd) 指数据块 200 中的数据字 20。
 
-S7P_SCRTSAP 是 S7 协议的源 TSAP
+S7P_SCRTSAP 是 S7 协议的源 TSAP（默认值0x0101）
 
-S7P_DSTTSAP 是 S7 协议的目标 TSAP
+S7P_DSTTSAP 是 S7 协议的目标 TSAP（默认值0x0101）
+
+TSAP由两个字节构成：
+第一个字节，01：PG or PC  02: OS   03: Others,such as OPC server,simatic s7 plc
+第二个字节，高四位表示rack number ，低四位表示cpu slot
 
 ## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2
 
@@ -767,6 +765,20 @@ EC61850 数据分层模型通常有以下几种：
 **CA** 站地址
 
 **IOA** 数据对象地址
+
+数据类型说明：
+
+|类型名称|数据类型|
+|--------|-------|
+|M_ME_NA_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_TD_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_ND_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_NB_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_TE_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_NC_1|FLOAT,DOUBLE|
+|M_ME_TF_1|FLOAT,DOUBLE|
+|M_SP_NA_1|BOOL|
+|M_SP_TB_1|BOOL|
 
 例如：1!2 代表地址为1的站，数据地址为2
 

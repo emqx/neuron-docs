@@ -246,30 +246,24 @@ Example: **10!DM100** means word 100 in data memory in slave 10.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">CH!ADDR</span>
+> <span style="font-family:sans-serif; font-size:2em;">CH!ADDR[.BIT]</span>
 
 **CH** is channel number
 
 **ADDR**  is the data memory word address starting with “DM”
 
+**BIT**  bit(option)
+
 | Type |           | Format    | Range       | Description       |
 | ---- | --------- | -----   | --------------| ------------------   |
-| B    | CIOb      | DDDDdd  | 0 ~ 614315    | CIO bit Area (word)           |
-| B    | WRb       | DDDDdd  | 0 ~ 51115     | Work bit Area (word)         |
-| B    | HRb       | DDDDdd  | 0 ~ 51115     | Holding Relay (word)          |
-| B    | ARb       | DDDDdd  | 0 ~ 95915     | Auxiliary Relay (word)           |
-| B    | TF        | DDDD    | 0 ~ 4095      | Timer Flag (bit)           |
-| B    | CF        | DDDD    | 0 ~ 4095      | Counter Flag (bit)           |
-| B    | DMb       | DDDDDdd | 0 ~ 3276715   | Data Memory bit (word)         |
-| B    | EM0~EM18  | DDDDDdd | 0 ~ W3276715  | Extended Memory bit, use W separate area and address(word)   |
-| Word | CIO       | DDDD    | 0 ~ 6143      | CIO Area (word)          |
-| Word | WR        | DDD     | 0 ~ 511       | Work Area (word)           |
-| Word | HR        | DDD     | 0 ~ 511       | Holding Bit Area (word)           |
-| Word | AR        | DDD     | 0 ~ 959       | Auxiliary Bit Area 0~447 read only (word)   |
-| Word | TIM       | DDDD    | 0 ~ 4095      | Timer (word)           |
-| Word | CNT       | DDDD    | 0 ~ 4095      | Counter (word)          |
-| Word | DM        | DDDDD   | 0 ~ 32767     | Data Memory (word)          |
-| Word | EM0~EM18  | DDDDD   | 0 ~ W32767    | Extended Memory, use W separate area and address(word)    |
+| Word | CIO       | DDDD[.dd]    | 0 ~ 6143      | CIO Area (word/bit)          |
+| Word | WR        | DDD[.dd]     | 0 ~ 511       | Work Area (word/bit)           |
+| Word | HR        | DDD[.dd]     | 0 ~ 511       | Holding Bit Area (word/bit)           |
+| Word | AR        | DDD[.dd]     | 0 ~ 959       | Auxiliary Bit Area 0~447 read only (word/bit)   |
+| Word | TIM       | DDDD[.dd]    | 0 ~ 4095      | Timer (word/bit)           |
+| Word | CNT       | DDDD[.dd]    | 0 ~ 4095      | Counter (word/bit)          |
+| Word | DM        | DDDDD[.dd]   | 0 ~ 32767     | Data Memory (word/bit)          |
+| Word | EM0~EM18  | DDDDD[.dd]   | 0 ~ W32767    | Extended Memory, use W separate area and address(word/bit)    |
 
 Example: 1!DM100 means word 100 in data memory in channel 1.
 
@@ -412,9 +406,16 @@ DBW(_ **byte offset** _) is the data word (start) in that data block.
 
 Example: **DB200.DBW20** (DBddd.DBWddddd) means data word 20 in data block 200.
 
-S7P_SCRTSAP is the source TSAP for S7 protocol
+S7P_SCRTSAP is the source TSAP for S7 protocol(default 0x0101)
 
-S7P_DSTTSAP is the destination TSAP for S7 protocol
+S7P_DSTTSAP is the destination TSAP for S7 protocol(default 0x0101)
+
+TSAP(2Byte):
+frist byte: 0x01: PG or PC, 0x02: OS, 0x03: Others, such as OPC server, s7 plc
+second byte:
+|7-4 bit| 3-0bit|
+|--|--|
+|rack number|cpu slot|
 
 ## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2 
 ### General Details
@@ -737,6 +738,18 @@ Please refer to OPC UA standard for the explanation of namespace index and node 
 **CA** Station Address
 
 **IOA** Starting Information Object Address
+
+|data name|data type|
+|--------|-------|
+|M_ME_NA_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_TD_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_ND_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_NB_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_TE_1|WORD,UWORAD,DWORD,UDWORD |
+|M_ME_NC_1|FLOAT,DOUBLE|
+|M_ME_TF_1|FLOAT,DOUBLE|
+|M_SP_NA_1|BOOL|
+|M_SP_TB_1|BOOL|
 
 Example: 1!2 represents Station Address is 1 and IOA is 2
 
