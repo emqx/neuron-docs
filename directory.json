@@ -236,6 +236,23 @@
         {
           "title": "System Mode Control",
           "path": "neuron-protocol/system-mode-control"
+        },
+        {
+          "title": "Function Application",
+          "children": [
+            {
+              "title": "Upload Logo Settings",
+              "path": "function-application/upload-logo"
+            },
+            {
+              "title": "SSL and JWT Settings",
+              "path": "function-application/ssl-jwt"
+            },
+            {
+              "title": "DTU TCP Server Settings",
+              "path": "function-application/tcp-server"
+            }
+          ]
         }
       ]
     }

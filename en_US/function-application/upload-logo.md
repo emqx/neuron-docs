@@ -1,4 +1,4 @@
-# Logo上传设置
+# Upload Logo Settings
 
 This feature provides the ability to modify the logo for paid users.
 
