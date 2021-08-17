@@ -1,11 +1,12 @@
-# 安装 
+# 安装
+
 下文介绍了如何在 x86 或 ARM Linux 设备上安装 Neuron 软件包。
 
 ## 下载
 
-Neuron 软件包可从 EMQ 网站 [https://www.emqx.io](https://www.emqx.io/) 下载. 
+Neuron 软件包可从 EMQ 网站 [https://www.emqx.com](https://www.emqx.io/) 下载.
 
-| 下载文件                                         | 架構   |
+| 下载文件                                         | 架构   |
 | ------------------------------------------------ | --------------------- |
 | _neuron-x.y.z-linux-x86_64.tar.gz_               | x86 64-bit            |
 | _neuron-x.y.z-linix-armv7l.tar.gz_               | ARM hardware floating |
@@ -13,7 +14,8 @@ Neuron 软件包可从 EMQ 网站 [https://www.emqx.io](https://www.emqx.io/) �
 
 对于版本号x.y.z，x是主要版本号，如果整个系统结构得到增强，则可能会更改； y是次要版本号，如果存在某些附加功能，则可能会更改。 z是Neuron软件中错误修复的补丁号。
 
-## 安装条件 
+## 安装条件
+
 已为 Neuron 测试了以下 Linux 发行版或设备。
 
 | Linux 发行版或设备                                                                   | 所需的 Neuron 包                  |
@@ -28,7 +30,8 @@ Neuron 软件包可从 EMQ 网站 [https://www.emqx.io](https://www.emqx.io/) �
 Debian 包, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)
 Redhat 包, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)
 
-### 安装 
+### 安装步骤
+
 本节介绍了如何在 Linux 系统上首次安装 Neuron 软件。新的 Neuron 软件必须安装在任何用户账户的主目录下。我们推荐使用 "neuron" 账户进行安装。
 
 1. 解压软件包到任何目录下，(例 /home/neuron)，输入命令：
@@ -55,7 +58,8 @@ Redhat 包, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](ht
    Neuron instance 0 is now running with PID:6312 Port:7000
    ```
 
-### 启动系统 
+### 启动系统
+
 Neuron 可以通过以下方式启动
 
 ```bash
@@ -63,7 +67,8 @@ Neuron 可以通过以下方式启动
 Neuron instance 0 is now running with PID:6037 Port:7000
 ```
 
-### 停止系统 
+### 停止系统
+
 输入以下命令，Neuron 将停止运行
 
 ```bash
@@ -72,7 +77,8 @@ Neuron instance 0 is stopping ...
 Stopped !
 ```
 
-## 启动特定系统 
+## 启动特定系统
+
 特定 Neuron 可以通过以下方式启动
 
 ```bash
@@ -80,7 +86,8 @@ Stopped !
 Neuron instance 7 is now running with PID:8097 Port:7007
 ```
 
-## 停止特定系统 
+## 停止特定系统
+
 输入以下命令，特定 Neuron 将停止运行
 
 ```bash
@@ -102,7 +109,8 @@ Neuron instance 3 is now running with PID:6087 Port:7003
 Neuron instance 4 is now running with PID:6090 Port:7004
 ```
 
-## 停止多个系统 
+## 停止多个系统
+
 输入以下命令，多个 Neuron 将停止运行
 
 ```bash
@@ -119,7 +127,8 @@ Neuron instance 4 is stopping ...
 Stopped !
 ```
 
-### 检查系统 
+### 检查系统
+
 输入以下命令，检查Neuron 是否运行
 
 ```bash
@@ -131,19 +140,21 @@ Neuron instance 3 is running with PID:6139 Port:7003
 Neuron instance 4 is running with PID:6144 Port:7004
 ```
 
-### 命令参数 
+### 命令参数
+
 本节介绍了 "neuron" 命令的可用参数。
 
 用法: neuron [start|stop|status] [options]
-| 参数 							        | 描述                  				  |
+| 参数                | 描述                        |
 | ------------------------------- | ------------------------------------- |
-| -a 或 --allinstance `<number>`  | 数量 `<2-10>`
-| -i 或 --instance `<instanceno>` | 实例号 `<0-9>`                         |
+| -a 或 --allinstance `<number>`  | 数量 `<2-10>`，同时启动a个实例
+| -i 或 --instance `<instanceno>` | 实例号 `<0-9>`，启动第i个实例                         |
 | -u 或 --uuid `<uuid>`           | 通用唯一ID `<最大36字符>`            |
 
 在两者 `[-a|-i]` 之间，只能选择其中之一
 
-## 在Docker运行 
+## 在Docker运行
+
 docker 镜像请从 docker hub 网站下载 [https://hub.docker.com](https://hub.docker.com).
 
 ```bash
@@ -159,4 +170,3 @@ docker 镜像请从 docker hub 网站下载 [https://hub.docker.com](https://hub
 ## 申请试用软件授权
 
 Neuron 缺省安装包提供了
-
