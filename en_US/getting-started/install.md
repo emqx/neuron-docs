@@ -20,15 +20,17 @@ The following Linux distros or devices have been tested for Neuron.
 
 | Linux distros or devices                                                             | Neuron package required           |
 | ------------------------------------------------------------------------------------ | --------------------------------- |
-| **Debian package system for x86_64** <br>Ubuntu 20.xx<br>Ubuntu 18.xx Desktop<br>Ubuntu 16.xx Desktop (install openssl1.1)<br>Ubuntu 14.xx Desktop (install openssl1.1)  | neuron-x.y.z-linux-x86_64.tar.gz |
-| **Redhat package system for x86_64** <br>Centos 8<br>Centos 7.x (install openssl1.1) | neuron-x.y.z-linux-x86_64.tar.gz  |
-| **Raspberry Pi 2** <br>Pi 4b+<br>Pi 3b+<br>Pi 2b+ (install openssl1.1)               | neuron-x.y.z-linux-armv7l.tar.gz  |
+| **Debian package system for x86_64** </br>Ubuntu 20.xx</br>Ubuntu 18.xx Desktop</br>Ubuntu 16.xx Desktop (install openssl1.1)</br>Ubuntu 14.xx Desktop (install openssl1.1)  | neuron-x.y.z-linux-x86_64.tar.gz |
+| **Redhat package system for x86_64** </br>Centos 8</br>Centos 7.x (install openssl1.1) | neuron-x.y.z-linux-x86_64.tar.gz  |
+| **Raspberry Pi 2** </br>Pi 4b+</br>Pi 3b+</br>Pi 2b+ (install openssl1.1)               | neuron-x.y.z-linux-armv7l.tar.gz  |
 | armv7l Ubuntu Linux System                                                           | neuron-x.y.z-linux-armv7l.tar.gz  |
 | aarch64 Ubuntu Linux System                                                          | neuron-x.y.z-linux-aarch64.tar.gz |
 
 Note: Some Linux distros require **openssl1.1** installation.
-For Debian package, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)
-For Redhat package, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)
+For Debian package, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)</br>
+For Redhat package, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)</br>
+
+Ensure that openssl is upgraded to version 1.1.If rpm -ivh neuron-1.3.0-linux-amd64.rpm prompts a missing dependency, run rpm -ivh neuron-1.3.0-linux-amd64.rpm --nodeps --force
 
 ## New Installation
 
