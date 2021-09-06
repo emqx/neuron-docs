@@ -24,4 +24,14 @@ There is a drop down box &quot;Routine&quot; at the top. Inside there will be 3 
 
 All useless created subroutine in the dropdown box can be deleted by pressing the &quot;Delete&quot; button. After making the necessary scripts, press the &quot;Submit&quot; button to save the scripts to the system.
 
+Note: When assigning a value to a variable with the address format Dummy, the script statement is programmed in the following format.
+
+> <span style="font-family:sans-serif; font-size:2em;">object[ix].attribute</span>
+
+| Name        | Description                                            |
+| :-----------| :------------------------------------------------------|
+| object      | Object name                                            |
+| ix          | Object index number, this number represents the item index of the object and can be a local variable                                     |
+| attribute   | Attribute name                                         |
+
 ![ ](./assets/script-editing.png)

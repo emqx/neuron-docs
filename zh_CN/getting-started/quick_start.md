@@ -48,32 +48,37 @@
 
 打开页面后，会进入到一个登录页面，此时可以使用初始化用户名密码进行登录，用户名：admin，密码：0000，进入后为安全起见，可以修改初始化的密码。
 
-![geting-started](./assets/geting-started.png)
+![geting-started](./assets/web-interface.png)
 
 ### 配置驱动
 
 登录成功后，此时系统中没有预设好的数据，可能会返回 `Function not allowed in current mode` 错误提示，该错误提示为正常提示，因为目前系统处于 `INACTIVE` 状态。
 
-我们选择顶部菜单栏中的配置一栏，点击 Object 设置，进入到对象配置页面。我们首先需要配置驱动，点击 `新建驱动` 按钮，会有一个配置弹出框，顶部我们选择 `Modbus TCP` 类型，选择完后需要进行驱动设置，必填项为 `Host name` 和 `Port no`，在该实例中即为准备好的 Modbus 模拟器所在机器的 IP 地址，端口一般为 502，下方表格为驱动参数，如有需要可自行修改参数默认值。
+我们选择顶部菜单栏中的配置一栏，点击 Object 设置，进入到对象配置页面。我们首先需要配置驱动，点击 `新建驱动` 按钮，会有一个配置弹出框。可配置可连接的 MQTT Broker 信息，在下方选择框中选择 `MQTT Client`，配置刚才使用 Docker 安装好的 EMQ X Edge 的 Host 地址和端口号。端口号默认为 1883，下方表格为连接 MQTT 的可选参数，可配置用户名密码，证书等。
 
-配置完成驱动后，需要配置可连接的 MQTT Broker 信息，在下方选择框中选择 `MQTT Client`，配置刚才使用 Docker 安装好的 EMQ X Edge 的 Host 地址和端口号。端口号默认为 1883，下方表格为连接 MQTT 的可选参数，可配置用户名密码，证书等。配置完成后，点击 `提交` 按钮即可完成一个 Modbus 的驱动的配置。
+配置驱动，我们选择 `Modbus TCP` 类型，选择完后需要进行驱动设置，必填项为 `Host name` 和 `Port no`，在该实例中即为准备好的 Modbus 模拟器所在机器的 IP 地址，端口一般为 502，下方表格为驱动参数，如有需要可自行修改参数默认值。配置完成后，点击 `提交` 按钮即可完成一个 Modbus 的驱动的配置。
 
 ![driver-setup1](./assets/driver-setup1.png)
+
 ![driver-setup2](./assets/driver-setup2.png)
 
 ### 配置对象
 
-配置完成驱动后，我们可以进行 Object 的数据的配置，首先需要添加 Object 数据，完成后添加 Object 的属性，每个属性又配置所对应的地址，本文中为快速进行使用数据，我们可以使用刚才下载到本地的对象数据表，进行数据导入操作，来快速配置 Object。此时点击上方的 `导入` 按钮，选择刚才本地下载好的 Excel 文件，就可以成功导入事先配置好的数据了。
+为快速进行使用数据，我们可以使用刚才下载到本地的对象数据表，进行数据导入操作，来快速配置 Object。此时点击上方的 `导入` 按钮，选择刚才本地下载好的 Excel 文件，就可以成功导入事先配置好的数据了。
+
+我们也可以一个个进行 Object 的数据的配置，首先需要添加 Object 数据，完成后添加 Object 的属性，每个属性又配置所对应的地址，如下图所示。
 
 ![object-details](./assets/object-details.png)
 
 ![object-result](./assets/object-result.png)
 
-![object-attr](./assets/object-attr.png)
+![attribute-setup](./assets/attribute-setup.png)
+
+![attribute-result](./assets/attribute-result.png)
 
 ### 配置事件
 
-配置完成 Object 后，就可以选择进行事件配置了。我们选择顶部菜单栏中的配置一栏，点击事件设置，进入到事件配置页面，选择 `创建` 按钮，会有一个事件设置弹出框，我们需要选择 Object 的的属性数据进行对比，因为此时我们只有一个 Object，我们就只选择该 Object，然后分别选择两个不同的属性对比，当 `Tag00001` 大于 `Tag00002` 时，触发一条告警信息，类型选择为 alarm。还可填写子程序编号，当事件触发时，可执行子程序，这里没有配置子程序，我们就填写一个默认数值即可。完成后点击提交按钮即可创建该事件。
+配置完成 Object 后，就可以选择进行事件配置了。我们选择顶部菜单栏中的配置一栏，点击事件设置，进入到事件配置页面，选择 `创建` 按钮，会有一个事件设置弹出框，我们需要选择 Object 的的属性数据进行对比，触发一条告警信息，类型选择为 alarm。还可填写子程序编号，当事件触发时，可执行子程序，这里没有配置子程序，我们就填写一个默认数值即可。完成后点击提交按钮即可创建该事件。
 
 ![event-setup](./assets/event-setup.png)
 
@@ -81,7 +86,7 @@
 
 当配置完驱动，Object 和 事件后，我们就可以向 Neuron 发送刚才的配置好的所有数据，只需点击最右上角的 `发送` 按钮并确认。发送成功后，会提示系统正在重启，返回到登录页面，等待几秒后，重新登录后进入，此时页面中有了刚才已经配置好的所有数据。当底部系统状态分别为 `COMM UP`、`MANU`、`ACTIVE`、`MQCONNECT`、`NO ALARM` 时，表示 Neuron 数据配置成功并且运行正常。
 
-![monitor](./assets/monitor.png)
+![monitor](./assets/data-monitoring.png)
 
 ### 查看数据点监控
 
@@ -89,11 +94,13 @@
 
 ![modbus-tcp](./assets/modbus-tcp.png)
 
-![monitor-value](./assets/monitor-value.png)
+![monitor-value](./assets/monitoring-value.png)
 
 ### 查看事件告警
 
-我们已经修改了 `Tag00001` 的值，此时该值大于 `Tag00002` 的值，可以看到底部出现一个红色的 `UNACK ALARM` 的状态提醒，说明出现未确认的告警信息，我们可以选择状态菜单栏，点击当前告警项，进入到告警页面查看告警信息，说明刚才配置的事件已经生效。如果已经发现存在该告警后，可以点击 `acknowledge` 按钮进行告警确认，底部的 `UNACK ALARM` 变为了 `ALARM`，表示存在告警信息，但是已经确认。
+我们设置了事件之后，可以看到底部出现一个红色的 `UNACK ALARM` 的状态提醒，说明出现未确认的告警信息，我们可以选择状态菜单栏，点击当前告警项，进入到告警页面查看告警信息，说明刚才配置的事件已经生效。如果已经发现存在该告警后，可以点击 `acknowledge` 按钮进行告警确认，底部的 `UNACK ALARM` 变为了 `ALARM`，表示存在告警信息，但是已经确认。
+
+![alarm-current](./assets/alarm-current.png)
 
 ![alarms](./assets/alarms.png)
 

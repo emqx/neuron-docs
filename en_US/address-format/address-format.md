@@ -319,16 +319,16 @@ Example: DB100 (data block 100)
 
 **ADDR** is the address as following
 
-DB is the data block (0 – 999)
+**DB** is the data block (0 – 999)
 
-DBW(_ **byte offset** _) is the data word in that data block
+**DBW**(_**byte offset**_) is the data word in that data block
 
 | Type |     | Format | Range    | Description     |
 | ---- | ----------- | ---------- | ------------------ | -------------------------------------- |
 | Byte | IW          | DDDD       | 0 ~ 4095           | Input                                  |
 | Byte | QW          | DDDD       | 0 ~ 4095           | Output                                 |
 | Byte | MW          | DDDD       | 0 ~ 4095           | Marker Memory                          |
-| Byte | DB0~999.DBW | DDDDD<br>DDDDD | 0 ~ 65535<br>0 ~ 65535 | Data Memory (must be in even byte no.) |
+| Byte | DB0~999.DBW | DDDDD</br>DDDDD | 0 ~ 65535</br>0 ~ 65535 | Data Memory (must be in even byte no.) |
 | Byte | T           | DDD        | 0 ~ 255            | Timer                                  |
 | Byte | C           | DDD        | 0 ~ 255            | Counter                                |
 
@@ -355,9 +355,9 @@ Example: DB100 (data block 100)
 
 **ADDR** is the address as following
 
-DB is the data block (0 – 999)
+**DB** is the data block (0 – 999)
 
-DBW(_ **byte offset** _) is the data word (start) in that data block.
+**DBW**(_**byte offset**_) is the data word (start) in that data block.
 
 | Type |     | Format | Range    | Description     |
 | ---- | ----------- | ---------- | ------------------ | ------------------------------------- |
@@ -393,14 +393,14 @@ Example: **DB200.DBW20** (DBddd.DBWddddd) means data word 20 in data block 200.
 
 Note: DB is the data block (0 – 999)
 
-DBW(_ **byte offset** _) is the data word (start) in that data block.
+DBW(_**byte offset**_) is the data word (start) in that data block.
 
 | Type |     | Format | Range    | Description     |
 | ---- | --- | ------ | -------- | --------------- |
 | Byte | IW         | DDDD       | 0 ~ 4095           | Input                                  |
 | Byte | QW         | DDDD       | 0 ~ 4095           | Output                                 |
 | Byte | MW         | DDDD       | 0 ~ 4095           | Marker Memory                          |
-| Byte | DB0~999DBW | DDDDD<br>DDDDD | 0 ~ 65535<br>0 ~ 65535 | Data Memory (must be in even byte no.) |
+| Byte | DB0~999DBW | DDDDD</br>DDDDD | 0 ~ 65535</br>0 ~ 65535 | Data Memory (must be in even byte no.) |
 | Byte | T          | DDD        | 0 ~ 255            | Timer                                  |
 | Byte | C          | DDD        | 0 ~ 255            | Counter                                |
 
@@ -417,7 +417,8 @@ second byte:
 |--|--|
 |rack number|cpu slot|
 
-## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2 
+## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -451,7 +452,8 @@ second byte:
 
 Example: **D100** means word 100 in D data memory area.
 
-## Mitsubishi FX2N/FX3U/FX3G Series 
+## Mitsubishi FX2N/FX3U/FX3G Series
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -486,7 +488,8 @@ Example: **D100** means word 100 in D data memory area.
 
 Example: **D100** means word 100 in D data memory area.
 
-## Mitsubishi Melsec E71 for Q Series 
+## Mitsubishi Melsec E71 for Q Series
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -533,7 +536,8 @@ Example: **D100** means word 100 in D data memory area.
 
 Example: **D100** means word 100 in D data memory area.
 
-## Modbus RTU 
+## Modbus RTU
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -552,7 +556,7 @@ Example: **D100** means word 100 in D data memory area.
 
 **ADDR** is the register address as following:
 
-**BIT** Bit no.(0-15) 
+**BIT** Bit no.(0-15)
 
 **ENDIAN** Endianness of the value
 
@@ -563,7 +567,8 @@ Example: **D100** means word 100 in D data memory area.
 | Word | 04       | DDDDDD | 300001 ~ 365536 | Analog Input Registers          |
 | Word | 03/06/16 | DDDDDD | 400001 ~ 465536 | Analog Output Holding Registers |
 
-## Modbus TCP 
+## Modbus TCP
+
 ### General Details
 
 | Settings           | Parameters     |
@@ -582,7 +587,7 @@ Example: **D100** means word 100 in D data memory area.
 
 **ADDR** is the register address as following:
 
-**BIT** Bit no.(0-15) 
+**BIT** Bit no.(0-15)
 
 **ENDIAN** Endianness of the value
 
@@ -595,7 +600,8 @@ Example: **D100** means word 100 in D data memory area.
 
 Example:**2!404001** means word address 4000 with in slave number 2.
 
-## Modbus RTU over TCP 
+## Modbus RTU over TCP
+
 ### General Details
 
 | Settings           | Parameters     |
