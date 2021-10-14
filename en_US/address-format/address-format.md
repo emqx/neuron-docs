@@ -294,7 +294,7 @@ DBW(_ **word offset** _) is the data word in that data block
 | Word | I           | DDDD       | 0 ~ 4095           | Input         |
 | Word | Q           | DDDD       | 0 ~ 4095           | Output        |
 | Word | M           | DDDD       | 0 ~ 4095           | Marker Memory |
-| Word | DB0~999.DBW | DDDDD<br>DDDDD | 0 ~ 65535<br>0 ~ 65535 | Data Memory   |
+| Word | DB0~999.DBW | DDDDD</br>DDDDD | 0 ~ 65535</br>0 ~ 65535 | Data Memory   |
 | Word | T           | DDD        | 0 ~ 255            | Timer         |
 | Word | C           | DDD        | 0 ~ 255            | Counter       |
 
@@ -364,7 +364,7 @@ Example: DB100 (data block 100)
 | Byte | IW          | DDDD       | 0 ~ 4095           | Input                                 |
 | Byte | QW          | DDDD       | 0 ~ 4095           | Output                                |
 | Byte | MW          | DDDD       | 0 ~ 4095           | Marker Memory                         |
-| Byte | DB0~999.DBW | DDDDD<br>DDDDD | 0 ~ 65535<br>0 ~ 65535 | Data Memory (must be in even byte no) |
+| Byte | DB0~999.DBW | DDDDD</br>DDDDD | 0 ~ 65535</br>0 ~ 65535 | Data Memory (must be in even byte no) |
 | Byte | T           | DDD        | 0 ~ 255            | Timer                                 |
 | Byte | C           | DDD        | 0 ~ 255            | Counter                               |
 

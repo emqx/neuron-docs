@@ -47,10 +47,10 @@ Publish: Neuron/Registry/%UUID%
 | **host** | System hostname                                                                                                                |
 | **uuid** | UUID                                                                                                                           |
 | **modl** | Model number                                                                                                                   |
-| **bver** | Software build version and date<br>First number -- major change<br>Second number -- minor change<br>Third number -- build date |
+| **bver** | Software build version and date</br>First number -- major change</br>Second number -- minor change</br>Third number -- build date |
 | **pver** | Protocol version                                                                                                               |
 
 | Response |                                                      |
 | -------- | ---------------------------------------------------- |
 | **func** | Function code 1                                      |
-| **regr** | Registry Return<br>-1 \-- not accept<br>0 \-- accept |
+| **regr** | Registry Return</br>-1 \-- not accept</br>0 \-- accept |

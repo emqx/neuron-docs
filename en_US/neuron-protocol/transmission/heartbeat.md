@@ -68,21 +68,21 @@ Subscribe: Neuron/Heartbeat/%UUID%
 | Heartbeat |                                                       |
 | --------- | ----------------------------------------------------- |
 | **tstp**  | TimeStamp                                             |
-| **comm**  | PLC or hardware communication status<br> UP<br> DOWN  |
-| **mach**  | Machine Mode<br> AUTO<br> MANU<br> SERV |
-| **mode**  | Please refer to Status Mode section.<br> Inactive Mode<br> Standby Mode <br> Semi-Standby Mode <br> Active Mode<br> Semi-Active Mode|
-| **mqcn**  | MQ broker connection status<br> MQCONNECT<br> MQDISCONNECT|
-| **dalm**  | Device Alarm which specify which device has <br> communication problem.|
+| **comm**  | PLC or hardware communication status</br> UP</br> DOWN  |
+| **mach**  | Machine Mode</br> AUTO</br> MANU</br> SERV |
+| **mode**  | Please refer to Status Mode section.</br> Inactive Mode</br> Standby Mode </br> Semi-Standby Mode </br> Active Mode</br> Semi-Active Mode|
+| **mqcn**  | MQ broker connection status</br> MQCONNECT</br> MQDISCONNECT|
+| **dalm**  | Device Alarm which specify which device has </br> communication problem.|
 | **ndal**  | Number of device alarms                               |
 | **drow**  | Device alarm rows                                     |
 | **chnl**  | Channel number of devices                             |
 | **addr**  | Address of devices                                    |
-| **galm**  | General Alarm which user define their own alarms and <br>triggers|
+| **galm**  | General Alarm which user define their own alarms and </br>triggers|
 | **ngal**  | Number of general alarms                              |
 | **grow**  | General alarm rows                                    |
-| **acat**  | Alarm Category <br> critical <br> alarm<br> warning<br> event<br> view |                                       
-| **astt**  | Alarm Status                                          <br> ON                                                    <br> OFF                                                   |
-| **amod**  | Alarm Mode                                            <br> UNACKALARM                                            <br> DISABLE                                               |
+| **acat**  | Alarm Category </br> critical </br> alarm</br> warning</br> event</br> view |                                       
+| **astt**  | Alarm Status                                          </br> ON                                                    </br> OFF                                                   |
+| **amod**  | Alarm Mode                                            </br> UNACKALARM                                            </br> DISABLE                                               |
 | **atim**  | Alarm TimeStamp                                       |
-| **alid**  | Alarm ID                                              <br> must be copied this ID when user acknowledge function <br> 80                                                    |
+| **alid**  | Alarm ID                                              </br> must be copied this ID when user acknowledge function </br> 80                                                    |
 | **comt**  | Alarm Comments                                        |
