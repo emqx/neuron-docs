@@ -103,6 +103,10 @@
           "path": "function-application/tcp-server"
         }
       ]
+    },
+    {
+      "title": "API 功能说明",
+      "path": "api-function/api-function-service"
     }
   ],
   "en": [
