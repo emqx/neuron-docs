@@ -4,15 +4,15 @@ Neuron将为IIoT平台提供一系列的API服务，以查询基本信息，控�
 
 **_Neuron平台的MQTT主题_**
 
-订阅（Subscribe）: Neuron/Request /%UUID%
+订阅（Subscribe）: Neuron/Request/%UUID%
 
-发布（Publish）: Neuro/Response n/%UUID%
+发布（Publish）: Neuro/Response/%UUID%
 
 **_IIoT平台的MQTT主题_**
 
-订阅（Subscribe）: Neuron/Response /%UUID%
+订阅（Subscribe）: Neuron/Response/%UUID%
 
-发布（Publish）: Neuron/Request /%UUID%
+发布（Publish）: Neuron/Request/%UUID%
 
 ![api-services-on-mqtt](./assets/api-services-on-mqtt.png)
 

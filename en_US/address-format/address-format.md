@@ -246,26 +246,24 @@ Example: **10!DM100** means word 100 in data memory in slave 10.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">CH!ADDR[.BIT]</span>
-
-**CH** is channel number
+> <span style="font-family:sans-serif; font-size:2em;">ADDR[.BIT]</span>
 
 **ADDR**  is the data memory word address starting with “DM”
 
 **BIT**  bit(option)
 
-| Type |           | Format    | Range       | Description       |
+| Type |  Address prefix   | Format    | Range       | Description       |
 | ---- | --------- | -----   | --------------| ------------------   |
-| Word | CIO       | DDDD[.dd]    | 0 ~ 6143      | CIO Area (word/bit)          |
-| Word | WR        | DDD[.dd]     | 0 ~ 511       | Work Area (word/bit)           |
-| Word | HR        | DDD[.dd]     | 0 ~ 511       | Holding Bit Area (word/bit)           |
-| Word | AR        | DDD[.dd]     | 0 ~ 959       | Auxiliary Bit Area 0~447 read only (word/bit)   |
-| Word | TIM       | DDDD[.dd]    | 0 ~ 4095      | Timer (word/bit)           |
-| Word | CNT       | DDDD[.dd]    | 0 ~ 4095      | Counter (word/bit)          |
-| Word | DM        | DDDDD[.dd]   | 0 ~ 32767     | Data Memory (word/bit)          |
-| Word | EM0~EM18  | DDDDD[.dd]   | 0 ~ W32767    | Extended Memory, use W separate area and address(word/bit)    |
+| Word/Bit | CIO       | DDDD[.dd]    | 0 ~ 6143      | CIO Area           |
+| Word/Bit | WR        | DDD[.dd]     | 0 ~ 511       | Work Area            |
+| Word/Bit | HR        | DDD[.dd]     | 0 ~ 511       | Holding Bit Area           |
+| Word/Bit | AR        | DDD[.dd]     | 0 ~ 959       | Auxiliary Bit Area 0~447 read only    |
+| Word/Bit | PV (Timer/Counter)       | DDDD[.dd]    | 0 ~ 4095      | Timer / Counter    |
+| Bit      | F (Completion Flag) | DDDD         | 0 ~ 4095      | Completion Flag     |
+| Word/Bit | DM        | DDDDD[.dd]   | 0 ~ 32767     | Data Memory           |
+| Word/Bit | EM0~EM18  | DDDDD[.dd]   | 0 ~ W32767    | Extended Memory, use W separate area and address    |
 
-Example: 1!DM100 means word 100 in data memory in channel 1.
+Example: DM100 means word 100 in data memory.
 
 ## Siemens S5 3964R/RK512
 
