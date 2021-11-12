@@ -105,7 +105,7 @@
       ]
     },
     {
-      "title": "API 功能说明",
+      "title": "API",
       "path": "api-function/api-function-service"
     }
   ],
@@ -226,10 +226,6 @@
             {
               "title": "Broadcast",
               "path": "neuron-protocol/transmission/broadcast"
-            },
-            {
-              "title": "Functional Services",
-              "path": "neuron-protocol/transmission/functional-services"
             }
           ]
         },
@@ -259,6 +255,10 @@
           ]
         }
       ]
+    },
+    {
+      "title": "API",
+      "path": "neuron-protocol/transmission/functional-services"
     }
   ]
 }
