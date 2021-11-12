@@ -4,15 +4,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **_MQTT Topics for Neuron_**
 
-Subscribe: Neuron/Request /%UUID%
+Subscribe: Neuron/Request/%UUID%
 
-Publish: Neuro/Response n/%UUID%
+Publish: Neuro/Response/%UUID%
 
 **_MQTT Topics for IIoT platform_**
 
-Subscribe: Neuron/Response /%UUID%
+Subscribe: Neuron/Response/%UUID%
 
-Publish: Neuron/Request /%UUID%
+Publish: Neuron/Request/%UUID%
 
 ![ ](../assets/api-services-on-mqtt.png)
 
