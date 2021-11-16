@@ -720,7 +720,49 @@ EC61850 数据分层模型通常有以下几种：
 | 物理接口   | 以太网         |
 | 默认设置   | 端口：4840     |
 
-### 地址格式
+### 证书设置
+
+OPCUA可通过用户自签名证书登录到OPC-UA服务器，certificate和key必须满足以下条件：
+
+* CERTIFICATE和KEYFILE必须同时设置
+* Certificate必须以X.509v3标准生成
+* Certficate的SAN字段必须包含` URI:urn:xxx.xxx.xxx`,“xxx”部分为自定义部分
+* Certificate文件和key文件必须使用DER格式编码
+
+证书文件可以提前导入到目标服务器中并设置为信任，也可以由neuron设置后自动提交再由服务端设置为信任。
+
+证书生成步骤（Windows/Linux/Mac）：
+
+```bash
+$openssl req -config localhost.cnf -new -nodes -x509 -sha256 -newkey rsa:2048 -keyout localhost.key -days 365 -subj "/C=DE/O=neuron/CN=NeuronClient@localhost" -out localhost.crt
+$openssl x509 -in localhost.crt -outform der -out client_cert.der
+$openssl rsa -inform PEM -in localhost.key -outform DER -out client_key.der
+$rm localhost.crt
+$rm localhost.key
+```
+
+`-config`指定的*.cnf文件可以使用[openssl的模版文件]([openssl/openssl.cnf at master · openssl/openssl (github.com)](https://github.com/openssl/openssl/blob/master/apps/openssl.cnf))进行修改，需包含如下配置节：
+
+```ini
+[ v3_req ]
+
+# Extensions to add to a certificate request
+
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[ alt_names ]
+URI.1 = urn:xxx.xxx.xxx
+DNS.1 = localhost
+#DNS.2 = localhost
+IP.1 = 127.0.0.1
+#IP.2 = 0.0.0.0
+```
+
+`-days`可以根据需要设置数值。
+
+### 地址格式C
 
 > <span style="font-family:sans-serif; font-size:2em;">IX!NODEID</span>
 
