@@ -6,29 +6,29 @@
 
 ### 在 Docker 中运行 Neuron
 
-获取 Docker 镜像
+获取 Docker 镜像(请在官网中获取最新版本)
 
 ```bash
-~\$ docker pull emqx/neuron:1.0.0
+~\$ docker pull emqx/neuron:1.3.3
 ```
 
-启动 Docker 容器
+启动 Docker 容器(请在官网中获取最新版本)
 
 ```bash
-~\$ docker run -d --name neuron -p 7000:7000 emqx/neuron:1.0.0
+~\$ docker run -d --name neuron -p 7000:7000 emqx/neuron:1.3.3
 ```
 
 ### 在 Docker 中运行 EMQ X Edge
 
 除运行 Neuron 实例外，我们还需要部署一个 MQTT Broker 来做消息的连接处理，这里推荐使用 [EMQ X Edge](https://www.emqx.cn/downloads#edge)，轻量级的边缘计算消息中间件。同样 EMQ X Edge 可以快速使用 Docker 容器进行安装使用。
 
-获取 Docker 镜像
+获取 Docker 镜像(请在官网中获取最新版本)
 
 ```bash
 ~\$ docker pull emqx/emqx-edge:4.2.2
 ```
 
-启动 Docker 容器
+启动 Docker 容器(请在官网中获取最新版本)
 
 ```bash
 ~\$ docker run -d --name emqx -p 1883:1883 -p 18083:18083 emqx/emqx-edge:4.2.2
@@ -43,6 +43,10 @@
 ## 运行和使用
 
 当环境和资源都准备好后，我们可以打开 Web 浏览器，输入您运行的网关地址和端口号，即可进入到管理控制台页面，Neuron 管理控制台的端口号为 7000，例如：[http://127.0.0.1:7000](http://127.0.0.1:7000)
+
+### 提示
+
+Windows中尽量关闭防火墙，否则可能会导致Neuron连接不上模拟器。
 
 ### 登录
 
