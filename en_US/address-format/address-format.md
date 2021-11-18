@@ -415,6 +415,18 @@ second byte:
 |--|--|
 |rack number|cpu slot|
 
+### Notes
+
+An external equipment can access to S71200/1500 CPU using the S7 “base” protocol, only working as an HMI, i.e. only basic data transfer are allowed.
+
+All other PG operations (control/directory/etc..) must follow the extended protocol.
+
+Particularly to access a DB in S71500 some additional setting plc-side are needed.
+
+1. Only global DBs can be accessed.
+2. The optimized block access must be turned off.
+3. The access level must be “full” and the “connection mechanism” must allow GET/PUT.
+
 ## Mitsubishi FX0S/FX0N/FX1S/FX1N/FX2
 
 ### General Details
