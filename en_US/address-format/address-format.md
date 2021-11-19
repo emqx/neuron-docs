@@ -510,6 +510,10 @@ Example: **D100** means word 100 in D data memory area.
 | Physical interface  | Ethernet        |
 | Default port no.    | 2000            |
 
+### Caution
+
+Multiple connection requests cannot be handled by a single port in Q series PLCs. When connecting to a PLC using the E71 protocol, be sure to assign a separate port for each neuron instance in the parameter settings of the PLC and specify the protocol as TCP and MC.
+
 ### Address String
 
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>

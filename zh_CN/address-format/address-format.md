@@ -512,6 +512,10 @@ Neuron连接S7-1200/1500设备时，只进行基本的数据传输。
 | 物理接口       | 以太网          |
 | 默认设置       | 端口：2000      |
 
+### 注意事项
+
+Q系列PLC中单个端口不能处理多个连接请求，在使用E71协议连接PLC时，请务必在PLC的参数设置中为每一个neuron实例分配独立端口，并指定协议为TCP和MC。
+
 ### 地址格式
 
 > <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
