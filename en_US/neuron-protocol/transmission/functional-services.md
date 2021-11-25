@@ -14,6 +14,52 @@ Subscribe: Neuron/Response/%UUID%
 
 Publish: Neuron/Request/%UUID%
 
+**_MQTT topic string list_**
+
+Neuron/Broadcast
+
+Neuron/Heartbeat/%UUID%
+
+Neuron/Telemetry/%UUID%
+
+Neuron/Request/%UUID%
+
+Neuron/Response/%UUID%
+
+where %UUID% is a 36 characters UUID string of Neuron.
+
+**_Neuron gateways subscribe topics_**
+
+Neuron/Broadcast
+
+Neuron/Request/%UUID%
+
+**_Neuron gateway publish topics_**
+
+Neuron/Broadcast
+
+Neuron/Heartbeat/%UUID%
+
+Neuron/Telemetry/%UUID%
+
+Neuron/Request/%UUID%
+
+Neuron/Response/%UUID%
+
+**_IIoT Platform subscribe topics_**
+
+Neuron/Broadcast
+
+Neuron/Heartbeat/%UUID%
+
+Neuron/Telemetry/%UUID%
+
+Neuron/Response/%UUID%
+
+**_IIoT Platform publish topics_**
+
+Neuron/Request/%UUID%
+
 ![ ](../assets/api-services-on-mqtt.png)
 
 ![ ](../assets/api-services-on-websockets.png)

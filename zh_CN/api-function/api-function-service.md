@@ -14,6 +14,52 @@ Neuron将为IIoT平台提供一系列的API服务，以查询基本信息，控�
 
 发布（Publish）: Neuron/Request/%UUID%
 
+**_MQTT主题字符串列表_**
+
+Neuron/Broadcast
+
+Neuron/Heartbeat/%UUID%
+
+Neuron/Telemetry/%UUID%
+
+Neuron/Request/%UUID%
+
+Neuron/Response/%UUID%
+
+其中%UUID%是Neuron的36个字符的UUID字符串。
+
+**_Neuron网关订阅主题_**
+
+Neuron/Broadcast
+
+Neuron/Request/%UUID%
+
+**_Neuron网关发布主题_**
+
+Neuron/Broadcast
+
+Neuron/Heartbeat/%UUID%
+
+Neuron/Telemetry/%UUID%
+
+Neuron/Request/%UUID%
+
+Neuron/Response/%UUID%
+
+**_IIoT平台订阅主题_**
+
+Neuron/Broadcast
+
+Neuron/Heartbeat/%UUID%
+
+Neuron/Telemetry/%UUID%
+
+Neuron/Response/%UUID%
+
+**_IIoT平台发布主题_**
+
+Neuron/Request/%UUID%
+
 ![api-services-on-mqtt](./assets/api-services-on-mqtt.png)
 
 ![api-services-on-websockets](./assets/api-services-on-websockets.png)
