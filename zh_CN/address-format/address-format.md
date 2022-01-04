@@ -750,11 +750,11 @@ OPCUA可通过用户自签名证书登录到OPC-UA服务器，certificate和key�
 证书生成步骤（Windows/Linux/Mac）：
 
 ```bash
-$openssl req -config localhost.cnf -new -nodes -x509 -sha256 -newkey rsa:2048 -keyout localhost.key -days 365 -subj "/C=DE/O=neuron/CN=NeuronClient@localhost" -out localhost.crt
-$openssl x509 -in localhost.crt -outform der -out client_cert.der
-$openssl rsa -inform PEM -in localhost.key -outform DER -out client_key.der
-$rm localhost.crt
-$rm localhost.key
+$ openssl req -config localhost.cnf -new -nodes -x509 -sha256 -newkey rsa:2048 -keyout localhost.key -days 365 -subj "/C=DE/O=neuron/CN=NeuronClient@localhost" -out localhost.crt
+$ openssl x509 -in localhost.crt -outform der -out client_cert.der
+$ openssl rsa -inform PEM -in localhost.key -outform DER -out client_key.der
+$ rm localhost.crt
+$ rm localhost.key
 ```
 
 `-config`指定的*.cnf文件可以使用[openssl的模版文件]([openssl/openssl.cnf at master · openssl/openssl (github.com)](https://github.com/openssl/openssl/blob/master/apps/openssl.cnf))进行修改，需包含如下配置节：
@@ -777,6 +777,16 @@ IP.1 = 127.0.0.1
 ```
 
 `-days`可以根据需要设置数值。
+
+### 证书转换
+可以通过以下步骤和命令将PEM证书以及私钥转换为DER格式
+1. 将包括"-----BEGIN CERTIFICATE-----"和"-----END CERTIFICATE-----"的所有内容保存为1.crt;
+2. 将包括"-----BEGIN PRIVATE KEY-----"和"-----END PRIVATE KEY-----"的所有内容保存为1.key;
+3. 执行如下命令:
+```bash
+$ openssl x509 -in 1.crt -outform der -out cert.der   
+$ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
+```
 
 ### 地址格式C
 

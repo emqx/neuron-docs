@@ -758,6 +758,16 @@ IP.1 = 127.0.0.1
 
 `-days` can set the value as desired.
 
+### Certificate conversion
+You can convert PEM certificate and private key to DER format by following steps and commands
+1. Save all the contents including "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----" as 1.crt;
+2. Save all the contents including "-----BEGIN PRIVATE KEY-----" and "-----END PRIVATE KEY-----" as 1.key;
+3. Execute the following command:
+```bash
+$ openssl x509 -in 1.crt -outform der -out cert.der   
+$ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
+```
+
 ### Address String
 
 > <span style="font-family:sans-serif; font-size:2em;">IX!NODEID</span>
