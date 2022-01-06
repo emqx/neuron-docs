@@ -778,6 +778,8 @@ $ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
 
 Example: 2!Device1.Module1.Tag1 represents namespace index is 2 and node ID is Device1.Module1.Tag1
 
+Neuron version 1.4 already supports fixed-length string read and write, you need to add the string length identifier - #length to the node ID, if you want to set Device1.Module1.Tag1 to a string type with length 20, the full access address is 2!Device1 .Module1.Tag1#20
+
 Please refer to OPC UA standard for the explanation of namespace index and node id.
 
 ## IEC 60870-5-104

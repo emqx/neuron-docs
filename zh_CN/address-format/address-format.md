@@ -798,6 +798,8 @@ $ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
 
 例如：2!Device1.Module1.Tag1 代表命名空间索引为 2，节点 ID 为 Device1.Module1.Tag1
 
+Neuron 1.4版本已支持定长字符串读写，需要在节点ID中添加字符串长度标识——#length，如果要把Device1.Module1.Tag1设置为长度为20的字符串类型，则完整的访问地址为2!Device1.Module1.Tag1#20
+
 命名空间索引和节点 ID 的解释请参考 OPC UA 标准。
 
 ## IEC 60870-5-104
