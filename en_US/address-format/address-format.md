@@ -737,7 +737,7 @@ $rm localhost.crt
 $rm localhost.key
 ```
 
-The *.cnf file specified by `-config` can be modified using the [template file for openssl]([openssl/openssl.cnf at master - openssl/openssl (github.com)](https://github.com/openssl/openssl /blob/master/apps/openssl.cnf)) to be modified to include the following configuration section:
+The *.cnf file specified by `-config` can be modified using the [template file for openssl](https://github.com/openssl/openssl/blob/master/apps/openssl.cnf) to be modified to include the following configuration section:
 
 ```ini
 [ v3_req ]

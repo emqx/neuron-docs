@@ -757,7 +757,7 @@ $rm localhost.crt
 $rm localhost.key
 ```
 
-`-config`指定的*.cnf文件可以使用[openssl的模版文件]([openssl/openssl.cnf at master · openssl/openssl (github.com)](https://github.com/openssl/openssl/blob/master/apps/openssl.cnf))进行修改，需包含如下配置节：
+`-config`指定的*.cnf文件可以使用 [openssl 的模版文件](https://github.com/openssl/openssl/blob/master/apps/openssl.cnf)进行修改，需包含如下配置节：
 
 ```ini
 [ v3_req ]
