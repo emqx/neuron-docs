@@ -750,11 +750,11 @@ OPCUA可通过用户自签名证书登录到OPC-UA服务器，certificate和key�
 证书生成步骤（Windows/Linux/Mac）：
 
 ```bash
-$openssl req -config localhost.cnf -new -nodes -x509 -sha256 -newkey rsa:2048 -keyout localhost.key -days 365 -subj "/C=DE/O=neuron/CN=NeuronClient@localhost" -out localhost.crt
-$openssl x509 -in localhost.crt -outform der -out client_cert.der
-$openssl rsa -inform PEM -in localhost.key -outform DER -out client_key.der
-$rm localhost.crt
-$rm localhost.key
+$ openssl req -config localhost.cnf -new -nodes -x509 -sha256 -newkey rsa:2048 -keyout localhost.key -days 365 -subj "/C=DE/O=neuron/CN=NeuronClient@localhost" -out localhost.crt
+$ openssl x509 -in localhost.crt -outform der -out client_cert.der
+$ openssl rsa -inform PEM -in localhost.key -outform DER -out client_key.der
+$ rm localhost.crt
+$ rm localhost.key
 ```
 
 `-config`指定的*.cnf文件可以使用 [openssl 的模版文件](https://github.com/openssl/openssl/blob/master/apps/openssl.cnf)进行修改，需包含如下配置节：
@@ -778,6 +778,16 @@ IP.1 = 127.0.0.1
 
 `-days`可以根据需要设置数值。
 
+### 证书转换
+可以通过以下步骤和命令将PEM证书以及私钥转换为DER格式
+1. 将包括"-----BEGIN CERTIFICATE-----"和"-----END CERTIFICATE-----"的所有内容保存为1.crt;
+2. 将包括"-----BEGIN PRIVATE KEY-----"和"-----END PRIVATE KEY-----"的所有内容保存为1.key;
+3. 执行如下命令:
+```bash
+$ openssl x509 -in 1.crt -outform der -out cert.der   
+$ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
+```
+
 ### 地址格式C
 
 > <span style="font-family:sans-serif; font-size:2em;">IX!NODEID</span>
@@ -787,6 +797,8 @@ IP.1 = 127.0.0.1
 **NODEID** 是节点 ID（任意字符串，不包括 '!'）
 
 例如：2!Device1.Module1.Tag1 代表命名空间索引为 2，节点 ID 为 Device1.Module1.Tag1
+
+Neuron 1.4版本已支持定长字符串读写，需要在节点ID中添加字符串长度标识——#length，如果要把Device1.Module1.Tag1设置为长度为20的字符串类型，则完整的访问地址为2!Device1.Module1.Tag1#20
 
 命名空间索引和节点 ID 的解释请参考 OPC UA 标准。
 

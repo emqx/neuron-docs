@@ -758,6 +758,16 @@ IP.1 = 127.0.0.1
 
 `-days` can set the value as desired.
 
+### Certificate conversion
+You can convert PEM certificate and private key to DER format by following steps and commands
+1. Save all the contents including "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----" as 1.crt;
+2. Save all the contents including "-----BEGIN PRIVATE KEY-----" and "-----END PRIVATE KEY-----" as 1.key;
+3. Execute the following command:
+```bash
+$ openssl x509 -in 1.crt -outform der -out cert.der   
+$ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
+```
+
 ### Address String
 
 > <span style="font-family:sans-serif; font-size:2em;">IX!NODEID</span>
@@ -767,6 +777,8 @@ IP.1 = 127.0.0.1
 **NODEID** is the node ID. (any string exclude &#39;!&#39;)
 
 Example: 2!Device1.Module1.Tag1 represents namespace index is 2 and node ID is Device1.Module1.Tag1
+
+Neuron version 1.4 already supports fixed-length string read and write, you need to add the string length identifier - #length to the node ID, if you want to set Device1.Module1.Tag1 to a string type with length 20, the full access address is 2!Device1 .Module1.Tag1#20
 
 Please refer to OPC UA standard for the explanation of namespace index and node id.
 
