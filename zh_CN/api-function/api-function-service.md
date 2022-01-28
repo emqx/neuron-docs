@@ -290,7 +290,7 @@ Authorization: Bearer \<token\>
 }
 ```
 
-请求body的句式
+响应body的句式
 
 ```json
 {
@@ -532,7 +532,7 @@ Authorization: Bearer \<token\>
 
 **_HTTP API 或者 Websockets 或者 MQTT 通信_**
 
-Request boy syntax
+请求body的句式
 
 ```json
 {
@@ -795,7 +795,7 @@ Authorization: Bearer \<token\>
 }
 ```
 
-请求body的句式
+响应body的句式
 
 ```json
 {
@@ -1825,43 +1825,33 @@ Authorization: Bearer \<token\>
 {
   "func": 50,
   "wtrm": "DEMO-Neuron-1001_1532421778827_1",
-  "srcn": "Tank[0]"
+  "srcn": "test"
 } 
 ```
 
-请求body的句式
+响应body的句式
 
 ```json
 {
-  "func": 50,
-  "wtrm": "DEMO-Neuron-1001_1532421778827_1",
-  "errc": 0,
-  "tele": [
-    {
-      "objn": "Tank_1",
-      "tstp": 1552532233,
-      "temperature": 81.2,
-      "energy": 2181.8,
-      "switch": 1,
-      "buzzer": 0
-    },
-    {
-      "objn": "Tank_2",
-      "tstp": 1552532233,
-      "temperature": 79.1,
-      "energy": 3176.2,
-      "switch": 1,
-      "buzzer": 0
-    },
-    {
-      "objn": "Tank_3",
-      "tstp": 1552532233,
-      "temperature": 86.4,
-      "energy": 1146.3,
-      "switch": 0,
-      "buzzer": 1
-    }
-  ]
+    "func": 50,
+    "wtrm": "DEMO-Neuron-1001_1532421778827_1",
+    "erroc": 0,
+    "tele": [
+        {
+            "objn": "test",
+            "tstp": 1643180286,
+            "data1": 123,
+            "data2": 789,
+            "data3": 3,
+            "data4": 4,
+            "data5": 5,
+            "data6": 6,
+            "data7": 7,
+            "data8": 8,
+            "data9": 9,
+            "data10": 10
+        }
+    ]
 }
 ```
 
@@ -1911,7 +1901,7 @@ Authorization: Bearer \<token\>
 }
 ```
 
-请求body的句式
+响应body的句式
 
 ```json
 {
@@ -2950,6 +2940,69 @@ Authorization: Bearer \<token\>
 | **func** | 功能代码 84                                  |
 | **wtrm** | 从请求信息中复制的水印                         |
 | **errc** | 编译器错误代码                               |
+
+## Function 93 读属性
+
+**_HTTP API Header_**
+
+(PUT)
+
+Resource Path: /api/v1/funcno93
+
+Content-Type: application/json
+
+Authorization: Bearer \<token\>
+
+| **HTTP状态代码** | **说明**        |
+| :-------------- | :------------- |
+| 200             | 操作成功        |
+| 400             | 无效操作        |
+
+**_HTTP API 或者Websockets 或者 MQTT 通信_**
+
+请求body的句式
+
+```json
+{
+  "func": 93,
+  "wtrm": "DEMO-Neuron-1001_1532421778827_1",
+  "srcn": "object1",
+  "attn": "data1"
+}
+```
+
+响应body的句式
+
+```json
+{
+    "func": 93,
+    "wtrm": "DEMO-Neuron-1001_1532421778827_1",
+    "erroc": 0,
+    "tele": [
+        {
+            "objn": "object1",
+            "tstp": 1643177359,
+            "data1": 0
+        }
+    ]
+}
+```
+
+| 请求      | 字段说明              |
+| :------- | :------------------- |
+| **func** | 功能代码 93           |
+| **wtrm** | 复制到响应信息的水印信息 |
+| **srcn** | 带有前缀和后缀的对象名称 |
+| **attn** | 属性名称              |
+
+| 响应       | 字段说明             |
+| :-------- | :-----------------  |
+| **func**  | 功能代码 93          |
+| **wtrm**  | 从请求信息中复制的水印 |
+| **erroc** | 错误编码             |
+| **tele**  | 遥测阵列             |
+| **objn**  | 对象名称             |
+| **tstp**  | 时间戳               |
 
 ## 仅限文件更新HTTP API
 
