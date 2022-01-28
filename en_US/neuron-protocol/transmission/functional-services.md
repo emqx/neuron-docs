@@ -290,7 +290,7 @@ Request body syntax
 }
 ```
 
-Request body syntax
+Response body syntax
 
 ```json
 {
@@ -795,7 +795,7 @@ Request body syntax
 }
 ```
 
-Request body syntax
+Response body syntax
 
 ```json
 {
@@ -1823,43 +1823,33 @@ Request body syntax
 {
   "func": 50,
   "wtrm": "DEMO-Neuron-1001_1532421778827_1",
-  "srcn": "Tank[0]"
+  "srcn": "test"
 } 
 ```
 
-Request body syntax
+Response body syntax
 
 ```json
 {
   "func": 50,
-  "wtrm": "DEMO-Neuron-1001_1532421778827_1",
-  "errc": 0,
-  "tele": [
-    {
-      "objn": "Tank_1",
-      "tstp": 1552532233,
-      "temperature": 81.2,
-      "energy": 2181.8,
-      "switch": 1,
-      "buzzer": 0
-    },
-    {
-      "objn": "Tank_2",
-      "tstp": 1552532233,
-      "temperature": 79.1,
-      "energy": 3176.2,
-      "switch": 1,
-      "buzzer": 0
-    },
-    {
-      "objn": "Tank_3",
-      "tstp": 1552532233,
-      "temperature": 86.4,
-      "energy": 1146.3,
-      "switch": 0,
-      "buzzer": 1
-    }
-  ]
+    "wtrm": "DEMO-Neuron-1001_1532421778827_1",
+    "erroc": 0,
+    "tele": [
+        {
+            "objn": "test",
+            "tstp": 1643180286,
+            "data1": 123,
+            "data2": 789,
+            "data3": 3,
+            "data4": 4,
+            "data5": 5,
+            "data6": 6,
+            "data7": 7,
+            "data8": 8,
+            "data9": 9,
+            "data10": 10
+        }
+    ]
 }
 ```
 
@@ -1909,7 +1899,7 @@ Request body syntax
 }
 ```
 
-Request body syntax
+Response body syntax
 
 ```json
 {
@@ -2941,6 +2931,68 @@ Response body syntax
 | **func** | Function code 84                                  |
 | **wtrm** | A water mark that copied from the request message |
 | **errc** | Compiler error code                               |
+
+## Function 93 Read Attribute
+
+**_HTTP API Header_**
+
+(PUT)
+
+Resource Path: /api/v1/funcno93
+
+Content-Type: application/json
+
+Authorization: Bearer \<token\>
+
+| **HTTP status code** | **Description**      |
+| -------------------- | -------------------- |
+| 200                  | Successful operation |
+| 400                  | Invalid Operation    |
+
+**_HTTP API or Websockets or MQTT Communication_**
+
+Request body syntax
+
+```json
+{
+  "func": 93,
+  "wtrm": "DEMO-Neuron-1001_1532421778827_1",
+  "srcn": "object1",
+  "attn": "data1"
+} 
+```
+
+Response body syntax
+
+```json
+{
+    "func": 93,
+    "wtrm": "DEMO-Neuron-1001_1532421778827_1",
+    "erroc": 0,
+    "tele": [
+        {
+            "objn": "object1",
+            "tstp": 1643177359,
+            "data1": 0
+        }
+    ]
+}
+```
+
+| Request  |                                                  |
+| -------- | ------------------------------------------------ |
+| **func** | Function code 93                                 |
+| **wtrm** | A water mark that copied to the response message |
+| **srcn** | Object Name with prefix and suffix               |
+
+| Response |                                                   |
+| -------- | ------------------------------------------------- |
+| **func** | Function code 93                                  |
+| **wtrm** | A water mark that copied from the request message |
+| **errc** | Error code                                        |
+| **tele** |Telemetry Array|
+| **objn** |Object Name|
+| **tstp** |TimeStamp|
 
 ## File Update HTTP API only
 
