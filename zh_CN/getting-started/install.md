@@ -4,7 +4,7 @@
 
 ## 下载
 
-Neuron 软件包可从 EMQ 网站 [https://www.emqx.com](https://www.emqx.com/) 下载.
+Neuron 软件包可从 EMQ 网站 [https://www.emqx.com/zh](https://www.emqx.com/zh) 下载.
 
 | 下载文件                                         | 架构   |
 | ------------------------------------------------ | --------------------- |
