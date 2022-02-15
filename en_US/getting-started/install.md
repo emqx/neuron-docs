@@ -4,7 +4,7 @@ Following section describes how to install the Neuron software package on a Linu
 
 ## Download
 
-Neuron software package is available in EMQ website [https://www.emqx.com](https://www.emqx.io/).
+Neuron software package is available in EMQ website [https://www.emqx.com/en](https://www.emqx.com/en).
 
 | Package Name                                     | Architecture System   |
 | ------------------------------------------------ | --------------------- |
