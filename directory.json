@@ -22,91 +22,33 @@
       "children": [
         {
           "title": "登录",
-          "path": "web-interface/login"
+          "path": "dashboard-interface/login"
         },
         {
-          "title": "整体布局",
-          "path": "web-interface/screen-layout"
+          "title": "首页",
+          "path": "dashboard-interface/home"
         },
         {
-          "title": "关于",
-          "path": "web-interface/about"
+          "title": "监控",
+          "path": "dashboard-interface/monitoring"
         },
         {
-          "title": "配置设置",
-          "path": "web-interface/configuration-setup"
+          "title": "配置",
+          "path": "dashboard-interface/configuration"
         },
         {
-          "title": "脚本编程",
-          "path": "web-interface/script-programming"
-        },
-        {
-          "title": "事件/报警信息",
-          "path": "web-interface/message"
-        },
-        {
-          "title": "状态监测",
-          "path": "web-interface/status-monitoring"
-        },
-        {
-          "title": "用户管理",
-          "path": "web-interface/user-administration"
-        }
-      ]
-    },
-    {
-      "title": "Neuron 脚本",
-      "children": [
-        {
-          "title": "脚本程序",
-          "path": "neuron-scripts/script-routines"
-        },
-        {
-          "title": "脚本语句",
-          "path": "neuron-scripts/script-statements"
-        },
-        {
-          "title": "脚本表达式",
-          "path": "neuron-scripts/script-expressions"
-        },
-        {
-          "title": "脚本运算符",
-          "path": "neuron-scripts/script-operators"
-        },
-        {
-          "title": "脚本操作数",
-          "path": "neuron-scripts/script-operands"
-        },
-        {
-          "title": "脚本指令",
-          "path": "neuron-scripts/script-instructions"
+          "title": "管理",
+          "path": "dashboard-interface/management"
         }
       ]
     },
     {
       "title": "Neuron 驱动地址格式",
-      "path": "address-format/address-format"
+      "path": "address-format/neuron2.x-driver"
     },
     {
-      "title": "功能应用",
-      "children": [
-        {
-          "title": "Logo上传设置",
-          "path": "function-application/upload-logo"
-        },
-        {
-          "title": "SSL和JWT的设置",
-          "path": "function-application/ssl-jwt"
-        },
-        {
-          "title": "DTU TCP Server的设置",
-          "path": "function-application/tcp-server"
-        }
-      ]
-    },
-    {
-      "title": "API",
-      "path": "api-function/api-function-service"
+      "title": "API 文档",
+      "path": "api-function/neuron2.x-api"
     }
   ],
   "en": [
@@ -120,145 +62,12 @@
       ]
     },
     {
-      "title": "Installation",
-      "path": "getting-started/install"
-    },
-    {
-      "title": "Web Interface",
-      "children": [
-        {
-          "title": "Login",
-          "path": "web-interface/login"
-        },
-        {
-          "title": "Screen Layout",
-          "path": "web-interface/screen-layout"
-        },
-        {
-          "title": "About",
-          "path": "web-interface/about"
-        },
-        {
-          "title": "Configuration Setup",
-          "path": "web-interface/configuration-setup"
-        },
-        {
-          "title": "Script Programming",
-          "path": "web-interface/script-programming"
-        },
-        {
-          "title": "Event/Alarm Message",
-          "path": "web-interface/message"
-        },
-        {
-          "title": "Status Monitoring",
-          "path": "web-interface/status-monitoring"
-        },
-        {
-          "title": "User Administration",
-          "path": "web-interface/user-administration"
-        }
-      ]
-    },
-    {
-      "title": "Neuron Scripts",
-      "children": [
-        {
-          "title": "Script Routines",
-          "path": "neuron-scripts/script-routines"
-        },
-        {
-          "title": "Script Statements",
-          "path": "neuron-scripts/script-statements"
-        },
-        {
-          "title": "Script Expressions",
-          "path": "neuron-scripts/script-expressions"
-        },
-        {
-          "title": "Script Operators",
-          "path": "neuron-scripts/script-operators"
-        },
-        {
-          "title": "Script Operands",
-          "path": "neuron-scripts/script-operands"
-        },
-        {
-          "title": "Script Instructions",
-          "path": "neuron-scripts/script-instructions"
-        }
-      ]
-    },
-    {
       "title": "Neuron Driver Address Format",
-      "path": "address-format/address-format"
-    },
-    {
-      "title": "Neuron Protocol",
-      "children": [
-        {
-          "title": "General",
-          "path": "neuron-protocol/general"
-        },
-        {
-          "title": "ISO Model",
-          "path": "neuron-protocol/iso-model"
-        },
-        {
-          "title": "Definition",
-          "path": "neuron-protocol/definition"
-        },
-        {
-          "title": "Transmission Process",
-          "children": [
-            {
-              "title": "Registration",
-              "path": "neuron-protocol/transmission/registration"
-            },
-            {
-              "title": "Heartbeat",
-              "path": "neuron-protocol/transmission/heartbeat"
-            },
-            {
-              "title": "Telemetry",
-              "path": "neuron-protocol/transmission/telemetry"
-            },
-            {
-              "title": "Broadcast",
-              "path": "neuron-protocol/transmission/broadcast"
-            }
-          ]
-        },
-        {
-          "title": "Handshake Process",
-          "path": "neuron-protocol/handshake-process"
-        },
-        {
-          "title": "System Mode Control",
-          "path": "neuron-protocol/system-mode-control"
-        },
-        {
-          "title": "Function Application",
-          "children": [
-            {
-              "title": "Upload Logo Settings",
-              "path": "function-application/upload-logo"
-            },
-            {
-              "title": "SSL and JWT Settings",
-              "path": "function-application/ssl-jwt"
-            },
-            {
-              "title": "DTU TCP Server Settings",
-              "path": "function-application/tcp-server"
-            }
-          ]
-        }
-      ]
+      "path": "address-format/neuron2.x-driver"
     },
     {
       "title": "API",
-      "path": "neuron-protocol/transmission/functional-services"
+      "path": "api-function/neuron2.x-api"
     }
   ]
 }
