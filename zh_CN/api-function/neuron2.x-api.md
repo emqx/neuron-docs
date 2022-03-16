@@ -123,7 +123,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -132,7 +132,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -160,7 +160,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 {
@@ -196,7 +196,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -209,7 +209,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Reponse**
+#### Response
 
 ```json
 {
@@ -241,7 +241,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -250,7 +250,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -282,7 +282,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -293,7 +293,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -327,7 +327,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 {
@@ -384,7 +384,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -397,7 +397,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Reponse**
+#### Response
 
 ```json
 {
@@ -432,7 +432,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -443,7 +443,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -475,7 +475,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -488,7 +488,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -515,13 +515,14 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 **Authorization** Bearer \<token\>
 
 ---
+
 #### Response Status
 
 * 200 OK
 
 ---
 
-**Response**
+#### Response
 
 ````json
 {
@@ -575,7 +576,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -610,7 +611,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -648,7 +649,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 {
@@ -718,7 +719,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -748,7 +749,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -775,12 +776,12 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 #### Response Status
 
 * 200 OK
-* 404 
+* 404
   * 2003 node not exist
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -796,7 +797,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -835,10 +836,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 * 409
   * 2203 library name conflict
   
-
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -847,7 +847,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -877,7 +877,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -886,7 +886,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -920,7 +920,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 {
@@ -965,7 +965,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -978,7 +978,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1010,7 +1010,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -1023,7 +1023,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1051,7 +1051,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -1062,7 +1062,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1072,17 +1072,17 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
             "id": 1,
             //tag value
             "value": 1,
-          	"error": 0
+           "error": 0
         },
         {
             "id": 2,
             "value": 2.2,
-          	"error": 2014
+           "error": 2014
         },
         {
             "id": 3,
             "value": true,
-          	"error": 0
+           "error": 0
         }
     ]
 }
@@ -1110,7 +1110,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Body**
+#### Body
 
 ```json
 {
@@ -1129,7 +1129,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1151,7 +1151,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1182,89 +1182,89 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 {
-	"tag_type": [
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		14
-	],
-	"params": [
-		"host",
-		"port",
-		"mode",
-		"baud_rate",
-		"real_param"
-	],
-	"host": {
-		"name": "host",
-		"description": "host",
-		"type": "string",
-		"default": "127.0.0.1",
-		"valid": {
-			"length": 30
-		}
-	},
-	"port": {
-		"name": "port",
-		"description": "port",
-		"type": "int",
-		"default": 502,
-		"valid": {
-			"min": 1024,
-			"max": 65535
-		}
-	},
-	"mode": {
-		"name": "mode",
-		"description": "mode",
-		"type": "bool",
-		"default": false,
-		"valid": {}
-	},
-	"baud_rate": {
-		"name": "baud rate",
-		"description": "port",
-		"type": "int",
-		"default": 9600,
-		"valid": {
-			"value": [
-				9600,
-				112800
-			]
-		}
-	},
-	"real_param": {
-		"name": "real param",
-		"description": "real",
-		"type": "real",
-		"default": 11.22,
-		"valid": {
-			"min": 1.1,
-			"max": 20.2
-		}
-	},
-	"ca": {
-		"name": "ca",
-		"description": "",
-		"attribute": "optional",
-		"type": "file",
-		"condition": {
-			"field": "mode",
-			"value": true
-		},
-		"valid": {
-			"length": 1024
-		}
-	}
+ "tag_type": [
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  14
+ ],
+ "params": [
+  "host",
+  "port",
+  "mode",
+  "baud_rate",
+  "real_param"
+ ],
+ "host": {
+  "name": "host",
+  "description": "host",
+  "type": "string",
+  "default": "127.0.0.1",
+  "valid": {
+   "length": 30
+  }
+ },
+ "port": {
+  "name": "port",
+  "description": "port",
+  "type": "int",
+  "default": 502,
+  "valid": {
+   "min": 1024,
+   "max": 65535
+  }
+ },
+ "mode": {
+  "name": "mode",
+  "description": "mode",
+  "type": "bool",
+  "default": false,
+  "valid": {}
+ },
+ "baud_rate": {
+  "name": "baud rate",
+  "description": "port",
+  "type": "int",
+  "default": 9600,
+  "valid": {
+   "value": [
+    9600,
+    112800
+   ]
+  }
+ },
+ "real_param": {
+  "name": "real param",
+  "description": "real",
+  "type": "real",
+  "default": 11.22,
+  "valid": {
+   "min": 1.1,
+   "max": 20.2
+  }
+ },
+ "ca": {
+  "name": "ca",
+  "description": "",
+  "attribute": "optional",
+  "type": "file",
+  "condition": {
+   "field": "mode",
+   "value": true
+  },
+  "valid": {
+   "length": 1024
+  }
+ }
 }
 ```
 
@@ -1289,11 +1289,11 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 * 200 OK
 * 400
   * 2003 node not exist
-  * 2004 node setting invalid 
+  * 2004 node setting invalid
 
 ---
 
-**Request**
+#### Body
 
 ```json
 //The parameter fields in json fill in different fields according to different plugins
@@ -1309,7 +1309,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1344,7 +1344,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 //The parameter fields in json fill in different fields according to different plugins
@@ -1384,7 +1384,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Request**
+#### Body
 
 ```json
 {
@@ -1395,7 +1395,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1429,7 +1429,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1467,7 +1467,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ---
 
-**Response**
+#### Response
 
 ```json
 {
@@ -1482,6 +1482,51 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
             "node_id": 2,
             "group_config_name": "g2name"
         }
+    ]
+}
+```
+
+### Get Log
+
+*GET*  /api/v2/log
+
+---
+
+#### Request Params
+
+**since**       required, UTC timestamp
+
+**until**       required, UTC timestamp, with `since` forms the interval [since, until)
+
+**level**       optional, log level, should be one of trace, debug, info, warn, error, fatal
+
+**page**        required
+
+**page_size**   required, should be in range [200, 10000]
+
+---
+
+#### Request Headers
+
+**Authorization** Bearer \<token\>
+
+---
+
+#### Response Status
+
+* 200
+* 400
+  * 1003 param is wrong
+
+---
+
+#### Response
+
+```json
+{
+    "error": 0,
+    "rows": [
+        "2022-02-11 15:30:57 WARN  [neuron] src/main.c:90: recv sig: 2"
     ]
 }
 ```

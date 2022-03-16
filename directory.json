@@ -49,6 +49,14 @@
     {
       "title": "API 文档",
       "path": "api-function/neuron2.x-api"
+    },
+    {
+      "title": "Error Codes",
+      "path": "error-code/neuron2.x-error-code"
+    },
+    {
+      "title": "MQTT订阅主题",
+      "path": "mqtt-topic/neuron2.x-mqtt-topics"
     }
   ],
   "en": [
@@ -68,6 +76,14 @@
     {
       "title": "API",
       "path": "api-function/neuron2.x-api"
+    },
+    {
+      "title": "Error Codes",
+      "path": "error-code/neuron2.x-error-code"
+    },
+    {
+      "title": "MQTT Topics",
+      "path": "mqtt-topic/neuron2.x-mqtt-topics"
     }
   ]
 }
