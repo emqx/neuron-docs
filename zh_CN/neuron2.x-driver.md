@@ -182,9 +182,7 @@ example: function is 0x3, and register address is 0, then address used by neuron
 
 ### Parameter Setting
 
-**host** is remote plc host.
-
-**port** is remote plc port. default 4840.
+**endpoint url** is the address of the remote access plc, the default value is `opc.tcp://127.0.0.1:4840/` .
 
 **username** is the user used when connecting to plc.
 
