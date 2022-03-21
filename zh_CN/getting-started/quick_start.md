@@ -4,22 +4,36 @@
 
 ### 软件包安装Neuron
 
+实例中使用的环境是Ubuntu 20.04.3，armv71。
+
 Neuron 软件包可从 Neuron 网站[https://neugates.io/zh/downloads](https://neugates.io/zh/downloads)上下载。
 
 解压软件包到任何目录下（例如：/home/Neuron），输入命令：
 
 ```bash
-~\$ unzip neuron-arm-2022-03-08.zip
-dpkg neuron-2.main-2022-03-08_arm.deb
-cd opt
+~\$ unzip neuron-arm.zip
+sudo dpkg -i neuron-2.0.0-beta.1-armhf.deb
+cd opt/neuron
 ```
 
-运行Neuron
+**注意：** 安装deb包后，自启动Neuron
+
+查看Neuron状态
 
 ```bash
-~\$ cd {PATH}/neuron
-cd bin
-./neuron
+~\$ systemctl status neuron
+```
+
+停止Neuron
+
+```bash
+~\$ systemctl stop neuron
+```
+
+重启Neuron
+
+```bash
+~\$ systemctl restart neuron
 ```
 
 ### 在 Docker 中运行EMQX Edge
@@ -58,8 +72,6 @@ cd bin
 在`配置`菜单中选择`南向设备管理`，进入到南向设备管理界面，此时未添加任何设备。点击`添加设备`按键，手动添加设备，填写设备名称并下拉选择插件，在本例中，我们创建 Modbus TCP 的设备连接，插件选择 modbus-tcp-plugin，如下图所示。
 
 ![add-south-device](./assets/add-south-device.png)
-
-注意：若下拉框中没有所需要的插件，需要手动添加，若您有.so文件（若没有所需要的驱动插件，请联系我们），需要手动将.so文件拷贝到build目录底下，然后在页面上，进到`配置`菜单中选择`插件管理`，在插件管理界面中，点击右上角的`添加配置`，输入拷贝过来的.so文件名来创建新的插件，如下图所示。
 
 ![add-plugin](./assets/add-plugin.png)
 
