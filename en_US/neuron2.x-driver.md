@@ -182,9 +182,7 @@ example: function is 0x3, and register address is 0, then address used by neuron
 
 ### Parameter Setting
 
-**host** is remote plc host.
-
-**port** is remote plc port. default 4840.
+**endpoint url** is the address of the remote access plc, the default value is `opc.tcp://127.0.0.1:4840/` .
 
 **username** is the user used when connecting to plc.
 
@@ -313,6 +311,8 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
 ### Support Data Type
 
+* UINT8
+* INT8
 * INT16
 * UINT16
 * INT32
@@ -341,12 +341,12 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 | AREA | DATA TYPE    | ATTRIBUTE  | REMARK           |
 | ---- | ------------ | ---------- | ---------------- |
 | CIO  | all          | read/write | CIO Area         |
-| A    | all          | read/write | Auxiliary Area   |
+| A    | all          | read       | Auxiliary Area   |
 | W    | all          | read/write | Work Area        |
 | H    | all          | read/write | Holding Area     |
 | D    | all          | read/write | Data Memory Area |
 | P    | int16/uint16 | read/write | PVs              |
-| F    | int16/uint16 | read/write | Completion Flag  |
+| F    | int8/uint8   | read       | Completion Flag  |
 | EM   | all          | read/write | Extended Memory  |
 
 example
@@ -364,6 +364,10 @@ bit:
     D5.2
     D5.3
     EM10W0.0
+    
+uint8/int8:
+   F0
+   F1
 
 int16/uint16/int32/uint32/float/double:
     CIO1
@@ -390,4 +394,97 @@ string:
     D5.20
     D5.30
     EM10W0.10
+```
+
+---
+
+## QnA3E
+
+The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
+
+---
+
+### Support Data Type
+
+* INT16
+* UINT16
+* INT32
+* UINT32
+* FLOAT
+* DOUBLE
+* BIT
+* STRING
+
+---
+
+### Parameter Setting
+
+**host** is remote plc ip.
+
+**ip** is remote plc port, default 2000.
+
+---
+
+### Address Format
+
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+
+---
+
+| AREA | DATA TYPE | ATTRIBUTE  | REMARK                           |
+| ---- | --------- | ---------- | -------------------------------- |
+| X    | bit       | read/write | Input relay (Q/iQ-F)             |
+| DX   | bit       | read/write | (Q/iQ-F)                         |
+| Y    | bit       | read/write | Output relay (Q/iQ-F)            |
+| DY   | bit       | read/write | (Q/iQ-F)                         |
+| B    | bit       | read/write | Link relay (Q/iQ-F)              |
+| SB   | bit       | read/write | Link special relay               |
+| M    | bit       | read/write | Internal relay (Q/iQ-F)          |
+| SM   | bit       | read/write | Special relay (Q/iQ-F)           |
+| L    | bit       | read/write | Latch relay (Q/iQ-F)             |
+| F    | bit       | read/write | Annunciator (Q/iQ-F)             |
+| V    | bit       | read/write | Edge relay (Q/iQ-F)              |
+| S    | bit       | read/write | (Q/iQ-F)                         |
+| TS   | bit       | read/write | Timer Contact (Q/iQ-F)           |
+| TC   | bit       | read/write | Timer Coil (Q/iQ-F)              |
+| SS   | bit       | read/write | (Q/iQ-F)                         |
+| STS  | bit       | read/write | Retentive timer Contact (Q/iQ-F) |
+| SC   | bit       | read/write | (Q/iQ-F)                         |
+| CS   | bit       | read/write | Counter Contact (Q/iQ-F)         |
+| CC   | bit       | read/write | Counter Coil (Q/iQ-F)            |
+| TN   | all       | read/write | Timer Current value (Q/iQ-F)     |
+| STN  | all       | read/write | Retentive timer (Q/iQ-F)         |
+| SN   | all       | read/write | (Q/iQ-F)                         |
+| CN   | all       | read/write | Counter Current value  (Q/iQ-F)  |
+| D    | all       | read/write | Data register (Q/iQ-F)           |
+| DSH  |           |            |                                  |
+| DSL  |           |            |                                  |
+| SD   | all       | read/write | Specical register (Q/iQ-F)       |
+| W    | all       | read/write | Link register (Q/iQ-F)           |
+| WSH  |           |            |                                  |
+| WSL  |           |            |                                  |
+| SW   | all       | read/write | Link special register (Q/iQ-F)   |
+| R    | all       | read/write | File register (Q/iQ-F)           |
+| ZR   | all       | read/write | File register (Q/iQ-F)           |
+| RSH  |           |            |                                  |
+| ZRSH |           |            |                                  |
+| RSL  |           |            |                                  |
+| ZRSL |           |            |                                  |
+| Z    | all       | read/write | Index register (Q/iQ-F)          |
+
+example
+
+```
+bit:
+    X0
+    X1
+    Y0
+    Y1
+
+int16/uint16/int32/uint32/float/double:
+    D100
+    D1000
+ 
+string:
+    D1002.16
 ```

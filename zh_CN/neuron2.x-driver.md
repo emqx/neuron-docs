@@ -311,6 +311,8 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
 ### Support Data Type
 
+* UINT8
+* INT8
 * INT16
 * UINT16
 * INT32
@@ -339,12 +341,12 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 | AREA | DATA TYPE    | ATTRIBUTE  | REMARK           |
 | ---- | ------------ | ---------- | ---------------- |
 | CIO  | all          | read/write | CIO Area         |
-| A    | all          | read/write | Auxiliary Area   |
+| A    | all          | read       | Auxiliary Area   |
 | W    | all          | read/write | Work Area        |
 | H    | all          | read/write | Holding Area     |
 | D    | all          | read/write | Data Memory Area |
 | P    | int16/uint16 | read/write | PVs              |
-| F    | int16/uint16 | read/write | Completion Flag  |
+| F    | int8/uint8   | read       | Completion Flag  |
 | EM   | all          | read/write | Extended Memory  |
 
 example
@@ -362,6 +364,10 @@ bit:
     D5.2
     D5.3
     EM10W0.0
+    
+uint8/int8:
+   F0
+   F1
 
 int16/uint16/int32/uint32/float/double:
     CIO1
