@@ -25,10 +25,6 @@
           "path": "dashboard-interface/login"
         },
         {
-          "title": "首页",
-          "path": "dashboard-interface/home"
-        },
-        {
           "title": "监控",
           "path": "dashboard-interface/monitoring"
         },
