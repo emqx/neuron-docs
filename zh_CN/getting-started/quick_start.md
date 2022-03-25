@@ -1,126 +1,149 @@
 # 快速教程
 
-下文介绍了如何在 Docker 容器中快速使用 Neuron 实例
-
 ## 环境搭建
 
-### 在 Docker 中运行 Neuron
+### 软件包安装Neuron
 
-获取 Docker 镜像(请在官网中获取最新版本)
+实例中使用的环境是Ubuntu 20.04.3，armv71。
 
-```bash
-~\$ docker pull neugates/neuron:1.3.3
-```
+Neuron 软件包可从 Neuron 网站[https://neugates.io/zh/downloads](https://neugates.io/zh/downloads)上下载。
 
-启动 Docker 容器(请在官网中获取最新版本)
+解压软件包到任何目录下（例如：/home/Neuron），输入命令：
 
 ```bash
-~\$ docker run -d --name neuron -p 7000:7000 neugates/neuron:1.3.3
+sudo dpkg -i neuron-2.0.0-beta.2-linux-armhf.deb
 ```
 
-### 在 Docker 中运行 EMQ X Edge
+**注意：** 安装 deb 包后，自启动Neuron
 
-除运行 Neuron 实例外，我们还需要部署一个 MQTT Broker 来做消息的连接处理，这里推荐使用 [EMQ X Edge](https://www.emqx.cn/downloads#edge)，轻量级的边缘计算消息中间件。同样 EMQ X Edge 可以快速使用 Docker 容器进行安装使用。
-
-获取 Docker 镜像(请在官网中获取最新版本)
+#### 查看 Neuron 状态
 
 ```bash
-~\$ docker pull emqx/emqx-edge:4.2.2
+systemctl status neuron
 ```
 
-启动 Docker 容器(请在官网中获取最新版本)
+#### 停止 Neuron
 
 ```bash
-~\$ docker run -d --name emqx -p 1883:1883 -p 18083:18083 emqx/emqx-edge:4.2.2
+systemctl stop neuron
 ```
 
-## 资源准备
+#### 重启 Neuron
 
-1. 安装 Modbus 模拟器： PeakHMISlaveSimulator。 安装后，打开 Modbus TCP slave。
+```bash
+systemctl restart neuron
+```
 
-2. 准备一份配置好的对象数据表，可以点击 [neuron_batch_modbus_5.xlsx](https://github.com/emqx/edge-stack/blob/master/developer-scripts/neuron_batch_modbus_5.xlsx) 选择下载到本地。
+### 在 Docker 中运行 EMQX Edge
+
+我们需要部署一个 MQTT Broker 来做消息的连接处理，这里推荐使用[EMQX Edge](https://www.emqx.cn/downloads#edge)，轻量级的边缘计算消息中间件。同样EMQX Edge可以快速使用Docker容器安装使用。
+
+获取 Docker 镜像（请在官网中获取最新版本）
+
+```bash
+docker pull emqx/emqx-edge:4.2.2
+```
+
+启动 Docker 容器（请在官网中获取最新版本）
+
+```bash
+docker run -d --name emqx -p 1883:1883 -p 18083:18083 emqx/emqx-edge:4.2.2
+```
+
+### 资源准备
+
+安装 PeakHMISlaveSimulator，安装后，打开 Modbus TCP slave.
+*提示：* Windows中尽量关闭防火墙，否则可能会导致 Neuron 连接不上模拟器。
 
 ## 运行和使用
 
-当环境和资源都准备好后，我们可以打开 Web 浏览器，输入您运行的网关地址和端口号，即可进入到管理控制台页面，Neuron 管理控制台的端口号为 7000，例如：[http://127.0.0.1:7000](http://127.0.0.1:7000)
+当环境和资源都准备好后，打开 Web 浏览器，输入运行 Neuron 的网关地址和端口号，即可进入到管理控制台页面，默认端口号为7000，例如：[http://127.0.0.1:7000](http://127.0.0.1:7000)。
 
-### 提示
+### 1.登录
 
-Windows中尽量关闭防火墙，否则可能会导致Neuron连接不上模拟器。
+打开页面，进入到登录界面，用户可使用初始用户名与密码登录（初始用户名：admin，初始密码：0000），如下图所示。
 
-### 登录
+![login](./assets/login.png)
 
-打开页面后，会进入到一个登录页面，此时可以使用初始化用户名密码进行登录，用户名：admin，密码：0000，进入后为安全起见，可以修改初始化的密码。
+### 2.License
 
-![geting-started](./assets/web-interface.png)
+在未上传 License 时，Neuron是无法读写和上报数据的，请先在界面申请 License，如下图所示，在页面右上角，在`关于`下拉框中选择 License，进入到 License 界面。
 
-### 1.配置驱动
+![license](./assets/license.png)
 
-说明：登录成功后，此时系统中没有预设好的数据，可能会返回 `Function not allowed in current mode` 错误提示，该错误提示为正常提示，因为目前系统处于 `INACTIVE` 状态。
+进入 License 界面，首先需要申请 License ，我们提供免费试用和正式使用的两种方式，在收到 License 文件之后，点击`上传`按键上传 License，如下图所示。
 
-第一步，点击 `新建驱动` 按钮，进行南北向配置。
-第二步，北向协议配置。北向协议下拉框中选择`MQTT Client`，`Host name`填写刚才使用 Docker 安装好的 EMQ X Edge 的 Host 地址和端口号。端口号默认为 1883，下方表格为连接 MQTT 的可选参数，可配置用户名密码，证书等。
-第三步，驱动协议配置。驱动协议下拉框中选择所需驱动协议，这里以modbus tcp协议为例，选择`Modbus TCP`，`Host name`填写Modbus 模拟器所在机器的 IP 地址，端口号一般为 502，下方表格为驱动参数，如有需要可自行修改参数默认值。
-第四步，点击 `提交` 按钮，完成一个 Modbus 的驱动的配置。
+![upload-license](./assets/upload-license.png)
 
-![driver-setup1](./assets/driver-setup1.png)
+### 3.南向配置
 
-![driver-setup2](./assets/driver-setup2.png)
+在`配置`菜单中选择`南向设备管理`，进入到南向设备管理界面，此时未添加任何设备。点击`添加设备`按键，手动添加设备，填写设备名称并下拉选择插件，在本例中，我们创建 Modbus TCP 的设备连接，插件选择 modbus-tcp-plugin，如下图所示。
 
-### 2.配置对象
+![add-south-device](./assets/add-south-device.png)
 
-为快速进行使用数据，我们可以使用刚才下载到本地的对象数据表，进行数据导入操作，来快速配置 Object。此时点击上方的 `导入` 按钮，选择刚才本地下载好的 Excel 文件，就可以成功导入事先配置好的数据了。
+创建设备成功之后，会在南向设备管理界面出现一个刚刚创建的设备的卡片，此时设备的工作状态在初始化状态中，连接状态在断开连接状态中，如下图所示。
 
-我们也可以一个个进行 Object 的数据的配置。
-第一步，在Object设置界面，点击`创建`按钮，开始配置Object，如下图所示，设置对象的名称，大小，数据更新时间间隔，数据保存时间间隔，是否带时间戳。
+![south-device](./assets/south-devices.png)
 
-![object-details](./assets/object-details.png)
+在新创建的设备卡片中选择`设备配置`，进行设备配置，如下图所示，带 “ * ”是必填项，每项后面都有一个字段说明键，鼠标放置在上面，将会显示详细的说明信息。在本例中，我们使用的是 Modbus TCP 的模拟器，Host项应该填写该模拟器所运行的IP地址，Port填写对应的端口号。
+注意：运行的Neuron和模拟器必须要在同一个网段下。
 
-第二步，创建object完成之后，如下图所示，再进行属性配置。
+![south-setting](./assets/south-setting.png)
 
-![object-result](./assets/object-result.png)
+配置完成后，在填写的信息正确的条件下，将该设备的工作状态置为运行后，连接状态变为“已连接”，设备进入工作状态，如下图所示，用户也可通过开关按键，停止设备的工作。
 
-![attribute-setup](./assets/attribute-setup.png)
+![connections](./assets/connections.png)
 
-第三步，属性设置完成之后，会提示设置地址，点击`地址`按钮，输入该点位的驱动地址。
+完成以上操作之后，便可以进入 Group 配置，轻点设备卡片的任意空白处，即可进入到该设备的 Group 列表中，点击`创建`按钮创建 Group，填写 Group 名称及上报数据的时间间隔，如下图所示。
 
-![attribute-result](./assets/attribute-result.png)
+![add-group](./assets/add-group.png)
 
-至此，对象及属性设置完成。
-### 3.配置事件
+Group 创建完成后，对应 Group 列表中会显示刚新建的 Group，如下图所示。用户此时也可点击编辑键查看刚创建的 Group 的配置。
 
-根据需要，选择是否配置事件，如果需要配置，在配置完成 Object 后，就可以进行事件配置。我们选择顶部菜单栏中的配置一栏，点击事件设置，进入到事件配置页面，选择 `创建` 按钮，会有一个事件设置弹出框，我们需要选择 Object 的的属性数据进行对比，触发一条告警信息，类型选择为 alarm。还可以填写子程序编号，当事件触发时，可执行子程序，这里没有配置子程序，我们就填写一个默认数值0即可。完成后点击提交按钮即可创建该事件。
+![group-list](./assets/group-list.png)
 
-如果不需要报警事件，此步骤可跳过，进行下一步操作。
+下一步点击tags列表键进入到tags列表界面，如下图所示，此时我们可以选择`创建`按钮手动创建 Tags，也可以通过点击`导入`按键，用 Excel 的形式批量导入 Tags 信息，本例中将介绍手动添加的方式。
 
-![event-setup](./assets/event-setup.png)
+![tag-list-null](./assets/tag-list-null.png)
 
-### 4.发送数据
+点击`创建`按钮进到创建 Tags 页面，对应填写 Tag 信息。在创建 Tags 页面中，点击`添加`按钮可创建一个新的Tag，以此实现同时创建多个Tag的功能，如下图所示。
 
-当配置完驱动，Object 和 事件后，我们就可以向 Neuron 发送刚才的配置好的所有数据，只需点击最右上角的 `发送` 按钮并确认。发送成功后，会提示系统正在重启，返回到登录页面，等待几秒后，重新登录后进入，此时页面中有了刚才已经配置好的所有数据。当底部系统状态分别为 `COMM UP`、`MANU`、`ACTIVE`、`MQCONNECT`、`NO ALARM` 时，表示 Neuron 数据配置成功并且运行正常。
+![add-tags](./assets/add-tags.png)
 
-![monitor](./assets/data-monitoring.png)
+创建完成后，如下图所示，此时可进行编辑/删除Tag操作。
 
-### 5.查看数据点监控
+![tag-list](./assets/tag-list.png)
 
-此时我们使用预先准备安装好的 Modbus TCP 模拟器，找到 Object 对应属性对应的地址项，并重新修改该值，设置该值为 12 后，在状态菜单栏下的数据监控页面，可以看到表格中对应属性的值实时发生了变化，变为刚才修改后的值。还可点击当前数据，实时查看当前属性的数据变化图表。
+此时南向配置已全部完成，用户可在`监控`菜单下选择`数据监控`，下拉框选择想要查看的南向设备及 Group，页面将会对应显示监测到的数据，如下图所示。对照模拟器，可以看到监控到的数据与模拟器的数值一致，如下图所示。
 
-![modbus-tcp](./assets/modbus-tcp.png)
+![data-monitoring](./assets/data-monitoring.png)
 
-![monitor-value](./assets/monitoring-value.png)
+![monitor](./assets/monitor.png)
 
-### 6.查看事件告警
+在 Tag 属性设置了写属性的时候，数据监控界面的 Tag 会有一个写操作，点击`Write`可改写该Tag的数值，如下图所示。
 
-我们设置了事件之后，可以看到底部出现一个红色的 `UNACK ALARM` 的状态提醒，说明出现未确认的告警信息，我们可以选择状态菜单栏，点击当前告警项，进入到告警页面查看告警信息，说明刚才配置的事件已经生效。如果已经发现存在该告警后，可以点击 `acknowledge` 按钮进行告警确认，底部的 `UNACK ALARM` 变为了 `ALARM`，表示存在告警信息，但是已经确认。
+![write](./assets/write.png)
 
-![alarm-current](./assets/alarm-current.png)
+![write-after](./assets/write-after.png)
 
-![alarms](./assets/alarms.png)
+### 4.北向配置
 
-### 7.查看上报数据
+在`配置`菜单中选择`北向应用管理`，进入到北向应用管理界面，初次打开这个界面时没有任何应用，此时需要手动添加应用，点击右上角的`添加配置`按键，填写应用名称，选择应用插件，如下图所示。
 
-此时如果我们可以查看到底部的 `MQCONNECT` 状态，说明 Neuron 已经成功连接到 MQTT Broker。我们可以使用 MQTT 客户端连接到刚才部署好的 EMQ X Edge，这里推荐使用 MQTT X。打开 MQTT X 并设置连接成功后，订阅上面 Neuron 发布的主题，主题格式为 `Neuron/Telemetry/{neuron-uuid}`，`neuron-uuid` 可以通过管理控制台中的 `管理` -> `关于` 中进行获取，订阅成功后，可以看到 MQTT X 可以一直接收到 Neuron 采集并上报过来的数据(详细订阅主题可查看API文档)。
+![add-north](./assets/add-north.png)
 
-如需自主订阅主题，请在第一项的配置驱动里的北向协议配置找到TOPIC项，填写自己所需的订阅主题名称。
+添加完成后，页面自动跳回到北向应用管理界面，此时添加的应用的工作状态为初始化状态，连接状态为断开连接，下一步点击`应用配置`按键，进入到应用配置界面，根据界面填写相关信息完成应用配置，如下图所示。
+
+![north-setting](./assets/north-setting.png)
+
+此时，应用的工作状态转为准备中，打开应用的工作按钮使设备进入到工作状态中，在应用配置正确的情况下，连接状态应转为已连接状态，如下图所示，用户也可手动停止应用。
+
+![north](./assets/north.png)
+
+下一步，点击应用卡片的任意空白处进入到订阅Group界面，点击右上角的`添加订阅`按键添加订阅，下拉框选择南向设备及想要订阅的Group，如下图所示。
+
+![add-subscriptions](./assets/add-subscriptions.png)
+
+订阅完成后，我们可以使用MQTT客户端（这里推荐使用 MQTTX）连接到刚才部署好的 EMQX Edge 来查看上报的数据。打开MQTTX 添加新的连接，正确填写名称与刚部署好的 EMQX Edge 的 Host 与 Port，完成连接。下一步，添加新的订阅，Topic的主题格式为`neuron/{mqtt_clientid}/read/resp`，其中{mqtt_clientid}是在 Neuron 界面中北向应用中配置的`Client-id`，订阅成功之后可以看到 MQTTX 可以一直接收到 Neuron 采集并上报过来的数据，如下图所示（详细订阅主题可查看 MQTT-Topics 文档）。
 
 ![mqttx](./assets/mqttx.png)

@@ -1,173 +1,106 @@
 # 安装
 
-下文介绍了如何在 x86 或 ARM Linux 设备上安装 Neuron 软件包。
+下文介绍了如何在 X86 / ARM Linux 设备上安装 Neuron 软件包。
 
 ## 下载
 
-Neuron 软件包可从 EMQ 网站 [https://www.emqx.com/zh](https://www.emqx.com/zh) 下载.
+Neuron 软件包可从 Neuron 网站[https://neugates.io/zh/downloads](https://neugates.io/zh/downloads)上根据实际系统对应下载。
 
-| 下载文件                                         | 架构   |
-| ------------------------------------------------ | --------------------- |
-| _neuron-x.y.z-linux-x86_64.tar.gz_               | x86 64-bit            |
-| _neuron-x.y.z-linix-armv7l.tar.gz_               | ARM hardware floating |
-| _neuron-x.y.z-linix-aarch64.tar.gz_              | ARM 64-bit            |
+| 下载文件                                | 架构    |
+| -------------------------------------- | ------ |
+| neuron-{version}-{os}-amd64.deb        | X86_64 |
+| neuron-{version}-{os}-armhf.deb        | ARM_32 |
+| neuron-{version}-{os}-arm64.deb        | ARM_64 |
 
-对于版本号x.y.z，x是主要版本号，如果整个系统结构得到增强，则可能会更改； y是次要版本号，如果存在某些附加功能，则可能会更改。 z是Neuron软件中错误修复的补丁号。
+{version}:指 Neuron 的版本号；
+{os}:指适用的操作系统，现在只支持 Linux；
+
+例如：neuron-2.0.0-beta.2-linux-amd64.deb 指的是适用于 linux 操作系统，X86_64的 V2.0.0-beta.2 版本的 Neuron。
 
 ## 安装条件
 
-已为 Neuron 测试了以下 Linux 发行版或设备。
+| 系统要求      | 包名称             |
+| ------------ | ---------------- |
+| ubuntu 18.xx | deb包, tar.gz包   |
+| ubuntu 20.xx | deb包, tar.gz包   |
+| centos 8     | rpm包, tar.gz包   |
+| centos 9     | rpm包, tar.gz包   |
 
-| Linux 发行版或设备                                                                   | 所需的 Neuron 包                  |
-| ------------------------------------------------------------------------------------ | --------------------------------- |
-| **Debian package system for x86_64** </br>Ubuntu 20.xx</br>Ubuntu 18.xx Desktop</br>Ubuntu 16.xx Desktop (install openssl1.1)</br>Ubuntu 14.xx Desktop (install openssl1.1)  | neuron-x.y.z-linux-x86_64.tar.gz |
-| **Redhat package system for x86_64** </br>Centos 8</br>Centos 7.x (install openssl1.1) | neuron-x.y.z-linux-x86_64.tar.gz  |
-| **Raspberry Pi 2** </br>Pi 4b+</br>Pi 3b+</br>Pi 2b+ (install openssl1.1)               | neuron-x.y.z-linux-armv7l.tar.gz  |
-| armv7l Ubuntu Linux System                                                           | neuron-x.y.z-linux-armv7l.tar.gz  |
-| aarch64 Ubuntu Linux System                                                          | neuron-x.y.z-linux-aarch64.tar.gz |
+## 安装步骤
 
-注意: 一些Linux发行版要求安装 **openssl1.1**.</br>
-Debian 包, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)</br>
-Redhat 包, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)</br>
-确保openssl升级到1.1版本之后，若执行rpm -ivh neuron-1.3.0-linux-amd64.rpm提示依赖缺失，执行rpm -ivh neuron-1.3.0-linux-amd64.rpm --nodeps --force
+本节介绍了如何在 Linux 系统上首次安装 Neuron 软件。
 
-### 安装步骤
+### 方法一：使用 .deb 安装
 
-本节介绍了如何在 Linux 系统上首次安装 Neuron 软件。新的 Neuron 软件必须安装在任何用户账户的主目录下。我们推荐使用 "neuron" 账户进行安装。
-
-1. 解压软件包到任何目录下，(例 /home/neuron)，输入命令：
-
-   ```bash
-   ~\$ tar -zxvf neuron-x.y.z-linux-x86_64.tar.gz
-   ```
-
-2. 第一次运行 Neuron 建立数据目录 ~/dat. 输入命令：
-
-   ```bash
-   ~\$ {PATH}/neuron start
-   Directory {PATH}/dat created
-   Directory {PATH}/dat/0 created
-   Directory {PATH}/dat/0/adm created
-   Directory {PATH}/dat/0/adm/usr created
-   Directory {PATH}/dat/0/alm created
-   Directory {PATH}/dat/0/cfg created
-   Directory {PATH}/dat/0/log created
-   Directory {PATH}/dat/0/scp created
-   Directory {PATH}/dat/0/scp/subr created
-   Directory {PATH}/dat/0/obj created
-   Directory {PATH}/dat/0/trd created
-   Neuron instance 0 is now running with PID:6312 Port:7000
-   ```
-
-### 启动系统
-
-Neuron 可以通过以下方式启动
+输入命令：
 
 ```bash
-~\$ {PATH}/neuron start
-Neuron instance 0 is now running with PID:6037 Port:7000
+sudo dpkg -i xxx.deb
 ```
 
-### 停止系统
+根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.deb
 
-输入以下命令，Neuron 将停止运行
+**注意：** 成功安装 deb 包后，自启动 Neuron
+
+#### 卸载 deb 的指令
 
 ```bash
-~\$ {PATH}/neuron stop
-Neuron instance 0 is stopping ...
-Stopped !
+sudo dpkg -r neuron
 ```
 
-## 启动特定系统
+### 方法二：使用 .rmp 安装
 
-特定 Neuron 可以通过以下方式启动
+输入命令：
 
 ```bash
-~\$ {PATH}/neuron start -i7
-Neuron instance 7 is now running with PID:8097 Port:7007
+sudo rpm -i xxx.rpm --nodeps --force
 ```
 
-## 停止特定系统
+根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.rpm
 
-输入以下命令，特定 Neuron 将停止运行
+**注意：** 成功安装 rmp 包后，自启动 Neuron
+
+#### 卸载 rmp 指令
 
 ```bash
-~\$ {PATH}/neuron stop -i7
-Neuron instance 7 is stopping ...
-Stopped !
+sudo rpm -e neuron
 ```
 
-## 启动多个系统
+### 方法三：使用 .tar.gz 安装
 
-多个 Neuron 可以通过以下方式启动
+输入命令：
 
 ```bash
-~\$ {PATH}/neuron start -a5
-Neuron instance 0 is now running with PID:6066 Port:7000
-Neuron instance 1 is now running with PID:6069 Port:7001
-Neuron instance 2 is now running with PID:6076 Port:7002
-Neuron instance 3 is now running with PID:6087 Port:7003
-Neuron instance 4 is now running with PID:6090 Port:7004
+sudo tar -zxvf xxx.tar.gz
+cd xxx
 ```
 
-## 停止多个系统
+根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.tar.gz
 
-输入以下命令，多个 Neuron 将停止运行
+#### 启动 Neuron
 
 ```bash
-~\$ {PATH}/neuron stop -a5
-Neuron instance 0 is stopping ...
-Stopped !
-Neuron instance 1 is stopping ...
-Stopped !
-Neuron instance 2 is stopping ...
-Stopped !
-Neuron instance 3 is stopping ...
-Stopped !
-Neuron instance 4 is stopping ...
-Stopped !
+./neuron
 ```
 
-### 检查系统
+### Neuron 操作
 
-输入以下命令，检查Neuron 是否运行
+用 rpm 和 deb 方式安装的都可以通过以下指令查看/起停 Neuron：
+
+#### 查看 Neuron 状态
 
 ```bash
-~\$ {PATH}/neuron status
-Neuron instance 0 is running with PID:6118 Port:7000
-Neuron instance 1 is running with PID:6121 Port:7001
-Neuron instance 2 is running with PID:6132 Port:7002
-Neuron instance 3 is running with PID:6139 Port:7003
-Neuron instance 4 is running with PID:6144 Port:7004
+sudo systemctl status neuron
 ```
 
-### 命令参数
-
-本节介绍了 "neuron" 命令的可用参数。
-
-用法: neuron [start|stop|status] [options]
-| 参数                | 描述                        |
-| ------------------------------- | ------------------------------------- |
-| -a 或 --allinstance `<number>`  | 数量 `<2-10>`，同时启动a个实例
-| -i 或 --instance `<instanceno>` | 实例号 `<0-9>`，启动第i个实例                         |
-| -u 或 --uuid `<uuid>`           | 通用唯一ID `<最大36字符>`            |
-
-在两者 `[-a|-i]` 之间，只能选择其中之一
-
-## 在Docker运行
-
-docker 镜像请从 docker hub 网站下载 [https://hub.docker.com](https://hub.docker.com).
+#### 停止 Neuron
 
 ```bash
-~\$ docker pull emqx/neuron:1.0.0
+sudo systemctl stop neuron
 ```
 
-启动 docker 容器
+#### 重启 Neuron
 
 ```bash
-~\$ docker run -d --name neuron -p 7000:7000 emqx/neuron:1.0.0
+sudo systemctl restart neuron
 ```
-
-## 申请试用软件授权
-
-Neuron 缺省安装包提供了

@@ -22,11 +22,6 @@ Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到�
 
 - Neuron 提供了基于 web 的管理控制台界面，用户可以通过控制台实现在浏览器中进行可视化的配置。
 
-## 脚本编程
-
-- [脚本](neuron-scripts/script-routines.md)：是用于控制装置和进行公式计算。
-
 ## 驱动列表及使用说明
 
-- [驱动列表](address-format/address-format.md)：内包含一系列常见的驱动以及相关的配置信息。
-
+- [驱动列表](neuron-driver.md)：内包含一系列常见的驱动以及相关的配置信息。

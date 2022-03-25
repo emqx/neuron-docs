@@ -73,7 +73,7 @@ jobs:
     - name: generate version config
       run: |
         cd docs-files
-        python3 .ci/generate_version.py $(git tag | egrep "v[0-9](\.[0-9])*$" | xargs echo -n) > ../frontend/docs/.vuepress/public/api/${DOCS_TYPE}_versions.json
+        python3 .ci/generate_version.py $(git tag | egrep "v(.*)$" | xargs echo -n) > ../frontend/docs/.vuepress/public/api/${DOCS_TYPE}_versions.json
         cat ../frontend/docs/.vuepress/public/api/${DOCS_TYPE}_versions.json
 
     - name: build docs
