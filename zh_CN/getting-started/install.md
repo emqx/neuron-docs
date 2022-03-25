@@ -6,11 +6,16 @@
 
 Neuron 软件包可从 Neuron 网站[https://neugates.io/zh/downloads](https://neugates.io/zh/downloads)上根据实际系统对应下载。
 
-| 下载文件                 | 架构    |
-| ----------------------- | ------ |
-| neuron-amd.zip          | X86_64 |
-| neuron-armhf.zip        | ARM_32 |
-| neuron-arm64.zip        | ARM_64 |
+| 下载文件                                | 架构    |
+| -------------------------------------- | ------ |
+| neuron-{version}-{os}-amd64.deb        | X86_64 |
+| neuron-{version}-{os}-armhf.deb        | ARM_32 |
+| neuron-{version}-{os}-arm64.deb        | ARM_64 |
+
+{version}:指 Neuron 的版本号；
+{os}:指适用的操作系统，现在只支持 Linux；
+
+例如：neuron-2.0.0-beta.2-linux-amd64.deb 指的是适用于 linux 操作系统，X86_64的 V2.0.0-beta.2 版本的 Neuron。
 
 ## 安装条件
 
@@ -33,7 +38,7 @@ Neuron 软件包可从 Neuron 网站[https://neugates.io/zh/downloads](https://n
 sudo dpkg -i xxx.deb
 ```
 
-根据不同版本安装，例如 neuron-2.0.0-beta.1-armhf.deb
+根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.deb
 
 **注意：** 成功安装 deb 包后，自启动 Neuron
 
@@ -51,7 +56,7 @@ sudo dpkg -r neuron
 sudo rpm -i xxx.rpm --nodeps --force
 ```
 
-根据不同版本安装，例如 neuron-2.0.0-beta.1-armhf.rpm
+根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.rpm
 
 **注意：** 成功安装 rmp 包后，自启动 Neuron
 
@@ -70,7 +75,7 @@ sudo tar -zxvf xxx.tar.gz
 cd xxx
 ```
 
-根据不同版本安装，例如 neuron-2.0.0-beta.1-armhf.tar.gz
+根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.tar.gz
 
 #### 启动 Neuron
 
