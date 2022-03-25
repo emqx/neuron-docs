@@ -44,19 +44,19 @@
     },
     {
       "title": "Neuron 驱动地址格式",
-      "path": "neuron2.x-driver"
+      "path": "neuron-driver"
     },
     {
       "title": "API 文档",
-      "path": "neuron2.x-api"
+      "path": "neuron-api"
     },
     {
       "title": "Error Codes",
-      "path": "neuron2.x-error-code"
+      "path": "neuron-error-code"
     },
     {
       "title": "MQTT订阅主题",
-      "path": "neuron2.x-mqtt-topics"
+      "path": "neuron-mqtt-topics"
     }
   ],
   "en": [
@@ -71,19 +71,19 @@
     },
     {
       "title": "Neuron Driver Address Format",
-      "path": "neuron2.x-driver"
+      "path": "neuron-driver"
     },
     {
       "title": "API",
-      "path": "neuron2.x-api"
+      "path": "neuron-api"
     },
     {
       "title": "Error Codes",
-      "path": "neuron2.x-error-code"
+      "path": "neuron-error-code"
     },
     {
       "title": "MQTT Topics",
-      "path": "neuron2.x-mqtt-topics"
+      "path": "neuron-mqtt-topics"
     }
   ]
 }
