@@ -2,13 +2,9 @@
 
 This document mainly introduces some parameter configuration and point information configuration specifications for northbound applications and southbound drives.
 
----
-
 ## Common Address Format Option
 
 Common options supported by each driver's address format.
-
----
 
 **#** endian
 
@@ -30,13 +26,9 @@ Common options supported by each driver's address format.
 - E = a low byte is stored in an int16
 ```
 
----
-
 ## MQTT
 
 The data collected from the device can be transmitted to the mqtt broker through mqtt application, and instructions can be sent to neuron throuth mqtt application.
-
----
 
 ### Parameter Setting
 
@@ -56,13 +48,9 @@ The data collected from the device can be transmitted to the mqtt broker through
 
 **ca-file** is ca file.
 
----
-
 ## Modbus
 
 The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.
-
----
 
 ### Support Data Type
 
@@ -74,8 +62,6 @@ The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus R
 * BIT
 * STRING
 
----
-
 ### Parameter Setting
 
 **connection mode**: The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client.
@@ -84,13 +70,9 @@ The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus R
 
 **port**:  When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. default 502.
 
----
-
 ### Address Format
 
 > SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
-
----
 
 **SLAVE** is slave id.
 
@@ -155,11 +137,7 @@ string:
 
 example: function is 0x3, and register address is 0, then address used by neuron is 400001.
 
----
-
 ## OPC UA
-
----
 
 ### Support Data Type
 
@@ -178,8 +156,6 @@ example: function is 0x3, and register address is 0, then address used by neuron
 * BIT
 * STRING
 
----
-
 ### Parameter Setting
 
 **endpoint url** is the address of the remote access plc, the default value is `opc.tcp://127.0.0.1:4840/` .
@@ -192,13 +168,9 @@ example: function is 0x3, and register address is 0, then address used by neuron
 
 **key-file** is the private key to provide signature and encrypted transmission.s
 
----
-
 ### Addresses Format
 
 > IX!NODEID</span>
-
----
 
 **IX** is the namespace index.
 
@@ -210,13 +182,9 @@ example: function is 0x3, and register address is 0, then address used by neuron
 
 **!** Please refer to OPC UA standard for the explanation of namespace index and node id.
 
----
-
 ## S7COMM
 
 The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300/400/1200/1500.
-
----
 
 ### Support Data Type
 
@@ -229,8 +197,6 @@ The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300
 * BIT
 * STRING
 
----
-
 ### Parameter Setting
 
 **host** is remote plc ip.
@@ -241,13 +207,9 @@ The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300
 
 **slot** plc cpu slot, default 1.
 
----
-
 ### Address Format
 
 > AREA ADDRESS\[.BIT][.LEN]</span>
-
----
 
 | AREA | DATA TYPE                                         | ATTRIBUTE  | REMARK          |
 | ---- | ------------------------------------------------- | ---------- | --------------- |
@@ -301,13 +263,9 @@ string:
 * The optimized block access must be turned off.
 * The access level must be "full" and the "connection mechanism" must allow GET/PUT.
 
----
-
 ## FINS on TCP
 
 The fins plugin is used for Omron PLCs with network port, such as CP2E.
-
----
 
 ### Support Data Type
 
@@ -322,21 +280,15 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 * BIT
 * STRING
 
----
-
 ### Parameter Setting
 
 **host** is remote plc ip.
 
 **port** is remote plc port, default 9600.
 
----
-
 ### Address Format
 
 > AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
-
----
 
 | AREA | DATA TYPE    | ATTRIBUTE  | REMARK           |
 | ---- | ------------ | ---------- | ---------------- |
@@ -396,13 +348,9 @@ string:
     EM10W0.10
 ```
 
----
-
 ## QnA3E
 
 The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
-
----
 
 ### Support Data Type
 
@@ -415,21 +363,15 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 * BIT
 * STRING
 
----
-
 ### Parameter Setting
 
 **host** is remote plc ip.
 
 **ip** is remote plc port, default 2000.
 
----
-
 ### Address Format
 
 > AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
-
----
 
 | AREA | DATA TYPE | ATTRIBUTE  | REMARK                           |
 | ---- | --------- | ---------- | -------------------------------- |

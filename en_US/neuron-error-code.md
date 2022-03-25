@@ -2,11 +2,7 @@
 
 This document mainly describes some errors that neuron will respond when calling http api and mqtt api.
 
----
-
 ## api request error codes
-
----
 
 * 1001 internal error
 
@@ -20,8 +16,6 @@ This document mainly describes some errors that neuron will respond when calling
 * 1009    user or password error
 
 ## add/del/update node/tag/plugin/group error codes
-
----
 
 * 2001    node type invalid
 
@@ -49,8 +43,6 @@ This document mainly describes some errors that neuron will respond when calling
 * 2303    library name conflict
 
 ## plugin common error codes
-
----
 
 * 3000    plugin read failure
 * 3001    plugin write failure
