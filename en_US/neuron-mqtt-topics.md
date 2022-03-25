@@ -46,8 +46,6 @@ The xxx in all topics refers to the Client-id, which is set in the northbound ap
 }
 ```
 
----
-
 ## Upload Data
 
 ### Response
@@ -78,8 +76,6 @@ The xxx in all topics refers to the Client-id, which is set in the northbound ap
 ```
 
 **Node:**  A group sends a message.
-
----
 
 ## Write Tags
 

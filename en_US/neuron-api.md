@@ -2,13 +2,9 @@
 
 Neuron would provide a series of API services for IIoT platform, to query the basic information, to control gateway behaviors or to setup the polling configuration. IIoT platform must initiate the communication by sending request message to Neuron. By return, Neuron would send back the required information or execute the deserved action. If there is error, a error code would be returned to tell the reason of failure.
 
----
-
 ## Value
 
 ### Data Type
-
----
 
 * BYTE = 2
 * INT8 = 3
@@ -27,8 +23,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ### Data Attribute
 
----
-
 * READ = 0x01
 
 * WRITE = 0x02
@@ -36,8 +30,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 * SUBSCRIBE = 0x04
 
 ### Node Type
-
----
 
 * DRIVER = 1
 * WEB = 2
@@ -47,22 +39,16 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ### Plugin Kind
 
----
-
 * STATIC = 0
 * SYSTEM = 1
 * CUSTOM = 2
 
 ### Node CTL
 
----
-
 * START = 0
 * STOP = 1
 
 ### Node State
-
----
 
 * IDLE = 0
 * INIT = 1
@@ -71,8 +57,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 * STOPPED = 4
 
 ### Node Link State
-
----
 
 * DISCONNECTED = 0
 * CONNECTING = 1
@@ -84,8 +68,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 *POST*  **/api/v2/ping**
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
@@ -94,19 +76,13 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 * 200 OK
 
----
-
 ### Login
 
 *POST*   **/api/v2/login**
 
----
-
 #### Request Headers
 
 **Content-Type**          application/json
-
----
 
 #### Response Status
 
@@ -120,8 +96,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 | 403           | 1006, Expired token           |
 | 403           | 1007, Validate token error    |
 | 403           | 1008, Invalid token           |
-
----
 
 #### Body
 
@@ -144,21 +118,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 *POST*  **/api/v2/logout**
 
----
-
 #### Request Headers
 
 **Content-Type** application/json
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Reponse Status
 
 * 200 OK
-
----
 
 #### Response
 
@@ -168,21 +136,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Add Node
 
 *POST*  **/api/v2/node**
-
----
 
 #### Request Headers
 
 **Content-Type** application/json
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
@@ -193,8 +155,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
   * 2301 plugin library not found
 * 409
   * 2002 node exist
-
----
 
 #### Body
 
@@ -217,13 +177,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Del Node
 
 *Delete* /api/v2/node
-
----
 
 #### Request Headers
 
@@ -231,15 +187,11 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
 * 404
   * 2003 node not exist
-
----
 
 #### Body
 
@@ -258,13 +210,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Update Node
 
 *PUT* **/api/v2/node**
-
----
 
 #### Request Headers
 
@@ -272,15 +220,11 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
 * 404
   * 2003 node exist
-
----
 
 #### Body
 
@@ -301,31 +245,21 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Get Node
 
 *GET*  /api/v2/node
-
----
 
 #### Request Params
 
 **type**  required
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
-
----
 
 #### Response
 
@@ -358,21 +292,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Add Group Config
 
 *POST*  /api/v2/gconfig
-
----
 
 #### Request Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
@@ -381,8 +309,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
   * 2003 node not exist
 * 409
   * 2103 group config conflict
-
----
 
 #### Body
 
@@ -405,21 +331,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Del Group Config
 
 *DELETE*  /api/v2/gconfig
-
----
 
 #### Request Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
@@ -429,8 +349,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 * 404
   * 2003 node not exist
   * 2101 group config not exist
-
----
 
 #### Body
 
@@ -451,13 +369,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Update Group Config
 
 *PUT*  /api/v2/gconfig
-
----
 
 #### Request Headers
 
@@ -465,15 +379,11 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
 * 404
   * 2101 group config not exist
-
----
 
 #### Body
 
@@ -496,31 +406,21 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Get Group Config
 
 *GET*  /api/v2/gconfig
-
----
 
 #### Request Params
 
 **node_id**  required
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
-
----
 
 #### Response
 
@@ -547,21 +447,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ````
 
----
-
 ### Add Tag
 
 *POST*  /api/v2/tags
-
----
 
 #### Request Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
@@ -573,8 +467,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
   * 2205 tag address format invalid
 * 404
   * 2003 node not exist
-
----
 
 #### Body
 
@@ -619,13 +511,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Get Tag
 
 *GET*  /api/v2/tags
-
----
 
 #### Request Params
 
@@ -633,21 +521,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **group_config_name**  optional
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
 * 200 OK
 * 404
   * 2003 node not exist
-
----
 
 #### Response
 
@@ -688,21 +570,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Update Tag
 
 *PUT*  /api/v2/tags
-
----
 
 #### Request Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response status
 
@@ -716,8 +592,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 * 404
   * 2003 node not exist
   * 2101 group config not exist
-
----
 
 #### Body
 
@@ -757,13 +631,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Del Tag
 
 *DELETE*  /api/v2/tags
-
----
 
 #### Request Headers
 
@@ -771,15 +641,11 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
 * 404
   * 2003 node not exist
-
----
 
 #### Body
 
@@ -805,21 +671,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Add Plugin
 
 *POST*  /api/v2/plugin
-
----
 
 #### Request Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
@@ -835,8 +695,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 * 409
   * 2203 library name conflict
-  
----
 
 #### Body
 
@@ -855,13 +713,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Del Plugin
 
 *DELETE*  /api/v2/plugin
-
----
 
 #### Request Headers
 
@@ -869,13 +723,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
-
----
 
 #### Body
 
@@ -894,31 +744,21 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Get Plugin
 
 *GET*  /api/v2/plugin
-
----
 
 #### Request Params
 
 **plugin_id**  optional
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
-
----
 
 #### Response
 
@@ -941,13 +781,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Subscribe
 
 *POST*  /api/v2/subscribe
-
----
 
 #### Request Headers
 
@@ -955,15 +791,11 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
 * 404
   * 2101 group config not exist
-
----
 
 #### Body
 
@@ -985,30 +817,22 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
     "error": 0
 }
 ```
-
----
 
 ### UnSubscribe
 
 *DELETE*  /api/v2/subscribe
 
----
-
 #### Request Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
 * 404
   * 2101 group config not exist
-
----
 
 #### Body
 
@@ -1031,25 +855,17 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Read Tag
 
 *POST*  /api/v2/read
-
----
 
 #### Request Headers
 
 **Content--Type**  application/json
 
----
-
 #### Response Status
 
 * 200
-
----
 
 #### Body
 
@@ -1088,13 +904,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Write Tag
 
 *POST*  /api/v2/write
-
----
 
 #### Request Headers
 
@@ -1102,13 +914,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
-
----
 
 #### Body
 
@@ -1137,19 +945,13 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Get TTY
 
 *GET*  /api/v2/tty
 
----
-
 #### Response Status
 
 * 200 OK
-
----
 
 #### Response
 
@@ -1162,25 +964,17 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Get Plugin Schema
 
 *GET*  /api/v2/schema
-
----
 
 #### Request Params
 
 **plugin_name**  required
 
----
-
 #### Response Status
 
 * 200 OK
-
----
 
 #### Response
 
@@ -1268,13 +1062,9 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Node Setting
 
 *POST*  /api/v2/node/setting
-
----
 
 #### Request Headers
 
@@ -1282,16 +1072,12 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
 * 400
   * 2003 node not exist
   * 2004 node setting invalid
-
----
 
 #### Body
 
@@ -1321,19 +1107,13 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 *GET*  /api/v2/node/setting
 
----
-
 #### Request Params
 
 **node_id**  required
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
@@ -1341,8 +1121,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
   * 2005 node setting not found
 * 404
   * 2003 node not exist
-
----
 
 #### Response
 
@@ -1357,21 +1135,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Node CTL
 
 *POST*  /api/v2/node/ctl
-
----
 
 #### Request Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Request Status
 
@@ -1381,8 +1153,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
   * 2007 node is running
   * 2008 node not running
   * 2009 node is stopped
-
----
 
 #### Body
 
@@ -1403,31 +1173,21 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Get Node State
 
 *GET*  /api/v2/node/state
-
----
 
 #### Request Params
 
 **node_id**  required
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
 
----
-
 #### Response Status
 
 * 200 OK
-
----
 
 #### Response
 
@@ -1440,32 +1200,22 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
----
-
 ### Get Subscribe Group Config
 
 *GET*  /api/v2/subscribe
-
----
 
 #### Request Params
 
 **node_id**  required
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
 * 200
 * 400
-
----
 
 #### Response
 
@@ -1490,8 +1240,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 *GET*  /api/v2/log
 
----
-
 #### Request Params
 
 **since**       required, UTC timestamp
@@ -1504,21 +1252,15 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 **page_size**   required, should be in range [200, 10000]
 
----
-
 #### Request Headers
 
 **Authorization** Bearer \<token\>
-
----
 
 #### Response Status
 
 * 200
 * 400
   * 1003 param is wrong
-
----
 
 #### Response
 
