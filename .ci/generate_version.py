@@ -5,7 +5,7 @@ version_list = sys.argv[1:]
 
 if __name__ == '__main__':
     version_list.sort(
-        key=lambda v: [int(u) for u in v.replace('v', '').split('.')],
+        key=lambda v: [int(u) for u in v.replace('v', '').split('-')[0].split('.')],
         reverse=True
     )
     version_list.insert(0, 'latest')
