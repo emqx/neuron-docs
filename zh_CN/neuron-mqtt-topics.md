@@ -2,13 +2,13 @@
 
 All topics for interaction between client and neuron with read, write command.
 
-The xxx in all topics refers to the Client-id, which is set in the northbound application configuration in the Neuron UI.
+The **client-id** in all topics refers to the actual MQTT client id, which is set in the northbound application configuration in the Neuron UI.
 
 ## Read Tags
 
 ### Request
 
-*Topic*  **neuron/xxx/read/req**
+*Topic*  **neuron/client-id/read/req**
 
 #### Body
 
@@ -23,7 +23,7 @@ The xxx in all topics refers to the Client-id, which is set in the northbound ap
 
 ### Response
 
-*Topic*  **neuron/xxx/read/resp**
+*Topic*  **neuron/client-id/read/resp**
 
 #### Body
 
@@ -50,7 +50,7 @@ The xxx in all topics refers to the Client-id, which is set in the northbound ap
 
 ### Response
 
-*Topic* **neuron/xxx/read/resp**
+*Topic* **neuron/client-id/upload**
 
 #### Body
 
@@ -81,7 +81,7 @@ The xxx in all topics refers to the Client-id, which is set in the northbound ap
 
 ### Request
 
-*Topic*  **neuron/xxx/write/req**
+*Topic*  **neuron/client-id/write/req**
 
 #### Body
 
@@ -106,7 +106,7 @@ The xxx in all topics refers to the Client-id, which is set in the northbound ap
 
 ### Response
 
-*Topic*  **neuron/xxx/write/resp**
+*Topic*  **neuron/client-id/write/resp**
 
 #### Body
 
