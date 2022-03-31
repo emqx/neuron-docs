@@ -1,2 +1,2 @@
 # neuron-docs
-EMQ X Neuron Documentation
+Neuron Documentation
