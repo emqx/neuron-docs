@@ -4,7 +4,7 @@
       "title": "概览",
       "children": [
         {
-          "title": "EMQ X Neuron 简介",
+          "title": "Neuron 简介",
           "path": "./"
         }
       ]
@@ -60,7 +60,7 @@
       "title": "Introduction",
       "children": [
         {
-          "title": "EMQ X Neuron",
+          "title": "Neuron",
           "path": "./"
         }
       ]
