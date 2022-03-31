@@ -8,7 +8,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 ### Request
 
-*Topic*  **neuron/client-id/read/req**
+*Topic*  **neuron/{client-id}/read/req**
 
 #### Body
 
@@ -23,7 +23,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 ### Response
 
-*Topic*  **neuron/client-id/read/resp**
+*Topic*  **neuron/{client-id}/read/resp**
 
 #### Body
 
@@ -50,7 +50,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 ### Response
 
-*Topic* **neuron/client-id/upload**
+*Topic* **neuron/{client-id}/upload**
 
 #### Body
 
@@ -81,7 +81,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 ### Request
 
-*Topic*  **neuron/client-id/write/req**
+*Topic*  **neuron/{client-id}/write/req**
 
 #### Body
 
@@ -106,7 +106,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 ### Response
 
-*Topic*  **neuron/client-id/write/resp**
+*Topic*  **neuron/{client-id}/write/resp**
 
 #### Body
 
