@@ -62,9 +62,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 * CONNECTING = 1
 * CONNECTED = 2
 
-## API
-
-### Ping
+## Ping
 
 *POST*  **/api/v2/ping**
 
@@ -76,7 +74,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 * 200 OK
 
-### Login
+## Login
 
 *POST*   **/api/v2/login**
 
@@ -114,7 +112,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Logout
+## Logout
 
 *POST*  **/api/v2/logout**
 
@@ -136,7 +134,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Add Node
+## Add Node
 
 *POST*  **/api/v2/node**
 
@@ -177,7 +175,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Del Node
+## Del Node
 
 *Delete* /api/v2/node
 
@@ -210,7 +208,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Update Node
+## Update Node(Not Implemented)
 
 *PUT* **/api/v2/node**
 
@@ -245,7 +243,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Node
+## Get Node
 
 *GET*  /api/v2/node
 
@@ -292,7 +290,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Add Group Config
+## Add Group Config
 
 *POST*  /api/v2/gconfig
 
@@ -331,7 +329,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Del Group Config
+## Del Group Config
 
 *DELETE*  /api/v2/gconfig
 
@@ -369,7 +367,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Update Group Config
+## Update Group Config(Not Implemented)
 
 *PUT*  /api/v2/gconfig
 
@@ -406,7 +404,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Group Config
+## Get Group Config
 
 *GET*  /api/v2/gconfig
 
@@ -447,7 +445,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ````
 
-### Add Tag
+## Add Tag
 
 *POST*  /api/v2/tags
 
@@ -511,7 +509,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Tag
+## Get Tag
 
 *GET*  /api/v2/tags
 
@@ -570,7 +568,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Update Tag
+## Update Tag
 
 *PUT*  /api/v2/tags
 
@@ -631,7 +629,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Del Tag
+## Del Tag
 
 *DELETE*  /api/v2/tags
 
@@ -671,7 +669,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Add Plugin
+## Add Plugin
 
 *POST*  /api/v2/plugin
 
@@ -713,7 +711,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Del Plugin
+## Del Plugin
 
 *DELETE*  /api/v2/plugin
 
@@ -744,7 +742,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Plugin
+## Get Plugin
 
 *GET*  /api/v2/plugin
 
@@ -781,7 +779,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Subscribe
+## Subscribe
 
 *POST*  /api/v2/subscribe
 
@@ -818,7 +816,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### UnSubscribe
+## UnSubscribe
 
 *DELETE*  /api/v2/subscribe
 
@@ -855,7 +853,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Read Tag
+## Read Tag
 
 *POST*  /api/v2/read
 
@@ -904,7 +902,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Write Tag
+## Write Tag
 
 *POST*  /api/v2/write
 
@@ -945,7 +943,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get TTY
+## Get TTY
 
 *GET*  /api/v2/tty
 
@@ -964,7 +962,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Plugin Schema
+## Get Plugin Schema
 
 *GET*  /api/v2/schema
 
@@ -1062,7 +1060,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Node Setting
+## Node Setting
 
 *POST*  /api/v2/node/setting
 
@@ -1103,7 +1101,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Node Setting
+## Get Node Setting
 
 *GET*  /api/v2/node/setting
 
@@ -1135,7 +1133,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Node CTL
+## Node CTL
 
 *POST*  /api/v2/node/ctl
 
@@ -1173,7 +1171,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Node State
+## Get Node State
 
 *GET*  /api/v2/node/state
 
@@ -1200,7 +1198,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Subscribe Group Config
+## Get Subscribe Group Config
 
 *GET*  /api/v2/subscribe
 
@@ -1236,7 +1234,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-### Get Log
+## Get Log
 
 *GET*  /api/v2/log
 
