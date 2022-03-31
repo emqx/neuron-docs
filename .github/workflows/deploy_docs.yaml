@@ -14,7 +14,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    if: github.repository_owner == 'neugates'
+    if: github.repository_owner == 'emqx'
     steps:
     - name: clone docs
       uses: actions/checkout@v2
@@ -86,12 +86,12 @@ jobs:
         cd frontend/docs/.vuepress/
         wget http://gosspublic.alicdn.com/ossutil/1.7.8/ossutil64
         chmod 755 ./ossutil64
-        ./ossutil64 config -e https://oss-accelerate.aliyuncs.com -i ${{ secrets.OSS_ACCESSKEY_ID }} -k ${{ secrets.OSS_ACCESSKEY_SECRET }} -L CH
+        ./ossutil64 config -e https://oss-accelerate.aliyuncs.com -i ${{ secrets.ALI_OSS_ACCESSKEY_ID }} -k ${{ secrets.ALI_OSS_ACCESSKEY_SECRET }} -L CH
 
     - name: upload dist
       run: |
         cd frontend/docs/.vuepress/
-        ./ossutil64 cp -r dist/ oss://${{ secrets.OSS_BUCKET }}/docs/ -u
+        ./ossutil64 cp -r dist/ oss://neugates-io/docs/ -u
 
     - name: clone docsearch
       uses: actions/checkout@v2
@@ -118,8 +118,8 @@ jobs:
     - name: update current version
       if: ${{ env.VERSION == 'latest' }}
       env:
-        APPLICATION_ID: ${{ secrets.DOCS_APPLICATION_ID }}
-        API_KEY: ${{ secrets.DOCS_API_KEY }}
+        APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+        API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
       run: |
         cd docsearch
         pipenv run python -m src.index config ${DOCS_TYPE} ${VERSION}
