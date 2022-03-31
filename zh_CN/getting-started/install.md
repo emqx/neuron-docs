@@ -29,7 +29,7 @@ rpm/deb package中使用了systemd管理neuron进程，建议优先使用rpm/deb
 
 ### 使用 deb package
 
-输入命令：
+#### 安装
 
 ```bash
 $ sudo dpkg -i xxx.deb
@@ -39,7 +39,7 @@ $ sudo dpkg -i xxx.deb
 
 **注意：** 成功安装 deb 包后，自动启动 Neuron
 
-#### 卸载 deb 的指令
+#### 卸载 
 
 ```bash
 $ sudo dpkg -r neuron
@@ -47,7 +47,7 @@ $ sudo dpkg -r neuron
 
 ### 使用 rpm package
 
-输入命令：
+#### 安装
 
 ```bash
 $ sudo rpm -i xxx.rpm --nodeps --force
@@ -57,7 +57,7 @@ $ sudo rpm -i xxx.rpm --nodeps --force
 
 **注意：** 成功安装 rpm 包后，自启动 Neuron
 
-#### 卸载 rpm 指令
+#### 卸载 
 
 ```bash
 $ sudo rpm -e neuron
@@ -65,7 +65,7 @@ $ sudo rpm -e neuron
 
 ### 使用 .tar.gz package
 
-输入命令：
+#### 解压
 
 ```bash
 $ sudo tar -zxvf xxx.tar.gz
@@ -74,7 +74,7 @@ $ cd xxx
 
 根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.tar.gz
 
-#### 启动 Neuron
+#### 启动
 
 ```bash
 $ ./neuron
@@ -82,13 +82,15 @@ $ ./neuron
 
 ### 使用Docker运行
 
+#### 获取镜像
+
 docker镜像请从docker hub网站下载 https://hub.docker.com
 
 ```bash
 $ docker pull emqx/neuron:2.0.0-rc1
 ```
 
-启动docker容器
+#### 启动
 
 ```bash
 $ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron:2.0.0-rc1
