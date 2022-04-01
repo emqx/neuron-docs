@@ -20,8 +20,8 @@ rpm/deb package中使用了systemd管理neuron进程，建议优先使用rpm/deb
 
 | Linux 发行版或设备 | 所需包          |
 | ------------ | ---------------- |
-| **Debian package system**<br>Ubuntu 20.xx <br>Ubuntu 18.xx | deb/tar.gz |
-| **Redhat package system**<br>Contos 8<br>Centos 9 | rpm/tar.gz |
+| **Debian package system**</br>Ubuntu 20.xx </br>Ubuntu 18.xx | deb/tar.gz |
+| **Redhat package system**</br>Contos 8</br>Centos 9 | rpm/tar.gz |
 
 ## 安装步骤
 
@@ -39,7 +39,7 @@ $ sudo dpkg -i xxx.deb
 
 **注意：** 成功安装 deb 包后，自动启动 Neuron
 
-#### 卸载 
+#### 卸载
 
 ```bash
 $ sudo dpkg -r neuron
