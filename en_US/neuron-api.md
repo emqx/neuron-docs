@@ -886,21 +886,20 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
             "name": "data1",
             //tag value
             "value": 1,
-            "error": 0
         },
         {
             "name": "data2",
-            "value": 2.2,
             "error": 2014
         },
         {
             "name": "data3",
             "value": true,
-            "error": 0
         }
     ]
 }
 ```
+
+*Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
 
 ## Write Tag
 

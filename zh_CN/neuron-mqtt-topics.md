@@ -35,16 +35,16 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
     {
       "value": 4,
       "name": "data1",
-      "error": 0
     },
     {
-      "value": 5,
       "name": "data2",
-      "error": 0
+      "error": 2014
     }
   ]
 }
 ```
+
+*Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
 
 ## Upload Data
 
@@ -63,16 +63,16 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
     {
       "value": 123,
       "name": "data1",
-      "error": 0
     },
     {
-      "value": 0,
       "name": "data2",
-      "error": 0
+      "error": 2014
     }
   ]
 }
 ```
+
+*Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
 
 **Node:**  A group sends a message.
 
