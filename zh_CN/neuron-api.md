@@ -869,8 +869,8 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ```json
 {
-    //node id
-    "node_id": 4,
+    //node name
+    "node_name": "modbus-tcp-1",
     //group config name
     "group_config_name": "config_modbus_tcp_sample_2"
 }
@@ -882,19 +882,19 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 {
     "tags": [
         {
-            //tag id
-            "id": 1,
+            //tag nmae
+            "name": "data1",
             //tag value
             "value": 1,
-           "error": 0
+            "error": 0
         },
         {
-            "id": 2,
+            "name": "data2",
             "value": 2.2,
-           "error": 2014
+            "error": 2014
         },
         {
-            "id": 3,
+            "name": "data3",
             "value": true,
            "error": 0
         }
@@ -920,14 +920,14 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ```json
 {
-    //node id
-    "node_id": 4,
+    //node name
+    "node_name": "modbus-tcp-1",
     //group config name
     "group_config_name": "config_modbus_tcp_sample_2",
     "tags": [
         {
             //tag id
-            "id": 2,
+            "name": "data2",
             //tag value
             "value": 123
         }

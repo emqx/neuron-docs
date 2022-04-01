@@ -16,7 +16,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 {
     "command": "",
     "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
-    "node_id": 5,
+    "node_name": "modbus-tcp-1",
     "group_config_name": "group-2"
 }
 ```
@@ -34,12 +34,12 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
   "tags": [
     {
       "value": 4,
-      "id": 3,
+      "name": "data1",
       "error": 0
     },
     {
       "value": 5,
-      "id": 4,
+      "name": "data2",
       "error": 0
     }
   ]
@@ -56,19 +56,18 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 ```json
 {
-  "node_id": 5,
   "node_name": "modbus-tcp-2",
   "group_config_name": "group-1",
   "timestamp": 1647497389075,
   "tags": [
     {
       "value": 123,
-      "id": 1,
+      "name": "data1",
       "error": 0
     },
     {
       "value": 0,
-      "id": 2,
+      "name": "data2",
       "error": 0
     }
   ]
@@ -89,16 +88,16 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 {
     "command": "",
     "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
-    "node_id": 5,
+    "node_name": "modbus-tcp-1",
     "group_config_name": "group-2",
     "tags": [
       {
         "value": 6,
-        "id": 3
+        "name": "data1"
       },
       {
         "value": 6,
-        "id": 4
+        "name": "data2"
       }
     ]
 }
@@ -117,12 +116,12 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
   "tags": [
     {
       "value": 6,
-      "id": 3,
+      "name": "data1",
       "error": 0
     },
     {
       "value": 6,
-      "id": 4,
+      "name": "data2",
       "error": 0
     }
   ]
