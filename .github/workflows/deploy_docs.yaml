@@ -91,8 +91,8 @@ jobs:
     - name: upload dist
       run: |
         cd frontend/docs/.vuepress/
-        ./ossutil64 rm -r oss://neugates-io/docs/zh/${VERSION}/
-        ./ossutil64 rm -r oss://neugates-io/docs/en/${VERSION}/
+        ./ossutil64 rm -r -f oss://neugates-io/docs/zh/${VERSION}/
+        ./ossutil64 rm -r -f oss://neugates-io/docs/en/${VERSION}/
         ./ossutil64 cp -r dist/ oss://neugates-io/docs/ -u
 
     - name: refresh cdn cache
