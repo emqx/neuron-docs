@@ -87,7 +87,7 @@ $ ./neuron
 docker镜像请从docker hub网站下载 https://hub.docker.com
 
 ```bash
-$ docker pull emqx/neuron:2.0.0-rc1
+$ docker pull neugates/neuron:2.0.0-rc1
 ```
 
 #### 启动
