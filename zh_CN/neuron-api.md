@@ -919,18 +919,10 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 ```json
 {
-    //node name
     "node_name": "modbus-tcp-1",
-    //group config name
     "group_config_name": "config_modbus_tcp_sample_2",
-    "tags": [
-        {
-            //tag id
-            "name": "data2",
-            //tag value
-            "value": 123
-        }
-    ]
+    "tag_name": "tag1",
+    "value": 1234
 }
 ```
 
