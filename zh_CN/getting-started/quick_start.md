@@ -144,6 +144,6 @@ Group 创建完成后，对应 Group 列表中会显示刚新建的 Group，如�
 
 ![add-subscriptions](./assets/add-subscriptions.png)
 
-订阅完成后，我们可以使用MQTT客户端（这里推荐使用 MQTTX）连接到刚才部署好的 EMQX Edge 来查看上报的数据。打开MQTTX 添加新的连接，正确填写名称与刚部署好的 EMQX Edge 的 Host 与 Port，完成连接。下一步，添加新的订阅，Topic的主题格式为`neuron/{mqtt_clientid}/read/resp`，其中{mqtt_clientid}是在 Neuron 界面中北向应用中配置的`Client-id`，订阅成功之后可以看到 MQTTX 可以一直接收到 Neuron 采集并上报过来的数据，如下图所示（详细订阅主题可查看 MQTT-Topics 文档）。
+订阅完成后，我们可以使用MQTT客户端（这里推荐使用 MQTTX）连接到刚才部署好的 EMQX Edge 来查看上报的数据。打开MQTTX 添加新的连接，正确填写名称与刚部署好的 EMQX Edge 的 Host 与 Port，完成连接。下一步，添加新的订阅，Topic的主题格式为`neuron/{mqtt_clientid}/upload`，其中{mqtt_clientid}是在 Neuron 界面中北向应用中配置的`Client-id`，订阅成功之后可以看到 MQTTX 可以一直接收到 Neuron 采集并上报过来的数据，如下图所示（详细订阅主题可查看 MQTT-Topics 文档）。
 
 ![mqttx](./assets/mqttx.png)
