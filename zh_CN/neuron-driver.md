@@ -1,4 +1,4 @@
-# Neuron 2.x Application And Driver Instructions
+# Neuron Application And Driver Instructions
 
 This document mainly introduces some parameter configuration and point information configuration specifications for northbound applications and southbound drives.
 
@@ -430,3 +430,34 @@ int16/uint16/int32/uint32/float/double:
 string:
     D1002.16
 ```
+
+## IEC 60870-5-104
+
+### Support Data Type
+
+* uint16
+* int16
+* float
+* bit
+
+### Parameter Setting
+
+**host** : device ip.
+
+**port**: device port, default 2404.
+
+**ca**: common address.
+
+**interrogation**: whether to use station interrogation to read tag value.sa
+
+### Address Format
+
+> IOA</span>
+
+| IEC 60870-5-104  TYPEID         | NEURON TYPE  |
+| ------------------------------- | ------------ |
+| M_ME_NB_1、M_ME_TE_1            | uint16/int16 |
+| M_ME_NC_1、M_ME_TF_1            | float        |
+| M_SP_NA_1、M_SP_TB_1            | bit          |
+| M_ME_NA_1、M_ME_TD_1、M_ME_ND_1 | uint16/int16 |
+

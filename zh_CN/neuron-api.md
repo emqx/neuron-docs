@@ -34,7 +34,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 * DRIVER = 1
 * WEB = 2
 * MQTT = 3
-* STREAM PROCESSOR = 4
+* DRIVERX = 4
 * APP = 5
 
 ### Plugin Kind

@@ -107,7 +107,7 @@ $ docker pull neugates/neuron:2.0.0-rc1
 #### 启动
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron:2.0.0-rc1
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0-rc1
 ```
 
 tcp 7000: 用于访问web。
