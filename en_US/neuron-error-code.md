@@ -51,3 +51,4 @@ This document mainly describes some errors that neuron will respond when calling
 * 3004    plugin tag not allow write
 * 3005    plugin tag not exist
 * 3006    plugin group config not subscribe
+* 3007    plugin tag type mismatch
