@@ -16,7 +16,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 {
     "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
     "node_name": "modbus-tcp-1",
-    "group_config_name": "group-2"
+    "group_name": "group-2"
 }
 ```
 
@@ -50,12 +50,12 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 *Topic* **neuron/{client-id}/upload**
 
-#### Body
+#### Body (Tags format)
 
 ```json
 {
   "node_name": "modbus-tcp-2",
-  "group_config_name": "group-1",
+  "group_name": "group-1",
   "timestamp": 1647497389075,
   "tags": [
     {
@@ -70,7 +70,27 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 }
 ```
 
+#### Body (Values format)
+
+```json
+{
+    "node_name": "opcua-1", 
+    "group_name": "group-1", 
+    "timestamp": 1650006388943, 
+    "values": 
+    {
+        "cstr01": "hello!"
+    }, 
+    "errors": 
+    {
+        "cstr100": 10002
+    }
+}
+```
+
 *Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
+
+There are two message formats for the body. You can choose two different formats in the mqtt configuration form.
 
 **Node:**  A group sends a message.
 
@@ -86,7 +106,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 {
     "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
     "node_name": "modbus-tcp-1",
-    "group_config_name": "group-2",
+    "group_name": "group-2",
     "tag_name": "tag1",
     "value": 1234
 }
