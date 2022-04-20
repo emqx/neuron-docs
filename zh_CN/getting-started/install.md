@@ -112,7 +112,7 @@ $ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --rest
 
 tcp 7000: 用于访问web。
 
-tcp 7001: http api端口。
+tcp 7001: http api端口。（api端口为web端口+1，例如，当web端口映射为8000时，api端口应映射为8001）
 
 --restart=always: docker进程重启时，自动重启neuron容器。
 
