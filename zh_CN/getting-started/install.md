@@ -101,13 +101,13 @@ $ ./neuron -h
 docker镜像请从docker hub网站下载 https://hub.docker.com
 
 ```bash
-$ docker pull neugates/neuron:2.0.0-rc1
+$ docker pull neugates/neuron:2.0.0
 ```
 
 #### 启动
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0-rc1
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0
 ```
 
 tcp 7000: 用于访问web。
