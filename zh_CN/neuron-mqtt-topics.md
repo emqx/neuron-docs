@@ -94,7 +94,7 @@ There are two message formats for the body. You can choose two different formats
 
 **Node:**  A group sends a message.
 
-## Write Tags
+## Write Tag
 
 ### Request
 
