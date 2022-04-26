@@ -2,6 +2,11 @@
 
 This document mainly introduces some parameter configuration and point information configuration specifications for northbound applications and southbound drives.
 
+## Type Description
+
+* If you want to use the word data type, please select uint16 in Neuron's datat type
+* If you want to use the dword data type, please select uint32 in Neuron's datat type
+
 ## Common Address Format Option
 
 Common options supported by each driver's address format.
@@ -460,4 +465,3 @@ string:
 | M_ME_NC_1、M_ME_TF_1            | float        |
 | M_SP_NA_1、M_SP_TB_1            | bit          |
 | M_ME_NA_1、M_ME_TD_1、M_ME_ND_1 | uint16/int16 |
-

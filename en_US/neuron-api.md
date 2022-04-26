@@ -1,4 +1,4 @@
-# Neuron 2.x api
+# Neuron API
 
 Neuron would provide a series of API services for IIoT platform, to query the basic information, to control gateway behaviors or to setup the polling configuration. IIoT platform must initiate the communication by sending request message to Neuron. By return, Neuron would send back the required information or execute the deserved action. If there is error, a error code would be returned to tell the reason of failure.
 
@@ -109,28 +109,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 ```json
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzcyODcxNjMsImlhdCI6MTYzNzIwMDc2MywiaXNzIjoiRU1RIFRlY2hub2xvZ2llcyBDby4sIEx0ZCBBbGwgcmlnaHRzIHJlc2VydmVkLiIsInBhc3MiOiIwMDAwIiwidXNlciI6ImFkbWluIn0.2EZzPC9djErrCeYNrK2av0smh-eKxDYeyu7cW4MyknI"
-}
-```
-
-## Logout
-
-*POST*  **/api/v2/logout**
-
-### Request Headers
-
-**Content-Type** application/json
-
-**Authorization** Bearer \<token\>
-
-### Reponse Status
-
-* 200 OK
-
-### Response
-
-```json
-{
-    "error": 0
 }
 ```
 
@@ -931,25 +909,6 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 ```json
 {
     "error": 0
-}
-```
-
-## Get TTY
-
-*GET*  /api/v2/tty
-
-### Response Status
-
-* 200 OK
-
-### Response
-
-```json
-{
-    "ttys": [
-        "/dev/tty0",
-        "/dev/tty1"
-    ]
 }
 ```
 
