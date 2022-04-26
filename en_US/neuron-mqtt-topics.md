@@ -1,4 +1,4 @@
-# Neuron 2.0 MQTT Topics
+# Neuron MQTT Topics
 
 All topics for interaction between client and neuron with read, write command.
 
