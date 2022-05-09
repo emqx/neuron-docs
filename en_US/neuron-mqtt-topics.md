@@ -50,6 +50,8 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 *Topic* **neuron/{client-id}/upload**
 
+If the upload-topic is set in the node setting, the topic will be used to upload data, and the default topic will no longer upload data.
+
 #### Body (Tags format)
 
 ```json
