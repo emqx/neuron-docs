@@ -66,6 +66,10 @@
       ]
     },
     {
+      "title": "Install Neuron",
+      "path": "getting-started/install"
+    },
+    {
       "title": "Neuron Driver Usage Description",
       "path": "neuron-driver"
     },
