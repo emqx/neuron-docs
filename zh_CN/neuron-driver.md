@@ -453,7 +453,7 @@ string:
 
 **ca**: common address.
 
-**interrogation**: whether to use station interrogation to read tag value.sa
+**interval**: station interrogation interval.
 
 ### Address Format
 

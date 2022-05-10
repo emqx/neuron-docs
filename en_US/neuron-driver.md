@@ -453,7 +453,7 @@ string:
 
 **ca**: common address.
 
-**interrogation**: whether to use station interrogation to read tag value.sa
+**interval**: station interrogation interval.
 
 ### Address Format
 
@@ -465,3 +465,4 @@ string:
 | M_ME_NC_1、M_ME_TF_1            | float        |
 | M_SP_NA_1、M_SP_TB_1            | bit          |
 | M_ME_NA_1、M_ME_TD_1、M_ME_ND_1 | uint16/int16 |
+
