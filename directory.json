@@ -1,13 +1,8 @@
 {
   "cn": [
     {
-      "title": "概览",
-      "children": [
-        {
-          "title": "Neuron 简介",
-          "path": "./"
-        }
-      ]
+      "title": "简介",
+      "path": "./"
     },
     {
       "title": "安装",
@@ -39,7 +34,7 @@
       ]
     },
     {
-      "title": "Neuron 驱动使用说明",
+      "title": "驱动使用说明",
       "path": "neuron-driver"
     },
     {
@@ -58,19 +53,18 @@
   "en": [
     {
       "title": "Introduction",
-      "children": [
-        {
-          "title": "Neuron",
-          "path": "./"
-        }
-      ]
+      "path": "./"
     },
     {
-      "title": "Install Neuron",
+      "title": "Install",
       "path": "getting-started/install"
     },
     {
-      "title": "Neuron Driver Usage Description",
+      "title": "Quick Start",
+      "path": "getting-started/quick_start"
+    },
+    {
+      "title": "Driver Usage Description",
       "path": "neuron-driver"
     },
     {
