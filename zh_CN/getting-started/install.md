@@ -1,4 +1,4 @@
-# 安装
+# 安装 Neuron
 
 下文介绍了如何在 X86 / ARM Linux 设备上安装 Neuron 软件包。
 
@@ -12,7 +12,11 @@ Neuron 软件包可从 Neuron 网站[https://neugates.io/zh/downloads](https://n
 | neuron-x.y.z-linux-armhf.deb | ARM_32 |
 | neuron-x.y.z-linux-arm64.deb | ARM_64 |
 
-版本号x.y.z，x为主要版本号，如果整个系统结构得到增强，则可能会更改； y是次要版本号，如果存在某些附加功能，则可能会更改。 z是Neuron软件中错误修复的补丁号。
+版本号 x.y.z 说明：
+
+* x为主要版本号，如果整个系统结构得到增强，则可能会更改。
+* y是次要版本号，如果存在某些附加功能，则可能会更改。
+* z是Neuron软件中错误修复的补丁号。
 
 ## 安装条件
 
@@ -32,17 +36,21 @@ rpm/deb package中使用了systemd管理neuron进程，建议优先使用rpm/deb
 #### 安装
 
 ```bash
-$ sudo dpkg -i xxx.deb
+sudo dpkg -i xxx.deb
 ```
 
-根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.deb
+根据不同版本安装，例如：
 
-**注意：** 成功安装 deb 包后，自动启动 Neuron
+```bash
+sudo dpkg -i neuron-2.0.1-linux-armhf.deb
+```
+
+*注意* 成功安装 deb 包后，自动启动 Neuron
 
 #### 卸载
 
 ```bash
-$ sudo dpkg -r neuron
+sudo dpkg -r neuron
 ```
 
 ### 使用 rpm package
@@ -50,17 +58,21 @@ $ sudo dpkg -r neuron
 #### 安装
 
 ```bash
-$ sudo rpm -i xxx.rpm --nodeps --force
+sudo rpm -i xxx.rpm --nodeps --force
 ```
 
-根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.rpm
-
-**注意：** 成功安装 rpm 包后，自启动 Neuron
-
-#### 卸载 
+根据不同版本安装，例如：
 
 ```bash
-$ sudo rpm -e neuron
+sudo rpm -i neuron-2.0.0-beta.2-linux-armhf.rpm --nodeps --force
+```
+
+*注意* 成功安装 rpm 包后，自启动 Neuron
+
+#### 卸载
+
+```bash
+sudo rpm -e neuron
 ```
 
 ### 使用 .tar.gz package
@@ -68,57 +80,58 @@ $ sudo rpm -e neuron
 #### 解压
 
 ```bash
-$ sudo tar -zxvf xxx.tar.gz
-$ cd xxx
+sudo tar -zxvf xxx.tar.gz
+cd xxx
 ```
 
-根据不同版本安装，例如 neuron-2.0.0-beta.2-linux-armhf.tar.gz
+根据不同版本安装，例如：
+
+```bash
+sudo tar -zxvf neuron-2.0.1-linux-armhf.tar.gz
+cd neuron-2.0.1-linux-armhf
+```
 
 #### 启动
 
 执行如下命令可在当前终端启动：
 
 ```bash
-$ ./neuron
+./neuron
 ```
 
 若想以守护进程方式运行，则可执行如下命令：
 
 ```bash
-$ ./neuron -d
+./neuron -d
 ```
 
 执行如下命令可查看所有命令行可用参数：
 
 ```bash
-$ ./neuron -h
+./neuron -h
 ```
 
 ### 使用Docker运行
 
 #### 获取镜像
 
-docker镜像请从docker hub网站下载 https://hub.docker.com
+docker镜像请从docker hub网站下载。[https://hub.docker.com](https://hub.docker.com)
 
 ```bash
-$ docker pull neugates/neuron:2.0.0
+docker pull neugates/neuron:2.0.0
 ```
 
 #### 启动
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0
+docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0
 ```
 
-tcp 7000: 用于访问web。
-
-tcp 7001: http api端口。（api端口为web端口+1，例如，当web端口映射为8000时，api端口应映射为8001）
-
---restart=always: docker进程重启时，自动重启neuron容器。
-
---privileged=true：便于排查问题。
-
---device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到docker。
+* tcp 7000: 用于访问web。
+* tcp 7001: http api端口。（api端口为web端口+1，例如，当web端口映射为8000时，api端口应映射为8001）
+* --restart=always: docker进程重启时，自动重启neuron容器。
+* --privileged=true：便于排查问题。
+* --device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到docker。
 
 ### Neuron 操作
 
@@ -127,17 +140,17 @@ tcp 7001: http api端口。（api端口为web端口+1，例如，当web端口映
 #### 查看 Neuron 状态
 
 ```bash
-$ sudo systemctl status neuron
+sudo systemctl status neuron
 ```
 
 #### 停止 Neuron
 
 ```bash
-$ sudo systemctl stop neuron
+sudo systemctl stop neuron
 ```
 
 #### 重启 Neuron
 
 ```bash
-$ sudo systemctl restart neuron
+sudo systemctl restart neuron
 ```
