@@ -25,9 +25,7 @@
 - `导出`按钮可将订阅的Group列表以Excel表格形式导出；
 - `添加订阅`按钮可进行添加订阅的操作，如下图所示，下拉框选择所有订阅的南向设备及对应的Group；
 
-![add-subscription-1](./assets-dashboard/add-subscription-1.png)
-
-![add-subscription-2](./assets-dashboard/add-subscription-2.png)
+![add-subscription](./assets-dashboard/add-subscription.png)
 
 - `清空`按钮可一键删除所有订阅的操作；
 - `删除`按钮，当选择全选时，再点击`删除`按钮，效果等同于`清空`，可将所有订阅全部删除。当单选某些Group时，再点击`删除`按键，可快捷批量删除选择的Groups的订阅；
@@ -71,9 +69,7 @@
 - `导入`按钮，将鼠标放置在`导入`按钮上方，将会出现导入的Excel模版，用户可通过Excel批量导入tags；
 - `创建`按钮可进行添加Tags的操作，如下图所示，填写Tag的名称，驱动地址，属性和类型创建Tag，当然，还可以通过下方的`添加`按钮一次添加多个tag。目前属性提供读、写、订阅三种属性，Tag类型根据插件里提供的数据类型来定，如下图所示。
 
-![add-tag-1](./assets-dashboard/add-tag-1.png)
-
-![add-tag-2](./assets-dashboard/add-tag-2.png)
+![add-tag](./assets-dashboard/add-tag.png)
 
 - `清空`按钮可一键删除所有创建的Tag；
 - `删除`按钮，在选择全选时，点击`删除`按键，效果等同于`清空`，将删除所有Tag。当单选某些Tag时，再点击`删除`按键，可快捷批量删除选择的Tags；
@@ -85,8 +81,6 @@
 - Static：不可删除
 - System：不可删除，是软件自带的
 - Custom：可删除，用户自己开发或者是定制开发的
-
-![plugins](./assets-dashboard/plugins.png)
 
 在添加的插件过多时，用户可下拉框筛选出北向应用/南向设备的插件，如下图所示。
 
