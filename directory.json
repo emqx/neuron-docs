@@ -64,6 +64,27 @@
       "path": "getting-started/quick_start"
     },
     {
+      "title": "Dashboard interface",
+      "children": [
+        {
+          "title": "Login",
+          "path": "dashboard-interface/login"
+        },
+        {
+          "title": "Monitoring",
+          "path": "dashboard-interface/monitoring"
+        },
+        {
+          "title": "Configugration",
+          "path": "dashboard-interface/configuration"
+        },
+        {
+          "title": "Management",
+          "path": "dashboard-interface/management"
+        }
+      ]
+    },
+    {
       "title": "Driver Usage Description",
       "path": "neuron-driver"
     },
