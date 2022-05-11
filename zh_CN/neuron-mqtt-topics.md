@@ -1,8 +1,8 @@
-# MQTT Topics
+# MQTT订阅主题
 
-All topics for interaction between client and neuron with read, write command.
+客户端和神经元之间通过读、写命令进行交互的所有主题。
 
-The **client-id** in all topics refers to the actual MQTT client id, which is set in the northbound application configuration in the Neuron UI.
+所有主题中的**client-id**指的是实际的MQTT客户端id，在Neuron UI的北向应用配置中设置。
 
 ## Read Tags
 
