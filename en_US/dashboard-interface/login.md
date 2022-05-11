@@ -6,4 +6,4 @@ This chapter will explain how to use Neuron in the front-end interface. Open a w
 
 Neuron web interface will be started with the first interface as shown in the following figure. The initial login account is "admin", and the default password is "0000". The user can change the login user name and password after.
 
-![login](./assets-dashboard/login.png)
+![login](../assets/login.png)
