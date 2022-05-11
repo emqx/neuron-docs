@@ -1,4 +1,4 @@
-# Neuron 简介
+# 简介
 
 Neuron 是运行在各类物联网边缘网关硬件上的工业协议商业化网关软件，支持一站式接入和解析数十种工业协议，并转换成 MQTT 协议接入工业物联网平台。用户可以通过基于 Web 的管理控制台可以实现在线的网关配置管理；Neuron 的资源占用很低，并且同时支持 X86、ARM、MIPS 三大 CPU 架构。
 
@@ -8,7 +8,7 @@ Neuron 是运行在各类物联网边缘网关硬件上的工业协议商业化�
 - 南向控制接口，Neuron 监听控制设备的主题，将相关的控制命令转发给设备。结合 EMQ X Kuiper 提供的规则引擎功能，快速实现基于规则的设备控制；
 - 本地数据存储，实现设备原始数据的存储和查看；
 
-Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到端的[云边协同的工业互联网解决方案](https://www.emqx.cn/blog/emq-industrial-internet-cloud-edge-integrated-solution)。
+Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到端的[云边协同的工业互联网解决方案](https://www.emqx.com/zh/use-cases/industrial-iot)。
 
 **以下为本文档内容的基本介绍，读者可以根据情况阅读相关的内容**
 

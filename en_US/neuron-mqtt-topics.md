@@ -1,4 +1,4 @@
-# Neuron MQTT Topics
+# MQTT Topics
 
 All topics for interaction between client and neuron with read, write command.
 

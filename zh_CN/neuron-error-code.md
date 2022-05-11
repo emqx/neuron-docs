@@ -1,4 +1,4 @@
-# Neuron ERROR CODE
+# ERROR CODE
 
 This document mainly describes some errors that neuron will respond when calling http api and mqtt api.
 

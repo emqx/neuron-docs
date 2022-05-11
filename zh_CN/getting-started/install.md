@@ -1,4 +1,4 @@
-# 安装 Neuron
+# 安装
 
 下文介绍了如何在 X86 / ARM Linux 设备上安装 Neuron 软件包。
 

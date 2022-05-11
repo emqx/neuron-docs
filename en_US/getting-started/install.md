@@ -1,10 +1,10 @@
-# Install Neuron
+# Installation
 
 The following section describes how to install the Neuron package on X86/ARM Linux devices.
 
 ## Download
 
-Neuron software packages can be downloaded from the Neuron website [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) according to the actual system.
+Neuron software packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads) according to the actual system.
 
 | Download files               | Architecture  |
 | ---------------------------- | ------------- |

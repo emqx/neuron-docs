@@ -6,7 +6,7 @@
 
 The environment used in this example is Ubuntu 20.04.3, armv71.
 
-Neuron packages can be downloaded from the Neuron website [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads)
+Neuron packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads)
 
 Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
 
@@ -103,7 +103,7 @@ Once you have done so, you can enter the Group configuration by tapping on any b
 
 ![add-group](./assets/group-create.png)
 
-Once the Group has been created, the new Group will be displayed in the corresponding Group list, as shown in the figure below. The user can also click on the Edit button at this point to view the configuration of the Group that has just been created.
+Once the Group has been created, the new Group will be displayed in the corresponding Group list, as shown in the figure below. The user can click on the Edit button at this point to view the configuration of the Group that has just been created.
 
 ![group-list](./assets/group-list.png)
 6. To set up tags：
@@ -117,11 +117,9 @@ Once created, as shown below, the Tag can be edited/deleted at this point.
 
 ![tag-list](./assets/tag-list.png)
 
-此时南向配置已全部完成，用户可在`监控`菜单下选择`数据监控`，下拉框选择想要查看的南向设备及 Group，页面将会对应显示监测到的数据，如下图所示。对照模拟器，可以看到监控到的数据与模拟器的数值一致，如下图所示。
-
 ![data-monitoring](./assets/data-monitoring.png)
 
-At this point the southbound configuration is complete, the user can select "Data Monitoring" under the `Monitoring' menu, the drop down box to select the southbound device and Group you want to view, the page will display the corresponding monitored data, as shown in the figure below. The monitored data will be displayed on the page, as shown below.
+At this point the southbound configuration is complete, the user can select `Data Monitoring` under the `Monitoring` menu, the drop down box to select the southbound device and Group you want to view, the page will display the corresponding monitored data, as shown in the figure below. The monitored data will be displayed on the page, as shown below.
 
 ![write](./assets/write.png)
 

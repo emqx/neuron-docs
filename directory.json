@@ -38,7 +38,7 @@
       "path": "neuron-driver"
     },
     {
-      "title": "API 文档",
+      "title": "API",
       "path": "neuron-api"
     },
     {
@@ -56,7 +56,7 @@
       "path": "./"
     },
     {
-      "title": "Install",
+      "title": "Installation",
       "path": "getting-started/install"
     },
     {

@@ -1,4 +1,4 @@
-# Neuron Application And Driver Instructions
+# Application And Driver Instructions
 
 This document mainly introduces some parameter configuration and point information configuration specifications for northbound applications and southbound drives.
 
