@@ -1,33 +1,33 @@
-# 管理
+# Management
 
 ## License
 
-点击页面右上角的`关于`下拉框，选择 License，如下图所示。
+Click the `About` drop-down box in the upper right corner of the page and select License, as shown in the following figure.
 
 ![license](./assets-dashboard/license.png)
 
-在 License 界面可以申请和上传 License，我们提供免费试用和正式使用 License 两种申请方式，点击对应的链接，进入到对应的申请的页面，在收到 License 文件之后，上传 .lic 文件即可，如下图所示。
+In the License interface, you can apply a trial license for free or upload a commercial license. Click the corresponding link to enter the corresponding application page. After receiving the license file, upload the .lic file, as follows as shown in the figure.
 
-License 上传成功之后，如下图所示，展示 License 的基本信息。用户可以再次上传 License。
+After the license is uploaded successfully, as shown in the figure below, the basic information of the license is displayed. The user can apply and upload the license again when license expired.
 
 ![reuoload-license](./assets-dashboard/license.png)
 
-## 账户设置
+## Account setup
 
-账户设置界面目前只提供了界面显示语言的选择，如下图所示。
+The account setting interface currently only provides the choice of the interface display language, as shown in the following figure.
 
 ![account-settings](./assets-dashboard/account-settings.png)
 
-## 日志
+## Log
 
-日志界面展示Neuron的运行日志信息，如下图所示。
+The log interface displays the running log information of Neuron, as shown in the following figure.
 
 ![log](./assets-dashboard/log.png)
 
-用户可根据需求选择查看特定时间段内的日志，如下图所示。
+Users can choose to view logs within a specific time period, as shown in the following figure.
 
 ![log-time](./assets-dashboard/log-time.png)
 
-用户可根据需求筛选出特定的日志类型，如下图所示。
+Users can filter out specific log types, as shown in the following figure.
 
 ![log-type](./assets-dashboard/log-type.png)

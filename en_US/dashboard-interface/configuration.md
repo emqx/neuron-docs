@@ -1,91 +1,91 @@
-# 配置
+# Configuration
 
-## 北向应用管理
+## Northbound Application Management
 
-北向应用管理界面展示用户添加的所有的北向应用，包含每个应用的名称，工作状态和连接状态。目前工作状态分为五种：初始化、配置中、准备好、运行中和停止。添加北向应用后进入初始化状态，设置该应用时进入配置状态，配置完成后进入准备状态，用户可点击工作状态的开关按钮，选择运行/停止该设备。
+The northbound application management interface displays all user-defined northbound applications, including the details of name, working status and connection status. There are 5 working states: Initializing, Configuring, Ready, Running, and Stopping. After adding a northbound application, it enters the initialization state, and when the application is set, it enters the configuration state. When the configuration is completed, it will be the preparation state. The user can click the switch button of the working state to choose to run/stop the device.
 
-北向应用管理界面还可进行`添加应用`操作，每个应用都可以单独地进行配置及删除操作，点击应用卡片的任意空白处，即可进入应用底下的订阅界面，如下图所示。
+The northbound application management interface can also perform the `add application` operation. Each application can be configured and deleted individually. Click any blank space of the application card to enter the subscription interface under the application, as shown in the following figure.
 
 ![noth-app](./assets-dashboard/north-app.png)
 
-用户可点击右上角的`添加应用`按钮，进行添加应用的操作，需要填写应用名称，下拉选择北向应用插件，如下图所示。
+Users can click the `Add Application` button in the upper right corner to add an application. You need to fill in the application name and click the dropdown to select the northbound application plug-in, as shown in the following figure.
 
 ![add-north-app](./assets-dashboard/add-north-app.png)
 
-当点击`应用配置`按钮时，进入到该应用的配置界面，带有 “ * ” 的是必填项，每个字段后面都有一个信息提示键，将鼠标放置在这个键上方，将会出现该字段的说明，如下图所示。
+When you click the `Apply Configuration` button, you will enter the configuration interface of the application. The items with "*" are required fields, and there is an information prompt button behind each field. Place the mouse over this icon, and a help message will appear. The description of this field is shown in the following figure.
 
 ![north-setting](./assets-dashboard/north-setting.png)
 
-当点击卡片空白处时，即可进入订阅界面，如下图所示。
+When you click on the blank space of the card, you can enter the subscription interface, as shown in the following figure.
 
 ![subscription](./assets-dashboard/subscription.png)
 
-在订阅界面中，用户可查看对应应用名称底下订阅的所有Group列表，也可在界面进行添加/删除订阅等操作：
+In the subscription interface, users can view the list of all subscribed groups under the corresponding application name, and can add/delete subscriptions on the prompt screen:
 
-- `导出`按钮可将订阅的Group列表以Excel表格形式导出；
-- `添加订阅`按钮可进行添加订阅的操作，如下图所示，下拉框选择所有订阅的南向设备及对应的Group；
+- The `Export` button can export the subscribed Group list in Excel form;
+- The `Add subscription` button can be used to add a subscription, as shown in the figure below, the drop-down box selects all the subscribed southbound devices and the corresponding group;
 
 ![add-subscription](./assets-dashboard/add-subscription.png)
 
-- `清空`按钮可一键删除所有订阅的操作；
-- `删除`按钮，当选择全选时，再点击`删除`按钮，效果等同于`清空`，可将所有订阅全部删除。当单选某些Group时，再点击`删除`按键，可快捷批量删除选择的Groups的订阅；
+- `Clear` button can delete all subscription operations at once;
+- `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, which can delete all subscriptions. When you select some Groups, click the `Delete` button to quickly delete the subscriptions of the selected Groups in batches;
 
-## 南向设备管理
+## Southbound device management
 
-南向设备管理界面展示用户添加的所有的南向设备，包含每个设备的名称，工作状态和连接状态，其中工作状态同北向应用的工作状态。
+The southbound device management interface displays all the southbound devices added by the user, including the name, working status and connection status of each device, where the working status is the same as that of the northbound application.
 
-南向设备管理界面还可进行`添加设备`操作，每台设备都可以单独地进行配置及删除操作，点击设备卡片的任意空白处，即可进入到Group列表界面，如下图所示。
+The southbound device management interface can also perform the `add device` operation. Each device can be configured and deleted individually. Click any blank space on the device card to enter the group list interface, as shown in the figure below.
 
 ![south-devices](./assets-dashboard/south-devices.png)
 
-同北向应用，用户需点击右上角的`添加设备`按钮，进行添加设备的操作，需要填写设备名称，下拉选择南向设备插件，如下图所示。
+The same as the northbound application, the user needs to click the `Add device` button in the upper right corner to add a device, fill in the device name, and click the dropdown to select the southbound device plug-in, as shown in the figure below.
 
 ![add-south-devices](./assets-dashboard/add-south-devices.png)
 
-当点击`设备配置`按钮时，进入该设备的配置界面,带有 ” * ” 的是必填项，每个字段后面都有一个信息提示键，将鼠标放置在这个键上方，将会出现该字段的说明，如下图所示。
+When you click the `Device Configuration` button, you will enter the configuration interface of the device. The items with "*" are required fields. There is an information prompt button behind each field. Place the mouse over this button, and the help message will appear, as shown in the following figure.
 
 ![south-setting](./assets-dashboard/south-setting.png)
 
-当点击卡片空白处时，即可进入该设备底下的Group列表界面，如下图所示。
+When you click on the blank space of the card, you can enter the Group list interface under the device, as shown in the following figure.
 
 ![group-list](./assets-dashboard/group-list.png)
 
-在Group列表界面中，用户可查看对应设备底下的所有Group列表，也可在界面进行添加/删除Group等操作：
+In the group list interface, users can view all group lists under the corresponding device, and can add/delete groups on the interface:
 
-- `导出`按钮可将Group列表信息以Excel表格形式导出；
-- `创建`按钮可进行添加Group的操作，如下图所示，填写Group信息，创建Group，用户可利用编辑按钮修改Group配置；
+- The `Export` button can export the Group list information in the form of Excel;
+- The `Create` button can be used to add a group, as shown in the figure below, fill in the group information, create a group, and the user can use the edit button to modify the group configuration;
 
 ![create-group](./assets-dashboard/create-group.png)
 
-- `清空`按钮可一键删除所有创建的Group；
-- `删除`按钮，在选择全选时，在点击`删除`按钮，效果等同于`清空`，可将所有Group全部删除。当单选某些Group时，再点击`删除`按键，可快捷批量删除选择的Groups；
+- `Clear` button can delete all created groups with one click;
+- `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, all groups can be deleted. When selecting some Groups, click the `Delete` button to quickly delete the selected Groups in batches;
 
-在Group列表界面点击某个Group底下的tag列表，将会进入到Tag列表界面，如下图所示。
+On the Group list interface, click the tag list under a group to enter the Tag list interface, as shown in the following figure.
 
 ![tag-list](./assets-dashboard/tag-list.png)
 
-在Tag列表界面中，用户可查看所在的设备名称，也可在界面进行创建/删除tag的操作，本页面还可以利用Excel批量导入tags；
+In the tag list interface, users can view the name of the device they are in, and can also create/delete tags on the interface. This page can also use Excel to import tags in batches;
 
-- `导入`按钮，将鼠标放置在`导入`按钮上方，将会出现导入的Excel模版，用户可通过Excel批量导入tags；
-- `创建`按钮可进行添加Tags的操作，如下图所示，填写Tag的名称，驱动地址，属性和类型创建Tag，当然，还可以通过下方的`添加`按钮一次添加多个tag。目前属性提供读、写、订阅三种属性，Tag类型根据插件里提供的数据类型来定，如下图所示。
+- `Import` button, place the mouse over the `Import` button, the imported Excel template will appear, and users can import tags through Excel in batches;
+- The `Create` button can be used to add tags. As shown in the figure below, fill in the tag name, driver address, attribute and type to create a tag. Of course, you can add multiple tags at a time through the `add` button below. At present, there are 3 attributes: read, write, and subscribe. The Tag type is determined according to the data type provided in the plug-in, as shown in the following figure.
 
 ![add-tag](./assets-dashboard/add-tag.png)
 
-- `清空`按钮可一键删除所有创建的Tag；
-- `删除`按钮，在选择全选时，点击`删除`按键，效果等同于`清空`，将删除所有Tag。当单选某些Tag时，再点击`删除`按键，可快捷批量删除选择的Tags；
+- `Clear` button can delete all created tags at once;
+- `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, all tags will be deleted. When selecting some tags, click the `delete` button to quickly delete the selected tags in batches;
 
-## 插件管理
+## Plugin management
 
-插件管理界面展示用户添加的所有插件信息，包含插件的名称、关联节点类型、插件类别和驱动库名称，如下图所示。其中插件类型包含下面三种：
+The plug-in management interface displays all the plug-in information added by the user, including the name of the plug-in, associated node type, plug-in category and driver library name, as shown in the following figure. The plug-in types include the following 3 modes:
 
-- Static：不可删除
-- System：不可删除，是软件自带的
-- Custom：可删除，用户自己开发或者是定制开发的
+- Static: cannot be deleted
+- System: cannot be deleted, native
+- Custom: Deletable, user-developed or custom-developed
 
-在添加的插件过多时，用户可下拉框筛选出北向应用/南向设备的插件，如下图所示。
+When there are too many plugins added, the user can filter out the plugins for northbound applications/southbound devices from the dropdown box, as shown in the following figure.
 
 ![plugin-options](./assets-dashboard/plugin-options.png)
 
-用户可根据右上角的`添加Plugin`按钮，进行添加插件的操作，如下图所示，手动添加已加在build目录底下的.so文件的文件名称。
+Users can add plugins according to the `Add Plugin` button in the upper right corner, as shown in the figure below, manually add the file name of the .so file that has been added to the build directory.
 
 ![add-plugin](./assets-dashboard/add-plugin.png)
