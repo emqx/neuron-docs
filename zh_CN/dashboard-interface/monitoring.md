@@ -6,12 +6,12 @@
 
 界面展示数据的更新时间，用户选择的Group底下的所有tag信息，包含每个tag的名称，驱动地址，值及是否可进行写操作，如下图所示。
 
-![data-monitoring](./assets-dashboard/data-monitoring.png)
+![data-monitoring](../assets/data-monitoring.png)
 
 在数据监控界面还提供了以十六进制显示数值的功能，用户需要将鼠标放置在`值`旁边的绿色提示标志上，将会自动弹出`以16进制显示值`的字样，将开关打开，数据将会如下图所示，以十六进制的方式展示。
 
-![hex](./assets-dashboard/hex.png)
+![hex](../assets/hex.png)
 
 操作栏展示该tag是否具有写操作的功能，当某个tag的属性设置了写属性时，操作栏就会出现`Write`的写操作按钮，点击该按钮将会有弹窗弹出，用户可改写该tag的数值，如下图所示。
 
-![write](./assets-dashboard/write.png)
+![write](../assets/write.png)

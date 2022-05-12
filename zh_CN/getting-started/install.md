@@ -64,7 +64,7 @@ sudo rpm -i xxx.rpm --nodeps --force
 根据不同版本安装，例如：
 
 ```bash
-sudo rpm -i neuron-2.0.0-beta.2-linux-armhf.rpm --nodeps --force
+sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
 ```
 
 *注意* 成功安装 rpm 包后，自启动 Neuron
@@ -115,16 +115,16 @@ cd neuron-2.0.1-linux-armhf
 
 #### 获取镜像
 
-docker镜像请从docker hub网站下载。[https://hub.docker.com](https://hub.docker.com)
+docker 镜像请从 docker hub 网站下载。[https://hub.docker.com](https://hub.docker.com)
 
 ```bash
-docker pull neugates/neuron:2.0.0
+docker pull neugates/neuron:2.0.1
 ```
 
 #### 启动
 
 ```bash
-docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0
+docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.1
 ```
 
 * tcp 7000: 用于访问web。
