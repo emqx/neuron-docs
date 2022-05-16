@@ -466,3 +466,30 @@ string:
 | M_SP_NA_1、M_SP_TB_1            | bit          |
 | M_ME_NA_1、M_ME_TD_1、M_ME_ND_1 | uint16/int16 |
 
+## KNXnet/IP
+
+### Support Data Type
+
+* bit
+* bool
+* int8
+* uint8
+* int16
+* uint16
+* float
+
+### Address Format
+
+> GROUP_ADDRESS | GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
+
+| ADDRESS                             | ATTRIBUTE | REMARK                             |
+| ----------------------------------- | --------- | ---------------------------------- |
+| GROUP_ADDRESS                       | write     | KNX group address                  |
+| GROUP_ADDRESS,INDIVIDUAL_ADDRESS    | read      | KNX individual address under group |
+
+*example*:
+* `0/0/1` is a KNX group address and is write only in Neuron, KNX devices
+  belonging to this group will react to messages sent to this group.
+* `0/0/1,1.1.1` represents a KNX individual address `1.1.1` that is a member
+  of the group address `0/0/1`, and is read only in Neuron.
+
