@@ -1,8 +1,8 @@
-# ERROR CODE
+# 错误代码
 
-This document mainly describes some errors that neuron will respond when calling http api and mqtt api.
+本文档描述了neuron在调用http api和mqtt api时会响应的错误码。
 
-## api request error codes
+## api request 错误代码
 
 * 1001 internal error
 
@@ -15,7 +15,7 @@ This document mainly describes some errors that neuron will respond when calling
 * 1008    invalid token
 * 1009    user or password error
 
-## add/del/update node/tag/plugin/group error codes
+## add/del/update node/tag/plugin/group 错误代码
 
 * 2001    node type invalid
 
@@ -42,7 +42,7 @@ This document mainly describes some errors that neuron will respond when calling
 * 2302    library info invalid
 * 2303    library name conflict
 
-## plugin common error codes
+## plugin 常见的错误代码
 
 * 3000    plugin read failure
 * 3001    plugin write failure

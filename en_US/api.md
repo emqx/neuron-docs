@@ -1,6 +1,6 @@
 # API
 
-Neuron would provide a series of API services for IIoT platform, to query the basic information, to control gateway behaviors or to setup the polling configuration. IIoT platform must initiate the communication by sending request message to Neuron. By return, Neuron would send back the required information or execute the deserved action. If there is error, a error code would be returned to tell the reason of failure.
+Neuron provide a series of API services for IIoT platform, to query the basic information, to control gateway behaviors or to setup the polling configuration. IIoT platform can initiate the communication by sending request message to Neuron. By return, Neuron would send back the required information or execute the deserved action. If there is error, a error code would be returned to tell the reason of failure.
 
 ## Value
 
@@ -437,7 +437,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 
 * 200 OK
 * 206
-  * 2202  tag name conflict
+  * 2202 tag name conflict
   * 2203 tag attribute not support
   * 2204 tag type not support
   * 2205 tag address format invalid
@@ -877,7 +877,7 @@ Neuron would provide a series of API services for IIoT platform, to query the ba
 }
 ```
 
-*Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
+*Node* The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
 
 ## Write Tag
 

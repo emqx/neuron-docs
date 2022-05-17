@@ -42,7 +42,7 @@
 }
 ```
 
-*Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
+*Node* 正确读取数值时，仅显示数值，仅当读取错误数值时，显示错误码，不显示数值。
 
 ## Upload Data
 
@@ -50,7 +50,7 @@
 
 *Topic* **neuron/{client-id}/upload** 
 
-If the upload-topic is set in the node setting, the topic will be used to upload data, and the default topic will no longer upload data.
+如果在节点设置中设置了upload-topic，则该topic将用于上传数据，默认topic将不再上传数据。
 
 #### Body (Tags format)
 
@@ -90,9 +90,9 @@ If the upload-topic is set in the node setting, the topic will be used to upload
 }
 ```
 
-*Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
+*Node* 正确读取数值时，仅显示数值，仅当读取错误数值时，显示错误码，不显示数值。
 
-There are two message formats for the body. You can choose two different formats in the mqtt configuration form.
+正文有两种消息格式。 您可以在 mqtt 配置表单中选择两种不同的格式。
 
 **Node:**  A group sends a message.
 

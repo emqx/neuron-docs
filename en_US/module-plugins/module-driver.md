@@ -1,6 +1,6 @@
 # Application And Driver Instructions
 
-This document mainly introduces some parameter configuration and point information configuration specifications for northbound applications and southbound drives.
+This document introduces how to setup parameter and data tag point information in configuration for northbound applications and southbound drivers.
 
 ## Type Description
 
@@ -187,7 +187,7 @@ example: function is 0x3, and register address is 0, then address used by neuron
 
 **!** Please refer to OPC UA standard for the explanation of namespace index and node id.
 
-## S7COMM
+## Siemens S7 ISOTCP
 
 The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300/400/1200/1500.
 
@@ -268,7 +268,7 @@ string:
 * The optimized block access must be turned off.
 * The access level must be "full" and the "connection mechanism" must allow GET/PUT.
 
-## FINS on TCP
+## OMRON FINS on TCP
 
 The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
@@ -353,7 +353,7 @@ string:
     EM10W0.10
 ```
 
-## QnA3E
+## Mitsubishi MELSEC E71
 
 The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
 

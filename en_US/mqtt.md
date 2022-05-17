@@ -1,6 +1,6 @@
 # MQTT Topics
 
-All topics for interaction between client and neuron with read, write command.
+The following topics are used for read/write interaction between client and neuron.
 
 The **client-id** in all topics refers to the actual MQTT client id, which is set in the northbound application configuration in the Neuron UI.
 
@@ -42,7 +42,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 }
 ```
 
-*Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
+*Node* The value is displayed only when the value is read correctly , when the value is read incorrectly, the error code is displayed, not the value.
 
 ## Upload Data
 
@@ -50,7 +50,7 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 
 *Topic* **neuron/{client-id}/upload**
 
-If the upload-topic is set in the node setting, the topic will be used to upload data, and the default topic will no longer upload data.
+If the upload-topic is set in the node setting, the new topic will be used to uploading data, and the default topic will no longer for uploading data.
 
 #### Body (Tags format)
 
@@ -90,9 +90,9 @@ If the upload-topic is set in the node setting, the topic will be used to upload
 }
 ```
 
-*Node* When the value is read correctly, only the value is displayed, only when the value is read incorrectly, the error code is displayed, not the value.
+*Node* The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
 
-There are two message formats for the body. You can choose two different formats in the mqtt configuration form.
+There are two message formats for the body. You can choose one of two different formats in the mqtt configuration form.
 
 **Node:**  A group sends a message.
 

@@ -1,11 +1,11 @@
-# 简介
+# About the documentation
 
-Neuron 是运行在各类物联网边缘网关硬件上的工业协议商业化网关软件，支持一站式接入和解析数十种工业协议，并转换成 MQTT 协议接入工业物联网平台。用户可以通过基于 Web 的管理控制台可以实现在线的网关配置管理；Neuron 的资源占用很低，并且同时支持 X86、ARM、MIPS 三大 CPU 架构。
+Neuron 文档由以下几个主要部分组成：
 
-- 支持了 Modbus，OPCUA，IEC61850，IEC104 和 BACnet 等众多协议和设备；
-- 管理控制台，用户可以在浏览器中进行可视化的配置，实现跨工业设备数据的接入；
-- 北向标准 MQTT 数据发送，根据用户指定配置，将数据发送至指定的 MQTT 消息服务器中；
-- 南向控制接口，Neuron 监听控制设备的主题，将相关的控制命令转发给设备。结合 EMQ X Kuiper 提供的规则引擎功能，快速实现基于规则的设备控制；
-- 本地数据存储，实现设备原始数据的存储和查看；
-
-Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到端的[云边协同的工业互联网解决方案](https://www.emqx.com/zh/use-cases/industrial-iot)。
+* [简介](README.md)：本节概述了 Neuron 是什么、特点、与 EMQ 边缘端其它产品的集成。
+* [入门](./getting-started/getting-started.md)：安装及快速开始使用 Neuron。
+* [界面](./dashboard-interface/login.md)：本节详细说明 Web 界面的使用。
+* [组件扩展](./neuron-driver.md)：本节详细说明插件的使用。
+* [MQTT](./neuron-mqtt-topics.md)：MQTT 客户端与 Neuron 之间交互主题的详细参考。
+* [API](./neuron-api.md)：Neuron API 详细参考。
+* [Error Codes](./neuron-error-code.md)：本文详细描述 Neuron 调用 http api 和 mqtt api 时，会出现的一些错误.

@@ -1,6 +1,6 @@
 # ERROR CODE
 
-This document mainly describes some errors that neuron will respond when calling http api and mqtt api.
+This document describes the errors that neuron will reply to sender when calling http api and mqtt api.
 
 ## api request error codes
 

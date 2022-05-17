@@ -1,26 +1,24 @@
 # Modules List
 
-## Developed Modules
+## Available Modules
 
-| Modules                 | Type | Release Date | Release Version   | Version Type                     ｜
-| ----------------------- | ---- |------------- | ----------------- | -------------------------------- |
-| Modbus TCP              | South | 03/09/2022  | 2.0.0 Beta.1    | Open Source/Commercial Version |
-| Modbus RTU over TCP     | South | 03/09/2022  | 2.0.0 Beta.1    | Commercial Version        |
-| OPC UA                  | South | 03/09/2022  | 2.0.0 Beta.1    | Commercial Version        |
-| Siemens PLC(S7 ISO TCP) | South | 03/09/2022  | 2.0.0 Beta.1    | Commercial Version        |
-| Mitsubishi MELSEC-Q E71 | South | 03/25/2022  | 2.0.0 Beta.2    | Commercial Version        |
-| Omron(FINS on TCP)      | South | 03/25/2022  | 2.0.0 Beta.2    | Commercial Version        |
+| Modules                 | Type | Release Date | Release Version   | Version Type       |
+| ----------------------- | ---- |------------- | ----------------- | --------------------------------|
+| Modbus TCP              | South | 03/09/2022  | 2.0.0     | Open Source/Commercial Version |
+| Modbus RTU over TCP     | South | 03/09/2022  | 2.0.0     | Commercial Version        |
+| OPC UA                  | South | 03/09/2022  | 2.0.0     | Commercial Version        |
+| Siemens PLC(S7 ISO TCP) | South | 03/09/2022  | 2.0.0     | Commercial Version        |
+| Mitsubishi MELSEC-Q E71 | South | 03/25/2022  | 2.0.0     | Commercial Version        |
+| Omron(FINS on TCP)      | South | 03/25/2022  | 2.0.0     | Commercial Version        |
 | eKuiper                 | North | 04/22/2022  | 2.0.0           | Commercial Version        |
 | IEC60870-5-104          | South | 04/22/2022  | 2.0.0           | Commercial Version        |
 
-### Difference Between Open Source And Commercial Versions
+##### Feature difference between open source and commercial versions Modbus driver
+  * DTU server mode client connection in commercial version only.
+  * String data types in commercial version only.
+  * Endianness in commercial version only.
 
-* Modbus functionality optimisation
-  * In the open source version, Neuron only acts as a client, but in the commercial version, Neuron can act as a client/server.
-  * String data types are supported in the commercial version.
-  * Different endianness is supported in the commercial version.
-
-## 计划开发的插件
+## Upcoming Modules
 
 | Modules                                     | Type |
 | ------------------------------------------- | ---- |
