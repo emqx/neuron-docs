@@ -1,4 +1,4 @@
-# 驱动使用说明
+# Application And Driver Instructions
 
 This document mainly introduces some parameter configuration and point information configuration specifications for northbound applications and southbound drives.
 
@@ -306,7 +306,7 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 | F    | int8/uint8   | read       | Completion Flag  |
 | EM   | all          | read/write | Extended Memory  |
 
-example
+*example*
 
 ```
 bit:
@@ -419,7 +419,7 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 | ZRSL |           |            |                                  |
 | Z    | all       | read/write | Index register (Q/iQ-F)          |
 
-example
+*example*
 
 ```
 bit:
@@ -478,6 +478,12 @@ string:
 * uint16
 * float
 
+### Parameter Setting
+
+**host** is BACnet device ip.
+
+**port** is BACnet device port, default 47808.
+
 ### Address Format
 
 > GROUP_ADDRESS | GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
@@ -492,3 +498,46 @@ string:
   belonging to this group will react to messages sent to this group.
 * `0/0/1,1.1.1` represents a KNX individual address `1.1.1` that is a member
   of the group address `0/0/1`, and is read only in Neuron.
+
+## BACnet/IP
+
+### Support Data Type
+
+* float
+* bit
+
+### Address Format
+
+> AREA[ADDRESS]</span>
+
+| AREA | ATTRIBUTE  | DADA TYPE | ADDRESS RANGE | REMARK             |
+| ---- | ---------- | --------- | ------------- | ------------------ |
+| AI   | read       | float     | 0 - 0x3fffff  | analog input       |
+| AO   | read/write | float     | 0 - 0x3fffff  | analog output      |
+| AV   | read/write | float     | 0 - 0x3fffff  | analog value       |
+| BI   | read       | bit       | 0 - 0x3fffff  | binary input       |
+| BO   | read/write | bit       | 0 - 0x3fffff  | binary output      |
+| BV   | read/write | bit       | 0 - 0x3fffff  | binary value       |
+| MSI  | read       | bit       | 0 - 0x3fffff  | multi state input  |
+| MSO  | read/write | bit       | 0 - 0x3fffff  | multi state output |
+| MSV  | read/write | bit       | 0 - 0x3fffff  | multi state value  |
+
+*example*
+
+```
+float:
+	AI0 
+	AI1
+	BO10
+	BO20
+	AV30
+
+bit:
+	BI0
+	BI1
+	BV3
+	MSI10
+	MSI20
+	MSI30
+```
+
