@@ -1,28 +1,28 @@
-# Application And Driver Instructions
+# 应用和配置说明
 
-This document mainly introduces some parameter configuration and point information configuration specifications for northbound applications and southbound drives.
+本节主要介绍了北向应用/南向设备的参数配置和点位信息配置规范。
 
-## Type Description
+## 类型描述
 
-* If you want to use the word data type, please select uint16 in Neuron's datat type
-* If you want to use the dword data type, please select uint32 in Neuron's datat type
+* 如果你想使用 **word** 类型，请在 Neuron 的数据类型中选择 uint16。
+* 如果你想使用 **dword** 类型，请在 Neuron 的数据类型中选择 uint32。
 
-## Common Address Format Option
+## 通用地址格式选项
 
-Common options supported by each driver's address format.
+每个驱动程序的地址格式所支持的通用选项。
 
-**#** endian
+**#** 字节顺序
 
 ```
  - B  = 2,1     int16/uint16
- - L  = 1,2     int16/uint16 (default)
- - LL = 1,2,3,4 int32/uint32/float (default)
+ - L  = 1,2     int16/uint16 (默认)
+ - LL = 1,2,3,4 int32/uint32/float (默认)
  - LB = 2,1,4,3 int32/uint32/float
  - BB = 3,4,1,2 int32/uint32/float
  - BL = 4,3,2,1 int32/uint32/float
 ```
 
-**.**  \[bit][len\[H]\[L]\[D]\[E]]  bit operation or string len
+**.**  \[bit][len\[H]\[L]\[D]\[E]]  位操作和字符串长度
 
 ```
 - H = high-to-low endian (default)
@@ -33,31 +33,31 @@ Common options supported by each driver's address format.
 
 ## MQTT
 
-The data collected from the device can be transmitted to the mqtt broker through mqtt application, and instructions can be sent to neuron throuth mqtt application.
+从设备中收集到的数据可以通过 MQTT 应用程序传输到 MQTT 代理，并通过 MQTT 应用程序 向 Neuron 发送指令。
 
-### Parameter Setting
+### 参数配置
 
-**client-id** is mqtt client id.
+**client-id** MQTT 的客户端 ID。
 
-**ssl** enable mqtt ssl, default false.
+**ssl** 是否启用 mqtt ssl，默认 false.
 
-**host** is mqtt broker host.
+**host** MQTT 代理主机。
 
-**port** is mqtt broker port.
+**port** MQTT 代理的端口。
 
-**username** is the user used when connecting to the broker.
+**username** 连接到 Broker 时使用的用户名。
 
-**password** is the password used when connecting to the broker.
+**password** 连接到 Broker 时使用的密码。
 
-**ca-path** is ca path.
+**ca-path** ca 路径。
 
-**ca-file** is ca file.
+**ca-file** ca 文件。
 
 ## Modbus
 
-The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.
+Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。
 
-### Support Data Type
+### 支持的数据类型
 
 * INT16
 * INT32
@@ -67,37 +67,36 @@ The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus R
 * BIT
 * STRING
 
-### Parameter Setting
+### 参数设置
 
-**connection mode**: The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client.
+**connection mode**：驱动程序连接到设备的方式，默认为客户端，即把 Neuron 作为客户端使用。
 
-**host**：When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default.
+**host**：当 Neuron 作为客户端使用时，host 指远程设备的 IP。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 IP，默认可填写 0.0.0.0。
 
-**port**:  When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. default 502.
-
-### Address Format
+**port**：当 Neuron 作为客户端使用时，post 指远程设备的 TCP 端口。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 TCP 端口，默认为 502。
+### 地址格式
 
 > SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
 
-**SLAVE** is slave id.
+**SLAVE** 从机 ID。
 
-**ADDRESS** is the register address.
+**ADDRESS** 寄存器地址。
 
-| AREA           | ADDRESS RANGE   | ATTRIBUTE  | REGISTER SIZE | FUNCTION     |
+| 区域           | 地址范围          | 属性        | 寄存器大小     | 功能码        |
 | -------------- | --------------- | ---------- | ------------- | ------------ |
-| coil           | 000001 ~ 065536 | read/write | 1bit          | 0x1,0x5,0x0f |
-| input          | 100001 ~ 165536 | read       | 1bit          | 0x2          |
-| input register | 300001 ~ 365536 | read       | 16bit         | 0x4          |
-| hold register  | 400001 ~ 465536 | read/write | 16bit         | 0x3,0x6,0x10 |
+| coil           | 000001 ~ 065536 | 读/写       | 1bit          | 0x1,0x5,0x0f |
+| input          | 100001 ~ 165536 | 读          | 1bit          | 0x2          |
+| input register | 300001 ~ 365536 | 读          | 16bit         | 0x4          |
+| hold register  | 400001 ~ 465536 | 读/写       | 16bit         | 0x3,0x6,0x10 |
 
-| DATA TYPE          | AREA                         | ATTRIBUTE                                               |
-| ------------------ | ---------------------------- | ------------------------------------------------------- |
-| uint16/int16       | input register\hold register | input register(r), hold register(w)                     |
-| uint32/int32/float | input register\hold register | input register(r), hold register(w)                     |
-| bit                | all area                     | input(r), coil(rw), input register(r), hold register(w) |
-| string             | input register\hold register | input register(r), hold register(w)                     |
+| 数据类型            | 区域                         | 属性                                               |
+| ------------------ | ------------------------ | ------------------------------------------------------- |
+| uint16/int16       | 输入寄存器\保持寄存器       | 输入寄存器(读), 保持寄存器(写)                     |
+| uint32/int32/float | 输入寄存器\保持寄存器       | 输入寄存器(读), 保持寄存器(写)                     |
+| bit                | 所有区域                  | 输入(读), 线圈(读/写), 输入寄存器(读), 保持寄存器(写) |
+| string             | 输入寄存器\保持寄存器       | 输入寄存器(读), 保持寄存器(写)                     |
 
-#### **example**
+#### **例子**
 
 ```
 bit:
@@ -138,13 +137,13 @@ string:
     1!40001.10L
 ```
 
-**!** Some device documents use function and register addresses to describe instructions. First, determine the highest digit of the address according to function. And add 1 to the register address to be the address used by neuron.
+**注意** 一些设备文件使用功能和寄存器地址来描述指令。首先，根据功能确定地址的最高位数，并在寄存器地址上加1，作为 Neuron 的使用地址。
 
-example: function is 0x3, and register address is 0, then address used by neuron is 400001.
+例如，功能码是 0x03，寄存器地址是 0，那么 Neuron 使用的地址是 400001.
 
 ## OPC UA
 
-### Support Data Type
+### 支持的数据类型
 
 * BYTE
 * INT8
@@ -161,37 +160,36 @@ example: function is 0x3, and register address is 0, then address used by neuron
 * BIT
 * STRING
 
-### Parameter Setting
+### 参数配置
 
-**endpoint url** is the address of the remote access plc, the default value is `opc.tcp://127.0.0.1:4840/` .
+**endpoint url** 远程访问 PLC 的地址，默认值是`opc.tcp://127.0.0.1:4840/`。
 
-**username** is the user used when connecting to plc.
+**username** 连接到 PLC 时，使用的用户名。
 
-**password** is the password used when connecting to plc.
+**password** 连接到 PLC 时，使用的密码。
 
-**cert-file** is the certificate to provide login user authentication.
+**cert-file** 提供登录用户认证的证书。
+**key-file** 私钥文件，用于提供签名和加密传输。
 
-**key-file** is the private key to provide signature and encrypted transmission.s
-
-### Addresses Format
+### 地址格式
 
 > IX!NODEID</span>
 
-**IX** is the namespace index.
+**IX** 命名空间索引。
 
-**NODEID** is the node id.
+**NODEID** 节点 ID。
 
-*example*:
+*例子*:
 
-* 2!Device1.Module1.Tag1 represents namespace index is 2 and node ID is Device1.Module1.Tag
+* 2!Device1.Module1.Tag1 指命名空间索引为2，节点 ID 为 Device1.Module1.Tag1。
 
-**!** Please refer to OPC UA standard for the explanation of namespace index and node id.
+**注意** 关于命名空间索引和节点 ID 的解释，请参考 OPC UA 标准。
 
 ## S7COMM
 
-The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300/400/1200/1500.
+s7comm 插件用于带有网络端口的西门子PLC，如，s7-200/300/400/1200/1500。
 
-### Support Data Type
+### 支持的数据类型
 
 * INT16
 * UINT16
@@ -202,30 +200,30 @@ The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300
 * BIT
 * STRING
 
-### Parameter Setting
+### 参数配置
 
-**host** is remote plc ip.
+**host** 远程 PLC 的 IP。
 
-**ip** is remote plc port, default 102.
+**ip** 远程 PLC 的端口，默认为 102。
 
-**rack** plc rack number, default 0.
+**rack** PLC 机架号，默认为 0。
 
-**slot** plc cpu slot, default 1.
+**slot** PLC 插槽号，默认为 1。
 
-### Address Format
+### 地址格式
 
 > AREA ADDRESS\[.BIT][.LEN]</span>
 
-| AREA | DATA TYPE                                         | ATTRIBUTE  | REMARK          |
+| 区域 | 数据类型                                        | 属性  | 备注          |
 | ---- | ------------------------------------------------- | ---------- | --------------- |
-| I    | int16/uint16/bit                                  | read       | input           |
-| O    | int16/uint16/bit                                  | read/write | output          |
-| F    | int16/uint16/bit                                  | read/write | flag            |
-| T    | int16/uint16/bit                                  | read/write | timer           |
-| C    | int16/uint16/bit                                  | read/write | counter         |
-| DB   | int16/uint16/bit/int32/uint32/float/double/string | read/write | global DB block |
+| I    | int16/uint16/bit                                  | 读       | input           |
+| O    | int16/uint16/bit                                  | 读/写 | output          |
+| F    | int16/uint16/bit                                  | 读/写 | flag            |
+| T    | int16/uint16/bit                                  | 读/写 | timer           |
+| C    | int16/uint16/bit                                  | 读/写 | counter         |
+| DB   | int16/uint16/bit/int32/uint32/float/double/string | 读/写 | global DB block |
 
-*example*
+*例子*
 
 ```
 bit:
@@ -263,16 +261,16 @@ string:
     DB1.DBW12.20
 ```
 
-**!**  When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Siemens software(TIA16) to make some settings for the PLC.
+**注意** 当使用S7COMM插件访问S7 1200/1500 PLC时，你需要使用西门子软件（TIA16）对PLC进行一些设置。
 
-* The optimized block access must be turned off.
-* The access level must be "full" and the "connection mechanism" must allow GET/PUT.
+* 优化块访问必须被关闭。
+* 访问级别必须是**完全**，**连接机制**必须允许 GET/PUT。
 
 ## FINS on TCP
 
-The fins plugin is used for Omron PLCs with network port, such as CP2E.
+这个插件用于带有网络端口的欧姆龙PLC，如CP2E。
 
-### Support Data Type
+### 支持的数据类型
 
 * UINT8
 * INT8
@@ -285,28 +283,28 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 * BIT
 * STRING
 
-### Parameter Setting
+### 参数配置
 
-**host** is remote plc ip.
+**host** 远程 PLC 的 ID。
 
-**port** is remote plc port, default 9600.
+**port** 远程 PLC 的端口，默认为 9600.
 
-### Address Format
+### 地址格式
 
 > AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
 
-| AREA | DATA TYPE    | ATTRIBUTE  | REMARK           |
-| ---- | ------------ | ---------- | ---------------- |
-| CIO  | all          | read/write | CIO Area         |
-| A    | all          | read       | Auxiliary Area   |
-| W    | all          | read/write | Work Area        |
-| H    | all          | read/write | Holding Area     |
-| D    | all          | read/write | Data Memory Area |
-| P    | int16/uint16 | read/write | PVs              |
-| F    | int8/uint8   | read       | Completion Flag  |
-| EM   | all          | read/write | Extended Memory  |
+| 区域 | 数据类型           | 属性        | 备注           |
+| ---- | ---------------- | ---------- | ---------------- |
+| CIO  | 所有类型          | 读/写       | CIO Area         |
+| A    | 所有类型          | 读          | Auxiliary Area   |
+| W    | 所有类型          | 读/写       | Work Area        |
+| H    | 所有类型          | 读/写       | Holding Area     |
+| D    | 所有类型          | 读/写       | Data Memory Area |
+| P    | int16/uint16    | 读/写       | PVs              |
+| F    | int8/uint8      | 读          | Completion Flag  |
+| EM   | 所有类型          | 读/写      | Extended Memory  |
 
-*example*
+*例子*
 
 ```
 bit:
@@ -355,9 +353,9 @@ string:
 
 ## QnA3E
 
-The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
+qna3e插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（MC）、iQ-F系列（SLMP）和iQ-L系列。
 
-### Support Data Type
+### 支持的数据类型
 
 * INT16
 * UINT16
@@ -368,58 +366,58 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 * BIT
 * STRING
 
-### Parameter Setting
+### 参数配置
 
-**host** is remote plc ip.
+**host** 远程 PLC 的 ID。
 
-**ip** is remote plc port, default 2000.
+**ip** 远程 PLC 的端口号，默认为 2000。
 
-### Address Format
+### 地址格式
 
 > AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
 
-| AREA | DATA TYPE | ATTRIBUTE  | REMARK                           |
+| 区域 |数据类型 | 属性  | 备注                           |
 | ---- | --------- | ---------- | -------------------------------- |
-| X    | bit       | read/write | Input relay (Q/iQ-F)             |
-| DX   | bit       | read/write | (Q/iQ-F)                         |
-| Y    | bit       | read/write | Output relay (Q/iQ-F)            |
-| DY   | bit       | read/write | (Q/iQ-F)                         |
-| B    | bit       | read/write | Link relay (Q/iQ-F)              |
-| SB   | bit       | read/write | Link special relay               |
-| M    | bit       | read/write | Internal relay (Q/iQ-F)          |
-| SM   | bit       | read/write | Special relay (Q/iQ-F)           |
-| L    | bit       | read/write | Latch relay (Q/iQ-F)             |
-| F    | bit       | read/write | Annunciator (Q/iQ-F)             |
-| V    | bit       | read/write | Edge relay (Q/iQ-F)              |
-| S    | bit       | read/write | (Q/iQ-F)                         |
-| TS   | bit       | read/write | Timer Contact (Q/iQ-F)           |
-| TC   | bit       | read/write | Timer Coil (Q/iQ-F)              |
-| SS   | bit       | read/write | (Q/iQ-F)                         |
-| STS  | bit       | read/write | Retentive timer Contact (Q/iQ-F) |
-| SC   | bit       | read/write | (Q/iQ-F)                         |
-| CS   | bit       | read/write | Counter Contact (Q/iQ-F)         |
-| CC   | bit       | read/write | Counter Coil (Q/iQ-F)            |
-| TN   | all       | read/write | Timer Current value (Q/iQ-F)     |
-| STN  | all       | read/write | Retentive timer (Q/iQ-F)         |
-| SN   | all       | read/write | (Q/iQ-F)                         |
-| CN   | all       | read/write | Counter Current value  (Q/iQ-F)  |
-| D    | all       | read/write | Data register (Q/iQ-F)           |
+| X    | 所有类型       | 读/写      | Input relay (Q/iQ-F)             |
+| DX   | 所有类型       | 读/写 | (Q/iQ-F)                         |
+| Y    | 所有类型       | 读/写 | Output relay (Q/iQ-F)            |
+| DY   | 所有类型       | 读/写 | (Q/iQ-F)                         |
+| B    | 所有类型       | 读/写 | Link relay (Q/iQ-F)              |
+| SB   | 所有类型       | 读/写 | Link special relay               |
+| M    | 所有类型       | 读/写 | Internal relay (Q/iQ-F)          |
+| SM   | 所有类型       | 读/写 | Special relay (Q/iQ-F)           |
+| L    | 所有类型       | 读/写 | Latch relay (Q/iQ-F)             |
+| F    | 所有类型       | 读/写 | Annunciator (Q/iQ-F)             |
+| V    | 所有类型       | 读/写 | Edge relay (Q/iQ-F)              |
+| S    | 所有类型       | 读/写 | (Q/iQ-F)                         |
+| TS   | 所有类型       | 读/写 | Timer Contact (Q/iQ-F)           |
+| TC   | 所有类型       | 读/写 | Timer Coil (Q/iQ-F)              |
+| SS   | 所有类型       | 读/写 | (Q/iQ-F)                         |
+| STS  | 所有类型       | 读/写 | Retentive timer Contact (Q/iQ-F) |
+| SC   | 所有类型       | 读/写 | (Q/iQ-F)                         |
+| CS   | 所有类型       | 读/写 | Counter Contact (Q/iQ-F)         |
+| CC   | 所有类型       | 读/写 | Counter Coil (Q/iQ-F)            |
+| TN   | 所有类型       | 读/写 | Timer Current value (Q/iQ-F)     |
+| STN  | 所有类型       | 读/写 | Retentive timer (Q/iQ-F)         |
+| SN   | 所有类型       | 读/写 | (Q/iQ-F)                         |
+| CN   | 所有类型       | 读/写 | Counter Current value  (Q/iQ-F)  |
+| D    | 所有类型       | 读/写 | Data register (Q/iQ-F)           |
 | DSH  |           |            |                                  |
 | DSL  |           |            |                                  |
-| SD   | all       | read/write | Specical register (Q/iQ-F)       |
-| W    | all       | read/write | Link register (Q/iQ-F)           |
+| SD   | 所有类型       | 读/写 | Specical register (Q/iQ-F)       |
+| W    | 所有类型       | 读/写 | Link register (Q/iQ-F)           |
 | WSH  |           |            |                                  |
 | WSL  |           |            |                                  |
-| SW   | all       | read/write | Link special register (Q/iQ-F)   |
-| R    | all       | read/write | File register (Q/iQ-F)           |
-| ZR   | all       | read/write | File register (Q/iQ-F)           |
+| SW   | 所有类型       | 读/写 | Link special register (Q/iQ-F)   |
+| R    | 所有类型       | 读/写 | File register (Q/iQ-F)           |
+| ZR   | 所有类型       | 读/写 | File register (Q/iQ-F)           |
 | RSH  |           |            |                                  |
 | ZRSH |           |            |                                  |
 | RSL  |           |            |                                  |
 | ZRSL |           |            |                                  |
-| Z    | all       | read/write | Index register (Q/iQ-F)          |
+| Z    | 所有类型       | 读/写 | Index register (Q/iQ-F)          |
 
-*example*
+*例子*
 
 ```
 bit:
@@ -438,28 +436,28 @@ string:
 
 ## IEC 60870-5-104
 
-### Support Data Type
+### 支持的数据类型
 
 * uint16
 * int16
 * float
 * bit
 
-### Parameter Setting
+### 参数配置
 
-**host** : device ip.
+**host** : 设备 IP。
 
-**port**: device port, default 2404.
+**port**: 设备端口号，默认为2404。
 
-**ca**: common address.
+**ca**: 公共地址。
 
-**interval**: station interrogation interval.
+**interval**: 站点问询时间间隔。
 
-### Address Format
+### 地址格式
 
 > IOA</span>
 
-| IEC 60870-5-104  TYPEID         | NEURON TYPE  |
+| IEC 60870-5-104  TYPEID         | Neuron 类型  |
 | ------------------------------- | ------------ |
 | M_ME_NB_1、M_ME_TE_1            | uint16/int16 |
 | M_ME_NC_1、M_ME_TF_1            | float        |
@@ -468,7 +466,7 @@ string:
 
 ## KNXnet/IP
 
-### Support Data Type
+### 支持的数据类型
 
 * bit
 * bool
@@ -478,35 +476,34 @@ string:
 * uint16
 * float
 
-### Parameter Setting
+### 参数配置
 
-**host** is BACnet device ip.
+**host** BACnet 设备的 ID。
 
-**port** is BACnet device port, default 47808.
+**port** BACnet 设备的端口号，默认为 47808.
 
-### Address Format
+### 地址格式
 
 > GROUP_ADDRESS | GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
 
-| ADDRESS                             | ATTRIBUTE | REMARK                             |
+| 地址                             | 属性 | 备注                             |
 | ----------------------------------- | --------- | ---------------------------------- |
-| GROUP_ADDRESS                       | write     | KNX group address                  |
-| GROUP_ADDRESS,INDIVIDUAL_ADDRESS    | read      | KNX individual address under group |
+| GROUP_ADDRESS                       | 写     | KNX 组地址                 |
+| GROUP_ADDRESS,INDIVIDUAL_ADDRESS    | 读      | KNX individual address under group |
 
-*example*:
-* `0/0/1` is a KNX group address and is write only in Neuron, KNX devices
-  belonging to this group will react to messages sent to this group.
-* `0/0/1,1.1.1` represents a KNX individual address `1.1.1` that is a member
-  of the group address `0/0/1`, and is read only in Neuron.
+*例子*:
+
+* `0/0/1` 是一个 KNX 组地址，只在 Neuron 中写入，属于这个组的 KNX 设备将对发送的信息做出反应。属于这个组的 KNX 设备将对发送到这个组的信息做出反应。
+* `0/0/1,1.1.1` 代表一个 KNX 个人地址 `1.1.1` 是组地址 `0/0/1` 的成员。是组地址 `0/0/1` 的成员，并且在 Neuron 中只读。
 
 ## BACnet/IP
 
-### Support Data Type
+### 支持的数据类型
 
 * float
 * bit
 
-### Address Format
+### 地址格式
 
 > AREA[ADDRESS]</span>
 
@@ -522,22 +519,21 @@ string:
 | MSO  | read/write | bit       | 0 - 0x3fffff  | multi state output |
 | MSV  | read/write | bit       | 0 - 0x3fffff  | multi state value  |
 
-*example*
+*例子*
 
 ```
 float:
-	AI0 
-	AI1
-	BO10
-	BO20
-	AV30
+ AI0 
+ AI1
+ BO10
+ BO20
+ AV30
 
 bit:
-	BI0
-	BI1
-	BV3
-	MSI10
-	MSI20
-	MSI30
+ BI0
+ BI1
+ BV3
+ MSI10
+ MSI20
+ MSI30
 ```
-

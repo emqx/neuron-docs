@@ -126,7 +126,7 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 点击`创建`按钮进到创建 Tags 页面:
 
 1. 填写 Tag 名称，例如，tag1；
-2. 填写驱动地址，例如，1!400001。详细的驱动地址使用说明请参阅 [驱动使用说明](../neuron-driver.md)；
+2. 填写驱动地址，例如，1!400001。详细的驱动地址使用说明请参阅 [驱动使用说明](../module-plugins/module-driver.md)；
 3. 选择 Tag 类型，例如，Read，Write；
 4. 选择数据类型，例如，int16；
 5. 点击`创建`按键，完成 Tag 的创建；
@@ -180,7 +180,7 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 
 在上图中，点击 1（`应用配置`）处，进入到应用配置界面，如下图所示，带 ` * `是必填项，每项后面都有一个字段说明键，鼠标放置在上面，将会显示详细的说明信息。
 
-1. Client-id：应用于订阅主题中，用于区分北向应用，例如，mqtt1，详细订阅主题请参阅[MQTT Topics](../neuron-mqtt-topics.md)；
+1. Client-id：应用于订阅主题中，用于区分北向应用，例如，mqtt1，详细订阅主题请参阅[MQTT Topics](../mqtt.md)；
 2. Upload foramt：Neuron 支持两种上报数据的格式，这边默认选择；
 3. 是否进行 SSL 认证；
 4. 部署的 MQTT Broker，这里默认连接 emqx 公共 broker；

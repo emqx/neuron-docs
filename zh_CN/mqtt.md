@@ -1,14 +1,14 @@
 # MQTT订阅主题
 
-客户端和神经元之间通过读、写命令进行交互的所有主题。
+客户端和 Neuron 进行交互的所有主题。包括读、写、订阅。
 
-所有主题中的**client-id**指的是实际的MQTT客户端id，在Neuron UI的北向应用配置中设置。
+所有主题中的**{client-id}**指的是实际的 MQTT 客户端 id，在 Neuron UI 的北向应用配置中设置。
 
-## Read Tags
+## 读 Tags
 
-### Request
+### 请求
 
-*Topic*  **neuron/{client-id}/read/req**
+*主题*  **neuron/{client-id}/read/req**
 
 #### Body
 
@@ -20,7 +20,7 @@
 }
 ```
 
-### Response
+### 响应
 
 *Topic*  **neuron/{client-id}/read/resp**
 
@@ -42,15 +42,13 @@
 }
 ```
 
-*Node* 正确读取数值时，仅显示数值，仅当读取错误数值时，显示错误码，不显示数值。
+*注意* 当点位读数值出错时，将显示 **error** 字段，不再显示 **value** 字段。
 
-## Upload Data
+## 上传数据
 
-### Response
+### 响应
 
-*Topic* **neuron/{client-id}/upload** 
-
-如果在节点设置中设置了upload-topic，则该topic将用于上传数据，默认topic将不再上传数据。
+*主题* **neuron/{client-id}/upload**
 
 #### Body (Tags format)
 
@@ -90,17 +88,15 @@
 }
 ```
 
-*Node* 正确读取数值时，仅显示数值，仅当读取错误数值时，显示错误码，不显示数值。
+*注意* 正确读取数值时，仅显示数值，仅当读取错误数值时，显示错误码，不显示数值。一个 Group 发送一条信息。
 
-正文有两种消息格式。 您可以在 mqtt 配置表单中选择两种不同的格式。
+Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选择。
 
-**Node:**  A group sends a message.
+## 写 Tag
 
-## Write Tag
+### 请求
 
-### Request
-
-*Topic*  **neuron/{client-id}/write/req**
+*主题*  **neuron/{client-id}/write/req**
 
 #### Body
 
@@ -114,7 +110,7 @@
 }
 ```
 
-### Response
+### 响应
 
 *Topic*  **neuron/{client-id}/write/resp**
 

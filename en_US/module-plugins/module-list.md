@@ -13,10 +13,11 @@
 | eKuiper                 | North | 04/22/2022  | 2.0.0           | Commercial Version        |
 | IEC60870-5-104          | South | 04/22/2022  | 2.0.0           | Commercial Version        |
 
-##### Feature difference between open source and commercial versions Modbus driver
-  * DTU server mode client connection in commercial version only.
-  * String data types in commercial version only.
-  * Endianness in commercial version only.
+### Feature difference between open source and commercial versions Modbus driver
+
+* DTU server mode client connection in commercial version only.
+* String data types in commercial version only.
+* Endianness in commercial version only.
 
 ## Upcoming Modules
 
