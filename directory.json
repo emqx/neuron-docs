@@ -1,19 +1,32 @@
 {
   "cn": [
     {
+      "title": "关于文档",
+      "path": "about-the-documentation"
+    },
+    {
       "title": "简介",
       "path": "./"
     },
     {
-      "title": "安装",
-      "path": "getting-started/install"
+      "title": "入门",
+      "children": [
+        {
+          "title": "入门",
+          "path": "getting-started/getting-started"
+        },
+        {
+          "title": "安装",
+          "path": "getting-started/install"
+        },
+        {
+          "title": "快速教程",
+          "path": "getting-started/quick_start"
+        }
+      ]
     },
     {
-      "title": "快速教程",
-      "path": "getting-started/quick_start"
-    },
-    {
-      "title": "网页使用介绍",
+      "title": "网页操作",
       "children": [
         {
           "title": "登录",
@@ -34,8 +47,21 @@
       ]
     },
     {
-      "title": "驱动使用说明",
-      "path": "neuron-driver"
+      "title": "组件扩展",
+      "children": [
+        {
+          "title": "插件列表",
+          "path": "modules-list"
+        },
+        {
+          "title": "地址介绍",
+          "path": "neuron-driver"
+        }
+      ]
+    },
+    {
+      "title": "MQTT",
+      "path": "neuron-mqtt-topics"
     },
     {
       "title": "API",
@@ -44,27 +70,36 @@
     {
       "title": "Error Codes",
       "path": "neuron-error-code"
-    },
-    {
-      "title": "MQTT订阅主题",
-      "path": "neuron-mqtt-topics"
     }
   ],
   "en": [
+    {
+      "title": "About the documentation",
+      "path": "about-the-documentation"
+    },
     {
       "title": "Introduction",
       "path": "./"
     },
     {
-      "title": "Installation",
-      "path": "getting-started/install"
+      "title": "Getting started",
+      "children": [
+        {
+          "title": "Geting started",
+          "path": "getting-started/getting-started"
+        },
+        {
+          "title": "Installing",
+          "path": "getting-started/install"
+        },
+        {
+          "title": "Quick start",
+          "path": "getting-started/quick_start"
+        }
+      ]
     },
     {
-      "title": "Quick Start",
-      "path": "getting-started/quick_start"
-    },
-    {
-      "title": "Dashboard interface",
+      "title": "Dashboard Operations",
       "children": [
         {
           "title": "Login",
@@ -85,8 +120,21 @@
       ]
     },
     {
-      "title": "Driver Usage Description",
-      "path": "neuron-driver"
+      "title": "Module Plugins",
+      "children": [
+        {
+          "title": "Modules List",
+          "path": "modules-list"
+        },
+        {
+          "title": "Address Description",
+          "path": "neuron-driver"
+        }
+      ]
+    },
+    {
+      "title": "MQTT",
+      "path": "neuron-mqtt-topics"
     },
     {
       "title": "API",
@@ -95,10 +143,6 @@
     {
       "title": "Error Codes",
       "path": "neuron-error-code"
-    },
-    {
-      "title": "MQTT Topics",
-      "path": "neuron-mqtt-topics"
     }
   ]
 }
