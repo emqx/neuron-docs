@@ -9,19 +9,3 @@ Neuron 是运行在各类物联网边缘网关硬件上的工业协议商业化�
 - 本地数据存储，实现设备原始数据的存储和查看；
 
 Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到端的[云边协同的工业互联网解决方案](https://www.emqx.com/zh/use-cases/industrial-iot)。
-
-**以下为本文档内容的基本介绍，读者可以根据情况阅读相关的内容**
-
-## 安装与快速使用
-
-- [安装](getting-started/install.md)：在不同操作系统下的下载和安装过程文档。
-
-- [快速教程](getting-started/quick_start.md)：3分钟 Neuron Docker 使用教程，Neuron 从 Modbus TCP 模拟器中读取数据，并在管理控制台中展示原始数据的过程。
-
-## 管理控制台使用
-
-- Neuron 提供了基于 web 的管理控制台界面，用户可以通过控制台实现在浏览器中进行可视化的配置。
-
-## 驱动列表及使用说明
-
-- [驱动列表](neuron-driver.md)：内包含一系列常见的驱动以及相关的配置信息。
