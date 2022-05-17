@@ -877,7 +877,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-*Node* The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
+*Note* The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
 
 ## Write Tag
 

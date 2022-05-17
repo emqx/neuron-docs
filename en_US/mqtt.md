@@ -42,15 +42,13 @@ The **client-id** in all topics refers to the actual MQTT client id, which is se
 }
 ```
 
-*Node* The value is displayed only when the value is read correctly , when the value is read incorrectly, the error code is displayed, not the value.
+*Note* The value is displayed only when the value is read correctly , when the value is read incorrectly, the error code is displayed, not the value.
 
 ## Upload Data
 
 ### Response
 
 *Topic* **neuron/{client-id}/upload**
-
-If the upload-topic is set in the node setting, the new topic will be used to uploading data, and the default topic will no longer for uploading data.
 
 #### Body (Tags format)
 
@@ -90,7 +88,7 @@ If the upload-topic is set in the node setting, the new topic will be used to up
 }
 ```
 
-*Node* The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
+*Note* The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
 
 There are two message formats for the body. You can choose one of two different formats in the mqtt configuration form.
 

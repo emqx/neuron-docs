@@ -55,7 +55,7 @@ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p
 Install PeakHMI Slave Simulator, download the software from the [PeakHMI official website](https://hmisys.com).
 After installation, open the Modbus TCP slave.
 
-*Node* Try to disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
+*Note* Try to disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
 
 ## Operation And Use
 
@@ -126,7 +126,7 @@ In the image above, click on 5 (`Tag list`) to go to the Tag list screen, as sho
 Click the `Create` button to go to the Create Tags page:
 
 1. fill in the Tag name, e.g. tag1. 2. fill in the driver address, e.g. 1!400001.
-2. fill in the driver address, e.g. 1!400001; for detailed instructions on how to use the driver address, please refer to the [driver instructions](../neuron-driver.md). 3.
+2. fill in the driver address, e.g. 1!400001; for detailed instructions on how to use the driver address, please refer to the [driver instructions](../module-plugins/module-driver.md.md). 3.
 3. select the Tag type, e.g. Read, Write.
 4. select the data type, e.g., int16.
 5. click the `Create` button to complete the Tag creation.
@@ -180,7 +180,7 @@ Step 2, Application Configuration.
 
 In the above diagram, click on 1 (`Application Configuration`) to enter the application configuration interface, as shown below, with ` * ` are required fields, each followed by a field description key, mouse over it, it will display detailed description information.
 
-1. client-id: applied to the subscription topic, used to distinguish the northbound application, e.g. mqtt1, see [MQTT Topics](../neuron-mqtt-topics.md) for details of the subscription topic. /neuron-mqtt-topics.md).
+1. client-id: applied to the subscription topic, used to distinguish the northbound application, e.g. mqtt1, see [MQTT Topics](../mqtt.md) for details of the subscription topic.
 2. upload foramt: Neuron supports two formats for uploading data, selected by default on this side.
 3. whether or not to perform SSL authentication.
 4. the deployed MQTT Broker, where the default connection is to the emqx public broker.

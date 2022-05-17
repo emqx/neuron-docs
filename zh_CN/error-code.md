@@ -1,54 +1,54 @@
 # 错误代码
 
-本文档描述了neuron在调用http api和mqtt api时会响应的错误码。
+本文档描述了 Neuron 在调用 http api 和 mqtt api 时会响应的错误码。
 
-## api request 错误代码
+## api 请求错误代码
 
-* 1001 internal error
+* 1001 内部错误
 
-* 1002    request body invalid
-* 1003    request param invalid
-* 1004    missing token
-* 1005    decoding token error
-* 1006    expired token
-* 1007    validate token error
-* 1008    invalid token
-* 1009    user or password error
+* 1002 请求 body 无效
+* 1003    请求 param 无效
+* 1004    缺少令牌
+* 1005    解码令牌错误
+* 1006    令牌过期
+* 1007    验证令牌错误
+* 1008    无效令牌
+* 1009    用户名或密码错误
 
-## add/del/update node/tag/plugin/group 错误代码
+## 添加/删除/更新 node/tag/plugin/group 错误代码
 
-* 2001    node type invalid
+* 2001    node 类型无效
 
-* 2002    node exist
-* 2003    node not exist
-* 2004    node setting invalid
-* 2005    node setting not found
-* 2006    node not ready
-* 2007    node is running
-* 2008    node not running
-* 2009    node is stopped
+* 2002    node 已存在
+* 2003    node 不存在
+* 2004    node 设置无效
+* 2005    node 设置未找到
+* 2006    node 未准备好
+* 2007    node 正在运行
+* 2008    node 未运行
+* 2009    node 已停止
 
-* 2101    group config not exist
-* 2102    group config in use
-* 2103    group config conflict
+* 2101    group 不存在
+* 2102    group 在使用中
+* 2103    group 冲突
 
-* 2201    tag not exist
-* 2202    tag name conflict
-* 2203    tag attribute not support
-* 2204    tag type not support
-* 2205    tag address format invalid
+* 2201    tag 不存在
+* 2202    tag 名称冲突
+* 2203    tag 属性不支持
+* 2204    tag 类型不支持
+* 2205    tag 地址格式无效
 
-* 2301    library not found
-* 2302    library info invalid
-* 2303    library name conflict
+* 2301    库未找到
+* 2302    库信息无效
+* 2303    库名称冲突
 
-## plugin 常见的错误代码
+## 插件常见的错误代码
 
-* 3000    plugin read failure
-* 3001    plugin write failure
-* 3002    plugin disconnected
-* 3003    plugin tag not allow read
-* 3004    plugin tag not allow write
-* 3005    plugin tag not exist
-* 3006    plugin group config not subscribe
-* 3007    plugin tag type mismatch
+* 3000    插件读失败
+* 3001    插件写失败
+* 3002    插件未连接
+* 3003    插件 tag 不允许读
+* 3004    插件 tag 不允许写
+* 3005    插件 tag 不存在
+* 3006    插件 group 未订阅
+* 3007    插件 tag 类型不匹配
