@@ -185,7 +185,7 @@ string:
 
 **注意** 关于命名空间索引和节点 ID 的解释，请参考 OPC UA 标准。
 
-## S7COMM
+## Siemens S7 ISOTCP
 
 s7comm 插件用于带有网络端口的西门子PLC，如，s7-200/300/400/1200/1500。
 
@@ -266,7 +266,7 @@ string:
 * 优化块访问必须被关闭。
 * 访问级别必须是**完全**，**连接机制**必须允许 GET/PUT。
 
-## FINS on TCP
+## OMRON FINS on TCP
 
 这个插件用于带有网络端口的欧姆龙PLC，如CP2E。
 
@@ -351,7 +351,7 @@ string:
     EM10W0.10
 ```
 
-## QnA3E
+## Mitsubishi MELSEC E71
 
 qna3e插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（MC）、iQ-F系列（SLMP）和iQ-L系列。
 

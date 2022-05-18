@@ -12,6 +12,8 @@
 | Omron(FINS on TCP)      | South | 03/25/2022  | 2.0.0     | Commercial Version        |
 | eKuiper                 | North | 04/22/2022  | 2.0.0           | Commercial Version        |
 | IEC60870-5-104          | South | 04/22/2022  | 2.0.0           | Commercial Version        |
+| BACnet                  | South | 05/30/2022  | 2.0.2   | Commercial Version |
+| KNXnet                  | South | 05/30/2022  | 2.0.2   | Commercial Version |
 
 ### Feature difference between open source and commercial versions Modbus driver
 
@@ -23,8 +25,6 @@
 
 | Modules                                     | Type |
 | ------------------------------------------- | ---- |
-| BACnet                                      | South |
-| KNXnet                                      | South |
 | SparkplugB                                  | North |
 | Beckhoff ADS                                | South |
 | DLT645 over TCP                             | South |

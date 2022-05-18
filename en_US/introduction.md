@@ -6,5 +6,5 @@ Neuron is an industrial application that can run on all kinds of IoT ultra-low r
 - Management web console: users can perform visual configuration in the browser to achieve cross-industrial equipment data access;
 - Northbound standard MQTT data transmission: according to the user-specified configuration, the data is sent to the specified MQTT message server;
 - Southbound driver connection: Neuron send control commands to the device and get back data.
-- Stream processing engine: Combined with the rule engine function provided by EMQ X Kuiper, it can quickly realize streaming SQL rule-based device control;
+- Stream processing engine: Combined with the rule engine function provided by eKuiper, it can quickly realize streaming SQL rule-based device control;
 - Local data storage: realizing the storage and viewing of the original data of the device in local database;
