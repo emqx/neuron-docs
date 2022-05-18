@@ -181,7 +181,7 @@ Step 2, Application Configuration.
 In the above diagram, click on 1 (`Application Configuration`) to enter the application configuration interface, as shown below, with ` * ` are required fields, each followed by a field description key, mouse over it, it will display detailed description information.
 
 1. client-id: applied to the subscription topic, used to distinguish the northbound application, e.g. mqtt1, see [MQTT Topics](../mqtt.md) for details of the subscription topic.
-2. upload foramt: Neuron supports two formats for uploading data, selected by default on this side.
+2. upload format: Neuron supports two formats for uploading data, default selection on this side.
 3. whether or not to perform SSL authentication.
 4. the deployed MQTT Broker, where the default connection is to the emqx public broker.
 5. the port number of the deployed MQTT Broker.
