@@ -112,7 +112,7 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 响应
 
-*Topic*  **neuron/{client-id}/write/resp**
+*主题*  **neuron/{client-id}/write/resp**
 
 #### Body
 
