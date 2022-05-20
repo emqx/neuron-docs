@@ -5,7 +5,7 @@
       "path": "./"
     },
     {
-      "title": "简介",
+      "title": "产品简介",
       "path": "introduction"
     },
     {
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "title": "网页操作",
+      "title": "网页指南",
       "children": [
         {
           "title": "登录",
@@ -43,14 +43,14 @@
       ]
     },
     {
-      "title": "组件扩展",
+      "title": "插件使用",
       "children": [
         {
           "title": "插件列表",
           "path": "module-plugins/module-list"
         },
         {
-          "title": "地址介绍",
+          "title": "应用和设备配置",
           "path": "module-plugins/module-driver"
         }
       ]
@@ -119,7 +119,7 @@
           "path": "module-plugins/module-list"
         },
         {
-          "title": "Address Description",
+          "title": "Application And Driver Instructions",
           "path": "module-plugins/module-driver"
         }
       ]
