@@ -2,52 +2,52 @@
 
 ## Available Modules
 
-| Modules                                     | Type | Release Version   | Open source or not     |
+| Modules                                     | Type | Release Version   | Open source      |
 | ------------------------------------------- | ---- | ----------------- | ------------------ |
 | MQTT                                        | North | v2.0.0           | Yes        |
-| eKuiper                                     | North | v2.0.0           | Yes        |
+| eKuiper                                     | North | v2.0.1           | Yes        |
 | Modbus TCP                                  | South | v2.0.0            | Yes        |
-| Modbus RTU                                  | South | v2.0.0            | N          |
-| OPC UA                                      | South | v2.0.0            | N          |
-| Siemens PLC(S7 ISO TCP)                     | South | v2.0.0            | N          |
-| Mitsubishi MELSEC-Q E71                     | South | v2.0.0            | N          |
-| Omron(FINS on TCP)                          | South | v2.0.0            | N          |
-| IEC60870-5-104                              | South | v2.0.0            | N          |
+| Modbus RTU over TCP                         | South | v2.0.0            | No          |
+| OPC UA                                      | South | v2.0.0            | No          |
+| Siemens PLC(S7 ISO TCP)                     | South | v2.0.0            | No          |
+| Mitsubishi MELSEC-Q E71                     | South | v2.0.0            | No          |
+| Omron(FINS on TCP)                          | South | v2.0.0            | No          |
+| IEC60870-5-104                              | South | v2.0.1            | No          |
 
 ## Upcoming Modules
 
-| Modules                                     | Type | Release Version   | Open source or not     |
-| ------------------------------------------- | ---- | ----------------- | ------------------ |
-| BACnet                                      | South | Pending          | N          |
-| KNXnet                                      | South | Pending          | N          |
-| SparkplugB                                  | North | Pending          | N          |
-| Beckhoff ADS                                | South | Pending          | N          |
-| DLT645 over TCP                             | South | Pending          | N          |
-| non A11 (custom protocol)                   | South | Pending          | N          |
-| Ethernet/IP                                 | South | Pending          | N          |
-| Mitsubishi MELSEC-Q C24                     | South | Pending          | N          |
-| Siemens S3964R                              | South | Pending          | N          |
-| Allen Bradley DF1                           | South | Pending          | N          |
-| Omron (FINS on Hostlink)                    | South | Pending          | N          |
-| Siemens Fetch Write for CP343/CP443 module  | South | Pending          | N          |
-| Omron Hostlink                              | South | Pending          | N          |
-| Mitsubishi FX 232ADP/485BD/232BD            | South | Pending          | N          |
-| Mitsubishi FX0N/FX0S/FX1N/FX1S/FX2          | South | Pending          | N          |
-| Mitsubishi FX2N/FX3U/FX3G/FX3S              | South | Pending          | N          |
-| IEC60870-5-101                              | South | Pending          | N          |
-| IEC60870-5-102                              | South | Pending          | N          |
-| IEC60870-5-103                              | South | Pending          | N          |
-| SNMP                                        | South | Pending          | N          |
-| Edge X foundry                              | North | Pending          | N          |
-| DNP 3.0                                     | South | Pending          | N          |
-| DLT645                                      | South | Pending          | N          |
-| DLT698                                      | South | Pending          | N          |
-| Schneider Modbus                            | South | Pending          | N          |
-| Schneider Telemecanique UNI-TE              | South | Pending          | N          |
-| XINJE PLC                                   | South | Pending          | N          |
-| Keyence PLC                                 | South | Pending          | N          |
-| Beckhoff PLC                                | South | Pending          | N          |
-| Siemens PPI                                 | South | Pending          | N          |
-| Siemens MPI                                 | South | Pending          | N          |
-| Profinet IO                                 | South | Pending          | N          |
-| Profibus                                    | South | Pending          | N          |
+| Modules                                     | Type |  Open source     |
+| ------------------------------------------- | ---- | ------------------ |
+| BACnet                                      | South | No          |
+| KNXnet                                      | South | No          |
+| SparkplugB                                  | North | No          |
+| Beckhoff ADS                                | South | No          |
+| DLT645 over TCP                             | South | No          |
+| non A11 (custom protocol)                   | South | No          |
+| Ethernet/IP                                 | South | No          |
+| Mitsubishi MELSEC-Q C24                     | South | No          |
+| Siemens S3964R                              | South | No          |
+| Allen Bradley DF1                           | South | No          |
+| Omron (FINS on Hostlink)                    | South | No          |
+| Siemens Fetch Write for CP343/CP443 module  | South | No          |
+| Omron Hostlink                              | South | No          |
+| Mitsubishi FX 232ADP/485BD/232BD            | South | No          |
+| Mitsubishi FX0N/FX0S/FX1N/FX1S/FX2          | South | No          |
+| Mitsubishi FX2N/FX3U/FX3G/FX3S              | South | No          |
+| IEC60870-5-101                              | South | No          |
+| IEC60870-5-102                              | South | No          |
+| IEC60870-5-103                              | South | No          |
+| SNMP                                        | South | No          |
+| Edge X foundry                              | North | No          |
+| DNP 3.0                                     | South | No          |
+| DLT645                                      | South | No          |
+| DLT698                                      | South | No          |
+| Schneider Modbus                            | South | No          |
+| Schneider Telemecanique UNI-TE              | South | No          |
+| XINJE PLC                                   | South | No          |
+| Keyence PLC                                 | South | No          |
+| Beckhoff PLC                                | South | No          |
+| Siemens PPI                                 | South | No          |
+| Siemens MPI                                 | South | No          |
+| Profinet IO                                 | South | No          |
+| Profibus                                    | South | No          |

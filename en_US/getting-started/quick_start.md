@@ -126,7 +126,7 @@ In the image above, click on 5 (`Tag list`) to go to the Tag list screen, as sho
 Click the `Create` button to go to the Create Tags page:
 
 1. fill in the Tag name, e.g. tag1. 2. fill in the driver address, e.g. 1!400001.
-2. fill in the driver address, e.g. 1!400001; for detailed instructions on how to use the driver address, please refer to the [driver instructions](../module-plugins/module-driver.md.md). 3.
+2. fill in the driver address, e.g. 1!400001; for detailed instructions on how to use the driver address, please refer to the [driver instructions](../module-plugins/module-driver.md).
 3. select the Tag type, e.g. Read, Write.
 4. select the data type, e.g., int16.
 5. click the `Create` button to complete the Tag creation.

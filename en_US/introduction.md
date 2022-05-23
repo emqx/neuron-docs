@@ -1,10 +1,18 @@
 # Introduction
 
-Neuron is an industrial application that can run on all kinds of IoT ultra-low resource hardware, supporting access to dozens of industrial protocols and converting to MQTT protocol to access the cloud-based IIoT platform, access to multiple devices or applications with various protocols simultaneously. Neuron provides a SQL-based stream processing rule engine to execute AI/ML logic. Make it to be a lightweight and powerful edge server, becoming the leader of the same product in the current market.
+Neuron is an industrial protocol gateway software running on various IoT edge gateway hardware. It aims to solve the problem of difficult unified access to device data in the context of Industry 4.0.
 
-- Multiple Industrial Protocols: Supports many protocols and devices such as Modbus, OPCUA, Siemens, Mitsubishi, Omron, IEC104 and BACnet;
-- Management web console: users can perform visual configuration in the browser to achieve cross-industrial equipment data access;
-- Northbound standard MQTT data transmission: according to the user-specified configuration, the data is sent to the specified MQTT message server;
-- Southbound driver connection: Neuron send control commands to the device and get back data.
-- Stream processing engine: Combined with the rule engine function provided by eKuiper, it can quickly realize streaming SQL rule-based device control;
-- Local data storage: realizing the storage and viewing of the original data of the device in local database;
+Neuron can realize the interconnection between various Industrial IoT platform and devices by converting a wide varity of protocols into a standard unified IoT MQTT message, performing remote control command and data acquisition, utimately providing data support for the intelligent manufacturing.
+
+Neuron supports one-stop access to multiple devices with dozens of industrial protocols, and converts to MQTT protocol. With ultra-low resource consumption, it can be deployed natively or containerized in various edge hardware like X86, ARM, RISC-V and other architectures. However, users can achieve online gateway configuration management through the Web-based management dashboard.
+
+Neuron offers the following product features.
+- Support for numerous protocols and devices such as [Modbus, OPCUA, Ethernet/IP, IEC104, BACnet and more](module-plugins/module-list.md).
+- Deliver data through northbound standard MQTT to a designated MQTT message server based on user-specified configurations.
+- Listen to southbound control device for data reporting and control the device by forwarding relevant control commands back to devices.
+- Has low memory footprint, less than 100k, can run on low configuration hardware.
+- Combine with the rule engine function provided by [eKuiper](https://www.lfedge.org/projects/ekuiper) to quickly implement rule-based device control.
+- Integrate with other application to control industrial devices, or to change parameters or labels, through [API](api.md) or [MQTT](mqtt.md) services.
+- Provide [management dashboard](dashboard-operation/login.md) for users to monitor data, device status and to manange configuration in a browser, enabling access to cross-industrial device data.
+- Support for encrypted TLS, HTTPS and JWT auth to ensure data security in transmission.
+
