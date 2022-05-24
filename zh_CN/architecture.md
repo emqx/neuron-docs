@@ -9,14 +9,14 @@ NNG提供了以下功能。
 
 核心的消息总线是基于NNG库的pair-1特性来组织一个星形的可扩展框架。在中心有一个消息路由器核心。外面有两类节点围绕着路由器核心。南向驱动节点是与设备通信的节点，它是一个数据生产者。北向应用节点是数据消费者，处理或转发数据信息。每个节点（南向或北向）都由插件适配器和插件模块组成。节点之间的通信依靠NNG高效的异步I/O来充分利用多核CPU的能力。
 
-![arch-overview](assets/arch-overview.png)
+![arch-overview](./assets/arch-overview.png)
 
 Scatter-Gather是异步I/O处理的一个更好的选择，因为消息需要并发处理，即通过一个并行的线程池在同一时间将消息发送到所需的节点。因此，由于Neuron采用这种Scatter-Gather的处理模式，南向驱动（数据生产者）被要求将数据流分组，以便北向应用（数据消费者）可以从各个节点订阅所需的数据流组。
 
-![arch-bus-topo](assets/arch-dataflow.png)
+![arch-bus-topo](./assets/arch-dataflow.png)
 
 Neuron中的所有节点都在松散耦合的线程服务中运行。因此，除了内置的Web服务器节点，Neuron中的任何节点都可以动态地创建或销毁，而不会干扰到其他运行的节点。这意味着Neuron可以非常灵活地在运行加载一个插件模块并启动一个新的节点服务，或者停止一个节点服务，然后时卸载相关插件模块。这种 "热插拔 "模块机制可以促进单个插件模块的升级，或者通过添加更多的插件模块来增加更多的应用功能，前提是主机平台/容器有足够的CPU处理能力来容纳更多的节点。
 
-![arch-dataflow](assets/arch-bus-topo.png)
+![arch-dataflow](./assets/arch-bus-topo.png)
 
 Neuron的目标是工业物联网的数据收集、转发和聚合，多个不同的设备以并发模式运行，因为边缘原生软件都是实时运行的，以实现边缘的超低延时处理。
