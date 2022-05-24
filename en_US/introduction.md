@@ -1,4 +1,4 @@
-# Introduction
+# What is Neuron?
 
 Neuron is an industrial protocol gateway software running on various IoT edge gateway hardware. It aims to solve the problem of difficult unified access to device data in the context of Industry 4.0.
 

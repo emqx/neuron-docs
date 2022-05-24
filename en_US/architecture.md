@@ -1,10 +1,23 @@
-# Introduction
+# Architecture
 
-Neuron is an industrial application that can run on all kinds of IoT ultra-low resource hardware, supporting access to dozens of industrial protocols and converting to MQTT protocol to access the cloud-based IIoT platform, access to multiple devices or applications with various protocols simultaneously. Neuron provides a SQL-based stream processing rule engine to execute AI/ML logic. Make it to be a lightweight and powerful edge server, becoming the leader of the same product in the current market.
+Modern CPUs are all multi-core in design, even though it is lower-end ARM and RISC-V for embedded systems. Multi-core is already a standard. Neuron must have a very good multi-thread management to take advantages of modern CPUs multi-core architecture. As a edge native application, Neuron must have real-time characteristic to execute tasks in certain time frame as running in concurrent. Therefore, We use NNG as our base library for message exchange between threads as NNG provides optimized asynchronous I/O processing for data message delivery.
 
-- Multiple Industrial Protocols: Supports many protocols and devices such as Modbus, OPCUA, Siemens, Mitsubishi, Omron, IEC104 and BACnet;
-- Management web console: users can perform visual configuration in the browser to achieve cross-industrial equipment data access;
-- Northbound standard MQTT data transmission: according to the user-specified configuration, the data is sent to the specified MQTT message server;
-- Southbound driver connection: Neuron send control commands to the device and get back data.
-- Stream processing engine: Combined with the rule engine function provided by eKuiper, it can quickly realize streaming SQL rule-based device control;
-- Local data storage: realizing the storage and viewing of the original data of the device in local database;
+NNG offers following features.
+* Asynchronous I/O - Built on the optimized NNG's asynchronous I/O framework 
+* SMP & Multi-threading - Scale out easily to engage multiple cores in the modern SMP system
+* Brokerless - Easily integrated into components, lightweight deployment 
+
+The core message bus is based on pairs-1 feature of NNG library to organize a star-like scalable framework. There is a message router core at the center. Outside there are two kinds of nodes surround the router core. Southbound driver nodes are the nodes to communicate with devices, which is a data producer. Northbound application nodes are the data consumer to process or to forward data message. Each node (southbound or northbound) consists of plugin adapter and plugin module. Communication between nodes rely on NNG high efficiency asynchronous I/O to make good use of multi-core CPU capability. 
+
+![arch-overview](assets/arch-overview.png)
+
+Scatter-Gather is a better choice for asynchronous I/O processing since messages are required to process in concurrent, that is, sending the messages to desired nodes at the same time through a parallel thread pool. Therefore, as Neuron adopt this scatter-gather processing pattern, southbound drivers (data producers) are requested to group together the data stream so that northbound applications (data consumers) can subscribe the desired data stream groups from various nodes.
+
+![arch-bus-topo](assets/arch-dataflow.png)
+
+All nodes in Neuron are running in loosely-coupled threading services. Therefore, except the build-in web server node, any node in Neuron can be created or destroyed dynamically without interfering other running nodes. That means Neuron is very flexible to load a plugin module and start a new node service, or stop a node service and then off-load the relevant plugin module, in run time. This "hot-plugin" module mechanism can facilitate the individual plugin module upgrades or increase more application features by adding more plugin modules dynamically, providing that the hosts platform/container has enough CPU processing capacity to accommodate more nodes.
+
+![arch-dataflow](assets/arch-bus-topo.png)
+
+Neuron is targeting on data collection, forwarding and aggregation for the Industrial IoT multiple diverse devices in concurrent mode since edge native software are all running in real-time to fulfill the ultra-low latency processing at the edge.
+
