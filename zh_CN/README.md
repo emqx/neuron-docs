@@ -2,7 +2,7 @@
 
 Neuron 文档由以下几个主要部分组成：
 
-* [简介](./introduction.md)：本节概述了 Neuron 是什么、特点、与 EMQ 边缘端其它产品的集成。
+* [产品简介](./introduction.md)：本节概述了 Neuron 是什么、特点、与 EMQ 边缘端其它产品的集成。
 * [入门](./getting-started/installation.md)：安装及快速开始使用 Neuron。
 * [网页指南](./dashboard-operation/login.md)：本节详细说明 Web 界面的使用。
 * [插件使用](./module-plugins/module-list.md)：本节详细说明插件的使用。

@@ -1,6 +1,6 @@
 # Installation
 
-The following section describes how to install the Neuron package on X86/ARM Linux devices.
+This section describes how to install the Neuron package on X86/ARM Linux devices.
 
 ## Download
 
@@ -18,113 +18,108 @@ Version number x.y.z Description:
 * y is the minor version number, which may change if certain additional features exist.
 * z is the patch number for bug fixes in the Neuron software.
 
-## Installation conditions
-
-The rpm/deb package uses systemd to manage the neuron process and it is recommended that the rpm/deb package is used in preference.
+## Installation Conditions
 
 | Linux distribution/device                                    | Required packages  |
 | ------------------------------------------------------------ | ------------------ |
 | **Debian package system**</br>Ubuntu 20.xx </br>Ubuntu 18.xx | deb/tar.gz         |
 | **Redhat package system**</br>Contos 8</br>Centos 9          | rpm/tar.gz         |
 
-## Installation steps
+The rpm/deb package uses systemd to manage the neuron process and it is recommended that the rpm/deb package is used in preference.
 
-This section describes how to install the Neuron software for the first time on a Linux system.
+## Install using deb package
 
-### Using the deb package
+### Install
 
-#### Install
+Install according to different versions and architectures, E.g.
 
 ```bash
-sudo dpkg -i xxx.deb
+$ sudo dpkg -i neuron-2.0.1-linux-armhf.deb
 ```
 
-Install depending on the version, e.g.
+To avoid replacing the neuron package when the ubuntu system is automatically updated, you also need to execute the following command to keep the neuron package in the apt upgrade.
 
 ```bash
-sudo dpkg -i neuron-2.0.1-linux-armhf.deb
+$ sudo apt-mark hold neuron
 ```
 
 *Note*  After successful installation of the deb package, Neuron is automatically started.
 
-#### Uninstall
+### Uninstall
 
 ```bash
-sudo dpkg -r neuron
+$ sudo dpkg -r neuron
 ```
 
-### Using the rpm package
+## Install using rpm package
 
-#### Install
+### Install
 
-```bash
-sudo rpm -i xxx.rpm --nodeps --force
-```
-
-Install depending on the version, e.g.
+Install according to different versions and architectures, E.g.
 
 ```bash
-sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
+$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
 ```
 
 *Note* After successful installation of the rpm package, Neuron is automatically started.
 
-#### Uninstall
+### Uninstall
 
 ```bash
-sudo rpm -e neuron
+$ sudo rpm -e neuron
 ```
 
-### Using the .tar.gz package
+## Install using .tar.gz package
 
-#### Unpacking
+### Download the installation package
+
+Download the installation package according to different versions and architectures, E.g.
 
 ```bash
-sudo tar -zxvf xxx.tar.gz
-cd xxx
+$ wget https://www.emqx.com/en/downloads/neuron/2.0.1/neuron-2.0.1-linux-armhf.tar.gz
 ```
 
-Install depending on the version, e.g.
+### Unpacking
 
 ```bash
-sudo tar -zxvf neuron-2.0.1-linux-armhf.tar.gz
-cd neuron-2.0.1-linux-armhf
+$ sudo tar -zxvf neuron-2.0.1-linux-armhf.tar.gz
+$ cd neuron-2.0.1-linux-armhf
 ```
 
-#### Start
+### Start
 
 The following command can be executed to boot from the current terminal：
 
 ```bash
-./neuron
+$ ./neuron
 ```
 
 If you want to run as a daemon, you can execute the following command：
 
 ```bash
-./neuron -d
+$ ./neuron -d
 ```
 
 Execute the following command to see all the parameters available on the command line：
 
 ```bash
-./neuron -h
+$ ./neuron -h
 ```
 
-### Running with Docker
+## Running with Docker
 
-#### Get the image
+### Get the image
 
 The docker image can be downloaded from the docker hub website.[https://hub.docker.com](https://hub.docker.com)
 
 ```bash
-docker pull neugates/neuron:2.0.0
+$ docker pull neugates/neuron:2.0.0
 ```
 
-#### Start
+### Start
 
 ```bash
-docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0
 ```
 
 * tcp 7000: Used to access the web.
@@ -133,24 +128,24 @@ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restar
 * --privileged=true：Easy to troubleshoot problems.
 * --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker.
 
-### Neuron Operation
+## Neuron Operation
 
 For rpm and deb installations, Neuron can view/start/stop the status with the following commands：
 
-#### View Neuron Status
+### View Neuron Status
 
 ```bash
-sudo systemctl status neuron
+$ sudo systemctl status neuron
 ```
 
-#### Stop Neuron
+### Stop Neuron
 
 ```bash
-sudo systemctl stop neuron
+$ sudo systemctl stop neuron
 ```
 
-#### Reatart Neuron
+### Reatart Neuron
 
 ```bash
-sudo systemctl restart neuron
+$ sudo systemctl restart neuron
 ```

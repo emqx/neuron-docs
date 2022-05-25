@@ -6,8 +6,8 @@ Neuron 是运行在各类物联网边缘网关硬件上的工业协议网关软�
 
 Neuron 支持同时为多个不同通讯协议设备、数十种工业协议进行一站式接入及 MQTT 协议转换，仅占用超低资源，即可以原生或容器的方式部署在 X86、ARM、RISC-V 等架构的各类边缘硬件中。同时，用户可以通过基于 Web 的管理控制台实现在线的网关配置管理。
 
-
 Neuron提供下列产品特点：
+
 - 支持了 [Modbus，OPCUA，Ethernet/IP，IEC104 和 BACnet](module-plugins/module-list.md) 等众多协议和设备；
 - 北向标准 MQTT 数据发送，根据用户指定配置，将数据发送至指定的 MQTT 消息服务器中；
 - 南向控制接口，监听及控制设备数据上报，将相关的控制命令转发给设备；
@@ -17,5 +17,4 @@ Neuron提供下列产品特点：
 - [管理控制台](dashboard-operation/login.md)，用户可以在浏览器中进行可视化的数据监控，设备状态及配置，实现跨工业设备数据的接入；
 - 支持加密TLS、HTTPS和JWT auth，确保传输中的数据安全；
 
-
-Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到端的[云边协同的工业互联网解决方案](https://www.emqx.com/zh/use-cases/industrial-iot)。
+Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到端的 [云边协同的工业互联网解决方案](https://www.emqx.com/zh/use-cases/industrial-iot)。

@@ -1,94 +1,89 @@
 # 安装
 
-下文介绍了如何在 X86 / ARM Linux 设备上安装 Neuron 软件包。
+本节主要介绍了如何在 X86 / ARM Linux 系统上首次安装 Neuron 软件包。
 
 ## 下载
 
-Neuron 软件包可从 Neuron 网站[https://neugates.io/zh/downloads](https://neugates.io/zh/downloads)上根据实际系统对应下载。
+Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。
 
-| 下载文件                                | 架构    |
-| -------------------------------------- | ------ |
+| 下载文件                      | 架构    |
+| ---------------------------- | ------ |
 | neuron-x.y.z-linux-amd64.deb | X86_64 |
 | neuron-x.y.z-linux-armhf.deb | ARM_32 |
 | neuron-x.y.z-linux-arm64.deb | ARM_64 |
 
 版本号 x.y.z 说明：
 
-* x为主要版本号，如果整个系统结构得到增强，则可能会更改。
-* y是次要版本号，如果存在某些附加功能，则可能会更改。
-* z是Neuron软件中错误修复的补丁号。
+* x 为主要版本号，如果整个系统结构得到增强，则可能会更改。
+* y 是次要版本号，如果存在某些附加功能，则可能会更改。
+* z 是Neuron软件中错误修复的补丁号。
 
 ## 安装条件
 
-rpm/deb package中使用了systemd管理neuron进程，建议优先使用rpm/deb package。
-
 | Linux 发行版或设备 | 所需包          |
-| ------------ | ---------------- |
+| :------------ | :---------------- |
 | **Debian package system**</br>Ubuntu 20.xx </br>Ubuntu 18.xx | deb/tar.gz |
 | **Redhat package system**</br>Contos 8</br>Centos 9 | rpm/tar.gz |
 
-## 安装步骤
+rpm/deb package中使用了 systemd 管理 neuron 进程，建议优先使用 rpm/deb package。
 
-本节介绍了如何在 Linux 系统上首次安装 Neuron 软件。
+## 使用 deb 包安装
 
-### 使用 deb package
+### 安装
 
-#### 安装
+根据不同版本及架构安装，例如：
 
 ```bash
-sudo dpkg -i xxx.deb
+$ sudo dpkg -i neuron-2.0.1-linux-armhf.deb
 ```
 
-根据不同版本安装，例如：
+为避免 ubuntu 系统自动更新时替换 neuron 包，还需要执行以下命令使 neuron 软件包在 apt 升级中保留。
 
 ```bash
-sudo dpkg -i neuron-2.0.1-linux-armhf.deb
+$ sudo apt-mark hold neuron
 ```
 
 *注意* 成功安装 deb 包后，自动启动 Neuron
 
-#### 卸载
+### 卸载
 
 ```bash
-sudo dpkg -r neuron
+$ sudo dpkg -r neuron
 ```
 
-### 使用 rpm package
+## 使用 rpm 安装包
 
-#### 安装
+### 安装
+
+根据不同版本及架构安装，例如：
 
 ```bash
-sudo rpm -i xxx.rpm --nodeps --force
+$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
 ```
 
-根据不同版本安装，例如：
+*注意* 成功安装 rpm 包后，自启动 Neuron。
+
+### 卸载
 
 ```bash
-sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
+$ sudo rpm -e neuron
 ```
 
-*注意* 成功安装 rpm 包后，自启动 Neuron
+## 使用 .tar.gz 安装包
 
-#### 卸载
+### 下载安装包
+
+根据不同的版本及架构下载，例如：
 
 ```bash
-sudo rpm -e neuron
+$ wget https://www.emqx.com/en/downloads/neuron/2.0.1/neuron-2.0.1-linux-armhf.tar.gz
 ```
 
-### 使用 .tar.gz package
-
-#### 解压
+### 解压
 
 ```bash
-sudo tar -zxvf xxx.tar.gz
-cd xxx
-```
-
-根据不同版本安装，例如：
-
-```bash
-sudo tar -zxvf neuron-2.0.1-linux-armhf.tar.gz
-cd neuron-2.0.1-linux-armhf
+$ sudo tar -zxvf neuron-2.0.1-linux-armhf.tar.gz
+$ cd neuron-2.0.1-linux-armhf
 ```
 
 #### 启动
@@ -96,35 +91,35 @@ cd neuron-2.0.1-linux-armhf
 执行如下命令可在当前终端启动：
 
 ```bash
-./neuron
+$ ./neuron
 ```
 
 若想以守护进程方式运行，则可执行如下命令：
 
 ```bash
-./neuron -d
+$ ./neuron -d
 ```
 
 执行如下命令可查看所有命令行可用参数：
 
 ```bash
-./neuron -h
+$ ./neuron -h
 ```
 
-### 使用Docker运行
+## 使用 Docker 运行
 
-#### 获取镜像
+### 获取镜像
 
-docker 镜像请从 docker hub 网站下载。[https://hub.docker.com](https://hub.docker.com)
+docker 镜像请从 [docker hub](https://hub.docker.com) 网站下载。
 
 ```bash
-docker pull neugates/neuron:2.0.1
+$ docker pull neugates/neuron:2.0.1
 ```
 
-#### 启动
+### 启动
 
 ```bash
-docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.1
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.1
 ```
 
 * tcp 7000: 用于访问web。
@@ -133,24 +128,24 @@ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restar
 * --privileged=true：便于排查问题。
 * --device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到docker。
 
-### Neuron 操作
+## Neuron 操作
 
 用 rpm 和 deb 方式安装的都可以通过以下指令查看/起停 Neuron：
 
-#### 查看 Neuron 状态
+### 查看 Neuron 状态
 
 ```bash
-sudo systemctl status neuron
+$ sudo systemctl status neuron
 ```
 
-#### 停止 Neuron
+### 停止 Neuron
 
 ```bash
-sudo systemctl stop neuron
+$ sudo systemctl stop neuron
 ```
 
 #### 重启 Neuron
 
 ```bash
-sudo systemctl restart neuron
+$ sudo systemctl restart neuron
 ```

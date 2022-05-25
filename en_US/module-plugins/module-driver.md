@@ -49,7 +49,7 @@ The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus R
 
 #### **SLAVE**
 
-Required, Slave is the slave id or site number.
+Required, Slave is the slave address or site number.
 
 #### **ADDRESS**
 
@@ -363,7 +363,7 @@ When the data type is string type, it is a required, **.LEN** indicates the leng
 | D5.30     | string | D area, address 5, the string length is 30 bytes and the endianness is L  |
 | EM10.10   | string | EM area, address 10, the string length is 10 bytes and the endianness is L  |
 
-## Mitsubishi MELSEC E71
+## Mitsubishi MELSEC-Q E71
 
 The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
 
