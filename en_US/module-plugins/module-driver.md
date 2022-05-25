@@ -185,7 +185,7 @@ The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300
 | **rack** | plc rack number, default 0       |
 | **slot** | plc cpu slot, default 1          |
 
-**!**  When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Siemens software(TIA16) to make some settings for the PLC.
+**!**  When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Siemens software(TIA16) to make some settings for the PLC.( For detailed settings, please refer to [plc-settings](./plc-settings/siemens-s7-1200-1500.md). )
 
 * The optimized block access must be turned off.
 * The access level must be "full" and the "connection mechanism" must allow GET/PUT.
