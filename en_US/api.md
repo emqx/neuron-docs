@@ -227,7 +227,9 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Request Params
 
-**type**  required
+**id**              optional
+**type**            required if **id** param not present, otherwise optional
+**name_contains**   optional
 
 ### Request Headers
 
