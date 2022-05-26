@@ -46,7 +46,6 @@
 | Schneider Telemecanique UNI-TE              | 南向 | 否        |
 | XINJE PLC                                   | 南向 | 否        |
 | Keyence PLC                                 | 南向 | 否        |
-| Beckhoff PLC                                | 南向 | 否        |
 | Siemens PPI                                 | 南向 | 否        |
 | Siemens MPI                                 | 南向 | 否        |
 | Profinet IO                                 | 南向 | 否        |

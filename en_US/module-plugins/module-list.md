@@ -46,7 +46,6 @@
 | Schneider Telemecanique UNI-TE              | South | No          |
 | XINJE PLC                                   | South | No          |
 | Keyence PLC                                 | South | No          |
-| Beckhoff PLC                                | South | No          |
 | Siemens PPI                                 | South | No          |
 | Siemens MPI                                 | South | No          |
 | Profinet IO                                 | South | No          |

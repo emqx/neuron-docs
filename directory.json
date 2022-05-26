@@ -14,6 +14,10 @@
         {
           "title": "架构设计",
           "path": "architecture"
+        },
+        {
+          "title": "案例",
+          "path": "use_cases"
         }
       ]
     },
@@ -92,6 +96,10 @@
         {
           "title": "Architecture",
           "path": "architecture"
+        },
+        {
+          "title": "Use Cases",
+          "path": "use_cases"
         }
       ]
     },
