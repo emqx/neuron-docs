@@ -6,58 +6,62 @@
 
 The environment used in this example is Ubuntu 20.04.3, armv71.
 
-Neuron packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads)
+1. Download the installation package
+Neuron packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).
 
+2. Unzip the installation package
 Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
 
 ```bash
-sudo dpkg -i neuron-2.X.X-linux-armhf.deb
+$ sudo dpkg -i neuron-2.X.X-linux-armhf.deb
 ```
 
 *Note*  After successful installation of the deb package, Neuron is automatically started.
 
+### Neuron operation
+
 #### Checking Neuron Status
 
 ```bash
-systemctl status neuron
+$ sudo systemctl status neuron
 ```
 
 #### Stop Neuron
 
 ```bash
-systemctl stop neuron
+$ sudo systemctl stop neuron
 ```
 
 #### Restart Neuron
 
 ```bash
-systemctl restart neuron
+$ sudo systemctl restart neuron
 ```
 
 ### Running EMQX in Docker
 
 We need to deploy an MQTT Broker to do the connection processing of messages, here we recommend using EMQX. Again EMQX can be installed and used quickly using a Docker container.The latest version can be obtained from the [EMQX](https://www.emqx.com/en/try?product=broker).
 
-Get the Docker image
+1. Get the Docker image
 
 ```bash
-docker pull emqx/emqx:4.4.3
+$ docker pull emqx/emqx:4.4.3
 ```
 
-Start the Docker container
+2. Start the Docker container
 
 ```bash
-docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
+$ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
 ```
 
-### Resource Preparation
+### Install Modbus Simulator
 
 Install PeakHMI Slave Simulator, download the software from the [PeakHMI official website](https://hmisys.com).
 After installation, open the Modbus TCP slave.
 
 *Note* Try to disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
 
-## Operation And Use
+## Running And Use
 
 When the environment and resources are ready, open a web browser and enter the gateway address and port number where you are running Neuron to get to the administration console page, the default port number is 7000, e.g [http://127.0.0.1:7000](http://127.0.0.1:7000)。
 

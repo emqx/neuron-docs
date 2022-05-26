@@ -49,7 +49,7 @@ The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus R
 
 #### **SLAVE**
 
-Required, Slave is the slave id or site number.
+Required, Slave is the slave address or site number.
 
 #### **ADDRESS**
 
@@ -185,7 +185,7 @@ The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300
 | **rack** | plc rack number, default 0       |
 | **slot** | plc cpu slot, default 1          |
 
-**!**  When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Siemens software(TIA16) to make some settings for the PLC.
+**!**  When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Siemens software(TIA16) to make some settings for the PLC.( For detailed settings, please refer to [plc-settings](./plc-settings/siemens-s7-1200-1500.md). )
 
 * The optimized block access must be turned off.
 * The access level must be "full" and the "connection mechanism" must allow GET/PUT.
@@ -295,16 +295,16 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
 #### AREA ADDRESS
 
-| AREA | DATA TYPE    | ATTRIBUTE  | REMARK           |
-| ---- | ------------ | ---------- | ---------------- |
-| CIO  | all          | read/write | CIO Area         |
-| A    | all          | read       | Auxiliary Area   |
-| W    | all          | read/write | Work Area        |
-| H    | all          | read/write | Holding Area     |
-| D    | all          | read/write | Data Memory Area |
-| P    | int16/uint16 | read/write | PVs              |
-| F    | int8/uint8   | read       | Completion Flag  |
-| EM   | all          | read/write | Extended Memory  |
+| AREA | DATA TYPE                                                 | ATTRIBUTE  | REMARK           |
+| ---- | --------------------------------------------------------- | ---------- | ---------------- |
+| CIO  | All types except uint8/int8                               | read/write | CIO Area         |
+| A    | All types except uint8/int8                               | read       | Auxiliary Area   |
+| W    | All types except uint8/int8                               | read/write | Work Area        |
+| H    | All types except uint8/int8                               | read/write | Holding Area     |
+| D    | All types except uint8/int8                               | read/write | Data Memory Area |
+| P    | All types except uint8/int8, but bit only supports read   | read/write | PVs              |
+| F    | int8/uint8                                                | read       | Completion Flag  |
+| EM   | All types except uint8/int8                               | read/write | Extended Memory  |
 
 *E.g*
 
@@ -345,7 +345,7 @@ Optional, referring to a bit of an address.
 
 #### .LEN\[H]\[L]
 
-When the data type is string type, it is a required, **.LEN** indicates the length of the string, including **H** and **L** two endianness, the default is **L** .
+When the data type is string type, it is a required, **.LEN** indicates the length of the string, including **H** and **L** two endianness, the default is **H** .
 
 *E.g*
 
@@ -363,7 +363,7 @@ When the data type is string type, it is a required, **.LEN** indicates the leng
 | D5.30     | string | D area, address 5, the string length is 30 bytes and the endianness is L  |
 | EM10.10   | string | EM area, address 10, the string length is 10 bytes and the endianness is L  |
 
-## Mitsubishi MELSEC E71
+## Mitsubishi MELSEC-Q E71
 
 The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
 
@@ -457,7 +457,7 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 
 #### .LEN\[H]\[L]
 
-When the data type is string type, it is a required , **.LEN** represents the length of the string, including **H** and **L** two endianness, the default is **L**.
+When the data type is string type, it is a required , **.LEN** represents the length of the string, including **H** and **L** two endianness, the default is **H**.
 *E.g*
 
 | Address     | Data Type  | Description          |

@@ -6,51 +6,55 @@
 
 实例中使用的环境是 Ubuntu 20.04.3，armv71。
 
-Neuron 软件包可从 Neuron 网站 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。
+1. 下载安装包
+Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。
 
+2. 解压安装包
 解压软件包到任何目录下（例如：/home/Neuron），输入命令：
 
 ```bash
-sudo dpkg -i neuron-2.0.1-linux-armhf.deb
+$ sudo dpkg -i neuron-2.0.1-linux-armhf.deb
 ```
 
 *注意* 安装 deb 包后，Neuron 自启动
 
+### Neuron 相关操作
+
 #### 查看 Neuron 状态
 
 ```bash
-systemctl status neuron
+$ sudo systemctl status neuron
 ```
 
 #### 停止 Neuron
 
 ```bash
-systemctl stop neuron
+$ sudo systemctl stop neuron
 ```
 
 #### 重启 Neuron
 
 ```bash
-systemctl restart neuron
+$ sudo systemctl restart neuron
 ```
 
 ### 在 Docker 中运行 EMQX
 
-我们需要部署一个 MQTT Broker 来做消息的连接处理，这里推荐使用 EMQX 。同样 EMQX 可以快速使用 Docker 容器安装使用。可从 [EMQX 官网](https://www.emqx.com/zh/try?product=broker) 获取最新版本。
+我们需要部署一个 MQTT Broker 客户端来做消息的连接处理，这里推荐使用 EMQX 。同样 EMQX 可以快速使用 Docker 容器安装使用。可从 [EMQX 官网](https://www.emqx.com/zh/try?product=broker) 获取最新版本。
 
-获取 Docker 镜像
-
-```bash
-docker pull emqx/emqx:4.4.3
-```
-
-启动 Docker 容器
+1. 获取 Docker 镜像
 
 ```bash
-docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
+$ docker pull emqx/emqx:4.4.3
 ```
 
-### 资源准备
+2. 启动 Docker 容器
+
+```bash
+$ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
+```
+
+### 安装 Modbus 模拟器
 
 安装 PeakHMISlaveSimulator 软件，安装包可在 [PeakHMI 官网](https://hmisys.com) 中下载。
 安装后，打开 Modbus TCP slave.
