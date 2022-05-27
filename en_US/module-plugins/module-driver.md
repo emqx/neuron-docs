@@ -143,7 +143,6 @@ When the data type is string type, **.LEN** is a required, indicating the length
 
 ### Support Data Type
 
-* BYTE
 * INT8
 * INT16
 * INT32
@@ -155,7 +154,6 @@ When the data type is string type, **.LEN** is a required, indicating the length
 * FLOAT
 * DOUBLE
 * BOOL
-* BIT
 * STRING
 
 ### Addresses Format

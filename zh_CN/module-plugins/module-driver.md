@@ -143,7 +143,6 @@ Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TC
 
 ### 支持的数据类型
 
-* BYTE
 * INT8
 * INT16
 * INT32
@@ -155,7 +154,6 @@ Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TC
 * FLOAT
 * DOUBLE
 * BOOL
-* BIT
 * STRING
 
 ### 地址格式
