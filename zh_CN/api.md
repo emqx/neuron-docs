@@ -225,9 +225,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**id**              可选
-**type**            必需的如果没有提供**id**参数，否则可选
-**name_contains**   可选
+**type**  必需
 
 ### 请求 Headers
 
