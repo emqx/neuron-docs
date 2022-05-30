@@ -21,6 +21,10 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | **ca-path**   | ca 路径                       |
 | **ca-file**   | ca 文件                       |
 
+## eKuiper
+
+使用 eKuiper 插件对 Neuron 采集的数据进行流式处理，详细的使用过程请参照 [Neuron 与 eKuiper 集成](https://github.com/lf-edge/ekuiper/blob/master/docs/zh_CN/tutorials/neuron/neuron_integration_tutorial.md)。
+
 ## Modbus TCP
 
 Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。

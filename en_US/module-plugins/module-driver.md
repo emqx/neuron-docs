@@ -21,6 +21,10 @@ The data collected from the device can be transmitted to the mqtt broker through
 | **ca-path**   | ca path                       |
 | **ca-file**   | ca file                       |
 
+## eKuiper
+
+Use the eKuiper plugin to stream processing of data collected by Neuron, for detailed usage process,please refer to [Integration of Neuron and eKuiper](https://github.com/lf-edge/ekuiper/blob/master/docs/en_US/tutorials/neuron/neuron_integration_tutorial.md).
+
 ## Modbus
 
 The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.
