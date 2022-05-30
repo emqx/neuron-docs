@@ -37,6 +37,10 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | 4015   | Publish被暂停，由于用户主动停止Plugin触发                    |
 | 4016   | Publish数据超过缓冲区长度，通常不会发生                      |
 
+## eKuiper
+
+使用 eKuiper 插件对 Neuron 采集的数据进行流式处理，详细的使用过程请参照 [Neuron 与 eKuiper 集成](https://github.com/lf-edge/ekuiper/blob/master/docs/zh_CN/tutorials/neuron/neuron_integration_tutorial.md)。
+
 ## Modbus TCP
 
 Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。
