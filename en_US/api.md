@@ -1220,3 +1220,27 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     ]
 }
 ```
+
+## Get Version
+
+*GET*  /api/v2/version
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200
+* 500
+  * 1001 internal error
+
+### Response
+
+```json
+{
+    "build_date": "2022-06-01",
+    "revision": "99e2184+dirty", // dirty indicates uncommit changes
+    "version": "2.0.1"
+}
+```
