@@ -16,6 +16,10 @@
           "path": "architecture"
         },
         {
+          "title": "集成",
+          "path": "integration"
+        },
+        {
           "title": "案例",
           "path": "use_cases"
         }
@@ -100,6 +104,10 @@
         {
           "title": "Architecture",
           "path": "architecture"
+        },
+        {
+          "title": "Integrations",
+          "path": "integration"
         },
         {
           "title": "Use Cases",

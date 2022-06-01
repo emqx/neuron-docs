@@ -1,11 +1,8 @@
-# 简介
+# 集成
 
-Neuron 是运行在各类物联网边缘网关硬件上的工业协议商业化网关软件，支持一站式接入和解析数十种工业协议，并转换成 MQTT 协议接入工业物联网平台。用户可以通过基于 Web 的管理控制台可以实现在线的网关配置管理；Neuron 的资源占用很低，并且同时支持 X86、ARM CPU 架构。
+Neuron可以通过MQTT和REST与各种云平台集成，包括EMQX Cloud、AWS、Google Cloud Platform和Microsoft Azure，将实时工业数据直接无缝地流向工业应用，如MES、ERP、大数据、分析软件等等。
 
-- 支持了 Modbus，OPCUA，IEC61850，IEC104 和 BACnet 等众多协议和设备；
-- 管理控制台，用户可以在浏览器中进行可视化的配置，实现跨工业设备数据的接入；
-- 北向标准 MQTT 数据发送，根据用户指定配置，将数据发送至指定的 MQTT 消息服务器中；
-- 南向控制接口，Neuron 监听控制设备的主题，将相关的控制命令转发给设备。结合 eKuiper 提供的规则引擎功能，快速实现基于规则的设备控制；
-- 本地数据存储，实现设备原始数据的存储和查看；
+Neuron还为数据分析AI/ML提供了一个集成的SQL流处理规则引擎eKuiper，以利用边缘侧低延迟处理的优势。输出的流数据可以存储在边缘侧的influxdb等时间序列数据库中。
 
-Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到端的[云边协同的工业互联网解决方案](https://www.emqx.com/zh/use-cases/industrial-iot)。
+![integrations](./assets/integration.png)
+
