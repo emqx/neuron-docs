@@ -415,19 +415,19 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 | SN   | all       | read/write | (Q/iQ-F)                         |
 | CN   | all       | read/write | Counter Current value  (Q/iQ-F)  |
 | D    | all       | read/write | Data register (Q/iQ-F)           |
-| DSH  |           |            |                                  |
-| DSL  |           |            |                                  |
+| DSH  | --        |            |                                  |
+| DSL  | --        |            |                                  |
 | SD   | all       | read/write | Specical register (Q/iQ-F)       |
 | W    | all       | read/write | Link register (Q/iQ-F)           |
-| WSH  |           |            |                                  |
-| WSL  |           |            |                                  |
+| WSH  | --        |            |                                  |
+| WSL  | --        |            |                                  |
 | SW   | all       | read/write | Link special register (Q/iQ-F)   |
 | R    | all       | read/write | File register (Q/iQ-F)           |
 | ZR   | all       | read/write | File register (Q/iQ-F)           |
-| RSH  |           |            |                                  |
-| ZRSH |           |            |                                  |
-| RSL  |           |            |                                  |
-| ZRSL |           |            |                                  |
+| RSH  | --        |            |                                  |
+| ZRSH | --        |            |                                  |
+| RSL  | --        |            |                                  |
+| ZRSL | --        |            |                                  |
 | Z    | all       | read/write | Index register (Q/iQ-F)          |
 
 *E.g*
@@ -446,22 +446,22 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 
 #### .BIT
 
-选填，表示某一个地址的某一位。
+It can only be used in **non-bit type area**, which means to read the specified bit of the specified address, and the binary bit index range is [0, 15].
 
-| 地址  | 数据类型 | 说明  |
+| Address | Data Type | Description |
 | ------- | --------- | --------- |
 | D20.0 | bit | D area, address is 20, bit 0   |
 | D20.2 | bit | D area, address is 20, bit 2   |
 
 #### .LEN\[H]\[L]
 
-When the data type is string type, it is a required , **.LEN** represents the length of the string, including **H** and **L** two endianness, the default is **H**.
+When the data type is string, **.LEN** indicates the length of the string;   **H** and **L** can be optional to indicate two byte orders, the default is **H** byte order.
 *E.g*
 
 | Address     | Data Type  | Description          |
 | ------- | ------- | --------------- |
-| D1002.16  | string  | D area, address is 1002, string length is 16, endianness is L |
-| D1003.16H | string  | D area, address is 1003, string length is 16, endianness is H |
+| D1002.16L | string  | D area, address is 1002, string length is 16, endianness is L |
+| D1003.16 | string  | D area, address is 1003, string length is 16, endianness is H |
 
 ## IEC 60870-5-104
 
