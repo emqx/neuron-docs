@@ -21,6 +21,18 @@ The data collected from the device can be transmitted to the mqtt broker through
 | **ca-path**   | ca path                       |
 | **ca-file**   | ca file                       |
 
+### Error Codes
+
+| 错误码 | 说明                                                         |
+| ------ | ------------------------------------------------------------ |
+| 4005   | MQTT client creation failed, usually caused by system reasons |
+| 4007   | Failed to connect to Broker, possible reasons include connection parameter configuration error or network abnormality (usually temporary) |
+| 4010   | Failed to subscribe Topic, usually before the connection is successful, it will be automatically re-subscribed after the connection is successful |
+| 4013   | Failed to unsubscribe topic                                  |
+| 4014   | Publish fails, usually due to a connection exception. In the current implementation, the failed data will be discarded |
+| 4015   | Publish suspended due to user stopping plugin                |
+| 4016   | Publish data exceeds buffer length, usually does not happen  |
+
 ## Modbus
 
 The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.
