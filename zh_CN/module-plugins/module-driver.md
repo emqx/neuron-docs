@@ -12,14 +12,30 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 
 | 字段           | 说明                         |
 | ------------- | ---------------------------- |
-| **client-id** | MQTT 客户端 ID                |
+| **client-id** | MQTT 客户端 ID，必填             |
+| **upload-topic** | 订阅数据上报的通道，可选填，如果不填写则数据会在`neuron/{client-id}/upload`下上报 |
+| **format** | 上报数据的json格式选择，必填，有values模式和tags模式，默认为values模式 |
 | **ssl**       | 是否启用 mqtt ssl，默认 false  |
-| **host**      | MQTT Broker 主机              |
-| **port**      | MQTT Broker 端口号            |
-| **username**  | 连接到 Broker 时使用的用户名    |
-| **password**  | 连接到 Broker 时使用的密码      |
-| **ca-path**   | ca 路径                       |
-| **ca-file**   | ca 文件                       |
+| **host**      | MQTT Broker 主机，必填           |
+| **port**      | MQTT Broker 端口号，必填 |
+| **username**  | 连接到 Broker 时使用的用户名，可选填 |
+| **password**  | 连接到 Broker 时使用的密码，可选填 |
+| **ca**   | ca文件，只在ssl值为true时启用，这种情况下为必填 |
+| **cert** | cert文件，只在ssl值为true时启用，可选填 |
+| **key** | key文件，只在ssl值为true时启用，可选填 |
+| **keypass** | key文件密码，只有在ssl值为true时启用，可选填 |
+
+### 常见错误码
+
+| 错误码 | 说明                                                         |
+| ------ | ------------------------------------------------------------ |
+| 4005   | MQTT客户端创建失败，一般由系统原因导致                       |
+| 4007   | 与Broker连接失败，可能的原因包括连接参数配置错误或网络异常（通常是暂时的） |
+| 4010   | 订阅Topic失败，通常发生在连接成功之前，连接成功后会自动重新订阅 |
+| 4013   | 解除订阅Topic失败                                            |
+| 4014   | Publish失败，通常由于连接异常导致，目前的实现中失败数据会被丢弃 |
+| 4015   | Publish被暂停，由于用户主动停止Plugin触发                    |
+| 4016   | Publish数据超过缓冲区长度，通常不会发生                      |
 
 ## Modbus TCP
 
