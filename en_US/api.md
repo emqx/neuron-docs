@@ -32,10 +32,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ### Node Type
 
 * DRIVER = 1
-* WEB = 2
-* MQTT = 3
-* DRIVERX = 4
-* APP = 5
+* APP = 2
 
 ### Plugin Kind
 

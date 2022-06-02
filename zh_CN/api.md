@@ -32,10 +32,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ### Node 类型
 
 * DRIVER = 1
-* WEB = 2
-* MQTT = 3
-* DRIVERX = 4
-* APP = 5
+* APP = 2
 
 ### 插件类型
 
@@ -134,8 +131,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //node type
-    "type": 1,
     //node name
     "name": "modbus-tcp-node",
     //plugin name
@@ -171,8 +166,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //node id
-    "id": 7
+    //node name
+    "name": "modbus-tcp-test"
 }
 ```
 
@@ -243,24 +238,12 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
         {
             //node name
             "name": "sample-driver-adapter",
-            //node id
-            "id": 1,
-            "plugin_id": 1
+            //plugin name
+            "plugin_name": "modbus-tcp"
         },
         {
             "name": "modbus-tcp-adapter",
-            "id": 4,
-            "plugin_id": 2
-        },
-        {
-            "name": "opcua-adapter",
-            "id": 6,
-            "plugin_id": 3
-        },
-        {
-            "name": "modbus-tcp-test",
-            "id": 7,
-            "plugin_id": 4
+            "plugin_name": "modbus-tcp"
         }
     ]
 }
@@ -290,8 +273,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 {
     //group config name
     "name": "gconfig1",
-    //node id
-    "node_id": 4,
+    //node name
+    "node_name": "modbus-node",
     //read/upload interval(ms)
     "interval": 10000
 }
@@ -328,8 +311,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //node id
-    "node_id": 4,
+    //node name
+    "node_name": "modbus-node",
     //group config name
     "name": "gconfig1"
 }
@@ -386,7 +369,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node_id**  必需
+**node_name**  必需
 
 ### 请求 Headers
 
@@ -406,15 +389,12 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "name": "config_modbus_tcp_sample_2",
             //read/upload interval(ms)
             "interval": 2000,
-            //pipe count
-            "pipe_count": 1,
             //tag count
             "tag_count": 0
         },
         {
             "name": "gconfig1",
             "interval": 10000,
-            "pipe_count": 0,
             "tag_count": 0
         }
     ]
@@ -446,8 +426,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-   //node id
-    "node_id": 4,
+   //node name
+    "node_name": "modbus-node",
    //group config name
     "group_config_name": "config_modbus_tcp_sample_2",
     "tags": [
@@ -491,7 +471,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node_id**  requred
+**node_name**  requred
 
 **group_config_name**  optional
 
@@ -520,25 +500,21 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //tag attribute
             "attribute": 1,
             //tag group config name
-            "group_config_name": "config_modbus_tcp_sample_2",
-            //tag id
-            "id": 1
+            "group_config_name": "config_modbus_tcp_sample_2"
         },
         {
             "name": "tag2",
             "type": 14,
             "address": "1!00001",
             "attribute": 3,
-            "group_config_name": "config_modbus_tcp_sample_2",
-            "id": 4
+            "group_config_name": "config_modbus_tcp_sample_2"
         },
         {
             "name": "tag3",
             "type": 11,
             "address": "1!400009",
             "attribute": 3,
-            "group_config_name": "config_modbus_tcp_sample_2",
-            "id": 5
+            "group_config_name": "config_modbus_tcp_sample_2"
         }
     ]
 }
@@ -571,12 +547,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //node id
-    "node_id": 4,
+    //node name
+    "node_name": 4,
     "tags": [
         {
-            //tag id
-            "id": 4,
             //tag name
             "name": "tag1",
             //tag type
@@ -587,7 +561,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "address": "1!400001"
         },
         {
-            "id": 5,
             "name": "tag2",
             "type": 6,
             "attribute": 0,
@@ -627,12 +600,12 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 {
     //group config name
     "group_config_name": "config_modbus_tcp_sample_2",
-    //node id
-    "node_id": 4,
+    //node name
+    "node_name": "modbus-node",
     //tag ids
-    "ids": [
-        4,
-        5
+    "names": [
+        "tag1",
+        "tag2"
     ]
 }
 ```
@@ -705,8 +678,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //plugin id
-    "id": 1
+    //plugin name
+    "name": "modbus-tcp"
 }
 ```
 
@@ -740,8 +713,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 {
     "plugin_libs": [
         {
-            //plugin id
-            "id": 1,
             //plugin kind
             "kind": 1,
             //node type
@@ -775,11 +746,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //src node id
-    "src_node_id": 4,
-    //dst node id
-    "dst_node_id": 5,
-    //src node group config name
+    //app name
+    "app_name": "mqtt-node",
+    //driver name
+    "driver_name": "modbus-node",
+    //driver node group config name
     "name": "gconfig1"
 }
 ```
@@ -812,11 +783,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //src node id
-    "src_node_id": 4,
-    //dst node id
-    "dst_node_id": 5,
-    //src node group config name
+    //app name
+    "app name": "mqtt-node",
+    //driver name
+    "driver name": "driver-node",
+    //driver node group config name
     "name": "gconfig1"
 }
 ```
@@ -1030,8 +1001,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 //The parameter fields in json fill in different fields according to different plugins
 {
-    //node id
-    "node_id": 123,
+    //node name
+    "node_name": "modbus-node",
     "params": {
         "param1": 1,
         "param2": "1.1.1.1",
@@ -1055,7 +1026,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node_id**  必需
+**node_name**  必需
 
 ### 请求 Headers
 
@@ -1073,7 +1044,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 //The parameter fields in json fill in different fields according to different plugins
 {
-    "node_id": 4,
+    "node_name": "modbus-node",
     "params": {
         "param1": "1.1.1.1",
         "param2": 502
@@ -1104,8 +1075,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //node id
-    "id": 4,
+    //node name
+    "name": "modbus-node",
     //0 start, 1 stop
     "cmd": 0
 }
@@ -1125,7 +1096,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node_id**  required
+**node_name**  required
 
 ### 请求 Headers
 
@@ -1152,7 +1123,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node_id**  required
+**node_name**  required
 
 ### 请求 Headers
 
@@ -1169,13 +1140,13 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 {
     "groups": [
         {
-            //node id
-            "node_id": 1,
+            //node name
+            "node_name": "modbus-node",
             //group config name
             "group_config_name": "g1name"
         },
         {
-            "node_id": 2,
+            "node_name": "modbus-node",
             "group_config_name": "g2name"
         }
     ]
