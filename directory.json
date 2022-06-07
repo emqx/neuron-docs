@@ -9,21 +9,16 @@
       "path": "introduction"
     },
     {
-      "title": "产品内容",
-      "children": [
-        {
-          "title": "架构设计",
-          "path": "architecture"
-        },
-        {
-          "title": "集成",
-          "path": "integration"
-        },
-        {
-          "title": "案例",
-          "path": "use_cases"
-        }
-      ]
+      "title": "架构设计",
+      "path": "architecture"
+    },
+    {
+      "title": "集成",
+      "path": "integration"
+    },
+    {
+      "title": "案例",
+      "path": "use_cases"
     },
     {
       "title": "入门",
@@ -99,21 +94,16 @@
       "path": "introduction"
     },
     {
-      "title": "Product Content",
-      "children": [
-        {
-          "title": "Architecture",
-          "path": "architecture"
-        },
-        {
-          "title": "Integrations",
-          "path": "integration"
-        },
-        {
-          "title": "Use Cases",
-          "path": "use_cases"
-        }
-      ]
+      "title": "Architecture",
+      "path": "architecture"
+    },
+    {
+      "title": "Integrations",
+      "path": "integration"
+    },
+    {
+      "title": "Use Cases",
+      "path": "use_cases"
     },
     {
       "title": "Getting Started",
