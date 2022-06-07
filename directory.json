@@ -6,11 +6,8 @@
     },
     {
       "title": "产品简介",
+      "path": "introduction",
       "children": [
-        {
-          "title": "什么是Neuron？",
-          "path": "introduction"
-        },
         {
           "title": "架构设计",
           "path": "architecture"
@@ -96,11 +93,8 @@
     },
     {
       "title": "Introduction",
+      "path": "introduction",
       "children": [
-        {
-          "title": "What is Neuron?",
-          "path": "introduction"
-        },
         {
           "title": "Architecture",
           "path": "architecture"
