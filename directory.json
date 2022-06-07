@@ -6,7 +6,10 @@
     },
     {
       "title": "产品简介",
-      "path": "introduction",
+      "path": "introduction"
+    },
+    {
+      "title": "产品内容",
       "children": [
         {
           "title": "架构设计",
@@ -93,7 +96,10 @@
     },
     {
       "title": "Introduction",
-      "path": "introduction",
+      "path": "introduction"
+    },
+    {
+      "title": "Product Content",
       "children": [
         {
           "title": "Architecture",
