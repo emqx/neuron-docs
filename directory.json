@@ -9,18 +9,6 @@
       "path": "introduction"
     },
     {
-      "title": "架构设计",
-      "path": "architecture"
-    },
-    {
-      "title": "集成",
-      "path": "integration"
-    },
-    {
-      "title": "案例",
-      "path": "use_cases"
-    },
-    {
       "title": "入门",
       "children": [
         {
@@ -72,6 +60,18 @@
       ]
     },
     {
+      "title": "架构设计",
+      "path": "architecture"
+    },
+    {
+      "title": "集成",
+      "path": "integration"
+    },
+    {
+      "title": "案例",
+      "path": "use_cases"
+    },
+    {
       "title": "MQTT",
       "path": "mqtt"
     },
@@ -92,18 +92,6 @@
     {
       "title": "Introduction",
       "path": "introduction"
-    },
-    {
-      "title": "Architecture",
-      "path": "architecture"
-    },
-    {
-      "title": "Integrations",
-      "path": "integration"
-    },
-    {
-      "title": "Use Cases",
-      "path": "use_cases"
     },
     {
       "title": "Getting Started",
@@ -155,6 +143,18 @@
           "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
         }
       ]
+    },
+    {
+      "title": "Architecture",
+      "path": "architecture"
+    },
+    {
+      "title": "Integrations",
+      "path": "integration"
+    },
+    {
+      "title": "Use Cases",
+      "path": "use_cases"
     },
     {
       "title": "MQTT",
