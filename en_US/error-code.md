@@ -4,6 +4,8 @@ This document describes the errors that neuron will reply to sender when calling
 
 ## api request error codes
 
+* 1000 generic error
+
 * 1001 internal error
 
 * 1002    request body invalid
@@ -14,10 +16,9 @@ This document describes the errors that neuron will reply to sender when calling
 * 1007    validate token error
 * 1008    invalid token
 * 1009    user or password error
+* 1010    is busy
 
 ## add/del/update node/tag/plugin/group error codes
-
-* 2001    node type invalid
 
 * 2002    node exist
 * 2003    node not exist
@@ -28,9 +29,13 @@ This document describes the errors that neuron will reply to sender when calling
 * 2008    node not running
 * 2009    node is stopped
 
-* 2101    group config not exist
-* 2102    group config in use
-* 2103    group config conflict
+* 2101    group already subscribed
+* 2102    group not subscribe
+* 2103    group not allow
+
+* 2104    group exist
+* 2105    group parameter invalid
+* 2106    group not exist
 
 * 2201    tag not exist
 * 2202    tag name conflict
@@ -41,6 +46,9 @@ This document describes the errors that neuron will reply to sender when calling
 * 2301    library not found
 * 2302    library info invalid
 * 2303    library name conflict
+* 2304    library failed to open
+* 2305    libraray module invalid
+* 2306    library system not allow del
 
 ## plugin common error codes
 
@@ -49,6 +57,4 @@ This document describes the errors that neuron will reply to sender when calling
 * 3002    plugin disconnected
 * 3003    plugin tag not allow read
 * 3004    plugin tag not allow write
-* 3005    plugin tag not exist
-* 3006    plugin group config not subscribe
 * 3007    plugin tag type mismatch

@@ -327,39 +327,39 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 *E.g*
 
 | Address     | Data Type  | Description          |
-| ------- | ------- | --------------- |
-| F0      | uint8  | F area, address is 0   |
-| F1      | int8   | F area, address is 1   |
-| CIO1    | int16  | CIO area, address is 1 |
-| CIO2    | uint16 | CIO area, address is 2 |
-| A2      | int32  | A area, address is 2   |
-| A4      | uint32 | A area, address is 4   |
-| W5      | float  | W area, address is 5   |
-| W10     | float  | W area, address is 10   |
-| H20     | double | H area, address is 20   |
-| H30     | uint32 | H area, address is 30   |
-| D10     | int32  | D area, address is 10   |
-| D20     | float  | D area, address is 20   |
-| EM10    | float  | EM area, address is 10   |
+| ----------- | ------- | ----------------------- |
+| F0          | uint8  | F area, address is 0     |
+| F1          | int8   | F area, address is 1     |
+| CIO1        | int16  | CIO area, address is 1   |
+| CIO2        | uint16 | CIO area, address is 2   |
+| A2          | int32  | A area, address is 2     |
+| A4          | uint32 | A area, address is 4     |
+| W5          | float  | W area, address is 5     |
+| W10         | float  | W area, address is 10    |
+| H20         | double | H area, address is 20    |
+| H30         | uint32 | H area, address is 30    |
+| D10         | int32  | D area, address is 10    |
+| D20         | float  | D area, address is 20    |
+| EM10W100    | float  | EM10 area, address is 100 |
 
 #### .BIT
 
 Optional, referring to a bit of an address.
 
 *E.g*
-| Address     | Data Type  | Description          |
-| ------- | ------- | --------------- |
-| CIO0.0   | bit | CIO area, address is 0, bit 0  |
-| CIO1.2   | bit | CIO area, address is 1, bit 2  |
-| A2.1     | bit | A area, address is 2, bit 1    |
-| A2.3     | bit | A area, address is 2, bit 3    |
-| W3.4     | bit | W area, address is 3, bit 4    |
-| W3.0     | bit | W area, address is 3, bit 0    |
-| H4.15    | bit | H area, address is 4, bit 15    |
-| H4.10    | bit | H area, address is 4, bit 10    |
-| D5.2     | bit | D area, address is 5, bit 2    |
-| D5.3     | bit | D area, address is 5, bit 3    |
-| EM10.0   | bit | EM area, address is 10, bit 0  |
+| Address      | Data Type  | Description                       |
+| ------------ | ---------- | --------------------------------- |
+| CIO0.0       | bit        | CIO area, address is 0, bit 0     |
+| CIO1.2       | bit        | CIO area, address is 1, bit 2     |
+| A2.1         | bit        | A area, address is 2, bit 1       |
+| A2.3         | bit        | A area, address is 2, bit 3       |
+| W3.4         | bit        | W area, address is 3, bit 4       |
+| W3.0         | bit        | W area, address is 3, bit 0       |
+| H4.15        | bit        | H area, address is 4, bit 15      |
+| H4.10        | bit        | H area, address is 4, bit 10      |
+| D5.2         | bit        | D area, address is 5, bit 2       |
+| D5.3         | bit        | D area, address is 5, bit 3       |
+| EM10W100.0   | bit        | EM10 area, address is 100, bit 0  |
 
 #### .LEN\[H]\[L]
 

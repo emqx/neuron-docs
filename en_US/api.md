@@ -82,15 +82,13 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ### Response Status
 
 * 200 OK
-
-| Error code    | Type of error                |
-| :-----------: | :--------------------------- |
-| 401           | 1004, Missing token           |
-| 401           | 1005, Decoding token error    |
-| 401           | 1009, User or password error  |
-| 403           | 1006, Expired token           |
-| 403           | 1007, Validate token error    |
-| 403           | 1008, Invalid token           |
+* 401
+  * 1004, 缺少令牌
+  * 1005, 解码令牌错误
+* 403
+  * 1006, 令牌过期
+  * 1007, 验证令牌错误
+  * 1008, 无效令牌
 
 ### Body
 
@@ -125,7 +123,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * 400
   * 2001 node type invalid
 * 404
-  * 2301 plugin library not found
+  * 2301 library not found
 * 409
   * 2002 node exist
 
@@ -133,12 +131,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
-    //node type
-    "type": 1,
     //node name
     "name": "modbus-tcp-node",
     //plugin name
-    "plugin_name": "modbus-plugin-tcp"
+    "plugin": "modbus-plugin-tcp"
 }
 ```
 
@@ -170,8 +166,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
-    //node id
-    "id": 7
+     //node name
+    "name": "modbus-tcp-test"
 }
 ```
 
@@ -242,32 +238,20 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
         {
             //node name
             "name": "sample-driver-adapter",
-            //node id
-            "id": 1,
-            "plugin_id": 1
+            //plugin name
+            "plugin": "modbus-tcp"
         },
         {
             "name": "modbus-tcp-adapter",
-            "id": 4,
-            "plugin_id": 2
-        },
-        {
-            "name": "opcua-adapter",
-            "id": 6,
-            "plugin_id": 3
-        },
-        {
-            "name": "modbus-tcp-test",
-            "id": 7,
-            "plugin_id": 4
+            "plugin": "modbus-tcp"
         }
     ]
 }
 ```
 
-## Add Group Config
+## Add Group
 
-*POST*  /api/v2/gconfig
+*POST*  /api/v2/group
 
 ### Request Headers
 
@@ -281,16 +265,16 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * 404
   * 2003 node not exist
 * 409
-  * 2103 group config conflict
+  * 2103 group not allow
 
 ### Body
 
 ```json
 {
-    //group config name
+    //group name
     "name": "gconfig1",
-    //node id
-    "node_id": 4,
+    //node name
+    "node": "modbus-node",
     //read/upload interval(ms)
     "interval": 10000
 }
@@ -304,9 +288,9 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Del Group Config
+## Del Group
 
-*DELETE*  /api/v2/gconfig
+*DELETE*  /api/v2/group
 
 ### Request Headers
 
@@ -318,19 +302,19 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 * 200 OK
 * 412
-  * 2102 group config in use
+  * 2101 group already subscribed
 * 404
   * 2003 node not exist
-  * 2101 group config not exist
+  * 2106 group not exist
 
 ### Body
 
 ```json
 {
-    //node id
-    "node_id": 4,
-    //group config name
-    "name": "gconfig1"
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1"
 }
 ```
 
@@ -342,9 +326,9 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Group Config(Not Implemented)
+## Update Group(Not Implemented)
 
-*PUT*  /api/v2/gconfig
+*PUT*  /api/v2/group
 
 ### Request Headers
 
@@ -356,13 +340,13 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 * 200 OK
 * 404
-  * 2101 group config not exist
+  * 2106 group not exist
 
 ### Body
 
 ```json
 {
-    //group config name
+    //group name
     "name": "modbus-tcp-config1",
     //read/upload interval(ms)
     "interval": 20000,
@@ -379,13 +363,13 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Get Group Config
+## Get Group
 
-*GET*  /api/v2/gconfig
+*GET*  /api/v2/group
 
 ### Request Params
 
-**node_id**  required
+**node**  required
 
 ### Request Headers
 
@@ -399,21 +383,18 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ````json
 {
-    "group_configs": [
+    "groups": [
         {
-            //group config name
+            //group name
             "name": "config_modbus_tcp_sample_2",
             //read/upload interval(ms)
             "interval": 2000,
-            //pipe count
-            "pipe_count": 1,
             //tag count
             "tag_count": 0
         },
         {
             "name": "gconfig1",
             "interval": 10000,
-            "pipe_count": 0,
             "tag_count": 0
         }
     ]
@@ -445,10 +426,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
-   //node id
-    "node_id": 4,
-   //group config name
-    "group_config_name": "config_modbus_tcp_sample_2",
+   //node name
+    "node": "modbus-node",
+   //group name
+    "group": "config_modbus_tcp_sample_2",
     "tags": [
         {
            //tag name
@@ -480,6 +461,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
+    "index": 1,
     "error": 0
 }
 ```
@@ -490,9 +472,9 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Request Params
 
-**node_id**  requred
+**node**  required
 
-**group_config_name**  optional
+**group**  required
 
 ### Request Headers
 
@@ -518,26 +500,18 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             "address": "1!400001",
             //tag attribute
             "attribute": 1,
-            //tag group config name
-            "group_config_name": "config_modbus_tcp_sample_2",
-            //tag id
-            "id": 1
         },
         {
             "name": "tag2",
             "type": 14,
             "address": "1!00001",
-            "attribute": 3,
-            "group_config_name": "config_modbus_tcp_sample_2",
-            "id": 4
+            "attribute": 3
         },
         {
             "name": "tag3",
             "type": 11,
             "address": "1!400009",
-            "attribute": 3,
-            "group_config_name": "config_modbus_tcp_sample_2",
-            "id": 5
+            "attribute": 3
         }
     ]
 }
@@ -564,18 +538,18 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
   * 2205 tag address format invalid
 * 404
   * 2003 node not exist
-  * 2101 group config not exist
+  * 2106 group not exist
 
 ### Body
 
 ```json
 {
-    //node id
-    "node_id": 4,
+    //node name
+    "node": "modbus-tcp-test",
+    //group name
+    "group": "group1",
     "tags": [
         {
-            //tag id
-            "id": 4,
             //tag name
             "name": "tag1",
             //tag type
@@ -586,7 +560,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             "address": "1!400001"
         },
         {
-            "id": 5,
             "name": "tag2",
             "type": 6,
             "attribute": 0,
@@ -624,14 +597,14 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
-    //group config name
-    "group_config_name": "config_modbus_tcp_sample_2",
-    //node id
-    "node_id": 4,
-    //tag ids
-    "ids": [
-        4,
-        5
+    //group name
+    "group": "config_modbus_tcp_sample_2",
+    //node name
+    "node": "modbus-node",
+    //tag name
+    "tags": [
+        "tag1",
+        "tag2"
     ]
 }
 ```
@@ -661,20 +634,13 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * 400
   
   * 2302 library info invalid
-  
-* 404
-
-  * 2201 library not found
-
-* 409
-  * 2203 library name conflict
 
 ### Body
 
 ```json
 {
     //plugin library name
-    "lib_name": "plugin_name.so"
+    "library": "plugin_name.so"
 }
 ```
 
@@ -704,8 +670,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
-    //plugin id
-    "id": 1
+    //plugin name
+   "plugin": "modbus-tcp"
 }
 ```
 
@@ -723,7 +689,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Request Params
 
-**plugin_id**  optional
+**plugin**  optional
 
 ### Request Headers
 
@@ -737,10 +703,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
-    "plugin_libs": [
+    "plugins": [
         {
-            //plugin id
-            "id": 1,
             //plugin kind
             "kind": 1,
             //node type
@@ -748,7 +712,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             //plugin name
             "name": "plugin_name",
             //plugin library name
-            "lib_name": "plugin_lib_name"
+            "library": "plugin_lib_name",
+            "description": "description"
         }
     ]
 }
@@ -768,18 +733,18 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 * 200 OK
 * 404
-  * 2101 group config not exist
+  * 2106 group not exist
 
 ### Body
 
 ```json
 {
-    //src node id
-    "src_node_id": 4,
-    //dst node id
-    "dst_node_id": 5,
-    //src node group config name
-    "name": "gconfig1"
+    //app name
+    "app": "mqtt-node",
+    //driver name
+    "driver": "modbus-node",
+    //driver node group name
+    "group": "gconfig1"
 }
 ```
 
@@ -805,18 +770,18 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 * 200 OK
 * 404
-  * 2101 group config not exist
+  * 2106 group not exist
 
 ### Body
 
 ```json
 {
-    //src node id
-    "src_node_id": 4,
-    //dst node id
-    "dst_node_id": 5,
-    //src node group config name
-    "name": "gconfig1"
+    //app name
+    "app": "mqtt-node",
+    //driver name
+    "driver": "driver-node",
+    //driver node group name
+    "group": "gconfig1"
 }
 ```
 
@@ -845,9 +810,9 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```json
 {
     //node name
-    "node_name": "modbus-tcp-1",
-    //group config name
-    "group_name": "config_modbus_tcp_sample_2"
+    "node": "modbus-tcp-1",
+    //group name
+    "group": "config_modbus_tcp_sample_2"
 }
 ```
 
@@ -894,9 +859,9 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
-    "node_name": "modbus-tcp-1",
-    "group_name": "config_modbus_tcp_sample_2",
-    "tag_name": "tag1",
+    "node": "modbus-tcp-1",
+    "group": "config_modbus_tcp_sample_2",
+    "tag": "tag1",
     "value": 1234
 }
 ```
@@ -1029,8 +994,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```json
 //The parameter fields in json fill in different fields according to different plugins
 {
-    //node id
-    "node_id": 123,
+    //node name
+    "node": "modbus-node",
     "params": {
         "param1": 1,
         "param2": "1.1.1.1",
@@ -1054,7 +1019,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Request Params
 
-**node_id**  required
+**node**  required
 
 ### Request Headers
 
@@ -1072,7 +1037,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```json
 //The parameter fields in json fill in different fields according to different plugins
 {
-    "node_id": 4,
+    "node": "modbus-node",
     "params": {
         "param1": "1.1.1.1",
         "param2": 502
@@ -1103,8 +1068,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ```json
 {
-    //node id
-    "id": 4,
+    //node name
+    "node": "modbus-node",
     //0 start, 1 stop
     "cmd": 0
 }
@@ -1124,7 +1089,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Request Params
 
-**node_id**  required
+**node**  required
 
 ### Request Headers
 
@@ -1145,13 +1110,13 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Get Subscribe Group Config
+## Get Subscribe Group
 
 *GET*  /api/v2/subscribe
 
 ### Request Params
 
-**node_id**  required
+**app**  required
 
 ### Request Headers
 
@@ -1168,14 +1133,14 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 {
     "groups": [
         {
-            //node id
-            "node_id": 1,
-            //group config name
-            "group_config_name": "g1name"
+            //driver name
+            "driver": "modbus-node",
+            //group name
+            "group": "g1name"
         },
         {
-            "node_id": 2,
-            "group_config_name": "g2name"
+            "driver": "modbus-node",
+            "group": "g2name"
         }
     ]
 }
@@ -1205,7 +1170,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 * 200
 * 400
-  * 1003 param is wrong
+  * 1003 request param invalid
 
 ### Response
 
