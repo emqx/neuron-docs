@@ -592,3 +592,44 @@ Represents the KNX group address, which can only be written in Neuron, and KNX d
 | MSI10  | bit     | MAI area, address is 10 |
 | MSI20  | bit     | MSI area, address is 20 |
 | MSI30  | bit     | MSI area, address is 30 |
+
+## DL/T645-2007
+
+The dlt645 protocol supports serial and tcp connection.
+
+### Parameter Setting
+
+#### serial
+
+| Parameter   | Description                                         |
+| ----------- | --------------------------------------------------- |
+| **device**  | Use a serial device, e.g."/dev/ttyUSB0             |
+| **stop**    | stopbits, default 1                                 |
+| **parity**  | parity bit, default 2, which means even parity      |
+| **baud**    | baudrate, default 9600                              |
+| **data**    | bytesize, default 8                                 |
+
+#### TCP
+
+| Parameter           | Description         |
+| ------------------- | ----------------- |
+| **connection mode** | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client       |
+| **host**            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default    |
+| **port**            | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. default 502    |
+| **timeout**         | |
+
+### Support Data Type
+
+* DOUBLE
+
+### Address Format
+
+> DATA </span>
+
+#### DATA
+
+Data represents data identification.
+
+| DATA RANGE   | ATTRIBUTE   | DATA FORMAT    |
+| ------------ | ----------- | -------------- |
+| 00 zz zz ff  | Read        | XXXXXX.XX      |
