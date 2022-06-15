@@ -2,7 +2,9 @@
 
 This document introduces how to setup parameter and data tag point information in configuration for northbound applications and southbound drivers.
 
-**!** uint16 corresponds to the word type. uint32 corresponds to dword type.
+::: warning
+uint16 corresponds to the word type. uint32 corresponds to dword type.
+:::
 
 ## MQTT
 
@@ -78,7 +80,9 @@ Required,  Address is the register address.The Modbus protocol has four areas, e
 | input register | 300001 ~ 365536 | read       | 16bit         | 0x4          | bit,int16,uint16,int32,uint32,float,string |
 | hold register  | 400001 ~ 465536 | read/write | 16bit         | 0x3,0x6,0x10 | bit,int16,uint16,int32,uint32,float,string |
 
-**!** Some device documents use function codes and register addresses to describe instructions. Because register address numbers start from 0, the register address range for each region is 0 to 65535. First, determine the highest digit of the address according to the function code, and add 1 to the register address as the address of Neuron.
+::: warning
+Some device documents use function codes and register addresses to describe instructions. Because register address numbers start from 0, the register address range for each region is 0 to 65535. First, determine the highest digit of the address according to the function code, and add 1 to the register address as the address of Neuron.
+:::
 
 example, function is 0x03, and register address is 0, then address used by neuron is 400001. function is 0x02, and register address is 5, then address used by neuron is 100006.
 
@@ -184,7 +188,9 @@ When the data type is string type, **.LEN** is a required, indicating the length
 
 * 2!Device1.Module1.Tag1 represents namespace index is 2 and node ID is Device1.Module1.Tag
 
-**!** Please refer to OPC UA standard for the explanation of namespace index and node id.
+::: warning
+Please refer to OPC UA standard for the explanation of namespace index and node id.
+:::
 
 ## Siemens S7 ISOTCP
 
@@ -199,7 +205,9 @@ The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300
 | **rack** | plc rack number, default 0       |
 | **slot** | plc cpu slot, default 1          |
 
-**!**  When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Siemens software(TIA16) to make some settings for the PLC.( For detailed settings, please refer to [plc-settings](./plc-settings/siemens-s7-1200-1500.md). )
+::: warning
+When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Siemens software(TIA16) to make some settings for the PLC.( For detailed settings, please refer to [plc-settings](./plc-settings/siemens-s7-1200-1500.md). )
+:::
 
 * The optimized block access must be turned off.
 * The access level must be "full" and the "connection mechanism" must allow GET/PUT.
