@@ -2,7 +2,9 @@
 
 本节主要介绍了北向应用和南向设备的参数配置，南向设备的点位信息配置规范。
 
-**注意** uint16 对应 word 类型。uint32 对应 dword 类型。
+::: warning
+uint16 对应 word 类型。uint32 对应 dword 类型。
+:::
 
 ## MQTT
 
@@ -82,7 +84,9 @@ Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TC
 | input register（输入寄存器） | 300001 ~ 365536 | 读          | 16bit         | 0x04          | bit,int16,uint16,int32,uint32,float,string |
 | hold register（保持寄存器）  | 400001 ~ 465536 | 读/写       | 16bit         | 0x03,0x06,0x10 | bit,int16,uint16,int32,uint32,float,string |
 
-**注意** 一些设备文件会使用功能码和寄存器地址来描述指令，因为寄存器地址编号是从 0 开始的，所以每个区域的寄存器地址范围为 0 ～ 65535。首先，根据功能码确定地址的最高位数，并在寄存器地址上加1，作为 Neuron 的使用地址。
+::: warning
+一些设备文件会使用功能码和寄存器地址来描述指令，因为寄存器地址编号是从 0 开始的，所以每个区域的寄存器地址范围为 0 ～ 65535。首先，根据功能码确定地址的最高位数，并在寄存器地址上加1，作为 Neuron 的使用地址。
+:::
 
 例如，功能码是 0x03，寄存器地址是 0，Neuron 使用的地址是 400001。功能码是 0x02，寄存器地址是 5，Neuron 使用的地址是 100006。
 
@@ -188,7 +192,9 @@ Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TC
 
 * 2!Device1.Module1.Tag1 指命名空间索引为2，节点 ID 为 Device1.Module1.Tag1。
 
-**注意** 关于命名空间索引和节点 ID 的解释，请参考 OPC UA 标准。
+::: warning
+关于命名空间索引和节点 ID 的解释，请参考 OPC UA 标准。
+:::
 
 ## Siemens S7 ISOTCP
 
@@ -203,7 +209,9 @@ s7comm 插件用于带有网络端口的西门子PLC，如，s7-200/300/400/1200
 | **rack** | PLC 机架号，默认为 0       |
 | **slot** | PLC 插槽号，默认为 1       |
 
-**注意** 当使用S7COMM插件访问S7 1200/1500 PLC时，你需要使用西门子软件（TIA16）对PLC进行一些设置。( 详细设置请参考 [PLC 设置](./plc-settings/siemens-s7-1200-1500.md) )
+::: warning
+当使用S7COMM插件访问S7 1200/1500 PLC时，你需要使用西门子软件（TIA16）对PLC进行一些设置。( 详细设置请参考 [PLC 设置](./plc-settings/siemens-s7-1200-1500.md) )
+:::
 
 * 优化块访问必须被关闭。
 * 访问级别必须是**完全**，**连接机制**必须允许 GET/PUT。
