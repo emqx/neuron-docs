@@ -131,6 +131,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
+    //node type
+    "type": 1,
     //node name
     "name": "modbus-tcp-node",
     //plugin name
@@ -166,8 +168,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //node name
-    "name": "modbus-tcp-test"
+    //node id
+    "id": 7
 }
 ```
 
@@ -389,12 +391,15 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "name": "config_modbus_tcp_sample_2",
             //read/upload interval(ms)
             "interval": 2000,
+            //pipe count
+            "pipe_count": 1,
             //tag count
             "tag_count": 0
         },
         {
             "name": "gconfig1",
             "interval": 10000,
+            "pipe_count": 0,
             "tag_count": 0
         }
     ]
@@ -549,6 +554,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "group": "group1",
     "tags": [
         {
+            //tag id
+            "id": 4,
             //tag name
             "name": "tag1",
             //tag type
@@ -559,6 +566,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "address": "1!400001"
         },
         {
+            "id": 5,
             "name": "tag2",
             "type": 6,
             "attribute": 0,
@@ -704,6 +712,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 {
     "plugins": [
         {
+            //plugin id
+            "id": 1,
             //plugin kind
             "kind": 1,
             //node type
@@ -1179,5 +1189,29 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "rows": [
         "2022-02-11 15:30:57 WARN  [neuron] src/main.c:90: recv sig: 2"
     ]
+}
+```
+
+## 获取版本信息
+
+*GET*  /api/v2/version
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200
+* 500
+  * 1001 服务器内部错误
+
+### 响应
+
+```json
+{
+    "build_date": "2022-06-01",
+    "revision": "99e2184+dirty", // dirty 表示有未提交的更改
+    "version": "2.0.1"
 }
 ```
