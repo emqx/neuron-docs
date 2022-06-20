@@ -1,4 +1,4 @@
-# Application And Driver Instructions
+# Application And Driver Settings
 
 This document introduces how to setup parameter and data tag point information in configuration for northbound applications and southbound drivers.
 
@@ -29,7 +29,7 @@ The data collected from the device can be transmitted to the mqtt broker through
 
 ### Error Codes
 
-| 错误码 | 说明                                                         |
+| Code   | Description                                                      |
 | ------ | ------------------------------------------------------------ |
 | 4005   | MQTT client creation failed, usually caused by system reasons |
 | 4007   | Failed to connect to Broker, possible reasons include connection parameter configuration error or network abnormality (usually temporary) |
@@ -38,10 +38,6 @@ The data collected from the device can be transmitted to the mqtt broker through
 | 4014   | Publish fails, usually due to a connection exception. In the current implementation, the failed data will be discarded |
 | 4015   | Publish suspended due to user stopping plugin                |
 | 4016   | Publish data exceeds buffer length, usually does not happen  |
-
-## eKuiper
-
-Use the eKuiper plugin to stream processing of data collected by Neuron, for detailed usage process,please refer to [Integration of Neuron and eKuiper](https://github.com/lf-edge/ekuiper/blob/master/docs/en_US/tutorials/neuron/neuron_integration_tutorial.md).
 
 ## Modbus
 
@@ -111,7 +107,8 @@ Optional, endianness, applicable to int16/uint16/int32/uint32/float data types, 
 | #BB        | 3,4,1,2   | int32/uint32/float      | |
 | #BL        | 4,3,2,1   | int32/uint32/float      | |
 
-*E.g*
+*Example:*
+
 | Address     | Data Type  | Description       |
 | ----------- | -------- | --------- |
 | 1!300004    | int16    | Refers to station number 1, input area, address 300004, endianness is #L |
@@ -141,7 +138,8 @@ When the data type is string type, **.LEN** is a required, indicating the length
 | D   | A register stores one byte, and is stored in the low byte      |
 | E   | A register stores one byte, and is stored in the high byte      |
 
-*E.g*
+*Example:*
+
 | Address     | Data Type | Description |
 | ----------- | ------- | --------- |
 | 1!300001.10  | String  | Refers to station number is 1, input area, the address is 300001, the string length is 10, and endianness is L, the occupied address is 300001-300005 |
@@ -188,7 +186,7 @@ When the data type is string type, **.LEN** is a required, indicating the length
 
 **NODEID** is the node id.
 
-*E.g*
+*Example:*
 
 * 2!Device1.Module1.Tag1 represents namespace index is 2 and node ID is Device1.Module1.Tag
 
@@ -242,7 +240,8 @@ When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Si
 | C    | int16/uint16/bit                                  | read/write | counter         |
 | DB   | int16/uint16/bit/int32/uint32/float/double/string | read/write | global DB block |
 
-*E.g*
+*Example:*
+
 | Address | Data Type | Description  |
 | ------ | ------- | -------- |
 | I0         | int16   | I area, address is 0 |
@@ -264,7 +263,7 @@ When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Si
 
 Optional, referring to a bit of an address.
 
-*E.g*
+*Example:*
 
 | Address     | Data Type | Description             |
 | ----------- | ------- | ------------------------- |
@@ -285,7 +284,7 @@ Optional, referring to a bit of an address.
 
 When the data type is a string type, it is required and indicates the length of the string.
 
-*E.g*
+*Example:*
 
 | Address     | Data Type | Description             |
 | ----------- | ------- | ------------------------- |
@@ -332,7 +331,7 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 | F    | int8/uint8                                                | read       | Completion Flag  |
 | EM   | All types except uint8/int8                               | read/write | Extended Memory  |
 
-*E.g*
+*Example:*
 
 | Address     | Data Type  | Description          |
 | ----------- | ------- | ----------------------- |
@@ -354,7 +353,8 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
 Optional, referring to a bit of an address.
 
-*E.g*
+*Example:*
+
 | Address      | Data Type  | Description                       |
 | ------------ | ---------- | --------------------------------- |
 | CIO0.0       | bit        | CIO area, address is 0, bit 0     |
@@ -373,7 +373,7 @@ Optional, referring to a bit of an address.
 
 When the data type is string type, it is a required, **.LEN** indicates the length of the string, including **H** and **L** two endianness, the default is **H** .
 
-*E.g*
+*Example:*
 
 | Address   | Data Type  | Description                                             |
 | --------- | ------ | ----------------------------------------------------------- |
@@ -458,7 +458,7 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 | ZRSL | --        |            |                                  |
 | Z    | all       | read/write | Index register (Q/iQ-F)          |
 
-*E.g*
+*Example:*
 
 | Address     | Data Type  | Description          |
 | ------- | ------- | --------------- |
@@ -484,7 +484,8 @@ It can only be used in **non-bit type area**, which means to read the specified 
 #### .LEN\[H]\[L]
 
 When the data type is string, **.LEN** indicates the length of the string;   **H** and **L** can be optional to indicate two byte orders, the default is **H** byte order.
-*E.g*
+
+*Example:*
 
 | Address     | Data Type  | Description          |
 | ------- | ------- | --------------- |
@@ -540,17 +541,15 @@ Two address formats
 
 Represents the KNX group address, which can only be written in Neuron, and KNX devices belonging to this group will react to messages sent to this group.
 
-*E.g*
+*Example:*
 
 `0/0/1` is a KNX group address and is write only in Neuron, KNX devices belonging to this group will react to messages sent to this group.
 
 * > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
 
-代表 KNX 组下的设备地址，只能在 Neuron 中读取。
+Represents a KNX individual address that is a member of the group address, and is read only in Neuron.
 
- Represents a KNX individual address that is a member of the group address, and is read only in Neuron.
-
-*E.g*
+*Example:*
 
 `0/0/1,1.1.1` represents a KNX individual address `1.1.1` that is a member
   of the group address `0/0/1`, and is read only in Neuron.
@@ -573,7 +572,7 @@ Represents the KNX group address, which can only be written in Neuron, and KNX d
 
 > AREA[ADDRESS]</span>
 
-| AREA | ADDRESS RANGE | ATTRIBUTE  | DADA TYPE  | REMARK             |
+| AREA | ADDRESS RANGE | ATTRIBUTE  | DATA TYPE  | REMARK             |
 | ---- | ------------- | ---------- | ------------- | ------------------ |
 | AI   | 0 - 0x3fffff  | read       | float     | analog input       |
 | AO   | 0 - 0x3fffff  | read/write | float     | analog output      |
@@ -585,7 +584,7 @@ Represents the KNX group address, which can only be written in Neuron, and KNX d
 | MSO  | 0 - 0x3fffff  | read/write | bit       | multi state output |
 | MSV  | 0 - 0x3fffff  | read/write | bit       | multi state value  |
 
-*E.g*
+*Example:*
 
 | Address     | Data Type  | Description          |
 | ------- | ------- | --------------- |

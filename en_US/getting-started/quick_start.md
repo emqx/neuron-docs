@@ -59,7 +59,7 @@ $ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 
 Install PeakHMI Slave Simulator, download the software from the [PeakHMI official website](https://hmisys.com).
 After installation, open the Modbus TCP slave.
 
-*Note* Try to disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
+*Note:* Disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
 
 ## Running And Use
 
@@ -73,19 +73,19 @@ The page opens to the login screen, where users can log in using their initial u
 
 ### 2.License
 
-Neuron cannot read/write/upload data without a license uploaded or when the license has expired, you need to apply for a valid license in the interface.
+Neuron cannot read/write/upload data without a valid license or when the license has expired, you need to apply for a valid license from our website http://neugate.io and upload it through the interface.
 
-*Note* In the commercial version, there is a default license that expires on 22/07/2022, after this date, please apply for a new license and update it in the interface.
+*Note* In the commercial version, there is a default license that expires on 22/07/2022, after this date, please apply for a new license and update it through the interface.
 
 1. Select License from the `About` drop down box in the top right hand corner of the page.
 
-2. Enter the License screen, which displays the default license information. After the license has expired, you will need to reapply, we offer both free trial and official use, after receiving the license file, click on the `Reupload` button to upload the license as shown below.
+2. Enter the License screen, which displays the default license information. After the license has expired, you will need to re-apply from website, we offer both free trial and official use, after receiving the license file, click on the `Reupload` button to upload the license as shown below.
 
 ![license](../assets/license.png)
 
 ### 3.South Configuration
 
-Select `Southbound Device Management` in the `Configuration` menu to go to the Southbound Device Management screen, where no devices have been added, in this case we create Modbus TCP devices.
+Select `Southbound Device Management` in the `Configuration` menu to go to the Southbound Device Management screen, where no devices have been shown, in this case, we create Modbus TCP devices.
 
 Step 1, Add south devices.
 
@@ -107,7 +107,7 @@ Click on 2 (`Device Configuration`) in the above diagram to configure the device
 4. Connection mode: the connection mode, default is Neuron as Client mode.
 5. Click Submit to complete the device configuration and the device status will change to **Ready**.
 
-*Note* The running Neuron and the emulator must be under the same network segment.
+*Note:* The running Neuron and the emulator must be under the same network segment.
 
 ![south-setting](../assets/south-setting.png)
 Step 3, Set up the Group.
@@ -195,7 +195,7 @@ In the above diagram, click on 1 (`Application Configuration`) to enter the appl
 
 ![north-setting](../assets/north-setting.png)
 
-Step 3, Subscribe to Group.
+Step 3, Subscribe to group for MQTT.
 
 Click on any blank space in Device Card 1 in step 1 to go to the Subscribe to Group screen, as shown below.
 
@@ -219,3 +219,5 @@ Once the subscription is complete, we can use the MQTT client (MQTTX is recommen
 After successful subscription, you can see that MQTTX can receive the data collected and reported by Neuron directly, as shown in the following figure.
 
 ![mqttx](../assets/mqttx.png)
+
+Step 5, Subscribe to group for eKuiper.
