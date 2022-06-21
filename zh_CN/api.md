@@ -6,20 +6,20 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 数据类型
 
-* BYTE = 2
-* INT8 = 3
-* INT16 = 4
-* INT32 = 5
-* INT64 = 6
-* UINT8 = 7
-* UINT16 = 8
-* UINT32 = 9
-* UINT64 = 10
-* FLOAT = 11
-* DOUBLE = 12
-* BOOL = 13
-* BIT = 14
-* STRING = 15
+* INT8   = 1
+* UINT8  = 2
+* INT16  = 3
+* UINT16 = 4
+* INT32  = 5
+* UINT32 = 6
+* INT64  = 7
+* UINT64 = 8
+* FLOAT  = 9
+* DOUBLE = 10
+* BIT    = 11
+* BOOL   = 12
+* STRING = 13
+* BYTES  = 14
 
 ### 点位属性
 
