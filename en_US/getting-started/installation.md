@@ -58,7 +58,7 @@ $ sudo dpkg -r neuron
 Install according to different versions and architectures, E.g.
 
 ```bash
-$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
+$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm
 ```
 
 *Note* After successful installation of the rpm package, Neuron is automatically started.
@@ -88,22 +88,18 @@ $ cd neuron-2.0.1-linux-armhf
 
 ### Start
 
-The following command can be executed to boot from the current terminal：
+The following command can be executed to start Neuron：
 
 ```bash
-$ ./neuron
+$ ./neuron-helper.sh  start
 ```
 
-If you want to run as a daemon, you can execute the following command：
+### Stop
+
+The following command can be executed to stop Neuron：
 
 ```bash
-$ ./neuron -d
-```
-
-Execute the following command to see all the parameters available on the command line：
-
-```bash
-$ ./neuron -h
+$ ./neuron-helper.sh  stop
 ```
 
 ## Running with Docker
