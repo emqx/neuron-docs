@@ -4,6 +4,34 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ## 值
 
+### Baud
+
+* 115200 = 0
+* 57600  = 1
+* 38400  = 2
+* 19200  = 3
+* 9600   = 4
+
+### Parity
+
+* NONE   = 0
+* ODD    = 1
+* EVEN   = 2
+* MARK   = 3
+* SPACE  = 4
+
+### Stop
+
+* Stop_1 = 0
+* Stop_2 = 1
+
+### Data
+
+* Data_5 = 0
+* Data_6 = 1
+* Data_7 = 2
+* Data_8 = 3
+
 ### 数据类型
 
 * INT8   = 1
