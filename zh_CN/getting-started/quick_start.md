@@ -13,7 +13,7 @@ Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://
 解压软件包到任何目录下（例如：/home/Neuron），输入命令：
 
 ```bash
-$ sudo dpkg -i neuron-2.0.1-linux-armhf.deb
+$ sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 ```
 
 *注意* 安装 deb 包后，Neuron 自启动
@@ -130,8 +130,8 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 点击`创建`按钮进到创建 Tags 页面:
 
 1. 填写 Tag 名称，例如，tag1；
-2. 填写驱动地址，例如，1!400001。详细的驱动地址使用说明请参阅 [驱动使用说明](../module-plugins/module-driver.md)；
-3. 选择 Tag 类型，例如，Read，Write；
+2. 填写驱动地址，例如，1!40001。详细的驱动地址使用说明请参阅 [驱动使用说明](../module-plugins/module-driver.md)；
+3. 选择 Tag 类型，例如，Read；
 4. 选择数据类型，例如，int16；
 5. 点击`创建`按键，完成 Tag 的创建；
 
@@ -219,3 +219,16 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 3. 订阅成功之后可以看到 MQTTX 可以一直接收到 Neuron 采集并上报过来的数据，如下图所示。
 
 ![mqttx](../assets/mqttx.png)
+
+第五步，data-stream-process 中订阅 group
+
+1. 在`北向应用管理 -> data-stream-process` 中添加订阅（添加订阅的详细步骤请参考上文）。完成订阅后打开工作状态。
+
+2. 在规则界面点击`新建规则`，添加规则。
+
+![data-stream-rules](../assets/data-stream-rules.png)
+
+![data-stream-rules-add](../assets/data-stream-rules-add.png)
+3. 添加动作
+
+![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)

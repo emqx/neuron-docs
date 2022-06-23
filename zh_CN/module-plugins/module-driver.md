@@ -39,17 +39,29 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | 4015   | Publish被暂停，由于用户主动停止Plugin触发                    |
 | 4016   | Publish数据超过缓冲区长度，通常不会发生                      |
 
-## Modbus TCP
+## Modbus
 
-Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。
+Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。三种协议除了设备配置方式不一致外，支持的数据类型及地址格式都一致。
 
-### 设备配置
+### Modbus TCP / Modbus RTU over TCP 设备配置
 
 | 字段                  | 说明                                                    |
 | -------------------- | ------------------------------------------------------- |
 | **connection mode** | 驱动程序连接到设备的方式，默认为 client，即把 Neuron 作为客户端使用 |
 | **host**            | 当 Neuron 作为客户端使用时，host 指远程设备的 IP。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 IP，默认可填写 0.0.0.0  |
-| **port**           | 当 Neuron 作为客户端使用时，post 指远程设备的 TCP 端口。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 TCP 端口，默认为 502  |
+| **port**            | 当 Neuron 作为客户端使用时，post 指远程设备的 TCP 端口。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 TCP 端口，默认为 502  |
+| **timeout**         | 向设备发送请求超时时间                                   |
+
+### Modbus RTU 设备配置
+
+| 字段        | 说明                               |
+| ----------- | -------------------------------- |
+| **device**  | 使用串口设备，例如“/dev/ttyUSB0”    |
+| **stop**    | 停止位，默认值是 1                  |
+| **parity**  | 校验位，默认值是 2，代表偶校验        |
+| **baud**    | 波特率，默认值是 9600               |
+| **data**    | 数据位，默认值是 8                  |
+| **timeout** | 向设备发送请求超时时间               |
 
 ### 支持的数据类型
 
@@ -236,8 +248,8 @@ s7comm 插件用于带有网络端口的西门子PLC，如，s7-200/300/400/1200
 | I    | int16/uint16/bit                                  | 读    | 输入          |
 | O    | int16/uint16/bit                                  | 读/写 | 输出          |
 | F    | int16/uint16/bit                                  | 读/写 | 标志          |
-| T    | int16/uint16/bit                                  | 读/写 | 计时器        |
-| C    | int16/uint16/bit                                  | 读/写 | 计数器        |
+| T    | int16/uint16                                      | 读/写 | 计时器        |
+| C    | int16/uint16                                      | 读/写 | 计数器        |
 | DB   | int16/uint16/bit/int32/uint32/float/double/string | 读/写 | 全局数据块     |
 
 *例子：*
@@ -328,7 +340,7 @@ fins插件用于带有网口的欧姆龙 PLC，如 CP2E。
 | H    | 除 uint8/int8 外的所有类型                    | 读/写    | 保持区     |
 | D    | 除 uint8/int8 外的所有类型                    | 读/写    | 数据存储区  |
 | P    | 除 uint8/int8 外的所有类型，但 bit 只支持读     | 读/写    | PVs        |
-| F    | int8/uint8                                  | 读      | 完成标志    |
+| F    | int8/uint8                                  | 读      | 标志区域     |
 | EM   | 除 uint8/int8 外的所有类型                    | 读/写    | 扩展内存    |
 
 *例子：*
@@ -614,6 +626,7 @@ dlt645 驱动支持串口和 TCP 连接。
 | **parity**  | 校验位，默认值是 2，代表偶校验        |
 | **baud**    | 波特率，默认值是 9600               |
 | **data**    | 数据位，默认值是 8                  |
+| **timeout** | 向设备发送请求超时时间               |
 
 #### TCP
 
@@ -622,7 +635,7 @@ dlt645 驱动支持串口和 TCP 连接。
 | **connection mode** | 驱动程序连接到设备的方式，默认为 client，即把 Neuron 作为客户端使用 |
 | **host**            | 当 Neuron 作为客户端使用时，host 指远程设备的 IP。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 IP，默认可填写 0.0.0.0  |
 | **port**            | 当 Neuron 作为客户端使用时，post 指远程设备的 TCP 端口。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 TCP 端口，默认为 502  |
-| **timeout**         | |
+| **timeout**         | 向设备发送请求超时时间                                     |
 
 ### 支持的数据类型
 

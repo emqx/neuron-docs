@@ -220,4 +220,15 @@ After successful subscription, you can see that MQTTX can receive the data colle
 
 ![mqttx](../assets/mqttx.png)
 
-Step 5, Subscribe to group for eKuiper.
+Step 5, Subscribe to group for data-stream-process.
+
+1. Add a subscription in `Northbound Application Management -> data-stream-process`(please refer to the above for detailed steps of adding a subscription). Open the working status after subscription is completed.
+
+2. Click `Create rule` in the rule interface to add a rule.
+
+![data-stream-rules](../assets/data-stream-rules.png)
+
+![data-s](../assets/data-stream-rules-add.png)
+3. Add actions
+
+![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)

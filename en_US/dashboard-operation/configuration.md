@@ -25,7 +25,7 @@ In the subscription interface, users can view the list of all subscribed groups 
 - The `Export` button can export the subscribed Group list in Excel form;
 - The `Add subscription` button can be used to add a subscription, as shown in the figure below, the drop-down box selects all the subscribed southbound devices and the corresponding group;
 
-![subscription-add](../assets/subscriptions-add.png)
+![subscriptions-add](../assets/subscriptions-add.png)
 
 - `Clear` button can delete all subscription operations at once;
 - `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, which can delete all subscriptions. When you select some Groups, click the `Delete` button to quickly delete the subscriptions of the selected Groups in batches;
@@ -40,7 +40,7 @@ The southbound device management interface can also perform the `add device` ope
 
 The same as the northbound application, the user needs to click the `Add device` button in the upper right corner to add a device, fill in the device name, and click the dropdown to select the southbound device plug-in, as shown in the figure below.
 
-![add-south-devices](../assets/south-devices-add.png)
+![south-devices-add](../assets/south-devices-add.png)
 
 When you click the `Device Configuration` button, you will enter the configuration interface of the device. The items with "*" are required fields. There is an information prompt button behind each field. Place the mouse over this button, and the help message will appear, as shown in the following figure.
 

@@ -41,15 +41,27 @@ The data collected from the device can be transmitted to the mqtt broker through
 
 ## Modbus
 
-The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.
+The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.Except for the device configuration, the three protocols support the same data types and address formats.
 
-### Parameter Setting
+### Modbus TCP / Modbus RTU over TCP Parameter Setting
 
 | Parameter     | Description                  |
 | ------------- | ---------------------------- |
 | **connection mode** | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client       |
 | **host**            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default    |
 | **port**           | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. default 502    |
+| **timeout**         | Timeout for sending requests to the device                                   |
+
+### Modbus RTU Parameter Setting
+
+| Parameter   | Description                                         |
+| ----------- | --------------------------------------------------- |
+| **device**  | Use a serial device, e.g."/dev/ttyUSB0"             |
+| **stop**    | stopbits, default 1                                 |
+| **parity**  | parity bit, default 2, which means even parity      |
+| **baud**    | baudrate, default 9600                              |
+| **data**    | bytesize, default 8                                 |
+| **timeout**   | Timeout for sending requests to the device        |
 
 ### Support Data Type
 
@@ -236,8 +248,8 @@ When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Si
 | I    | int16/uint16/bit                                  | read       | input           |
 | O    | int16/uint16/bit                                  | read/write | output          |
 | F    | int16/uint16/bit                                  | read/write | flag            |
-| T    | int16/uint16/bit                                  | read/write | timer           |
-| C    | int16/uint16/bit                                  | read/write | counter         |
+| T    | int16/uint16                                      | read/write | timer           |
+| C    | int16/uint16                                      | read/write | counter         |
 | DB   | int16/uint16/bit/int32/uint32/float/double/string | read/write | global DB block |
 
 *Example:*
@@ -328,7 +340,7 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 | H    | All types except uint8/int8                               | read/write | Holding Area     |
 | D    | All types except uint8/int8                               | read/write | Data Memory Area |
 | P    | All types except uint8/int8, but bit only supports read   | read/write | PVs              |
-| F    | int8/uint8                                                | read       | Completion Flag  |
+| F    | int8/uint8                                                | read       | Flag Area        |
 | EM   | All types except uint8/int8                               | read/write | Extended Memory  |
 
 *Example:*
@@ -610,11 +622,12 @@ The dlt645 protocol supports serial and tcp connection.
 
 | Parameter   | Description                                         |
 | ----------- | --------------------------------------------------- |
-| **device**  | Use a serial device, e.g."/dev/ttyUSB0             |
+| **device**  | Use a serial device, e.g."/dev/ttyUSB0"             |
 | **stop**    | stopbits, default 1                                 |
 | **parity**  | parity bit, default 2, which means even parity      |
 | **baud**    | baudrate, default 9600                              |
 | **data**    | bytesize, default 8                                 |
+| **timeout**    | Timeout for sending requests to the device       |
 
 #### TCP
 
@@ -623,7 +636,7 @@ The dlt645 protocol supports serial and tcp connection.
 | **connection mode** | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client       |
 | **host**            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default    |
 | **port**            | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. default 502    |
-| **timeout**         | |
+| **timeout**         | Timeout for sending requests to the device    |
 
 ### Support Data Type
 
