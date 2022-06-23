@@ -220,7 +220,10 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 
 ![mqttx](../assets/mqttx.png)
 
-第五步，数据流处理
+### 5.数据流处理
+
+
+第一步，订阅 Group：
 
 在`北向应用管理`中，默认有一个 `data-stream-processing` 卡片。
 

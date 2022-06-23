@@ -2,20 +2,20 @@
 
 ## Account setup
 
-The account setting interface currently only provides the choice of the interface display language, as shown in the following figure.
+The account setting page currently only provides the choice of the interface display language.
 
 ![account-settings](../assets/account-settings.png)
 
-## Log
+## Log viewer
 
-The log interface displays the running log information of Neuron, as shown in the following figure.
+The log view page displays the historical running information of Neuron.
 
 ![log](../assets/log.png)
 
-Users can choose to view logs within a specific time period, as shown in the following figure.
+Users can choose to view logs within a specific time period.
 
 ![log-time](../assets/log-time.png)
 
-Users can filter out specific log types, as shown in the following figure.
+Users can filter out specific log information level.
 
 ![log-type](../assets/log-type.png)
