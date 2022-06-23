@@ -13,7 +13,7 @@ Neuron packages can be downloaded from the Neuron website [https://neugates.io/d
 Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
 
 ```bash
-$ sudo dpkg -i neuron-2.X.X-linux-armhf.deb
+sudo dpkg -i neuron-2.X.X-linux-armhf.deb
 ```
 
 *Note*  After successful installation of the deb package, Neuron is automatically started.
@@ -23,19 +23,19 @@ $ sudo dpkg -i neuron-2.X.X-linux-armhf.deb
 #### Checking Neuron Status
 
 ```bash
-$ sudo systemctl status neuron
+sudo systemctl status neuron
 ```
 
 #### Stop Neuron
 
 ```bash
-$ sudo systemctl stop neuron
+sudo systemctl stop neuron
 ```
 
 #### Restart Neuron
 
 ```bash
-$ sudo systemctl restart neuron
+sudo systemctl restart neuron
 ```
 
 ### Running EMQX in Docker
@@ -45,13 +45,13 @@ We need to deploy an MQTT Broker to do the connection processing of messages, he
 1. Get the Docker image
 
 ```bash
-$ docker pull emqx/emqx:4.4.3
+docker pull emqx/emqx:4.4.3
 ```
 
 2. Start the Docker container
 
 ```bash
-$ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
+docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
 ```
 
 ### Install Modbus Simulator
@@ -73,13 +73,13 @@ The first screen is the login page, where users can login with their initial use
 
 ### 2.License
 
-Neuron cannot read/write/upload data either without a valid license or with an expired license, you need to apply for a valid license from our website http://neugate.io and upload it through the license screen.
+Neuron cannot read/write/upload data either without a valid license or with an expired license, you need to apply for a valid license from our website <http://neugate.io> and upload it through the license screen.
 
 *Note:* In the commercial version, there is a default license that expires on 22/07/2022, after this date, please apply for a new license and update it through the interface.
 
 1. Select License from the `About` drop down box in the top right hand corner of the page.
 
-2. Go the License screen, which displays the default license information. If the license has expired, you have to re-apply from our website http://neugate.io for free trail license, or you may contact our sales representatives for official license, after receiving the license file, click on the `Reupload` button to upload the license as shown below.
+2. Go the License screen, which displays the default license information. If the license has expired, you have to re-apply from our website <http://neugate.io> for free trail license, or you may contact our sales representatives for official license, after receiving the license file, click on the `Reupload` button to upload the license as shown below.
 
 ![license](../assets/license.png)
 
@@ -236,55 +236,66 @@ After successfully subscribed the topic, you can see that MQTTX can receive the 
 
 ### 5.Data Stream Processing
 
-
+已内置一条名为 `neuronStream`， `type` 属性为 `neuron` 的流，neuron 将采集到的已订阅 group 的数据全部发送过来，并通过多条规则处理同一份数据。本文将介绍**清洗数据到云端**和**反控设备**两条规则。
 
 **Step 1**, Subscribe Groups for data stream node.
 
-1. Add a subscription in `Northbound Application Management -> data-stream-process`.
+1. 在`北向应用管理`中，有一个 `data-stream-processing` 默认的卡片，点击卡片空白处进入 `Group 列表`界面，如下图所示。
 
-2. Switch on the node after subscription is completed.
+![data-stream-rules-adapter](../assets/data-stream-rules-adapter.png)
 
+2. 点击`添加订阅`，下拉框选择需要订阅的`南向设备`及对应的 `Group`。
+3. 点击`提交`，完成订阅，如下图所示。
+![data-stream-rules-sub](../assets/data-stream-rules-sub.png)
 
+**Step 2**, 添加清洗数据到云端的规则
 
-**Step 2**, Create data stream processing SQL statements.
+本模块实现将 neuron 从设备采集到的数据进行 +1 处理，并重命名为有意义的名字后，将结果发送到云端的 MQTT 动态 topic `${node_name}/${group_name}`中。
 
-1. Click `Create rule` in the rule interface to add a rule.
-
-
-![data-stream-rules](../assets/data-stream-rules.png)
-
-![data-s](../assets/data-stream-rules-add.png)
-
-3. Add actions
-
-![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)
-
-第五步，数据流处理
-
-在`北向应用管理`中，默认有一个 `data-stream-processing` 卡片。
-
-1. 添加订阅，在 `data-stream-processing` 中添加需要订阅的 group，如下图所示，完成订阅后，将卡片的工作状态打开。
-
-![data-stream-sub](../assets/data-stream-sub.png)
-![data-stream-sub-1](../assets/data-stream-sub-1.png)
-2. 添加规则，在规则界面点击`新建规则`，如下图所示。
+1. 新建规则，在规则界面点击`新建规则`，如下图所示。
 
 ![data-stream-rules-add](../assets/data-stream-rules-add.png)
+2. 添加动作，填写 `Rule ID` 和 `SQL` 后，点击`添加`，如下图所示。
 ![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)
 
-* 填写 Rule ID，例如，neuron_publish_mqtt；
-* 填写 SQL；
+![data-stream-rules-action](../assets/data-stream-rules-action.png)
 
-3. 添加动作
-
-* `sink` 下拉框选择mqtt；
+* `sink` 下拉框选择 mqtt；
 * 正确填写 MQTT 服务器地址；
-* 正确填写 MQTT 主题，这里填写{{.node_name}}/{{.group_name}}；
-![data-stream-rules-add-action-end](../assets/data-stream-rules-add-action-end.png)
+* 正确填写 MQTT 主题，这里填写`{{.node_name}}/{{.group_name}}`；
+
+3. 点击`提交`，完成动作的添加。
+4. 点击`提交`，完成规则的添加，如下图所示。
+
+![data-stream-rules](../assets/data-stream-rules.png)
+5. 启动规则，如下图所示。
+
+![data-stream-rules-list](../assets/data-stream-rules-list.png)
+6. 打开 MQTT 客户端，订阅主题，查看数据，如下图所示。
 
 ::: tip
 此例中使用的 node_name 为 **modbus-plus-tcp-1**，group_name 为**group-1**，即，订阅主题为 modbus-plus-tcp-1/group-1。
 :::
 
-打开 MQTT 客户端，查看数据，如下图所示。
+**Step 3**, 添加反控设备的规则
 
+本模块实现将 neuron 从设备采集到的数据进行 +1 处理，neuron 将结果写到设备中，此时 tag 属性一定是写属性，不然无法写成功。
+
+1. 在规则界面点击`新建规则`。填写 `Rule ID` 和 `SQL` 后，点击`添加`，如下图所示。
+![data-stream-rules-add-action](../assets/data-stream-rules-add-action-1.png)
+
+![data-stream-rules-action-1](../assets/data-stream-rules-action-1.png)
+
+* `sink` 下拉框选择 neuron;
+* 正确填写节点名称，这里填写`{{.node_name}}`；
+* 正确填写分组名称，这里填写`{{.group_name}}`；
+* 正确填写标签字段，这里填写 tag1；
+
+2. 点击`提交`，完成动作的添加。
+3. 点击`提交`，完成规则的添加，如下图所示。
+
+![data-stream-rules-1](../assets/data-stream-rules-1.png)
+4. 启动规则，如下图所示。
+
+![data-stream-rules-list-1](../assets/data-stream-rules-list-1.png)
+5. 打开 neuron 数据监控，查看数据，如下图所示。
