@@ -259,3 +259,32 @@ After successfully subscribed the topic, you can see that MQTTX can receive the 
 
 ![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)
 
+第五步，数据流处理
+
+在`北向应用管理`中，默认有一个 `data-stream-processing` 卡片。
+
+1. 添加订阅，在 `data-stream-processing` 中添加需要订阅的 group，如下图所示，完成订阅后，将卡片的工作状态打开。
+
+![data-stream-sub](../assets/data-stream-sub.png)
+![data-stream-sub-1](../assets/data-stream-sub-1.png)
+2. 添加规则，在规则界面点击`新建规则`，如下图所示。
+
+![data-stream-rules-add](../assets/data-stream-rules-add.png)
+![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)
+
+* 填写 Rule ID，例如，neuron_publish_mqtt；
+* 填写 SQL；
+
+3. 添加动作
+
+* `sink` 下拉框选择mqtt；
+* 正确填写 MQTT 服务器地址；
+* 正确填写 MQTT 主题，这里填写{{.node_name}}/{{.group_name}}；
+![data-stream-rules-add-action-end](../assets/data-stream-rules-add-action-end.png)
+
+::: tip
+此例中使用的 node_name 为 **modbus-plus-tcp-1**，group_name 为**group-1**，即，订阅主题为 modbus-plus-tcp-1/group-1。
+:::
+
+打开 MQTT 客户端，查看数据，如下图所示。
+

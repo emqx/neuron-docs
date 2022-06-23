@@ -13,7 +13,7 @@ Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://
 解压软件包到任何目录下（例如：/home/Neuron），输入命令：
 
 ```bash
-$ sudo dpkg -i neuron-2.1.0-linux-armhf.deb
+sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 ```
 
 *注意* 安装 deb 包后，Neuron 自启动
@@ -23,19 +23,19 @@ $ sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 #### 查看 Neuron 状态
 
 ```bash
-$ sudo systemctl status neuron
+sudo systemctl status neuron
 ```
 
 #### 停止 Neuron
 
 ```bash
-$ sudo systemctl stop neuron
+sudo systemctl stop neuron
 ```
 
 #### 重启 Neuron
 
 ```bash
-$ sudo systemctl restart neuron
+sudo systemctl restart neuron
 ```
 
 ### 在 Docker 中运行 EMQX
@@ -45,13 +45,13 @@ $ sudo systemctl restart neuron
 1. 获取 Docker 镜像
 
 ```bash
-$ docker pull emqx/emqx:4.4.3
+docker pull emqx/emqx:4.4.3
 ```
 
 2. 启动 Docker 容器
 
 ```bash
-$ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
+docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
 ```
 
 ### 安装 Modbus 模拟器
@@ -220,15 +220,31 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 
 ![mqttx](../assets/mqttx.png)
 
-第五步，data-stream-process 中订阅 group
+第五步，数据流处理
 
-1. 在`北向应用管理 -> data-stream-process` 中添加订阅（添加订阅的详细步骤请参考上文）。完成订阅后打开工作状态。
+在`北向应用管理`中，默认有一个 `data-stream-processing` 卡片。
 
-2. 在规则界面点击`新建规则`，添加规则。
+1. 添加订阅，在 `data-stream-processing` 中添加需要订阅的 group，如下图所示，完成订阅后，将卡片的工作状态打开。
 
-![data-stream-rules](../assets/data-stream-rules.png)
+![data-stream-sub](../assets/data-stream-sub.png)
+![data-stream-sub-1](../assets/data-stream-sub-1.png)
+2. 添加规则，在规则界面点击`新建规则`，如下图所示。
 
 ![data-stream-rules-add](../assets/data-stream-rules-add.png)
+![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)
+
+* 填写 Rule ID，例如，neuron_publish_mqtt；
+* 填写 SQL；
+
 3. 添加动作
 
-![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)
+* `sink` 下拉框选择mqtt；
+* 正确填写 MQTT 服务器地址；
+* 正确填写 MQTT 主题，这里填写{{.node_name}}/{{.group_name}}；
+![data-stream-rules-add-action-end](../assets/data-stream-rules-add-action-end.png)
+
+::: tip
+此例中使用的 node_name 为 **modbus-plus-tcp-1**，group_name 为**group-1**，即，订阅主题为 modbus-plus-tcp-1/group-1。
+:::
+
+打开 MQTT 客户端，查看数据，如下图所示。
