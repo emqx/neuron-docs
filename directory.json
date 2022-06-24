@@ -37,6 +37,10 @@
           "path": "dashboard-operation/configuration"
         },
         {
+          "title": "数据流处理",
+          "path": "dashboard-operation/data-stream-processing"
+        },
+        {
           "title": "管理",
           "path": "dashboard-operation/management"
         }
@@ -120,6 +124,10 @@
         {
           "title": "Configugration",
           "path": "dashboard-operation/configuration"
+        },
+        {
+          "title": "Data Stream Processing",
+          "path": "dashboard-operation/data-stream-processing"
         },
         {
           "title": "Management",

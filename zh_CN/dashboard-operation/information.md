@@ -8,8 +8,8 @@
 
 License 上传成功之后，如下图所示，展示 License 的基本信息。用户可以再次上传 License。
 
-![license](../assets/license.png)
+![license](./assets/license.png)
 
 ## 关于
 
-![about](../assets/about.png)
+![about](./assets/about.png)
