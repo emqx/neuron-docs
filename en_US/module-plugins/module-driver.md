@@ -650,6 +650,8 @@ The dlt645 protocol supports serial and tcp connection.
 
 Data represents data identification.
 
-| DATA RANGE   | ATTRIBUTE   | DATA FORMAT    |
-| ------------ | ----------- | -------------- |
-| 00 zz zz ff  | Read        | XXXXXX.XX      |
+| DATA RANGE   | ATTRIBUTE   |
+| ------------ | ----------- |
+| 00 zz zz ff  | read        |
+| 02 zz zz ff  | read        |
+| 04 00 3~9 ff | read        |
