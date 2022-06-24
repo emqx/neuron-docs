@@ -207,12 +207,12 @@ Click on the `Application Configuration` button to enter the application configu
 
 **Step 3**, Subscribe Groups for MQTT node.
 
-Click on Device node to go to the Subscribe to Group screen, as shown below.
+Click on Device node to go to the Group Subscription screen.
 
-1. Click on the `Add subscription' button in the top right corner to add a subscription.
+1. Click on the `Add subscription` button in the top right corner to add a subscription.
 2. Click on the drop down box to select the southbound device, in this case, we select the modbus-plus-tcp-1 device built above.
 3. Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
-4. Click on `Submit` button to complete the subscription, as shown in the figure below.
+4. Click on `Submit` button to complete the subscription.
 
 ![subscriptions-add](../assets/subscriptions-add.png)
 
@@ -236,66 +236,81 @@ After successfully subscribed the topic, you can see that MQTTX can receive the 
 
 ### 5.Data Stream Processing
 
-已内置一条名为 `neuronStream`， `type` 属性为 `neuron` 的流，neuron 将采集到的已订阅 group 的数据全部发送过来，并通过多条规则处理同一份数据。本文将介绍**清洗数据到云端**和**反控设备**两条规则。
+There is a pre-defined a data stream named `neuronStream` with type attribute `neuron` in data stream engine. This data stream is all collected data from various southbound drivers. All rules would share this data stream. This section describes two rules of **data cleaning for cloud** and **device control**.
 
 **Step 1**, Subscribe Groups for data stream node.
 
-1. 在`北向应用管理`中，有一个 `data-stream-processing` 默认的卡片，点击卡片空白处进入 `Group 列表`界面，如下图所示。
+Click on `data-stream-processing` application node to go to the Group Subscription screen.
 
 ![data-stream-rules-adapter](../assets/data-stream-rules-adapter.png)
 
-2. 点击`添加订阅`，下拉框选择需要订阅的`南向设备`及对应的 `Group`。
-3. 点击`提交`，完成订阅，如下图所示。
+1. Click on the `Add subscription` button in the top right corner to add a subscription.
+2. Click on the drop down box to select the southbound device, in this case, we select the modbus-plus-tcp-1 device built above.
+3. Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
+4. Click on `Submit` button to complete the subscription.
+
 ![data-stream-rules-sub](../assets/data-stream-rules-sub.png)
 
-**Step 2**, 添加清洗数据到云端的规则
+**Step 2**, Add rules for cleaning data to the cloud
 
-本模块实现将 neuron 从设备采集到的数据进行 +1 处理，并重命名为有意义的名字后，将结果发送到云端的 MQTT 动态 topic `${node_name}/${group_name}`中。
-
-1. 新建规则，在规则界面点击`新建规则`，如下图所示。
+This rule implements +1 processing of the data collected by the neuron from the device, renames it to a meaningful name, and sends the result to the MQTT dynamic topic `${node_name}/${group_name}` in the cloud.
 
 ![data-stream-rules-add](../assets/data-stream-rules-add.png)
-2. 添加动作，填写 `Rule ID` 和 `SQL` 后，点击`添加`，如下图所示。
+
+1. Click `New Rule` to create a new rule in the rule page.
+2. Fill in the `Rule ID` and `SQL` statement.
+3. Click on `Add` button to add sink action for the rule, you may add more than one sink action for each rule.
+4. Click on `Submit` button to complete the rule definition.
+
 ![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)
+
+1. Fill in the name of sink action.
+2. Fill in the MQTT broker address.
+3. Fill in the MQTT topic, in this case, we have `{{.node_name}}/{{.group_name}}`.
+4. Select the `True` for send single.
+5. Click on `Submit` button to complete the sink action.
 
 ![data-stream-rules-action](../assets/data-stream-rules-action.png)
 
-* `sink` 下拉框选择 mqtt；
-* 正确填写 MQTT 服务器地址；
-* 正确填写 MQTT 主题，这里填写`{{.node_name}}/{{.group_name}}`；
-
-3. 点击`提交`，完成动作的添加。
-4. 点击`提交`，完成规则的添加，如下图所示。
+The rule has shown as below
 
 ![data-stream-rules](../assets/data-stream-rules.png)
-5. 启动规则，如下图所示。
+
+1. Start rule execution.
 
 ![data-stream-rules-list](../assets/data-stream-rules-list.png)
-6. 打开 MQTT 客户端，订阅主题，查看数据，如下图所示。
+
+1. Start MQTTX client, subscribe the topic `{{.node_name}}/{{.group_name}}`.
 
 ::: tip
-此例中使用的 node_name 为 **modbus-plus-tcp-1**，group_name 为**group-1**，即，订阅主题为 modbus-plus-tcp-1/group-1。
+The node_name used in this example is **modbus-plus-tcp-1** and the group_name is **group-1**, that is, the subscription topic is modbus-plus-tcp-1/group-1.
 :::
 
-**Step 3**, 添加反控设备的规则
+**Step 3**, Add rules for controlling devices
 
-本模块实现将 neuron 从设备采集到的数据进行 +1 处理，neuron 将结果写到设备中，此时 tag 属性一定是写属性，不然无法写成功。
+This rule implements +1 processing of the data collected by neuron from the device, and neuron writes the result back to the device. At this time, the tag attribute must be a write attribute, otherwise it cannot be written successfully.
 
-1. 在规则界面点击`新建规则`。填写 `Rule ID` 和 `SQL` 后，点击`添加`，如下图所示。
+1. Click `New Rule` to create a new rule in the rule page.
+2. Fill in the `Rule ID` and `SQL` statement.
+3. Click on `Add` button to add sink action for the rule, you may add more than one sink action for each rule.
+4. Click on `Submit` button to complete the rule definition.
+
 ![data-stream-rules-add-action](../assets/data-stream-rules-add-action-1.png)
+
+1. Fill in the name of sink action.
+2. Fill in the node name.
+3. Fill in the group name.
+4. Fill in the tag name.
+5. Click on `Submit` button to complete the sink action.
 
 ![data-stream-rules-action-1](../assets/data-stream-rules-action-1.png)
 
-* `sink` 下拉框选择 neuron;
-* 正确填写节点名称，这里填写`{{.node_name}}`；
-* 正确填写分组名称，这里填写`{{.group_name}}`；
-* 正确填写标签字段，这里填写 tag1；
-
-2. 点击`提交`，完成动作的添加。
-3. 点击`提交`，完成规则的添加，如下图所示。
+The rule has shown as below
 
 ![data-stream-rules-1](../assets/data-stream-rules-1.png)
-4. 启动规则，如下图所示。
+
+1. Start rule execution.
 
 ![data-stream-rules-list-1](../assets/data-stream-rules-list-1.png)
-5. 打开 neuron 数据监控，查看数据，如下图所示。
+
+5. Start neuron data monitoring, check data.
