@@ -655,3 +655,35 @@ Data represents data identification.
 | 00 zz zz ff  | read        |
 | 02 zz zz ff  | read        |
 | 04 00 3~9 ff | read        |
+
+## Sparkplug_B
+
+Data collected by Neuron from the device can be transmitted from the edge to the Sparkplug_B application using the Sparkplug_B protocol. Users can also send data modification instructions to Neuron from the application. Sparkplug_B is an application-type protocol that runs on top of MQTT, so the setup in Neuron is similar to the MQTT driver. 
+
+### Parameter Setting
+
+| Parameter     | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| **group-id**  | The top-level logical group in Sparkplug_B, which can represent an entity such as a factory or workshop, required |
+| **client-id** | MQTT client ID, A unique identifier that can represent the edge end, required |
+| **ssl**       | Whether to enable mqtt ssl, default false                    |
+| **host**      | MQTT Broker host, required                                   |
+| **port**      | MQTT Broker port number, required                            |
+| **username**  | Username to use when connecting to the broker, optional      |
+| **password**  | The password to use when connecting to the broker, optional  |
+| **ca**        | ca file, only enabled when the ssl value is true, in which case it is required |
+| **cert**      | cert file, only enabled when the ssl value is true, optional |
+| **key**       | key file, only enabled when the ssl value is true, optional  |
+| **keypass**   | key file password, only enabled when the ssl value is true, optional |
+
+### Error Codes
+
+| Code | Description                                                  |
+| ---- | ------------------------------------------------------------ |
+| 4005 | MQTT client creation failed, usually caused by system reasons |
+| 4007 | Failed to connect to Broker, possible reasons include connection parameter configuration error or network abnormality (usually temporary) |
+| 4010 | Failed to subscribe Topic, usually before the connection is successful, it will be automatically re-subscribed after the connection is successful |
+| 4013 | Failed to unsubscribe topic                                  |
+| 4014 | Publish fails, usually due to a connection exception. In the current implementation, the failed data will be discarded |
+| 4015 | Publish suspended due to user stopping plugin                |
+| 4016 | Publish data exceeds buffer length, usually does not happen  |
