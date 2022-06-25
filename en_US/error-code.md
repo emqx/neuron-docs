@@ -28,20 +28,24 @@ This document describes the errors that neuron will reply to sender when calling
 * 2007    node is running
 * 2008    node not running
 * 2009    node is stopped
+* 2010    node name too long
 
 * 2101    group already subscribed
 * 2102    group not subscribe
 * 2103    group not allow
-
 * 2104    group exist
 * 2105    group parameter invalid
 * 2106    group not exist
+* 2017    group name too long
 
 * 2201    tag not exist
 * 2202    tag name conflict
 * 2203    tag attribute not support
 * 2204    tag type not support
 * 2205    tag address format invalid
+* 2206    tag name too long
+* 2207    tag address too long
+* 2208    tag description too long
 
 * 2301    library not found
 * 2302    library info invalid
@@ -49,6 +53,15 @@ This document describes the errors that neuron will reply to sender when calling
 * 2304    library failed to open
 * 2305    libraray module invalid
 * 2306    library system not allow del
+
+## license error codes
+
+* 2400   license not found
+* 2401   license invalid
+* 2402   license expired
+* 2403   license disabled
+* 2404   license max nodes
+* 2405   license max tags
 
 ## plugin common error codes
 
@@ -58,3 +71,4 @@ This document describes the errors that neuron will reply to sender when calling
 * 3003    plugin tag not allow read
 * 3004    plugin tag not allow write
 * 3007    plugin tag type mismatch
+* 3008    plugin tag expired

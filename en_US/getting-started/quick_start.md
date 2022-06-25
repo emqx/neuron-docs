@@ -69,7 +69,7 @@ When the installation environment is ready, open a web browser and enter the add
 
 The first screen is the login page, where users can login with their initial username and password (initial username: admin, initial password: 0000) as shown below.
 
-![login](../assets/login.png)
+![login](./assets/login.png)
 
 ### 2.License
 
@@ -79,9 +79,9 @@ Neuron cannot read/write/upload data either without a valid license or with an e
 
 1. Select License from the `About` drop down box in the top right hand corner of the page.
 
-2. Go the License screen, which displays the default license information. If the license has expired, you have to re-apply from our website <http://neugate.io> for free trail license, or you may contact our sales representatives for official license, after receiving the license file, click on the `Reupload` button to upload the license as shown below.
+2. Go the License screen, which displays the default license information. If the license has expired, you have to re-apply from our website [http://neugate.io](http://neugate.io) for free trail license, or you may contact our sales representatives for official license, after receiving the license file, click on the `Reupload` button to upload the license as shown below.
 
-![license](../assets/license.png)
+![license](./assets/license.png)
 
 ### 3.South Configuration
 
@@ -93,11 +93,11 @@ Select `Southbound Device Management` in the `Configuration` menu to go to the S
 2. Fill in the device name, e.g. modbus-plus-tcp-1;
 3. Click on the drop-down box, which shows all the southbound driver protocols available for this software version, in this case we choose modbus-plus-tcp plugin, as shown below.
 
-![add-south-device](../assets/south-devices-add.png)
+![add-south-device](./assets/south-devices-add.png)
 
 After the device has been successfully created, the new device information box will appear in the southbound device management screen, at this time the device is at the initialisation state and the connection state is at the disconnection state, as shown in the figure below.
 
-![south-devices](../assets/south-devices.png)
+![south-devices](./assets/south-devices.png)
 
 **Step 2**, Set up equipment configuration.
 
@@ -111,7 +111,7 @@ Click on `Device Configuration` in the above diagram to configure the device, as
 
 *Note:* The running Neuron instance and the simulator must be under the same network segment.
 
-![south-setting](../assets/south-setting.png)
+![south-setting](./assets/south-setting.png)
 
 **Step 3**, Set up Group.
 
@@ -121,17 +121,17 @@ Click on device node box to enter the Group list management screen, and click on
 2. Fill in the Interval, set the time interval for reading data from the device and reporting data, the value should be greater than 100, we set it to 100.
 3. Click on the `Submit` button to complete the creation of the Group.
 
-![group-add](../assets/group-add.png)
+![group-add](./assets/group-add.png)
 
 The Group list will show the newly created group, as shown below.
 
-![group-list](../assets/group-list.png)
+![group-list](./assets/group-list.png)
 
 **Step 4**, Set up tags of Group.
 
 Click on the `Tag list` icon at the end row to go to the Tag list screen, as shown below. At this point we can either create tags manually by clicking on the `Create` button, or import a bulk list of tags in a Excel sheet by clicking on the `Import` button, in the example, we will describe the manual way of adding tags.
 
-![tag-list-null](../assets/tag-list-null.png)
+![tag-list-null](./assets/tag-list-null.png)
 
 After going into the Tag List screen:
 
@@ -143,11 +143,11 @@ After going into the Tag List screen:
 
 *Note:* A new tag can be created by using the `Add` button, where a `Delete` button will appear next to the information box after the Tag is successfully created.
 
-![tags-add](../assets/tags-add.png)
+![tags-add](./assets/tags-add.png)
 
 Once created, the screen below has shown.
 
-![tag-list](../assets/tag-list.png)
+![tag-list](./assets/tag-list.png)
 
 Click on `Southbound device management` and tap on the operating status switch in the device node to turn the device into a **running** state.
 
@@ -163,15 +163,15 @@ Under the `Monitoring` menu select `Data Monitoring` to enter the data monitorin
 
 *Note:* the default byte order for the Modbus TCP simulator is BE 3,4,1,2
 
-![data-monitoring](../assets/data-monitoring.png)
+![data-monitoring](./assets/data-monitoring.png)
 
 Check over the data readings of each data tag in Data Monitoring screen by comparing with the simulator's relevant data registers.
 
-![monitor](../assets/monitor.png)
+![monitor](./assets/monitor.png)
 
 *Note:* When a tag has a write attribute set, the tag in the Data Monitor screen will have a write action button at the end of row, click `Write` to write a new value to the tag as shown below.
 
-![write](../assets/write.png)
+![write](./assets/write.png)
 
 ### 4.North Configuration
 
@@ -183,17 +183,17 @@ Select `Northbound Application Management` in the `Configuration` menu to enter 
 2. Fill in the name of the application, for example, mqtt-1.
 3. The drop-down box shows the northbound applications available for this software version, in this case we choose the mqtt plugin, as shown in the image below.
 
-![north-add](../assets/north-add.png)
+![north-add](./assets/north-add.png)
 
 After the application node has been successfully created, an new application node will appear in the northbound application management screen, the running status of node is at the initial state and the connection is at disconnection state, as shown in the figure below.
 
-![north](../assets/north.png)
+![north](./assets/north.png)
 
 **Step 2**, Set up application configuration.
 
 Click on the `Application Configuration` button to enter the application configuration screen, as shown below, all fields with `*` indicators at the beginning are required fields, and short description icon at the end, when move mouse pointer over it.
 
-1. Fill in the Client Id of MQTT, which is also the name of northbound application node, e.g. mqtt1.
+1. Fill in the Client Id of MQTT, which is also the name of northbound application node, e.g. mqtt1，please refer to the [MQTT Topics](../mqtt.md).
 2. Fill in the MQTT publish topic.
 3. Select the upload format.
 4. Set up SSL authentication option.
@@ -203,7 +203,7 @@ Click on the `Application Configuration` button to enter the application configu
 8. Set up a password, which is optional.
 9. Click on the `Submit` button to complete the configuration of the northbound application and the working status will change to **Ready**, the connection status should change to **Connected** if the application node is configured correctly.
 
-![north-setting](../assets/north-setting.png)
+![north-setting](./assets/north-setting.png)
 
 **Step 3**, Subscribe Groups for MQTT node.
 
@@ -214,11 +214,11 @@ Click on Device node to go to the Group Subscription screen.
 3. Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
 4. Click on `Submit` button to complete the subscription.
 
-![subscriptions-add](../assets/subscriptions-add.png)
+![subscriptions-add](./assets/subscriptions-add.png)
 
 A Group name will be shown as below.
 
-![subscription](../assets/subscription.png)
+![subscription](./assets/subscription.png)
 
 Tap `Northbound Application Management` and switch on the working status in the application node to bring the application node into **running** state.
 
@@ -232,7 +232,7 @@ Once the subscription is completed, we can use the MQTT client (MQTTX is recomme
 
 After successfully subscribed the topic, you can see that MQTTX can receive the data from Neuron, as shown in the following.
 
-![mqttx](../assets/mqttx.png)
+![mqttx](./assets/mqttx.png)
 
 ### 5.Data Stream Processing
 
@@ -242,27 +242,27 @@ There is a pre-defined a data stream named `neuronStream` with type attribute `n
 
 Click on `data-stream-processing` application node to go to the Group Subscription screen.
 
-![data-stream-rules-adapter](../assets/data-stream-rules-adapter.png)
+![data-stream-rules-adapter](./assets/data-stream-rules-adapter.png)
 
 1. Click on the `Add subscription` button in the top right corner to add a subscription.
 2. Click on the drop down box to select the southbound device, in this case, we select the modbus-plus-tcp-1 device built above.
 3. Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
 4. Click on `Submit` button to complete the subscription.
 
-![data-stream-rules-sub](../assets/data-stream-rules-sub.png)
+![data-stream-rules-sub](./assets/data-stream-rules-sub.png)
 
 **Step 2**, Add rules for cleaning data to the cloud
 
 This rule implements +1 processing of the data collected by the neuron from the device, renames it to a meaningful name, and sends the result to the MQTT dynamic topic `${node_name}/${group_name}` in the cloud.
 
-![data-stream-rules-add](../assets/data-stream-rules-add.png)
+![data-stream-rules-add](./assets/data-stream-rules-add.png)
 
 1. Click `New Rule` to create a new rule in the rule page.
 2. Fill in the `Rule ID` and `SQL` statement.
 3. Click on `Add` button to add sink action for the rule, you may add more than one sink action for each rule.
 4. Click on `Submit` button to complete the rule definition.
 
-![data-stream-rules-add-action](../assets/data-stream-rules-add-action.png)
+![data-stream-rules-add-action](./assets/data-stream-rules-add-action.png)
 
 1. Fill in the name of sink action.
 2. Fill in the MQTT broker address.
@@ -270,21 +270,23 @@ This rule implements +1 processing of the data collected by the neuron from the 
 4. Select the `True` for send single.
 5. Click on `Submit` button to complete the sink action.
 
-![data-stream-rules-action](../assets/data-stream-rules-action.png)
+![data-stream-rules-action](./assets/data-stream-rules-action.png)
 
 The rule has shown as below
 
-![data-stream-rules](../assets/data-stream-rules.png)
+![data-stream-rules](./assets/data-stream-rules.png)
 
 1. Start rule execution.
 
-![data-stream-rules-list](../assets/data-stream-rules-list.png)
+![data-stream-rules-list](./assets/data-stream-rules-list.png)
 
 1. Start MQTTX client, subscribe the topic `{{.node_name}}/{{.group_name}}`.
 
 ::: tip
 The node_name used in this example is **modbus-plus-tcp-1** and the group_name is **group-1**, that is, the subscription topic is modbus-plus-tcp-1/group-1.
 :::
+
+![result](./assets/result.png)
 
 **Step 3**, Add rules for controlling devices
 
@@ -295,7 +297,7 @@ This rule implements +1 processing of the data collected by neuron from the devi
 3. Click on `Add` button to add sink action for the rule, you may add more than one sink action for each rule.
 4. Click on `Submit` button to complete the rule definition.
 
-![data-stream-rules-add-action](../assets/data-stream-rules-add-action-1.png)
+![data-stream-rules-add-action](./assets/data-stream-rules-add-action-1.png)
 
 1. Fill in the name of sink action.
 2. Fill in the node name.
@@ -303,14 +305,14 @@ This rule implements +1 processing of the data collected by neuron from the devi
 4. Fill in the tag name.
 5. Click on `Submit` button to complete the sink action.
 
-![data-stream-rules-action-1](../assets/data-stream-rules-action-1.png)
+![data-stream-rules-action-1](./assets/data-stream-rules-action-1.png)
 
 The rule has shown as below
 
-![data-stream-rules-1](../assets/data-stream-rules-1.png)
+![data-stream-rules-1](./assets/data-stream-rules-1.png)
 
 1. Start rule execution.
 
-![data-stream-rules-list-1](../assets/data-stream-rules-list-1.png)
+![data-stream-rules-list-1](./assets/data-stream-rules-list-1.png)
 
-5. Start neuron data monitoring, check data.
+1. Start neuron data monitoring, check data.

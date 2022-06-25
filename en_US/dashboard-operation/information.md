@@ -8,10 +8,10 @@ In the License interface, you can apply a trial license for free or upload a com
 
 After Neuron license is uploaded successfully, the information content of the license will be shown. The user can apply and upload the license again when the current license expires.
 
-![license](../assets/license.png)
+![license](./assets/license.png)
 
 ## About
 
 This page will show the current version number of Neuron and its build date for reference.
 
-![about](../assets/about.png)
+![about](./assets/about.png)
