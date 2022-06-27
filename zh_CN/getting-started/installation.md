@@ -34,7 +34,7 @@ rpm/deb package中使用了 systemd 管理 neuron 进程，建议优先使用 rp
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo dpkg -i neuron-2.0.1-linux-armhf.deb
+$ sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 ```
 
 为避免 ubuntu 系统自动更新时替换 neuron 包，还需要执行以下命令使 neuron 软件包在 apt 升级中保留。
@@ -58,7 +58,7 @@ $ sudo dpkg -r neuron
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
+$ sudo rpm -i neuron-2.1.0-linux-armhf.rpm --nodeps --force
 ```
 
 *注意* 成功安装 rpm 包后，自启动 Neuron。
@@ -76,14 +76,14 @@ $ sudo rpm -e neuron
 根据不同的版本及架构下载，例如：
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.0.1/neuron-2.0.1-linux-armhf.tar.gz
+$ wget https://www.emqx.com/en/downloads/neuron/2.1.0/neuron-2.1.0-linux-armhf.tar.gz
 ```
 
 ### 解压
 
 ```bash
-$ sudo tar -zxvf neuron-2.0.1-linux-armhf.tar.gz
-$ cd neuron-2.0.1-linux-armhf
+$ sudo tar -zxvf neuron-2.1.0-linux-armhf.tar.gz
+$ cd neuron-2.1.0-linux-armhf
 ```
 
 #### 启动

@@ -61,7 +61,7 @@ After installation, open the Modbus TCP slave.
 
 *Note:* Disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
 
-## Running And Use
+## Run for the First Time
 
 When the installation environment is ready, open a web browser and enter the address and port number where you are running Neuron to get into the administration console page, the default port number is 7000, e.g [http://127.0.0.1:7000](http://127.0.0.1:7000)。
 
