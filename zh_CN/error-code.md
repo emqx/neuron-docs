@@ -28,6 +28,7 @@
 * 2007    node 正在运行
 * 2008    node 未运行
 * 2009    node 已停止
+* 2010    node name too long
 
 * 2101    group 已经被订阅
 * 2102    group 未被订阅

@@ -4,22 +4,50 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ## Value
 
+### Baud
+
+* 115200 = 0
+* 57600  = 1
+* 38400  = 2
+* 19200  = 3
+* 9600   = 4
+
+### Parity
+
+* NONE   = 0
+* ODD    = 1
+* EVEN   = 2
+* MARK   = 3
+* SPACE  = 4
+
+### Stop
+
+* Stop_1 = 0
+* Stop_2 = 1
+
+### Data
+
+* Data_5 = 0
+* Data_6 = 1
+* Data_7 = 2
+* Data_8 = 3
+
 ### Data Type
 
-* BYTE = 2
-* INT8 = 3
-* INT16 = 4
-* INT32 = 5
-* INT64 = 6
-* UINT8 = 7
-* UINT16 = 8
-* UINT32 = 9
-* UINT64 = 10
-* FLOAT = 11
-* DOUBLE = 12
-* BOOL = 13
-* BIT = 14
-* STRING = 15
+* INT8   = 1
+* UINT8  = 2
+* INT16  = 3
+* UINT16 = 4
+* INT32  = 5
+* UINT32 = 6
+* INT64  = 7
+* UINT64 = 8
+* FLOAT  = 9
+* DOUBLE = 10
+* BIT    = 11
+* BOOL   = 12
+* STRING = 13
+* BYTES  = 14
 
 ### Data Attribute
 

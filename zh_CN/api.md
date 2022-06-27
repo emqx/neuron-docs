@@ -4,22 +4,50 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ## 值
 
+### Baud
+
+* 115200 = 0
+* 57600  = 1
+* 38400  = 2
+* 19200  = 3
+* 9600   = 4
+
+### Parity
+
+* NONE   = 0
+* ODD    = 1
+* EVEN   = 2
+* MARK   = 3
+* SPACE  = 4
+
+### Stop
+
+* Stop_1 = 0
+* Stop_2 = 1
+
+### Data
+
+* Data_5 = 0
+* Data_6 = 1
+* Data_7 = 2
+* Data_8 = 3
+
 ### 数据类型
 
-* BYTE = 2
-* INT8 = 3
-* INT16 = 4
-* INT32 = 5
-* INT64 = 6
-* UINT8 = 7
-* UINT16 = 8
-* UINT32 = 9
-* UINT64 = 10
-* FLOAT = 11
-* DOUBLE = 12
-* BOOL = 13
-* BIT = 14
-* STRING = 15
+* INT8   = 1
+* UINT8  = 2
+* INT16  = 3
+* UINT16 = 4
+* INT32  = 5
+* UINT32 = 6
+* INT64  = 7
+* UINT64 = 8
+* FLOAT  = 9
+* DOUBLE = 10
+* BIT    = 11
+* BOOL   = 12
+* STRING = 13
+* BYTES  = 14
 
 ### 点位属性
 
@@ -131,8 +159,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //node type
-    "type": 1,
     //node name
     "name": "modbus-tcp-node",
     //plugin name
@@ -168,8 +194,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //node id
-    "id": 7
+     //node name
+    "name": "modbus-tcp-test"
 }
 ```
 
@@ -391,15 +417,12 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "name": "config_modbus_tcp_sample_2",
             //read/upload interval(ms)
             "interval": 2000,
-            //pipe count
-            "pipe_count": 1,
             //tag count
             "tag_count": 0
         },
         {
             "name": "gconfig1",
             "interval": 10000,
-            "pipe_count": 0,
             "tag_count": 0
         }
     ]
@@ -477,9 +500,9 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node**  required
+**node**  必需
 
-**group**  required
+**group**  必需
 
 ### 请求 Headers
 
@@ -489,7 +512,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
 ### 响应
 
@@ -536,26 +559,25 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 206
-  * 2201 tag not exist
-  * 2202 tag name conflict
-  * 2203 tag attribute not support
-  * 2204 tag type not support
-  * 2205 tag address format invalid
+  * 2201 tag 不存在
+  * 2202 tag 名字冲突
+  * 2203 tag 属性不支持
+  * 2204 tag 类型不支持
+  * 2205 tag 地址格式无效
 * 404
-  * 2003 node not exist
-  * 2106 group not exist
+  * 2003 node 不存在
+  * 2106 group 不存在
 
 ### Body
 
 ```json
 {
-    //node name
-    "node": 4,
+     //node name
+    "node": "modbus-tcp-test",
+    //group name
     "group": "group1",
     "tags": [
         {
-            //tag id
-            "id": 4,
             //tag name
             "name": "tag1",
             //tag type
@@ -566,7 +588,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "address": "1!400001"
         },
         {
-            "id": 5,
             "name": "tag2",
             "type": 6,
             "attribute": 0,
@@ -598,7 +619,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
 ### Body
 
@@ -640,7 +661,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 400
   
-  * 2302 library info invalid
+  * 2302 库信息无效
 
 ### Body
 
@@ -712,8 +733,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 {
     "plugins": [
         {
-            //plugin id
-            "id": 1,
             //plugin kind
             "kind": 1,
             //node type
@@ -742,7 +761,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
 ### Body
 
@@ -779,7 +798,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
 ### Body
 
@@ -889,7 +908,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**plugin_name**  required
+**plugin_name**  必需
 
 ### 响应状态
 
@@ -995,8 +1014,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 400
-  * 2003 node not exist
-  * 2004 node setting invalid
+  * 2003 node 不存在
+  * 2004 node 配置无效
 
 ### Body
 
@@ -1037,9 +1056,9 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ### 响应状态
 
 * 200 OK
-  * 2005 node setting not found
+  * 2005 node 配置未发现
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
 ### 响应
 
@@ -1125,7 +1144,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**app**  required
+**app**  必需
 
 ### 请求 Headers
 

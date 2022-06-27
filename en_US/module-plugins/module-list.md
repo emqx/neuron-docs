@@ -5,24 +5,26 @@
 | Modules                                     | Type | Release Version   | Open source      |
 | ------------------------------------------- | ---- | ----------------- | ------------------ |
 | MQTT                                        | North | v2.0.0           | Yes        |
+| MQTT SparkplugB                             | North | v2.1.0          |No          |
 | eKuiper                                     | North | v2.0.1           | Yes        |
 | Modbus TCP                                  | South | v2.0.0            | Yes        |
 | Modbus RTU over TCP                         | South | v2.0.0            | No          |
+| Modbus RTU                                  | South | v2.1.0            | No          |
 | OPC UA                                      | South | v2.0.0            | No          |
 | Siemens PLC(S7 ISO TCP)                     | South | v2.0.0            | No          |
 | Mitsubishi MELSEC-Q E71                     | South | v2.0.0            | No          |
 | Omron(FINS on TCP)                          | South | v2.0.0            | No          |
 | IEC60870-5-104                              | South | v2.0.1            | No          |
+| BACnet                                      | South | v2.1.0            |No          |
+| KNXnet                                      | South | v2.1.0              |No          |
+| DLT645                                      | South | v2.1.0          |No          |
+| DLT645 over TCP                             | South | v2.1.0          |No          |
 
 ## Upcoming Modules
 
 | Modules                                     | Type |  Open source     |
 | ------------------------------------------- | ---- | ------------------ |
-| BACnet                                      | South | No          |
-| KNXnet                                      | South | No          |
-| SparkplugB                                  | North | No          |
 | Beckhoff ADS                                | South | No          |
-| DLT645 over TCP                             | South | No          |
 | non A11 (custom protocol)                   | South | No          |
 | Ethernet/IP                                 | South | No          |
 | Mitsubishi MELSEC-Q C24                     | South | No          |
@@ -40,7 +42,6 @@
 | SNMP                                        | South | No          |
 | Edge X foundry                              | North | No          |
 | DNP 3.0                                     | South | No          |
-| DLT645                                      | South | No          |
 | DLT698                                      | South | No          |
 | Schneider Modbus                            | South | No          |
 | Schneider Telemecanique UNI-TE              | South | No          |
@@ -49,4 +50,3 @@
 | Siemens PPI                                 | South | No          |
 | Siemens MPI                                 | South | No          |
 | Profinet IO                                 | South | No          |
-| Profibus                                    | South | No          |
