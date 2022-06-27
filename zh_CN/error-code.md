@@ -30,45 +30,39 @@
 * 2009    node 已停止
 * 2010    node name too long
 
-* 2101    group already subscribed
-* 2102    group not subscribe
-* 2103    group not allow
-* 2104    group exist
-* 2105    group parameter invalid
-* 2106    group not exist
-* 2017    group name too long
+* 2101    group 已经被订阅
+* 2102    group 未被订阅
+* 2103    group 不允许
 
-* 2201    tag not exist
-* 2202    tag name conflict
-* 2203    tag attribute not support
-* 2204    tag type not support
-* 2205    tag address format invalid
-* 2206    tag name too long
-* 2207    tag address too long
-* 2208    tag description too long
+* 2104    group 已存在
+* 2105    group 参数无效
+* 2106    group 不存在
 
-* 2301    library not found
-* 2302    library info invalid
-* 2303    library name conflict
-* 2304    library failed to open
-* 2305    libraray module invalid
-* 2306    library system not allow del
+* 2201    tag 不存在
+* 2202    tag 名称冲突
+* 2203    tag 属性不支持
+* 2204    tag 类型不支持
+* 2205    tag 地址格式无效
 
-## license error codes
+* 2301    库未找到
+* 2302    库信息无效
+* 2303    库名称冲突
+* 2304    库打开失败
+* 2305    库模块无效
+* 2306    系统库不允许删除
 
-* 2400   license not found
-* 2401   license invalid
-* 2402   license expired
-* 2403   license disabled
-* 2404   license max nodes
-* 2405   license max tags
+* 2400    license未找到
+* 2401    license无效
+* 2402    license过期
+* 2403    license未启用插件
+* 2404    达到license授权的最大节点数
+* 2405    达到license授权的节点最大点位数
 
-## plugin common error codes
+## 插件常见的错误代码
 
-* 3000    plugin read failure
-* 3001    plugin write failure
-* 3002    plugin disconnected
-* 3003    plugin tag not allow read
-* 3004    plugin tag not allow write
-* 3007    plugin tag type mismatch
-* 3008    plugin tag expired
+* 3000    插件读失败
+* 3001    插件写失败
+* 3002    插件未连接
+* 3003    插件 tag 不允许读
+* 3004    插件 tag 不允许写
+* 3007    插件 tag 类型不匹配

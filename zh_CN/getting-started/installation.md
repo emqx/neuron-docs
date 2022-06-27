@@ -58,7 +58,7 @@ $ sudo dpkg -r neuron
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo rpm -i neuron-2.1.0-linux-armhf.rpm --nodeps --force
+$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm
 ```
 
 *注意* 成功安装 rpm 包后，自启动 Neuron。
@@ -88,22 +88,17 @@ $ cd neuron-2.1.0-linux-armhf
 
 #### 启动
 
-执行如下命令可在当前终端启动：
+执行如下命令启动Neuron：
 
 ```bash
-$ ./neuron
+$ ./neuron-helper.sh start
 ```
 
-若想以守护进程方式运行，则可执行如下命令：
+#### 停止
 
+执行如下命令停止Neuron：
 ```bash
-$ ./neuron -d
-```
-
-执行如下命令可查看所有命令行可用参数：
-
-```bash
-$ ./neuron -h
+$ ./neuron-helper.sh stop
 ```
 
 ## 使用 Docker 运行

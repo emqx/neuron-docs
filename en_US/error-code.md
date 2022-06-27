@@ -54,14 +54,12 @@ This document describes the errors that neuron will reply to sender when calling
 * 2305    libraray module invalid
 * 2306    library system not allow del
 
-## license error codes
-
-* 2400   license not found
-* 2401   license invalid
-* 2402   license expired
-* 2403   license disabled
-* 2404   license max nodes
-* 2405   license max tags
+* 2400    license not found
+* 2401    license invalid
+* 2402    license expired
+* 2403    plugin disabled by license
+* 2404    reach licensed max number of nodes
+* 2405    reach licensed max number of tags per node
 
 ## plugin common error codes
 
