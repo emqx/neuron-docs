@@ -43,7 +43,9 @@ $ sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 $ sudo apt-mark hold neuron
 ```
 
-*注意* 成功安装 deb 包后，自动启动 Neuron
+::: tip
+成功安装 deb 包后，自动启动 Neuron
+:::
 
 ### 卸载
 
@@ -58,10 +60,12 @@ $ sudo dpkg -r neuron
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm
+$ sudo rpm -i neuron-2.1.0-linux-armhf.rpm
 ```
 
-*注意* 成功安装 rpm 包后，自启动 Neuron。
+::: tip
+成功安装 rpm 包后，自启动 Neuron。
+:::
 
 ### 卸载
 
@@ -108,13 +112,13 @@ $ ./neuron-helper.sh stop
 docker 镜像请从 [docker hub](https://hub.docker.com) 网站下载。
 
 ```bash
-$ docker pull neugates/neuron:2.0.1
+$ docker pull neugates/neuron:2.1.0
 ```
 
 ### 启动
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.1
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.1.0
 ```
 
 * tcp 7000: 用于访问web。

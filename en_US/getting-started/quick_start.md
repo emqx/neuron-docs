@@ -16,7 +16,9 @@ Unzip the package into any directory (e.g. /home/Neuron) and enter the commandï¼
 sudo dpkg -i neuron-2.X.X-linux-armhf.deb
 ```
 
-*Note*  After successful installation of the deb package, Neuron is automatically started.
+::: tip
+After successful installation of the deb package, Neuron is automatically started.
+:::
 
 ### Neuron operation
 
@@ -59,7 +61,9 @@ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p
 Install PeakHMI Slave Simulator, download the software from the [PeakHMI official website](https://hmisys.com).
 After installation, open the Modbus TCP slave.
 
-*Note:* Disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
+::: tip
+Disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
+:::
 
 ## Run for the First Time
 
@@ -75,12 +79,16 @@ The first screen is the login page, where users can login with their initial use
 
 Neuron cannot read/write/upload data either without a valid license or with an expired license, you need to apply for a valid license from our website <http://neugate.io> and upload it through the license screen.
 
-*Note:* In the commercial version, there is a default license that expires on 22/07/2022, after this date, please apply for a new license and update it through the interface.
+::: tip
+In the commercial version, there is a default license that expires on 22/07/2022, after this date, please apply for a new license and update it through the interface.
+:::
 
 1. Select License from the `About` drop down box in the top right hand corner of the page.
 
-2. Go the License screen, which displays the default license information. If the license has expired, you have to re-apply from our website [http://neugate.io](http://neugate.io) for free trail license, or you may contact our sales representatives for official license, after receiving the license file, click on the `Reupload` button to upload the license as shown below.
+2. You have to upload license from our website [http://neugate.io](http://neugate.io) for free trail license, or you may contact our sales representatives for official license, after receiving the license file, click on the `Upload` button to upload the license as shown below.
 
+![license-null](./assets/license-null.png)
+3. Go the License screen, which displays the license information.If the license has expired, you have to re-apply and click on the `Reupload` button to upload the license as shown below.
 ![license](./assets/license.png)
 
 ### 3.South Configuration
@@ -109,7 +117,9 @@ Click on `Device Configuration` in the above diagram to configure the device, as
 4. Fill in the connection mode, default is Client mode.
 5. Click `Submit` to complete the device configuration and the device status will change to **Ready**.
 
-*Note:* The running Neuron instance and the simulator must be under the same network segment.
+::: warning
+The running Neuron instance and the simulator must be under the same network segment.
+:::
 
 ![south-setting](./assets/south-setting.png)
 
@@ -141,7 +151,9 @@ After going into the Tag List screen:
 4. Select the data type, e.g., int16.
 5. Click the `Create` button to complete the Tag creation.
 
-*Note:* A new tag can be created by using the `Add` button, where a `Delete` button will appear next to the information box after the Tag is successfully created.
+::: tip
+A new tag can be created by using the `Add` button, where a `Delete` button will appear next to the information box after the Tag is successfully created.
+:::
 
 ![tags-add](./assets/tags-add.png)
 
@@ -151,8 +163,6 @@ Once created, the screen below has shown.
 
 Click on `Southbound device management` and tap on the operating status switch in the device node to turn the device into a **running** state.
 
-*Note:* that the modbus device is now in the unconnected state, the neuron will only connect to the modbus tcp device if there is a read data command, next go to the data monitoring screen to view the read data.
-
 **Step 5**, Data monitoring.
 
 Under the `Monitoring` menu select `Data Monitoring` to enter the data monitoring screen as shown below.
@@ -161,7 +171,9 @@ Under the `Monitoring` menu select `Data Monitoring` to enter the data monitorin
 2. Click on the drop down box to select the Group you want to view under the selected southbound device, in this case, select group-1 which has been created above.
 3. When the selection is complete, the page will show the value of each Tag read under the Group.
 
-*Note:* the default byte order for the Modbus TCP simulator is BE 3,4,1,2
+::: tip
+The default byte order for the Modbus TCP simulator is BE 3,4,1,2
+:::
 
 ![data-monitoring](./assets/data-monitoring.png)
 
@@ -169,7 +181,9 @@ Check over the data readings of each data tag in Data Monitoring screen by compa
 
 ![monitor](./assets/monitor.png)
 
-*Note:* When a tag has a write attribute set, the tag in the Data Monitor screen will have a write action button at the end of row, click `Write` to write a new value to the tag as shown below.
+::: tip
+When a tag has a write attribute set, the tag in the Data Monitor screen will have a write action button at the end of row, click `Write` to write a new value to the tag as shown below.
+:::
 
 ![write](./assets/write.png)
 

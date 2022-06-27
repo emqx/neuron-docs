@@ -11,7 +11,7 @@ Neuron offers the following product features.
 - Support for numerous protocols and devices such as [Modbus, OPCUA, Ethernet/IP, IEC104, BACnet and more](module-plugins/module-list.md).
 - Deliver data through northbound standard MQTT to a designated MQTT message server based on user-specified configurations.
 - Listen to southbound control device for data reporting and control the device by forwarding relevant control commands back to devices.
-- Has low memory footprint, less than 100k, can run on low configuration hardware.
+- Has low memory footprint, less than 10M, can run on low configuration hardware.
 - Combine with the rule engine function provided by [eKuiper](https://www.lfedge.org/projects/ekuiper) to quickly implement rule-based device control.
 - Integrate with other application to control industrial devices, or to change parameters or labels, through [API](api.md) or [MQTT](mqtt.md) services.
 - Provide [management dashboard](dashboard-operation/login.md) for users to monitor data, device status and to manange configuration in a browser, enabling access to cross-industrial device data.
