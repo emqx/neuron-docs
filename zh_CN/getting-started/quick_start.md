@@ -16,7 +16,9 @@ Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://
 sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 ```
 
-*注意* 安装 deb 包后，Neuron 自启动
+::: tip
+安装 deb 包后，Neuron 自启动
+:::
 
 ### Neuron 相关操作
 
@@ -59,7 +61,9 @@ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p
 安装 PeakHMISlaveSimulator 软件，安装包可在 [PeakHMI 官网](https://hmisys.com) 中下载。
 安装后，打开 Modbus TCP slave.
 
-*提示* Windows 中尽量关闭防火墙，否则可能会导致 Neuron 连接不上模拟器。
+::: tip
+Windows 中尽量关闭防火墙，否则可能会导致 Neuron 连接不上模拟器。
+:::
 
 ## 运行和使用
 
@@ -75,11 +79,12 @@ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p
 
 在未上传 License 或者 License 过期时，Neuron 是无法读写和上报数据的，需要在界面申请有效的 License。
 
-*注意* 在商业版本中，现有一个默认的 License， 截至日期到 2022年07月22日，过期之后，请重新申请 License，并在界面上更新。
-
 1. 在页面右上角`关于`下拉框中选择 License。
 
-2. 进入 License 界面，展示默认的 License 信息，如果 License 已过期，您必须从我们的官方网站 [http://neugate.io](http://neugate.io)重新申请免费试用的 License，或者您也可以联系我们销售代表获取正式的 License，收到 License 之后，点击`重新上传`按键上传 License，如下图所示。
+2. 首次登陆需要上传 license，您可以从我们的官方网站 [http://neugate.io](http://neugate.io) 申请免费试用的 License，或者您也可以联系我们销售代表获取正式的 License，收到 License 之后，点击`上传`按键，如下图所示。
+
+![license-null](./assets/license-null.png)
+3. 成功上传后，页面将展示 License 信息。如果 License 过期，您必须重新获取 License，然后点击`重新上传`按键上传 License，如下图所示。
 
 ![license](./assets/license.png)
 
@@ -107,7 +112,9 @@ docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p
 4. 选择连接模式，默认 Neuron 作为 Client 模式；
 5. 点击提交，完成设备配置，设备状态转为**准备好**。
 
-*注意* 运行的 Neuron 和模拟器必须要在同一个网段下。
+::: warning
+运行的 Neuron 和模拟器必须要在同一个网段下。
+::: warning
 
 ![south-setting](./assets/south-setting.png)
 第三步，设置 Group：
@@ -135,7 +142,9 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 4. 选择数据类型，例如，int16；
 5. 点击`创建`按键，完成 Tag 的创建；
 
-补充：这里可以通过`添加`按键，再新建一个 Tag，Tag 创建成功后，信息框旁边会出现一个`删除`按键。
+::: tip
+这里可以通过`添加`按键，再新建一个 Tag，Tag 创建成功后，信息框旁边会出现一个`删除`按键。
+:::
 
 ![tags-add](./assets/tags-add.png)
 
@@ -145,8 +154,6 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 
 点击`南向设备管理`，点开设备卡片中的工作状态开关，使设备进入**运行中**的状态。
 
-*注意* modbus 设备现在处于未连接状态，只有在有读数据指令下，neuron 才会去连接 modbus tcp 设备，下一步到数据监控界面查看读取到的数据。
-
 第五步，数据监控：
 在`监控`菜单下选择`数据监控`，进入数据监控界面，如下图所示。
 
@@ -154,7 +161,9 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 2. 下拉框选择想要查看所选南向设备下的 Group，这里选择上面已经创建好的 group-1；
 3. 选择完成，页面将会展示读取到 Group 底下每一个 Tag 的值；
 
-*注意* Modbus TCP 模拟器的字节顺序默认是 BE 3,4,1,2
+::: tip
+Modbus TCP 模拟器的字节顺序默认是 BE 3,4,1,2
+:::
 
 ![data-monitoring](./assets/data-monitoring.png)
 
@@ -162,7 +171,9 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 
 ![monitor](./assets/monitor.png)
 
-*补充* 在 Tag 设置了写属性的时候，数据监控界面的 Tag 会有一个写操作，点击`Write`可改写该 Tag 的数值，如下图所示。
+::: tip
+在 Tag 设置了写属性的时候，数据监控界面的 Tag 会有一个写操作，点击`Write`可改写该 Tag 的数值，如下图所示。
+:::
 
 ![write](./assets/write.png)
 

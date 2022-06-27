@@ -11,7 +11,7 @@ Neuron提供下列产品特点：
 - 支持了 [Modbus，OPCUA，Ethernet/IP，IEC104 和 BACnet](module-plugins/module-list.md) 等众多协议和设备；
 - 北向标准 MQTT 数据发送，根据用户指定配置，将数据发送至指定的 MQTT 消息服务器中；
 - 南向控制接口，监听及控制设备数据上报，将相关的控制命令转发给设备；
-- 内存占用少，小于 100k，能在低配置硬件上运行。
+- 内存占用少，小于 10M，能在低配置硬件上运行。
 - 结合 [eKuiper](https://www.lfedge.org/projects/ekuiper) 提供的规则引擎功能，快速实现基于规则的设备控制；
 - 集成其他应用，通过 [API](api.md) 或 [MQTT](mqtt.md) 服务控制工业设备或更改配置。
 - [管理控制台](dashboard-operation/login.md)，用户可以在浏览器中进行可视化的数据监控，设备状态及配置，实现跨工业设备数据的接入；

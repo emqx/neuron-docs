@@ -43,7 +43,9 @@ To avoid replacing the neuron package due to the ubuntu system perform the packa
 $ sudo apt-mark hold neuron
 ```
 
-*Note*  After successful installation of the deb package, Neuron is automatically started.
+::: tip
+After successful installation of the deb package, Neuron is automatically started.
+:::
 
 ### Uninstall
 
@@ -58,10 +60,12 @@ $ sudo dpkg -r neuron
 Install according to different versions and architectures, E.g.
 
 ```bash
-$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm
+$ sudo rpm -i neuron-2.1.0-linux-armhf.rpm
 ```
 
-*Note* After successful installation of the rpm package, Neuron is automatically started.
+::: tip
+After successful installation of the rpm package, Neuron is automatically started.
+:::
 
 ### Uninstall
 
