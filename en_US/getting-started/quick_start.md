@@ -13,7 +13,7 @@ Neuron packages can be downloaded from the Neuron website [https://neugates.io/d
 Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
 
 ```bash
-sudo dpkg -i neuron-2.X.X-linux-armhf.deb
+sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 ```
 
 ::: tip
