@@ -278,11 +278,13 @@ This rule implements +1 processing of the data collected by the neuron from the 
 
 ![data-stream-rules-add-action](./assets/data-stream-rules-add-action.png)
 
+::: v-pre
 1. Fill in the name of sink action.
 2. Fill in the MQTT broker address.
 3. Fill in the MQTT topic, in this case, we have `{{.node_name}}/{{.group_name}}`.
 4. Select the `True` for send single.
 5. Click on `Submit` button to complete the sink action.
+:::
 
 ![data-stream-rules-action](./assets/data-stream-rules-action.png)
 
@@ -294,7 +296,9 @@ The rule has shown as below
 
 ![data-stream-rules-list](./assets/data-stream-rules-list.png)
 
+::: v-pre
 1. Start MQTTX client, subscribe the topic `{{.node_name}}/{{.group_name}}`.
+:::
 
 ::: tip
 The node_name used in this example is **modbus-plus-tcp-1** and the group_name is **group-1**, that is, the subscription topic is modbus-plus-tcp-1/group-1.
