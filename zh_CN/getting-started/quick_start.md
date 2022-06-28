@@ -114,7 +114,7 @@ Windows 中尽量关闭防火墙，否则可能会导致 Neuron 连接不上模�
 
 ::: warning
 运行的 Neuron 和模拟器必须要在同一个网段下。
-::: warning
+:::
 
 ![south-setting](./assets/south-setting.png)
 第三步，设置 Group：
@@ -268,11 +268,13 @@ Modbus TCP 模拟器的字节顺序默认是 BE 3,4,1,2
 
 ![data-stream-rules-add-action](./assets/data-stream-rules-add-action.png)
 
+::: v-pre
 1. 下拉选择 Sink；
 2. 填写 MQTT 服务器地址；
 3. 填写 MQTT 主题，本例中使用 `{{.node_name}}/{{.group_name}}`；
 4. 选择 `True` 以将结果数据按条发送；
 5. 选择 `提交` 完成 sink 动作的添加。
+:::
 
 ![data-stream-rules-action](./assets/data-stream-rules-action.png)
 
@@ -284,7 +286,9 @@ Modbus TCP 模拟器的字节顺序默认是 BE 3,4,1,2
 
 ![data-stream-rules-list](./assets/data-stream-rules-list.png)
 
+::: v-pre
 1. 启动 MQTTX ，订阅主题 `{{.node_name}}/{{.group_name}}`，结果如下图所示。
+:::
 
 ::: tip
 此例中使用的 node_name 为 **modbus-plus-tcp-1**，group_name 为**group-1**，即，订阅主题为 modbus-plus-tcp-1/group-1。
