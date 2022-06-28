@@ -42,7 +42,9 @@ The **{client-id}** in all topics refers to the actual MQTT client id, which is 
 }
 ```
 
-*Note* The value is displayed only when the value is read correctly , when the value is read incorrectly, the error code is displayed, not the value.
+::: tip
+The value is displayed only when the value is read correctly , when the value is read incorrectly, the error code is displayed, not the value.
+:::
 
 ## Upload Data
 
@@ -88,7 +90,9 @@ The **{client-id}** in all topics refers to the actual MQTT client id, which is 
 }
 ```
 
-*Note* The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.A group sends a message.
+::: tip
+The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.A group sends a message.
+:::
 
 There are two message formats for the body. You can choose one of two different formats in the mqtt configuration form.
 

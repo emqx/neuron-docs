@@ -34,7 +34,7 @@ rpm/deb package中使用了 systemd 管理 neuron 进程，建议优先使用 rp
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo dpkg -i neuron-2.0.1-linux-armhf.deb
+$ sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 ```
 
 为避免 ubuntu 系统自动更新时替换 neuron 包，还需要执行以下命令使 neuron 软件包在 apt 升级中保留。
@@ -43,7 +43,9 @@ $ sudo dpkg -i neuron-2.0.1-linux-armhf.deb
 $ sudo apt-mark hold neuron
 ```
 
-*注意* 成功安装 deb 包后，自动启动 Neuron
+::: tip
+成功安装 deb 包后，自动启动 Neuron
+:::
 
 ### 卸载
 
@@ -58,10 +60,12 @@ $ sudo dpkg -r neuron
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
+$ sudo rpm -i neuron-2.1.0-linux-armhf.rpm
 ```
 
-*注意* 成功安装 rpm 包后，自启动 Neuron。
+::: tip
+成功安装 rpm 包后，自启动 Neuron。
+:::
 
 ### 卸载
 
@@ -76,34 +80,29 @@ $ sudo rpm -e neuron
 根据不同的版本及架构下载，例如：
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.0.1/neuron-2.0.1-linux-armhf.tar.gz
+$ wget https://www.emqx.com/en/downloads/neuron/2.1.0/neuron-2.1.0-linux-armhf.tar.gz
 ```
 
 ### 解压
 
 ```bash
-$ sudo tar -zxvf neuron-2.0.1-linux-armhf.tar.gz
-$ cd neuron-2.0.1-linux-armhf
+$ sudo tar -zxvf neuron-2.1.0-linux-armhf.tar.gz
+$ cd neuron-2.1.0-linux-armhf
 ```
 
 #### 启动
 
-执行如下命令可在当前终端启动：
+执行如下命令启动Neuron：
 
 ```bash
-$ ./neuron
+$ ./neuron-helper.sh start
 ```
 
-若想以守护进程方式运行，则可执行如下命令：
+#### 停止
 
+执行如下命令停止Neuron：
 ```bash
-$ ./neuron -d
-```
-
-执行如下命令可查看所有命令行可用参数：
-
-```bash
-$ ./neuron -h
+$ ./neuron-helper.sh stop
 ```
 
 ## 使用 Docker 运行
@@ -113,13 +112,13 @@ $ ./neuron -h
 docker 镜像请从 [docker hub](https://hub.docker.com) 网站下载。
 
 ```bash
-$ docker pull neugates/neuron:2.0.1
+$ docker pull neugates/neuron:2.1.0
 ```
 
 ### 启动
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.1
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.1.0
 ```
 
 * tcp 7000: 用于访问web。

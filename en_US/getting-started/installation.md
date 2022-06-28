@@ -34,16 +34,18 @@ The rpm/deb package uses systemd to manage the neuron process and it is recommen
 Install according to different versions and architectures, E.g.
 
 ```bash
-$ sudo dpkg -i neuron-2.0.1-linux-armhf.deb
+$ sudo dpkg -i neuron-2.1.0-linux-armhf.deb
 ```
 
-To avoid replacing the neuron package when the ubuntu system is automatically updated, you also need to execute the following command to keep the neuron package in the apt upgrade.
+To avoid replacing the neuron package due to the ubuntu system perform the package updated automatically, you also need to execute the following command to keep the neuron package in the apt upgrade.
 
 ```bash
 $ sudo apt-mark hold neuron
 ```
 
-*Note*  After successful installation of the deb package, Neuron is automatically started.
+::: tip
+After successful installation of the deb package, Neuron is automatically started.
+:::
 
 ### Uninstall
 
@@ -58,10 +60,12 @@ $ sudo dpkg -r neuron
 Install according to different versions and architectures, E.g.
 
 ```bash
-$ sudo rpm -i neuron-2.0.1-linux-armhf.rpm --nodeps --force
+$ sudo rpm -i neuron-2.1.0-linux-armhf.rpm
 ```
 
-*Note* After successful installation of the rpm package, Neuron is automatically started.
+::: tip
+After successful installation of the rpm package, Neuron is automatically started.
+:::
 
 ### Uninstall
 
@@ -76,34 +80,30 @@ $ sudo rpm -e neuron
 Download the installation package according to different versions and architectures, E.g.
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.0.1/neuron-2.0.1-linux-armhf.tar.gz
+$ wget https://www.emqx.com/en/downloads/neuron/2.1.0/neuron-2.1.0-linux-armhf.tar.gz
 ```
 
 ### Unpacking
 
 ```bash
-$ sudo tar -zxvf neuron-2.0.1-linux-armhf.tar.gz
-$ cd neuron-2.0.1-linux-armhf
+$ sudo tar -zxvf neuron-2.1.0-linux-armhf.tar.gz
+$ cd neuron-2.1.0-linux-armhf
 ```
 
 ### Start
 
-The following command can be executed to boot from the current terminal：
+The following command can be executed to start Neuron：
 
 ```bash
-$ ./neuron
+$ ./neuron-helper.sh  start
 ```
 
-If you want to run as a daemon, you can execute the following command：
+### Stop
+
+The following command can be executed to stop Neuron：
 
 ```bash
-$ ./neuron -d
-```
-
-Execute the following command to see all the parameters available on the command line：
-
-```bash
-$ ./neuron -h
+$ ./neuron-helper.sh  stop
 ```
 
 ## Running with Docker
@@ -113,13 +113,13 @@ $ ./neuron -h
 The docker image can be downloaded from the docker hub website.[https://hub.docker.com](https://hub.docker.com)
 
 ```bash
-$ docker pull neugates/neuron:2.0.0
+$ docker pull neugates/neuron:2.1.0
 ```
 
 ### Start
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.0.0
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.1.0
 ```
 
 * tcp 7000: Used to access the web.

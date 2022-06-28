@@ -5,6 +5,7 @@
 | 模块                                         | 类型 | 发布版本    | 开源   |
 | ------------------------------------------- |----- | --------- | --------- |
 | MQTT                                        | 北向 | v2.0.0     | 是        |
+| MQTT SparkplugB                             | 北向 | v2.1.0     | 否        |
 | eKuiper                                     | 北向 | v2.0.1     | 是        |
 | Modbus TCP                                  | 南向 | v2.0.0     | 是        |
 | Modbus RTU over TCP                         | 南向 | v2.0.0     | 否        |
@@ -13,16 +14,16 @@
 | Mitsubishi MELSEC-Q E71                     | 南向 | v2.0.0     | 否        |
 | Omron(FINS on TCP)                          | 南向 | v2.0.0     | 否        |
 | IEC60870-5-104                              | 南向 | v2.0.1     | 否        |
+| BACnet                                      | 南向 | v2.1.0     | 否        |
+| KNXnet                                      | 南向 | v2.1.0     | 否        |
+| DLT645                                      | 南向 | v2.1.0     | 否        |
+| DLT645 over TCP                             | 南向 | v2.1.0     | 否        |
 
 ## 即将推出模块
 
 | 模块                                         | 类型 | 开源   |
 | ------------------------------------------- |----- | --------- |
-| BACnet                                      | 南向 | 否        |
-| KNXnet                                      | 南向 | 否        |
-| SparkplugB                                  | 北向 | 否        |
 | Beckhoff ADS                                | 南向 | 否        |
-| DLT645 over TCP                             | 南向 | 否        |
 | non A11 (custom protocol)                   | 南向 | 否        |
 | Ethernet/IP                                 | 南向 | 否        |
 | Mitsubishi MELSEC-Q C24                     | 南向 | 否        |
@@ -40,7 +41,6 @@
 | SNMP                                        | 南向 | 否        |
 | Edge X foundry                              | 北向 | 否        |
 | DNP 3.0                                     | 南向 | 否        |
-| DLT645                                      | 南向 | 否        |
 | DLT698                                      | 南向 | 否        |
 | Schneider Modbus                            | 南向 | 否        |
 | Schneider Telemecanique UNI-TE              | 南向 | 否        |
@@ -49,4 +49,3 @@
 | Siemens PPI                                 | 南向 | 否        |
 | Siemens MPI                                 | 南向 | 否        |
 | Profinet IO                                 | 南向 | 否        |
-| Profibus                                    | 南向 | 否        |

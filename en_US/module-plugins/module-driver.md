@@ -1,4 +1,4 @@
-# Application And Driver Instructions
+# Application And Driver Settings
 
 This document introduces how to setup parameter and data tag point information in configuration for northbound applications and southbound drivers.
 
@@ -29,7 +29,7 @@ The data collected from the device can be transmitted to the mqtt broker through
 
 ### Error Codes
 
-| 错误码 | 说明                                                         |
+| Code   | Description                                                      |
 | ------ | ------------------------------------------------------------ |
 | 4005   | MQTT client creation failed, usually caused by system reasons |
 | 4007   | Failed to connect to Broker, possible reasons include connection parameter configuration error or network abnormality (usually temporary) |
@@ -41,15 +41,27 @@ The data collected from the device can be transmitted to the mqtt broker through
 
 ## Modbus
 
-The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.
+The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.Except for the device configuration, the three protocols support the same data types and address formats.
 
-### Parameter Setting
+### Modbus TCP / Modbus RTU over TCP Parameter Setting
 
 | Parameter     | Description                  |
 | ------------- | ---------------------------- |
 | **connection mode** | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client       |
 | **host**            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default    |
 | **port**           | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. default 502    |
+| **timeout**         | Timeout for sending requests to the device                                   |
+
+### Modbus RTU Parameter Setting
+
+| Parameter   | Description                                         |
+| ----------- | --------------------------------------------------- |
+| **device**  | Use a serial device, e.g."/dev/ttyUSB0"             |
+| **stop**    | stopbits, default 1                                 |
+| **parity**  | parity bit, default 2, which means even parity      |
+| **baud**    | baudrate, default 9600                              |
+| **data**    | bytesize, default 8                                 |
+| **timeout**   | Timeout for sending requests to the device        |
 
 ### Support Data Type
 
@@ -107,7 +119,8 @@ Optional, endianness, applicable to int16/uint16/int32/uint32/float data types, 
 | #BB        | 3,4,1,2   | int32/uint32/float      | |
 | #BL        | 4,3,2,1   | int32/uint32/float      | |
 
-*E.g*
+*Example:*
+
 | Address     | Data Type  | Description       |
 | ----------- | -------- | --------- |
 | 1!300004    | int16    | Refers to station number 1, input area, address 300004, endianness is #L |
@@ -137,7 +150,8 @@ When the data type is string type, **.LEN** is a required, indicating the length
 | D   | A register stores one byte, and is stored in the low byte      |
 | E   | A register stores one byte, and is stored in the high byte      |
 
-*E.g*
+*Example:*
+
 | Address     | Data Type | Description |
 | ----------- | ------- | --------- |
 | 1!300001.10  | String  | Refers to station number is 1, input area, the address is 300001, the string length is 10, and endianness is L, the occupied address is 300001-300005 |
@@ -184,7 +198,7 @@ When the data type is string type, **.LEN** is a required, indicating the length
 
 **NODEID** is the node id.
 
-*E.g*
+*Example:*
 
 * 2!Device1.Module1.Tag1 represents namespace index is 2 and node ID is Device1.Module1.Tag
 
@@ -234,11 +248,12 @@ When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Si
 | I    | int16/uint16/bit                                  | read       | input           |
 | O    | int16/uint16/bit                                  | read/write | output          |
 | F    | int16/uint16/bit                                  | read/write | flag            |
-| T    | int16/uint16/bit                                  | read/write | timer           |
-| C    | int16/uint16/bit                                  | read/write | counter         |
+| T    | int16/uint16                                      | read/write | timer           |
+| C    | int16/uint16                                      | read/write | counter         |
 | DB   | int16/uint16/bit/int32/uint32/float/double/string | read/write | global DB block |
 
-*E.g*
+*Example:*
+
 | Address | Data Type | Description  |
 | ------ | ------- | -------- |
 | I0         | int16   | I area, address is 0 |
@@ -260,7 +275,7 @@ When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Si
 
 Optional, referring to a bit of an address.
 
-*E.g*
+*Example:*
 
 | Address     | Data Type | Description             |
 | ----------- | ------- | ------------------------- |
@@ -281,7 +296,7 @@ Optional, referring to a bit of an address.
 
 When the data type is a string type, it is required and indicates the length of the string.
 
-*E.g*
+*Example:*
 
 | Address     | Data Type | Description             |
 | ----------- | ------- | ------------------------- |
@@ -325,51 +340,52 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 | H    | All types except uint8/int8                               | read/write | Holding Area     |
 | D    | All types except uint8/int8                               | read/write | Data Memory Area |
 | P    | All types except uint8/int8, but bit only supports read   | read/write | PVs              |
-| F    | int8/uint8                                                | read       | Completion Flag  |
+| F    | int8/uint8                                                | read       | Flag Area        |
 | EM   | All types except uint8/int8                               | read/write | Extended Memory  |
 
-*E.g*
+*Example:*
 
 | Address     | Data Type  | Description          |
-| ------- | ------- | --------------- |
-| F0      | uint8  | F area, address is 0   |
-| F1      | int8   | F area, address is 1   |
-| CIO1    | int16  | CIO area, address is 1 |
-| CIO2    | uint16 | CIO area, address is 2 |
-| A2      | int32  | A area, address is 2   |
-| A4      | uint32 | A area, address is 4   |
-| W5      | float  | W area, address is 5   |
-| W10     | float  | W area, address is 10   |
-| H20     | double | H area, address is 20   |
-| H30     | uint32 | H area, address is 30   |
-| D10     | int32  | D area, address is 10   |
-| D20     | float  | D area, address is 20   |
-| EM10    | float  | EM area, address is 10   |
+| ----------- | ------- | ----------------------- |
+| F0          | uint8  | F area, address is 0     |
+| F1          | int8   | F area, address is 1     |
+| CIO1        | int16  | CIO area, address is 1   |
+| CIO2        | uint16 | CIO area, address is 2   |
+| A2          | int32  | A area, address is 2     |
+| A4          | uint32 | A area, address is 4     |
+| W5          | float  | W area, address is 5     |
+| W10         | float  | W area, address is 10    |
+| H20         | double | H area, address is 20    |
+| H30         | uint32 | H area, address is 30    |
+| D10         | int32  | D area, address is 10    |
+| D20         | float  | D area, address is 20    |
+| EM10W100    | float  | EM10 area, address is 100 |
 
 #### .BIT
 
 Optional, referring to a bit of an address.
 
-*E.g*
-| Address     | Data Type  | Description          |
-| ------- | ------- | --------------- |
-| CIO0.0   | bit | CIO area, address is 0, bit 0  |
-| CIO1.2   | bit | CIO area, address is 1, bit 2  |
-| A2.1     | bit | A area, address is 2, bit 1    |
-| A2.3     | bit | A area, address is 2, bit 3    |
-| W3.4     | bit | W area, address is 3, bit 4    |
-| W3.0     | bit | W area, address is 3, bit 0    |
-| H4.15    | bit | H area, address is 4, bit 15    |
-| H4.10    | bit | H area, address is 4, bit 10    |
-| D5.2     | bit | D area, address is 5, bit 2    |
-| D5.3     | bit | D area, address is 5, bit 3    |
-| EM10.0   | bit | EM area, address is 10, bit 0  |
+*Example:*
+
+| Address      | Data Type  | Description                       |
+| ------------ | ---------- | --------------------------------- |
+| CIO0.0       | bit        | CIO area, address is 0, bit 0     |
+| CIO1.2       | bit        | CIO area, address is 1, bit 2     |
+| A2.1         | bit        | A area, address is 2, bit 1       |
+| A2.3         | bit        | A area, address is 2, bit 3       |
+| W3.4         | bit        | W area, address is 3, bit 4       |
+| W3.0         | bit        | W area, address is 3, bit 0       |
+| H4.15        | bit        | H area, address is 4, bit 15      |
+| H4.10        | bit        | H area, address is 4, bit 10      |
+| D5.2         | bit        | D area, address is 5, bit 2       |
+| D5.3         | bit        | D area, address is 5, bit 3       |
+| EM10W100.0   | bit        | EM10 area, address is 100, bit 0  |
 
 #### .LEN\[H]\[L]
 
 When the data type is string type, it is a required, **.LEN** indicates the length of the string, including **H** and **L** two endianness, the default is **H** .
 
-*E.g*
+*Example:*
 
 | Address   | Data Type  | Description                                             |
 | --------- | ------ | ----------------------------------------------------------- |
@@ -454,7 +470,7 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 | ZRSL | --        |            |                                  |
 | Z    | all       | read/write | Index register (Q/iQ-F)          |
 
-*E.g*
+*Example:*
 
 | Address     | Data Type  | Description          |
 | ------- | ------- | --------------- |
@@ -480,7 +496,8 @@ It can only be used in **non-bit type area**, which means to read the specified 
 #### .LEN\[H]\[L]
 
 When the data type is string, **.LEN** indicates the length of the string;   **H** and **L** can be optional to indicate two byte orders, the default is **H** byte order.
-*E.g*
+
+*Example:*
 
 | Address     | Data Type  | Description          |
 | ------- | ------- | --------------- |
@@ -536,17 +553,15 @@ Two address formats
 
 Represents the KNX group address, which can only be written in Neuron, and KNX devices belonging to this group will react to messages sent to this group.
 
-*E.g*
+*Example:*
 
 `0/0/1` is a KNX group address and is write only in Neuron, KNX devices belonging to this group will react to messages sent to this group.
 
 * > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
 
-代表 KNX 组下的设备地址，只能在 Neuron 中读取。
+Represents a KNX individual address that is a member of the group address, and is read only in Neuron.
 
- Represents a KNX individual address that is a member of the group address, and is read only in Neuron.
-
-*E.g*
+*Example:*
 
 `0/0/1,1.1.1` represents a KNX individual address `1.1.1` that is a member
   of the group address `0/0/1`, and is read only in Neuron.
@@ -569,7 +584,7 @@ Represents the KNX group address, which can only be written in Neuron, and KNX d
 
 > AREA[ADDRESS]</span>
 
-| AREA | ADDRESS RANGE | ATTRIBUTE  | DADA TYPE  | REMARK             |
+| AREA | ADDRESS RANGE | ATTRIBUTE  | DATA TYPE  | REMARK             |
 | ---- | ------------- | ---------- | ------------- | ------------------ |
 | AI   | 0 - 0x3fffff  | read       | float     | analog input       |
 | AO   | 0 - 0x3fffff  | read/write | float     | analog output      |
@@ -581,7 +596,7 @@ Represents the KNX group address, which can only be written in Neuron, and KNX d
 | MSO  | 0 - 0x3fffff  | read/write | bit       | multi state output |
 | MSV  | 0 - 0x3fffff  | read/write | bit       | multi state value  |
 
-*E.g*
+*Example:*
 
 | Address     | Data Type  | Description          |
 | ------- | ------- | --------------- |
@@ -596,3 +611,79 @@ Represents the KNX group address, which can only be written in Neuron, and KNX d
 | MSI10  | bit     | MAI area, address is 10 |
 | MSI20  | bit     | MSI area, address is 20 |
 | MSI30  | bit     | MSI area, address is 30 |
+
+## DL/T645-2007
+
+The dlt645 protocol supports serial and tcp connection.
+
+### Parameter Setting
+
+#### serial
+
+| Parameter   | Description                                         |
+| ----------- | --------------------------------------------------- |
+| **device**  | Use a serial device, e.g."/dev/ttyUSB0"             |
+| **stop**    | stopbits, default 1                                 |
+| **parity**  | parity bit, default 2, which means even parity      |
+| **baud**    | baudrate, default 9600                              |
+| **data**    | bytesize, default 8                                 |
+| **timeout**    | Timeout for sending requests to the device       |
+
+#### TCP
+
+| Parameter           | Description         |
+| ------------------- | ----------------- |
+| **connection mode** | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client       |
+| **host**            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default    |
+| **port**            | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. default 502    |
+| **timeout**         | Timeout for sending requests to the device    |
+
+### Support Data Type
+
+* DOUBLE
+
+### Address Format
+
+> DATA </span>
+
+#### DATA
+
+Data represents data identification.
+
+| DATA RANGE   | ATTRIBUTE   |
+| ------------ | ----------- |
+| 00 zz zz ff  | read        |
+| 02 zz zz ff  | read        |
+| 04 00 3~9 ff | read        |
+
+## Sparkplug_B
+
+Data collected by Neuron from the device can be transmitted from the edge to the Sparkplug_B application using the Sparkplug_B protocol. Users can also send data modification instructions to Neuron from the application. Sparkplug_B is an application-type protocol that runs on top of MQTT, so the setup in Neuron is similar to the MQTT driver. 
+
+### Parameter Setting
+
+| Parameter     | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| **group-id**  | The top-level logical group in Sparkplug_B, which can represent an entity such as a factory or workshop, required |
+| **client-id** | MQTT client ID, A unique identifier that can represent the edge end, required |
+| **ssl**       | Whether to enable mqtt ssl, default false                    |
+| **host**      | MQTT Broker host, required                                   |
+| **port**      | MQTT Broker port number, required                            |
+| **username**  | Username to use when connecting to the broker, optional      |
+| **password**  | The password to use when connecting to the broker, optional  |
+| **ca**        | ca file, only enabled when the ssl value is true, in which case it is required |
+| **cert**      | cert file, only enabled when the ssl value is true, optional |
+| **key**       | key file, only enabled when the ssl value is true, optional  |
+| **keypass**   | key file password, only enabled when the ssl value is true, optional |
+
+### Error Codes
+
+| Code | Description                                                  |
+| ---- | ------------------------------------------------------------ |
+| 4005 | MQTT client creation failed, usually caused by system reasons |
+| 4007 | Failed to connect to Broker, possible reasons include connection parameter configuration error or network abnormality (usually temporary) |
+| 4010 | Failed to subscribe Topic, usually before the connection is successful, it will be automatically re-subscribed after the connection is successful |
+| 4013 | Failed to unsubscribe topic                                  |
+| 4014 | Publish fails, usually due to a connection exception. In the current implementation, the failed data will be discarded |
+| 4015 | Publish suspended due to user stopping plugin                |
+| 4016 | Publish data exceeds buffer length, usually does not happen  |

@@ -37,6 +37,10 @@
           "path": "dashboard-operation/configuration"
         },
         {
+          "title": "数据流处理",
+          "path": "dashboard-operation/data-stream-processing"
+        },
+        {
           "title": "管理",
           "path": "dashboard-operation/management"
         }
@@ -122,6 +126,10 @@
           "path": "dashboard-operation/configuration"
         },
         {
+          "title": "Data Stream Processing",
+          "path": "dashboard-operation/data-stream-processing"
+        },
+        {
           "title": "Management",
           "path": "dashboard-operation/management"
         }
@@ -135,7 +143,7 @@
           "path": "module-plugins/module-list"
         },
         {
-          "title": "Application And Driver Instructions",
+          "title": "Application And Driver Settings",
           "path": "module-plugins/module-driver"
         },
         {
