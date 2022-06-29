@@ -119,11 +119,12 @@ $ docker pull neugates/neuron:2.1.0
 ### Start
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always neugates/neuron:2.1.0
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always neugates/neuron:2.1.0
 ```
 
 * tcp 7000: Used to access the web.
 * tcp 7001: http api port. (api port is web port + 1, e.g. when web port is mapped to 8000, api port should be mapped to 8001)
+* tcp 9081: eKuiper api port.
 * --restart=always: Automatically restart the neuron container when the docker process is restarted.
 * --privileged=true：Easy to troubleshoot problems.
 * --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker.
