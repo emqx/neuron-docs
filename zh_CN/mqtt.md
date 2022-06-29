@@ -15,8 +15,8 @@ MQTT 客户端和 Neuron 进行交互的所有主题。包括读、写、订阅�
 ```json
 {
     "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
-    "node_name": "modbus-tcp-1",
-    "group_name": "group-2"
+    "node": "modbus-tcp-1",
+    "group": "group-2"
 }
 ```
 
@@ -56,8 +56,8 @@ MQTT 客户端和 Neuron 进行交互的所有主题。包括读、写、订阅�
 
 ```json
 {
-  "node_name": "modbus-tcp-2",
-  "group_name": "group-1",
+  "node": "modbus-tcp-2",
+  "group": "group-1",
   "timestamp": 1647497389075,
   "tags": [
     {
@@ -76,8 +76,8 @@ MQTT 客户端和 Neuron 进行交互的所有主题。包括读、写、订阅�
 
 ```json
 {
-    "node_name": "opcua-1", 
-    "group_name": "group-1", 
+    "node": "opcua-1", 
+    "group": "group-1", 
     "timestamp": 1650006388943, 
     "values": 
     {
@@ -107,9 +107,9 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 ```json
 {
     "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
-    "node_name": "modbus-tcp-1",
-    "group_name": "group-2",
-    "tag_name": "tag1",
+    "node": "modbus-tcp-1",
+    "group": "group-2",
+    "tag": "tag1",
     "value": 1234
 }
 ```
