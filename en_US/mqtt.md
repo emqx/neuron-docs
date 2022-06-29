@@ -15,8 +15,8 @@ The **{client-id}** in all topics refers to the actual MQTT client id, which is 
 ```json
 {
     "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
-    "node_name": "modbus-tcp-1",
-    "group_name": "group-2"
+    "node": "modbus-tcp-1",
+    "group": "group-2"
 }
 ```
 
@@ -56,8 +56,8 @@ The value is displayed only when the value is read correctly , when the value is
 
 ```json
 {
-  "node_name": "modbus-tcp-2",
-  "group_name": "group-1",
+  "node": "modbus-tcp-2",
+  "group": "group-1",
   "timestamp": 1647497389075,
   "tags": [
     {
@@ -76,8 +76,8 @@ The value is displayed only when the value is read correctly , when the value is
 
 ```json
 {
-    "node_name": "opcua-1", 
-    "group_name": "group-1", 
+    "node": "opcua-1", 
+    "group": "group-1", 
     "timestamp": 1650006388943, 
     "values": 
     {
@@ -107,9 +107,9 @@ There are two message formats for the body. You can choose one of two different 
 ```json
 {
     "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
-    "node_name": "modbus-tcp-1",
-    "group_name": "group-2",
-    "tag_name": "tag1",
+    "node": "modbus-tcp-1",
+    "group": "group-2",
+    "tag": "tag1",
     "value": 1234
 }
 ```
