@@ -24,15 +24,16 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ### 点位属性
 
 * READ = 0x01
-
 * WRITE = 0x02
-
 * SUBSCRIBE = 0x04
 
 ### Node 类型
 
-* DRIVER = 1
-* APP = 2
+* DRIVER  = 1
+* WEB     = 2
+* MQTT    = 3
+* DRIVERX = 4
+* APP     = 5
 
 ### 插件类型
 

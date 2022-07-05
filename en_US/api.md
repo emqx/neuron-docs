@@ -24,15 +24,16 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ### Data Attribute
 
 * READ = 0x01
-
 * WRITE = 0x02
-
 * SUBSCRIBE = 0x04
 
 ### Node Type
 
-* DRIVER = 1
-* APP = 2
+* DRIVER  = 1
+* WEB     = 2
+* MQTT    = 3
+* DRIVERX = 4
+* APP     = 5
 
 ### Plugin Kind
 
