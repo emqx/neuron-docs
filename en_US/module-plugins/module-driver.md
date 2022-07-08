@@ -478,7 +478,7 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 | Parameter | Description |
 | -------- | -------------------------- |
 | **host** | remote plc ip                 |
-| **ip**   | remote plc port, default 2000 |
+| **port** | remote plc port, default 2000 |
 
 ### Support Data Type
 
