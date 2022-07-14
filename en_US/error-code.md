@@ -69,4 +69,47 @@ This document describes the errors that neuron will reply to sender when calling
 * 3003    plugin tag not allow read
 * 3004    plugin tag not allow write
 * 3007    plugin tag type mismatch
-* 3008    plugin tag expired
+* 3008    plugin tag value expired
+* 3009    plugin protocol decode failure
+* 3010    plugin not running
+* 3011    plugin tag not ready
+* 3012    plugin packet out of order
+
+
+
+## S7COMM error codes
+
+* 10101  s7comm hardware error
+* 10103  s7comm accessing the object not allowed
+* 10105  s7comm invalid address
+* 10106  s7comm data type not supported
+* 10107  s7comm data type inconsistent
+* 10110  s7comm object not exist
+* 10150  s7comm cotp disconnected
+* 10151  s7comm disconnected
+
+
+
+## KNX error codes
+
+* 10200  knx no devices
+
+
+
+## NONA11
+
+* 10400 nona11 invalid address
+
+
+
+## FINS error codes
+
+* 10500    fins disconnected
+* 10501    fins error
+* 10502    fins first address in inaccessible area
+* 10503    fins end of word exceed range
+* 10504    fins invalid size of data
+* 10505    fins response too long
+* 10506    fins data is protected
+* 10507    fins area read-only
+* 10508    fins data cannot change
