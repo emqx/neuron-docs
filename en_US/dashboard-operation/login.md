@@ -4,6 +4,6 @@ This chapter describes how to use front-end Web interface to manager Neuron. At 
 
 ## Login
 
-Neuron web login page will be prompted for user authentication as shown in the following figure. The default login account name is "admin", and the default password is "0000". The user can change the login user name and password after.
+Neuron web login page will be prompted for user authentication as shown in the following figure. The default login account name is "admin", and the default password is "0000".
 
 ![login](./assets/login.png)
