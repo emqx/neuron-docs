@@ -27,18 +27,6 @@ The data collected from the device can be transmitted to the mqtt broker through
 | **key**          | key file, only enabled when the ssl value is true, optional  |
 | **keypass**      | key file password, only enabled when the ssl value is true, optional |
 
-### Error Codes
-
-| Code   | Description                                                      |
-| ------ | ------------------------------------------------------------ |
-| 4005   | MQTT client creation failed, usually caused by system reasons |
-| 4007   | Failed to connect to Broker, possible reasons include connection parameter configuration error or network abnormality (usually temporary) |
-| 4010   | Failed to subscribe Topic, usually before the connection is successful, it will be automatically re-subscribed after the connection is successful |
-| 4013   | Failed to unsubscribe topic                                  |
-| 4014   | Publish fails, usually due to a connection exception. In the current implementation, the failed data will be discarded |
-| 4015   | Publish suspended due to user stopping plugin                |
-| 4016   | Publish data exceeds buffer length, usually does not happen  |
-
 ## Modbus
 
 The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.Except for the device configuration, the three protocols support the same data types and address formats.
@@ -743,15 +731,3 @@ Data collected by Neuron from the device can be transmitted from the edge to the
 | **cert**      | cert file, only enabled when the ssl value is true, optional |
 | **key**       | key file, only enabled when the ssl value is true, optional  |
 | **keypass**   | key file password, only enabled when the ssl value is true, optional |
-
-### Error Codes
-
-| Code | Description                                                  |
-| ---- | ------------------------------------------------------------ |
-| 4005 | MQTT client creation failed, usually caused by system reasons |
-| 4007 | Failed to connect to Broker, possible reasons include connection parameter configuration error or network abnormality (usually temporary) |
-| 4010 | Failed to subscribe Topic, usually before the connection is successful, it will be automatically re-subscribed after the connection is successful |
-| 4013 | Failed to unsubscribe topic                                  |
-| 4014 | Publish fails, usually due to a connection exception. In the current implementation, the failed data will be discarded |
-| 4015 | Publish suspended due to user stopping plugin                |
-| 4016 | Publish data exceeds buffer length, usually does not happen  |
