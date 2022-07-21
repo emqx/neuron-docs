@@ -58,12 +58,17 @@
           "path": "module-plugins/module-list"
         },
         {
-          "title": "应用和设备配置",
+          "title": "应用和设备插件配置",
           "path": "module-plugins/module-driver"
         },
         {
           "title": "PLC 设置",
-          "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
+          "children": [
+            {
+              "title": "Siemens S7-1200/1500",
+              "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
+            }
+          ]
         }
       ]
     },
@@ -130,7 +135,7 @@
           "path": "dashboard-operation/monitor"
         },
         {
-          "title": "Configugration",
+          "title": "Configuration",
           "path": "dashboard-operation/configuration"
         },
         {
@@ -147,16 +152,21 @@
       "title": "Module Plugins",
       "children": [
         {
-          "title": "Modules List",
+          "title": "Plugin Modules List",
           "path": "module-plugins/module-list"
         },
         {
-          "title": "Application And Driver Settings",
+          "title": "Application and Driver Plugin Settings",
           "path": "module-plugins/module-driver"
         },
         {
-          "title": "PLC Settings",
-          "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
+          "title": "PLC Setup Instructions",
+          "children": [
+            {
+              "title": "Siemens S7-1200/1500",
+              "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
+            }
+          ]
         }
       ]
     },

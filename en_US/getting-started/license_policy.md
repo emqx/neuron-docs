@@ -1,10 +1,10 @@
-# Neuron Policy
+# License Policy
 
 Neuron is an open source project. We encourage our community to develop their own plugin modules.
 
 Core framework, and a few plugin modules such as modbus, mqtt and eKuiper are open source under LGPLv3 license. Neuron may run with these open source modules without EMQ license. But all other commercial plugin modules require an official EMQ license to run without any limitation.
 
-A trial EMQ license can be download from website [https://www.emqx.com/zh/apply-licenses/neuron](https://www.emqx.com/zh/apply-licenses/neuron). All available modules could be used for 15 days without limitation. A mailbox can only apply for a trial license up to two times.
+A trial EMQ license can be download from website [https://www.emqx.com/zh/apply-licenses/neuron](https://www.emqx.com/zh/apply-licenses/neuron). All available modules could be used without limitation for 15 days. A mailbox can only apply for a trial license up to two times.
 
 The below diagram are license details:
 
