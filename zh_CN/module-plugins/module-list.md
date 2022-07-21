@@ -91,14 +91,10 @@
 
 ## 商业模块的 EMQ 许可证
 
-![license-null](../getting-started/assets/license-null.png)
-
-* 必须安装 EMQ 许可证才能运行 Neuron。
+* 必须安装试用 EMQ 许可证或官方 EMQ 许可证才能运行 Neuron 商业插件模块。
 
 * 试用 EMQ 许可证可从网站 [https://www.emqx.com/zh/apply-licenses/neuron](https://www.emqx.com/zh/apply-licenses/neuron) 下载。所有可用的模块都可以无限制地使用 15 天。
 
 * 核心框架，部分插件模块在 LGPLv3 许可下开源。
-
-* 商业插件模块需要官方 EMQ 许可证才能不受限制地运行。
 
 * 每个插件模块都可以在 EMQ 许可文件中独立授权。
