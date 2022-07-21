@@ -18,6 +18,10 @@
         {
           "title": "快速教程",
           "path": "getting-started/quick_start"
+        },
+        {
+          "title": "许可证政策",
+          "path": "getting-started/license_policy"
         }
       ]
     },
@@ -107,6 +111,10 @@
         {
           "title": "Quick Start",
           "path": "getting-started/quick_start"
+        },
+        {
+          "title": "License Policy",
+          "path": "getting-started/license_policy"
         }
       ]
     },
