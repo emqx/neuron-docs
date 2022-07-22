@@ -12,20 +12,21 @@ The data collected from the device can be transmitted to the mqtt broker through
 
 ### Parameter Setting
 
-| Parameter        | Description                                                  |
-| ---------------- | ------------------------------------------------------------ |
-| **client-id**    | MQTT client ID, required                                     |
-| **upload-topic** | Subscription data reporting channel, optional, if not set, the data will be reported under `neuron/{client-id}/upload` |
-| **format**       | The json format selection of the reported data, required, there are values mode and tags mode, the default is values mode |
-| **ssl**          | Whether to enable mqtt ssl, default false                    |
-| **host**         | MQTT Broker host, required                                   |
-| **port**         | MQTT Broker port number, required                            |
-| **username**     | Username to use when connecting to the broker, optional      |
-| **password**     | The password to use when connecting to the broker, optional  |
-| **ca**           | ca file, only enabled when the ssl value is true, in which case it is required |
-| **cert**         | cert file, only enabled when the ssl value is true, optional |
-| **key**          | key file, only enabled when the ssl value is true, optional  |
-| **keypass**      | key file password, only enabled when the ssl value is true, optional |
+| Parameter           | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| **client-id**       | MQTT client ID, required                                     |
+| **upload-topic**    | Subscription data reporting channel, optional, if not set, the data will be reported under `neuron/{client-id}/upload` |
+| **heartbeat-topic** | The channel for heartbeat data reporting, optional, if not set, the data will be reported under `neuron/{client-id}/heartbeat` |
+| **format**          | The json format selection of the reported data, required, there are values mode and tags mode, the default is values mode |
+| **ssl**             | Whether to enable mqtt ssl, default false                    |
+| **host**            | MQTT Broker host, required                                   |
+| **port**            | MQTT Broker port number, required                            |
+| **username**        | Username to use when connecting to the broker, optional      |
+| **password**        | The password to use when connecting to the broker, optional  |
+| **ca**              | ca file, only enabled when the ssl value is true, in which case it is required |
+| **cert**            | cert file, only enabled when the ssl value is true, optional |
+| **key**             | key file, only enabled when the ssl value is true, optional  |
+| **keypass**         | key file password, only enabled when the ssl value is true, optional |
 
 ## Modbus
 
