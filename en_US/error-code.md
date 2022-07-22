@@ -113,3 +113,11 @@ This document describes the errors that neuron will reply to sender when calling
 * 10506    fins data is protected
 * 10507    fins area read-only
 * 10508    fins data cannot change
+
+## OPCUA error codes
+
+* 10001 opcua tag does not exist
+* 10002 opcua connection configuration error
+* 10003 opcua access timeout
+* 10004 opcua tag is not readable
+* 10005 opcua tag is not writable
