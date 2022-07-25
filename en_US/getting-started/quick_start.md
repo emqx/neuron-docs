@@ -75,28 +75,7 @@ The first screen is the login page, where users can login with their initial use
 
 ![login](./assets/login.png)
 
-### Step 2 Install License
-
-The commercial plugin cannot be used when the license has not been upload or the licnese has expired, and the user needs to apply for a valid license on the interface, as shown below.
-
-![license-null](./assets/license-null.png)
-
-* Select License from the `System Information` drop-down box in the upper-right corner of the page.
-
-* Users can apply for a free trial license from our website [https://www.emqx.com/en/apply-licenses/neuron](https://www.emqx.com/en/apply-licenses/neuron), you can also contact our sales representatve to purchase a commercial licnese. After receiving the license, click on the `Upload` button to upload the license.
-
-### Step 3 Check over the License details
-
-After the license is successfully upload, the page will display the license information, as shown below.
-
-![license](./assets/license.png)
-
-* Expire date, the deadline for Neuron to use, if the license expires, you must obtain the license again, `re-upload` to upload the license;
-* Limit on the maximum number of nodes, Neuron can create the maximum number of nodes, a node refers to a southbound device or a northbound application;
-* Limit on the maximum number of tags belog a node, the maximum value of the sum of all tags that Neuron can create;
-* Enabled Plugins, Neuron authorized plugins.
-
-### Step 4 Add southbound plugin modules for device drivers
+### Step 2 Add southbound plugin modules for device drivers
 
 Select `Southbound Device Management` in the `Configuration` menu to go to the Southbound Device Management screen, where no devices have been shown in this case, we now create a Modbus TCP device, as shown below.
 
@@ -106,7 +85,7 @@ Select `Southbound Device Management` in the `Configuration` menu to go to the S
 * Fill in the device name, e.g. modbus-plus-tcp-1;
 * Click on the drop-down box, which shows all the southbound driver protocols available for this software version, in this case we choose modbus-plus-tcp plugin, as shown below.
 
-### Step 5 Manage southbound device node list
+### Step 3 Manage southbound device node list
 
 After the device has been successfully created, the new device information box will appear in the southbound device management screen, as shown below.
 
@@ -120,7 +99,7 @@ The device card contains the device name, device configuration button, delete bu
 * Running, manually open the working state and enter the running state. After adding Group and Tag, Neuron connects to the device to collect data;
 * Stop, manually close the working state, enter the stop state, the neuron disconnects the connection with the device, and stops collecting data;
 
-### Step 6 Setup southbound device parameters
+### Step 4 Setup southbound device parameters
 
 Click on `Device Configuration` in the above diagram to configure the device, as shown below.
 
@@ -138,7 +117,7 @@ Items with `*` are required, and each item is followed by a field description ke
 The running Neuron instance and the simulator must be under the same network segment.
 :::
 
-### Step 7 Create groups in node
+### Step 5 Create groups in node
 
 Click any blank space of the device node card to enter the group list management interface, as shown below.
 
@@ -149,7 +128,7 @@ Click any blank space of the device node card to enter the group list management
 * Fill in the Interval, set the time interval for the neuron to collect data from the device and upload the data to MQTT. The minimum can be set to 100ms, but when there is a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, you can appropriately increase the value of interval.
 * Click on the `Submit` button to complete the creation of the Group.
 
-### Step 8 Manage group list
+### Step 6 Manage group list
 
 The Group list will show the newly created group, as shown below.
 
@@ -159,7 +138,7 @@ The Group list will show the newly created group, as shown below.
 * `Delete` button, when selecting all, and then click the `Delete` button, the effect is equivalent to `Clear`, which can delete all groups. When you select some groups, and then click the `delete` button, you can quickly delete the selected groups in batches.
 * Each group contains the group name, the total number of tags under the group, the value of the Interval, the `view` group configuration button, the `tag list` button and the `delete` button.
 
-### Step 9 Add data tags into group
+### Step 7 Add data tags into group
 
 Click on the `Tag list` icon at the end row to go to the tag list screen, as shown below.
 
@@ -167,7 +146,7 @@ Click on the `Tag list` icon at the end row to go to the tag list screen, as sho
 
  At this point we can either create tags manually by clicking on the `Create` button, or import a bulk list of tags in a Excel sheet by clicking on the `Import` button.
 
-### Step 10 Setup data tag details
+### Step 8 Setup data tag details
 
 In the example, we will describe the manual way of adding tags.
 
@@ -183,7 +162,7 @@ In the example, we will describe the manual way of adding tags.
 A new tag can be created by using the `Add` button, where a `Delete` button will appear next to the information box after the tag is successfully created.
 :::
 
-### Step 11 Manage data tags of group
+### Step 9 Manage data tags of group
 
 After the creation is complete, as shown below.
 
@@ -195,7 +174,7 @@ After the creation is complete, as shown below.
 * `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, which can delete all tags. When selecting some tags, click the `delete` button to quickly delete the selected tags in batches;
 * Each tag contains name, address, type, read/write properties, description, button to `edit` tag information and `delete` button.
 
-### Step 12 Check over the data in monitoring screen
+### Step 10 Check over the data in monitoring screen
 
 Under the `Monitoring` menu select `Data Monitoring` to enter the data monitoring screen, as shown below.
 
@@ -209,13 +188,13 @@ Under the `Monitoring` menu select `Data Monitoring` to enter the data monitorin
 The default byte order for the Modbus TCP simulator is BE 3,4,1,2
 :::
 
-### Step 13 Make change to simulator data tag value
+### Step 11 Make change to simulator data tag value
 
 By setting the value of the register in the simulator, check whether the value displayed by the data monitoring is consistent with the value in the simulator, as shown below.
 
 ![monitor](./assets/monitor.png)
 
-### Step 14 Input device control value in dashboard
+### Step 12 Input device control value in dashboard
 
 When the tag is set with the write attribute, the tag of the data monitoring interface will have a write operation. Click `Write` to realize the reverse control device, as shown below.
 
@@ -225,7 +204,7 @@ When the tag is set with the write attribute, the tag of the data monitoring int
 This point in the device must also have the writable attribute.
 :::
 
-### Step 15 Add northbound plugin modules for application
+### Step 13 Add northbound plugin modules for application
 
 Select `Northbound Application Management` in the `Configuration` menu to enter the Northbound Application Management screen. There will be a default data stream application node, now you can add more manually, in this case we will create an mqtt application node, as shown below.
 
@@ -235,7 +214,7 @@ Select `Northbound Application Management` in the `Configuration` menu to enter 
 * Fill in the name of the application, for example, mqtt-1.
 * The drop-down box shows the northbound applications available for this software version, in this case we choose the mqtt plugin.
 
-### Step 16 Manage northbound application node list
+### Step 14 Manage northbound application node list
 
 After the application node has been successfully created, an new application node will appear in the northbound application management screen, as shown below.
 
@@ -249,7 +228,7 @@ The application card contains the application name, device configuration button,
 * Running: manually open the working state, enter the running state, neuron connects to the northbound application, and transmits data;
 * Stop: manually close the working state, enter the stop state, the neuron disconnects the connection with the northbound application, and stops transmitting data;
 
-### Step 17 Setup northbound application parameters
+### Step 15 Setup northbound application parameters
 
 Click on the `Application Configuration` button to enter the application configuration screen, as shown below.
 
@@ -267,7 +246,7 @@ Items with `*` are required, and each item is followed by a field description ke
 * Set up a password, which is optional.
 * Click on the `Submit` button to complete the configuration of the northbound application, and click the working status switch in the application card to make the application enter the **running** state.
 
-### Step 18 Subscribe to southbound tag groups
+### Step 16 Subscribe to southbound tag groups
 
 Click any blank space of the application node card to enter the subscription group interface, as shown below.
 
@@ -278,7 +257,7 @@ Click any blank space of the application node card to enter the subscription gro
 * Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
 * Click on `Submit` button to complete the subscription.
 
-### Step 19 Manage subscribed group list
+### Step 17 Manage subscribed group list
 
 After the subscription is added successfully, the newly subscribed Group will be displayed in the Group list, as shown below.
 
@@ -288,7 +267,7 @@ After the subscription is added successfully, the newly subscribed Group will be
 * `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, which can cancel the subscription of all Groups. When you select some groups, and then click the `Delete` button, you can quickly cancel the subscription of the selected groups in batches.
 * Each group contains Group name, device name and `Delete` button.
 
-### Step 20 Check over the payload in MQTT broker
+### Step 18 Check over the payload in MQTT broker
 
 Once the subscription is completed, we can use the MQTT client (MQTTX is recommended here and can be downloaded from the official website [https://www.emqx.com/en/products/mqttx](https://www.emqx.com/en/products/mqttx) to connect to the EMQX broker to view the subscirbed topic's data, as shown below.
 

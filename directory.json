@@ -26,6 +26,36 @@
       ]
     },
     {
+      "title": "数据处理引擎",
+      "children": [
+        {
+          "title": "设置先决条件",
+          "path": "data-processing-engine/prerequisite-setup"
+        },
+        {
+          "title": "清洗数据",
+          "path": "data-processing-engine/data-cleansing"
+        },
+        {
+          "title": "控制设备",
+          "path": "data-processing-engine/device-control"
+        }
+      ]
+    },
+    {
+      "title": "控制台管理",
+      "children": [
+        {
+          "title": "安装 License",
+          "path": "console-management/license-installation"
+        },
+        {
+          "title": "管理插件模块",
+          "path": "console-management/plugin-modules-management"
+        }
+      ]
+    },
+    {
       "title": "网页指南",
       "children": [
         {
@@ -124,6 +154,36 @@
       ]
     },
     {
+      "title": "Data Processing Engine",
+      "children": [
+        {
+          "title": "Prerequisite Setup",
+          "path": "data-processing-engine/prerequisite-setup"
+        },
+        {
+          "title": "Data Cleansing",
+          "path": "data-processing-engine/data-cleansing"
+        },
+        {
+          "title": "Device Control",
+          "path": "data-processing-engine/device-control"
+        }
+      ]
+    },
+    {
+      "title": "Console Management",
+      "children": [
+        {
+          "title": "License Installation",
+          "path": "console-management/license-installation"
+        },
+        {
+          "title": "Plugin Modules Management",
+          "path": "console-management/plugin-modules-management"
+        }
+      ]
+    },
+    {
       "title": "Dashboard Operation",
       "children": [
         {
@@ -137,10 +197,6 @@
         {
           "title": "Configuration",
           "path": "dashboard-operation/configuration"
-        },
-        {
-          "title": "Data Stream Processing",
-          "path": "dashboard-operation/data-stream-processing"
         },
         {
           "title": "Management",
