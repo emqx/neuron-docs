@@ -14,5 +14,5 @@ Neuron offers the following product features.
 - Has low memory footprint, less than 10M, can run on low configuration hardware.
 - Combine with the rule engine function provided by [eKuiper](https://www.lfedge.org/projects/ekuiper) to quickly implement rule-based device control.
 - Integrate with other application to control industrial devices, or to change parameters or labels, through [API](api.md) or [MQTT](mqtt.md) services.
-- Provide [management dashboard](dashboard-operation/login.md) for users to monitor data, device status and to manange configuration in a browser, enabling access to cross-industrial device data.
+- Provide management dashboard for users to monitor data, device status and to manange configuration in a browser, enabling access to cross-industrial device data.
 - Support for encrypted TLS, HTTPS and JWT auth to ensure data security in transmission.
