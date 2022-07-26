@@ -14,7 +14,7 @@ Neuron提供下列产品特点：
 - 内存占用少，小于 10M，能在低配置硬件上运行。
 - 结合 [eKuiper](https://www.lfedge.org/projects/ekuiper) 提供的规则引擎功能，快速实现基于规则的设备控制；
 - 集成其他应用，通过 [API](api.md) 或 [MQTT](mqtt.md) 服务控制工业设备或更改配置。
-- [管理控制台](dashboard-operation/login.md)，用户可以在浏览器中进行可视化的数据监控，设备状态及配置，实现跨工业设备数据的接入；
+- 提供管理控制台，用户可以在浏览器中进行可视化的数据监控，设备状态及配置，实现跨工业设备数据的接入；
 - 支持加密TLS、HTTPS和JWT auth，确保传输中的数据安全；
 
 Neuron 与 EMQ 在边缘的其它产品集成，可以轻松实现一个端到端的 [云边协同的工业互联网解决方案](https://www.emqx.com/zh/use-cases/industrial-iot)。
