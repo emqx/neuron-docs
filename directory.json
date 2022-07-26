@@ -56,31 +56,6 @@
       ]
     },
     {
-      "title": "网页指南",
-      "children": [
-        {
-          "title": "登录",
-          "path": "dashboard-operation/login"
-        },
-        {
-          "title": "监控",
-          "path": "dashboard-operation/monitor"
-        },
-        {
-          "title": "配置",
-          "path": "dashboard-operation/configuration"
-        },
-        {
-          "title": "数据流处理",
-          "path": "dashboard-operation/data-stream-processing"
-        },
-        {
-          "title": "管理",
-          "path": "dashboard-operation/management"
-        }
-      ]
-    },
-    {
       "title": "插件使用",
       "children": [
         {
@@ -180,27 +155,6 @@
         {
           "title": "Plugin Modules Management",
           "path": "console-management/plugin-modules-management"
-        }
-      ]
-    },
-    {
-      "title": "Dashboard Operation",
-      "children": [
-        {
-          "title": "Login",
-          "path": "dashboard-operation/login"
-        },
-        {
-          "title": "Monitoring",
-          "path": "dashboard-operation/monitor"
-        },
-        {
-          "title": "Configuration",
-          "path": "dashboard-operation/configuration"
-        },
-        {
-          "title": "Management",
-          "path": "dashboard-operation/management"
         }
       ]
     },

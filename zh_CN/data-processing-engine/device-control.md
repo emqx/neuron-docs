@@ -4,7 +4,9 @@
 
 ## 第一步，添加新的规则
 
-点击`新建规则`，进入创建规则界面。
+点击`新建规则`，如下图所示。
+
+![data-stream-rules-add](./assets/data-stream-rules-add.png)
 
 ## 第二步，设置规则详细信息
 

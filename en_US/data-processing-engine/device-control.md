@@ -1,10 +1,13 @@
 # Device Control
 
-This rule implements +1 processing of the data collected by neuron from the device, and neuron writes the result back to the device. At this time, the tag attribute must be a write attribute, otherwise it cannot be written successfully.
+This rule implements +1 processing of the data collected by neuron from the device, and writes the result back to the device. At this time, the tag attribute must be a write attribute, otherwise it cannot be written successfully.
 
 ## Step 1 Add a new rule
 
-Click `New Rule` to enter the create rule interface.
+Click `New Rule` to create a new rule in the rule page, as shown below.
+
+![data-stream-rules-add](./assets/data-stream-rules-add.png)
+
 
 ## Step 2 Setup rule details
 
