@@ -8,7 +8,6 @@ Click `New Rule` to create a new rule in the rule page, as shown below.
 
 ![data-stream-rules-add](./assets/data-stream-rules-add.png)
 
-
 ## Step 2 Setup rule details
 
 In the rule editing interface, fill in the rule information, as shown below.

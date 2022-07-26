@@ -22,7 +22,7 @@ Click on any blank space of the `data-stream-processing` application node to ent
 
 ![data-stream-rules-sub](./assets/data-stream-rules-sub.png)
 
-Tos subscribe the data Groups of southbound device,
+To subscribe the data Groups of southbound device,
 
 1. Click on the `Add subscription` button in the top right corner.
 2. Click on the drop down box to select the southbound device, in this case, we select the modbus-plus-tcp-1 device built above.
