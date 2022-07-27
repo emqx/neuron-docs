@@ -24,11 +24,11 @@ Set sink details in the pop-up window for adding actions, as shown below.
 
 ![data-stream-rules-action-1](./assets/data-stream-rules-action-1.png)
 
-* Drop down to select sink.
-* Fill in the node name.
-* Fill in the group name.
-* Fill in the tag name.
-* Click on `Submit` button to complete the sink action.
+1. Drop down to select sink.
+2. Fill in the node name.
+3. Fill in the group name.
+4. Fill in the tag name.
+5. Click on `Submit` button to complete the sink action.
 
 After the action is added, as shown below.
 
