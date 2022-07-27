@@ -24,11 +24,11 @@
 
 ![data-stream-rules-action-1](./assets/data-stream-rules-action-1.png)
 
-* 下拉选择 Sink；
-* 填写节点名称；
-* 填写分组名称；
-* 填写标签字段；
-* 选择 `提交` 完成 sink 动作的添加。
+1. 下拉选择 Sink；
+2. 填写节点名称；
+3. 填写分组名称；
+4. 填写标签字段；
+5. 选择 `提交` 完成 sink 动作的添加。
 
 动作添加完成后，如下图所示。
 

@@ -25,6 +25,6 @@ Click on any blank space of the `data-stream-processing` application node to ent
 To subscribe the data Groups of southbound device,
 
 1. Click on the `Add subscription` button in the top right corner.
-2. Click on the drop down box to select the southbound device, in this case, we select the modbus-plus-tcp-1 device built above.
+2. Click on the drop down box to select the southbound device, in this case, we select the modbus-tcp-1 device built above.
 3. Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
 4. Click on `Submit` button to complete the subscription.

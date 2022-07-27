@@ -26,11 +26,11 @@
 
 ::: v-pre
 
-* 下拉选择 Sink，例如选择 mqtt；
-* 填写 MQTT 服务器地址；
-* 填写 MQTT 主题，本例中使用 `{{.node_name}}/{{.group_name}}`；
-* 选择 `True` 以将结果数据按条发送；
-* 选择 `提交` 完成 sink 动作的添加。
+1. 下拉选择 Sink，例如选择 mqtt；
+2. 填写 MQTT 服务器地址；
+3. 填写 MQTT 主题，本例中使用 `{{.node_name}}/{{.group_name}}`；
+4. 选择 `True` 以将结果数据按条发送；
+5. 选择 `提交` 完成 sink 动作的添加。
 :::
 
 动作添加完成后，如下图所示。
@@ -50,7 +50,7 @@
 :::
 
 ::: tip
-此例中使用的 node_name 为 **modbus-plus-tcp-1**，group_name 为 **group-1**，即，订阅主题为 modbus-plus-tcp-1/group-1。
+此例中使用的 node_name 为 **modbus-tcp-1**，group_name 为 **group-1**，即，订阅主题为 modbus-tcp-1/group-1。
 :::
 
 ![result](./assets/result.png)
