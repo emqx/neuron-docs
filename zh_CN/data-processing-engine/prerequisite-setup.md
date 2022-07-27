@@ -15,6 +15,6 @@
 ![data-stream-rules-sub](./assets/data-stream-rules-sub.png)
 
 * 点击右上角`添加订阅`；
-* 点击下拉框，选择南向设备，本例中选择已构建的**modbus-plus-tcp-1**；
+* 点击下拉框，选择南向设备，本例中选择已构建的**modbus-tcp-1**；
 * 点击下拉框，选择要订阅的 Group，本例中选择已构建的 **group-1**；
 * 点击`提交`按键完成订阅。

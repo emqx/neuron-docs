@@ -94,10 +94,9 @@ To add a new southbound device,
 3. Click on the drop-down box, which shows all the southbound driver protocols available for this software version, in this case we choose modbus-tcp plugin module.
 4. Click on `Create` button to create the device.
 
-::: notes
+::: tip
 You suppose to install a valid trail or commercial license to select the plugin modules other than modbus-tcp. Only modbus-tcp is open source plugin module in the list.
 :::
-
 
 ### Step 3 Manage southbound device node list
 
@@ -123,7 +122,6 @@ There are five working status for each south device node.
 * **Running**, when the device node is started and is collecting data from device. it goes running state.
 * **Stop**, when the device node is stopped or for reason it can't connect to device, it goes to stop state.
 
-
 ### Step 4 Setup southbound device parameters
 
 Click on `Device Configuration Button` in device node to configure the southbound device parameters, as shown below.
@@ -141,7 +139,7 @@ To setup southbound device parameters,
 5. Click `Submit` to complete the device configuration.
 6. Click on the `Status Change Button` switch in the device node to make the device node to **Running** state.
 
-::: notes
+::: tip
 The running Neuron instance and the simulator must be under the same network segment.
 :::
 
@@ -170,12 +168,12 @@ The Group List contains following elements,
 2. Select all groups in the list
 3. Select this group in the list
 4. `View icon` View the group configuration
-5. `Data tags icon` Create data tags for this group.
+5. `Tag List icon` Create data tags for this group.
 6. `Delete icon` Delete this group.
 
 ### Step 7 Add data tags into group
 
-Click on the `Data tags icon` at the end of a group row to show up the tags configuration list screen, as shown below.
+Click on the `Tag List icon` at the end of a group row to show up the tags configuration list screen, as shown below.
 
 ![tag-list-null](./assets/tag-list-null.png)
 
@@ -185,7 +183,7 @@ Click on the `Data tags icon` at the end of a group row to show up the tags conf
 
 ### Step 8 Setup data tag details
 
-After clicking on the `Data tags icon` at the end of a group row,  data tags details setup screen will be shown as below.In the example, we will describe the manual way of adding tags.
+Clicking the `Create icon`,  data tags details setup screen will be shown as below.In the example, we will describe the manual way of adding tags.
 
 ![tags-add](./assets/tags-add.png)
 
@@ -196,12 +194,12 @@ To create a tag for the group list,
 1. Fill in the Tag name, e.g. tag1.
 2. Fill in the driver address, e.g. 1!400001; for detailed instructions on how to use the driver address, please refer to the [driver instructions](../module-plugins/module-driver.md).
 3. Select the Tag type, e.g. Read, Write.
-4. Select the data type, e.g., int16.
-5. Click the `Create` button to complete the Tag creation.
-6. Click on the `Add` button to add next tag.
-7. Repeat 1 - 6 until the last tag added.
+4. Select the data type, e.g. int16.
+5. Click on the `Add` button to add next tag, repeat 1 - 4 until the last tag added.
+6. Optionally delete a tag.
+7. Click the `Create` button to complete the Tag creation.
 
-::: notes
+::: tip
 A new tag can be created by using the `Add` button, where a `Delete` button will appear next to the information box after the tag is successfully created.
 :::
 
@@ -229,7 +227,7 @@ To switch between data group for monitoring,
 2. Click on the drop down box to select the Group you want to view under the selected southbound device, in this case, select group-1 which has been created above.
 3. When the selection is complete, the page will show the value of each Tag read under the Group.
 
-::: notes
+::: tip
 If you find data value is a non-sense large number, you can adjust the byte order settings in simulator. The default byte order for the Modbus TCP simulator is BE 3,4,1,2
 :::
 
@@ -248,11 +246,11 @@ When the tag is set with the write attribute, the tag of the data monitoring int
 To perform dashboard data write operation,
 
 1. Click on `Write` button at the end of the tag which is going to change value.
-2. Enter the new value for the tag.
-3. Switch on the hex flag to input hexadecimal value.
+2. Choose whether to enter the value in hexadecimal.
+3. Enter the new value for the tag.
 4. Click on `Submit` button to submit new value.
 
-:::warning
+::: tip
 The tag in the device must be the writable.
 :::
 

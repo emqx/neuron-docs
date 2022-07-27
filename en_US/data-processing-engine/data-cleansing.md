@@ -51,7 +51,7 @@ Start MQTTX client, subscribe the topic `{{.node_name}}/{{.group_name}}`, the re
 :::
 
 ::: tip
-The node_name used in this example is **modbus-plus-tcp-1** and the group_name is **group-1**, that is, the subscription topic is modbus-plus-tcp-1/group-1.
+The node_name used in this example is **modbus-tcp-1** and the group_name is **group-1**, that is, the subscription topic is modbus-tcp-1/group-1.
 :::
 
 ![result](./assets/result.png)

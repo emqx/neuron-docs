@@ -119,7 +119,7 @@ $ docker pull neugates/neuron:2.1.0
 ### Start
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always neugates/neuron:2.1.0
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always -v /host/dir:/opt/neuron/persistence neugates/
 ```
 
 * tcp 7000: Used to access the web.
@@ -127,6 +127,7 @@ $ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privilege
 * tcp 9081: eKuiper api port.
 * --restart=always: Automatically restart the neuron container when the docker process is restarted.
 * --privileged=true：Easy to troubleshoot problems.
+* -v /host/dir:/opt/neuron/persistence: Used to store Neuron configuration information in docker to a local directory, e.g. /host/dir.
 * --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker.
 
 ## Neuron Operation

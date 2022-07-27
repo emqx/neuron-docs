@@ -50,7 +50,7 @@
 :::
 
 ::: tip
-此例中使用的 node_name 为 **modbus-plus-tcp-1**，group_name 为 **group-1**，即，订阅主题为 modbus-plus-tcp-1/group-1。
+此例中使用的 node_name 为 **modbus-tcp-1**，group_name 为 **group-1**，即，订阅主题为 modbus-tcp-1/group-1。
 :::
 
 ![result](./assets/result.png)

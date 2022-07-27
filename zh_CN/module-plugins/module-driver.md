@@ -2,7 +2,7 @@
 
 本节主要介绍了北向应用和南向设备的参数配置，南向设备的点位信息配置规范。
 
-::: warning
+::: tip
 uint16 对应 word 类型。uint32 对应 dword 类型。
 :::
 
@@ -81,7 +81,7 @@ Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TC
 | input register（输入寄存器） | 300001 ~ 365536 | 读          | 16bit         | 0x04          | bit,int16,uint16,int32,uint32,float,string |
 | hold register（保持寄存器）  | 400001 ~ 465536 | 读/写       | 16bit         | 0x03,0x06,0x10 | bit,int16,uint16,int32,uint32,float,string |
 
-::: warning
+::: tip
 一些设备文件会使用功能码和寄存器地址来描述指令，因为寄存器地址编号是从 0 开始的，所以每个区域的寄存器地址范围为 0 ～ 65535。首先，根据功能码确定地址的最高位数，并在寄存器地址上加1，作为 Neuron 的使用地址。
 :::
 
@@ -175,21 +175,21 @@ Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TC
 
 OPCUA可通过用户自签名证书登录到 OPC-UA 服务器，certificate 和 key 必须满足以下条件：
 
-- CERTIFICATE 和 KEYFILE 必须同时设置
-- Certificate 必须以X.509v3标准生成
-- Certficate 的SAN字段必须包含` URI:urn:xxx.xxx.xxx`,“xxx”部分为自定义部分
-- Certificate 文件和 Key 文件必须使用DER格式编码
+* CERTIFICATE 和 KEYFILE 必须同时设置
+* Certificate 必须以X.509v3标准生成
+* Certficate 的SAN字段必须包含`URI:urn:xxx.xxx.xxx`,“xxx”部分为自定义部分
+* Certificate 文件和 Key 文件必须使用DER格式编码
 
 证书文件可以提前导入到目标服务器中并设置为信任，也可以由 neuron 设置后自动提交再由服务端设置为信任。注：老版本的 kepware 或者 IGS 可能需要手动导入证书。
 
 证书生成步骤（Windows/Linux/Mac）：
 
 ```sh
-$ openssl req -config localhost.cnf -new -nodes -x509 -sha256 -newkey rsa:2048 -keyout localhost.key -days 365 -subj "/C=DE/O=neuron/CN=NeuronClient@localhost" -out localhost.crt
-$ openssl x509 -in localhost.crt -outform der -out client_cert.der
-$ openssl rsa -inform PEM -in localhost.key -outform DER -out client_key.der
-$ rm localhost.crt
-$ rm localhost.key
+openssl req -config localhost.cnf -new -nodes -x509 -sha256 -newkey rsa:2048 -keyout localhost.key -days 365 -subj "/C=DE/O=neuron/CN=NeuronClient@localhost" -out localhost.crt
+openssl x509 -in localhost.crt -outform der -out client_cert.der
+openssl rsa -inform PEM -in localhost.key -outform DER -out client_key.der
+rm localhost.crt
+rm localhost.key
 ```
 
 `-config`指定的 *.cnf 文件可以使用 [openssl 的模版文件](https://github.com/openssl/openssl/blob/master/apps/openssl.cnf) 进行修改，需包含如下配置节：
@@ -222,8 +222,8 @@ IP.1 = 127.0.0.1
 3. 执行如下命令:
 
 ```sh
-$ openssl x509 -in 1.crt -outform der -out cert.der   
-$ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
+openssl x509 -in 1.crt -outform der -out cert.der   
+openssl rsa -inform PEM -in 1.key -outform DER -out key.der
 ```
 
 ### 支持的数据类型
@@ -258,7 +258,7 @@ $ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
 
 可以使用 UaExpert 软件协助查看所需点位的名字空间和节点 ID 信息。
 
-::: warning
+::: tip
 关于命名空间索引和节点 ID 的解释，请参考 OPC UA 标准。
 
 Neuron 设置的数据类型必须与 OPCUA 数据类型相匹配。
@@ -278,7 +278,7 @@ s7comm 插件用于带有网络端口的西门子PLC，如，s7-200/300/400/1200
 | **rack** | PLC 机架号，默认为 0       |
 | **slot** | PLC 插槽号，默认为 1       |
 
-::: warning
+::: tip
 当使用S7COMM插件访问S7 1200/1500 PLC时，你需要使用西门子软件（TIA16）对PLC进行一些设置。( 详细设置请参考 [PLC 设置](./plc-settings/siemens-s7-1200-1500.md) )
 :::
 
@@ -736,7 +736,6 @@ Neuron 从设备采集到的数据可以通过Sparkplug_B协议从边缘端传�
 | **key**       | key文件，只在ssl值为true时启用，可选填                       |
 | **keypass**   | key文件密码，只有在ssl值为true时启用，可选填                 |
 
-
 ## 非 A11
 
 ### 设备设置
@@ -768,4 +767,3 @@ Neuron 从设备采集到的数据可以通过Sparkplug_B协议从边缘端传�
 | 1!10.20 | string             | 指令1，偏移10，字符串长度20 |
 | 12!1    | uint16/int16       | 指令12，偏移1               |
 | 20!32   | uint32/int32/float | 指令20，偏移32              |
-

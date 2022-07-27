@@ -118,15 +118,16 @@ $ docker pull neugates/neuron:2.1.0
 ### 启动
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always neugates/neuron:2.1.0
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always -v /host/dir:/opt/neuron/persistence neugates/
 ```
 
 * tcp 7000: 用于访问web。
-* tcp 7001: http api端口。（api端口为web端口+1，例如，当web端口映射为8000时，api端口应映射为8001）
-* tcp 9081: eKuiper api端口.
-* --restart=always: docker进程重启时，自动重启neuron容器。
-* --privileged=true：便于排查问题。
-* --device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到docker。
+* tcp 7001: http api端口。（api 端口为 web 端口+1，例如，当 web 端口映射为 8000 时，api 端口应映射为8001）
+* tcp 9081: eKuiper api 端口.
+* --restart=always: docker 进程重启时，自动重启 neuron 容器。
+* --privileged=true: 可选参数，便于排查问题。
+* -v /host/dir:/opt/neuron/persistence: 用于将 docker 中 Neuron 配置信息存放在本地目录（例如，/host/dir）。
+* --device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到 docker。
 
 ## Neuron 操作
 
