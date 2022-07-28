@@ -1236,3 +1236,68 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "version": "2.0.1"
 }
 ```
+
+## 上传License
+
+*POST*  /api/v2/license
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200
+  * 0    OK
+  * 2402 license过期
+* 400
+  * 2401 license无效
+* 500
+  * 1001 服务器内部错误
+
+### 请求体
+
+```json
+{
+    "license": "-----BEGIN CERTIFICATE-----\nMIID2TCCAsGgAwIBAgIEATSJqjA....."
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 2401
+}
+```
+
+## 获取License信息
+
+*GET*  /api/v2/license
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+  * 2400 license未找到
+* 500
+  * 1001 服务器内部错误
+
+### 响应
+
+```json
+{
+    "error": 0,
+    "license_type": "trial",
+    "max_nodes": 1000,
+    "max_node_tags": 20000,
+    "valid": true,
+    "valid_since": "2022-03-30 09:10:40",
+    "valid_until": "2023-03-30 09:10:40",
+    "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
+}
+```

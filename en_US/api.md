@@ -1236,3 +1236,68 @@ The value is displayed only when the value is read correctly, when the value is 
     "version": "2.0.1"
 }
 ```
+
+## Upload License
+
+*POST*  /api/v2/license
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200
+  * 0    OK
+  * 2402 license expired
+* 400
+  * 2401 license invalid
+* 500
+  * 1001 internal error
+
+### Body
+
+```json
+{
+    "license": "-----BEGIN CERTIFICATE-----\nMIID2TCCAsGgAwIBAgIEATSJqjA....."
+}
+```
+
+### Response
+
+```json
+{
+    "error": 2401
+}
+```
+
+## Get License Info
+
+*GET*  /api/v2/license
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+  * 2400 license not found
+* 500
+  * 1001 internal error
+
+### Response
+
+```json
+{
+    "error": 0,
+    "license_type": "trial",
+    "max_nodes": 1000,
+    "max_node_tags": 20000,
+    "valid": true,
+    "valid_since": "2022-03-30 09:10:40",
+    "valid_until": "2023-03-30 09:10:40",
+    "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
+}
+```
