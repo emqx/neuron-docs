@@ -20,7 +20,7 @@ Neuron offers extensive and diverse southbound pluggable modules for various ind
 
 ## Multi-source Aggregation
 
-Neuron can simultaneously make 1000 or above connections to various industrial devices. All data from various sources would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That streamlines the IIoT platform or industrial applications such as MES and SCADA, acquiring those data from various sources by providing a single point of entry to all information, just like the idea of unified namespace architecture.
+Neuron can simultaneously make 1000 or above connections to various industrial devices. All data from various sources would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That streamlines the IIoT platform or industrial applications acquiring those data from various sources by providing a single point of entry to all information via broker, just like the idea of unified namespace architecture.
 
 ## Streaming Process Engine
 
