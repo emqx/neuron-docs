@@ -20,11 +20,11 @@ Neuron offers extensive and diverse southbound pluggable modules for various ind
 
 ## Multi-source Aggregation
 
-Neuron can simultaneously make 1000 or above connections to various industrial devices. All data from various sources would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That streamlines the IIoT platform or industrial applications acquiring those data from various sources by providing a single point of entry to all information via broker, just like the idea of unified namespace architecture.
+Neuron can simultaneously make 1000 or above connections to various industrial devices. All data from various sources would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That streamlines the IIoT platform or industrial applications acquiring those data from various sources by providing a single point of entry to all information via broker, as [unified namespace](./use_cases.md) architecture.
 
 ## Streaming Process Engine
 
-Neuron has integrated with [eKuiper](https://www.lfedge.org/projects/ekuiper) streaming SQL processing rule engine to implement edge side AI/ML analytics and control logic for those collected industrial data, and store the filtered industrial data in local time series database or quickly implement rule-based device control.
+Neuron has integrated with [eKuiper](https://www.lfedge.org/projects/ekuiper) streaming SQL processing rule engine to implement edge side AI/ML analytics and control logic for those collected industrial data, and store the filtered industrial data in local time series database or quickly implement [rule-based device control](./data-processing-engine/device-control.md).
 
 ## Portable Deployment
 
@@ -36,11 +36,11 @@ Neuron offers [API](./api.md) and [MQTT](./mqtt.md) services to manipulate Neuro
 
 ## Better Integration
 
-Neuron has better integration with IIoT platform, big data, and AI/ML analytic software into private cloud, EMQX Cloud, AWS, Google Cloud, Azure, or on-premise server via dedicated northbound MQTT modules.
+Neuron has better [integration](./integration.md) with IIoT platform, big data, and AI/ML analytic software into private cloud, EMQX Cloud, AWS, Google Cloud, Azure, or on-premise server via dedicated northbound MQTT modules.
 
 ## Unified DataOps
 
-Neuron supports SparkplugB protocol so it can act like an EoN node of SparkplugB unified industrial architecture via EMQX broker, providing unified dataops for industrial application, and eliminating the complexity ERP, MES, SCADA and historian to access the device data.
+Neuron supports SparkplugB protocol so it can act like an EoN node of [SparkplugB unified industrial architecture](./use_cases.md) via EMQX broker, providing unified dataops for industrial application, and eliminating the complexity ERP, MES, SCADA and historian to access the device data.
 
 ## Data Tags Optimization
 
@@ -48,7 +48,7 @@ Duplicate or consecutive data tags would be merged into a single read/write comm
 
 ## Configuration Import/Export
 
-Neuron provides configuration Excel sheet import and export capability to accelerate the data tags setup configuration and to keep data tags information in outside storage.
+Neuron provides configuration [Excel sheet import and export](./console-management/configuration-import-export.md) capability to accelerate the data tags setup configuration and to keep data tags information in outside storage.
 
 ## Authentication and Security
 
@@ -56,4 +56,4 @@ Neuron supports encryption TLS, HTTPS to ensure the data security in transmissio
 
 ## Web-based Dashboard
 
-Neuron provides Web-based management dashboard for users to monitor data, device status and to manange online connection setup configuration in a browser, enabling access to cross-industrial device data.
+Neuron provides Web-based management dashboard for users to monitor data, device status and to manange online connection setup configuration and to deliver [device control](./console-management/device-control.md) command in a browser, enabling access to cross-industrial device data.
