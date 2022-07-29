@@ -12,11 +12,11 @@ Neuron leverages real-time event-driven analytics to take full advantage of the 
 
 ## Loosely-coupled Modularity
 
-Neuron design based on decoupled modular plugin [architecture](architecture.md) which allows more functional extensions by hot-plugging more service modules. Each pluggable module works independently without interference to each other and has its own specific capability of service. 
+Neuron design based on decoupled modular plugin [architecture](./architecture.md) which allows more functional extensions by hot-plugging more service modules. Each pluggable module works independently without interference to each other and has its own specific capability of service.
 
 ## Diverse Connectivity
 
-Neuron offers extensive and diverse southbound pluggable modules for various industries, including building automation, CNC machines, Robotics, Electricity, various PLCs and even smart sensors. Neuron supports broadest range access to 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise IIoT platform connection. 
+Neuron offers extensive and diverse southbound pluggable modules for various industries, including building automation, CNC machines, Robotics, Electricity, various PLCs and even smart sensors. Neuron supports broadest range access to 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise IIoT platform connection.
 
 ## Multi-source Aggregation
 
@@ -32,7 +32,7 @@ With ultra-low resource consumption, Neuron executables can be deployed natively
 
 ## API and MQTT Services
 
-Neuron offers [API](api.md) and [MQTT](mqtt.md) services to manipulate Neuron and industrial devices without onsite operation. This allows cloud and on-premise IIoT platform to deliver the command to connected machines/devices, make changes to their parameter settings based on big data analysis results, or modify data tags configuration to accomodate more machines/devices.
+Neuron offers [API](./api.md) and [MQTT](./mqtt.md) services to manipulate Neuron and industrial devices without onsite operation. This allows cloud and on-premise IIoT platform to deliver the command to connected machines/devices, make changes to their parameter settings based on big data analysis results, or modify data tags configuration to accomodate more machines/devices.
 
 ## Better Integration
 
