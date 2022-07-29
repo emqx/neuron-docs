@@ -12,7 +12,7 @@ Hover the mouse over `Import` and the button `Download Template` will appear, as
 
 Click the `Download Template` button to download the Excel sheet.
 
-### Step 2 Fill in the Excel第二步，填写 Excel 表格
+### Step 2 Fill in the Excel
 
 Fill in the relevant information according to the form format, as shown below.
 
