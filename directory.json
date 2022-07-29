@@ -52,6 +52,14 @@
         {
           "title": "管理插件模块",
           "path": "console-management/plugin-modules-management"
+        },
+        {
+          "title": "配置导入/导出",
+          "path": "console-management/configuration-import-export"
+        },
+        {
+          "title": "设备控制",
+          "path": "console-management/device-control"
         }
       ]
     },
@@ -155,6 +163,14 @@
         {
           "title": "Plugin Modules Management",
           "path": "console-management/plugin-modules-management"
+        },
+        {
+          "title": "Configuration Import/Export",
+          "path": "console-management/configuration-import-export"
+        },
+        {
+          "title": "Device Control",
+          "path": "console-management/device-control"
         }
       ]
     },
