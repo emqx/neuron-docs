@@ -92,7 +92,7 @@ $ cd neuron-2.1.0-linux-armhf
 
 #### 启动
 
-执行如下命令启动Neuron：
+执行如下命令启动 Neuron：
 
 ```bash
 $ ./neuron-helper.sh start
@@ -100,7 +100,7 @@ $ ./neuron-helper.sh start
 
 #### 停止
 
-执行如下命令停止Neuron：
+执行如下命令停止 Neuron：
 ```bash
 $ ./neuron-helper.sh stop
 ```
@@ -118,11 +118,11 @@ $ docker pull neugates/neuron:2.1.0
 ### 启动
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always -v /host/dir:/opt/neuron/persistence neugates/
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always neugates/
 ```
 
-* tcp 7000: 用于访问web。
-* tcp 7001: http api端口。（api 端口为 web 端口+1，例如，当 web 端口映射为 8000 时，api 端口应映射为8001）
+* tcp 7000: 用于访问 web。
+* tcp 7001: http api 端口。（api 端口为 web 端口+1，例如，当 web 端口映射为 8000 时，api 端口应映射为8001）
 * tcp 9081: eKuiper api 端口.
 * --restart=always: docker 进程重启时，自动重启 neuron 容器。
 * --privileged=true: 可选参数，便于排查问题。

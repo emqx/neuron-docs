@@ -93,7 +93,7 @@
 
 * Either a Trial EMQ License or an Official EMQ License must be installed to run Neuron commercial plugin modules.
 
-* A trial EMQ license can be download from website [https://www.emqx.com/zh/apply-licenses/neuron](https://www.emqx.com/zh/apply-licenses/neuron). All available modules could be used without limitation for 15 days.
+* A trial EMQ license can be download from website [https://www.emqx.com/en/apply-licenses/neuron](https://www.emqx.com/en/apply-licenses/neuron). All available modules could be used without limitation for 15 days.
 
 * Core framework, and some plugin modules are open source under LGPLv3 license.
 

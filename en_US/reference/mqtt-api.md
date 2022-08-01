@@ -1,4 +1,4 @@
-# MQTT Topics
+# MQTT API
 
 The following topics are used for read/write interaction between client and neuron.
 

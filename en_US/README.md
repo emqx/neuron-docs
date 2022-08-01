@@ -10,6 +10,4 @@ The Neuron documentation is composed of a few major sections：
 * [Architecture](./architecture.md): This section describes more details about Neuron architecture.
 * [Integrations](./integration.md): This section describes how Neuron integrated with other applications and cloud platforms.
 * [Use Cases](./use_cases.md): This section describes use cases of Neuron in details.
-* [MQTT](./mqtt.md): Neuron MQTT topic and payload detailed reference.
-* [API](./api.md): Neuron API detailed reference.
-* [Error Codes](./error-code.md): Description of error codes that may return when using API calls or using MQTT communication.
+* [Reference](./reference/http-api.md): Neuron MQTT topic and payload and HTTP API detailed reference, and some errors when calling the API.

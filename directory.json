@@ -98,16 +98,21 @@
       "path": "use_cases"
     },
     {
-      "title": "MQTT",
-      "path": "mqtt"
-    },
-    {
-      "title": "API",
-      "path": "api"
-    },
-    {
-      "title": "错误代码",
-      "path": "error-code"
+      "title": "参考",
+      "children": [
+        {
+          "title": "HTTP API",
+          "path": "reference/http-api"
+        },
+        {
+          "title": "MQTT API",
+          "path": "reference/mqtt-api"
+        },
+        {
+          "title": "错误代码",
+          "path": "reference/error-code"
+        }
+      ]
     }
   ],
   "en": [
@@ -209,16 +214,21 @@
       "path": "use_cases"
     },
     {
-      "title": "MQTT",
-      "path": "mqtt"
-    },
-    {
-      "title": "API",
-      "path": "api"
-    },
-    {
-      "title": "Error Codes",
-      "path": "error-code"
+      "title": "Reference",
+      "children": [
+        {
+          "title": "HTTP API",
+          "path": "reference/http-api"
+        },
+        {
+          "title": "MQTT API",
+          "path": "reference/mqtt-api"
+        },
+        {
+          "title": "Error Codes",
+          "path": "reference/error-code"
+        }
+      ]
     }
   ]
 }
