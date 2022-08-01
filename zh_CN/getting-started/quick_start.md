@@ -299,7 +299,7 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 
 设置 MQTT 连接：
 
-1. 填写 MQTT 的 Client ID，例如，mqtt1，详细订阅主题请参阅 [MQTT Topics](../mqtt.md)；
+1. 填写 MQTT 的 Client ID，例如，mqtt1，详细订阅主题请参阅 [MQTT Topics](../reference/mqtt-api.md)；
 2. 选填自定义的 MQTT 发布主题；
 3. 选择上传格式；
 4. 设置 SSL 认证选项；

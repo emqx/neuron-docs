@@ -1,4 +1,4 @@
-# MQTT 订阅主题
+# MQTT API
 
 MQTT 客户端和 Neuron 进行交互的所有主题。包括读、写、订阅。
 

@@ -1,8 +1,8 @@
-# API
+# HTTP API
 
-Neuron provide a series of API services for IIoT platform, to query the basic information, to control gateway behaviors or to setup the polling configuration. IIoT platform can initiate the communication by sending request message to Neuron. By return, Neuron would send back the required information or execute the deserved action. If there is error, a error code would be returned to tell the reason of failure.
+Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息、控制网关行为或设置轮询配置。 IIoT 平台必须通过向 Neuron 发送请求消息来启动通信。 通过返回，Neuron 将返回所需的信息或执行相应的操作。 如果有错误，将返回一个错误代码来说明失败的原因。
 
-## Value
+## 值
 
 ### Baud
 
@@ -32,7 +32,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * Data_7 = 2
 * Data_8 = 3
 
-### Data Type
+### 数据类型
 
 * INT8   = 1
 * UINT8  = 2
@@ -49,7 +49,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * STRING = 13
 * BYTES  = 14
 
-### Data Attribute
+### 点位属性
 
 * READ = 0x01
 
@@ -57,23 +57,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 * SUBSCRIBE = 0x04
 
-### Node Type
+### Node 类型
 
 * DRIVER = 1
 * APP = 2
 
-### Plugin Kind
+### 插件类型
 
 * STATIC = 0
 * SYSTEM = 1
 * CUSTOM = 2
 
-### Node CTL
+### Node 控制
 
 * START = 0
 * STOP = 1
 
-### Node State
+### Node 状态
 
 * IDLE = 0
 * INIT = 1
@@ -81,7 +81,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * RUNNING = 3
 * STOPPED = 4
 
-### Node Link State
+### Node 连接状态
 
 * DISCONNECTED = 0
 * CONNECTING = 1
@@ -91,23 +91,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 *POST*  **/api/v2/ping**
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-## Login
+## 登录
 
 *POST*   **/api/v2/login**
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**          application/json
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 401
@@ -127,7 +127,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -135,25 +135,25 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Add Node
+## 添加 Node
 
 *POST*  **/api/v2/node**
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type** application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-  * 2001 node type invalid
+  * 2001 node 类型无效
 * 404
-  * 2301 library not found
+  * 2301 未找到插件库
 * 409
-  * 2002 node exist
+  * 2002 node 不存在
 
 ### Body
 
@@ -166,7 +166,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -174,17 +174,17 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Del Node
+## 删除 Node
 
 *Delete* /api/v2/node
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
@@ -199,7 +199,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -207,17 +207,17 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Node(Not Implemented)
+## 更新 Node(未实现)
 
 *PUT* **/api/v2/node**
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
@@ -234,7 +234,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -242,23 +242,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Get Node
+## 获取 Node
 
 *GET*  /api/v2/node
 
-### Request Params
+### 请求 Params
 
-**type**  required
+**type**  必需
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -277,17 +277,17 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Add Group
+## 添加 Group
 
 *POST*  /api/v2/group
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
@@ -300,7 +300,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```json
 {
     //group name
-    "name": "gconfig1",
+    "group": "gconfig1",
     //node name
     "node": "modbus-node",
     //read/upload interval(ms)
@@ -308,7 +308,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -316,24 +316,24 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Del Group
+## 删除 Group
 
 *DELETE*  /api/v2/group
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 412
   * 2101 group already subscribed
 * 404
   * 2003 node not exist
-  * 2106 group not exist
+  * 2101 group not exist
 
 ### Body
 
@@ -346,7 +346,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -354,17 +354,17 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Group(Not Implemented)
+## 更新 Group(未实现)
 
 *PUT*  /api/v2/group
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
@@ -383,7 +383,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -391,23 +391,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Get Group
+## 获取 Group
 
 *GET*  /api/v2/group
 
-### Request Params
+### 请求 Params
 
-**node**  required
+**node**  必需
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ````json
 {
@@ -429,17 +429,17 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ````
 
-## Add Tag
+## 添加 Tag
 
 *POST*  /api/v2/tags
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 206
@@ -485,7 +485,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -494,27 +494,27 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Get Tag
+## 获取 Tag
 
 *GET*  /api/v2/tags
 
-### Request Params
+### 请求 Params
 
-**node**  required
+**node**  必需
 
-**group**  required
+**group**  必需
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
-### Response
+### 响应
 
 ```json
 {
@@ -527,7 +527,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             //tag address
             "address": "1!400001",
             //tag attribute
-            "attribute": 1,
+            "attribute": 1
         },
         {
             "name": "tag2",
@@ -545,34 +545,34 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Tag
+## 更新 Tag
 
 *PUT*  /api/v2/tags
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response status
+### 响应状态
 
 * 200 OK
 * 206
-  * 2201 tag not exist
-  * 2202 tag name conflict
-  * 2203 tag attribute not support
-  * 2204 tag type not support
-  * 2205 tag address format invalid
+  * 2201 tag 不存在
+  * 2202 tag 名字冲突
+  * 2203 tag 属性不支持
+  * 2204 tag 类型不支持
+  * 2205 tag 地址格式无效
 * 404
-  * 2003 node not exist
-  * 2106 group not exist
+  * 2003 node 不存在
+  * 2106 group 不存在
 
 ### Body
 
 ```json
 {
-    //node name
+     //node name
     "node": "modbus-tcp-test",
     //group name
     "group": "group1",
@@ -597,7 +597,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -605,21 +605,21 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Del Tag
+## 删除 Tag
 
 *DELETE*  /api/v2/tags
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
 ### Body
 
@@ -629,7 +629,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     "group": "config_modbus_tcp_sample_2",
     //node name
     "node": "modbus-node",
-    //tag name
+    //tag names
     "tags": [
         "tag1",
         "tag2"
@@ -637,7 +637,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -645,23 +645,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Add Plugin
+## 添加插件
 
 *POST*  /api/v2/plugin
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
 * 400
   
-  * 2302 library info invalid
+  * 2302 库信息无效
 
 ### Body
 
@@ -672,7 +672,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -680,17 +680,17 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Del Plugin
+## 删除插件
 
 *DELETE*  /api/v2/plugin
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
@@ -699,11 +699,11 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```json
 {
     //plugin name
-   "plugin": "modbus-tcp"
+    "plugin": "modbus-tcp"
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -711,23 +711,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Get Plugin
+## 获取插件
 
 *GET*  /api/v2/plugin
 
-### Request Params
+### 请求 Params
 
 **plugin**  optional
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -747,21 +747,21 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Subscribe
+## 订阅
 
 *POST*  /api/v2/subscribe
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
 ### Body
 
@@ -776,7 +776,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -784,21 +784,21 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## UnSubscribe
+## 取消订阅
 
 *DELETE*  /api/v2/subscribe
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
 ### Body
 
@@ -808,12 +808,12 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     "app": "mqtt-node",
     //driver name
     "driver": "driver-node",
-    //driver node group name
+    //driver node group config name
     "group": "gconfig1"
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -821,15 +821,15 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Read Tag
+## 读 Tag
 
 *POST*  /api/v2/read
 
-### Request Headers
+### 请求 Headers
 
 **Content--Type**  application/json
 
-### Response Status
+### 响应状态
 
 * 200
 
@@ -844,7 +844,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -868,20 +868,20 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```
 
 ::: tip
-The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
+当某个点位读数值出错时，将显示 **error** 字段，不再显示 **value** 字段。
 :::
 
-## Write Tag
+## 写 Tag
 
 *POST*  /api/v2/write
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
@@ -896,7 +896,7 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -904,19 +904,19 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Plugin Schema
+## 获取插件 Schema
 
 *GET*  /api/v2/schema
 
-### Request Params
+### 请求 Params
 
-**plugin_name**  required
+**plugin_name**  必需
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -1002,22 +1002,22 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Node Setting
+## Node 配置
 
 *POST*  /api/v2/node/setting
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-  * 2003 node not exist
-  * 2004 node setting invalid
+  * 2003 node 不存在
+  * 2004 node 配置无效
 
 ### Body
 
@@ -1035,7 +1035,7 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1043,26 +1043,26 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Node Setting
+## 获取 Node 配置
 
 *GET*  /api/v2/node/setting
 
-### Request Params
+### 请求 Params
 
-**node**  required
+**node**  必需
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
-  * 2005 node setting not found
+  * 2005 node 配置未发现
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
-### Response
+### 响应
 
 ```json
 //The parameter fields in json fill in different fields according to different plugins
@@ -1075,17 +1075,17 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Node CTL
+## Node 控制
 
 *POST*  /api/v2/node/ctl
 
-### Request Headers
+### 请求 Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Request Status
+### 请求状态
 
 * 200 OK
 * 409
@@ -1105,7 +1105,7 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1113,23 +1113,23 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Node State
+## 获取 Node 状态
 
 *GET*  /api/v2/node/state
 
-### Request Params
+### 请求 Params
 
 **node**  required
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -1140,24 +1140,24 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Subscribe Group
+## 获取订阅的 Group
 
 *GET*  /api/v2/subscribe
 
-### Request Params
+### 请求 Params
 
-**app**  required
+**app**  必需
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
 * 400
 
-### Response
+### 响应
 
 ```json
 {
@@ -1176,33 +1176,33 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Log
+## 获取日志
 
 *GET*  /api/v2/log
 
-### Request Params
+### 请求 Params
 
-**since**       required, UTC timestamp
+**since**       必需， UTC 时间戳
 
-**until**       required, UTC timestamp, with `since` forms the interval [since, until)
+**until**       必需， UTC timestamp, with `since` forms the interval [since, until)
 
-**level**       optional, log level, should be one of trace, debug, info, warn, error, fatal
+**level**       选填， log level, should be one of trace, debug, info, warn, error, fatal
 
-**page**        required
+**page**        必需
 
-**page_size**   required, should be in range [200, 10000]
+**page_size**   必需，范围应在 200 ～ 10000
 
-### Request Headers
+### 请求 Headers
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
 * 400
-  * 1003 request param invalid
+  * 1003 错误参数
 
-### Response
+### 响应
 
 ```json
 {
@@ -1213,49 +1213,49 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Version
+## 获取版本信息
 
 *GET*  /api/v2/version
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Response
+### 响应
 
 ```json
 {
     "build_date": "2022-06-01",
-    "revision": "99e2184+dirty", // dirty indicates uncommit changes
+    "revision": "99e2184+dirty", // dirty 表示有未提交的更改
     "version": "2.0.1"
 }
 ```
 
-## Upload License
+## 上传License
 
 *POST*  /api/v2/license
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
   * 0    OK
-  * 2402 license expired
+  * 2402 license过期
 * 400
-  * 2401 license invalid
+  * 2401 license无效
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1263,7 +1263,7 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1271,23 +1271,23 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get License Info
+## 获取License信息
 
 *GET*  /api/v2/license
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2400 license not found
+  * 2400 license未找到
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Response
+### 响应
 
 ```json
 {

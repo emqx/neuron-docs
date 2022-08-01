@@ -119,7 +119,7 @@ $ docker pull neugates/neuron:2.1.0
 ### Start
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always -v /host/dir:/opt/neuron/persistence neugates/
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always neugates/
 ```
 
 * tcp 7000: Used to access the web.

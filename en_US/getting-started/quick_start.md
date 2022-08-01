@@ -300,7 +300,7 @@ Items with `*` are required, and each item is followed by a field description ke
 
 To setup MQTT connection,
 
-1. Fill in the Client Id of MQTT, which is also the name of northbound application node, e.g. mqtt1，please refer to the [MQTT Topics](../mqtt.md).
+1. Fill in the Client Id of MQTT, which is also the name of northbound application node, e.g. mqtt1，please refer to the [MQTT Topics](../reference/mqtt-api.md).
 2. Fill in the MQTT publish topic.
 3. Select the upload format.
 4. Set up SSL authentication option.

@@ -32,7 +32,7 @@ With ultra-low resource consumption, Neuron executables can be deployed natively
 
 ## API and MQTT Services
 
-Neuron offers [API](./api.md) and [MQTT](./mqtt.md) services to manipulate Neuron and industrial devices without onsite operation. This allows cloud and on-premise IIoT platform to deliver the command to connected machines/devices, make changes to their parameter settings based on big data analysis results, or modify data tags configuration to accomodate more machines/devices.
+Neuron offers [API](./reference/http-api.md) and [MQTT](./reference/mqtt-api.md) services to manipulate Neuron and industrial devices without onsite operation. This allows cloud and on-premise IIoT platform to deliver the command to connected machines/devices, make changes to their parameter settings based on big data analysis results, or modify data tags configuration to accomodate more machines/devices.
 
 ## Better Integration
 

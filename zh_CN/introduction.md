@@ -12,7 +12,7 @@ Neuron 利用实时事件驱动分析充分利用低延迟网络方法，响应�
 
 ## 松耦合模块化
 
-基于解耦模块化插件 [architecture](./architecture.md) 的 Neuron 设计，通过热插拔更多的服务模块允许更多的功能扩展。每个可插拔模块独立工作，互不干扰，具有自己特定的服务能力。
+基于解耦模块化插件的 Neuron [架构设计](./architecture.md)，通过热插拔更多的服务模块允许更多的功能扩展。每个可插拔模块独立工作，互不干扰，具有自己特定的服务能力。
 
 ## 多样化的连接
 
@@ -20,11 +20,11 @@ Neuron 为各个行业提供广泛多样的南向可插拔模块，包括楼宇�
 
 ## 多源聚合
 
-Neuron 可以同时与各种工业设备建立 1000 个或以上的连接。来自不同来源的所有数据将同时收集并根据用户指定的配置转发到指定的 MQTT 消息代理。这简化了 IIoT 平台或工业应用程序从各种来源获取这些数据的过程，方法是通过代理提供对所有信息的单一入口点，就像统一命名空间架构的想法一样。
+Neuron 可以同时与各种工业设备建立 1000 个或以上的连接。来自不同来源的所有数据将同时收集并根据用户指定的配置转发到指定的 MQTT 消息代理。这简化了 IIoT 平台或工业应用程序从各种来源获取这些数据的过程，方法是通过代理提供对所有信息的单一入口点，如[统一命名空间](./use_cases.md)架构。
 
 ## 流式处理引擎
 
-Neuron 集成了 [eKuiper](https://www.lfedge.org/projects/ekuiper) 流式 SQL 处理规则引擎，对采集的工业数据实现边缘侧 AI/ML 分析和控制逻辑，并将过滤后的工业数据存储起在本地时间序列数据库中或快速实现基于规则的设备控制。
+Neuron 集成了 [eKuiper](https://www.lfedge.org/projects/ekuiper) 流式 SQL 处理规则引擎，对采集的工业数据实现边缘侧 AI/ML 分析和控制逻辑，并将过滤后的工业数据存储起在本地时间序列数据库中或快速实现[基于规则的设备控制](./data-processing-engine/device-control.md)。
 
 ## 便携式部署
 
@@ -32,15 +32,15 @@ Neuron 集成了 [eKuiper](https://www.lfedge.org/projects/ekuiper) 流式 SQL �
 
 ## API 和 MQTT 服务
 
-Neuron 提供 [API](./api.md) 和 [MQTT](./mqtt.md) 服务，无需现场操作即可操作 Neuron 和工业设备。这允许云和本地 IIoT 平台将命令传递给连接的机器/设备，根据大数据分析结果更改其参数设置，或修改数据标签配置以适应更多机器/设备。
+Neuron 提供 [API](./reference/http-api.md) 和 [MQTT](./reference/mqtt-api.md) 服务，无需现场操作即可操作 Neuron 和工业设备。这允许云和本地 IIoT 平台将命令传递给连接的机器/设备，根据大数据分析结果更改其参数设置，或修改数据标签配置以适应更多机器/设备。
 
 ## 更好的集成
 
-Neuron 通过专用的北向 MQTT 模块将 IIoT 平台、大数据和 AI/ML 分析软件更好地集成到私有云、EMQX Cloud、AWS、Google Cloud、Azure 或本地服务器中。
+Neuron 通过专用的北向 MQTT 模块将 IIoT 平台、大数据和 AI/ML 分析软件更好地[集成](./integration.md)到私有云、EMQX Cloud、AWS、Google Cloud、Azure 或本地服务器中。
 
 ## 统一数据运营
 
-Neuron 支持 SparkplugB 协议，可以通过 EMQX 代理充当 SparkplugB 统一工业架构的 EoN 节点，为工业应用提供统一的数据操作，消除 ERP、MES、SCADA 和 historian 访问设备数据的复杂性。
+Neuron 支持 SparkplugB 协议，可以通过 EMQX 代理充当 [SparkplugB 统一工业架构](./use_cases.md)的 EoN 节点，为工业应用提供统一的数据操作，消除 ERP、MES、SCADA 和 historian 访问设备数据的复杂性。
 
 ## 数据标签优化
 
@@ -48,7 +48,7 @@ Neuron 支持 SparkplugB 协议，可以通过 EMQX 代理充当 SparkplugB 统�
 
 ## 配置导入/导出
 
-Neuron 提供配置 Excel 表导入和导出功能，以加速数据标签设置配置并将数据标签信息保存在外部存储中。
+Neuron 提供配置 [Excel 表导入和导出](./console-management/configuration-import-export.md)功能，以加速数据标签设置配置并将数据标签信息保存在外部存储中。
 
 ## 身份验证和安全性
 
@@ -56,4 +56,4 @@ Neuron 支持加密 TLS、HTTPS 以确保传输中的数据安全，并采用 JW
 
 ## 基于 Web 的仪表板
 
-Neuron 为用户提供基于 Web 的管理界面，可以监控数据和设备状态并且可以在浏览器中在线管理连接设置的配置，从而达到跨行业访问设备数据。
+Neuron 为用户提供基于 Web 的管理界面，可以监控数据和设备状态并且可以在浏览器中在线管理连接设置的配置，并在浏览器中提供[设备控制](./console-management/device-control.md)，从而达到跨行业访问设备数据的目的。
