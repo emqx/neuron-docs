@@ -95,7 +95,7 @@ To add a new southbound device,
 4. Click on `Create` button to create the device.
 
 ::: tip
-You suppose to install a valid trail or commercial license to select the plugin modules other than modbus-tcp. Only modbus-tcp is open source plugin module in the list.
+You suppose to install a valid trial or commercial license to be able selecting the pluggable modules other than modbus-tcp. Only modbus-tcp is an open source pluggable module in the list.
 :::
 
 ### Step 3 Manage southbound device node list

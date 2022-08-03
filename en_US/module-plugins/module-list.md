@@ -91,10 +91,8 @@
 
 ## EMQ License for commercial modules
 
-* Either a Trial EMQ License or an Official EMQ License must be installed to run Neuron commercial plugin modules.
+* Core framework, dashboard and modbus, mqtt and eKuiper pluggable modules are open source under LGPLv3 license. Neuron could run with these modules without a license installed. A valid trial or official EMQ license must be installed if you need any one or more of the commercial modules as mentioned above.
 
-* A trial EMQ license can be download from website [https://www.emqx.com/en/apply-licenses/neuron](https://www.emqx.com/en/apply-licenses/neuron). All available modules could be used without limitation for 15 days.
-
-* Core framework, and some plugin modules are open source under LGPLv3 license.
+* A trial EMQ license can be download from our official website [https://www.emqx.com/en/apply-licenses/neuron](https://www.emqx.com/en/apply-licenses/neuron). All available modules could be used with limitation on 100 connections and 1000 data tags for 15 days. If trial EMQ license is expired, you can re-apply the trial EMQ license via our official website again. However, a mailbox can only apply for a trial license up to two times.
 
 * Each plugin module can be authorized independently in EMQ license.

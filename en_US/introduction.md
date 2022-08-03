@@ -8,19 +8,19 @@ Neuron offers the following product features.
 
 ## Edge Native
 
-Neuron leverages real-time event-driven analytics to take full advantage of the low-latency network approach to at most 100 millisecond response time. It has very low memory footprints, less than 10M, suitable for running on low-profile edge gateway near machines.
+Neuron is designed based on real-time asynchourous event-driven processing to take full advantage of the low-latency network approach to 100 millisecond response time. It has very low memory footprints, less than 10M, suitable for running on low-profile edge gateway near machines.
 
 ## Loosely-coupled Modularity
 
-Neuron design based on decoupled modular plugin [architecture](./architecture.md) which allows more functional extensions by hot-plugging more service modules. Each pluggable module works independently without interference to each other and has its own specific capability of service.
+Neuron design framework is based on decoupled modular plugin [architecture](./architecture.md) which allows more functional extensions by hot-plugging more service modules. Each pluggable module works independently without interference to each other and has its own specific capability of service.
 
 ## Diverse Connectivity
 
-Neuron offers extensive and diverse southbound pluggable modules for various industries, including building automation, CNC machines, Robotics, Electricity, various PLCs and even smart sensors. Neuron supports broadest range access to 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise IIoT platform connection.
+Neuron offers extensive and diverse southbound pluggable modules for various industries, including building automation, CNC machines, Robotics, Electricity, various PLCs and even smart sensors, since it supports broadest range access to 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise IIoT platform connection.
 
 ## Multi-source Aggregation
 
-Neuron can simultaneously make 1000 or above connections to various industrial devices. All data from various sources would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That streamlines the IIoT platform or industrial applications acquiring those data from various sources by providing a single point of entry to all information via broker, as [unified namespace](./use_cases.md) architecture.
+Neuron can simultaneously make 1000 or above connections to various industrial devices. All data from these sources would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That is to provide a single point of entry of all information to data consumers via a designated MQTT broker, thus streamlining the IIoT platform or industrial applications acquiring those data from various sources, like an [unified namespace](./use_cases.md) architecture.
 
 ## Streaming Process Engine
 
@@ -32,7 +32,7 @@ With ultra-low resource consumption, Neuron executables can be deployed natively
 
 ## API and MQTT Services
 
-Neuron offers [API](./reference/http-api.md) and [MQTT](./reference/mqtt-api.md) services to manipulate Neuron and industrial devices without onsite operation. This allows cloud and on-premise IIoT platform to deliver the command to connected machines/devices, make changes to their parameter settings based on big data analysis results, or modify data tags configuration to accomodate more machines/devices.
+Neuron offers [HTTP-API](./reference/http-api.md) and [MQTT-API](./reference/mqtt-api.md) services to manipulate Neuron and industrial devices without onsite operation. This allows cloud and on-premise IIoT platform to deliver the command to connected machines/devices, or make changes to their parameter settings based on big data analysis results, or to modify configuration setup to accomodate more machines/devices.
 
 ## Better Integration
 
@@ -44,11 +44,11 @@ Neuron supports SparkplugB protocol so it can act like an EoN node of [Sparkplug
 
 ## Data Tags Optimization
 
-Duplicate or consecutive data tags would be merged into a single read/write command to increase the efficiency of data transmission. This data tag conditioning and reduction mechanism can reduces network and device workload.
+Duplicate or consecutive data tags would be merged into a single read/write command to increase the efficiency of data transmission. Such a data tag conditioning mechanism can reduces network and device workload.
 
 ## Configuration Import/Export
 
-Neuron provides configuration [Excel sheet import and export](./console-management/configuration-import-export.md) capability to accelerate the data tags setup configuration and to keep data tags information in outside storage.
+Neuron provides configuration [Excel sheet import and export](./console-management/configuration-import-export.md) capability to accelerate the data tags configuration setup and to keep data tags information in outside storage.
 
 ## Authentication and Security
 

@@ -91,10 +91,8 @@
 
 ## 商业模块的 EMQ 许可证
 
-* 必须安装试用 EMQ 许可证或官方 EMQ 许可证才能运行 Neuron 商业插件模块。
+* 核心框架，仪表板以及 modbus、mqtt 和 eKuiper 可插拔模块在 LGPLv3 许可下开源。 Neuron 可以在没有安装许可证的情况下运行这些模块。 如果您需要上述任何一个或多个商业模块，则必须安装有效的试用版或官方 EMQ 许可证。
 
-* 试用 EMQ 许可证可从网站 [https://www.emqx.com/zh/apply-licenses/neuron](https://www.emqx.com/zh/apply-licenses/neuron) 下载。所有可用的模块都可以无限制地使用 15 天。
-
-* 核心框架，部分插件模块在 LGPLv3 许可下开源。
+* 试用 EMQ 许可证可从网站 [https://www.emqx.com/zh/apply-licenses/neuron](https://www.emqx.com/zh/apply-licenses/neuron) 下载。所有可用的模块都可以在 100 个连接和 1000 个数据标签的限制下使用 15 天。 如果试用 EMQ 许可证过期，您可以通过我们的官网重新申请试用 EMQ 许可证。 但是，一个邮箱最多只能申请两次试用许可证。
 
 * 每个插件模块都可以在 EMQ 许可文件中独立授权。

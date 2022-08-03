@@ -8,7 +8,7 @@ Neuron 提供以下产品功能。
 
 ## 边缘原生
 
-Neuron 利用实时事件驱动分析充分利用低延迟网络方法，响应时间最多为 100 毫秒。它具有小于 10M 的较低的内存占用，适合运行在低配置边缘网关。
+Neuron 的设计基于实时异步事件驱动处理，以充分利用低延迟网络方法实现 100 毫秒响应时间。 它具有非常低的内存占用，小于 10M，适合在机器附近的低配置边缘网关上运行。
 
 ## 松耦合模块化
 
@@ -20,7 +20,7 @@ Neuron 为各个行业提供广泛多样的南向可插拔模块，包括楼宇�
 
 ## 多源聚合
 
-Neuron 可以同时与各种工业设备建立 1000 个或以上的连接。来自不同来源的所有数据将同时收集并根据用户指定的配置转发到指定的 MQTT 消息代理。这简化了 IIoT 平台或工业应用程序从各种来源获取这些数据的过程，方法是通过代理提供对所有信息的单一入口点，如[统一命名空间](./use_cases.md)架构。
+Neuron 可以同时与各种工业设备建立 1000 个或以上的连接。 来自这些来源的所有数据将同时收集并根据用户指定的配置转发到指定的 MQTT 消息代理。 也就是说，通过指定的 MQTT 代理向数据消费者提供所有信息的单一入口点，从而简化 IIoT 平台或工业应用程序从各种来源获取这些数据，例如 [统一命名空间](./use_cases.md) 架构 .
 
 ## 流式处理引擎
 
@@ -32,7 +32,7 @@ Neuron 集成了 [eKuiper](https://www.lfedge.org/projects/ekuiper) 流式 SQL �
 
 ## API 和 MQTT 服务
 
-Neuron 提供 [API](./reference/http-api.md) 和 [MQTT](./reference/mqtt-api.md) 服务，无需现场操作即可操作 Neuron 和工业设备。这允许云和本地 IIoT 平台将命令传递给连接的机器/设备，根据大数据分析结果更改其参数设置，或修改数据标签配置以适应更多机器/设备。
+Neuron 提供 [HTTP-API](./reference/http-api.md) 和 [MQTT-API](./reference/mqtt-api.md) 服务，无需现场操作即可操作 Neuron 和工业设备。这允许云和本地 IIoT 平台将命令传递给连接的机器/设备，根据大数据分析结果更改其参数设置，或修改数据标签配置以适应更多机器/设备。
 
 ## 更好的集成
 
@@ -48,7 +48,7 @@ Neuron 支持 SparkplugB 协议，可以通过 EMQX 代理充当 [SparkplugB 统
 
 ## 配置导入/导出
 
-Neuron 提供配置 [Excel 表导入和导出](./console-management/configuration-import-export.md)功能，以加速数据标签设置配置并将数据标签信息保存在外部存储中。
+Neuron 提供配置 [Excel 表导入和导出](./console-management/configuration-import-export.md)功能，以加速数据标签配置设定，并将数据标签信息保存在外部存储中。
 
 ## 身份验证和安全性
 
@@ -56,4 +56,4 @@ Neuron 支持加密 TLS、HTTPS 以确保传输中的数据安全，并采用 JW
 
 ## 基于 Web 的仪表板
 
-Neuron 为用户提供基于 Web 的管理界面，可以监控数据和设备状态并且可以在浏览器中在线管理连接设置的配置，并在浏览器中提供[设备控制](./console-management/device-control.md)，从而达到跨行业访问设备数据的目的。
+Neuron 为用户提供基于 Web 的管理界面，可以监控数据和设备状态并且可以在浏览器中在线管理连接设定的配置，并在浏览器中提供[设备控制](./console-management/device-control.md)，从而达到跨行业访问设备数据的目的。
