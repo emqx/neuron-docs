@@ -272,7 +272,7 @@ The s7comm plugin is used for Siemens PLCs with network port, such as s7-200/300
 | Parameter         | Description                      |
 | ----------------- | -------------------------------- |
 | **host** | remote plc ip                 |
-| **ip**   | remote plc port, default 102  |
+| **port** | remote plc port, default 102  |
 | **rack** | plc rack number, default 0       |
 | **slot** | plc cpu slot, default 1          |
 
