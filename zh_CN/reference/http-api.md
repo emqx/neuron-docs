@@ -1119,7 +1119,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node**  required
+**node**  optional
 
 ### 请求 Headers
 
@@ -1137,6 +1137,21 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "running": 2,
     //link state
     "link": 1
+}
+
+{
+    "states": [
+        {
+            "node": "modbus-node1",
+            "running": 2,
+            "link": 1
+        },
+        {
+            "node": "modbus-node2",
+            "running": 1,
+            "link": 0
+        }
+    ]
 }
 ```
 

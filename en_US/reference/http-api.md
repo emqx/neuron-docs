@@ -1119,7 +1119,7 @@ The value is displayed only when the value is read correctly, when the value is 
 
 ### Request Params
 
-**node**  required
+**node**  optional
 
 ### Request Headers
 
@@ -1137,6 +1137,21 @@ The value is displayed only when the value is read correctly, when the value is 
     "running": 2,
     //link state
     "link": 1
+}
+
+{
+    "states": [
+        {
+            "node": "modbus-node1",
+            "running": 2,
+            "link": 1
+        },
+        {
+            "node": "modbus-node2",
+            "running": 1,
+            "link": 0
+        }
+    ]
 }
 ```
 
