@@ -112,13 +112,13 @@ $ ./neuron-helper.sh stop
 docker 镜像请从 [docker hub](https://hub.docker.com) 网站下载。
 
 ```bash
-$ docker pull neugates/neuron:2.1.0
+$ docker pull emqx/neuron
 ```
 
 ### 启动
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always neugates/
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always emqx/neuron
 ```
 
 * tcp 7000: 用于访问 web。
