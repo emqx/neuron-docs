@@ -4,7 +4,7 @@ Neuron is an modern industrial IoT connectivity server running on all kinds of l
 
 Neuron realize the interconnection between Industrial IoT platforms and various devices by converting a wide variety of industrial protocols into a standard unified IoT MQTT messages. These common data sources can be widely used for data centric automation and AI/ML analytic, ultimately providing foundational support for the intelligent manufacturing.
 
-# Neuron product features
+## Neuron product features
 
 **Edge Native**
 
