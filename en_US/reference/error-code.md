@@ -47,6 +47,8 @@ This document describes the errors that neuron will reply to sender when calling
 * 2207    tag address too long
 * 2208    tag description too long
 
+* 2209    tag precision invalid
+
 * 2301    library not found
 * 2302    library info invalid
 * 2303    library name conflict

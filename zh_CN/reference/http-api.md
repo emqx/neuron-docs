@@ -467,7 +467,9 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
            //tag attribute
             "attribute": 1,
            //tag type
-            "type": 4
+            "type": 4,
+           //floag precision, optional(0-17)
+            "precision": 3
         },
         {
             "name": "tag2",

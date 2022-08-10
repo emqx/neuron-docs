@@ -467,7 +467,9 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
            //tag attribute
             "attribute": 1,
            //tag type
-            "type": 4
+            "type": 4,
+           //floag precision, optional(0-17)
+            "precision": 3
         },
         {
             "name": "tag2",
