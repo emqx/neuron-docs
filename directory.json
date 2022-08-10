@@ -113,6 +113,15 @@
           "path": "reference/error-code"
         }
       ]
+    },
+    {
+      "title": "SDK",
+      "children": [
+        {
+          "title": "Modbus 插件开发示例",
+          "path": "sdk/modbus_example"
+        }
+      ]
     }
   ],
   "en": [
@@ -227,6 +236,15 @@
         {
           "title": "Error Codes",
           "path": "reference/error-code"
+        }
+      ]
+    },
+    {
+      "title": "SDK",
+      "children": [
+        {
+          "title": "Modbus plugin development example",
+          "path": "sdk/modbus_example"
         }
       ]
     }
