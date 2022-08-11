@@ -468,8 +468,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             "attribute": 1,
            //tag type
             "type": 4,
-           //floag precision, optional(0-17)
-            "precision": 3
+           //float/double precision, optional(0-17)
+            "precision": 3,
+           //decimal
+            "decimal": 1
         },
         {
             "name": "tag2",
@@ -530,6 +532,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             "address": "1!400001",
             //tag attribute
             "attribute": 1,
+            //float/double precision
+            "precision": 1,
+            //decimal
+            "decimal": 0.1
         },
         {
             "name": "tag2",
@@ -587,7 +593,11 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             //tag attribute
             "attribute": 0,
             //tag address
-            "address": "1!400001"
+            "address": "1!400001",
+            //float/double precison
+            "precision": 1,
+            //decimal
+            "decimal": 0.001
         },
         {
             "name": "tag2",
