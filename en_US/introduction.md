@@ -16,7 +16,7 @@ Neuron design framework is based on decoupled modular plugin [architecture](./ar
 
 **Diverse Connectivity**
 
-Neuron offers diverse southbound pluggable communication modules including 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise industrial IoT platform connection. These modules are widely used in building automation, CNC machines, Robotics, Electricity, and various PLCs.
+Neuron offers diverse southbound pluggable communication modules including 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise industrial IoT platform connection. These modules are widely used in building automation, CNC machines, Robotics, Electricity, and various PLCs communication.
 
 **Multi-source Aggregation**
 

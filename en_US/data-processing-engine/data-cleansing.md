@@ -45,13 +45,10 @@ Start the rule, as shown below.
 
 ## Step 5 Check over the payload in MQTT broker
 
-::: v-pre
-
 Start MQTTX client, subscribe the topic `{{.node_name}}/{{.group_name}}`, the result is shown below.
-:::
+
+![result](./assets/result.png)
 
 ::: tip
 The node_name used in this example is **modbus-tcp-1** and the group_name is **group-1**, that is, the subscription topic is modbus-tcp-1/group-1.
 :::
-
-![result](./assets/result.png)

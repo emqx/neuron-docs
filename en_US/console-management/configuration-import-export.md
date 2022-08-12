@@ -1,8 +1,6 @@
-# Configuration Import/Export
+# Data Tags Import/Export
 
-Neuron provides configuration Excel sheet import and export capability to accelerate the data tags setup configuration and to keep data tags information in outside storage.
-
-## Config Import
+## Data Tags Import
 
 ### Step 1 Download Template
 
@@ -12,22 +10,24 @@ Hover the mouse over `Import` and the button `Download Template` will appear, as
 
 Click the `Download Template` button to download the Excel sheet.
 
-### Step 2 Fill in the Excel
+### Step 2 Fill in the Excel Sheet
 
-Fill in the relevant information according to the form format, as shown below.
+Fill in the relevant information according to the Excel sheet format as shown below.
 
 ![excel](./assets/excel.png)
 
-1. Fill in the Tag name;
-2. Fill in the address of the Tag;
-3. Select the attribute from the drop-down box;
-4. Select the data type from the drop-down box;
-5. Fill in the description, which can be left blank.
+The following items must be filled accordingly.
 
-### Step 3 Import the Excel
+* Fill in the Tag name;
+* Fill in the address of the Tag;
+* Select the attribute from the drop-down box;
+* Select the data type from the drop-down box;
+* Fill in the description, which can be left blank.
 
-Click the `Import` button and select the Excel file to be imported.
+### Step 3 Import the Excel Sheet
 
-## Config Export
+Click on the `Import` button and select the Excel file to be imported.
 
-Click the `Export` button, and all tag information created in the page will be exported to an Excel sheet.
+## Data Tags Excel sheet Export
+
+Click on the `Export` button, and all data tags information listed will be exported to an Excel sheet. Users may save the Excel sheet for data tags backup.

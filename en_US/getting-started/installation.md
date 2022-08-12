@@ -130,9 +130,9 @@ $ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privilege
 * -v /host/dir:/opt/neuron/persistence: Used to store Neuron configuration information in docker to a local directory, e.g. /host/dir.
 * --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker.
 
-## Neuron Operation
+## Operate Neuron in command line
 
-For rpm and deb installations, Neuron can view/start/stop the status with the following commands：
+For rpm and deb installations, Neuron can perform the operation with following commands：
 
 ### View Neuron Status
 
