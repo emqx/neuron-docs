@@ -12,15 +12,15 @@ Neuron is designed based on asynchourous real-time processing to take full advan
 
 **Loosely-coupled Modularity**
 
-Neuron design framework is based on decoupled modular plugin [architecture](./architecture.md) which allows more extension services by hot-plugging more modules. Each pluggable module has its own specific capability of services and would works independently without interfering with each other.
+Neuron design framework is based on decoupled modular plugin [architecture](./architecture.md) which allows more extension services by hot-plugging modules. Each pluggable module has its own specific capability of service and would work independently without interfering with each other.
 
 **Diverse Connectivity**
 
-Neuron offers extensive and diverse southbound pluggable communication modules for various industries, including building automation, CNC machines, Robotics, Electricity, various PLCs and even smart sensors, since it supports broadest range access to 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise industrial IoT platform connection.
+Neuron offers diverse southbound pluggable communication modules including 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise industrial IoT platform connection. These modules are widely used in building automation, CNC machines, Robotics, Electricity, and various PLCs.
 
 **Multi-source Aggregation**
 
-Neuron can simultaneously make a 1000 or above connections to various industrial devices. All data from these sources would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That means Neuron can provide a single point of entry of all information to data consumers via a designated MQTT broker like an [unified namespace](./use_cases.md) architecture, thus streamlining the data acquisition of industrial IoT platform and industrial applications.
+Neuron can simultaneously make a 1000 or above connections to various industrial devices. All source data from these connections would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That is a single point of access of all information like what [unified namespace](./use_cases.md) architecture provides for data consumers, thus streamlining the data acquisition of industrial IoT platform and industrial applications.
 
 **Streaming Process Engine**
 
@@ -32,7 +32,7 @@ With ultra-low resource consumption, Neuron executables can be deployed natively
 
 **API and MQTT Services**
 
-Neuron offers cloud industrial IoT platform or on-premise industrial applications various [HTTP-API](./reference/http-api.md) and [MQTT-API](./reference/mqtt-api.md) services to send the control command to connected machines and devices, or make changes to device parameters based on big data, AI/ML analysis results, and to modify configuration to accomodate more data tags, machines and devices without onsite operation.
+Neuron offers cloud industrial IoT platform or on-premise industrial applications various [HTTP-API](./reference/http-api.md) and [MQTT-API](./reference/mqtt-api.md) services which includes sending the control command to connected machines or devices, modifying device parameters based on big data and AI/ML analysis results, and changing configuration to accommodate more data tags and device connections without onsite operation.
 
 **Better Integration**
 
@@ -40,7 +40,7 @@ Neuron has better [integration](./integration.md) with industrial IoT platform, 
 
 **Unified DataOps**
 
-Neuron supports [Sparkplug B communication](./use_cases.md) and assists the connected "data polling" devices to be smarter to report Sparkplug B format data message in asynchronous way, eliminating the complexity of ERP, MES, SCADA and historian to access the device data by using an open, unified, interoperable standard for industrial data exchange. 
+Neuron supports [Sparkplug B communication](./use_cases.md) and thus assists the "data polling" devices to be smarter to report Sparkplug B format data message in asynchronous way, eliminating the complexity of ERP, MES, SCADA and historian to access the device data by using an open, unified, interoperable standard for industrial data exchange. 
 
 **Data Tags Optimization**
 
@@ -48,7 +48,7 @@ Duplicate or consecutive data tags would be merged into a single read/write comm
 
 **Configuration Import/Export**
 
-Neuron provides [Excel sheet import and export](./console-management/configuration-import-export.md) capability to accelerate the setup of data tags configuration. Users can use favorite Excel editor to prepare those data tags details at once according to the format as mentioned and then import the Excel sheet to Neuron. Excel sheet also help to keep these data tags information in outside storage for backup.
+Neuron provides [Excel sheet import and export](./console-management/configuration-import-export.md) capability to accelerate the setup of data tags. Users can use the most favorite editor Excel to prepare those data tags details at once according to the format as mentioned and then import the Excel sheet to Neuron. Excel sheets also help to keep these data tags information in outside storage for backup.
 
 **Authentication and Security**
 
@@ -56,4 +56,4 @@ Neuron supports TLS and HTTPS encryption to ensure the data security in transmis
 
 **Web-based Dashboard**
 
-Neuron provides Web-based management dashboard for users to monitor data and device status, to manange online connection configuration setup and to send [control command](./console-management/device-control.md) to a specific device.All these operations can be handled in an one-stop browser interface.
+Neuron provides Web-based management dashboard for users to monitor data and device status, to manange online connection configuration setup and to send [control command](./console-management/device-control.md) to a specific device. All these operations can be handled in an one-stop browser interface.
