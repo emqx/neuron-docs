@@ -120,6 +120,10 @@
         {
           "title": "Modbus 插件开发示例",
           "path": "sdk/modbus_example"
+        },
+        {
+          "title": "基于 SDK 的驱动开发",
+          "path": "sdk/sdk_based-driver-development"
         }
       ]
     }
@@ -245,6 +249,10 @@
         {
           "title": "Modbus plugin development example",
           "path": "sdk/modbus_example"
+        },
+        {
+          "title": "SDK-based driver development",
+          "path": "sdk/sdk_based-driver-development"
         }
       ]
     }
