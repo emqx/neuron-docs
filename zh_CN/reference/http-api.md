@@ -84,8 +84,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ### Node 连接状态
 
 * DISCONNECTED = 0
-* CONNECTING = 1
-* CONNECTED = 2
+* CONNECTED = 1
 
 ## Ping
 

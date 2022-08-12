@@ -84,8 +84,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ### Node Link State
 
 * DISCONNECTED = 0
-* CONNECTING = 1
-* CONNECTED = 2
+* CONNECTED = 1
 
 ## Ping
 
