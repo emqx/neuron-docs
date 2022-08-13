@@ -45,7 +45,10 @@ Start the rule, as shown below.
 
 ## Step 5 Check over the payload in MQTT broker
 
+::: v-pre
+
 Start MQTTX client, subscribe the topic `{{.node_name}}/{{.group_name}}`, the result is shown below.
+:::
 
 ![result](./assets/result.png)
 
