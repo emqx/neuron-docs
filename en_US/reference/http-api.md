@@ -353,7 +353,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Group(Not Implemented)
+## Update Group
 
 *PUT*  /api/v2/group
 
@@ -374,11 +374,11 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```json
 {
     //group name
-    "name": "modbus-tcp-config1",
+    "group": "gconfig1",
+    //node name
+    "node": "modbus-node",
     //read/upload interval(ms)
-    "interval": 20000,
-    //node id
-    "node_id": 4
+    "interval": 10000
 }
 ```
 

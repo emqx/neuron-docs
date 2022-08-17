@@ -353,7 +353,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-## 更新 Group(未实现)
+## 更新 Group
 
 *PUT*  /api/v2/group
 
@@ -373,12 +373,12 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
+    //node name
+    "node": "node1",
     //group name
-    "name": "modbus-tcp-config1",
+    "group": "group",
     //read/upload interval(ms)
-    "interval": 20000,
-    //node id
-    "node_id": 4
+    "interval": 20000
 }
 ```
 
