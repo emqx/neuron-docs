@@ -113,6 +113,15 @@
           "path": "reference/error-code"
         }
       ]
+    },
+    {
+      "title": "SDK",
+      "children": [
+        {
+          "title": "基于 SDK 的驱动开发",
+          "path": "sdk/sdk_based-driver-development"
+        }
+      ]
     }
   ],
   "en": [
@@ -227,6 +236,15 @@
         {
           "title": "Error Codes",
           "path": "reference/error-code"
+        }
+      ]
+    },
+    {
+      "title": "SDK",
+      "children": [
+        {
+          "title": "SDK-based driver development",
+          "path": "sdk/sdk_based-driver-development"
         }
       ]
     }
