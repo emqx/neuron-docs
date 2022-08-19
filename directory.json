@@ -64,7 +64,7 @@
       ]
     },
     {
-      "title": "插件使用",
+      "title": "可插拔模块",
       "children": [
         {
           "title": "插件列表",
@@ -180,7 +180,7 @@
       ]
     },
     {
-      "title": "Module Plugins",
+      "title": "Pluggable Modules",
       "children": [
         {
           "title": "Plugin Modules List",

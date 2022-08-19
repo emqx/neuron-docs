@@ -28,6 +28,10 @@ Neuron 提供标签配置信息以 Excel 表格方式批量导入和导出的功
 
 单击`导入`按键，选择需要导入的 Excel 文件。
 
+![import](./assets/import.png)
+
 ## 配置导出
 
 单击`导出`按键，页面中创建的所有标签信息都将导出到一张 Excel 表格中。
+
+![export](./assets/export.png)
