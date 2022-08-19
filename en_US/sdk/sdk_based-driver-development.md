@@ -71,7 +71,7 @@ target_link_libraries(${MODBUS_RTU_PLUGIN} neuron-base)
 
 #### modbus_tcp.c
 
-The interface file of the driver plugin, for the specific driver development example, please refer to [modbus-tcp plugin development example](./sdk_based-driver-development.md).
+The interface file of the driver plugin, for the specific driver development example, please refer to [modbus plugin development example](./modbus_example.md).
 
 static const neu_plugin_intf_funs_t plugin_intf_funs structure description.
 

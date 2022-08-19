@@ -71,7 +71,7 @@ target_link_libraries(${MODBUS_RTU_PLUGIN} neuron-base)
 
 #### modbus_tcp.c
 
-驱动插件的接口文件，具体的驱动开发示例，请参考 [modbus-tcp 插件开发示例](./sdk_based-driver-development.md)。
+驱动插件的接口文件，具体的驱动开发示例，请参考 [modbus 插件开发示例](./modbus_example.md)。
 
 static const neu_plugin_intf_funs_t plugin_intf_funs 结构体说明。
 
