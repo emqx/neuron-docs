@@ -11,4 +11,4 @@ Neuron 文档由以下几个主要部分组成：
 * [集成](./integration.md)：本节介绍 Neuron 如何与其他应用程序和云平台集成。
 * [用户案例](./use_cases.md)：本节介绍 Neuron 的用户案例。
 * [参考](./reference/http-api.md)：MQTT 客户端与 Neuron 之间交互主题和 HTTP API 的详细参考，及调用 API 时出现的一些错误。
-* [SDK 教程](./sdk/modbus_example.md)：SDK 用法及示例。
+* [SDK 教程](./sdk/mind_mapping.md)：SDK 用法及示例。

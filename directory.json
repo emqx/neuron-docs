@@ -118,6 +118,10 @@
       "title": "SDK 教程",
       "children": [
         {
+          "title": "南向开发思维导图",
+          "path": "sdk/mind_mapping"
+        },
+        {
           "title": "Modbus 插件开发示例",
           "path": "sdk/modbus_example"
         },
@@ -246,6 +250,10 @@
     {
       "title": "SDK Tutorial",
       "children": [
+        {
+          "title": "Southbound development mind map",
+          "path": "sdk/mind_mapping"
+        },
         {
           "title": "Modbus plugin development example",
           "path": "sdk/modbus_example"
