@@ -75,7 +75,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Node State
 
-* IDLE = 0
 * INIT = 1
 * READY = 2
 * RUNNING = 3
