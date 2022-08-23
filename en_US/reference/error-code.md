@@ -56,6 +56,8 @@ This document describes the errors that neuron will reply to sender when calling
 * 2305    libraray module invalid
 * 2306    library system not allow del
 
+* 2307    library not allow create instance
+
 * 2400    license not found
 * 2401    license invalid
 * 2402    license expired
