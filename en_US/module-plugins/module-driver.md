@@ -28,6 +28,32 @@ The data collected from the device can be transmitted to the mqtt broker through
 | **key**             | key file, only enabled when the ssl value is true, optional  |
 | **keypass**         | key file password, only enabled when the ssl value is true, optional |
 
+### Heartbeat message format
+
+```json
+{
+  "version": "2.2.0",
+  "timestamp": 1661160693392,
+  "states": [
+    {
+      "node": "data-stream-processing",
+      "link": 0,
+      "running": 3
+    },
+    {
+      "node": "modbus-tcp-1",
+      "link": 1,
+      "running": 3
+    },
+    {
+      "node": "mqtt-1",
+      "link": 1,
+      "running": 3
+    }
+  ]
+}
+```
+
 ## Modbus
 
 The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.Except for the device configuration, the three protocols support the same data types and address formats.

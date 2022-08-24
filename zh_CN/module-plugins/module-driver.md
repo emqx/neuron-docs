@@ -28,6 +28,32 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | **key** | key文件，只在ssl值为true时启用，可选填 |
 | **keypass** | key文件密码，只有在ssl值为true时启用，可选填 |
 
+### 心跳报文上传格式
+
+```json
+{
+  "version": "2.2.0",
+  "timestamp": 1661160693392,
+  "states": [
+    {
+      "node": "data-stream-processing",
+      "link": 0,
+      "running": 3
+    },
+    {
+      "node": "modbus-tcp-1",
+      "link": 1,
+      "running": 3
+    },
+    {
+      "node": "mqtt-1",
+      "link": 1,
+      "running": 3
+    }
+  ]
+}
+```
+
 ## Modbus
 
 Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。三种协议除了设备配置方式不一致外，支持的数据类型及地址格式都一致。
