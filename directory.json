@@ -111,6 +111,10 @@
         {
           "title": "错误代码",
           "path": "reference/error-code"
+        },
+        {
+          "title": "插件设置",
+          "path": "reference/plugin-setting"
         }
       ]
     }
@@ -227,6 +231,10 @@
         {
           "title": "Error Codes",
           "path": "reference/error-code"
+        },
+        {
+          "title": "Plugin Setting",
+          "path": "reference/plugin-setting"
         }
       ]
     }
