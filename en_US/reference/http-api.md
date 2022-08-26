@@ -395,7 +395,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Request Params
 
-**node**  required
+**node**  optional
 
 ### Request Headers
 
@@ -426,6 +426,35 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     ]
 }
 ````
+
+```json
+{
+    "groups": [
+        {
+            //node name
+            "driver": "modbus",
+            //group name
+            "group": "group1",
+            "tag_count": 1,
+            "interval": 1000
+        },
+        {
+            "driver": "modbus",
+            "group": "group2",
+            "tag_count": 0,
+            "interval": 100
+        },
+        {
+            "driver": "modbus1",
+            "group": "group",
+            "tag_count": 0,
+            "interval": 10001
+        }
+    ]
+}
+```
+
+
 
 ## Add Tag
 

@@ -30,6 +30,8 @@ This document describes the errors that neuron will reply to sender when calling
 * 2009    node is stopped
 * 2010    node name too long
 
+* 2011    node not allow delete
+
 * 2101    group already subscribed
 * 2102    group not subscribe
 * 2103    group not allow

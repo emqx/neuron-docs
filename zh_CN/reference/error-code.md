@@ -30,6 +30,8 @@
 * 2009    node 已停止
 * 2010    node name too long
 
+* 2011    node不允许删除
+
 * 2101    group 已经被订阅
 * 2102    group 未被订阅
 * 2103    group 不允许

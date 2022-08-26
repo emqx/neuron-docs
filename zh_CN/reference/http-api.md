@@ -395,7 +395,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node**  必需
+**node**  可选
 
 ### 请求 Headers
 
@@ -426,6 +426,35 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     ]
 }
 ````
+
+```json
+{
+    "groups": [
+        {
+            //node name
+            "driver": "modbus",
+            //group name
+            "group": "group1",
+            "tag_count": 1,
+            "interval": 1000
+        },
+        {
+            "driver": "modbus",
+            "group": "group2",
+            "tag_count": 0,
+            "interval": 100
+        },
+        {
+            "driver": "modbus1",
+            "group": "group",
+            "tag_count": 0,
+            "interval": 10001
+        }
+    ]
+}
+```
+
+
 
 ## 添加 Tag
 
