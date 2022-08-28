@@ -14,11 +14,11 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 
 | 字段           | 说明                         |
 | ------------- | ---------------------------- |
-| **client-id** | MQTT 客户端 ID，必填             |
-| **upload-topic** | 订阅数据上报的通道，可选填，如果不填写则数据会在`neuron/{client-id}/upload`下上报 |
-| **heartbeat-topic** | 心跳数据上报的通道，可选填，如果不填写则数据会在`neuron/{client-id}/heartbeat`下上报 |
+| **upload-topic** | 订阅数据上报的通道，必填 |
+| **heartbeat-topic** | 心跳数据上报的通道，必填 |
 | **format** | 上报数据的json格式选择，可选填，有values模式和tags模式，默认为values模式 |
-| **ssl**       | 是否启用 mqtt ssl，默认 false  |
+| **cache** | MQTT连接异常时，上传数据缓存的大小限制 |
+| **ssl**       | 是否启用 mqtt ssl，可选填，默认 false |
 | **host**      | MQTT Broker 主机，必填           |
 | **port**      | MQTT Broker 端口号，必填 |
 | **username**  | 连接到 Broker 时使用的用户名，可选填 |
@@ -27,6 +27,8 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | **cert** | cert文件，只在ssl值为true时启用，可选填 |
 | **key** | key文件，只在ssl值为true时启用，可选填 |
 | **keypass** | key文件密码，只有在ssl值为true时启用，可选填 |
+
+
 
 ## Modbus
 
