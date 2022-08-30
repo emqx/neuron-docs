@@ -10,7 +10,7 @@ Of course, you can also directly [contact us](https://www.emqx.com/en/contact?pr
 
 The below diagram are license details:
 
-![license](../getting-started/assets/license.png)
+![license](./assets/license.png)
 
 * Maximum number of nodes means the maximum number of connection nodes you can create in the Neuron, including southbound northbound connection nodes.
 

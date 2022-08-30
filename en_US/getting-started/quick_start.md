@@ -213,6 +213,8 @@ Currently, the Tag attribute supports three types: Read, Write, and Subscribe. W
 When the data type is float/double, an optional parameter precision is displayed to set the precision, and the optional range is 1-17.
 :::
 
+![precision](./assets/precision.png)
+
 ### Step 9 Manage data tags of group
 
 After all tags creation are complete, tag list will be shown as below.

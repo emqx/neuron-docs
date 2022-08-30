@@ -210,6 +210,8 @@ Group 列表中会显示刚新建的 Group，如下图所示。
 当数据类型选择 float/double 时，会显示一个可选参数 precision，用于设置精度，可选范围 1-17。
 :::
 
+![precision](./assets/precision.png)
+
 ### 第九步，管理组的数据标签
 
 完成所有标签创建后，标签列表，如下图所示。

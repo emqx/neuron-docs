@@ -10,7 +10,7 @@ Neuron 是一个开源项目。我们鼓励我们的社区开发自己的插件�
 
 下图是许可证的详细信息：
 
-![license](../getting-started/assets/license.png)
+![license](./assets/license.png)
 
 * 节点数限制指的是用户可以在 Neuron 中创建的最大节点数量。每个节点就是一个连接到外部设备的南向连接或者是连接到应用程序的北向连接。
 
