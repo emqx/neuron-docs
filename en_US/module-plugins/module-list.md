@@ -1,4 +1,4 @@
-# Modules List
+# Module List
 
 ## Southbound Plugin Modules
 
