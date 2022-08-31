@@ -14,19 +14,19 @@ OPC is an interoperability standard for safe and reliable data exchange in the f
 
 ![south-open](./assets/south-open.png)
 
-Modbus devices use master-slave (client-server) communication model, and only one device (master/client) can initiate a query. In simple terms, it is a method used for transmitting information over serial lines between electronic devices.
+Modbus TCP/IP is a simple Modbus protocol running on Ethernet over a TCP interface. Modbus is an application protocol that assigns the ways of managing and passing data between electronic devices.
 
-## Modbus
+## Modbus Plus
 
 ![modbus](./assets/Modbus.png)
 
 ![south-commercial](./assets/south-commercial.png)
 
-Modbus devices use master-slave (client-server) communication model, and only one device (master/client) can initiate a query. In simple terms, it is a method used for transmitting information over serial lines between electronic devices.Neuron offers the following drive modules for Modbus.
+Modbus devices use master-slave (client-server) communication model, and only one device (master/client) can initiate a query. In simple terms, it is a method used for transmitting information over serial lines or ethernet between electronic devices. Neuron offers the following drive modules for Modbus protocol series.
 
 * Modbus RTU
-* Modbus plus TCP
-* Modbus ph TCP
+* Modbus TCP plus (more advance functions)
+* Modbus RTU on TCP
 
 ## EtherNet/IP
 
