@@ -14,10 +14,10 @@ The data collected from the device can be transmitted to the mqtt broker through
 
 | Parameter           | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
-| **client-id**       | MQTT client ID, required                                     |
-| **upload-topic**    | Subscription data reporting channel, optional, if not set, the data will be reported under `neuron/{client-id}/upload` |
-| **heartbeat-topic** | The channel for heartbeat data reporting, optional, if not set, the data will be reported under `neuron/{client-id}/heartbeat` |
+| **upload-topic**    | Subscription data reporting channel, required                |
+| **heartbeat-topic** | The channel for heartbeat data reporting, required           |
 | **format**          | The json format selection of the reported data, required, there are values mode and tags mode, the default is values mode |
+| **cache**           | When the MQTT connection is abnormal, the size limit of the upload data cache |
 | **ssl**             | Whether to enable mqtt ssl, default false                    |
 | **host**            | MQTT Broker host, required                                   |
 | **port**            | MQTT Broker port number, required                            |

@@ -2,13 +2,13 @@
 
 The following topics are used for read/write interaction between client and neuron.
 
-The **{client-id}** in all topics refers to the actual MQTT client id, which is set in the northbound application configuration in the Neuron UI.
+The **{node_name}** in all topics refers to the actual MQTT northbound application name, which is set in the Neuron UI's northbound application management.
 
 ## Upload Data
 
 ### Response
 
-*Default topic* **neuron/{client-id}/upload**
+*Default topic* **neuron/{node_name}/upload**
 
 #### Body (Tags format)
 
@@ -60,7 +60,7 @@ There are two message formats for the body. You can choose one of two different 
 
 ### Response
 
-*Default topic* **neuron/{client-id}/heartbeat**
+*Default topic* **neuron/{node_name}/heartbeat**
 
 #### Body
 
@@ -91,13 +91,13 @@ Heartbeat messages are currently set to be sent every 3 seconds by default.
 
 ### Request
 
-*Topic*  **neuron/{client-id}/read/req**
+*Topic*  **neuron/{node_name}/read/req**
 
 #### Body
 
 ```json
 {
-    "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
+    "uuid": "bca54fe7-a2b1-43e2-a4b4-1da715d28eab",
     "node": "modbus-tcp-1",
     "group": "group-2"
 }
@@ -105,13 +105,13 @@ Heartbeat messages are currently set to be sent every 3 seconds by default.
 
 ### Response
 
-*Topic*  **neuron/{client-id}/read/resp**
+*Topic*  **neuron/{node_name}/read/resp**
 
 #### Body
 
 ```json
 {
-  "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
+  "uuid": "bca54fe7-a2b1-43e2-a4b4-1da715d28eab",
   "tags": [
     {
       "value": 4,
@@ -133,13 +133,13 @@ The value is displayed only when the value is read correctly , when the value is
 
 ### Request
 
-*Topic*  **neuron/{client-id}/write/req**
+*Topic*  **neuron/{node_name}/write/req**
 
 #### Body
 
 ```json
 {
-    "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
+    "uuid": "cd32be1b-c8b1-3257-94af-77f847b1ed3e",
     "node": "modbus-tcp-1",
     "group": "group-2",
     "tag": "tag1",
@@ -149,13 +149,13 @@ The value is displayed only when the value is read correctly , when the value is
 
 ### Response
 
-*Topic*  **neuron/{client-id}/write/resp**
+*Topic*  **neuron/{node_name}/write/resp**
 
 #### Body
 
 ```json
 {
-  "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
+  "uuid": "cd32be1b-c8b1-3257-94af-77f847b1ed3e",
   "error": 0
 }
 ```
