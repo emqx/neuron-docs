@@ -64,7 +64,7 @@
       ]
     },
     {
-      "title": "插件使用",
+      "title": "可插拔模块",
       "children": [
         {
           "title": "插件列表",
@@ -111,6 +111,10 @@
         {
           "title": "错误代码",
           "path": "reference/error-code"
+        },
+        {
+          "title": "插件设置",
+          "path": "reference/plugin-setting"
         }
       ]
     },
@@ -118,12 +122,16 @@
       "title": "SDK 教程",
       "children": [
         {
+          "title": "基于 SDK 的驱动开发",
+          "path": "sdk/sdk_based-driver-development"
+        },
+        {
           "title": "Modbus 插件开发示例",
           "path": "sdk/modbus_example"
         },
         {
-          "title": "基于 SDK 的驱动开发",
-          "path": "sdk/sdk_based-driver-development"
+          "title": "南向开发思维导图",
+          "path": "sdk/mind_mapping"
         }
       ]
     }
@@ -193,7 +201,7 @@
       ]
     },
     {
-      "title": "Module Plugins",
+      "title": "Pluggable Modules",
       "children": [
         {
           "title": "Plugin Modules List",
@@ -240,6 +248,10 @@
         {
           "title": "Error Codes",
           "path": "reference/error-code"
+        },
+        {
+          "title": "Plugin Setting",
+          "path": "reference/plugin-setting"
         }
       ]
     },
@@ -247,12 +259,16 @@
       "title": "SDK Tutorial",
       "children": [
         {
+          "title": "SDK-based driver development",
+          "path": "sdk/sdk_based-driver-development"
+        },
+        {
           "title": "Modbus plugin development example",
           "path": "sdk/modbus_example"
         },
         {
-          "title": "SDK-based driver development",
-          "path": "sdk/sdk_based-driver-development"
+          "title": "Southbound development mind map",
+          "path": "sdk/mind_mapping"
         }
       ]
     }

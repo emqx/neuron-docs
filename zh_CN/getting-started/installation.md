@@ -1,16 +1,19 @@
 # 安装
 
-本节主要介绍了如何在 X86 / ARM Linux 系统上首次安装 Neuron 软件包。
+为满足客户需求，Neuron 分成两种，一种是集成 eKuiper，携带数据流处理引擎界面的，名称为 Neuron-plus，另一种是不集成 eKuiper 的，名称为 Neuron。用户可以根据自身需求选择。
 
 ## 下载
 
 Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。
 
-| 下载文件                      | 架构    |
-| ---------------------------- | ------ |
-| neuron-x.y.z-linux-amd64.deb | X86_64 |
-| neuron-x.y.z-linux-armhf.deb | ARM_32 |
-| neuron-x.y.z-linux-arm64.deb | ARM_64 |
+| 下载文件                           | 架构    |
+| --------------------------------- | ------ |
+| neuron-x.y.z-linux-amd64.deb      | X86_64 |
+| neuron-plus-x.y.z-linux-amd64.deb | X86_64 |
+| neuron-x.y.z-linux-armhf.deb      | ARM_32 |
+| neuron-plus-x.y.z-linux-armhf.deb | ARM_32 |
+| neuron-x.y.z-linux-arm64.deb      | ARM_64 |
+| neuron-plus-x.y.z-linux-arm64.deb | ARM_64 |
 
 版本号 x.y.z 说明：
 
@@ -20,12 +23,12 @@ Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://
 
 ## 安装条件
 
-| Linux 发行版或设备 | 所需包          |
-| :------------ | :---------------- |
-| **Debian package system**</br>Ubuntu 20.xx </br>Ubuntu 18.xx | deb/tar.gz |
-| **Redhat package system**</br>Contos 8</br>Centos 9 | rpm/tar.gz |
+| Linux 发行版或设备                                                   | 所需包          |
+| :----------------------------------------------------------------- | :--------- |
+| **Debian package system**</br>Ubuntu 20 </br>Ubuntu 18             | deb/tar.gz |
+| **Redhat package system**</br>Contos stream 8</br>Centos stream 9  | rpm/tar.gz |
 
-rpm/deb package中使用了 systemd 管理 neuron 进程，建议优先使用 rpm/deb package。
+rpm/deb package 中使用了 systemd 管理 neuron 进程，建议优先使用 rpm/deb package。
 
 ## 使用 deb 包安装
 
@@ -34,7 +37,7 @@ rpm/deb package中使用了 systemd 管理 neuron 进程，建议优先使用 rp
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo dpkg -i neuron-2.1.0-linux-armhf.deb
+$ sudo dpkg -i neuron-plus-2.2.0-linux-armhf.deb
 ```
 
 为避免 ubuntu 系统自动更新时替换 neuron 包，还需要执行以下命令使 neuron 软件包在 apt 升级中保留。
@@ -60,7 +63,7 @@ $ sudo dpkg -r neuron
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo rpm -i neuron-2.1.0-linux-armhf.rpm
+$ sudo rpm -i neuron-plus-2.2.0-linux-armhf.rpm
 ```
 
 ::: tip
@@ -80,14 +83,14 @@ $ sudo rpm -e neuron
 根据不同的版本及架构下载，例如：
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.1.0/neuron-2.1.0-linux-armhf.tar.gz
+$ wget https://www.emqx.com/en/downloads/neuron/2.2.0/neuron-plus-2.2.0-linux-armhf.tar.gz
 ```
 
 ### 解压
 
 ```bash
-$ sudo tar -zxvf neuron-2.1.0-linux-armhf.tar.gz
-$ cd neuron-2.1.0-linux-armhf
+$ sudo tar -zxvf neuron-plus-2.2.0-linux-armhf.tar.gz
+$ cd neuron-plus-2.2.0-linux-armhf
 ```
 
 #### 启动
@@ -126,6 +129,7 @@ $ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privilege
 * tcp 9081: eKuiper api 端口.
 * --restart=always: docker 进程重启时，自动重启 neuron 容器。
 * --privileged=true: 可选参数，便于排查问题。
+* --env DISABLE_AUTH=true: 可选参数，用于关闭鉴权。
 * -v /host/dir:/opt/neuron/persistence: 用于将 docker 中 Neuron 配置信息存放在本地目录（例如，/host/dir）。
 * --device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到 docker。
 

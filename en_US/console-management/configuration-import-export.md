@@ -28,6 +28,10 @@ The following items must be filled accordingly.
 
 Click on the `Import` button and select the Excel file to be imported.
 
+![import](./assets/import.png)
+
 ## Data Tags Excel sheet Export
 
 Click on the `Export` button, and all data tags information listed will be exported to an Excel sheet. Users may save the Excel sheet for data tags backup.
+
+![export](./assets/export.png)

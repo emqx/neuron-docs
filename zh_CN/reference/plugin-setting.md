@@ -74,29 +74,45 @@
 
 ### modbus-rtu
 
+#### 串口连接设置
+
 ```json
 {
     "node": "modbus-rtu",
     "params": {
-        // required, connection method, 0 tcp, 1 serial port
+        // required, connection method, 0 serial port, 1 tcp,
         "link": 0,
         // required, timeout for sending requests to the device
         "timeout": 3000,
         // serial port required, use a serial device
         "device": "dev/ttyUSB0",
-        // rtserial portu required, stopbits
+        // serial port required, stopbits
         "stop": 0,
         // serial port required, parity bit
         "parity": 0,
         // serial port required, baudrate
         "baud": 4,
         // serial port required, bytesize
-        "data": 3,
+        "data": 3
+    }
+}
+```
+
+#### TCP 连接设置
+
+```json
+{
+    "node": "modbus-rtu",
+    "params": {
+        // required, connection method, 0 serial port, 1 tcp,
+        "link": 1,
+        // required, timeout for sending requests to the device
+        "timeout": 3000,
         // tcp required, client: host means the ip of the remote device. server: it means the ip used by neuron locally
-        "host": "",
+        "host": "127.0.0.1",
         // tcp required, client: port means the tcp port of the remote device. server: it means the tcp port used by neuron locally
         "port": 502,
-        // required, 0 the neuron driver is used as the client, 1 the neuron driver is used as the server
+        // tcp required, 0 the neuron driver is used as the client, 1 the neuron driver is used as the server
         "connection_mode": 0
     }
 }
@@ -202,11 +218,13 @@
 
 ## DL/T645-2007
 
+### 串口连接设置
+
 ```json
 {
     "node": "dlt645-1",
     "params": {
-        // required, connection method, 0 tcp, 1 serial port
+        // required, connection method, 0 serial port, 1 tcp
         "link": 0,
         // required, contact address
         "mail_address": 210220003011,
@@ -218,15 +236,31 @@
         "stop": 0,
         // serial port required, parity bit
         "parity": 2,
-        // serial port required, bytesize
+        // serial port required, baudrate
         "baud": 4,
         // serial port required, bytesize
-        "data": 3,
+        "data": 3
+    }
+}
+```
+
+### TCP 连接设置
+
+```json
+{
+    "node": "dlt645-1",
+    "params": {
+        // required, connection method, 0 serial port, 1 tcp
+        "link": 1,
+        // required, contact address
+        "mail_address": 210220003011,
+        // required, timeout for sending requests to the device
+        "timeout": 3000,
         // tcp required, client: host means the ip of the remote device. server: it means the ip used by neuron locally
-        "host": "",
+        "host": "127.0.0.1",
         // tcp required, client: port means the tcp port of the remote device. server: it means the tcp port used by neuron locally
         "port": 502,
-        // required, 0 the neuron driver is used as the client, 1 the neuron driver is used as the server
+        // tcp required, 0 the neuron driver is used as the client, 1 the neuron driver is used as the server
         "connection_mode": 0
     }
 }

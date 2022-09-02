@@ -1,5 +1,7 @@
 # Prerequisite Setup
 
+The Neuron-plus version integrates eKuiper, and the page adds a data stream processing section.
+
 There is a pre-defined a data stream named `neuronStream` with type attribute `neuron` in data stream engine. Users are required to subscribe the desired data Groups of southbound devices. The subscribed data Groups will be the data stream for stream engine. All rules in stream engine would share this data stream.
 
 ## Step 1 Check over the data stream processing application node

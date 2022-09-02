@@ -2,9 +2,11 @@
 
 ## Step 1 Check over all available Modules
 
-The plugin management page displays all the pluggable modules available and detailed information, including the name of the plug-in, associated node type, plug-in category and driver library name, as shown in the following figure. 
+The plugin management page displays all the pluggable modules available and detailed information, including the name of the plug-in, associated node type, plug-in category, driver library name and description, as shown in the following figure.
 
 ![plugin-options](./assets/plugin-options.png)
+
+Click the `Document` button in the upper right corner of the plugin card to jump to the documentation for the specific use and description of the driver.
 
 The plug-in types include the following 3 modes:
 
@@ -12,7 +14,7 @@ The plug-in types include the following 3 modes:
 * System: cannot be deleted, native
 * Custom: Deletable, user-developed or custom-developed
 
-::: tip
+:::tip
 Users can filter out the plugins for northbound applications or southbound devices from the dropdown box.
 :::
 
@@ -27,4 +29,6 @@ To add a new Pluggable module,
 1. Fill in the path and file name of the .so file that needs to be added.
 2. Click on the `Create` button to move .so file to the build directory.
 
-
+:::tip
+Please make sure that the plugin .so file you have written is placed under the neuron/build/plugins directory before adding it. For specific plugin development tutorials, please refer to [SKD Tutorial](../sdk/sdk_based-driver-development.md).
+:::
