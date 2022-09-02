@@ -122,12 +122,11 @@ $ docker pull emqx/neuron
 ### Start
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 -p 9081:9081 --privileged=true --restart=always emqx/neuron
+$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron
 ```
 
 * tcp 7000: Used to access the web.
 * tcp 7001: http api port. (api port is web port + 1, e.g. when web port is mapped to 8000, api port should be mapped to 8001)
-* tcp 9081: eKuiper api port.
 * --restart=always: Automatically restart the neuron container when the docker process is restarted.
 * --privileged=true: Optional parameter for easy troubleshooting.
 * --env DISABLE_AUTH=true: Optional parameter to turn off authentication.
