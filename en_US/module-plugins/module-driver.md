@@ -813,3 +813,48 @@ Both `INDEX_GROUP` and `INDEX_OFFSET` could be in decimal or hexadecimal format 
 | 0x4040,0x7d01c  | bool               | index_group 0x4040, index_offset 0x7d01c                  |
 | 16448,51029     | uint8              | index_group 0x4040, index_offset 0x7d01d                  |
 | 0x4040,512896.5 | string             | index_group 0x4040, index_offset 0x7d380, string length 5 |
+
+## OPCDA
+
+Neuron can indirectly access the OPCDA server running on Windows operating system through the external helper program opcshift.exe. opcshift converts the DA protocol to the UA protocol, and then obtains data through Neuron's existing opcua driver. All accessible points of the DA are mapped to the "namespace 1" of the UA, and the IDs of the points remain the same.
+
+### Parameter Setting
+
+Install opcshift and the OPCDA access dependency package opc-core-components-redistributables , open the opcshift.ini file with a text editor, fill in the configuration information, and then run opcshift.exe. Create a new OPCUA node in Neuron, and fill in the corresponding ua.port in opcshift.ini and the IP address of opcshift.
+
+| Parameter    | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| all.log_file | Full path to log file, default is log/opcshift               |
+| da.host      | The host name where the DA service is located, the default is localhost |
+| da.server    | The name of the DA server, such as "Matrikon.OPC.Simulation.1" |
+| ua.port      | The port number of the UA server, the default is 4841        |
+
+### Support Data Type
+
+* INT8（OPCUA SBYTE type）
+* INT16
+* INT32
+* INT64
+* UINT8（OPCUA BYTE type）
+* UINT16
+* UINT32（also used to represent DATETIME types）
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* STRING
+
+### Address Format
+
+> IX!NODEID</span>
+
+**IX** Namespace index, IX can only be 1 when accessing opcshift.
+
+**NODEID** Node ID, consistent with the string in the UA server.
+
+*例子：*
+
+| Address                | Data Type | Description                                                  |
+| ---------------------- | --------- | ------------------------------------------------------------ |
+| 1!Bucket Brigade.UInt2 | UINT16    | Get a datatag of type UINT16; NS is 1, NODEID is Bucket Brigade.UInt2 |
+

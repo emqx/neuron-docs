@@ -816,3 +816,48 @@ ADS路由.
 | 0x4040,0x7d01c  | bool               | index_group 0x4040, index_offset 0x7d01c                  |
 | 16448,51029     | uint8              | index_group 0x4040, index_offset 0x7d01d                  |
 | 0x4040,512896.5 | string             | index_group 0x4040, index_offset 0x7d380, 字符串长度为5   |
+
+## OPCDA
+
+Neuron 可通过外部辅助程序 opcshift.exe 间接访问运行于 Windows 操作系统的 OPCDA 服务器。opcshift 通过将 DA 协议转换为 UA 协议，再通过 Neuron已有的 opcua driver 进行数据获取，DA 的所有可访问点位都被映射至 UA 的"命名空间1"当中，点位的 ID 则保持一致。
+
+### 设备配置
+
+安装 opcshift 以及 OPCDA 访问依赖包 opc-core-components-redistributables , 使用文本编辑器打开 opcshift.ini 文件，并填写配置信息，然后运行 opcshift.exe。新建 Neuron 中的 OPCUA 节点，填写 opcshift.ini 中对应的 ua.port 和 opcshift 所在的IP地址。
+
+| 字段         | 说明                                           |
+| ------------ | ---------------------------------------------- |
+| all.log_file | 日志文件的全路径，默认为 log/opcshift          |
+| da.host      | DA 服务所在的主机名，默认为 localhost          |
+| da.server    | DA 服务器的名称，如"Matrikon.OPC.Simulation.1" |
+| ua.port      | UA 服务器的端口号，默认为4841                  |
+
+### 支持的数据类型
+
+* INT8（用于表示 SBYTE 类型）
+* INT16
+* INT32
+* INT64
+* UINT8（用于表示 BYTE 类型）
+* UINT16
+* UINT32（同时用于表示 DATETIME 类型）
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* STRING
+
+### 地址格式
+
+> IX!NODEID</span>
+
+**IX** 名字空间索引，访问 opcshift 时，IX只能为1。
+
+**NODEID** 节点 ID，与 UA 服务器中的字符串一致。
+
+*例子：*
+
+| 地址                   | 数据类型 | 说明                                                         |
+| ---------------------- | -------- | ------------------------------------------------------------ |
+| 1!Bucket Brigade.UInt2 | UINT16   | 获取类型为 UINT16 的数据点；NS 为1，NODEID 为 Bucket Brigade.UInt2 |
+
