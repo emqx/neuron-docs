@@ -25,7 +25,7 @@ To preview Neuron documents, please use preview.sh command as below:
 
 Now, open <http://localhost:8080/docs/en/latest> or <http://localhost:8080/docs/zh/latest/>, to view English and Chinese version documents respectively. If any contents has been updated, you can re-run the above command to update the docs.
 
-## Relational Repos
+## Related Repos
 
 The following are all the github repos related to Neuron development.
 
