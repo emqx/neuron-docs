@@ -2,7 +2,7 @@
 
 The Neuron documentation is composed of a few major sections：
 
-* [Introduction](./introduction.md): An introductory description product features, and how Neuron supports to industrial IoT platform and Industry 4.0.
+* [Introduction](./introduction.md): An introductory description for product features, and how Neuron supports to industrial IoT platform and Industry 4.0.
 * [Getting Started](./getting-started/installation.md): Get started quickly with Neuron by installing native package or using docker.
 * [Data Processing Engine](./data-processing-engine/prerequisite-setup.md): How to setup data streaming engine and make streaming SQL statements for various AI/ML analystics and logic processing.
 * [Console Management](./console-management/license-installation.md): How to setup and operate Neuron via dashboard.

@@ -67,11 +67,44 @@
       "title": "可插拔模块",
       "children": [
         {
-          "title": "插件列表",
+          "title": "模块列表",
           "path": "module-plugins/module-list"
         },
         {
-          "title": "应用和设备插件配置",
+          "title": "模块描述",
+          "children": [
+            {
+              "title": "云连接",
+              "path": "module-plugins/module-description/cloud-connectivity"
+            },
+            {
+              "title": "应用",
+              "path": "module-plugins/module-description/application"
+            },
+            {
+              "title": "PLC 设备",
+              "path": "module-plugins/module-description/plc-drivers"
+            },
+            {
+              "title": "全球标准",
+              "path": "module-plugins/module-description/global-standards"
+            },
+            {
+              "title": "电力",
+              "path": "module-plugins/module-description/electricity"
+            },
+            {
+              "title": "楼宇自动化",
+              "path": "module-plugins/module-description/building-automation"
+            },
+            {
+              "title": "数控机床和机器人",
+              "path": "module-plugins/module-description/cnc-machines-robotics"
+            }
+          ]
+        },
+        {
+          "title": "模块配置",
           "path": "module-plugins/module-driver"
         },
         {
@@ -82,6 +115,23 @@
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "SDK 教程",
+      "children": [
+        {
+          "title": "基于 SDK 的驱动开发",
+          "path": "sdk/sdk_based-driver-development"
+        },
+        {
+          "title": "Modbus 插件开发示例",
+          "path": "sdk/modbus_example"
+        },
+        {
+          "title": "南向开发思维导图",
+          "path": "sdk/mind_mapping"
         }
       ]
     },
@@ -115,23 +165,6 @@
         {
           "title": "插件设置",
           "path": "reference/plugin-setting"
-        }
-      ]
-    },
-    {
-      "title": "SDK 教程",
-      "children": [
-        {
-          "title": "基于 SDK 的驱动开发",
-          "path": "sdk/sdk_based-driver-development"
-        },
-        {
-          "title": "Modbus 插件开发示例",
-          "path": "sdk/modbus_example"
-        },
-        {
-          "title": "南向开发思维导图",
-          "path": "sdk/mind_mapping"
         }
       ]
     }
@@ -187,7 +220,7 @@
           "path": "console-management/license-installation"
         },
         {
-          "title": "Plugin Modules Management",
+          "title": "Plugin Module Management",
           "path": "console-management/plugin-modules-management"
         },
         {
@@ -204,11 +237,44 @@
       "title": "Pluggable Modules",
       "children": [
         {
-          "title": "Plugin Modules List",
+          "title": "Module List",
           "path": "module-plugins/module-list"
         },
         {
-          "title": "Application and Driver Plugin Settings",
+          "title": "Module Description",
+          "children": [
+            {
+              "title": "Cloud Connectivity",
+              "path": "module-plugins/module-description/cloud-connectivity"
+            },
+            {
+              "title": "Application",
+              "path": "module-plugins/module-description/application"
+            },
+            {
+              "title": "PLC Drivers",
+              "path": "module-plugins/module-description/plc-drivers"
+            },
+            {
+              "title": "Global Standards",
+              "path": "module-plugins/module-description/global-standards"
+            },
+            {
+              "title": "Electricity",
+              "path": "module-plugins/module-description/electricity"
+            },
+            {
+              "title": "Building Automation",
+              "path": "module-plugins/module-description/building-automation"
+            },
+            {
+              "title": "CNC Machines & Robotics",
+              "path": "module-plugins/module-description/cnc-machines-robotics"
+            }
+          ]
+        },
+        {
+          "title": "Module Setting",
           "path": "module-plugins/module-driver"
         },
         {
@@ -219,6 +285,23 @@
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "SDK Tutorial",
+      "children": [
+        {
+          "title": "SDK-based driver development",
+          "path": "sdk/sdk_based-driver-development"
+        },
+        {
+          "title": "Modbus plugin development example",
+          "path": "sdk/modbus_example"
+        },
+        {
+          "title": "Southbound development mind map",
+          "path": "sdk/mind_mapping"
         }
       ]
     },
@@ -252,23 +335,6 @@
         {
           "title": "Plugin Setting",
           "path": "reference/plugin-setting"
-        }
-      ]
-    },
-    {
-      "title": "SDK Tutorial",
-      "children": [
-        {
-          "title": "SDK-based driver development",
-          "path": "sdk/sdk_based-driver-development"
-        },
-        {
-          "title": "Modbus plugin development example",
-          "path": "sdk/modbus_example"
-        },
-        {
-          "title": "Southbound development mind map",
-          "path": "sdk/mind_mapping"
         }
       ]
     }

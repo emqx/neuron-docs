@@ -132,12 +132,10 @@ Items with `*` are required, and each item is followed by a field description ke
 
 To setup southbound device parameters,
 
-1. Fill in the Host IP of the machine on which the Modbus simulator is running.
+1. Fill in the Host IP running the Modbus simulator.
 2. Fill in the Port number of the Modbus simulator, the default is 502.
 3. Fill in the request timeout, the default is 3000.
-4. Fill in the connection mode, default is Client mode.
-5. Click `Submit` to complete the device configuration.
-6. Click on the `Status Change Button` switch in the device node to make the device node to **Running** state.
+4. Click `Submit` to complete the device configuration and the device card automatically enters the state of **RUnning**.
 
 ::: tip
 The running Neuron instance and the simulator must be under the same network segment.
@@ -166,12 +164,16 @@ The newly created Group will be shown in the Group list, as shown below.
 
 The Group List contains following elements,
 
-1. `Clear` button, delete all created groups with one click. When you select some groups, and then click the `Delete` button, you can quickly delete the selected groups in batches. `Cretae` button is used to create a new group.
+1. `Import` button, in Excel form, and batch import in groups. The `Export` button exports the information of the selected group to Excel.`Clear` button, delete all created groups with one click. When you select some groups, and then click the `Delete` button, you can quickly delete the selected groups in batches. `Cretae` button is used to create a new group.
 2. Select all groups in the list
 3. Select this group in the list
 4. `Edit icon` Edit the group configuration
 5. `Tag List icon` Create data tags for this group.
 6. `Delete icon` Delete this group.
+
+:::tip
+For detailed import/export functions, please refer to [Configuration Import/Export](../console-management/configuration-import-export.md).
+:::
 
 ### Step 7 Add data tags into group
 
@@ -179,13 +181,7 @@ Click on the `Tag List icon` at the end of a group row to show up the tags confi
 
 ![tag-list-null](./assets/tag-list-null.png)
 
- At this point we can either create tags manually by clicking on the `Create` button, or import a bulk list of tags in a Excel sheet by clicking on the `Import` button.
-
- `Export` button is also available for exporting those data tags details into an Excel file. `Clear` button is used to delete all data tags in the list. `Delete` button will remove the selected tags in the list.
-
-:::tip
-For detailed import/export functions, please refer to [Configuration Import/Export](../console-management/configuration-import-export.md).
-:::
+Select the `Create` button to enter the Add Tags page.
 
 ### Step 8 Setup data tag details
 
@@ -198,7 +194,7 @@ All data tags will be manually added one by one to show you how to setup the tag
 To create a tag for the group list,
 
 1. Fill in the Tag name, e.g. tag1.
-2. Scroll down to select the Tag property;
+2. Scroll down to select the Tag attribute;
 3. Drop down to select the data type, for example, int16. Due to the different types supported by each driver, the data types that can be selected from the drop-down box are also different;
 4. Fill in the drive address, for example, 1!40001. For detailed driver address instructions, please refer to [Driver Instructions](../module-plugins/module-driver.md);
 5. The optional parameter Decimal can set the multiplier after the value collected by Neuron. For example, the value collected by neuron is 11, and Decimal is set to 0.1, then the value displayed at this point is 1.1;
@@ -221,11 +217,13 @@ After all tags creation are complete, tag list will be shown as below.
 
 ![tag-list](./assets/tag-list.png)
 
-* `Import` button, batch configuration tag information in Excel form;
-* `Export` button to output the created tag information in Excel form;
+* `Create` button to create a new label;
 * `Clear` button, delete all tags with one click;
 * `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, which can delete all tags. When selecting some tags, click the `delete` button to quickly delete the selected tags in batches;
-* Each tag contains name, address, type, read/write properties, description, button to `edit` tag information and `delete` button.
+* Select all tags in the list;
+* A label in the radio list;
+* `Edit`, Each tag contains name, address, type, read/write properties, description, button to `edit` tag information.
+* `Delete`, delete this tag.
 
 ### Step 10 Check over the data in monitoring screen
 
@@ -308,15 +306,16 @@ Items with `*` are required, and each item is followed by a field description ke
 
 To setup MQTT connection,
 
-1. Fill in the Client Id of MQTT, which is also the name of northbound application node, e.g. mqtt1，please refer to the [MQTT Topics](../reference/mqtt-api.md).
-2. Fill in the MQTT publish topic.
+1. Required, fill in the topic of subscription data report, please refer to the [MQTT Topics](../reference/mqtt-api.md).
+2. Required, fill in the subject reported by the heartbeat message.
 3. Select the upload format.
-4. Set up SSL authentication option.
-5. Fill in the hostname of MQTT Broker, where the default connection is to the emqx public broker.
-6. Fill in the port number of the MQTT Broker.
-7. Set up a username, which is optional.
-8. Set up a password, which is optional.
-9. Click on the `Submit` button to complete the configuration of the northbound application, and click the working status switch in the application card to make the application enter the **running** state.
+4. Optional, when the mqtt connection is abnormal, set the size limit of the uploaded data cache.
+5. Set up SSL authentication option.
+6. Fill in the hostname of MQTT Broker, where the default connection is to the emqx public broker.
+7. Fill in the port number of the MQTT Broker.
+8. Set up a username, which is optional.
+9. Set up a password, which is optional.
+10. Click on the `Submit` button to complete the configuration of the northbound application, and the application card automatically enters the **running** state.
 
 ### Step 16 Subscribe to southbound tag groups
 
