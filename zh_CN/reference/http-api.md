@@ -75,7 +75,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### Node 状态
 
-* IDLE = 0
 * INIT = 1
 * READY = 2
 * RUNNING = 3
@@ -84,8 +83,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ### Node 连接状态
 
 * DISCONNECTED = 0
-* CONNECTING = 1
-* CONNECTED = 2
+* CONNECTED = 1
 
 ## Ping
 
@@ -354,7 +352,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-## 更新 Group(未实现)
+## 更新 Group
 
 *PUT*  /api/v2/group
 
@@ -374,12 +372,12 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
+    //node name
+    "node": "node1",
     //group name
-    "name": "modbus-tcp-config1",
+    "group": "group",
     //read/upload interval(ms)
-    "interval": 20000,
-    //node id
-    "node_id": 4
+    "interval": 20000
 }
 ```
 
@@ -397,7 +395,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node**  必需
+**node**  可选
 
 ### 请求 Headers
 
@@ -428,6 +426,35 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     ]
 }
 ````
+
+```json
+{
+    "groups": [
+        {
+            //node name
+            "driver": "modbus",
+            //group name
+            "group": "group1",
+            "tag_count": 1,
+            "interval": 1000
+        },
+        {
+            "driver": "modbus",
+            "group": "group2",
+            "tag_count": 0,
+            "interval": 100
+        },
+        {
+            "driver": "modbus1",
+            "group": "group",
+            "tag_count": 0,
+            "interval": 10001
+        }
+    ]
+}
+```
+
+
 
 ## 添加 Tag
 
@@ -467,7 +494,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
            //tag attribute
             "attribute": 1,
            //tag type
-            "type": 4
+            "type": 4,
+           //floag precision, optional(0-17)
+            "precision": 3,
+           //decimal, optional
+            "decimal": 0.1
         },
         {
             "name": "tag2",
@@ -527,7 +558,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //tag address
             "address": "1!400001",
             //tag attribute
-            "attribute": 1
+            "attribute": 1,
+            //float/double precision
+             "precison": 1,
+            //decimal
+             "decimal": 0
         },
         {
             "name": "tag2",
@@ -585,7 +620,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //tag attribute
             "attribute": 0,
             //tag address
-            "address": "1!400001"
+            "address": "1!400001",
+            //float/double precision
+            "precison": 1,
+            //decimal
+            "decimal": 1
         },
         {
             "name": "tag2",
@@ -1119,7 +1158,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求 Params
 
-**node**  required
+**node**  optional
 
 ### 请求 Headers
 
@@ -1137,6 +1176,21 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "running": 2,
     //link state
     "link": 1
+}
+
+{
+    "states": [
+        {
+            "node": "modbus-node1",
+            "running": 2,
+            "link": 1
+        },
+        {
+            "node": "modbus-node2",
+            "running": 1,
+            "link": 0
+        }
+    ]
 }
 ```
 

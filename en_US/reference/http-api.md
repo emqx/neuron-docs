@@ -75,7 +75,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Node State
 
-* IDLE = 0
 * INIT = 1
 * READY = 2
 * RUNNING = 3
@@ -84,8 +83,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ### Node Link State
 
 * DISCONNECTED = 0
-* CONNECTING = 1
-* CONNECTED = 2
+* CONNECTED = 1
 
 ## Ping
 
@@ -354,7 +352,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Group(Not Implemented)
+## Update Group
 
 *PUT*  /api/v2/group
 
@@ -375,11 +373,11 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```json
 {
     //group name
-    "name": "modbus-tcp-config1",
+    "group": "gconfig1",
+    //node name
+    "node": "modbus-node",
     //read/upload interval(ms)
-    "interval": 20000,
-    //node id
-    "node_id": 4
+    "interval": 10000
 }
 ```
 
@@ -397,7 +395,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 ### Request Params
 
-**node**  required
+**node**  optional
 
 ### Request Headers
 
@@ -428,6 +426,35 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     ]
 }
 ````
+
+```json
+{
+    "groups": [
+        {
+            //node name
+            "driver": "modbus",
+            //group name
+            "group": "group1",
+            "tag_count": 1,
+            "interval": 1000
+        },
+        {
+            "driver": "modbus",
+            "group": "group2",
+            "tag_count": 0,
+            "interval": 100
+        },
+        {
+            "driver": "modbus1",
+            "group": "group",
+            "tag_count": 0,
+            "interval": 10001
+        }
+    ]
+}
+```
+
+
 
 ## Add Tag
 
@@ -467,7 +494,11 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
            //tag attribute
             "attribute": 1,
            //tag type
-            "type": 4
+            "type": 4,
+           //float/double precision, optional(0-17)
+            "precision": 3,
+           //decimal
+            "decimal": 1
         },
         {
             "name": "tag2",
@@ -528,6 +559,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             "address": "1!400001",
             //tag attribute
             "attribute": 1,
+            //float/double precision
+            "precision": 1,
+            //decimal
+            "decimal": 0.1
         },
         {
             "name": "tag2",
@@ -585,7 +620,11 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             //tag attribute
             "attribute": 0,
             //tag address
-            "address": "1!400001"
+            "address": "1!400001",
+            //float/double precison
+            "precision": 1,
+            //decimal
+            "decimal": 0.001
         },
         {
             "name": "tag2",
@@ -1119,7 +1158,7 @@ The value is displayed only when the value is read correctly, when the value is 
 
 ### Request Params
 
-**node**  required
+**node**  optional
 
 ### Request Headers
 
@@ -1137,6 +1176,21 @@ The value is displayed only when the value is read correctly, when the value is 
     "running": 2,
     //link state
     "link": 1
+}
+
+{
+    "states": [
+        {
+            "node": "modbus-node1",
+            "running": 2,
+            "link": 1
+        },
+        {
+            "node": "modbus-node2",
+            "running": 1,
+            "link": 0
+        }
+    ]
 }
 ```
 
