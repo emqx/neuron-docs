@@ -1,8 +1,20 @@
 # License Installation
 
-## Step 1 Install License
+## Step 1 Check the hardware token
+
+In the `About` interface, check the hardware token, as shown in the following figure.
+
+![about](./assets/about.png)
+
+## Step 2 Install License
 
 The commercial pluggable modules can only be used when a valid license has been installed. If the license has expired, user can apply for a valid license from [official website](https://www.emqx.com/en/apply-licenses/neuron) and install it as shown below.
+
+::: tip
+When applying for a valid license, you need to fill in the hardware token.
+
+Users can apply for a trial license from official website by clicking on the `Apply`, or contact our sales representatives to purchase a commercial license by clicking on the `Contact us`.
+:::
 
 ![license-null](./assets/license-null.png)
 
@@ -11,11 +23,7 @@ To install a license,
 1. Click on the `License` from the System Information drop-down box in the upper-right corner.
 2. Click on the `Upload` button to select the license file and then submit.
 
-::: tip
-Users can apply for a trial license from official website by clicking on the `Apply`, or contact our sales representatives to purchase a commercial license by clicking on the `Contact us`.
-:::
-
-## Step 2 Check over the License details
+## Step 3 Check over the License details
 
 After the license is successfully installed, it will display the license information, as shown below.
 
