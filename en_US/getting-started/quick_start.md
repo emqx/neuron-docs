@@ -4,16 +4,16 @@
 
 ### Package Installation
 
-The environment used in this example is Ubuntu 20.04.3, armv71.
+The environment used in this example is Ubuntu 20.04.3, X86_64.Use Neuron-plus version.
 
 1. Download the installation package
-Neuron packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).
+Neuron-plus packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).
 
 2. Unzip the installation package
 Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
 
 ```bash
-sudo dpkg -i neuron-2.1.0-linux-armhf.deb
+sudo dpkg -i neuron-plus-2.2.0-linux-amd64.deb
 ```
 
 ::: tip
@@ -141,6 +141,8 @@ To setup southbound device parameters,
 
 ::: tip
 The running Neuron instance and the simulator must be under the same network segment.
+
+Different drivers have different configuration parameters. For detailed driver configuration parameters, please refer to [Application and Device Plugin Configuration](../module-plugins/module-driver.md).
 :::
 
 ### Step 5 Create groups for device node
@@ -167,7 +169,7 @@ The Group List contains following elements,
 1. `Clear` button, delete all created groups with one click. When you select some groups, and then click the `Delete` button, you can quickly delete the selected groups in batches. `Cretae` button is used to create a new group.
 2. Select all groups in the list
 3. Select this group in the list
-4. `View icon` View the group configuration
+4. `Edit icon` Edit the group configuration
 5. `Tag List icon` Create data tags for this group.
 6. `Delete icon` Delete this group.
 
@@ -181,6 +183,10 @@ Click on the `Tag List icon` at the end of a group row to show up the tags confi
 
  `Export` button is also available for exporting those data tags details into an Excel file. `Clear` button is used to delete all data tags in the list. `Delete` button will remove the selected tags in the list.
 
+:::tip
+For detailed import/export functions, please refer to [Configuration Import/Export](../console-management/configuration-import-export.md).
+:::
+
 ### Step 8 Setup data tag details
 
 Clicking the `Create icon`,  data tags details setup screen will be shown as below.In the example, we will describe the manual way of adding tags.
@@ -192,16 +198,22 @@ All data tags will be manually added one by one to show you how to setup the tag
 To create a tag for the group list,
 
 1. Fill in the Tag name, e.g. tag1.
-2. Fill in the driver address, e.g. 1!400001; for detailed instructions on how to use the driver address, please refer to the [driver instructions](../module-plugins/module-driver.md).
-3. Select the Tag type, e.g. Read, Write.
-4. Select the data type, e.g. int16.
-5. Click on the `Add` button to add next tag, repeat 1 - 4 until the last tag added.
-6. Optionally delete a tag.
-7. Click the `Create` button to complete the Tag creation.
+2. Scroll down to select the Tag property;
+3. Drop down to select the data type, for example, int16. Due to the different types supported by each driver, the data types that can be selected from the drop-down box are also different;
+4. Fill in the drive address, for example, 1!40001. For detailed driver address instructions, please refer to [Driver Instructions](../module-plugins/module-driver.md);
+5. The optional parameter Decimal can set the multiplier after the value collected by Neuron. For example, the value collected by neuron is 11, and Decimal is set to 0.1, then the value displayed at this point is 1.1;
+6. Optional parameter Description, used to add some description information to the label;
+7. Click the `Add` button to add the next tag, repeat steps 1-6 until the last tag is added;
+8. After adding a tag, a `delete` button will be added next to the information box, and you can choose to delete the tag;
+9. Click the `Create` button to complete the creation of the Tag;
 
 ::: tip
-A new tag can be created by using the `Add` button, where a `Delete` button will appear next to the information box after the tag is successfully created.
+Currently, the Tag attribute supports three types: Read, Write, and Subscribe. When the Subscribe attribute is selected, the changed value will be uploaded to the cloud only when the collected value changes.
+
+When the data type is float/double, an optional parameter precision is displayed to set the precision, and the optional range is 1-17.
 :::
+
+![precision](./assets/precision.png)
 
 ### Step 9 Manage data tags of group
 
@@ -239,7 +251,7 @@ By setting the value of the register in the simulator, check whether the value d
 
 ### Step 12 Input device control value in dashboard
 
-When the tag is set with the write attribute, the tag of the data monitoring interface will have a write operation. Click `Write` to realize the reverse control device, as shown below.
+When the tag is set with the write attribute, the tag of the data monitoring interface will have a write operation. When the point also has the writable attribute on the device, click `Write` to realize the reverse control device, as shown in the following figure.
 
 ![write](./assets/write.png)
 
@@ -249,10 +261,6 @@ To perform dashboard data write operation,
 2. Choose whether to enter the value in hexadecimal.
 3. Enter the new value for the tag.
 4. Click on `Submit` button to submit new value.
-
-::: tip
-The tag in the device must be the writable.
-:::
 
 ### Step 13 Add northbound plugin modules for application
 
@@ -346,3 +354,7 @@ After successfully subscribed the topic, you can see that MQTTX can receive the 
 * Open MQTTX to add a new connection, Fill in the correct name and the Host and Port of the EMQX broker you have just connected, and then start the connection.
 
 * Add a new subscription, the default upload topic format is `neuron/{mqtt_clientid}/upload`, where {mqtt_clientid} is the `Client-id` configured in the northbound application node of MQTT, in this case, we fill in `mqtt1`.
+
+:::tip
+When the Subscribe attribute is set for the point, the changed value will be uploaded to the cloud only when the collected value changes.
+:::

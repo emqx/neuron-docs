@@ -14,11 +14,11 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 
 | 字段           | 说明                         |
 | ------------- | ---------------------------- |
-| **client-id** | MQTT 客户端 ID，必填             |
-| **upload-topic** | 订阅数据上报的通道，可选填，如果不填写则数据会在`neuron/{client-id}/upload`下上报 |
-| **heartbeat-topic** | 心跳数据上报的通道，可选填，如果不填写则数据会在`neuron/{client-id}/heartbeat`下上报 |
+| **upload-topic** | 订阅数据上报的通道，必填 |
+| **heartbeat-topic** | 心跳数据上报的通道，必填 |
 | **format** | 上报数据的json格式选择，可选填，有values模式和tags模式，默认为values模式 |
-| **ssl**       | 是否启用 mqtt ssl，默认 false  |
+| **cache** | MQTT连接异常时，上传数据缓存的大小限制 |
+| **ssl**       | 是否启用 mqtt ssl，可选填，默认 false |
 | **host**      | MQTT Broker 主机，必填           |
 | **port**      | MQTT Broker 端口号，必填 |
 | **username**  | 连接到 Broker 时使用的用户名，可选填 |
@@ -27,6 +27,8 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | **cert** | cert文件，只在ssl值为true时启用，可选填 |
 | **key** | key文件，只在ssl值为true时启用，可选填 |
 | **keypass** | key文件密码，只有在ssl值为true时启用，可选填 |
+
+
 
 ## Modbus
 
@@ -767,3 +769,95 @@ Neuron 从设备采集到的数据可以通过Sparkplug_B协议从边缘端传�
 | 1!10.20 | string             | 指令1，偏移10，字符串长度20 |
 | 12!1    | uint16/int16       | 指令12，偏移1               |
 | 20!32   | uint32/int32/float | 指令20，偏移32              |
+
+## ADS
+
+通过ads插件可以连接Beckhoff ADS/AMS设备.
+
+### 设备设置
+
+| 字段            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| host            | 远程设备IP.                                                  |
+| port            | 远程设备TCP端口（默认48898）.                                |
+| src-ams-net-id  | 运行neuron的设备的AMSNetId.                                  |
+| src-ads-port    | 运行neuron的设备的AMSPort.                                   |
+| dst-ams-net-id  | 目标PLC的AMSNetId.                                           |
+| dst-ads-port    | 目标PLC的AMSPort.                                            |
+
+请注意，为了让neuron能与PLC正常通信，需要在目标TC runtime (PLC) 中添加和设置对应的
+ADS路由.
+
+### 支持的数据类型
+
+* BOOL
+* INT8
+* UINT8
+* INT16
+* UINT16
+* INT32
+* UINT32
+* INT64
+* UINT64
+* FLOAT
+* DOUBLE
+* STRING
+
+### 地址格式
+
+> INDEX_GROUP,INDEX_OFFSET</span>
+
+`INDEX_GROUP`和`INDEX_OFFSET`可以分别独立使用十进制或十六进制指定.
+
+*示例:*
+
+| 地址            | 数据类型           | 说明                        |
+| --------------- | ------------------ | --------------------------------------------------------- |
+| 0x4040,0x7d01c  | bool               | index_group 0x4040, index_offset 0x7d01c                  |
+| 16448,51029     | uint8              | index_group 0x4040, index_offset 0x7d01d                  |
+| 0x4040,512896.5 | string             | index_group 0x4040, index_offset 0x7d380, 字符串长度为5   |
+
+## OPCDA
+
+Neuron 可通过外部辅助程序 opcshift.exe 间接访问运行于 Windows 操作系统的 OPCDA 服务器。opcshift 通过将 DA 协议转换为 UA 协议，再通过 Neuron已有的 opcua driver 进行数据获取，DA 的所有可访问点位都被映射至 UA 的"命名空间1"当中，点位的 ID 则保持一致。
+
+### 设备配置
+
+安装 opcshift 以及 OPCDA 访问依赖包 opc-core-components-redistributables , 使用文本编辑器打开 opcshift.ini 文件，并填写配置信息，然后运行 opcshift.exe。新建 Neuron 中的 OPCUA 节点，填写 opcshift.ini 中对应的 ua.port 和 opcshift 所在的IP地址。
+
+| 字段         | 说明                                           |
+| ------------ | ---------------------------------------------- |
+| all.log_file | 日志文件的全路径，默认为 log/opcshift          |
+| da.host      | DA 服务所在的主机名，默认为 localhost          |
+| da.server    | DA 服务器的名称，如"Matrikon.OPC.Simulation.1" |
+| ua.port      | UA 服务器的端口号，默认为4841                  |
+
+### 支持的数据类型
+
+* INT8（用于表示 SBYTE 类型）
+* INT16
+* INT32
+* INT64
+* UINT8（用于表示 BYTE 类型）
+* UINT16
+* UINT32（同时用于表示 DATETIME 类型）
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* STRING
+
+### 地址格式
+
+> IX!NODEID</span>
+
+**IX** 名字空间索引，访问 opcshift 时，IX只能为1。
+
+**NODEID** 节点 ID，与 UA 服务器中的字符串一致。
+
+*例子：*
+
+| 地址                   | 数据类型 | 说明                                                         |
+| ---------------------- | -------- | ------------------------------------------------------------ |
+| 1!Bucket Brigade.UInt2 | UINT16   | 获取类型为 UINT16 的数据点；NS 为1，NODEID 为 Bucket Brigade.UInt2 |
+

@@ -150,6 +150,23 @@
           "path": "reference/plugin-setting"
         }
       ]
+    },
+    {
+      "title": "SDK 教程",
+      "children": [
+        {
+          "title": "基于 SDK 的驱动开发",
+          "path": "sdk/sdk_based-driver-development"
+        },
+        {
+          "title": "Modbus 插件开发示例",
+          "path": "sdk/modbus_example"
+        },
+        {
+          "title": "南向开发思维导图",
+          "path": "sdk/mind_mapping"
+        }
+      ]
     }
   ],
   "en": [
@@ -301,6 +318,23 @@
         {
           "title": "Plugin Setting",
           "path": "reference/plugin-setting"
+        }
+      ]
+    },
+    {
+      "title": "SDK Tutorial",
+      "children": [
+        {
+          "title": "SDK-based driver development",
+          "path": "sdk/sdk_based-driver-development"
+        },
+        {
+          "title": "Modbus plugin development example",
+          "path": "sdk/modbus_example"
+        },
+        {
+          "title": "Southbound development mind map",
+          "path": "sdk/mind_mapping"
         }
       ]
     }

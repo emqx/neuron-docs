@@ -2,13 +2,13 @@
 
 MQTT 客户端和 Neuron 进行交互的所有主题。包括读、写、订阅。
 
-所有主题中的 **{client-id}** 指的是实际的 MQTT 客户端 id，在 Neuron UI 的北向应用配置中设置。
+所有主题中的 **{node_name}** 指的是实际的 MQTT 北向应用名称，在 Neuron UI 的北向应用管理中设置。
 
 ## 上传数据
 
 ### 响应
 
-*默认主题* **neuron/{client-id}/upload**
+*默认主题* **neuron/{node_name}/upload**
 
 #### Body (Tags format)
 
@@ -60,7 +60,7 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 响应
 
-*默认主题* **neuron/{client-id}/heartbeat**
+*默认主题* **neuron/{node_name}/heartbeat**
 
 #### Body
 
@@ -91,13 +91,13 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 请求
 
-*主题*  **neuron/{client-id}/read/req**
+*主题*  **neuron/{node_name}/read/req**
 
 #### Body
 
 ```json
 {
-    "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
+    "uuid": "bca54fe7-a2b1-43e2-a4b4-1da715d28eab",
     "node": "modbus-tcp-1",
     "group": "group-2"
 }
@@ -105,13 +105,13 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 响应
 
-*主题*  **neuron/{client-id}/read/resp**
+*主题*  **neuron/{node_name}/read/resp**
 
 #### Body
 
 ```json
 {
-  "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
+  "uuid": "bca54fe7-a2b1-43e2-a4b4-1da715d28eab",
   "tags": [
     {
       "value": 4,
@@ -133,13 +133,13 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 请求
 
-*主题*  **neuron/{client-id}/write/req**
+*主题*  **neuron/{node_name}/write/req**
 
 #### Body
 
 ```json
 {
-    "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
+    "uuid": "cd32be1b-c8b1-3257-94af-77f847b1ed3e",
     "node": "modbus-tcp-1",
     "group": "group-2",
     "tag": "tag1",
@@ -149,13 +149,13 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 响应
 
-*主题*  **neuron/{client-id}/write/resp**
+*主题*  **neuron/{node_name}/write/resp**
 
 #### Body
 
 ```json
 {
-  "uuid": "E21AEE51-1269-B228-E9E5-CD252CE10877",
+  "uuid": "cd32be1b-c8b1-3257-94af-77f847b1ed3e",
   "error": 0
 }
 ```

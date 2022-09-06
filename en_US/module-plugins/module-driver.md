@@ -14,10 +14,10 @@ The data collected from the device can be transmitted to the mqtt broker through
 
 | Parameter           | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
-| **client-id**       | MQTT client ID, required                                     |
-| **upload-topic**    | Subscription data reporting channel, optional, if not set, the data will be reported under `neuron/{client-id}/upload` |
-| **heartbeat-topic** | The channel for heartbeat data reporting, optional, if not set, the data will be reported under `neuron/{client-id}/heartbeat` |
+| **upload-topic**    | Subscription data reporting channel, required                |
+| **heartbeat-topic** | The channel for heartbeat data reporting, required           |
 | **format**          | The json format selection of the reported data, required, there are values mode and tags mode, the default is values mode |
+| **cache**           | When the MQTT connection is abnormal, the size limit of the upload data cache |
 | **ssl**             | Whether to enable mqtt ssl, default false                    |
 | **host**            | MQTT Broker host, required                                   |
 | **port**            | MQTT Broker port number, required                            |
@@ -766,3 +766,95 @@ The non a11 plugin is used for NON-A11 device.
 | 1!10.20 | string             | command 1, offset 10, string length 20 |
 | 12!1    | uint16/int16       | command 12, offset 1                   |
 | 20!32   | uint32/int32/float | command 20, offset 32                  |
+
+## ADS
+
+The ads plugin is used for Beckhoff ADS/AMS devices.
+
+### Parameter Setting
+
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| host            | the IP of the remote device.                                 |
+| port            | the TCP port of the remote device (default 48898).           |
+| src-ams-net-id  | The AMSNetId of the machine running neuron.                  |
+| src-ads-port    | The AMSPort of the machine running neuron.                   |
+| dst-ams-net-id  | The AMSNetId of the target PLC.                              |
+| dst-ads-port    | The AMSPort of the target PLC.                               |
+
+Note that a ADS route corresponding to the parameter setting should created in the
+target TC runtime (PLC), so that neuron could correctly communicate with the PLC.
+
+### Support Data Type
+
+* BOOL
+* INT8
+* UINT8
+* INT16
+* UINT16
+* INT32
+* UINT32
+* INT64
+* UINT64
+* FLOAT
+* DOUBLE
+* STRING
+
+### Address Format
+
+> INDEX_GROUP,INDEX_OFFSET</span>
+
+Both `INDEX_GROUP` and `INDEX_OFFSET` could be in decimal or hexadecimal format independently.
+
+*Example:*
+
+| Address         | Data Type          | Description                                               |
+| --------------- | ------------------ | --------------------------------------------------------- |
+| 0x4040,0x7d01c  | bool               | index_group 0x4040, index_offset 0x7d01c                  |
+| 16448,51029     | uint8              | index_group 0x4040, index_offset 0x7d01d                  |
+| 0x4040,512896.5 | string             | index_group 0x4040, index_offset 0x7d380, string length 5 |
+
+## OPCDA
+
+Neuron can indirectly access the OPCDA server running on Windows operating system through the external helper program opcshift.exe. opcshift converts the DA protocol to the UA protocol, and then obtains data through Neuron's existing opcua driver. All accessible points of the DA are mapped to the "namespace 1" of the UA, and the IDs of the points remain the same.
+
+### Parameter Setting
+
+Install opcshift and the OPCDA access dependency package opc-core-components-redistributables , open the opcshift.ini file with a text editor, fill in the configuration information, and then run opcshift.exe. Create a new OPCUA node in Neuron, and fill in the corresponding ua.port in opcshift.ini and the IP address of opcshift.
+
+| Parameter    | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| all.log_file | Full path to log file, default is log/opcshift               |
+| da.host      | The host name where the DA service is located, the default is localhost |
+| da.server    | The name of the DA server, such as "Matrikon.OPC.Simulation.1" |
+| ua.port      | The port number of the UA server, the default is 4841        |
+
+### Support Data Type
+
+* INT8（OPCUA SBYTE type）
+* INT16
+* INT32
+* INT64
+* UINT8（OPCUA BYTE type）
+* UINT16
+* UINT32（also used to represent DATETIME types）
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* STRING
+
+### Address Format
+
+> IX!NODEID</span>
+
+**IX** Namespace index, IX can only be 1 when accessing opcshift.
+
+**NODEID** Node ID, consistent with the string in the UA server.
+
+*例子：*
+
+| Address                | Data Type | Description                                                  |
+| ---------------------- | --------- | ------------------------------------------------------------ |
+| 1!Bucket Brigade.UInt2 | UINT16    | Get a datatag of type UINT16; NS is 1, NODEID is Bucket Brigade.UInt2 |
+
