@@ -140,7 +140,7 @@ To setup southbound device parameters,
 ::: tip
 The running Neuron instance and the simulator must be under the same network segment.
 
-Different drivers have different configuration parameters. For detailed driver configuration parameters, please refer to [Application and Device Plugin Configuration](../module-plugins/module-driver.md).
+Different drivers have different configuration parameters. For detailed driver configuration parameters, please refer to [Module Setting](../module-plugins/module-driver.md).
 :::
 
 ### Step 5 Create groups for device node
@@ -196,7 +196,7 @@ To create a tag for the group list,
 1. Fill in the Tag name, e.g. tag1.
 2. Scroll down to select the Tag attribute;
 3. Drop down to select the data type, for example, int16. Due to the different types supported by each driver, the data types that can be selected from the drop-down box are also different;
-4. Fill in the drive address, for example, 1!40001. For detailed driver address instructions, please refer to [Driver Instructions](../module-plugins/module-driver.md);
+4. Fill in the drive address, for example, 1!40001. For detailed driver address instructions, please refer to [Module Setting](../module-plugins/module-driver.md);
 5. The optional parameter Decimal can set the multiplier after the value collected by Neuron. For example, the value collected by neuron is 11, and Decimal is set to 0.1, then the value displayed at this point is 1.1;
 6. Optional parameter Description, used to add some description information to the label;
 7. Click the `Add` button to add the next tag, repeat steps 1-6 until the last tag is added;
@@ -306,7 +306,7 @@ Items with `*` are required, and each item is followed by a field description ke
 
 To setup MQTT connection,
 
-1. Required, fill in the topic of subscription data report, please refer to the [MQTT Topics](../reference/mqtt-api.md).
+1. Required, fill in the topic of subscription data report, please refer to the [MQTT API](../reference/mqtt-api.md).
 2. Required, fill in the subject reported by the heartbeat message.
 3. Select the upload format.
 4. Optional, when the mqtt connection is abnormal, set the size limit of the uploaded data cache.

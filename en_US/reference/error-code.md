@@ -17,6 +17,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 1008    invalid token
 * 1009    user or password error
 * 1010    is busy
+* 1011    file not exist
 
 ## add/del/update node/tag/plugin/group error codes
 
@@ -29,7 +30,6 @@ This document describes the errors that neuron will reply to sender when calling
 * 2008    node not running
 * 2009    node is stopped
 * 2010    node name too long
-
 * 2011    node not allow delete
 
 * 2101    group already subscribed
@@ -38,7 +38,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2104    group exist
 * 2105    group parameter invalid
 * 2106    group not exist
-* 2017    group name too long
+* 2107    group name too long
 
 * 2201    tag not exist
 * 2202    tag name conflict
@@ -82,8 +82,6 @@ This document describes the errors that neuron will reply to sender when calling
 * 3011    plugin tag not ready
 * 3012    plugin packet out of order
 
-
-
 ## S7COMM error codes
 
 * 10101  s7comm hardware error
@@ -95,19 +93,13 @@ This document describes the errors that neuron will reply to sender when calling
 * 10150  s7comm cotp disconnected
 * 10151  s7comm disconnected
 
-
-
 ## KNX error codes
 
 * 10200  knx no devices
 
-
-
 ## NONA11
 
 * 10400 nona11 invalid address
-
-
 
 ## FINS error codes
 
