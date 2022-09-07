@@ -868,6 +868,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 **Content--Type**  application/json
 
+**Authorization** Bearer \<token\>
+
 ### Response Status
 
 * 200
@@ -950,6 +952,10 @@ The value is displayed only when the value is read correctly, when the value is 
 ### Request Params
 
 **plugin_name**  required
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
 
 ### Response Status
 

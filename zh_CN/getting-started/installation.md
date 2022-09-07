@@ -115,7 +115,7 @@ $ ./neuron-helper.sh stop
 docker 镜像请从 [docker hub](https://hub.docker.com) 网站下载。
 
 ```bash
-$ docker pull emqx/neuron
+$ docker pull emqx/neuron:latest
 ```
 
 ### 启动

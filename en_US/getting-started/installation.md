@@ -116,7 +116,7 @@ $ ./neuron-helper.sh  stop
 The docker image can be downloaded from the docker hub website.[https://hub.docker.com](https://hub.docker.com)
 
 ```bash
-$ docker pull emqx/neuron
+$ docker pull emqx/neuron:latest
 ```
 
 ### Start
