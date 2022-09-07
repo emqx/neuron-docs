@@ -67,6 +67,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2404    reach licensed max number of nodes
 * 2405    reach licensed max number of tags per node
 * 2406    license hardware token not match
+* 2407    license detect bad clock
 
 ## plugin common error codes
 
