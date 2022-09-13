@@ -352,7 +352,7 @@ After successfully subscribed the topic, you can see that MQTTX can receive the 
 
 * Open MQTTX to add a new connection, Fill in the correct name and the Host and Port of the EMQX broker you have just connected, and then start the connection.
 
-* Add a new subscription, the default upload topic format is `neuron/{mqtt_clientid}/upload`, where {mqtt_clientid} is the `Client-id` configured in the northbound application node of MQTT, in this case, we fill in `mqtt1`.
+* Add a new subscription, the default upload topic format is `/neuron/{node_name}/upload`, where {node_name} is the configured in the northbound application node of MQTT, in this case, we fill in `mqtt-1`.
 
 :::tip
 When the Subscribe attribute is set for the point, the changed value will be uploaded to the cloud only when the collected value changes.

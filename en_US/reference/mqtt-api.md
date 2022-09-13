@@ -8,7 +8,7 @@ The **{node_name}** in all topics refers to the actual MQTT northbound applicati
 
 ### Response
 
-*Default topic* **neuron/{node_name}/upload**
+*Default topic* **/neuron/{node_name}/upload**
 
 #### Body (Tags format)
 
@@ -60,7 +60,7 @@ There are two message formats for the body. You can choose one of two different 
 
 ### Response
 
-*Default topic* **neuron/{node_name}/heartbeat**
+*Default topic* **/neuron/{node_name}/heartbeat**
 
 #### Body
 
@@ -91,7 +91,7 @@ Heartbeat messages are currently set to be sent every 3 seconds by default.
 
 ### Request
 
-*Topic*  **neuron/{node_name}/read/req**
+*Topic*  **/neuron/{node_name}/read/req**
 
 #### Body
 
@@ -105,7 +105,7 @@ Heartbeat messages are currently set to be sent every 3 seconds by default.
 
 ### Response
 
-*Topic*  **neuron/{node_name}/read/resp**
+*Topic*  **/neuron/{node_name}/read/resp**
 
 #### Body
 
@@ -133,7 +133,7 @@ The value is displayed only when the value is read correctly , when the value is
 
 ### Request
 
-*Topic*  **neuron/{node_name}/write/req**
+*Topic*  **/neuron/{node_name}/write/req**
 
 #### Body
 
@@ -149,7 +149,7 @@ The value is displayed only when the value is read correctly , when the value is
 
 ### Response
 
-*Topic*  **neuron/{node_name}/write/resp**
+*Topic*  **/neuron/{node_name}/write/resp**
 
 #### Body
 

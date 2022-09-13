@@ -8,7 +8,7 @@ MQTT 客户端和 Neuron 进行交互的所有主题。包括读、写、订阅�
 
 ### 响应
 
-*默认主题* **neuron/{node_name}/upload**
+*默认主题* **/neuron/{node_name}/upload**
 
 #### Body (Tags format)
 
@@ -60,7 +60,7 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 响应
 
-*默认主题* **neuron/{node_name}/heartbeat**
+*默认主题* **/neuron/{node_name}/heartbeat**
 
 #### Body
 
@@ -91,7 +91,7 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 请求
 
-*主题*  **neuron/{node_name}/read/req**
+*主题*  **/neuron/{node_name}/read/req**
 
 #### Body
 
@@ -105,7 +105,7 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 响应
 
-*主题*  **neuron/{node_name}/read/resp**
+*主题*  **/neuron/{node_name}/read/resp**
 
 #### Body
 
@@ -133,7 +133,7 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 请求
 
-*主题*  **neuron/{node_name}/write/req**
+*主题*  **/neuron/{node_name}/write/req**
 
 #### Body
 
@@ -149,7 +149,7 @@ Body 有两种消息格式，您可以在 Neuron UI 中 mqtt 配置表单中选�
 
 ### 响应
 
-*主题*  **neuron/{node_name}/write/resp**
+*主题*  **/neuron/{node_name}/write/resp**
 
 #### Body
 
