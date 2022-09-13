@@ -89,7 +89,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  **/api/v2/ping**
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -101,7 +101,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*   **/api/v2/login**
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**          application/json
 
@@ -116,7 +116,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
   * 1007, 验证令牌错误
   * 1008, 无效令牌
 
-### Body
+### 请求体
 
 ```json
 {
@@ -137,7 +137,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  **/api/v2/node**
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type** application/json
 
@@ -153,7 +153,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 409
   * 2002 node 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -176,7 +176,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *Delete* /api/v2/node
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -188,7 +188,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 404
   * 2003 node not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -209,7 +209,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *PUT* **/api/v2/node**
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -221,7 +221,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 404
   * 2003 node exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -244,11 +244,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/node
 
-### 请求 Params
+### 请求参数
 
 **type**  必需
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -279,7 +279,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  /api/v2/group
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -293,7 +293,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 409
   * 2103 group not allow
 
-### Body
+### 请求体
 
 ```json
 {
@@ -318,7 +318,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *DELETE*  /api/v2/group
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -333,7 +333,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
   * 2003 node not exist
   * 2101 group not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -356,7 +356,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *PUT*  /api/v2/group
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -368,7 +368,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 404
   * 2106 group not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -393,11 +393,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/group
 
-### 请求 Params
+### 请求参数
 
 **node**  可选
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -454,13 +454,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-
-
 ## 添加 Tag
 
 *POST*  /api/v2/tags
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -477,7 +475,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 404
   * 2003 node not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -529,13 +527,13 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/tags
 
-### 请求 Params
+### 请求参数
 
 **node**  必需
 
 **group**  必需
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -584,7 +582,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *PUT*  /api/v2/tags
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -603,7 +601,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
   * 2003 node 不存在
   * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -648,7 +646,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *DELETE*  /api/v2/tags
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -660,7 +658,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 404
   * 2003 node 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -688,7 +686,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  /api/v2/plugin
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -702,7 +700,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
   
   * 2302 库信息无效
 
-### Body
+### 请求体
 
 ```json
 {
@@ -723,7 +721,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *DELETE*  /api/v2/plugin
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -733,7 +731,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 
-### Body
+### 请求体
 
 ```json
 {
@@ -754,11 +752,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/plugin
 
-### 请求 Params
+### 请求参数
 
 **plugin**  optional
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -790,7 +788,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  /api/v2/subscribe
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -802,7 +800,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 404
   * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -827,7 +825,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *DELETE*  /api/v2/subscribe
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -839,7 +837,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 404
   * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -864,15 +862,17 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  /api/v2/read
 
-### 请求 Headers
+### 请求头部
 
 **Content--Type**  application/json
+
+**Authorization** Bearer \<token\>
 
 ### 响应状态
 
 * 200
 
-### Body
+### 请求体
 
 ```json
 {
@@ -914,7 +914,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  /api/v2/write
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -924,7 +924,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 
-### Body
+### 请求体
 
 ```json
 {
@@ -947,9 +947,13 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/schema
 
-### 请求 Params
+### 请求参数
 
 **plugin_name**  必需
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
 
 ### 响应状态
 
@@ -1045,7 +1049,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  /api/v2/node/setting
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -1058,7 +1062,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
   * 2003 node 不存在
   * 2004 node 配置无效
 
-### Body
+### 请求体
 
 ```json
 //The parameter fields in json fill in different fields according to different plugins
@@ -1086,11 +1090,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/node/setting
 
-### 请求 Params
+### 请求参数
 
 **node**  必需
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -1118,7 +1122,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *POST*  /api/v2/node/ctl
 
-### 请求 Headers
+### 请求头部
 
 **Content-Type**  application/json
 
@@ -1133,7 +1137,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
   * 2008 node not running
   * 2009 node is stopped
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1156,11 +1160,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/node/state
 
-### 请求 Params
+### 请求参数
 
 **node**  optional
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -1198,11 +1202,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/subscribe
 
-### 请求 Params
+### 请求参数
 
 **app**  必需
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -1234,7 +1238,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 *GET*  /api/v2/log
 
-### 请求 Params
+### 请求参数
 
 **since**       必需， UTC 时间戳
 
@@ -1246,7 +1250,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 **page_size**   必需，范围应在 200 ～ 10000
 
-### 请求 Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
@@ -1291,7 +1295,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-## 上传License
+## 上传 License
 
 *POST*  /api/v2/license
 
@@ -1325,7 +1329,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-## 获取License信息
+## 获取 License 信息
 
 *GET*  /api/v2/license
 
