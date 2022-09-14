@@ -345,7 +345,7 @@ Group 列表中会显示刚新建的组，如下图所示。
 订阅成功之后可以看到 MQTTX 可以一直接收到 Neuron 采集并上报过来的数据。
 
 * 打开 MQTTX 添加新的连接，正确填写名称与刚部署好的 EMQX Edge 的 Host 与 Port，完成连接;
-* 添加新的订阅，默认的上传 Topic 的主题格式为`neuron/{mqtt_clientid}/upload`，其中 {mqtt_clientid} 是在 Neuron 界面中北向应用中配置的`Client-id`，本例我们填写上面设置好的 `mqtt1`；
+* 添加新的订阅，默认的上传 Topic 的主题格式为`/neuron/{node_name}/upload`，其中 {node_name} 是在 Neuron 界面中北向应用中配置的，本例我们填写上面设置好的 `/neuron/mqtt-1/upload`；
 
 :::tip
 当点位设置了 Subscribe 属性时，只有在采集到的数值发生变化时，才会将变化后的数值上传到云端。
