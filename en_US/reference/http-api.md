@@ -133,6 +133,49 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
+## Password
+
+*POST*   **/api/v2/password**
+
+### Request Headers
+
+**Content-Type** application/json
+
+**Authorization** Bearer \<token\>
+
+
+### Response Status
+
+* 200 OK
+* 401
+  * 1004 missing token
+  * 1005 decoding token error
+  * 1012 password length too short or too long
+  * 1013 duplicate password
+* 403
+  * 1006 expired token
+  * 1007 validate token error
+  * 1008 invalid token
+
+### Body
+
+```json
+{
+    "name": "admin",
+    "old_pass": "01234",
+    "new_pass": "56789"
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+
 ## Add Node
 
 *POST*  **/api/v2/node**
