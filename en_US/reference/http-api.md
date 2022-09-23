@@ -1236,43 +1236,6 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Log
-
-*GET*  /api/v2/log
-
-### Request Params
-
-**since**       required, UTC timestamp
-
-**until**       required, UTC timestamp, with `since` forms the interval [since, until)
-
-**level**       optional, log level, should be one of trace, debug, info, warn, error, fatal
-
-**page**        required
-
-**page_size**   required, should be in range [200, 10000]
-
-### Request Headers
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200
-* 400
-  * 1003 request param invalid
-
-### Response
-
-```json
-{
-    "error": 0,
-    "rows": [
-        "2022-02-11 15:30:57 WARN  [neuron] src/main.c:90: recv sig: 2"
-    ]
-}
-```
-
 ## Get Version
 
 *GET*  /api/v2/version
