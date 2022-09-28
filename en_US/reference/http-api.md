@@ -1224,7 +1224,9 @@ The value is displayed only when the value is read correctly, when the value is 
     //running state
     "running": 2,
     //link state
-    "link": 1
+    "link": 1,
+    //average round trip time communicating with devices
+    "average_rtt": 100
 }
 
 {
@@ -1232,12 +1234,14 @@ The value is displayed only when the value is read correctly, when the value is 
         {
             "node": "modbus-node1",
             "running": 2,
-            "link": 1
+            "link": 1,
+            "average_rtt": 100
         },
         {
             "node": "modbus-node2",
             "running": 1,
-            "link": 0
+            "link": 0,
+            "average_rtt": 9999
         }
     ]
 }

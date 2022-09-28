@@ -1221,7 +1221,9 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     //running state
     "running": 2,
     //link state
-    "link": 1
+    "link": 1,
+    //average round trip time communicating with devices
+    "average_rtt": 100
 }
 
 {
@@ -1229,12 +1231,14 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
         {
             "node": "modbus-node1",
             "running": 2,
-            "link": 1
+            "link": 1,
+            "average_rtt": 100
         },
         {
             "node": "modbus-node2",
             "running": 1,
-            "link": 0
+            "link": 0,
+            "average_rtt": 9999
         }
     ]
 }
