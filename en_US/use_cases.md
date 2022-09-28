@@ -5,7 +5,7 @@ Neuron is an Industrial IoT connectivity solution capable of meeting the require
 ## Industrial Device Connectivity
 Neuron is usually used for factory digitized transformation, connecting disparate native protocol devices to multiple industrial information applications that support MQTT or API, such as MES, ERP, SCADA, IIoT platform and analytics system. Neuron also allows these industrial applications send back command to monitor, manage and control the field devices. 
 
-Multiple Neuron can be deployed on the edge side of the district site for real-time data collection of various IIoT devices. Some devices are connected directly, others may be connected via DTU. Real-time data are reported to the data center or cloud for relevant analysis system and application, through the EMQ X Broker.
+Multiple Neuron can be deployed on the edge side of the district site for real-time data collection of various IIoT devices. Some devices are connected directly, others may be connected via DTU. Real-time data are reported to the data center or cloud for relevant analysis system and application, through the EMQX Broker.
 
 ![district-site](./assets/district-site.png)
 
@@ -29,17 +29,17 @@ Neuron is a EoN nodes of Sparkplug solution in the below infrastructure. It is a
 
 ![sparkplugB](./assets/sparkplugB.png)
  
-EMQ X Broker or Cluster is the main component of infrastruture to manage all MQTT message traffic. Devices and sensors through the Neuron (EoN node) can communicate with application node such as SCADA systems, data historians and analysis programs.
+EMQX Broker or Cluster is the main component of infrastruture to manage all MQTT message traffic. Devices and sensors through the Neuron (EoN node) can communicate with application node such as SCADA systems, data historians and analysis programs.
 
 ## Unified Namespace
-Unified namespace is a suit of solution software (EMQ X Broker + Neuron) that acts as central repository where any application and device can publish or subscirbe contextualized data for a specific need. This simplifies dataops at scale since it is possible to interact with different industrial applications using the same namespace and communication interface. This makes your industrial information system to scale up easily.
+Unified namespace is a suit of solution software (EMQX Broker + Neuron) that acts as central repository where any application and device can publish or subscirbe contextualized data for a specific need. This simplifies dataops at scale since it is possible to interact with different industrial applications using the same namespace and communication interface. This makes your industrial information system to scale up easily.
 
 Unified Namespace Solution offers below advantages:
 * Integration Simplification
 * Easy Devices Additions
 
-The EMQ X Broker or Cluster allows the communication between the various industrial applications, which are data producers and data consumers at the same time. Neuron will connect to various IIoT devices and process the collected data in eKuiper stream processing engine to generate contextualized data. This contextualized data will be published to EMQ X Broker or Cluster, and can be visualized by single point of MQTT connection in all industrial applications such as SCADA tools, BI analytic software, MES, ERP. 
+The EMQX Broker or Cluster allows the communication between the various industrial applications, which are data producers and data consumers at the same time. Neuron will connect to various IIoT devices and process the collected data in eKuiper stream processing engine to generate contextualized data. This contextualized data will be published to EMQX Broker or Cluster, and can be visualized by single point of MQTT connection in all industrial applications such as SCADA tools, BI analytic software, MES, ERP. 
 
 ![uns](./assets/uns.png)
 
-EMQ X Broker or Cluster and Neuron together can form an UNS. Industrial applications such as MES, ERP can uitilize the benefits of UNS. For example, UNS eliminates massive point to point connections and minimizes the load on data transmission. 
+EMQX Broker or Cluster and Neuron together can form an UNS. Industrial applications such as MES, ERP can uitilize the benefits of UNS. For example, UNS eliminates massive point to point connections and minimizes the load on data transmission. 
