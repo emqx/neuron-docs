@@ -133,6 +133,49 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
+## Password
+
+*POST*   **/api/v2/password**
+
+### Request Headers
+
+**Content-Type** application/json
+
+**Authorization** Bearer \<token\>
+
+
+### Response Status
+
+* 200 OK
+* 401
+  * 1004 missing token
+  * 1005 decoding token error
+  * 1012 password length too short or too long
+  * 1013 duplicate password
+* 403
+  * 1006 expired token
+  * 1007 validate token error
+  * 1008 invalid token
+
+### Body
+
+```json
+{
+    "name": "admin",
+    "old_pass": "01234",
+    "new_pass": "56789"
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+
 ## Add Node
 
 *POST*  **/api/v2/node**
@@ -1181,7 +1224,9 @@ The value is displayed only when the value is read correctly, when the value is 
     //running state
     "running": 2,
     //link state
-    "link": 1
+    "link": 1,
+    //average round trip time communicating with devices
+    "average_rtt": 100
 }
 
 {
@@ -1189,12 +1234,14 @@ The value is displayed only when the value is read correctly, when the value is 
         {
             "node": "modbus-node1",
             "running": 2,
-            "link": 1
+            "link": 1,
+            "average_rtt": 100
         },
         {
             "node": "modbus-node2",
             "running": 1,
-            "link": 0
+            "link": 0,
+            "average_rtt": 9999
         }
     ]
 }

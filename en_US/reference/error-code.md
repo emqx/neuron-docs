@@ -18,6 +18,8 @@ This document describes the errors that neuron will reply to sender when calling
 * 1009    user or password error
 * 1010    is busy
 * 1011    file not exist
+* 1012    password length too short or too long
+* 1013    duplicate password
 
 ## add/del/update node/tag/plugin/group error codes
 

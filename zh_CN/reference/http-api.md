@@ -133,6 +133,48 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 更改密码
+
+*POST*   **/api/v2/password**
+
+### 请求头部
+
+**Content-Type** application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 401
+  * 1004, 缺少令牌
+  * 1005, 解码令牌错误
+  * 1012, 密码长度太短或太长
+  * 1013, 密码重复
+* 403
+  * 1006, 令牌过期
+  * 1007, 验证令牌错误
+  * 1008, 无效令牌
+
+### 请求体
+
+```json
+{
+    "name": "admin",
+    "old_pass": "01234",
+    "new_pass": "56789"
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+
 ## 添加 Node
 
 *POST*  **/api/v2/node**
@@ -1179,7 +1221,9 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     //running state
     "running": 2,
     //link state
-    "link": 1
+    "link": 1,
+    //average round trip time communicating with devices
+    "average_rtt": 100
 }
 
 {
@@ -1187,12 +1231,14 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
         {
             "node": "modbus-node1",
             "running": 2,
-            "link": 1
+            "link": 1,
+            "average_rtt": 100
         },
         {
             "node": "modbus-node2",
             "running": 1,
-            "link": 0
+            "link": 0,
+            "average_rtt": 9999
         }
     ]
 }
