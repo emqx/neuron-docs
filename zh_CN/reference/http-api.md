@@ -1176,43 +1176,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-## 获取日志
-
-*GET*  /api/v2/log
-
-### 请求 Params
-
-**since**       必需， UTC 时间戳
-
-**until**       必需， UTC timestamp, with `since` forms the interval [since, until)
-
-**level**       选填， log level, should be one of trace, debug, info, warn, error, fatal
-
-**page**        必需
-
-**page_size**   必需，范围应在 200 ～ 10000
-
-### 请求 Headers
-
-**Authorization** Bearer \<token\>
-
-### 响应状态
-
-* 200
-* 400
-  * 1003 错误参数
-
-### 响应
-
-```json
-{
-    "error": 0,
-    "rows": [
-        "2022-02-11 15:30:57 WARN  [neuron] src/main.c:90: recv sig: 2"
-    ]
-}
-```
-
 ## 获取版本信息
 
 *GET*  /api/v2/version

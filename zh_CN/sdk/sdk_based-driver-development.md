@@ -6,7 +6,7 @@
 
 下载链接：[https://github.com/emqx/neuron/releases](https://github.com/emqx/neuron/releases)
 
-根据不同的开发系统，下载对应的 sdk tar.gz 包（ 例如，neuron-sdk-2.1.3-linux-amd64.tar.gz ）到相应的开发系统中并解压得到 neuron-sdk-x.x.x，其中 x.x.x 代表的的是版本号，执行以下指令。
+根据不同的开发系统，下载对应的 sdk tar.gz 包（ 例如，neuron-sdk-2.1.3-linux-amd64.tar.gz ）到相应的开发系统中并解压得到 neuron-sdk-x.x.x，其中 x.x.x 代表的是版本号，执行以下指令。
 
 ```bash
 # take version 2.1.3 as an example

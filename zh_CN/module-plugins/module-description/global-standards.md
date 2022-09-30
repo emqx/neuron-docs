@@ -24,7 +24,7 @@ Modbus TCP/IP 是通过 TCP 接口在以太网上运行的简单 Modbus 协议�
 
 ![south-commercial](./assets/south-commercial.png)
 
-Modbus 设备采用主从（客户端-服务器）通信模式，只有一台设备（主/客户端）可以发起查询。简单来说，它是一种用于在电子设备之间通过串行线路传输信息的方法。Neuron 提供下列 Mosbus 驱动模块。
+Modbus 设备采用主从（客户端-服务器）通信模式，只有一台设备（主/客户端）可以发起查询。简单来说，它是一种用于在电子设备之间通过串行线路传输信息的方法。Neuron 提供下列 Modbus 驱动模块。
 
 * Modbus RTU
 * Modbus TCP plus (more advance functions)
