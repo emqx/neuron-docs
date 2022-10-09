@@ -876,3 +876,44 @@ Neuron 可通过外部辅助程序 opcshift.exe 间接访问运行于 Windows �
 | ---------------------- | -------- | ------------------------------------------------------------ |
 | 1!Bucket Brigade.UInt2 | UINT16   | 获取类型为 UINT16 的数据点；NS 为1，NODEID 为 Bucket Brigade.UInt2 |
 
+
+
+## CNC FANUC FOCAS
+
+### 设备设置
+
+| 字段 | 说明       |
+| ---- | ---------- |
+| host | 设备IP地址 |
+| port | 设备端口号 |
+
+### 支持的数据类型
+
+### 地址格式
+
+> C INDEX[!param1]\[!param2]\[!param3]\.[offset]</span>
+
+
+
+| 索引 | 说明                             | 参数                  | 类型   | 例子       |
+| ---- | -------------------------------- | --------------------- | ------ | ---------- |
+| 1    | actual axis feedrate(F)          | 无                    | int64  | C1         |
+| 2    | absolute axis position           | param1,param2,offset  | int64  | C2!1!2.2   |
+| 3    | machine axis position            | param1,param2,offset  | int64  | C3!1!2.3   |
+| 4    | relative axis position           | param1,param2,offset  | int64  | C4!1!2.4   |
+| 5    | distance                         | param1,param2,offset  | int64  | C5!1!2.5   |
+| 6    | skip position                    | param1,param2,offset  | int64  | C6!1!2.6   |
+| 7    | servo delay value                | param1, param2,offset | int64  | C7!1!2.7   |
+| 8    | accdec delay value               | param1,param2,offset  | int64  | C8!1!2.8   |
+| 9    | actual spindle speed             | 无                    | int64  | C9         |
+| 10   | manual overlapped motion value 1 | param1,param2,offset  | int64  | C10!1!2.10 |
+| 11   | manual overlapped motion value 2 | param1,param2,offset  | int64  | C11!1!2.11 |
+| 12   | serial spindle load info         | param1,offset         | int16  | C12!1.3    |
+| 13   | serial spindle max rpm           | param1,offset         | int16  | C13!1.3    |
+| 14   | serial spindle gear ration       | param1,offset         | int16  | C14!1.4    |
+| 15   | axis name                        | param1                | string | C15        |
+| 16   | controlled name                  | param1,param2         | string | C16        |
+| 17   | spindle name                     | param1                | string | C17        |
+| 18   | order spindle speed              | 无                    | int64  | C18        |
+| 19   | order constant spindle speed     | 无                    | int64  | C19        |
+| 20   | order maximum spindle speed      | 无                    | int64  | C20        |
