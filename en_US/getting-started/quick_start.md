@@ -2,45 +2,25 @@
 
 ## Environment setup
 
-### Package Installation
+### Running Neuron-plus In Docker
 
-The environment used in this example is Ubuntu 20.04.3, X86_64.Use Neuron-plus version.
+1. Get the Docker image
 
-1. Download the installation package
-Neuron-plus packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).
-
-2. Unzip the installation package
-Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
+Get the neuron-plus image at [docker hub](https://hub.docker.com/r/emqx/neuron).
 
 ```bash
-sudo dpkg -i neuron-plus-2.2.0-linux-amd64.deb
+## pull neuron
+$ docker pull emqx/neuron-plus:latest
 ```
 
-::: tip
-After successful installation of the deb package, Neuron is automatically started.
-:::
-
-### Neuron operation
-
-#### Checking Neuron Status
+2. Start the Docker container
 
 ```bash
-sudo systemctl status neuron
+## run neuron-plus
+$ docker run -d --name neuron-plus -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron-plus:latest
 ```
 
-#### Stop Neuron
-
-```bash
-sudo systemctl stop neuron
-```
-
-#### Restart Neuron
-
-```bash
-sudo systemctl restart neuron
-```
-
-### Running EMQX in Docker
+### Running EMQX In Docker
 
 We need to deploy an MQTT Broker to do the connection processing of messages, here we recommend using EMQX. Again EMQX can be installed and used quickly using a Docker container.The latest version can be obtained from the [EMQX](https://www.emqx.com/en/try?product=broker).
 

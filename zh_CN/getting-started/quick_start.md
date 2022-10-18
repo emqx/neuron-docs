@@ -2,40 +2,22 @@
 
 ## 环境搭建
 
-### 软件包安装
+### 在 Docker 中运行 Neuron-plus
 
-实例中使用的环境是 Ubuntu 20.04.3，X86_64。使用 Neuron-plus 版本。
+1. 获取 Docker 镜像
 
-1. 下载安装包：Neuron-plus 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。
-
-2. 解压安装包：解压软件包到任何目录下（例如：/home/Neuron），输入命令：
+在 [docker hub](https://hub.docker.com/r/emqx/neuron) 中获取 neuron-plus 镜像。
 
 ```bash
-sudo dpkg -i neuron-plus-2.2.0-linux-amd64.deb
+## pull neuron
+$ docker pull emqx/neuron-plus:latest
 ```
 
-::: tip
-安装 deb 包后，Neuron 自启动
-:::
-
-### Neuron 相关操作
-
-#### 查看 Neuron 状态
+2. 启动 Docker 容器
 
 ```bash
-sudo systemctl status neuron
-```
-
-#### 停止 Neuron
-
-```bash
-sudo systemctl stop neuron
-```
-
-#### 重启 Neuron
-
-```bash
-sudo systemctl restart neuron
+## run neuron-plus
+$ docker run -d --name neuron-plus -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron-plus:latest
 ```
 
 ### 在 Docker 中运行 EMQX

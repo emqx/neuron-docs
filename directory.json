@@ -46,10 +46,6 @@
       "title": "控制台管理",
       "children": [
         {
-          "title": "安装 License",
-          "path": "console-management/license-installation"
-        },
-        {
           "title": "管理插件模块",
           "path": "console-management/plugin-modules-management"
         },
@@ -215,10 +211,6 @@
     {
       "title": "Console Management",
       "children": [
-        {
-          "title": "License Installation",
-          "path": "console-management/license-installation"
-        },
         {
           "title": "Plugin Module Management",
           "path": "console-management/plugin-modules-management"
