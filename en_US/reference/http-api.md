@@ -1408,3 +1408,30 @@ The value is displayed only when the value is read correctly, when the value is 
     "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
 }
 ```
+
+## Download log files
+
+*GET*  /api/v2/logs
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+    * 1011 file not exist
+    * 1015 command execution failed
+* 500
+    * 1001 internal error
+
+### Response
+
+Response if there is an error returned:
+
+```json
+{
+    "error": 1015
+}
+```

@@ -1405,3 +1405,30 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
 }
 ```
+
+## 下载日志文件
+
+*GET*  /api/v2/logs
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+    * 1011 文件不存在
+    * 1015 执行指令失败
+* 500
+    * 1001 内部错误
+
+### 响应
+
+如果有错误返回时响应：
+
+```json
+{
+    "error": 1015
+}
+```
