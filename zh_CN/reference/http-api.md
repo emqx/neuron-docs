@@ -290,6 +290,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 **type**  必需
 
+**plugin** 可选
+
+**node** 可选
+
 ### 请求头部
 
 **Authorization** Bearer \<token\>
@@ -574,6 +578,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 **node**  必需
 
 **group**  必需
+
+**name** 可选
 
 ### 请求头部
 
