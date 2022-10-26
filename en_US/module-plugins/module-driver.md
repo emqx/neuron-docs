@@ -300,14 +300,14 @@ When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Si
 
 #### AREA ADDRESS
 
-| AREA | DATA TYPE                                         | ATTRIBUTE  | REMARK          |
-| ---- | ------------------------------------------------- | ---------- | --------------- |
-| I    | int16/uint16/bit                                  | read       | input           |
-| O    | int16/uint16/bit                                  | read/write | output          |
-| F    | int16/uint16/bit                                  | read/write | flag            |
-| T    | int16/uint16                                      | read/write | timer           |
-| C    | int16/uint16                                      | read/write | counter         |
-| DB   | int16/uint16/bit/int32/uint32/float/double/string | read/write | global DB block |
+| AREA | DATA TYPE                                         | ATTRIBUTE  | REMARK          | S7-200 smart                  |
+| ---- | ------------------------------------------------- | ---------- | --------------- | ----------------------------- |
+| I    | int16/uint16/bit                                  | read       | input           | Input I、E                    |
+| O    | int16/uint16/bit                                  | read/write | output          | Output Q、A                   |
+| F    | int16/uint16/bit                                  | read/write | flag            | FLAG Memory M                 |
+| T    | int16/uint16                                      | read/write | timer           | Timer T                       |
+| C    | int16/uint16                                      | read/write | counter         | Counter C                     |
+| DB   | int16/uint16/bit/int32/uint32/float/double/string | read/write | global DB block | Variable Memory V, DB index 1 |
 
 *Example:*
 
