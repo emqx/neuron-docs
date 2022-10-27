@@ -1422,7 +1422,7 @@ The value is displayed only when the value is read correctly, when the value is 
 * 200 OK
 * 404
     * 1011 file not exist
-    * 1015 command execution failed
+    * 1014 command execution failed
 * 500
     * 1001 internal error
 
@@ -1432,6 +1432,43 @@ Response if there is an error returned:
 
 ```json
 {
-    "error": 1015
+    "error": 1014
 }
 ```
+
+## Update node log level
+
+*PUT*  /api/v2/level
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+    * 2003 node not exist
+* 500
+    * 1001 internal error
+    * 1010 is busy
+
+### Body
+
+```json
+{
+    "node_name": "modbus-tcp"
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+:::tip
+Call the api to modify the log level of the node to debug, and automatically switch to the default level in about ten minutes.
+:::

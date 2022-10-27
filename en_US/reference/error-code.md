@@ -20,8 +20,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 1011    file not exist
 * 1012    password length too short or too long
 * 1013    duplicate password
-* 1014    log level is wrong
-* 1015    command execution failed
+* 1014    command execution failed
 
 ## add/del/update node/tag/plugin/group error codes
 
