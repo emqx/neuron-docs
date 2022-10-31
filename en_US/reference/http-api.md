@@ -291,6 +291,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 **type**  required
 
+**plugin** optional
+
+**node** optional
+
 ### Request Headers
 
 **Authorization** Bearer \<token\>
@@ -577,6 +581,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 **node**  required
 
 **group**  required
+
+**name** name
 
 ### Request Headers
 
