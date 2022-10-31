@@ -1405,3 +1405,68 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
 }
 ```
+
+## 下载日志文件
+
+*GET*  /api/v2/logs
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+    * 1011 文件不存在
+    * 1014 执行指令失败
+* 500
+    * 1001 内部错误
+
+### 响应
+
+如果有错误返回时响应：
+
+```json
+{
+    "error": 1014
+}
+```
+
+## 修改节点日志等级
+
+*PUT*  /api/v2/log/level
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+    * 2003 node 不存在
+* 500
+    * 1001 内部错误
+    * 1010 程序繁忙
+
+### 请求体
+
+```json
+{
+    // node name
+    "node": "modbus-tcp"
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+:::tip
+调用接口修改节点的日志等级为 debug，十分钟左右自动切回默认等级。
+:::
