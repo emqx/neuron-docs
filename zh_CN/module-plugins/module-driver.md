@@ -901,40 +901,93 @@ Neuron 可通过外部辅助程序 opcshift.exe 间接访问运行于 Windows �
 
 ## CNC FANUC FOCAS
 
+**支持架构**: amd64, arm/v7
+
 ### 设备设置
 
-| 字段 | 说明       |
-| ---- | ---------- |
-| host | 设备IP地址 |
-| port | 设备端口号 |
+| 字段    | 说明         |
+| ------- | ------------ |
+| host    | 设备IP地址   |
+| port    | 设备端口号   |
+| timeout | 连接超时时间 |
 
 ### 支持的数据类型
 
-### 地址格式
+* uint8
+* int8
+* uint16
+* int16
+* uint32
+* int32
+* uint64
+* int64
+* float
+* double
+* bit
+* string
 
-> C INDEX[!param1]\[!param2]\[!param3]\.[offset]</span>
+
+
+### CNC 数据
+
+| tag标识（地址） | 说明                                         | 数据类型     | 参数               |
+| --------------- | -------------------------------------------- | ------------ | ------------------ |
+| actf            | actual feed rate                             | int64/uint64 | -                  |
+| absolute        | absolute position data of axis               | int64/uint64 | axis number(.n)    |
+| machine         | machine position data of axis                | int64/uint64 | axis number(.n)    |
+| relative        | relative position data of axis               | int64/uint64 | axis number(.n)    |
+| distance        | distance to go of axis                       | int64/uint64 | axis number(.n)    |
+| acts            | actual rotational speed of the spindle       | int64/uint64 | -                  |
+| skip            | skipped position of axis                     | int64/uint64 | axis number(.n)    |
+| srvdelay        | servo delay amount of axis                   | int64/uint64 | axis number(.n)    |
+| accdecdly       | acceleration/deceration delay amount of axis | int64/uint64 | axis number(.n)    |
+| spcss_srpm      | converted spindle speed                      | int64/uint64 | -                  |
+| spcss_sspm      | specified surface speed                      | int64/uint64 | -                  |
+| spcss_smax      | clamp of maxmum spindle speed                | int64/uint64 | -                  |
+| movrlap_input   | input overlapped motion value                | int64/uint64 | axis number(.n)    |
+| movrlap_output  | output overlapped motion value               | int64/uint64 | axis number(.n)    |
+| spload          | load information of the serial spindle       | int32/uint32 | spindle number(.n) |
+| spmaxrpm        | maximum r.p.m ratio of serial spindle        | int32/uint32 | spindle number(.n) |
+| spgear          | gear ratio of the serial spindle             | int32/uint32 | spindle number(.n) |
+
+*CNC地址示例*
+
+| 地址       | 说明                                  |
+| ---------- | ------------------------------------- |
+| actf       | 读取 actual feed rate                 |
+| absolute.1 | 读取第1个axis的absolute position      |
+| machine.3  | 读取第3个axis的machine position       |
+| spload.1   | 读取第1个spindle的load information    |
+| spmaxrpm.3 | 读取第3个spindle的maximum r.p.m ratio |
 
 
 
-| 索引 | 说明                             | 参数                  | 类型   | 例子       |
-| ---- | -------------------------------- | --------------------- | ------ | ---------- |
-| 1    | actual axis feedrate(F)          | 无                    | int64  | C1         |
-| 2    | absolute axis position           | param1,param2,offset  | int64  | C2!1!2.2   |
-| 3    | machine axis position            | param1,param2,offset  | int64  | C3!1!2.3   |
-| 4    | relative axis position           | param1,param2,offset  | int64  | C4!1!2.4   |
-| 5    | distance                         | param1,param2,offset  | int64  | C5!1!2.5   |
-| 6    | skip position                    | param1,param2,offset  | int64  | C6!1!2.6   |
-| 7    | servo delay value                | param1, param2,offset | int64  | C7!1!2.7   |
-| 8    | accdec delay value               | param1,param2,offset  | int64  | C8!1!2.8   |
-| 9    | actual spindle speed             | 无                    | int64  | C9         |
-| 10   | manual overlapped motion value 1 | param1,param2,offset  | int64  | C10!1!2.10 |
-| 11   | manual overlapped motion value 2 | param1,param2,offset  | int64  | C11!1!2.11 |
-| 12   | serial spindle load info         | param1,offset         | int16  | C12!1.3    |
-| 13   | serial spindle max rpm           | param1,offset         | int16  | C13!1.3    |
-| 14   | serial spindle gear ration       | param1,offset         | int16  | C14!1.4    |
-| 15   | axis name                        | param1                | string | C15        |
-| 16   | controlled name                  | param1,param2         | string | C16        |
-| 17   | spindle name                     | param1                | string | C17        |
-| 18   | order spindle speed              | 无                    | int64  | C18        |
-| 19   | order constant spindle speed     | 无                    | int64  | C19        |
-| 20   | order maximum spindle speed      | 无                    | int64  | C20        |
+### PMC数据
+
+| 标识 | 说明                            | 类型 | 权限 |
+| ---- | ------------------------------- | ---- | ---- |
+| A    | message demand                  | all  | 读写 |
+| C    | counter                         | all  | 读写 |
+| D    | data table                      | all  | 读写 |
+| E    | extended relay                  | all  | 读写 |
+| F    | signal to CNC -> PMC            | all  | 只读 |
+| G    | single to PMC -> CNC            | all  | 读写 |
+| K    | keep relay                      | all  | 读写 |
+| M    | input single from other device  | all  | 读写 |
+| N    | output signal from other device | all  | 读写 |
+| R    | internal relay                  | all  | 读写 |
+| T    | changeable timer                | all  | 读写 |
+| X    | singnal to machine -> PMC       | all  | 只读 |
+| Y    | signal to PMC -> machine        | all  | 读写 |
+
+*PMC点位示例*
+
+| 地址 | 类型                                                         | 说明                                                    |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------- |
+| A0   | uint8/int8/uint16/int16/uint32/int32/int64/uint64/float/double | PMC **message demand** 区域，地址0的数据                |
+| A0.1 | bit                                                          | PMC **message demand** 区域，地址0的的字节，第1个bit位  |
+| A0.0 | bit                                                          | PMC **message demand** 区域，地址0的字节，第0个bit位    |
+| A0.2 | string                                                       | PMC **message demand** 区域，地址0开始，长度为2的字符串 |
+| D0.2 | string                                                       | PMC **data table** 区域，地址0开始，长度为2的字符串     |
+| D0.7 | bit                                                          | PMC **data table** 区域，地址0的字节，第7个bit位        |
+
