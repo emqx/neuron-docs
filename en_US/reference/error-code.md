@@ -109,13 +109,22 @@ This document describes the errors that neuron will reply to sender when calling
 
 * 10500    fins disconnected
 * 10501    fins error
-* 10502    fins first address in inaccessible area
-* 10503    fins end of word exceed range
-* 10504    fins invalid size of data
-* 10505    fins response too long
-* 10506    fins data is protected
-* 10507    fins area read-only
-* 10508    fins data cannot change
+* 10502    fins local node error
+* 10503    fins dest node error
+* 10504    fins communication controller error
+* 10505    fins not executable
+* 10506    fins routing error
+* 10507    fins command format error
+* 10508    fins parameter error
+* 10509    fins read not possible
+* 10510    fins write not possible
+* 10511    fins not executable in current mode
+* 10512    fins no unit
+* 10513    fins start/stop not possible
+* 10514    fins unit error
+* 10515    fins command error
+* 10516    fins access error
+* 10517    fins abort
 
 ## OPCUA error codes
 
