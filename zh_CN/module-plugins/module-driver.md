@@ -28,8 +28,6 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | **key** | key文件，只在ssl值为true时启用，可选填 |
 | **keypass** | key文件密码，只有在ssl值为true时启用，可选填 |
 
-
-
 ## Modbus
 
 Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。三种协议除了设备配置方式不一致外，支持的数据类型及地址格式都一致。
@@ -621,7 +619,6 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 ### 地址格式
 
-
 代表 KNX 组地址，只能在 Neuron 中写入，属于该组的 KNX 设备将对发送到该组的消息做出响应。
 
 *例子：*
@@ -703,8 +700,8 @@ dlt645 驱动支持串口和 TCP 连接。
 
 | 字段               | 说明                               |
 | ----------------- | -------------------------------- |
-| **mail address**  | 电表通信地址                       |
 | **timeout**       | 向设备发送请求超时时间               |
+| **interval**      | 读指令时间间隔，单位为 ms            |
 | **device**        | 使用串口设备，例如，/dev/ttyUSB0    |
 | **stop**          | 停止位，默认值是 1                  |
 | **parity**        | 校验位，默认值是 2，代表偶校验        |
@@ -715,8 +712,8 @@ dlt645 驱动支持串口和 TCP 连接。
 
 | 字段                 | 说明                                                    |
 | ------------------- | ------------------------------------------------------- |
-| **mail address**    | 电表通信地址                       |
 | **timeout**         | 向设备发送请求超时时间               |
+| **interval**        | 读指令时间间隔                      |
 | **host**            | 当 Neuron 作为客户端使用时，host 指远程设备的 IP。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 IP，默认可填写 0.0.0.0  |
 | **port**            | 当 Neuron 作为客户端使用时，post 指远程设备的 TCP 端口。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 TCP 端口  |
 | **connection mode** | 驱动程序连接到设备的方式，默认为 client，即把 Neuron 作为客户端使用 |
@@ -730,18 +727,23 @@ dlt645 驱动支持串口和 TCP 连接。
 
 ### 地址格式
 
-> DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
+> mail_address#DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
 
-DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub>代表的是数据标识，所有点位只支持读属性，且用十六进制表示。
+* mail_address 代表电表的通信地址。
+* DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> 代表的是数据标识，所有点位只支持读属性，且用十六进制表示。
+
+例如，123456789012#02-01-01-00，代表通信地址为 123456789012 的电表设备的 A 相电压的值。
 
 :::tip
+支持一个节点配置多个通信地址的点位，即单串口的多设备连接。
+
 具体的数据标识对应的数据项名称请参考 DL/T645-2007 行业标准的数据编码表格。
 
 * 数据长度为 1，数据类型选择 UINT8；
 * 数据长度为 2，数据类型选择 UINT16；
 * 数据长度为 3 或 4，数据类型选择 UINT32；
 * 数据长度为 5 或 6 或 7 或 8，数据类型选择 UINT64；
-* Decimal 的值根据数据格式来定；
+* 根据数据格式设置 Decimal 的值，例如数据格式为 XXX.X，则 Decimal 设置为 0.1；
 :::
 
 | DI<sub>3</sub> | DI<sub>2</sub>    | DI<sub>1</sub>   | DI<sub>0</sub>   | 说明                             | 数据类型 | Decimal 值 | 举例                                                         |
@@ -896,8 +898,6 @@ Neuron 可通过外部辅助程序 opcshift.exe 间接访问运行于 Windows �
 | 地址                   | 数据类型 | 说明                                                         |
 | ---------------------- | -------- | ------------------------------------------------------------ |
 | 1!Bucket Brigade.UInt2 | UINT16   | 获取类型为 UINT16 的数据点；NS 为1，NODEID 为 Bucket Brigade.UInt2 |
-
-
 
 ## CNC FANUC FOCAS
 

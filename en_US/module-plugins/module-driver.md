@@ -701,8 +701,8 @@ The dlt645 protocol supports serial and tcp connection.
 
 | Parameter         | Description                                         |
 | ----------------- | --------------------------------------------------- |
-| **mail address**  | Electricity meter communication address             |
 | **timeout**       | Timeout for sending requests to the device          |
+| **inteval**       | read instruction interval(ms)                       |
 | **device**        | Use a serial device, e.g. /dev/ttyUSB0             |
 | **stop**          | stopbits, default 1                                 |
 | **parity**        | parity bit, default 2, which means even parity      |
@@ -713,8 +713,8 @@ The dlt645 protocol supports serial and tcp connection.
 
 | Parameter           | Description         |
 | ------------------- | ----------------- |
-| **mail address**    | Electricity meter communication address             |
 | **timeout**         | Timeout for sending requests to the device    |
+| **inteval**         | read instruction interval(ms)                       |
 | **host**            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default    |
 | **port**            | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally     |
 | **connection mode** | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client       |
@@ -728,18 +728,23 @@ The dlt645 protocol supports serial and tcp connection.
 
 ### Address format
 
-> DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
+> mail_address#DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
 
-DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> represents the data identification, and all points only support read attributes, and expressed in hexadecimal.
+* mail_address represents the mailing address of the meter.
+* DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> represents the data identification, and all points only support read attributes, and expressed in hexadecimal.
+
+E.g 123456789012#02-01-01-00, represents the value of the A-phase voltage of the meter device with the mailing address 123456789012.
 
 :::tip
+Support a node to configure multiple mailing addresses, that is a single serial port multi-device connection.
+
 Please refer to the DL/T645-2007 industry standard data coding table for the specific data item name corresponding to the data identifier.
 
-* The data length is 1, and the data type is UINT8;
-* The data length is 2, and the data type is UINT16;
-* The data length is 3 or 4, and the data type is UINT32;
-* The data length is 5 or 6 or 7 or 8, and the data type is UINT64;
-* The value of Decimal is determined according to the data format;
+* The data length is 1, and the data type is UINT8.
+* The data length is 2, and the data type is UINT16.
+* The data length is 3 or 4, and the data type is UINT32.
+* The data length is 5 or 6 or 7 or 8, and the data type is UINT64.
+* Set the value of **Decimal** according to the data format, e.g, if the data format is XXX.X, then **Decimal** is set to 0.1.
 :::
 
 | DI<sub>3</sub> | DI<sub>2</sub>    | DI<sub>1</sub>   | DI<sub>0</sub>   | Description                             | Type of data | Decimal value | Example                                                         |
