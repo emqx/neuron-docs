@@ -7,8 +7,8 @@ The Neuron documentation is composed of a few major sections：
 * [Data Processing Engine](./data-processing-engine/prerequisite-setup.md): How to setup data streaming engine and make streaming SQL statements for various AI/ML analystics and logic processing.
 * [Console Management](./console-management/plugin-modules-management.md): How to setup and operate Neuron via dashboard.
 * [Pluggable Module](./module-plugins/module-list.md): An overview of all current available modules and the parameters and address string format for configuration.
+* [SDK Tutorial](./sdk/sdk_based-driver-development.md): SDK usage and example.
 * [Architecture](./architecture.md): This section describes in details about the desgin of Neuron architecture.
 * [Integrations](./integration.md): How Neuron integrated with other applications and cloud platforms.
 * [Use Cases](./use_cases.md): A number of scensarios of how Neuron is used to accomplish the dataOps.
 * [Reference](./reference/http-api.md): A reference for MQTT API and HTTP API, and some error number descriptions when calling the API.
-* [SDK Tutorial](./sdk/sdk_based-driver-development.md): SDK usage and example.

@@ -1,4 +1,6 @@
-# Data Tags Import/Export
+# Tag Configuration Import/Export
+
+Neuron provides the function of batch import and export of label configuration information in Excel form, which can speed up the configuration of data labels, and can easily export the created data label information to external storage.
 
 ## Data Tags Import
 

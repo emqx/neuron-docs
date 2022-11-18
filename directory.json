@@ -50,7 +50,7 @@
           "path": "console-management/plugin-modules-management"
         },
         {
-          "title": "配置导入/导出",
+          "title": "点位配置导入/导出",
           "path": "console-management/configuration-import-export"
         },
         {
@@ -216,7 +216,7 @@
           "path": "console-management/plugin-modules-management"
         },
         {
-          "title": "Configuration Import/Export",
+          "title": "Tag Configuration Import/Export",
           "path": "console-management/configuration-import-export"
         },
         {

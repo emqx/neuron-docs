@@ -152,7 +152,7 @@ The Group List contains following elements,
 6. `Delete icon` Delete this group.
 
 :::tip
-For detailed import/export functions, please refer to [Configuration Import/Export](../console-management/configuration-import-export.md).
+For detailed import/export functions, please refer to [Tag Configuration Import/Export](../console-management/configuration-import-export.md).
 :::
 
 ### Step 7 Add data tags into group
