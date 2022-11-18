@@ -124,17 +124,16 @@ $ docker pull emqx/neuron-plus:latest
 
 ```bash
 ## run neuron
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron:latest
+$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:latest
 ```
 
 启动 neuron-plus:
 ```bash
 ## run neuron-plus
-$ docker run -d --name neuron-plus -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron-plus:latest
+$ docker run -d --name neuron-plus -p 7000:7000 --privileged=true --restart=always emqx/neuron-plus:latest
 ```
 
-* tcp 7000: 用于访问 web。
-* tcp 7001: http api 端口。（api 端口为 web 端口+1，例如，当 web 端口映射为 8000 时，api 端口应映射为8001）
+* tcp 7000: 用于访问 web 和 http api 端口。
 * --restart=always: docker 进程重启时，自动重启 neuron 容器。
 * --privileged=true: 可选参数，便于排查问题。
 * --env DISABLE_AUTH=true: 可选参数，用于关闭鉴权。
