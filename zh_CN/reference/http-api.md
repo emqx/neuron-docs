@@ -174,7 +174,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-
 ## 添加 Node
 
 *POST*  **/api/v2/node**
@@ -826,7 +825,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "name": "plugin_name",
             //plugin library name
             "library": "plugin_lib_name",
-            "description": "description"
+            "description": "description",
+            "description_zh": "描述"
         }
     ]
 }
@@ -1424,10 +1424,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 404
-    * 1011 文件不存在
-    * 1014 执行指令失败
+  * 1011 文件不存在
+  * 1014 执行指令失败
 * 500
-    * 1001 内部错误
+  * 1001 内部错误
 
 ### 响应
 
@@ -1451,10 +1451,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 404
-    * 2003 node 不存在
+  * 2003 node 不存在
 * 500
-    * 1001 内部错误
-    * 1010 程序繁忙
+  * 1001 内部错误
+  * 1010 程序繁忙
 
 ### 请求体
 
