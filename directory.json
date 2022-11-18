@@ -165,6 +165,10 @@
         {
           "title": "插件设置",
           "path": "reference/plugin-setting"
+        },
+        {
+          "title": "DTU 连接",
+          "path": "reference/dtu-connection"
         }
       ]
     }
@@ -335,6 +339,10 @@
         {
           "title": "Plugin Setting",
           "path": "reference/plugin-setting"
+        },
+        {
+          "title": "DTU Connection",
+          "path": "reference/dtu-connection"
         }
       ]
     }
