@@ -861,7 +861,7 @@ Neuron 可通过外部辅助程序 neuopc.exe 间接访问运行于 Windows 操�
 
 ### 设备配置
 
-neuopc 的组件包可以前往 neuopc 的[项目页面]([neugates/neuopc: Implementation of opcshift based on .net core (github.com)](https://github.com/neugates/neuopc))下载（neuopc是GPL协议下的开源项目）。安装以及远程连接的系统配置参考 [neuopc 运行环境设置](plc-settings/opcda.md)。
+neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neugates/neuopc)下载（neuopc是GPL协议下的开源项目）。安装以及远程连接的系统配置参考 [neuopc 运行环境设置](plc-settings/opcda.md)。
 
 ![](plc-settings/assets-opcda/neuopc-setting.png)
 
@@ -900,7 +900,7 @@ neuopc 的组件包可以前往 neuopc 的[项目页面]([neugates/neuopc: Imple
 2. 在设备配置中修改 endpoint url 为 neuopc 的 UA Server 地址；
 3. 在设备配置中填写 Username，与 neuopc 中设置的一致；
 4. 在设备配置中填写 Password，与neuopc 中设置的一直；
-5. 无需填写 Cert 和 Key，直接提交设置表达。
+5. 无需填写 Cert 和 Key，直接提交设置表单。
 
 ### 支持的数据类型
 
