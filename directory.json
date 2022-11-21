@@ -60,6 +60,10 @@
         {
           "title": "设备控制",
           "path": "console-management/device-control"
+        },
+        {
+          "title": "日志管理",
+          "path": "console-management/log-management"
         }
       ]
     },
@@ -114,7 +118,7 @@
               "title": "Siemens S7-1200/1500",
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
             },
-			{
+            {
               "title": "neuopc运行环境设置",
               "path": "module-plugins/plc-settings/opcda"
             }
@@ -238,6 +242,10 @@
         {
           "title": "Device Control",
           "path": "console-management/device-control"
+        },
+        {
+          "title": "Log Management",
+          "path": "console-management/log-management"
         }
       ]
     },
