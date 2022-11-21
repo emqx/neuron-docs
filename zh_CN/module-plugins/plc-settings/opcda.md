@@ -18,29 +18,41 @@
 
 2. 检查组件是否已安装
 
-   1. 如果是32位操作系统，则进入到 C:\Windows\System32 目录下，如果是64位操作系统，则进入到 C:\Windows\SysWOW64 目录下，检查是否有如下文件存在：
+   * 如果是32位操作系统，则进入到 C:\Windows\System32 目录下，如果是64位操作系统，则进入到 C:\Windows\SysWOW64 目录下，检查是否有如下文件存在：
 
-      ![](assets-opcda/core-components.png)
+   ![](assets-opcda/core-components.png)
 
-      如果文件不存在则安装对应平台的 OPC Core Components Redistributable 组件，如果存在则不用安装。
+   ::: tip
 
-   2. 打开 "Windows 任务管理器"检查 OpcEnum 系统服务是否在运行，如图：
+   如果文件不存在则安装对应平台的 OPC Core Components Redistributable 组件，如果存在则不用安装。
 
-      ![](assets-opcda/opcenum.png)
+   :::
 
-      如果正常运行，说明 OPC Core Components Redistributable 已经正常安装。
+   * 打开 "Windows 任务管理器"检查 OpcEnum 系统服务是否在运行，如图：
 
-   3. 拷贝 OPCDAAuto.dll 文件到系统目录中，如果是32位操作系统则拷贝到 C:\Windows\System32 目录下，如果是64位操作系统则拷贝到 C:\Windows\SysWOW64 目录下，拷贝完成后使用管理员权限打开 powershell 输入如下命令：
+   ![](assets-opcda/opcenum.png)
 
-      ```powershell
-      cd C:/Windows/System32 # x86系统
-      cd C:/Windows/SysWOW64 # x64系统
-      ./regsvr32 OPCDAAuto.dll
-      ```
+   ::: tip
 
-      成功后如下图所示：
+   如果正常运行，说明 OPC Core Components Redistributable 已经正常安装。
 
-      ![](assets-opcda/regist.png)
+   :::
+
+   * 拷贝 OPCDAAuto.dll 文件到系统目录中，如果是32位操作系统则拷贝到 C:\Windows\System32 目录下，如果是64位操作系统则拷贝到 C:\Windows\SysWOW64 目录下，拷贝完成后使用管理员权限打开 powershell 输入如下命令：
+
+   ```powershell
+   cd C:/Windows/System32 # x86系统
+   cd C:/Windows/SysWOW64 # x64系统
+   ./regsvr32 OPCDAAuto.dll
+   ```
+
+   ::: tip
+
+   成功后如下图所示：
+
+   :::
+
+   ![](assets-opcda/regist.png)
 
 3. 本机安装 MatrikonOPCSimulation 模拟器程序；
 
