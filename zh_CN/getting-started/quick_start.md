@@ -150,7 +150,7 @@ Group 列表中会显示刚新建的组，如下图所示。
 6. `删除` 图标用于删除当前组。
 
 :::tip
-详细的导入/导出功能请参考 [点位配置导入导出](../console-management/configuration-import-export.md)。
+详细的导入/导出功能请参考 [点位配置导入导出](../user-guide/configuration-import-export.md)。
 :::
 
 ### 第七步，添加数据标签到组中

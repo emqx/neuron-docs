@@ -26,6 +26,23 @@
       ]
     },
     {
+      "title": "用户指南",
+      "children": [
+        {
+          "title": "管理插件模块",
+          "path": "user-guide/plugin-modules-management"
+        },
+        {
+          "title": "点位配置导入/导出",
+          "path": "user-guide/configuration-import-export"
+        },
+        {
+          "title": "设备控制",
+          "path": "user-guide/device-control"
+        }
+      ]
+    },
+    {
       "title": "数据处理引擎",
       "children": [
         {
@@ -39,23 +56,6 @@
         {
           "title": "控制设备",
           "path": "data-processing-engine/device-control"
-        }
-      ]
-    },
-    {
-      "title": "控制台管理",
-      "children": [
-        {
-          "title": "管理插件模块",
-          "path": "console-management/plugin-modules-management"
-        },
-        {
-          "title": "点位配置导入/导出",
-          "path": "console-management/configuration-import-export"
-        },
-        {
-          "title": "设备控制",
-          "path": "console-management/device-control"
         }
       ]
     },
@@ -200,6 +200,23 @@
       ]
     },
     {
+      "title": "User Guide",
+      "children": [
+        {
+          "title": "Plugin Module Management",
+          "path": "user-guide/plugin-modules-management"
+        },
+        {
+          "title": "Tag Configuration Import/Export",
+          "path": "user-guide/configuration-import-export"
+        },
+        {
+          "title": "Device Control",
+          "path": "user-guide/device-control"
+        }
+      ]
+    },
+    {
       "title": "Data Processing Engine",
       "children": [
         {
@@ -213,23 +230,6 @@
         {
           "title": "Device Control",
           "path": "data-processing-engine/device-control"
-        }
-      ]
-    },
-    {
-      "title": "Console Management",
-      "children": [
-        {
-          "title": "Plugin Module Management",
-          "path": "console-management/plugin-modules-management"
-        },
-        {
-          "title": "Tag Configuration Import/Export",
-          "path": "console-management/configuration-import-export"
-        },
-        {
-          "title": "Device Control",
-          "path": "console-management/device-control"
         }
       ]
     },

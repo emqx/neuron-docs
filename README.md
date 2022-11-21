@@ -10,7 +10,7 @@ English | [简体中文](https://github.com/emqx/neuron/README-CN.md)
 
 Neuron is an Industrial IoT (IIoT) connectivity server for modern big data and AI/ML technology to leverage the power of Industrial 4.0. It supports one-stop access to dozens of industrial protocols and converts them into MQTT protocol and realize the interconnection between IIoT platforms and various industrial devices.
 
-This repository contains documents for Neuron module development and operations in terms of architecture, use cases, quick started guide, SQL streaming scripts, console management, SDK tutorial and technical details.
+This repository contains documents for Neuron module development and operations in terms of architecture, use cases, quick started guide, SQL streaming scripts, user guide, SDK tutorial and technical details.
 
 For more information about Neuron, please access [Neuron website](https://neugates.io).
 

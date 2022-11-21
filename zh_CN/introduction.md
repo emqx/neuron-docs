@@ -48,7 +48,7 @@ Neuron 支持 SparkplugB 协议，可以通过 EMQX 代理充当 [SparkplugB 统
 
 ## 点位配置导入导出
 
-Neuron 提供配置 [Excel 表导入和导出](./console-management/configuration-import-export.md)功能，以加速数据标签配置设定，并将数据标签信息保存在外部存储中。
+Neuron 提供配置 [Excel 表导入和导出](./user-guide/configuration-import-export.md)功能，以加速数据标签配置设定，并将数据标签信息保存在外部存储中。
 
 ## 身份验证和安全性
 
@@ -56,4 +56,4 @@ Neuron 支持加密 TLS、HTTPS 以确保传输中的数据安全，并采用 JW
 
 ## 基于 Web 的仪表板
 
-Neuron 为用户提供基于 Web 的管理界面，可以监控数据和设备状态并且可以在浏览器中在线管理连接设定的配置，并在浏览器中提供[反控设备](./console-management/device-control.md)，从而达到跨行业访问设备数据的目的。
+Neuron 为用户提供基于 Web 的管理界面，可以监控数据和设备状态并且可以在浏览器中在线管理连接设定的配置，并在浏览器中提供[反控设备](./user-guide/device-control.md)，从而达到跨行业访问设备数据的目的。
