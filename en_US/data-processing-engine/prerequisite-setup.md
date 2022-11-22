@@ -8,8 +8,9 @@ Because the neuron-plus version integrates eKuiper, and the page adds a data str
 
 ```shell
 $ sudo docker pull emqx/neuron-plus:latest
-$ sudo docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron-plus:latest
+$ sudo docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron-plus:latest
 ```
+
 ### Install Neuron and eKuiper separately
 
 Users can choose to install Neuorn and eKuiper separately, and use docker-compose to install and configure them directly. The docker-compose.yml example is as follows, and the installed version can be selected according to requirements.
@@ -45,7 +46,6 @@ services:
     container_name: neuron
     ports:
       - "7000:7000"
-      - "7001:7001"
     volumes:
       - nng-ipc:/tmp
 

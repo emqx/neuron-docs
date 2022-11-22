@@ -143,7 +143,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 **Authorization** Bearer \<token\>
 
-
 ### Response Status
 
 * 200 OK
@@ -174,7 +173,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     "error": 0
 }
 ```
-
 
 ## Add Node
 
@@ -500,8 +498,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     ]
 }
 ```
-
-
 
 ## Add Tag
 
@@ -829,7 +825,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             "name": "plugin_name",
             //plugin library name
             "library": "plugin_lib_name",
-            "description": "description"
+            "description": "description",
+            "description_zh": "描述"
         }
     ]
 }
@@ -1427,10 +1424,10 @@ The value is displayed only when the value is read correctly, when the value is 
 
 * 200 OK
 * 404
-    * 1011 file not exist
-    * 1014 command execution failed
+  * 1011 file not exist
+  * 1014 command execution failed
 * 500
-    * 1001 internal error
+  * 1001 internal error
 
 ### Response
 
@@ -1454,10 +1451,10 @@ Response if there is an error returned:
 
 * 200 OK
 * 404
-    * 2003 node not exist
+  * 2003 node not exist
 * 500
-    * 1001 internal error
-    * 1010 is busy
+  * 1001 internal error
+  * 1010 is busy
 
 ### Body
 

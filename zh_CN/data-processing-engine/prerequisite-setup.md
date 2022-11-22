@@ -8,11 +8,12 @@
 
 ```shell
 $ sudo docker pull emqx/neuron-plus:latest
-$ sudo docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron-plus:latest
+$ sudo docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron-plus:latest
 ```
+
 ### 分别安装 Neuron 和 eKuiper
 
-用户可以选择将 Neuorn 和 eKuiper 分开安装，可用 docker-compose 直接安装及配置，docker-compose.yml 示例如下所，安装的版本可根据需求自行选择。
+用户可以选择将 Neuorn 和 eKuiper 分开安装，可用 docker-compose 直接安装及配置，docker-compose.yml 示例如下所示，安装的版本可根据需求自行选择。
 
 ```python
 version: '3.4'
@@ -45,7 +46,6 @@ services:
     container_name: neuron
     ports:
       - "7000:7000"
-      - "7001:7001"
     volumes:
       - nng-ipc:/tmp
 
