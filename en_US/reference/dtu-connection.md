@@ -10,16 +10,17 @@ DTU supports two-way conversion of data, supports mutual conversion of common se
 
 Client/Server, also known as client/server mode, referred to as C/S mode, is a network communication architecture, which is used to distinguish the two parties who establish a communication connection as a client (Clent) and a server (Server).
 
-Although the C/S structure is very mature in technology, it has the characteristics of strong interaction, safe access mode, fast response speed, and good for processing large amounts of data. However, the C/S structure lacks versatility, and system maintenance and upgrades require redesign and development, which increases the difficulty of maintenance and management, and further data expansion is more difficult, so the C/S structure is limited to small LANs. If the Client and the Server are not in the same local area network, the user needs to ensure that the Client can access the Server through a network address and the Server can give the Client an access right to achieve communication between the two ends.
+In TCP, the client is the initiator of the request and sends the connection request to the server actively, while the server waits for the request from the client passively.
 
-A complete inter-network communication requires five element identifications: protocol, local address, local port number, remote port number, and remote address. In the C/S mode, the client receives user requests, actively sends a connection request to the server, and the server passively waits for the request from the client, processes the request and returns the result to the client. The port number is used to distinguish the logical number of different services.
+The following figure shows the workflow for establishing a connection between Client and Server.
 
-* When configuring the TCP connection on the client side, the server IP address and listening port must be set;
-* When configuring the TCP connection on the server side, the port used by the server must be set, and the client IP address and port are optional;
+![client_server](./assets/client_server.png)
 
 ## How To Connect To Neuron As A Client?
 
-This section mainly introduces how to configure the communication connection between Neuron and DTU under the condition that Neuron and DTU are in the same LAN, and Neuron acts as the client.
+This section mainly describes the configuration of Neuron and DTU when Neuron serves as Client and DTU serves as Server.
+
+As a Client, Neuron initiates connection requests to DTU actively. The user needs to ensure the network connectivity of Neuron -> DTU.
 
 ### Configure DTU Server
 
@@ -50,14 +51,11 @@ In the southbound driver management, create a node whose plugin is modbus-plus-t
 * Host fill in the IP address of DTU;
 * Port fill in the port of DTU configuration;
 
-### View Data Monitoring
-
-After adding points to the southbound drive, enter the data monitoring interface to view the data collected from the device, as shown in the figure below.
-![neuron-client-data](./assets/neuron-client-data.png)
-
 ## How To Connect To Neuron As Server?
 
-This section mainly introduces how to configure the communication connection between Neuron and DTU under the condition that Neuron and DTU are in the same LAN and Neuron is used as the server.
+This section mainly describes the configuration of Neuron and DTU when Neuron serves as the Server and DTU serves as the Client.
+
+As a Client, DTU initiates connection requests to Neuron. Users need to ensure the network connectivity of DTU -> Neuron. This connection mode can generally be used in the following scenarios. When some DTU uses 4G to access the Internet, Neuron cannot actively connect to DTU, so Neuron can only choose Server mode and actively connect to Neuron by DTU.
 
 ### Configure DTU Client
 
@@ -87,12 +85,6 @@ In the southbound driver management, create a node whose plugin is modbus-plus-t
 * Select server as the connection mode;
 * Host, fill in 0.0.0.0;
 * Port, fill in the listening port;
-
-### View data monitoring
-
-After adding tags to the southbound drive, enter the data monitoring interface to view the data collected from the device, as shown in the figure below.
-
-![neuron-server-data](./assets/neuron-server-data.png)
 
 ## Supplementary Instructions
 
