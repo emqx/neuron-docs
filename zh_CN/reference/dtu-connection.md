@@ -10,16 +10,17 @@ DTU 支持数据的双向转换，支持将 RS232、RS485、RS422 等常见的�
 
 Client/Server 又称客户/伺服器模式，简称 C/S 模式，是一种网络通讯架构，用以将通讯建立连接的双方以客户端（Clent）与服务器（Server）的身份区分开来。
 
-C/S 结构虽然在技术上已经很成熟，并且具有交互性强、具有安全的存取模式、响应速度快、利于处理大量数据等特点。但是 C/S 结构缺少通用性，系统维护、升级需要重新设计和开发，从而增加了维护和管理的难度，并且进一步的数据拓展困难较多，所以 C/S 结构只限于小型的局域网。若 Client 与 Server 不在同一局域网内，用户需要通过处理以保证 Client 端能够通过一个网络地址访问到 Server 端并且 Server 端能够给 Client 一个访问的权限，才能实现两端的通信。
+在 TCP 协议中，客户端属于请求的发起者，主动给服务器发送连接请求，服务端被动等待来自客户端的请求。
 
-一个完整的网间通信需要协议、本机地址、本地端口号、远程端口号、远程地址五个元素标识。在 C/S 模式中，客户端接收用户请求，主动给服务器发送连接请求，服务器被动等待来自客户端的请求，处理请求并传回结果到客户端。端口号则用于区分不同服务的逻辑编号。
+Client 和 Server 建立连接的工作流程如下图所示。
 
-* 客户端侧在配置 TCP 连接时，必须设置服务器 IP 地址及监听端口；
-* 服务端侧在配置 TCP 连接时，必须设置服务器使用的端口，客户端 IP 地址及端口为可选项；
+![client_server](./assets/client_server.png)
 
 ## 如何连接作为 Client 的 Neuron？
 
-本节主要介绍在 Neuron 与 DTU 在同一局域网内，并且 Neuron 作为 Client 端的条件下，如何配置以实现两者的通信连接。
+本节主要介绍 Neuron 作为 Client，DTU 作为 Server 时，Neuron 与 DTU 的相关配置。
+
+Neuron 作为 Client，主动向 DTU 发起连接请求，用户需要保证 Neuron -> DTU 的网络连通性。
 
 ### 配置 DTU Server
 
@@ -50,21 +51,18 @@ C/S 结构虽然在技术上已经很成熟，并且具有交互性强、具有�
 * Host 填写 DTU 的 IP 地址；
 * Port 填写 DTU 配置的端口；
 
-### 查看数据监控
-
-在南向驱动添加了点位后，进入数据监控界面，查看从设备端采集到的数据，如下图所示。
-![neuron-client-data](./assets/neuron-client-data.png)
-
 ## 如何连接作为 Server 的 Neuron？
 
-本节主要介绍在 Neuron 与 DTU 在同一局域网内，并且 Neuron 作为 Server 端的条件下，如何配置以实现两者的通信连接。
+本节主要介绍 Neuron 作为 Server，DTU 作为 Client 时， Neuron 与 DTU 的相关配置。
+
+DTU 作为 Client，主动向 Neuron 发起连接请求，用户需要保证 DTU -> Neuron 的网络连通性。这种连接方式通常可用于以下场景中，在某些 DTU 使用 4G 上网时，因为 Neuron 无法主动连接到 DTU，所以，Neuron 只能选择 Server 模式，由 DTU 主动连接到 Neuron。
 
 ### 配置 DTU Client
 
 首先，需要配置 DTU 与串口连接的参数，其次，需要配置 DTU 与 Neuron 建立连接的 Socket 参数，如下图所示。
 ![tcp-client](./assets/tcp-client.png)
 
-* 远程服务器地址，填写作为 server 端的 Neuron 运行的 IP 地址；
+* 远程服务器地址，填写作为 Server 端运行 Neuron 的 IP 地址；
 * 本地端口，默认不填写；
 * 远程端口，由于 每个 TCP Server 端口都会在客户端指定的端口上监听传入的 TCP 流量，因此，需要用户自定一个未被占用的端口，用以客户端与服务端之间进行握手建立连接。
 
@@ -88,12 +86,6 @@ $ telnet <ip> <port>
 * 连接模式选择 server；
 * Host，填写 0.0.0.0；
 * Port，填写监听端口；
-
-### 查看数据监控
-
-在南向驱动添加了点位后，进入数据监控界面，查看从设备端采集到的数据，如下图所示。
-
-![neuron-server-data](./assets/neuron-server-data.png)
 
 ## 补充说明
 
