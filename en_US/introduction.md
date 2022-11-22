@@ -46,9 +46,9 @@ Neuron supports [Sparkplug B communication](./use_cases.md) and thus assists the
 
 Duplicate or consecutive data tags would be merged into a single read/write command to increase the efficiency of data transmission. Such a data tag conditioning mechanism can reduces network and device workload.
 
-**Configuration Import/Export**
+**Tag Configuration Import/Export**
 
-Neuron provides [Excel sheet import and export](./console-management/configuration-import-export.md) capability to accelerate the setup of data tags. Users can use the most favorite editor Excel to prepare those data tags details at once according to the format as mentioned and then import the Excel sheet to Neuron. Excel sheets also help to keep these data tags information in outside storage for backup.
+Neuron provides [Excel sheet import and export](./user-guide/configuration-import-export.md) capability to accelerate the setup of data tags. Users can use the most favorite editor Excel to prepare those data tags details at once according to the format as mentioned and then import the Excel sheet to Neuron. Excel sheets also help to keep these data tags information in outside storage for backup.
 
 **Authentication and Security**
 
@@ -56,4 +56,4 @@ Neuron supports TLS and HTTPS encryption to ensure the data security in transmis
 
 **Web-based Dashboard**
 
-Neuron provides Web-based management dashboard for users to monitor data and device status, to manange online connection configuration setup and to send [control command](./console-management/device-control.md) to a specific device. All these operations can be handled in an one-stop browser interface.
+Neuron provides Web-based management dashboard for users to monitor data and device status, to manange online connection configuration setup and to send [Device Control](./user-guide/device-control.md) to a specific device. All these operations can be handled in an one-stop browser interface.
