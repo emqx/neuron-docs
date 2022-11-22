@@ -1008,13 +1008,13 @@ step:
 | D           | data table                      | all       | 读写   |
 | E           | extended relay                  | all       | 读写   |
 | F           | signal to CNC -> PMC            | all       | 只读   |
-| G           | single to PMC -> CNC            | all       | 读写   |
+| G           | signal to PMC -> CNC            | all       | 读写   |
 | K           | keep relay                      | all       | 读写   |
-| M           | input single from other device  | all       | 读写   |
+| M           | input signal from other device  | all       | 读写   |
 | N           | output signal from other device | all       | 读写   |
 | R           | internal relay                  | all       | 读写   |
 | T           | changeable timer                | all       | 读写   |
-| X           | singnal to machine -> PMC       | all       | 只读   |
+| X           | signal to machine -> PMC        | all       | 只读   |
 | Y           | signal to PMC -> machine        | all       | 读写   |
 
 *PMC点位示例*
