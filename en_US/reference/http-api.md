@@ -48,6 +48,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * BOOL   = 12
 * STRING = 13
 * BYTES  = 14
+* ERROR = 15
+* WORD = 16
+* DWORD = 17
+* LWORD = 18
 
 ### Data Attribute
 

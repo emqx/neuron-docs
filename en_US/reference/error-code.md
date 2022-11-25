@@ -133,3 +133,13 @@ This document describes the errors that neuron will reply to sender when calling
 * 10003 opcua access timeout
 * 10004 opcua tag is not readable
 * 10005 opcua tag is not writable
+
+
+
+
+
+## EtherNet/IP error codes
+
+* 10701 - 10744 EtherNet/IP error
+* 10798 EtherNet/IP data type mismatch
+* 10799 EtherNet/IP no session

@@ -578,6 +578,8 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 * int16
 * float
 * bit
+* int8
+* uint8
 
 ### Address Format
 
@@ -1122,3 +1124,44 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 | --------- | --------- | ------------------------------------------------------------ |
 | D1002.16L | string    | D area, address is 1002, string length is 16, endianness is L |
 | D1003.16  | string    | D area, address is 1003, string length is 16, endianness is H |
+
+
+
+## EtherNet/IP(CIP)
+
+
+
+### Parameter Setting
+
+| Field | description                |
+| ----- | -------------------------- |
+| host  | device ip                  |
+| port  | device port, default 44818 |
+| slot  | cpu slot, default 0        |
+
+
+
+### Data Type
+
+* INT8
+* UINT8
+* INT16
+* UINT16
+* INT32
+* UINT32
+* INT64
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* BIT
+* STRING
+* WORD
+* DWORD
+* LWORD
+
+
+
+### Address Format
+
+>  TAG NAME </span>
