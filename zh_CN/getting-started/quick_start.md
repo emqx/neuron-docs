@@ -4,14 +4,14 @@
 
 ### 软件包安装
 
-实例中使用的环境是 Ubuntu 20.04.3，X86_64。使用 Neuron-plus 版本。
+实例中使用的环境是 Ubuntu 20.04.3，X86_64。使用 NeuronEX 版本。
 
-1. 下载安装包：Neuron-plus 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。
+1. 下载安装包：NeuronEX 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。
 
 2. 解压安装包：解压软件包到任何目录下（例如：/home/Neuron），输入命令：
 
 ```bash
-sudo dpkg -i neuron-plus-2.2.0-linux-amd64.deb
+sudo dpkg -i neuronex-2.3.0-linux-amd64.deb
 ```
 
 ::: tip

@@ -1,6 +1,6 @@
 # Installation
 
-In order to meet customer needs, Neuron is divided into two types, one that integrates eKuiper and carries a data stream processing engine interface, named Neuron-plus, and the other that does not integrate eKuiper, named Neuron. Users can choose according to their own needs.Neuron-plus version now only supports docker installation.
+In order to meet customer needs, Neuron is divided into two types, one that integrates eKuiper and carries a data stream processing engine interface, named NeuronEX, and the other that does not integrate eKuiper, named Neuron. Users can choose according to their own needs.
 
 ## Download
 
@@ -36,7 +36,7 @@ The rpm/deb package uses systemd to manage the neuron process and it is recommen
 Install according to different versions and architectures, E.g.
 
 ```bash
-$ sudo dpkg -i neuron-2.2.0-linux-armhf.deb
+$ sudo dpkg -i neuron-2.3.0-linux-armhf.deb
 ```
 
 To avoid replacing the neuron package due to the ubuntu system perform the package updated automatically, you also need to execute the following command to keep the neuron package in the apt upgrade.
@@ -62,7 +62,7 @@ $ sudo dpkg -r neuron
 Install according to different versions and architectures, E.g.
 
 ```bash
-$ sudo rpm -i neuron-2.2.0-linux-armhf.rpm
+$ sudo rpm -i neuron-2.3.0-linux-armhf.rpm
 ```
 
 ::: tip
@@ -82,14 +82,14 @@ $ sudo rpm -e neuron
 Download the installation package according to different versions and architectures, E.g.
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.2.0/neuron-plus-2.2.0-linux-armhf.tar.gz
+$ wget https://www.emqx.com/en/downloads/neuron/2.3.0/neuron-2.3.0-linux-armhf.tar.gz
 ```
 
 ### Unpacking
 
 ```bash
-$ sudo tar -zxvf neuron-2.2.0-linux-armhf.tar.gz
-$ cd neuron-2.1.0-linux-armhf
+$ sudo tar -zxvf neuron-2.3.0-linux-armhf.tar.gz
+$ cd neuron-2.3.0-linux-armhf
 ```
 
 ### Start
@@ -107,31 +107,31 @@ $ ./neuron
 The neuron docker image can be downloaded from the docker hub website.[https://hub.docker.com](https://hub.docker.com/r/emqx/neuron)
 
 ```bash
-## pull neuron
+## pull Neuron
 $ docker pull emqx/neuron:latest
 ```
 
-The neuron-plus docker image can be downloaded from the docker hub website.[https://hub.docker.com](https://hub.docker.com/r/emqx/neuron-plus)
+The NeuronEX docker image can be downloaded from the docker hub website.[https://hub.docker.com](https://hub.docker.com/r/emqx/neuronex)
 
 ```bash
-## pull neuron-plus
-$ docker pull emqx/neuron-plus:latest
+## pull NeuronEX
+$ docker pull emqx/neuronex:latest
 ```
 
 ### Start
 
-Start neuron.
+Start Neuron.
 
 ```bash
-## run neuron
+## run Neuron
 $ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:latest
 ```
 
-Start neuron-plus
+Start NeuronEX
 
 ```bash
-## run neuron-plus
-$ docker run -d --name neuron-plus -p 7000:7000 --privileged=true --restart=always emqx/neuron-plus:latest
+## run NeuronEX
+$ docker run -d --name neuronex -p 7000:7000 --privileged=true --restart=always emqx/neuronex:latest
 ```
 
 * tcp 7000: Used to access the web and http api port.

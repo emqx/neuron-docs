@@ -2,13 +2,13 @@
 
 ## 安装
 
-### Neuron-plus
+### NeuronEX
 
-因为 neuron-plus 版本中集成了 eKuiper，页面增加数据流处理板块，所以只需要安装 Neuron-plus 版本。
+因为 NeuronEX 版本中集成了 eKuiper，页面增加数据流处理板块，所以只需要安装 NeuronEX 版本。
 
 ```shell
-$ sudo docker pull emqx/neuron-plus:latest
-$ sudo docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron-plus:latest
+$ sudo docker pull emqx/neuronex:latest
+$ sudo docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuronex:latest
 ```
 
 ### 分别安装 Neuron 和 eKuiper
