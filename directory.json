@@ -64,6 +64,14 @@
         {
           "title": "日志管理",
           "path": "console-management/log-management"
+        },
+        {
+          "title": "修改密码",
+          "path": "console-management/change-password"
+        },
+        {
+          "title": "数据统计",
+          "path": "console-management/data-statistics"
         }
       ]
     },
@@ -246,6 +254,14 @@
         {
           "title": "Log Management",
           "path": "console-management/log-management"
+        },
+        {
+          "title": "Change Password",
+          "path": "console-management/change-password"
+        },
+        {
+          "title": "Data statistics",
+          "path": "console-management/data-statistics"
         }
       ]
     },
@@ -300,7 +316,7 @@
               "title": "Siemens S7-1200/1500",
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
             },
-			{
+            {
               "title": "neuopc operating environment settings",
               "path": "module-plugins/plc-settings/opcda"
             }
