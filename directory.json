@@ -68,6 +68,10 @@
         {
           "title": "修改密码",
           "path": "console-management/change-password"
+        },
+        {
+          "title": "数据统计",
+          "path": "console-management/data-statistics"
         }
       ]
     },
@@ -254,6 +258,10 @@
         {
           "title": "Change Password",
           "path": "console-management/change-password"
+        },
+        {
+          "title": "Data statistics",
+          "path": "console-management/data-statistics"
         }
       ]
     },
