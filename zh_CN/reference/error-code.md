@@ -131,10 +131,9 @@
 * 10001    opcua tag 不存在
 * 10002    opcua 连接配置错误
 * 10003    opcua 访问超时
-* 10004    opcua tag不可读
-* 10005    opcua tag不可写
-
-
+* 10004    opcua tag 不可读
+* 10005    opcua tag 不可写
+* 10006    opcua tag 不支持
 
 ## EtherNet/IP 错误码
 
