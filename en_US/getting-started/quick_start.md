@@ -115,7 +115,7 @@ To setup southbound device parameters,
 1. Fill in the Host IP running the Modbus simulator.
 2. Fill in the Port number of the Modbus simulator, the default is 502.
 3. Fill in the request timeout, the default is 3000.
-4. Click `Submit` to complete the device configuration and the device card automatically enters the state of **RUnning**.
+4. Click `Submit` to complete the device configuration and the device card automatically enters the state of **Running**.
 
 ::: tip
 The running Neuron instance and the simulator must be under the same network segment.
