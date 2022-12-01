@@ -61,6 +61,8 @@
 * 2306    系统库不允许删除
 * 2307    插件不允许实例化
 
+* 2308    插件不支持此架构
+
 * 2400    license 未找到
 * 2401    license 无效
 * 2402    license 过期
@@ -131,3 +133,11 @@
 * 10003    opcua 访问超时
 * 10004    opcua tag不可读
 * 10005    opcua tag不可写
+
+
+
+## EtherNet/IP 错误码
+
+* 10701 - 10744 EtherNet/IP 错误
+* 10798 EtherNet/IP 数据类型不匹配
+* 10799 EtherNet/IP 未注册session

@@ -48,6 +48,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * BOOL   = 12
 * STRING = 13
 * BYTES  = 14
+* ERROR = 15
+* WORD = 16
+* DWORD = 17
+* LWORD = 18
 
 ### 点位属性
 

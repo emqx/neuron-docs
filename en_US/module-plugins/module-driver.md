@@ -578,6 +578,8 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 * int16
 * float
 * bit
+* int8
+* uint8
 
 ### Address Format
 
@@ -1008,13 +1010,13 @@ step:
 | D           | data table                      | all       | 读写   |
 | E           | extended relay                  | all       | 读写   |
 | F           | signal to CNC -> PMC            | all       | 只读   |
-| G           | single to PMC -> CNC            | all       | 读写   |
+| G           | signal to PMC -> CNC            | all       | 读写   |
 | K           | keep relay                      | all       | 读写   |
-| M           | input single from other device  | all       | 读写   |
+| M           | input signal from other device  | all       | 读写   |
 | N           | output signal from other device | all       | 读写   |
 | R           | internal relay                  | all       | 读写   |
 | T           | changeable timer                | all       | 读写   |
-| X           | singnal to machine -> PMC       | all       | 只读   |
+| X           | signal to machine -> PMC        | all       | 只读   |
 | Y           | signal to PMC -> machine        | all       | 读写   |
 
 *PMC点位示例*
@@ -1122,3 +1124,44 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 | --------- | --------- | ------------------------------------------------------------ |
 | D1002.16L | string    | D area, address is 1002, string length is 16, endianness is L |
 | D1003.16  | string    | D area, address is 1003, string length is 16, endianness is H |
+
+
+
+## EtherNet/IP(CIP)
+
+
+
+### Parameter Setting
+
+| Field | description                |
+| ----- | -------------------------- |
+| host  | device ip                  |
+| port  | device port, default 44818 |
+| slot  | cpu slot, default 0        |
+
+
+
+### Data Type
+
+* INT8
+* UINT8
+* INT16
+* UINT16
+* INT32
+* UINT32
+* INT64
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* BIT
+* STRING
+* WORD
+* DWORD
+* LWORD
+
+
+
+### Address Format
+
+>  TAG NAME </span>

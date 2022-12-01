@@ -580,6 +580,8 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 * INT16
 * FLOAT
 * BIT
+* UINT8
+* INT8
 
 ### 地址格式
 
@@ -1003,13 +1005,13 @@ neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neug
 | D    | data table                      | all  | 读写 |
 | E    | extended relay                  | all  | 读写 |
 | F    | signal to CNC -> PMC            | all  | 只读 |
-| G    | single to PMC -> CNC            | all  | 读写 |
+| G    | signal to PMC -> CNC            | all  | 读写 |
 | K    | keep relay                      | all  | 读写 |
-| M    | input single from other device  | all  | 读写 |
+| M    | input signal from other device  | all  | 读写 |
 | N    | output signal from other device | all  | 读写 |
 | R    | internal relay                  | all  | 读写 |
 | T    | changeable timer                | all  | 读写 |
-| X    | singnal to machine -> PMC       | all  | 只读 |
+| X    | signal to machine -> PMC        | all  | 只读 |
 | Y    | signal to PMC -> machine        | all  | 读写 |
 
 *PMC点位示例*
@@ -1117,3 +1119,46 @@ a1e 插件用于通过以太网访问三菱的 A 系列、FX3U、FX3G、iQ-F 系
 | --------- | -------- | -------------------------------------------------- |
 | D1002.16L | string   | D 区域，地址为 1002，字符串长度为 16，字节顺序为 L |
 | D1003.16  | string   | D 区域，地址为 1003，字符串长度为 16，字节顺序为 H |
+
+
+
+## EtherNet/IP(CIP)
+
+此驱动主要用于支持EtherNet/IP协议的设备。
+
+
+
+### 设备配置
+
+| 字段 | 说明                  |
+| ---- | --------------------- |
+| host | 设备IP地址            |
+| port | 设备端口，默认为44818 |
+| slot | CPU槽号，默认为0      |
+
+
+
+### 支持的数据类型
+
+* INT8
+* UINT8
+* INT16
+* UINT16
+* INT32
+* UINT32
+* INT64
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* BIT
+* STRING
+* WORD
+* DWORD
+* LWORD
+
+
+
+### PLC数据地址
+
+>  TAG NAME </span>

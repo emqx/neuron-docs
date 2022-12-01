@@ -34,7 +34,6 @@ This document describes the errors that neuron will reply to sender when calling
 * 2009    node is stopped
 * 2010    node name too long
 * 2011    node not allow delete
-
 * 2101    group already subscribed
 * 2102    group not subscribe
 * 2103    group not allow
@@ -42,7 +41,6 @@ This document describes the errors that neuron will reply to sender when calling
 * 2105    group parameter invalid
 * 2106    group not exist
 * 2107    group name too long
-
 * 2201    tag not exist
 * 2202    tag name conflict
 * 2203    tag attribute not support
@@ -51,18 +49,15 @@ This document describes the errors that neuron will reply to sender when calling
 * 2206    tag name too long
 * 2207    tag address too long
 * 2208    tag description too long
-
 * 2209    tag precision invalid
-
 * 2301    library not found
 * 2302    library info invalid
 * 2303    library name conflict
 * 2304    library failed to open
 * 2305    libraray module invalid
 * 2306    library system not allow del
-
 * 2307    library not allow create instance
-
+* 2308    library arch not support
 * 2400    license not found
 * 2401    license invalid
 * 2402    license expired
@@ -133,3 +128,13 @@ This document describes the errors that neuron will reply to sender when calling
 * 10003 opcua access timeout
 * 10004 opcua tag is not readable
 * 10005 opcua tag is not writable
+
+
+
+
+
+## EtherNet/IP error codes
+
+* 10701 - 10744 EtherNet/IP error
+* 10798 EtherNet/IP data type mismatch
+* 10799 EtherNet/IP no session
