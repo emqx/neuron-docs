@@ -766,17 +766,18 @@ Neuron 从设备采集到的数据可以通过Sparkplug_B协议从边缘端传�
 
 | 字段          | 说明                                                         |
 | ------------- | ------------------------------------------------------------ |
-| **group-id**  | Sparkplug_B协议中的最顶层逻辑分组，可以代表工厂或车间等实体，必填 |
-| **client-id** | MQTT 客户端 ID，这里代表边缘端的唯一标识，必填               |
+| **client-id** | MQTT 客户端 ID，连接的唯一标识，必填                         |
+| **group-id**  | Sparkplug_B 协议中的最顶层逻辑分组，可以代表工厂或车间等实体，必填 |
+| **node-id**   | Sparkplug_B 协议中的边缘节点唯一标识，必填                   |
 | **ssl**       | 是否启用 mqtt ssl，默认 false                                |
 | **host**      | MQTT Broker 主机，必填                                       |
 | **port**      | MQTT Broker 端口号，必填                                     |
 | **username**  | 连接到 Broker 时使用的用户名，可选填                         |
 | **password**  | 连接到 Broker 时使用的密码，可选填                           |
-| **ca**        | ca文件，只在ssl值为true时启用，这种情况下为必填              |
-| **cert**      | cert文件，只在ssl值为true时启用，可选填                      |
-| **key**       | key文件，只在ssl值为true时启用，可选填                       |
-| **keypass**   | key文件密码，只有在ssl值为true时启用，可选填                 |
+| **ca**        | ca 文件，只在 ssl 值为 true 时启用，这种情况下为必填         |
+| **cert**      | cert 文件，只在 ssl 值为 true 时启用，可选填                 |
+| **key**       | key 文件，只在 ssl 值为 true 时启用，可选填                  |
+| **keypass**   | key 文件密码，只有在 ssl 值为 true 时启用，可选填            |
 
 ## 非 A11
 

@@ -128,10 +128,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 10003 opcua access timeout
 * 10004 opcua tag is not readable
 * 10005 opcua tag is not writable
-
-
-
-
+* 10006 opcua tag is not supported
 
 ## EtherNet/IP error codes
 

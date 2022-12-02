@@ -767,8 +767,9 @@ Data collected by Neuron from the device can be transmitted from the edge to the
 
 | Parameter     | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
-| **group-id**  | The top-level logical group in Sparkplug_B, which can represent an entity such as a factory or workshop, required |
 | **client-id** | MQTT client ID, A unique identifier that can represent the edge end, required |
+| **group-id**  | The top-level logical group in Sparkplug_B, which can represent an entity such as a factory or workshop, required |
+| **node-id**   | The unique identifier of the edge node in the Sparkplug_B protocol, required |
 | **ssl**       | Whether to enable mqtt ssl, default false                    |
 | **host**      | MQTT Broker host, required                                   |
 | **port**      | MQTT Broker port number, required                            |
