@@ -4,16 +4,16 @@
 
 ### Package Installation
 
-The environment used in this example is Ubuntu 20.04.3, X86_64.Use Neuron-plus version.
+The environment used in this example is Ubuntu 20.04.3, X86_64.Use NeuronEX version.
 
 1. Download the installation package
-Neuron-plus packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).
+NeuronEX packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).
 
 2. Unzip the installation package
 Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
 
 ```bash
-sudo dpkg -i neuron-plus-2.2.0-linux-amd64.deb
+sudo dpkg -i neuronex-2.3.0-linux-amd64.deb
 ```
 
 ::: tip

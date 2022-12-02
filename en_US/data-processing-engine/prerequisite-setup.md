@@ -2,13 +2,13 @@
 
 ## Installstion
 
-### Neuron-plus
+### NeuronEX
 
-Because the neuron-plus version integrates eKuiper, and the page adds a data stream processing section, so only the Neuron-plus version needs to be installed.
+Because the NeuronEX version integrates eKuiper, and the page adds a data stream processing section, so only the NeuronEX version needs to be installed.
 
 ```shell
-$ sudo docker pull emqx/neuron-plus:latest
-$ sudo docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron-plus:latest
+$ sudo docker pull emqx/neuronex:latest
+$ sudo docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuronex:latest
 ```
 
 ### Install Neuron and eKuiper separately
