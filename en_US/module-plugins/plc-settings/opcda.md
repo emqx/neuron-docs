@@ -11,12 +11,18 @@ This example uses windows 7 SP1 32-bit system to demonstrate
    ![](assets-opcda/package.png)
 
    * neuopc - the main program to run OPCDA to convert OPCUA;
-   * OPC Core Components Redistributable (x64) 3.00.108.msi - OPC Foundation official components, need to be installed under x64 system;
-   * OPC Core Components Redistributable (x86) 3.00.108.msi - OPC Foundation official components, need to be installed under x86 system;
-   * OPC DA Auto 2.02 Source Code 5.30.msi - the official component of the OPC Foundation, which cannot be installed normally in most systems, but the OPCDAAuto.dll component can be extracted from it using the msi extraction tool;
-   * OPCDAAuto.dll - the official component of the OPC Foundation, is a COM component that provides OPCDA service access specifically for the .NET platform;
+   * dotnetfx-1.1——.Net framework 1.1, you need to correct this program before installing OPC DAAuto;
+   * OPC DA Auto 2.02 Source Code 5.30.msi - the official component of the OPC Foundation, Install using "Windows Task Manager";
+   * OPC Core Components Redistributable (x64) 3.00.108.msi - OPC Foundation official components, no need to install;
+   * OPC Core Components Redistributable (x86) 3.00.108.msi - OPC Foundation official components, no need to install;
 
-2. Check if the component is installed
+2. Check if .Net framework 1.1 has been installed, if not, install dotnetfx-1.1;
+
+3. Use the task manager to install OPC DA Auto 2.02 Source Code 5.30.msi, open the "Windows Task Manager", open "File" - "New Task", enter the MSI file path, and check "Create this task with system administrative rights";
+
+   ![](assets-opcda/install-auto.png)
+
+4. Check if the component is installed
 
    * If it is a 32-bit operating system, enter the C:\Windows\System32 directory, if it is a 64-bit operating system, enter the C:\Windows\SysWOW64 directory, and check whether the following files exist:
 
@@ -24,7 +30,7 @@ This example uses windows 7 SP1 32-bit system to demonstrate
 
    ::: tip
 
-   If the file does not exist, install the OPC Core Components Redistributable component of the corresponding platform, and if it exists, do not install it.
+   If the file does not exist then contact sales for support.
 
    :::
 
@@ -34,29 +40,13 @@ This example uses windows 7 SP1 32-bit system to demonstrate
 
    ::: tip
 
-   If it works normally, it means that OPC Core Components Redistributable has been installed normally.
+   If it works normally, it means that OPC DA Auto 2.02 has been installed normally.
 
    :::
 
-   * Copy the OPCDAAuto.dll file to the system directory. If it is a 32-bit operating system, copy it to the C:\Windows\System32 directory. If it is a 64-bit operating system, copy it to the C:\Windows\SysWOW64 directory. After the copy is completed, use Open powershell with administrator privileges and enter the following command:
+5. Install the MatrikonOPCSimulation simulator program locally, if the installation fails, you can install KepServerEX for testing;
 
-   ```powershell
-   cd C:/Windows/System32 # x86 System
-   cd C:/Windows/SysWOW64 # x64 System
-   ./regsvr32 OPCDAAuto.dll
-   ```
-
-   ::: tip
-
-   After success, as shown in the figure below:
-
-   :::
-
-   ![](assets-opcda/regist.png)
-
-3. Install the MatrikonOPCSimulation simulator program on this machine;
-
-4. Run the neuopc.exe program, select DA Host and DA Server and click Connect, set the parameters of UA and click Run, the operation is successful, as shown in the figure:
+6. Run the neuopc.exe program, select DA Host and DA Server and click Connect, set the parameters of UA and click Run, the operation is successful, as shown in the figure:
 
    ![](assets-opcda/local-neuopc.png)
 
