@@ -578,6 +578,8 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 * int16
 * float
 * bit
+* int8
+* uint8
 
 ### Address Format
 
@@ -592,6 +594,21 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 
 ## KNXnet/IP
 
+### Parameter Setting
+
+| Parameter | Description                               |
+| --------- | ----------------------------------------- |
+| **host**  | KNXnet/IP device ip, default 224.0.23.12  |
+| **port**  | KNXnet/IP device port, default 3671       |
+
+Note that setting with the multicast address *224.0.23.12* normally requires that the
+KNXnet/IP device and Neuron are in the same sub network.
+
+Due to the way how KNXnet/IP protocol works, the KNX plugin may not be able to work correctly
+if Neuron is installed using some virtualisation technology such as virtual machines or docker.
+In a Linux host with docker, using the docker option `--net=host` is required. In other cases,
+we recommend that you install Neuron using binary packages.
+
 ### Support Data Type
 
 * bit
@@ -604,24 +621,29 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 
 ### Address Format
 
-Two address formats
-
-* > GROUP_ADDRESS</span>
-
-Represents the KNX group address, which can only be written in Neuron, and KNX devices belonging to this group will react to messages sent to this group.
-
-*Example:*
-
-`0/0/1` is a KNX group address and is write only in Neuron, KNX devices belonging to this group will react to messages sent to this group.
-
 * > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
 
-Represents a KNX individual address that is a member of the group address, and is read only in Neuron.
+Represents a KNX individual address that is a member of the group address.
+When reading the KNX plugin sends a `GroupValueRead` tunnelling request using
+the specified group address, and updates the tag value upon receiving a `GroupValueResp`
+matching the specified individual address.
+When writing the KNX plugin sends a `GroupValueWrite` tunnelling request using
+the specified group address.
 
 *Example:*
 
 `0/0/1,1.1.1` represents a KNX individual address `1.1.1` that is a member
-  of the group address `0/0/1`, and is read only in Neuron.
+  of the group address `0/0/1`.
+
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS,BIT</span>
+
+Same as above, but for `uint8` values with fewer than 8 bits, such as KNX data point
+types `B2` and `B1U3`, etc. *BIT* represents the number of bits.
+
+*Example:*
+
+`0/0/1,1.1.1,2` represents a KNX individual address `1.1.1` that is a member
+  of the group address `0/0/1`, the data is of 2 bit.
 
 ## BACnet/IP
 
@@ -681,8 +703,8 @@ The dlt645 protocol supports serial and tcp connection.
 
 | Parameter         | Description                                         |
 | ----------------- | --------------------------------------------------- |
-| **mail address**  | Electricity meter communication address             |
 | **timeout**       | Timeout for sending requests to the device          |
+| **inteval**       | read instruction interval(ms)                       |
 | **device**        | Use a serial device, e.g. /dev/ttyUSB0             |
 | **stop**          | stopbits, default 1                                 |
 | **parity**        | parity bit, default 2, which means even parity      |
@@ -693,8 +715,8 @@ The dlt645 protocol supports serial and tcp connection.
 
 | Parameter           | Description         |
 | ------------------- | ----------------- |
-| **mail address**    | Electricity meter communication address             |
 | **timeout**         | Timeout for sending requests to the device    |
+| **inteval**         | read instruction interval(ms)                       |
 | **host**            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default    |
 | **port**            | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally     |
 | **connection mode** | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client       |
@@ -708,18 +730,23 @@ The dlt645 protocol supports serial and tcp connection.
 
 ### Address format
 
-> DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
+> mail_address#DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
 
-DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> represents the data identification, and all points only support read attributes, and expressed in hexadecimal.
+* mail_address represents the mailing address of the meter.
+* DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> represents the data identification, and all points only support read attributes, and expressed in hexadecimal.
+
+E.g 123456789012#02-01-01-00, represents the value of the A-phase voltage of the meter device with the mailing address 123456789012.
 
 :::tip
+Support a node to configure multiple mailing addresses, that is a single serial port multi-device connection.
+
 Please refer to the DL/T645-2007 industry standard data coding table for the specific data item name corresponding to the data identifier.
 
-* The data length is 1, and the data type is UINT8;
-* The data length is 2, and the data type is UINT16;
-* The data length is 3 or 4, and the data type is UINT32;
-* The data length is 5 or 6 or 7 or 8, and the data type is UINT64;
-* The value of Decimal is determined according to the data format;
+* The data length is 1, and the data type is UINT8.
+* The data length is 2, and the data type is UINT16.
+* The data length is 3 or 4, and the data type is UINT32.
+* The data length is 5 or 6 or 7 or 8, and the data type is UINT64.
+* Set the value of **Decimal** according to the data format, e.g, if the data format is XXX.X, then **Decimal** is set to 0.1.
 :::
 
 | DI<sub>3</sub> | DI<sub>2</sub>    | DI<sub>1</sub>   | DI<sub>0</sub>   | Description                             | Type of data | Decimal value | Example                                                         |
@@ -740,8 +767,9 @@ Data collected by Neuron from the device can be transmitted from the edge to the
 
 | Parameter     | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
-| **group-id**  | The top-level logical group in Sparkplug_B, which can represent an entity such as a factory or workshop, required |
 | **client-id** | MQTT client ID, A unique identifier that can represent the edge end, required |
+| **group-id**  | The top-level logical group in Sparkplug_B, which can represent an entity such as a factory or workshop, required |
+| **node-id**   | The unique identifier of the edge node in the Sparkplug_B protocol, required |
 | **ssl**       | Whether to enable mqtt ssl, default false                    |
 | **host**      | MQTT Broker host, required                                   |
 | **port**      | MQTT Broker port number, required                            |
@@ -835,18 +863,50 @@ Both `INDEX_GROUP` and `INDEX_OFFSET` could be in decimal or hexadecimal format 
 
 ## OPCDA
 
-Neuron can indirectly access the OPCDA server running on Windows operating system through the external helper program opcshift.exe. opcshift converts the DA protocol to the UA protocol, and then obtains data through Neuron's existing opcua driver. All accessible points of the DA are mapped to the "namespace 1" of the UA, and the IDs of the points remain the same.
+Neuron can indirectly access OPCDA servers running on Windows operating systems through the external auxiliary program neuopc.exe. neuopc converts the DA protocol to the UA protocol, and then obtains data through Neuron's existing opcua driver. All accessible points of DA are mapped to the "namespace 2" of UA, and the ID of the point is kept with DA. unanimous.
 
 ### Parameter Setting
 
-Install opcshift and the OPCDA access dependency package opc-core-components-redistributables , open the opcshift.ini file with a text editor, fill in the configuration information, and then run opcshift.exe. Create a new OPCUA node in Neuron, and fill in the corresponding ua.port in opcshift.ini and the IP address of opcshift.
+The component package of neuopc can be downloaded from the [project page](https://github.com/neugates/neuopc) of neuopc (neuopc is an open source project under the GPL agreement). Refer to [neuopc operating environment settings](plc-settings/opcda.md) for system configuration of installation and remote connection.
+
+![](plc-settings/assets-opcda/neuopc-setting.png)
+
+#### neuopc setting
+
+| Parameter   | Description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| DA Host     | Need to connect to the target host ID, which can be the target IP or Hostname, and this machine can not be set |
+| DA Server   | The name of the DA server, such as "Matrikon.OPC.Simulation.1", after filling in the DA Host, you can click the drop-down button to try to get the Server list |
+| UA Port     | The listening port setting of the UA server, the default `48401` |
+| UA User     | Authorized access user name of UA server, default `admin`    |
+| UA Password | Access password of UA server, default `123456`               |
+
+step:
+
+1. Fill in DA Host, you can fill in IP or Hostname, if you don’t fill in, it defaults to this machine;
+2. Try to click the drop-down button of DA Server, you can try to get the DA Server list of the target Host, if the drop-down is empty, it means that no DA Server on the target host can be detected;
+3. Click the Connect button. After the server is successfully connected, all available measuring point information of the current DA Server will be displayed, and the connection information of the current server will appear in the status bar, as shown in Figure 8;
+4. Set UA Port;
+5. Set UA User;
+6. Set UA Password;
+7. Click the Run button. After the UA server starts, all the measuring points in the list will be mapped to the NeuOPC directory of the UA Server. The UA namespace of all measuring points is 2. At this time, the related setting items of UA will become unavailable. ;
+8. Double-click the Name column of the neuopc measuring point list to copy the corresponding measuring point name to the clipboard, and then paste it in the neuron tag form.
+
+#### Neuron opcua connection configuration
 
 | Parameter    | Description                                                  |
 | ------------ | ------------------------------------------------------------ |
-| all.log_file | Full path to log file, default is log/opcshift               |
-| da.host      | The host name where the DA service is located, the default is localhost |
-| da.server    | The name of the DA server, such as "Matrikon.OPC.Simulation.1" |
-| ua.port      | The port number of the UA server, the default is 4841        |
+| endpoint url | The access address of neuopc, the default is `opc.tcp://127.0.0.1:48401/` |
+| username     | Authorized username for neuopc                               |
+| password     | Access password for neuopc                                   |
+
+step:
+
+1. Add an opcua device in neuron southbound device management;
+2. Modify the endpoint url in the device configuration to the UA Server address of neuopc;
+3. Fill in the Username in the device configuration, which is consistent with the setting in neuopc;
+4. Fill in the Password in the device configuration, which is the same as that set in neuopc;
+5. Submit the setup form directly without filling in the Cert and Key.
 
 ### Support Data Type
 
@@ -867,7 +927,7 @@ Install opcshift and the OPCDA access dependency package opc-core-components-red
 
 > IX!NODEID</span>
 
-**IX** Namespace index, IX can only be 1 when accessing opcshift.
+**IX** Namespace index, IX can only be 2 when accessing neuopc.
 
 **NODEID** Node ID, consistent with the string in the UA server.
 
@@ -875,4 +935,234 @@ Install opcshift and the OPCDA access dependency package opc-core-components-red
 
 | Address                | Data Type | Description                                                  |
 | ---------------------- | --------- | ------------------------------------------------------------ |
-| 1!Bucket Brigade.UInt2 | UINT16    | Get a datatag of type UINT16; NS is 1, NODEID is Bucket Brigade.UInt2 |
+| 1!Bucket Brigade.UInt2 | UINT16    | Get a datatag of type UINT16; NS is 2, NODEID is Bucket Brigade.UInt2 |
+
+
+
+## CNC FANUC FOCAS
+
+**Support arch**: amd64, armv7
+
+### Parameter Setting
+
+| 字段    | 说明                               |
+| ------- | ---------------------------------- |
+| host    | device ip address                  |
+| port    | device port, default 8193          |
+| timeout | connection timeout, default 3000ms |
+
+### Support Data Type
+
+* uint8
+* int8
+* uint16
+* int16
+* uint32
+* int32
+* uint64
+* int64
+* float
+* double
+* bit
+* string
+
+
+
+### CNC Data
+
+| tag address    | description                                  | data type    | parameter          |
+| -------------- | -------------------------------------------- | ------------ | ------------------ |
+| actf           | actual feed rate                             | int64/uint64 | -                  |
+| absolute       | absolute position data of axis               | int64/uint64 | axis number(.n)    |
+| machine        | machine position data of axis                | int64/uint64 | axis number(.n)    |
+| relative       | relative position data of axis               | int64/uint64 | axis number(.n)    |
+| distance       | distance to go of axis                       | int64/uint64 | axis number(.n)    |
+| acts           | actual rotational speed of the spindle       | int64/uint64 | -                  |
+| skip           | skipped position of axis                     | int64/uint64 | axis number(.n)    |
+| srvdelay       | servo delay amount of axis                   | int64/uint64 | axis number(.n)    |
+| accdecdly      | acceleration/deceration delay amount of axis | int64/uint64 | axis number(.n)    |
+| spcss_srpm     | converted spindle speed                      | int64/uint64 | -                  |
+| spcss_sspm     | specified surface speed                      | int64/uint64 | -                  |
+| spcss_smax     | clamp of maxmum spindle speed                | int64/uint64 | -                  |
+| movrlap_input  | input overlapped motion value                | int64/uint64 | axis number(.n)    |
+| movrlap_output | output overlapped motion value               | int64/uint64 | axis number(.n)    |
+| spload         | load information of the serial spindle       | int32/uint32 | spindle number(.n) |
+| spmaxrpm       | maximum r.p.m ratio of serial spindle        | int32/uint32 | spindle number(.n) |
+| spgear         | gear ratio of the serial spindle             | int32/uint32 | spindle number(.n) |
+
+*CNC地址示例*
+
+| address    | description                               |
+| ---------- | ----------------------------------------- |
+| actf       | read actual feed rate                     |
+| absolute.1 | read absolute position of no.1 axis       |
+| machine.3  | read machine position of no.3 axis        |
+| spload.1   | read load information of no.1 spindle     |
+| spmaxrpm.3 | read maximum r.p.m ratio  of no.3 spindle |
+
+
+
+### PMC Data
+
+| tag address | description                     | data type | access |
+| ----------- | ------------------------------- | --------- | ------ |
+| A           | message demand                  | all       | 读写   |
+| C           | counter                         | all       | 读写   |
+| D           | data table                      | all       | 读写   |
+| E           | extended relay                  | all       | 读写   |
+| F           | signal to CNC -> PMC            | all       | 只读   |
+| G           | signal to PMC -> CNC            | all       | 读写   |
+| K           | keep relay                      | all       | 读写   |
+| M           | input signal from other device  | all       | 读写   |
+| N           | output signal from other device | all       | 读写   |
+| R           | internal relay                  | all       | 读写   |
+| T           | changeable timer                | all       | 读写   |
+| X           | signal to machine -> PMC        | all       | 只读   |
+| Y           | signal to PMC -> machine        | all       | 读写   |
+
+*PMC点位示例*
+
+| address | data type                                                    | descrption                                                   |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| A0      | uint8/int8/uint16/int16/uint32/int32/int64/uint64/float/double | PMC **message demand**，address 0                            |
+| A0.1    | bit                                                          | PMC **message demand** ，no.1 bit of address 0               |
+| A0.0    | bit                                                          | PMC **message demand** ，no.0 bit of address 0               |
+| A0.2    | string                                                       | PMC **message demand** ，address 0 starts with a string of length 2 |
+| D0.2    | string                                                       | PMC **data table** ，address 0 starts with a string of length 2 |
+| D0.7    | bit                                                          | PMC **data table** ，no.7 bit of address 0                   |
+## Mitsubishi MELSEC-Q A1E
+
+The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series PLCs via Ethernet, iQ-F requires a specific firmware version.
+
+### Parameter Setting
+
+| Parameter | Description                   |
+| --------- | ----------------------------- |
+| **host**  | remote plc ip                 |
+| **port**  | remote plc port, default 2000 |
+
+### Support Data Type
+
+* INT16
+* UINT16
+* INT32
+* UINT32
+* FLOAT
+* DOUBLE
+* BIT
+* STRING
+
+### Address Format
+
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+
+#### AREA ADDRESS
+
+| 区域 | 数据类型 | 属性       | 备注                                  |
+| ---- | -------- | ---------- | ------------------------------------- |
+| X    | bit      | read/write | Input relay (FX3/iQ-F)                |
+| Y    | bit      | read/write | Output relay (FX3/iQ-F)               |
+| M    | bit      | read/write | Internal relay (FX3/iQ-F)             |
+| L    | bit      | read/write | Latch relay (FX3/iQ-F)                |
+| F    | bit      | read/write | Annunciator (FX3/iQ-F)                |
+| B    | bit      | read/write | Link relay (FX3/iQ-F)                 |
+| SB   | bit      | read/write | Link special relay (FX3/iQ-F)         |
+| S    | bit      | read/write | (FX3/iQ-F)                            |
+| D    | all      | read/write | Data register (FX3/iQ-F)              |
+| W    | all      | read/write | Link register (FX3/iQ-F)              |
+| TS   | bit      | read/write | Timer Contact (FX3/iQ-F)              |
+| TC   | bit      | read/write | Timer Coil (FX3/iQ-F)                 |
+| TN   | all      | read/write | Timer Current value (FX3/iQ-F)        |
+| STS  | bit      | read/write | Retentive timer Contact (FX3/iQ-F)    |
+| STC  | bit      | read/write | Retentive timer Coil (FX3/iQ-F)       |
+| STN  | all      | read/write | Retentive timer (FX3/iQ-F)            |
+| CS   | bit      | read/write | Counter Contact (FX3/iQ-F)            |
+| CC   | bit      | read/write | Counter Coil (FX3/iQ-F)               |
+| CN   | all      | read/write | Counter Current value (FX3/iQ-F)      |
+| LCS  | bit      | read/write | Long Counter Contact (FX3/iQ-F)       |
+| LCC  | bit      | read/write | Long Counter Coil (FX3/iQ-F)          |
+| LCN  | all      | read/write | Long Counter Current value (FX3/iQ-F) |
+| SB   | bit      | read/write | Link special relay (FX3/iQ-F)         |
+| SW   | all      | read/write | Link special register (FX3/iQ-F)      |
+| SM   | bit      | read/write | Special relay (FX3/iQ-F)              |
+| SD   | all      | read/write | Specical register (FX3/iQ-F)          |
+| Z    | all      | read/write | Index register (FX3/iQ-F)             |
+| LZ   | all      | read/write | Long Index register (FX3/iQ-F)        |
+| DX   | bit      | read/write | Link input (FX3/iQ-F)                 |
+| DY   | bit      | read/write | Link output(FX3/iQ-F)                 |
+| R    | all      | read/write | File register (FX3/iQ-F)              |
+
+*Example:*
+
+| Address | Data Type | Description             |
+| ------- | --------- | ----------------------- |
+| X0      | bit       | X area, address is 0    |
+| X1      | bit       | X area, address is 1    |
+| Y0      | bit       | Y area, address is 0    |
+| Y1      | bit       | Y area, address is 1    |
+| D100    | int16     | D area, address is 100  |
+| D1000   | uint16    | D area, address is 1000 |
+| D200    | uint32    | D area, address is 200  |
+| D10     | float     | D area, address is 10   |
+| D20     | double    | D area, address is 20   |
+
+#### .BIT
+
+It can only be used in **non-bit type area**, which means to read the specified bit of the specified address, and the binary bit index range is [0, 15].
+
+| Address | Data Type | Description                  |
+| ------- | --------- | ---------------------------- |
+| D20.0   | bit       | D area, address is 20, bit 0 |
+| D20.2   | bit       | D area, address is 20, bit 2 |
+
+#### .LEN\[H]\[L]
+
+When the data type is string, **.LEN** indicates the length of the string;   **H** and **L** can be optional to indicate two byte orders, the default is **H** byte order.
+
+*Example:*
+
+| Address   | Data Type | Description                                                  |
+| --------- | --------- | ------------------------------------------------------------ |
+| D1002.16L | string    | D area, address is 1002, string length is 16, endianness is L |
+| D1003.16  | string    | D area, address is 1003, string length is 16, endianness is H |
+
+
+
+## EtherNet/IP(CIP)
+
+
+
+### Parameter Setting
+
+| Field | description                |
+| ----- | -------------------------- |
+| host  | device ip                  |
+| port  | device port, default 44818 |
+| slot  | cpu slot, default 0        |
+
+
+
+### Data Type
+
+* INT8
+* UINT8
+* INT16
+* UINT16
+* INT32
+* UINT32
+* INT64
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* BIT
+* STRING
+* WORD
+* DWORD
+* LWORD
+
+
+
+### Address Format
+
+>  TAG NAME </span>

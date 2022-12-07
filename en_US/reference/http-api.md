@@ -48,6 +48,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * BOOL   = 12
 * STRING = 13
 * BYTES  = 14
+* ERROR = 15
+* WORD = 16
+* DWORD = 17
+* LWORD = 18
 
 ### Data Attribute
 
@@ -130,6 +134,47 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```json
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzcyODcxNjMsImlhdCI6MTYzNzIwMDc2MywiaXNzIjoiRU1RIFRlY2hub2xvZ2llcyBDby4sIEx0ZCBBbGwgcmlnaHRzIHJlc2VydmVkLiIsInBhc3MiOiIwMDAwIiwidXNlciI6ImFkbWluIn0.2EZzPC9djErrCeYNrK2av0smh-eKxDYeyu7cW4MyknI"
+}
+```
+
+## Password
+
+*POST*   **/api/v2/password**
+
+### Request Headers
+
+**Content-Type** application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 401
+  * 1004 missing token
+  * 1005 decoding token error
+  * 1012 password length too short or too long
+  * 1013 duplicate password
+* 403
+  * 1006 expired token
+  * 1007 validate token error
+  * 1008 invalid token
+
+### Body
+
+```json
+{
+    "name": "admin",
+    "old_pass": "01234",
+    "new_pass": "56789"
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
 }
 ```
 
@@ -247,6 +292,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ### Request Params
 
 **type**  required
+
+**plugin** optional
+
+**node** optional
 
 ### Request Headers
 
@@ -454,8 +503,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-
-
 ## Add Tag
 
 *POST*  /api/v2/tags
@@ -534,6 +581,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 **node**  required
 
 **group**  required
+
+**name** name
 
 ### Request Headers
 
@@ -780,7 +829,8 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
             "name": "plugin_name",
             //plugin library name
             "library": "plugin_lib_name",
-            "description": "description"
+            "description": "description",
+            "description_zh": "描述"
         }
     ]
 }
@@ -1181,7 +1231,9 @@ The value is displayed only when the value is read correctly, when the value is 
     //running state
     "running": 2,
     //link state
-    "link": 1
+    "link": 1,
+    //average round trip time communicating with devices
+    "average_rtt": 100
 }
 
 {
@@ -1189,12 +1241,14 @@ The value is displayed only when the value is read correctly, when the value is 
         {
             "node": "modbus-node1",
             "running": 2,
-            "link": 1
+            "link": 1,
+            "average_rtt": 100
         },
         {
             "node": "modbus-node2",
             "running": 1,
-            "link": 0
+            "link": 0,
+            "average_rtt": 9999
         }
     ]
 }
@@ -1323,4 +1377,149 @@ The value is displayed only when the value is read correctly, when the value is 
     "valid_until": "2023-03-30 09:10:40",
     "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
 }
+```
+
+## Download log files
+
+*GET*  /api/v2/logs
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+  * 1011 file not exist
+  * 1014 command execution failed
+* 500
+  * 1001 internal error
+
+### Response
+
+Response if there is an error returned:
+
+```json
+{
+    "error": 1014
+}
+```
+
+## Update node log level
+
+*PUT*  /api/v2/level
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+  * 2003 node not exist
+* 500
+  * 1001 internal error
+  * 1010 is busy
+
+### Body
+
+```json
+{
+    "node_name": "modbus-tcp"
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+:::tip
+Call the api to modify the log level of the node to debug, and automatically switch to the default level in about ten minutes.
+:::
+
+## Get Metrics
+
+*GET*  /api/v2/metrics
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Request Params
+
+**category**  optional, one of `global`, `driver` and `app`
+**node**      optional, filter with node name, only meaningful when `category=driver` or `category=app`
+
+### Response Status
+
+* 200 OK
+* 400 Bad request
+* 500 Internal server error
+
+### Response
+
+```text
+# HELP core_dumped Whether there is any core dump
+# TYPE core_dumped gauge
+core_dumped 0
+# HELP uptime_seconds Uptime in seconds
+# TYPE uptime_seconds counter
+uptime_seconds 314
+# HELP north_nodes_total Number of north nodes
+# TYPE north_nodes_total gauge
+north_nodes_total 1
+# HELP north_running_nodes_total Number of north nodes in running state
+# TYPE north_running_nodes_total gauge
+north_running_nodes_total 1
+# HELP north_disconnected_nodes_total Number of north nodes disconnected
+# TYPE north_disconnected_nodes_total gauge
+north_disconnected_nodes_total 1
+# HELP south_nodes_total Number of south nodes
+# TYPE south_nodes_total gauge
+south_nodes_total 1
+# HELP south_running_nodes_total Number of south nodes in running state
+# TYPE south_running_nodes_total gauge
+south_running_nodes_total 0
+# HELP south_disconnected_nodes_total Number of south nodes disconnected
+# TYPE south_disconnected_nodes_total gauge
+south_disconnected_nodes_total 1
+# HELP send_msgs_total Total number of messages sent
+# TYPE send_msgs_total counter
+send_msgs_total{node="data-stream-processing"} 0
+# HELP send_msg_errors_total Total number of errors sending messages
+# TYPE send_msg_errors_total counter
+send_msg_errors_total{node="data-stream-processing"} 0
+# HELP recv_msgs_total Total number of messages received
+# TYPE recv_msgs_total counter
+recv_msgs_total{node="data-stream-processing"} 0
+# HELP last_rtt_ms Last request round trip time in milliseconds
+# TYPE last_rtt_ms gauge
+last_rtt_ms{node="modbus"} 9999
+# HELP send_bytes Total number of bytes sent
+# TYPE send_bytes gauge
+send_bytes{node="modbus"} 0
+# HELP recv_bytes Total number of bytes received
+# TYPE recv_bytes gauge
+recv_bytes{node="modbus"} 0
+# HELP tag_reads_total Total number of tag reads including errors
+# TYPE tag_reads_total counter
+tag_reads_total{node="modbus"} 0
+# HELP tag_read_errors_total Total number of tag read errors
+# TYPE tag_read_errors_total counter
+tag_read_errors_total{node="modbus"} 0
+# HELP group_tags_total Total number of tags in the group
+# TYPE group_tags_total gauge
+group_tags_total{node="modbus",group="grp"} 1
+# HELP group_last_send_msgs Number of messages sent on last group timer invocation
+# TYPE group_last_send_msgs gauge
+group_last_send_msgs{node="modbus",group="grp"} 0
+# HELP group_last_timer_ms Time in milliseconds consumed on last group timer invocation
+# TYPE group_last_timer_ms gauge
+group_last_timer_ms{node="modbus",group="grp"} 0
 ```

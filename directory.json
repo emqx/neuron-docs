@@ -39,6 +39,18 @@
         {
           "title": "设备控制",
           "path": "user-guide/device-control"
+        },
+        {
+          "title": "日志管理",
+          "path": "user-guide/log-management"
+        },
+        {
+          "title": "修改密码",
+          "path": "user-guide/change-password"
+        },
+        {
+          "title": "数据统计",
+          "path": "user-guide/data-statistics"
         }
       ]
     },
@@ -109,6 +121,10 @@
             {
               "title": "Siemens S7-1200/1500",
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
+            },
+            {
+              "title": "neuopc运行环境设置",
+              "path": "module-plugins/plc-settings/opcda"
             }
           ]
         }
@@ -213,6 +229,18 @@
         {
           "title": "Device Control",
           "path": "user-guide/device-control"
+        },
+        {
+          "title": "Log Management",
+          "path": "user-guide/log-management"
+        },
+        {
+          "title": "Change Password",
+          "path": "user-guide/change-password"
+        },
+        {
+          "title": "Data statistics",
+          "path": "user-guide/data-statistics"
         }
       ]
     },
@@ -283,6 +311,10 @@
             {
               "title": "Siemens S7-1200/1500",
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
+            },
+            {
+              "title": "neuopc operating environment settings",
+              "path": "module-plugins/plc-settings/opcda"
             }
           ]
         }

@@ -270,10 +270,12 @@
 {
     "node": "sparkplugb",
     "params": {
-        // required, the top-level logical group in Sparkplug_B
-        "group-id": "test",
         // required, MQTT client ID, A unique identifier that can represent the edge end
         "client-id": "saprk-test",
+        // required, the top-level logical group in Sparkplug_B
+        "group-id": "test",
+        // required, the egde node id
+        "node-id": "neuron1",
         // required, whether to enable mqtt ssl,
         "ssl": false,
         // required, MQTT Broker host

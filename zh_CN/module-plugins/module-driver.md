@@ -28,8 +28,6 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | **key** | key文件，只在ssl值为true时启用，可选填 |
 | **keypass** | key文件密码，只有在ssl值为true时启用，可选填 |
 
-
-
 ## Modbus
 
 Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。三种协议除了设备配置方式不一致外，支持的数据类型及地址格式都一致。
@@ -582,6 +580,8 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 * INT16
 * FLOAT
 * BIT
+* UINT8
+* INT8
 
 ### 地址格式
 
@@ -596,6 +596,19 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 ## KNXnet/IP
 
+### 设备配置
+
+| Parameter | Description                               |
+| --------- | ----------------------------------------- |
+| **host**  | KNXnet/IP设备ip, 默认224.0.23.12          |
+| **port**  | KNXnet/IP设备端口, 默认3671               |
+
+注意如果使用多拨地址*224.0.23.12*进行配置，通常要求设备与Neuron部署在同一网段中。
+
+由于KNXnet/IP协议的工作原理，如果使用虚拟化技术如虚拟机或docker部署Neuron，KNX插件可能
+无法正常工作。如果是在Linux主机中使用docker镜像部署Neuron，那么需要使用docker选项`--net=host`。
+在其他情况下，推荐您使用二进制安装包部署Neuron。
+
 ### 支持的数据类型
 
 * BIT
@@ -608,10 +621,6 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 ### 地址格式
 
-两种地址格式：
-
-* > GROUP_ADDRESS</span>
-
 代表 KNX 组地址，只能在 Neuron 中写入，属于该组的 KNX 设备将对发送到该组的消息做出响应。
 
 *例子：*
@@ -620,11 +629,22 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 * > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
 
-代表 KNX 组下的设备地址，只能在 Neuron 中读取。
+表示一个KNX设备地址及其所属的组地址。进行读操作时，KNX插件发送`GroupValueRead`
+隧道请求，在收到匹配设备地址的`GroupValueResp`报文时更新点位数据。
+进行写操作时， KNX插件发送一个`GroupValueWrite`隧道请求报文。
 
 *例子：*
 
-`0/0/1,1.1.1` 代表 KNX 组地址 `0/0/1`下的设备地址 `1.1.1`，并且在 Neuron 中只读。
+`0/0/1,1.1.1` 代表 KNX 组地址 `0/0/1`下的设备地址 `1.1.1`。
+
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS,BIT</span>
+
+与上相同，但为读取比特位数少于8的`uint8`类型数据时使用，如KNX data point类型`B2`和`B1U3`等。
+其中*BIT*表示数据比特位数。
+
+*例子：*
+
+`0/0/1,1.1.1,2` 代表 KNX 组地址 `0/0/1`下的设备地址 `1.1.1`，数据为两个比特。
 
 ## BACnet/IP
 
@@ -682,8 +702,8 @@ dlt645 驱动支持串口和 TCP 连接。
 
 | 字段               | 说明                               |
 | ----------------- | -------------------------------- |
-| **mail address**  | 电表通信地址                       |
 | **timeout**       | 向设备发送请求超时时间               |
+| **interval**      | 读指令时间间隔，单位为 ms            |
 | **device**        | 使用串口设备，例如，/dev/ttyUSB0    |
 | **stop**          | 停止位，默认值是 1                  |
 | **parity**        | 校验位，默认值是 2，代表偶校验        |
@@ -694,8 +714,8 @@ dlt645 驱动支持串口和 TCP 连接。
 
 | 字段                 | 说明                                                    |
 | ------------------- | ------------------------------------------------------- |
-| **mail address**    | 电表通信地址                       |
 | **timeout**         | 向设备发送请求超时时间               |
+| **interval**        | 读指令时间间隔                      |
 | **host**            | 当 Neuron 作为客户端使用时，host 指远程设备的 IP。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 IP，默认可填写 0.0.0.0  |
 | **port**            | 当 Neuron 作为客户端使用时，post 指远程设备的 TCP 端口。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 TCP 端口  |
 | **connection mode** | 驱动程序连接到设备的方式，默认为 client，即把 Neuron 作为客户端使用 |
@@ -709,18 +729,23 @@ dlt645 驱动支持串口和 TCP 连接。
 
 ### 地址格式
 
-> DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
+> mail_address#DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
 
-DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub>代表的是数据标识，所有点位只支持读属性，且用十六进制表示。
+* mail_address 代表电表的通信地址。
+* DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> 代表的是数据标识，所有点位只支持读属性，且用十六进制表示。
+
+例如，123456789012#02-01-01-00，代表通信地址为 123456789012 的电表设备的 A 相电压的值。
 
 :::tip
+支持一个节点配置多个通信地址的点位，即单串口的多设备连接。
+
 具体的数据标识对应的数据项名称请参考 DL/T645-2007 行业标准的数据编码表格。
 
 * 数据长度为 1，数据类型选择 UINT8；
 * 数据长度为 2，数据类型选择 UINT16；
 * 数据长度为 3 或 4，数据类型选择 UINT32；
 * 数据长度为 5 或 6 或 7 或 8，数据类型选择 UINT64；
-* Decimal 的值根据数据格式来定；
+* 根据数据格式设置 Decimal 的值，例如数据格式为 XXX.X，则 Decimal 设置为 0.1；
 :::
 
 | DI<sub>3</sub> | DI<sub>2</sub>    | DI<sub>1</sub>   | DI<sub>0</sub>   | 说明                             | 数据类型 | Decimal 值 | 举例                                                         |
@@ -741,17 +766,18 @@ Neuron 从设备采集到的数据可以通过Sparkplug_B协议从边缘端传�
 
 | 字段          | 说明                                                         |
 | ------------- | ------------------------------------------------------------ |
-| **group-id**  | Sparkplug_B协议中的最顶层逻辑分组，可以代表工厂或车间等实体，必填 |
-| **client-id** | MQTT 客户端 ID，这里代表边缘端的唯一标识，必填               |
+| **client-id** | MQTT 客户端 ID，连接的唯一标识，必填                         |
+| **group-id**  | Sparkplug_B 协议中的最顶层逻辑分组，可以代表工厂或车间等实体，必填 |
+| **node-id**   | Sparkplug_B 协议中的边缘节点唯一标识，必填                   |
 | **ssl**       | 是否启用 mqtt ssl，默认 false                                |
 | **host**      | MQTT Broker 主机，必填                                       |
 | **port**      | MQTT Broker 端口号，必填                                     |
 | **username**  | 连接到 Broker 时使用的用户名，可选填                         |
 | **password**  | 连接到 Broker 时使用的密码，可选填                           |
-| **ca**        | ca文件，只在ssl值为true时启用，这种情况下为必填              |
-| **cert**      | cert文件，只在ssl值为true时启用，可选填                      |
-| **key**       | key文件，只在ssl值为true时启用，可选填                       |
-| **keypass**   | key文件密码，只有在ssl值为true时启用，可选填                 |
+| **ca**        | ca 文件，只在 ssl 值为 true 时启用，这种情况下为必填         |
+| **cert**      | cert 文件，只在 ssl 值为 true 时启用，可选填                 |
+| **key**       | key 文件，只在 ssl 值为 true 时启用，可选填                  |
+| **keypass**   | key 文件密码，只有在 ssl 值为 true 时启用，可选填            |
 
 ## 非 A11
 
@@ -834,18 +860,50 @@ ADS路由.
 
 ## OPCDA
 
-Neuron 可通过外部辅助程序 opcshift.exe 间接访问运行于 Windows 操作系统的 OPCDA 服务器。opcshift 通过将 DA 协议转换为 UA 协议，再通过 Neuron已有的 opcua driver 进行数据获取，DA 的所有可访问点位都被映射至 UA 的"命名空间1"当中，点位的 ID 则保持一致。
+Neuron 可通过外部辅助程序 neuopc.exe 间接访问运行于 Windows 操作系统的 OPCDA 服务器。neuopc 通过将 DA 协议转换为 UA 协议，再通过 Neuron已有的 opcua driver 进行数据获取，DA 的所有可访问点位都被映射至 UA 的"命名空间2"当中，点位的 ID 则与 DA 保持一致。
 
 ### 设备配置
 
-安装 opcshift 以及 OPCDA 访问依赖包 opc-core-components-redistributables , 使用文本编辑器打开 opcshift.ini 文件，并填写配置信息，然后运行 opcshift.exe。新建 Neuron 中的 OPCUA 节点，填写 opcshift.ini 中对应的 ua.port 和 opcshift 所在的IP地址。
+neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neugates/neuopc)下载（neuopc是GPL协议下的开源项目）。安装以及远程连接的系统配置参考 [neuopc 运行环境设置](plc-settings/opcda.md)。
 
-| 字段         | 说明                                           |
-| ------------ | ---------------------------------------------- |
-| all.log_file | 日志文件的全路径，默认为 log/opcshift          |
-| da.host      | DA 服务所在的主机名，默认为 localhost          |
-| da.server    | DA 服务器的名称，如"Matrikon.OPC.Simulation.1" |
-| ua.port      | UA 服务器的端口号，默认为4841                  |
+![](plc-settings/assets-opcda/neuopc-setting.png)
+
+#### neuopc配置
+
+| 字段        | 说明                                                         |
+| ----------- | ------------------------------------------------------------ |
+| DA Host     | 需要连接目标主机标识，可以是目标 IP 或者 Hostname，本机可以不设置 |
+| DA Server   | DA 服务器的名称，如"Matrikon.OPC.Simulation.1"，填写 DA Host 之后可以点击下拉按钮尝试获取 Server 列表 |
+| UA Port     | UA 服务器的监听端口设置，默认 `48401`                        |
+| UA User     | UA 服务器的授权访问用户名，默认 `admin`                      |
+| UA Password | UA 服务器的访问密码，默认 `123456`                           |
+
+步骤：
+
+1. 填写 DA Host，可以填写 IP 或 Hostname，不填写则默认为本机；
+2. 尝试点击 DA Server 的下拉按钮，可以尝试获取目标 Host 的 DA Server 列表，如果下拉为空则说明检测不到任何目标主机上的 DA Server；
+3. 点击 Connect 按钮，服务器连接成功后会显示当前 DA Server 的所有可获取的测点信息，状态栏会出现当前服务器的连接信息，如图示8；
+4. 设置 UA Port；
+5. 设置 UA User；
+6. 设置 UA Password；
+7. 点击 Run 按钮，UA 服务器启动后，所有列表中的测点都会被映射到 UA Server 的 NeuOPC 目录下，所有测点的 UA namespace 为2，此时 UA 的相关设置项目会变为不可设置状态；
+8. 通过鼠标双击 neuopc 测点列表的 Name 列可将对应的测点名称复制到剪贴板中，然后在 neuron 的 tag 表单中粘贴。
+
+#### Neuron opcua 连接配置
+
+| 字段         | 说明                                                  |
+| ------------ | ----------------------------------------------------- |
+| endpoint url | neuopc 的访问地址，默认是`opc.tcp://127.0.0.1:48401/` |
+| username     | neuopc 的授权用户名                                   |
+| password     | neuopc 的访问密码                                     |
+
+步骤：
+
+1. 在 neuron 南向设备管理中添加一个 opcua 设备；
+2. 在设备配置中修改 endpoint url 为 neuopc 的 UA Server 地址；
+3. 在设备配置中填写 Username，与 neuopc 中设置的一致；
+4. 在设备配置中填写 Password，与neuopc 中设置的一直；
+5. 无需填写 Cert 和 Key，直接提交设置表单。
 
 ### 支持的数据类型
 
@@ -866,13 +924,242 @@ Neuron 可通过外部辅助程序 opcshift.exe 间接访问运行于 Windows �
 
 > IX!NODEID</span>
 
-**IX** 名字空间索引，访问 opcshift 时，IX只能为1。
+**IX** 名字空间索引，访问 neuopc 时，IX只能为2。
 
-**NODEID** 节点 ID，与 UA 服务器中的字符串一致。
+**NODEID** 节点 ID，与 DA 服务器中的字符串一致。
 
 *例子：*
 
 | 地址                   | 数据类型 | 说明                                                         |
 | ---------------------- | -------- | ------------------------------------------------------------ |
-| 1!Bucket Brigade.UInt2 | UINT16   | 获取类型为 UINT16 的数据点；NS 为1，NODEID 为 Bucket Brigade.UInt2 |
+| 2!Bucket Brigade.UInt2 | UINT16   | 获取类型为 UINT16 的数据点；NS 为2，NODEID 为 Bucket Brigade.UInt2 |
 
+## CNC FANUC FOCAS
+
+**支持架构**: amd64, arm/v7
+
+### 设备设置
+
+| 字段    | 说明         |
+| ------- | ------------ |
+| host    | 设备IP地址   |
+| port    | 设备端口号   |
+| timeout | 连接超时时间 |
+
+### 支持的数据类型
+
+* uint8
+* int8
+* uint16
+* int16
+* uint32
+* int32
+* uint64
+* int64
+* float
+* double
+* bit
+* string
+
+
+
+### CNC 数据
+
+| tag标识（地址） | 说明                                         | 数据类型     | 参数               |
+| --------------- | -------------------------------------------- | ------------ | ------------------ |
+| actf            | actual feed rate                             | int64/uint64 | -                  |
+| absolute        | absolute position data of axis               | int64/uint64 | axis number(.n)    |
+| machine         | machine position data of axis                | int64/uint64 | axis number(.n)    |
+| relative        | relative position data of axis               | int64/uint64 | axis number(.n)    |
+| distance        | distance to go of axis                       | int64/uint64 | axis number(.n)    |
+| acts            | actual rotational speed of the spindle       | int64/uint64 | -                  |
+| skip            | skipped position of axis                     | int64/uint64 | axis number(.n)    |
+| srvdelay        | servo delay amount of axis                   | int64/uint64 | axis number(.n)    |
+| accdecdly       | acceleration/deceration delay amount of axis | int64/uint64 | axis number(.n)    |
+| spcss_srpm      | converted spindle speed                      | int64/uint64 | -                  |
+| spcss_sspm      | specified surface speed                      | int64/uint64 | -                  |
+| spcss_smax      | clamp of maxmum spindle speed                | int64/uint64 | -                  |
+| movrlap_input   | input overlapped motion value                | int64/uint64 | axis number(.n)    |
+| movrlap_output  | output overlapped motion value               | int64/uint64 | axis number(.n)    |
+| spload          | load information of the serial spindle       | int32/uint32 | spindle number(.n) |
+| spmaxrpm        | maximum r.p.m ratio of serial spindle        | int32/uint32 | spindle number(.n) |
+| spgear          | gear ratio of the serial spindle             | int32/uint32 | spindle number(.n) |
+
+*CNC地址示例*
+
+| 地址       | 说明                                  |
+| ---------- | ------------------------------------- |
+| actf       | 读取 actual feed rate                 |
+| absolute.1 | 读取第1个axis的absolute position      |
+| machine.3  | 读取第3个axis的machine position       |
+| spload.1   | 读取第1个spindle的load information    |
+| spmaxrpm.3 | 读取第3个spindle的maximum r.p.m ratio |
+
+
+
+### PMC数据
+
+| 标识 | 说明                            | 类型 | 权限 |
+| ---- | ------------------------------- | ---- | ---- |
+| A    | message demand                  | all  | 读写 |
+| C    | counter                         | all  | 读写 |
+| D    | data table                      | all  | 读写 |
+| E    | extended relay                  | all  | 读写 |
+| F    | signal to CNC -> PMC            | all  | 只读 |
+| G    | signal to PMC -> CNC            | all  | 读写 |
+| K    | keep relay                      | all  | 读写 |
+| M    | input signal from other device  | all  | 读写 |
+| N    | output signal from other device | all  | 读写 |
+| R    | internal relay                  | all  | 读写 |
+| T    | changeable timer                | all  | 读写 |
+| X    | signal to machine -> PMC        | all  | 只读 |
+| Y    | signal to PMC -> machine        | all  | 读写 |
+
+*PMC点位示例*
+
+| 地址 | 类型                                                         | 说明                                                    |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------- |
+| A0   | uint8/int8/uint16/int16/uint32/int32/int64/uint64/float/double | PMC **message demand** 区域，地址0的数据                |
+| A0.1 | bit                                                          | PMC **message demand** 区域，地址0的的字节，第1个bit位  |
+| A0.0 | bit                                                          | PMC **message demand** 区域，地址0的字节，第0个bit位    |
+| A0.2 | string                                                       | PMC **message demand** 区域，地址0开始，长度为2的字符串 |
+| D0.2 | string                                                       | PMC **data table** 区域，地址0开始，长度为2的字符串     |
+| D0.7 | bit                                                          | PMC **data table** 区域，地址0的字节，第7个bit位        |
+## Mitsubishi MELSEC-Q A1E
+
+a1e 插件用于通过以太网访问三菱的 A 系列、FX3U、FX3G、iQ-F 系列 PLC（iQ-F 需要特定固件版本支持）。
+
+### 设备配置
+
+| 字段     | 说明                           |
+| -------- | ------------------------------ |
+| **host** | 远程 PLC 的 IP 地址            |
+| **port** | 远程 PLC 的端口号，默认为 2000 |
+
+### 支持的数据类型
+
+* INT16
+* UINT16
+* INT32
+* UINT32
+* FLOAT
+* DOUBLE
+* BIT
+* STRING
+
+### 地址格式
+
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+
+#### AREA ADDRESS
+
+| 区域 | 数据类型 | 属性  | 备注                                   |
+| ---- | -------- | ----- | -------------------------------------- |
+| X    | bit      | 读/写 | 输入继电器  (FX3/iQ-F)                 |
+| Y    | bit      | 读/写 | 输出继电器 (FX3/iQ-F)                  |
+| M    | bit      | 读/写 | 内部继电器 (FX3/iQ-F)                  |
+| L    | bit      | 读/写 | 锁存器 (FX3)                           |
+| F    | bit      | 读/写 | 信号器 (FX3)                           |
+| B    | bit      | 读/写 | 链接继电器 (FX3)                       |
+| SB   | bit      | 读/写 | 链接专用继电器(FX3/iQ-F)               |
+| S    | bit      | 读/写 | 步继电器(FX3/iQ-F)                     |
+| D    | 所有类型 | 读/写 | 数据寄存器 (FX3/iQ-F)                  |
+| W    | 所有类型 | 读/写 | 链接寄存器 (FX3)                       |
+| TS   | bit      | 读/写 | 定时器触点 (FX3/iQ-F)                  |
+| TC   | bit      | 读/写 | 定时器线圈 (FX3)                       |
+| TN   | 所有类型 | 读/写 | 定时器当前值 (FX3/iQ-F)                |
+| STS  | bit      | 读/写 | 保持定时器触点 (FX3)                   |
+| STC  | bit      | 读/写 | 保持定时器线圈(FX3)                    |
+| STN  | 所有类型 | 读/写 | 保持定时器 (FX3)                       |
+| CS   | bit      | 读/写 | 计数器触点 (FX3/iQ-F)                  |
+| CC   | bit      | 读/写 | 计数器线圈 (FX3)                       |
+| CN   | 所有类型 | 读/写 | 计数器当前值  (FX3/iQ-F)               |
+| LCS  | bit      | 读/写 | 长计数器触点（FX3/iQ-F）               |
+| LCC  | bit      | 读/写 | 长计数器线圈（FX3）                    |
+| LCN  | 所有类型 | 读/写 | 长计数器当前值（FX3/iQ-F）             |
+| SB   | bit      | 读/写 | 链接特殊继电器（FX3）                  |
+| SW   | 所有类型 | 读/写 | 链接专用寄存器 (FX3)                   |
+| SM   | bit      | 读/写 | 特殊寄存器 (FX3/iQ-F)                  |
+| SD   | 所有类型 | 读/写 | 专用寄存器Specical register (FX3/iQ-F) |
+| Z    | 所有类型 | 读/写 | 索引寄存器 Index register (FX3)        |
+| LZ   | 所有类型 | 读/写 | 长变址寄存器 (FX3)                     |
+| DX   | bit      | 读/写 | 链接直接软元件 链接输入(FX3)           |
+| DY   | bit      | 读/写 | 链接直接软元件 链接输出(FX3)           |
+| R    | 所有类型 | 读/写 | 文件寄存器 (FX3/iQ-F)                  |
+
+*例子：*
+
+| 地址  | 数据类型 | 说明                |
+| ----- | -------- | ------------------- |
+| X0    | bit      | X 区域，地址为 0    |
+| X1    | bit      | X 区域，地址为 1    |
+| Y0    | bit      | Y 区域，地址为 0    |
+| Y1    | bit      | Y 区域，地址为 1    |
+| D100  | int16    | D 区域，地址为 100  |
+| D1000 | uint16   | D 区域，地址为 1000 |
+| D200  | uint32   | D 区域，地址为 200  |
+| D10   | float    | D 区域，地址为 10   |
+| D20   | double   | D 区域，地址为 20   |
+
+#### .BIT
+
+只可用于**非bit类型区域**，表示读取指定地址的指定二进制位，二进制位索引区间为[0, 15]。
+
+| 地址  | 数据类型 | 说明                       |
+| ----- | -------- | -------------------------- |
+| D20.0 | bit      | D 区域，地址为 20，第 0 位 |
+| D20.2 | bit      | D 区域，地址为 20，第 2 位 |
+
+#### .LEN\[H]\[L]
+
+当数据类型是 string 类型时，**.LEN** 表示的是字符串长度；可以选填 **H**和 **L** 表示两种字节顺序，默认的是 **H** 的字节顺序。
+
+*例子：*
+
+| 地址      | 数据类型 | 说明                                               |
+| --------- | -------- | -------------------------------------------------- |
+| D1002.16L | string   | D 区域，地址为 1002，字符串长度为 16，字节顺序为 L |
+| D1003.16  | string   | D 区域，地址为 1003，字符串长度为 16，字节顺序为 H |
+
+
+
+## EtherNet/IP(CIP)
+
+此驱动主要用于支持EtherNet/IP协议的设备。
+
+
+
+### 设备配置
+
+| 字段 | 说明                  |
+| ---- | --------------------- |
+| host | 设备IP地址            |
+| port | 设备端口，默认为44818 |
+| slot | CPU槽号，默认为0      |
+
+
+
+### 支持的数据类型
+
+* INT8
+* UINT8
+* INT16
+* UINT16
+* INT32
+* UINT32
+* INT64
+* UINT64
+* FLOAT
+* DOUBLE
+* BOOL
+* BIT
+* STRING
+* WORD
+* DWORD
+* LWORD
+
+
+
+### PLC数据地址
+
+>  TAG NAME </span>

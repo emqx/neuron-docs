@@ -2,22 +2,42 @@
 
 ## Environment setup
 
-### Running Neuron-plus In Docker
+### Package Installation
 
-1. Get the Docker image
+The environment used in this example is Ubuntu 20.04.3, X86_64.Use NeuronEX version.
 
-Get the neuron-plus image at [docker hub](https://hub.docker.com/r/emqx/neuron).
+1. Download the installation package
+NeuronEX packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).
+
+2. Unzip the installation package
+Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
 
 ```bash
-## pull neuron
-$ docker pull emqx/neuron-plus:latest
+sudo dpkg -i neuronex-2.3.0-linux-amd64.deb
 ```
 
-2. Start the Docker container
+::: tip
+After successful installation of the deb package, Neuron is automatically started.
+:::
+
+### Neuron operation
+
+#### Checking Neuron Status
 
 ```bash
-## run neuron-plus
-$ docker run -d --name neuron-plus -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron-plus:latest
+sudo systemctl status neuron
+```
+
+#### Stop Neuron
+
+```bash
+sudo systemctl stop neuron
+```
+
+#### Restart Neuron
+
+```bash
+sudo systemctl restart neuron
 ```
 
 ### Running EMQX In Docker
