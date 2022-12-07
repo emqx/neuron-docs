@@ -11,12 +11,18 @@
    ![](assets-opcda/package.png)
 
    * neuopc ——运行 OPCDA 转换 OPCUA 的主程序；
-   * OPC Core Components Redistributable (x64) 3.00.108.msi ——OPC 基金会官方组件，需要在 x64系统下安装；
-   * OPC Core Components Redistributable (x86) 3.00.108.msi ——OPC 基金会官方组件，需要在 x86系统下安装；
-   * OPC DA Auto 2.02 Source Code 5.30.msi ——OPC 基金会官方组件，在大部分系统中已经无法正常安装，但是可以使用 msi 提取工具从中提取出 OPCDAAuto.dll 组件；
-   * OPCDAAuto.dll ——OPC 基金会官方组件，是一个 COM 组件，专门为 .NET 平台进行提供 OPCDA 的服务访问；
+   * dotnetfx-1.1——.Net framework 1.1，安装 OPC DAAuto 需要先正确此程序；
+   * OPC DA Auto 2.02 Source Code 5.30.msi ——OPC 基金会官方组件，使用"Windows任务管理器"安装；
+   * OPC Core Components Redistributable (x64) 3.00.108.msi ——OPC 基金会官方组件，可不用安装；
+   * OPC Core Components Redistributable (x86) 3.00.108.msi ——OPC 基金会官方组件，可不用安装。
 
-2. 检查组件是否已安装
+2. 检查是否已经安装过.Net framework 1.1 ，如果没有则安装 dotnetfx-1.1；
+
+3. 使用任务管理器安装 OPC DA Auto 2.02 Source Code 5.30.msi ，打开"Windows 任务管理器"，打开"文件"-"新建任务"，输入MSI文件路径，勾选"以系统管理权限创建此任务"；
+
+   ![](assets-opcda/install-auto.png)
+
+4. 检查组件是否已安装
 
    * 如果是32位操作系统，则进入到 C:\Windows\System32 目录下，如果是64位操作系统，则进入到 C:\Windows\SysWOW64 目录下，检查是否有如下文件存在：
 
@@ -24,7 +30,7 @@
 
    ::: tip
 
-   如果文件不存在则安装对应平台的 OPC Core Components Redistributable 组件，如果存在则不用安装。
+   如果文件不存在则联系销售人员进行支持。
 
    :::
 
@@ -34,29 +40,13 @@
 
    ::: tip
 
-   如果正常运行，说明 OPC Core Components Redistributable 已经正常安装。
+   如果正常运行，说明 OPC DA Auto 2.02 已经正常安装。
 
    :::
 
-   * 拷贝 OPCDAAuto.dll 文件到系统目录中，如果是32位操作系统则拷贝到 C:\Windows\System32 目录下，如果是64位操作系统则拷贝到 C:\Windows\SysWOW64 目录下，拷贝完成后使用管理员权限打开 powershell 输入如下命令：
+5. 本机安装 MatrikonOPCSimulation 模拟器程序，如果安装失败可安装KepServerEX测试；
 
-   ```powershell
-   cd C:/Windows/System32 # x86系统
-   cd C:/Windows/SysWOW64 # x64系统
-   ./regsvr32 OPCDAAuto.dll
-   ```
-
-   ::: tip
-
-   成功后如下图所示：
-
-   :::
-
-   ![](assets-opcda/regist.png)
-
-3. 本机安装 MatrikonOPCSimulation 模拟器程序；
-
-4. 运行 neuopc.exe 程序，选择 DA Host 和 DA Server 后点击 Connect，设置 UA 的各项参数后点击 Run，运行成功，如图：
+6. 运行 neuopc.exe 程序，选择 DA Host 和 DA Server 后点击 Connect，设置 UA 的各项参数后点击 Run，运行成功，如图：
 
    ![](assets-opcda/local-neuopc.png)
 
