@@ -1,6 +1,6 @@
 # 安装
 
-为满足客户需求，Neuron 分成两种，一种是集成 eKuiper，携带数据流处理引擎界面的，名称为 Neuron-plus，另一种是不集成 eKuiper 的，名称为 Neuron。用户可以根据自身需求选择，Neuron-plus 版本现在只支持 docker 安装。
+为满足客户需求，Neuron 分成两种，一种是集成 eKuiper，携带数据流处理引擎界面的，名称为 NeuronEX，另一种是不集成 eKuiper 的，名称为 Neuron。用户可以根据自身需求选择。
 
 ## 下载
 
@@ -36,7 +36,7 @@ rpm/deb package 中使用了 systemd 管理 neuron 进程，建议优先使用 r
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo dpkg -i neuron-2.2.0-linux-armhf.deb
+$ sudo dpkg -i neuron-2.3.0-linux-armhf.deb
 ```
 
 为避免 ubuntu 系统自动更新时替换 neuron 包，还需要执行以下命令使 neuron 软件包在 apt 升级中保留。
@@ -62,7 +62,7 @@ $ sudo dpkg -r neuron
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo rpm -i neuron-2.2.0-linux-armhf.rpm
+$ sudo rpm -i neuron-2.3.0-linux-armhf.rpm
 ```
 
 ::: tip
@@ -82,14 +82,14 @@ $ sudo rpm -e neuron
 根据不同的版本及架构下载，例如：
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.2.0/neuron-2.2.0-linux-armhf.tar.gz
+$ wget https://www.emqx.com/en/downloads/neuron/2.3.0/neuron-2.3.0-linux-armhf.tar.gz
 ```
 
 ### 解压
 
 ```bash
-$ sudo tar -zxvf neuron-2.2.0-linux-armhf.tar.gz
-$ cd neuron-2.2.0-linux-armhf
+$ sudo tar -zxvf neuron-2.3.0-linux-armhf.tar.gz
+$ cd neuron-2.3.0-linux-armhf
 ```
 
 #### 启动
@@ -107,34 +107,34 @@ $ ./neuron
 neuron docker 镜像请从 [docker hub](https://hub.docker.com/r/emqx/neuron) 网站下载。
 
 ```bash
-## pull neuron
+## pull Neuron
 $ docker pull emqx/neuron:latest
 ```
 
-neuron-plus docker 镜像请从 [docker hub](https://hub.docker.com/r/emqx/neuron-plus) 网站下载。
+NeuronEX docker 镜像请从 [docker hub](https://hub.docker.com/r/emqx/neuronex) 网站下载。
 
 ```bash
-## pull neuron-plus
-$ docker pull emqx/neuron-plus:latest
+## pull NeuronEX
+$ docker pull emqx/neuronex:latest
 ```
 
 ### 启动
 
-启动 neuron:
+启动 Neuron:
 
 ```bash
-## run neuron
-$ docker run -d --name neuron -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron:latest
+## run Neuron
+$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:latest
 ```
 
-启动 neuron-plus:
+启动 NeuronEX:
+
 ```bash
-## run neuron-plus
-$ docker run -d --name neuron-plus -p 7000:7000 -p 7001:7001 --privileged=true --restart=always emqx/neuron-plus:latest
+## run NeuronEX
+$ docker run -d --name neuronex -p 7000:7000 --privileged=true --restart=always emqx/neuronex:latest
 ```
 
-* tcp 7000: 用于访问 web。
-* tcp 7001: http api 端口。（api 端口为 web 端口+1，例如，当 web 端口映射为 8000 时，api 端口应映射为8001）
+* tcp 7000: 用于访问 web 和 http api 端口。
 * --restart=always: docker 进程重启时，自动重启 neuron 容器。
 * --privileged=true: 可选参数，便于排查问题。
 * --env DISABLE_AUTH=true: 可选参数，用于关闭鉴权。

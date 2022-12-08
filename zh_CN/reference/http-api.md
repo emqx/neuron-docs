@@ -48,6 +48,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * BOOL   = 12
 * STRING = 13
 * BYTES  = 14
+* ERROR = 15
+* WORD = 16
+* DWORD = 17
+* LWORD = 18
 
 ### 点位属性
 
@@ -130,6 +134,47 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzcyODcxNjMsImlhdCI6MTYzNzIwMDc2MywiaXNzIjoiRU1RIFRlY2hub2xvZ2llcyBDby4sIEx0ZCBBbGwgcmlnaHRzIHJlc2VydmVkLiIsInBhc3MiOiIwMDAwIiwidXNlciI6ImFkbWluIn0.2EZzPC9djErrCeYNrK2av0smh-eKxDYeyu7cW4MyknI"
+}
+```
+
+## 更改密码
+
+*POST*   **/api/v2/password**
+
+### 请求头部
+
+**Content-Type** application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 401
+  * 1004, 缺少令牌
+  * 1005, 解码令牌错误
+  * 1012, 密码长度太短或太长
+  * 1013, 密码重复
+* 403
+  * 1006, 令牌过期
+  * 1007, 验证令牌错误
+  * 1008, 无效令牌
+
+### 请求体
+
+```json
+{
+    "name": "admin",
+    "old_pass": "01234",
+    "new_pass": "56789"
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
 }
 ```
 
@@ -247,6 +292,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ### 请求参数
 
 **type**  必需
+
+**plugin** 可选
+
+**node** 可选
 
 ### 请求头部
 
@@ -533,6 +582,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 **group**  必需
 
+**name** 可选
+
 ### 请求头部
 
 **Authorization** Bearer \<token\>
@@ -778,7 +829,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "name": "plugin_name",
             //plugin library name
             "library": "plugin_lib_name",
-            "description": "description"
+            "description": "description",
+            "description_zh": "描述"
         }
     ]
 }
@@ -1179,7 +1231,9 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     //running state
     "running": 2,
     //link state
-    "link": 1
+    "link": 1,
+    //average round trip time communicating with devices
+    "average_rtt": 100
 }
 
 {
@@ -1187,12 +1241,14 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
         {
             "node": "modbus-node1",
             "running": 2,
-            "link": 1
+            "link": 1,
+            "average_rtt": 100
         },
         {
             "node": "modbus-node2",
             "running": 1,
-            "link": 0
+            "link": 0,
+            "average_rtt": 9999
         }
     ]
 }
@@ -1321,4 +1377,150 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "valid_until": "2023-03-30 09:10:40",
     "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
 }
+```
+
+## 下载日志文件
+
+*GET*  /api/v2/logs
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+  * 1011 文件不存在
+  * 1014 执行指令失败
+* 500
+  * 1001 内部错误
+
+### 响应
+
+如果有错误返回时响应：
+
+```json
+{
+    "error": 1014
+}
+```
+
+## 修改节点日志等级
+
+*PUT*  /api/v2/log/level
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+  * 2003 node 不存在
+* 500
+  * 1001 内部错误
+  * 1010 程序繁忙
+
+### 请求体
+
+```json
+{
+    // node name
+    "node": "modbus-tcp"
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+:::tip
+调用接口修改节点的日志等级为 debug，十分钟左右自动切回默认等级。
+:::
+
+## 获取统计信息
+
+*GET*  /api/v2/metrics
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 请求参数
+
+**category**  可选, 取值为`global`, `driver` and `app`之一
+**node**      可选, 用节点名过滤, 且必须指定`category=driver`或`category=app`
+
+### 响应状态
+
+* 200 OK
+* 400 请求错误
+* 500 服务器内部错误
+
+### 响应
+
+```text
+# HELP core_dumped Whether there is any core dump
+# TYPE core_dumped gauge
+core_dumped 0
+# HELP uptime_seconds Uptime in seconds
+# TYPE uptime_seconds counter
+uptime_seconds 314
+# HELP north_nodes_total Number of north nodes
+# TYPE north_nodes_total gauge
+north_nodes_total 1
+# HELP north_running_nodes_total Number of north nodes in running state
+# TYPE north_running_nodes_total gauge
+north_running_nodes_total 1
+# HELP north_disconnected_nodes_total Number of north nodes disconnected
+# TYPE north_disconnected_nodes_total gauge
+north_disconnected_nodes_total 1
+# HELP south_nodes_total Number of south nodes
+# TYPE south_nodes_total gauge
+south_nodes_total 1
+# HELP south_running_nodes_total Number of south nodes in running state
+# TYPE south_running_nodes_total gauge
+south_running_nodes_total 0
+# HELP south_disconnected_nodes_total Number of south nodes disconnected
+# TYPE south_disconnected_nodes_total gauge
+south_disconnected_nodes_total 1
+# HELP send_msgs_total Total number of messages sent
+# TYPE send_msgs_total counter
+send_msgs_total{node="data-stream-processing"} 0
+# HELP send_msg_errors_total Total number of errors sending messages
+# TYPE send_msg_errors_total counter
+send_msg_errors_total{node="data-stream-processing"} 0
+# HELP recv_msgs_total Total number of messages received
+# TYPE recv_msgs_total counter
+recv_msgs_total{node="data-stream-processing"} 0
+# HELP last_rtt_ms Last request round trip time in milliseconds
+# TYPE last_rtt_ms gauge
+last_rtt_ms{node="modbus"} 9999
+# HELP send_bytes Total number of bytes sent
+# TYPE send_bytes gauge
+send_bytes{node="modbus"} 0
+# HELP recv_bytes Total number of bytes received
+# TYPE recv_bytes gauge
+recv_bytes{node="modbus"} 0
+# HELP tag_reads_total Total number of tag reads including errors
+# TYPE tag_reads_total counter
+tag_reads_total{node="modbus"} 0
+# HELP tag_read_errors_total Total number of tag read errors
+# TYPE tag_read_errors_total counter
+tag_read_errors_total{node="modbus"} 0
+# HELP group_tags_total Total number of tags in the group
+# TYPE group_tags_total gauge
+group_tags_total{node="modbus",group="grp"} 1
+# HELP group_last_send_msgs Number of messages sent on last group timer invocation
+# TYPE group_last_send_msgs gauge
+group_last_send_msgs{node="modbus",group="grp"} 0
+# HELP group_last_timer_ms Time in milliseconds consumed on last group timer invocation
+# TYPE group_last_timer_ms gauge
+group_last_timer_ms{node="modbus",group="grp"} 0
 ```

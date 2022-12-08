@@ -9,8 +9,8 @@ Download link: [https://github.com/emqx/neuron/releases](https://github.com/emqx
 According to different development systems, download the corresponding sdk tar.gz package, e.g. neuron-sdk-2.1.3-linux-amd64.tar.gz to the corresponding development system and decompress it to obtain neuron-sdk-x.x.x, where x.x.x represents the version number, execute the following command.
 
 ```bash
-# take version 2.1.3 as an example
-$ cd neuron-sdk-2.1.3
+# take version 2.3.0 as an example
+$ cd neuron-sdk-2.3.0
 # install sdk
 $ sudo ./sdk-install.sh
 ```

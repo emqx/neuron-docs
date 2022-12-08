@@ -18,6 +18,9 @@ This document describes the errors that neuron will reply to sender when calling
 * 1009    user or password error
 * 1010    is busy
 * 1011    file not exist
+* 1012    password length too short or too long
+* 1013    duplicate password
+* 1014    command execution failed
 
 ## add/del/update node/tag/plugin/group error codes
 
@@ -31,7 +34,6 @@ This document describes the errors that neuron will reply to sender when calling
 * 2009    node is stopped
 * 2010    node name too long
 * 2011    node not allow delete
-
 * 2101    group already subscribed
 * 2102    group not subscribe
 * 2103    group not allow
@@ -39,7 +41,6 @@ This document describes the errors that neuron will reply to sender when calling
 * 2105    group parameter invalid
 * 2106    group not exist
 * 2107    group name too long
-
 * 2201    tag not exist
 * 2202    tag name conflict
 * 2203    tag attribute not support
@@ -48,18 +49,15 @@ This document describes the errors that neuron will reply to sender when calling
 * 2206    tag name too long
 * 2207    tag address too long
 * 2208    tag description too long
-
 * 2209    tag precision invalid
-
 * 2301    library not found
 * 2302    library info invalid
 * 2303    library name conflict
 * 2304    library failed to open
 * 2305    libraray module invalid
 * 2306    library system not allow del
-
 * 2307    library not allow create instance
-
+* 2308    library arch not support
 * 2400    license not found
 * 2401    license invalid
 * 2402    license expired
@@ -106,13 +104,22 @@ This document describes the errors that neuron will reply to sender when calling
 
 * 10500    fins disconnected
 * 10501    fins error
-* 10502    fins first address in inaccessible area
-* 10503    fins end of word exceed range
-* 10504    fins invalid size of data
-* 10505    fins response too long
-* 10506    fins data is protected
-* 10507    fins area read-only
-* 10508    fins data cannot change
+* 10502    fins local node error
+* 10503    fins dest node error
+* 10504    fins communication controller error
+* 10505    fins not executable
+* 10506    fins routing error
+* 10507    fins command format error
+* 10508    fins parameter error
+* 10509    fins read not possible
+* 10510    fins write not possible
+* 10511    fins not executable in current mode
+* 10512    fins no unit
+* 10513    fins start/stop not possible
+* 10514    fins unit error
+* 10515    fins command error
+* 10516    fins access error
+* 10517    fins abort
 
 ## OPCUA error codes
 
@@ -121,3 +128,10 @@ This document describes the errors that neuron will reply to sender when calling
 * 10003 opcua access timeout
 * 10004 opcua tag is not readable
 * 10005 opcua tag is not writable
+* 10006 opcua tag is not supported
+
+## EtherNet/IP error codes
+
+* 10701 - 10744 EtherNet/IP error
+* 10798 EtherNet/IP data type mismatch
+* 10799 EtherNet/IP no session

@@ -39,5 +39,5 @@ Click on the `Import` button and select the Excel file to be imported.
 
 ![export](./assets/export.png)
 
-1. Select the group to be exported, you can select all with one click;
-2. Click the `Export` button, the information in the group, including the label information under the group, will be exported to an Excel table.
+* Select the group to be exported, you can select all with one click;
+* Click the `Export` button, the information in the group, including the label information under the group, will be exported to an Excel table.

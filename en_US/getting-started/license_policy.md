@@ -22,8 +22,8 @@ To install a license, as shown below.
 
 ![license-null](./assets/license-null.png)
 
-1. Click on the `License` from the System Information drop-down box in the upper-right corner.
-2. Click on the `Upload` button to select the license file and then submit.
+* Click on the `License` from the System Information drop-down box in the upper-right corner.
+* Click on the `Upload` button to select the license file and then submit.
 
 ::: tip
 When applying for a valid license, you need to fill in the hardware token.
@@ -41,6 +41,7 @@ After the license is successfully installed, it will display the license informa
 
 The license page details includes following items.
 
+* `Effective data`, time when Neuron applied for License to take effect.
 * `Expire date`, if the license has expired, the system would not work correctly anymore. Users must obtain a new valid license from official website, `Re-upload` the new license as procedure above.
 * `Limit on the maximum number of nodes`, The maximum number of connection nodes that Neuron can create, a node can be either a southbound device or a northbound application.
 * `Limit on the maximum number of tags`, The maximum number of total data tags that Neuron can create.
