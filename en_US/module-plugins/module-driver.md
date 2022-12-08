@@ -697,8 +697,6 @@ The dlt645 protocol supports serial and tcp connection.
 
 ### Parameter Setting
 
-### 设备配置
-
 #### serival
 
 | Parameter         | Description                                         |
@@ -869,7 +867,7 @@ Neuron can indirectly access OPCDA servers running on Windows operating systems 
 
 The component package of neuopc can be downloaded from the [project page](https://github.com/neugates/neuopc) of neuopc (neuopc is an open source project under the GPL agreement). Refer to [neuopc operating environment settings](plc-settings/opcda.md) for system configuration of installation and remote connection.
 
-![](plc-settings/assets-opcda/neuopc-setting.png)
+![](./plc-settings/assets-opcda/neuopc-setting.png)
 
 #### neuopc setting
 

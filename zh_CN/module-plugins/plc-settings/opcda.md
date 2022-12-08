@@ -26,7 +26,7 @@
 
 * 如果是32位操作系统，则进入到 C:\Windows\System32 目录下，如果是64位操作系统，则进入到 C:\Windows\SysWOW64 目录下，检查是否有如下文件存在：
 
-![](assets-opcda/core-components.png)
+![](./assets-opcda/core-components.png)
 
 ::: tip
 如果文件不存在则联系销售人员进行支持。

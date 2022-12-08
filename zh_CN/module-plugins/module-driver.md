@@ -652,7 +652,7 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 | 字段      | 说明                            |
 |--------- | ------------------------------ |
-| **host** | BACnet 设备的 ID                |
+| **host** | BACnet 设备的 IP                |
 | **port** | BACnet 设备的端口号，默认为 47808 |
 
 ### 支持的数据类型
@@ -866,8 +866,7 @@ Neuron 可通过外部辅助程序 neuopc.exe 间接访问运行于 Windows 操�
 
 neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neugates/neuopc)下载（neuopc是GPL协议下的开源项目）。安装以及远程连接的系统配置参考 [neuopc 运行环境设置](plc-settings/opcda.md)。
 
-![](plc-settings/assets-opcda/neuopc-setting.png)
-
+![](./plc-settings/assets-opcda/neuopc-setting.png)
 #### neuopc配置
 
 | 字段        | 说明                                                         |
