@@ -961,8 +961,6 @@ neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neug
 * bit
 * string
 
-
-
 ### CNC 数据
 
 | tag标识（地址） | 说明                                         | 数据类型     | 参数               |
@@ -994,8 +992,6 @@ neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neug
 | machine.3  | 读取第3个axis的machine position       |
 | spload.1   | 读取第1个spindle的load information    |
 | spmaxrpm.3 | 读取第3个spindle的maximum r.p.m ratio |
-
-
 
 ### PMC数据
 
@@ -1121,13 +1117,9 @@ a1e 插件用于通过以太网访问三菱的 A 系列、FX3U、FX3G、iQ-F 系
 | D1002.16L | string   | D 区域，地址为 1002，字符串长度为 16，字节顺序为 L |
 | D1003.16  | string   | D 区域，地址为 1003，字符串长度为 16，字节顺序为 H |
 
-
-
 ## EtherNet/IP(CIP)
 
 此驱动主要用于支持EtherNet/IP协议的设备。
-
-
 
 ### 设备配置
 
@@ -1136,8 +1128,6 @@ a1e 插件用于通过以太网访问三菱的 A 系列、FX3U、FX3G、iQ-F 系
 | host | 设备IP地址            |
 | port | 设备端口，默认为44818 |
 | slot | CPU槽号，默认为0      |
-
-
 
 ### 支持的数据类型
 
@@ -1157,8 +1147,6 @@ a1e 插件用于通过以太网访问三菱的 A 系列、FX3U、FX3G、iQ-F 系
 * WORD
 * DWORD
 * LWORD
-
-
 
 ### PLC数据地址
 

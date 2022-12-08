@@ -4,7 +4,7 @@ In order to meet customer needs, Neuron is divided into two types, one that inte
 
 ## Download
 
-Neuron software packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads) according to the actual system, or download via [Github](https://github.com/emqx/neuron/releases).
+Neuron software packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).The installation package downloaded from official website is adapted to a newer system, so please download more system version packages and version packages adapted to the old system from [Github](https://github.com/emqx/neuron/releases).
 
 | Download files                    | Architecture  |
 | --------------------------------- | ------------- |
@@ -109,6 +109,13 @@ The neuron docker image can be downloaded from the docker hub website.[docker hu
 ```bash
 ## pull Neuron
 $ docker pull emqx/neuron:latest
+```
+
+To support the Alpine image with smaller occupation, please download it from the [docker hub](https://hub.docker.com/r/emqx/neuron/tags) website.
+
+```bash
+## pull Neuron
+$ docker pull emqx/neuron:2.3.0-alpine
 ```
 
 The NeuronEX docker image can be downloaded from the docker hub website.[docker hub](https://hub.docker.com/r/emqx/neuronex)
