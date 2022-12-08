@@ -937,8 +937,6 @@ step:
 | ---------------------- | --------- | ------------------------------------------------------------ |
 | 1!Bucket Brigade.UInt2 | UINT16    | Get a datatag of type UINT16; NS is 2, NODEID is Bucket Brigade.UInt2 |
 
-
-
 ## CNC FANUC FOCAS
 
 **Support arch**: amd64, armv7
@@ -965,8 +963,6 @@ step:
 * double
 * bit
 * string
-
-
 
 ### CNC Data
 
@@ -999,8 +995,6 @@ step:
 | machine.3  | read machine position of no.3 axis        |
 | spload.1   | read load information of no.1 spindle     |
 | spmaxrpm.3 | read maximum r.p.m ratio  of no.3 spindle |
-
-
 
 ### PMC Data
 
@@ -1126,11 +1120,7 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 | D1002.16L | string    | D area, address is 1002, string length is 16, endianness is L |
 | D1003.16  | string    | D area, address is 1003, string length is 16, endianness is H |
 
-
-
 ## EtherNet/IP(CIP)
-
-
 
 ### Parameter Setting
 
@@ -1139,8 +1129,6 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 | host  | device ip                  |
 | port  | device port, default 44818 |
 | slot  | cpu slot, default 0        |
-
-
 
 ### Data Type
 
@@ -1160,8 +1148,6 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 * WORD
 * DWORD
 * LWORD
-
-
 
 ### Address Format
 

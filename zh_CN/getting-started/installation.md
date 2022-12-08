@@ -4,7 +4,7 @@
 
 ## 下载
 
-Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。或者通过 [Github 仓库](https://github.com/emqx/neuron/releases) 下载。
+Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。官网下载的安装包适配的系统较新，更多系统版本包及适配老系统的版本包请到 [Github 仓库](https://github.com/emqx/neuron/releases) 下载。
 
 | 下载文件                           | 架构    |
 | --------------------------------- | ------ |
@@ -104,14 +104,21 @@ $ ./neuron
 
 ### 获取镜像
 
-neuron docker 镜像请从 [docker hub](https://hub.docker.com/r/emqx/neuron) 网站下载。
+neuron docker 镜像请从 [docker hub](https://hub.docker.com/r/emqx/neuron/tags) 网站下载。
 
 ```bash
 ## pull Neuron
 $ docker pull emqx/neuron:latest
 ```
 
-NeuronEX docker 镜像请从 [docker hub](https://hub.docker.com/r/emqx/neuronex) 网站下载。
+支持更小占用的 alpine 镜像，请从 [docker hub](https://hub.docker.com/r/emqx/neuron/tags) 网站下载。
+
+```bash
+## pull Neuron
+$ docker pull emqx/neuron:2.3.0-alpine
+```
+
+NeuronEX docker 镜像请从 [docker hub](https://hub.docker.com/r/emqx/neuronex/tags) 网站下载。
 
 ```bash
 ## pull NeuronEX

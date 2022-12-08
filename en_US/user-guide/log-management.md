@@ -23,3 +23,7 @@ When you click this button, a prompt like the one below appears.
 ![debug_log_tip](./assets/debug_log_tip.png)
 
 In this case, the node starts to print debug logs. You can download the logs about ten minutes later to view the logs of the node, or view the logs under /build/logs.
+
+:::tip
+When the node debug log is printed, the neuron log will also be printed, and the default log level will be automatically switched back after ten minutes.
+:::

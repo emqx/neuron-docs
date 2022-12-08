@@ -23,3 +23,7 @@ Neuron 支持设置打印某个节点的 debug 日志，并在大致十分钟后
 ![debug_log_tip](./assets/debug_log_tip.png)
 
 此时，该节点开始打印 debug 日志，用户可选择在十分钟后下载日志，查看对应节点的日志，也可以选择在 /build/logs 下实时查看节点打印的日志。
+
+:::tip
+打印节点 debug 日志的同时 neuron 日志也会打印，并在十分钟后自动切回默认的日志等级。
+:::
