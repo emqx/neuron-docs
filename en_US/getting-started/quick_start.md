@@ -77,22 +77,22 @@ The first screen is the login page, where users can login using their username a
 
 To login to dashboard control panel,
 
-1. Fill in default username `admin`.
-2. Fill in default password `0000`.
-3. Click on the `Login` button.
+* Fill in default username `admin`.
+* Fill in default password `0000`.
+* Click on the `Login` button.
 
 ### Step 2 Add southbound plugin modules for device drivers
 
 Click on `Southbound Device` in the `Configuration` menu to show the Southbound Device Management screen, where no devices have been found in this case, we now create a Modbus TCP device, as shown below.
 
-![add-south-device](./assets/south-devices-add.png)
+![south_devices_add](./assets/south_devices_add.png)
 
 To add a new southbound device,
 
-1. Click on the `Add Device` button at top right corner to show New Device dialog box.
-2. Fill in the device name, e.g. modbus-tcp-1.
-3. Click on the drop-down box, which shows all the southbound driver protocols available for this software version, in this case we choose modbus-tcp plugin module.
-4. Click on `Create` button to create the device.
+* Click on the `Add Device` button at top left corner to show New Device dialog box.
+* Fill in the device name, e.g. modbus-tcp-1.
+* Click on the drop-down box, which shows all the southbound driver protocols available for this software version, in this case we choose modbus-tcp plugin module.
+* Click on `Create` button to create the device.
 
 ::: tip
 You suppose to install a valid trial or commercial license to be able selecting the pluggable modules other than modbus-tcp. Only modbus-tcp is an open source pluggable module in the list.
@@ -102,25 +102,26 @@ You suppose to install a valid trial or commercial license to be able selecting 
 
 After the device has been successfully created, the new device node information will appear in the southbound device screen, as shown below.
 
-![south-devices](./assets/south-devices.png)
+![south_devices](./assets/south_devices.png)
 
 The device node contains the following information
 
-1. Device Name - the unique name you give to the device.
-2. Device Configuration Button - click on this button to show the device configuration screen.
-3. Delete Button - click on this to remove this device from southbound device list.
-4. Node Status - show the current status of device node, see below for details.
-5. State Change Button - switch on to connect to device.
-6. Connection Status - show connection status to device.
-7. Plugin Module Name - the name of plugin module used for this device.
-
-There are five working status for each south device node.
-
-* **Init**, the initial status for the first creation of southbound devices.
-* **Setup**, when the configuration of device node is started, it goes to setup state.
-* **Ready**, after successfully configuring the device node, it goes to ready state.
-* **Running**, when the device node is started and is collecting data from device. it goes running state.
-* **Stop**, when the device node is stopped or for reason it can't connect to device, it goes to stop state.
+* Device Name - the unique name you give to the device.
+* Device Configuration - click on this button to show the device configuration screen.
+* Data Statistics - statistics node card information.
+* More
+    * DEBUG log - Print the debug log of the node and restore the default log level in ten minutes.
+    * Delete Button - remove this node from southbound device list.
+* Status - show the current status of device node.Five working states.
+    * **Init**, the initial status for the first creation of southbound devices.
+    * **Setup**, when the configuration of device node is started, it goes to setup state.
+    * **Ready**, after successfully configuring the device node, it goes to ready state.
+    * **Running**, when the device node is started and is collecting data from device. it goes running state.
+    * **Stop**, when the device node is stopped or for reason it can't connect to device, it goes to stop state.
+* State Change Button - switch on to connect to device.
+* Connection Status - show connection status to device.
+* Delay time - time interval between sending and receiving an instruction.
+* Plugin Module Name - the name of plugin module used for this device.
 
 ### Step 4 Setup southbound device parameters
 
@@ -132,10 +133,10 @@ Items with `*` are required, and each item is followed by a field description ke
 
 To setup southbound device parameters,
 
-1. Fill in the Host IP running the Modbus simulator.
-2. Fill in the Port number of the Modbus simulator, the default is 502.
-3. Fill in the request timeout, the default is 3000.
-4. Click `Submit` to complete the device configuration and the device card automatically enters the state of **Running**.
+* Fill in the Host IP running the Modbus simulator.
+* Fill in the Port number of the Modbus simulator, the default is 502.
+* Fill in the request timeout, the default is 3000.
+* Click `Submit` to complete the device configuration and the device card automatically enters the state of **Running**.
 
 ::: tip
 The running Neuron instance and the simulator must be under the same network segment.
@@ -151,10 +152,10 @@ Click on any blank space in the device node to enter the Group list management s
 
 To create a group for device node,
 
-1. Click on the `Create` at the top right corner to show up `Create Group` dialog box.
-2. Fill in the Group name, e.g. group-1.
-3. Fill in the Interval, set the time interval for the neuron to collect data from the device and upload the data to MQTT. The minimum can be set to 100ms, but when there is a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, you can adjust the value a bit higher to fix the error.
-4. Click on the `Submit` button to complete the creation of the Group.
+* Click on the `Create` at the top right corner to show up `Create Group` dialog box.
+* Fill in the Group name, e.g. group-1.
+* Fill in the Interval, set the time interval for the neuron to collect data from the device and upload the data to MQTT. The minimum can be set to 100ms, but when there is a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, you can adjust the value a bit higher to fix the error.
+* Click on the `Submit` button to complete the creation of the Group.
 
 ### Step 6 Manage group list
 
@@ -164,12 +165,12 @@ The newly created Group will be shown in the Group list, as shown below.
 
 The Group List contains following elements,
 
-1. `Import` button, in Excel form, and batch import in groups. The `Export` button exports the information of the selected group to Excel.`Clear` button, delete all created groups with one click. When you select some groups, and then click the `Delete` button, you can quickly delete the selected groups in batches. `Cretae` button is used to create a new group.
-2. Select all groups in the list
-3. Select this group in the list
-4. `Edit icon` Edit the group configuration
-5. `Tag List icon` Create data tags for this group.
-6. `Delete icon` Delete this group.
+* `Import` button, in Excel form, and batch import in groups. The `Export` button exports the information of the selected group to Excel.`Clear` button, delete all created groups with one click. When you select some groups, and then click the `Delete` button, you can quickly delete the selected groups in batches. `Cretae` button is used to create a new group.
+* Select all groups in the list
+* Select this group in the list
+* `Edit icon` Edit the group configuration
+* `Tag List icon` Create data tags for this group.
+* `Delete icon` Delete this group.
 
 :::tip
 For detailed import/export functions, please refer to [Tag Configuration Import/Export](../user-guide/configuration-import-export.md).
@@ -193,15 +194,15 @@ All data tags will be manually added one by one to show you how to setup the tag
 
 To create a tag for the group list,
 
-1. Fill in the Tag name, e.g. tag1.
-2. Scroll down to select the Tag attribute;
-3. Drop down to select the data type, for example, int16. Due to the different types supported by each driver, the data types that can be selected from the drop-down box are also different;
-4. Fill in the drive address, for example, 1!40001. For detailed driver address instructions, please refer to [Module Setting](../module-plugins/module-driver.md);
-5. The optional parameter Decimal can set the multiplier after the value collected by Neuron. For example, the value collected by neuron is 11, and Decimal is set to 0.1, then the value displayed at this point is 1.1;
-6. Optional parameter Description, used to add some description information to the label;
-7. Click the `Add` button to add the next tag, repeat steps 1-6 until the last tag is added;
-8. After adding a tag, a `delete` button will be added next to the information box, and you can choose to delete the tag;
-9. Click the `Create` button to complete the creation of the Tag;
+* Fill in the Tag name, e.g. tag1.
+* Scroll down to select the Tag attribute;
+* Drop down to select the data type, for example, int16. Due to the different types supported by each driver, the data types that can be selected from the drop-down box are also different;
+* Fill in the drive address, for example, 1!40001. For detailed driver address instructions, please refer to [Module Setting](../module-plugins/module-driver.md);
+* The optional parameter Decimal can set the multiplier after the value collected by Neuron. For example, the value collected by neuron is 11, and Decimal is set to 0.1, then the value displayed at this point is 1.1;
+* Optional parameter Description, used to add some description information to the label;
+* Click the `Add` button to add the next tag, repeat steps 1-6 until the last tag is added;
+* After adding a tag, a `delete` button will be added next to the information box, and you can choose to delete the tag;
+* Click the `Create` button to complete the creation of the Tag;
 
 ::: tip
 Currently, the Tag attribute supports three types: Read, Write, and Subscribe. When the Subscribe attribute is selected, the changed value will be uploaded to the cloud only when the collected value changes.
@@ -233,9 +234,9 @@ Click on `Data Monitoring` in the `Monitoring` menu to show the data monitoring 
 
 To switch between data group for monitoring,
 
-1. Select the southbound device you want to view from the drop down box, in this case, select modbus-tcp-1 which has been created above.
-2. Click on the drop down box to select the Group you want to view under the selected southbound device, in this case, select group-1 which has been created above.
-3. When the selection is complete, the page will show the value of each Tag read under the Group.
+* Select the southbound device you want to view from the drop down box, in this case, select modbus-tcp-1 which has been created above.
+* Click on the drop down box to select the Group you want to view under the selected southbound device, in this case, select group-1 which has been created above.
+* When the selection is complete, the page will show the value of each Tag read under the Group.
 
 ::: tip
 If you find data value is a non-sense large number, you can adjust the byte order settings in simulator. The default byte order for the Modbus TCP simulator is BE 3,4,1,2
@@ -255,10 +256,10 @@ When the tag is set with the write attribute, the tag of the data monitoring int
 
 To perform dashboard data write operation,
 
-1. Click on `Write` button at the end of the tag which is going to change value.
-2. Choose whether to enter the value in hexadecimal.
-3. Enter the new value for the tag.
-4. Click on `Submit` button to submit new value.
+* Click on `Write` button at the end of the tag which is going to change value.
+* Choose whether to enter the value in hexadecimal.
+* Enter the new value for the tag.
+* Click on `Submit` button to submit new value.
 
 ### Step 13 Add northbound plugin modules for application
 
@@ -268,9 +269,9 @@ Click on `Northbound Application` in the `Configuration` menu to show the Northb
 
 To add MQTT cloud connection module,
 
-1. Click on the `Add Application` button in the top right hand corner.
-2. Fill in the name of the application, for example, mqtt-1.
-3. The drop-down box shows the northbound applications available for this software version, in this case we choose the mqtt plugin.
+* Click on the `Add Application` button in the top right hand corner.
+* Fill in the name of the application, for example, mqtt-1.
+* The drop-down box shows the northbound applications available for this software version, in this case we choose the mqtt plugin.
 
 ### Step 14 Manage northbound application node list
 
@@ -280,42 +281,43 @@ After the application node has been successfully created, an new application nod
 
 The device node contains the following information
 
-1. Application Name - the unique name you give to the application.
-2. Application Configuration Button - click on this button to show the application configuration screen.
-3. Delete Button - click on this to remove this application from northbound application list.
-4. Node Status - show the current status of application node, see below for details.
-5. State Change Button - switch on to connect to application.
-6. Connection Status - show connection status to application.
-7. Plugin Module Name - the name of plugin module used for this application.
-
-There are five working status for each northbound application node.
-
-* **Init**, the initial status for the first creation of northbound applications.
-* **Setup**, when the configuration of application node is started, it goes to setup state.
-* **Ready**, after successfully configuring the application node, it goes to ready state.
-* **Running**, when the application node is started and is sending data to cloud. it goes running state.
-* **Stop**, when the applicaiton node is stopped or for reason it can't connect to cloud, it goes to stop state.
+* Application Name - the unique name you give to the application.
+* Application Configuration Button - click on this button to show the application configuration screen.
+* Data Statistics - statistics node card information.
+* More
+    * DEBUG log - Print the debug log of the node and restore the default log level in ten minutes.
+    * Delete Button - click on this to remove this application from northbound application list.
+* Status - show the current status of application node.Five working states.
+    * **Init**, the initial status for the first creation of northbound applications.
+    * **Setup**, when the configuration of application node is started, it goes to setup state.
+    * **Ready**, after successfully configuring the application node, it goes to ready state.
+    * **Running**, when the application node is started and is sending data to cloud. it goes running state.
+    * **Stop**, when the applicaiton node is stopped or for reason it can't connect to cloud, it goes to stop state.
+* State Change Button - switch on to connect to application.
+* Connection Status - show connection status to application.
+* Plugin Module Name - the name of plugin module used for this application.
 
 ### Step 15 Setup northbound application parameters
 
 Click on the `Application Configuration` button to enter the application configuration screen, as shown below.
 
-![north-setting](./assets/north-setting.png)
+![mqtt_config](./assets/mqtt_config.png)
 
 Items with `*` are required, and each item is followed by a field description key. Hovering over it will display a detailed description.
 
 To setup MQTT connection,
 
-1. Required, fill in the topic of subscription data report, please refer to the [MQTT API](../reference/mqtt-api.md).
-2. Required, fill in the subject reported by the heartbeat message.
-3. Select the upload format.
-4. Optional, when the mqtt connection is abnormal, set the size limit of the uploaded data cache.
-5. Set up SSL authentication option.
-6. Fill in the hostname of MQTT Broker, where the default connection is to the emqx public broker.
-7. Fill in the port number of the MQTT Broker.
-8. Set up a username, which is optional.
-9. Set up a password, which is optional.
-10. Click on the `Submit` button to complete the configuration of the northbound application, and the application card automatically enters the **running** state.
+* Client-id, Required.
+* Upload topic, Required, fill in the topic of subscription data report, please refer to the [MQTT API](../reference/mqtt-api.md).
+* Heartbeat topic, Required, fill in the subject reported by the heartbeat message.
+* Upload format, Select the upload format.
+* Cache memory size, Required, when the mqtt connection is abnormal, set the size limit of the uploaded data cache in memory.
+* Cache disk size, Required, when the mqtt connection is abnormal, set the size limit of the uploaded data cache in disk.
+* Host, Required, Fill in the hostname of MQTT Broker, where the default connection is to the emqx public broker.
+* Port, Required, Fill in the port number of the MQTT Broker, the default is 1883.
+* Username, Optional, Set up a username, which is optional.
+* Password, Optional, Set up a password, which is optional.
+* Click on the `Submit` button to complete the configuration of the northbound application, and the application card automatically enters the **running** state.
 
 ### Step 16 Subscribe to southbound tag groups
 
@@ -325,10 +327,10 @@ Click any blank space of the application node to show the subscription group int
 
 To subscribe data group of southbound devices,
 
-1. Click on the `Add subscription` button in the upper-right corner to add a subscription.
-2. Click on the drop down box to select the southbound device, in this case, we select the modbus-tcp-1 device built above.
-3. Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
-4. Click on `Submit` button to complete the subscription.
+* Click on the `Add subscription` button in the upper-right corner to add a subscription.
+* Click on the drop down box to select the southbound device, in this case, we select the modbus-tcp-1 device built above.
+* Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
+* Click on `Submit` button to complete the subscription.
 
 ### Step 17 Manage subscribed group list
 
@@ -352,7 +354,7 @@ After successfully subscribed the topic, you can see that MQTTX can receive the 
 
 * Open MQTTX to add a new connection, Fill in the correct name and the Host and Port of the EMQX broker you have just connected, and then start the connection.
 
-* Add a new subscription, the default upload topic format is `/neuron/{node_name}/upload`, where {node_name} is the configured in the northbound application node of MQTT, in this case, we fill in `mqtt-1`.
+* Add a new subscription, the default upload topic format is `/neuron/{node_name}/upload`, where {node_name} is the configured in the northbound application node of MQTT, in this case, we fill in `/neuron/mqtt/upload`.
 
 :::tip
 When the Subscribe attribute is set for the point, the changed value will be uploaded to the cloud only when the collected value changes.

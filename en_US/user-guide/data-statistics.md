@@ -2,11 +2,20 @@
 
 Neuron supports the north-south node data statistics function based on Prometheus data model, which is used to monitor the running state of nodes. The basic principle of Prometheus is to periodically capture the status of monitored components through HTTP protocol. Any component can access monitoring by providing the corresponding HTTP interface. Neuron provides the corresponding interface and can successfully access Prometheus for monitoring.
 
-Each node card has an operation button of `Data statistics`, which is used to display the statistical information of the node. At present, Neuron has realized the statistics of some general fields and north-south general fields, and will continue to increase statistical fields according to the demand.
+Each node card has an operation button of `Data statistics`, which is used to display the statistical information of the node. At present, Neuron has realized the statistics of some global fields and north-south fields, and will continue to increase statistical fields according to the demand.
+
+## Global Statistics
+
+Some global fields are described below.
+
+| Parameters      | Description                                     |
+| --------------- | --------------------------------------- |
+| uptime_seconds  | Displays the running time of Neuron, and the page is refreshed at a frequency of 5 s |
+| core_dumped     | Shows whether there is any abnormality in the running state of the system                   |
 
 ## Northbound Node Statistics
 
-The statistics already supported by the ekuiper plugin are shown in the following figure.
+The northbound application node already supports the statistics of some fields, but there will be some differences in the fields to be counted for each application. There are plans to update the statistical fields of each application in the later version, and some fields are described below.
 
 ![north_statistics](./assets/north_statistics.png)
 
@@ -18,7 +27,7 @@ The statistics already supported by the ekuiper plugin are shown in the followin
 
 ## Southboud node statistics
 
-The southbound node supports some general statistical fields. However, the statistical fields required by each driver may vary. In later versions, the statistical fields required by each driver will be updated. The following figure describes the common statistical fields.
+The southbound node already supports the statistics of some fields, but there are some differences in the fields to be counted for each driver. Later versions have plans to update the statistical fields of each driver continuously. Some fields are described below.
 
 ![south_statistics](./assets/south_statistics.png)
 

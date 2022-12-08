@@ -41,7 +41,7 @@ services:
       - nng-ipc:/tmp
 
   neuron:
-    image: emqx/neuron:2.2.4
+    image: emqx/neuron:2.3.0
     hostname: neuron
     container_name: neuron
     ports:
@@ -75,7 +75,7 @@ Login to kuiper-manager.
 
 Add the service as shown.
 
-![ekuiper-service](./assets/ekuiper_service.png)
+![ekuiper_service](./assets/ekuiper_service.png)
 
 :::tip
 The address in Endpoint should fill in the local address where eKuiper is launched.
@@ -98,8 +98,8 @@ When you install a .deb or .rpm Neuron package, there is a default `data-stream-
 The data stream processing node contains the following information
 
 * Application Name - **data-stream-processing**
-* Node Status - **Init**
-* State Change Button - OFF
+* Status - **Running**
+* State Change Button - ON
 * Connection Status - **Disconnected**
 * Plugin Module Name - **ekuiper**
 
@@ -111,7 +111,7 @@ Click on any blank space of the `data-stream-processing` application node to ent
 
 To subscribe the data Groups of southbound device,
 
-1. Click on the `Add subscription` button in the top right corner.
-2. Click on the drop down box to select the southbound device, in this case, we select the modbus-tcp-1 device built above.
-3. Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
-4. Click on `Submit` button to complete the subscription.
+* Click on the `Add subscription` button in the top right corner.
+* Click on the drop down box to select the southbound device, in this case, we select the modbus-tcp-1 device built above.
+* Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
+* Click on `Submit` button to complete the subscription.

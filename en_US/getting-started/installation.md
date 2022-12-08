@@ -104,14 +104,14 @@ $ ./neuron
 
 ### Get the image
 
-The neuron docker image can be downloaded from the docker hub website.[https://hub.docker.com](https://hub.docker.com/r/emqx/neuron)
+The neuron docker image can be downloaded from the docker hub website.[docker hub](https://hub.docker.com/r/emqx/neuron)
 
 ```bash
 ## pull Neuron
 $ docker pull emqx/neuron:latest
 ```
 
-The NeuronEX docker image can be downloaded from the docker hub website.[https://hub.docker.com](https://hub.docker.com/r/emqx/neuronex)
+The NeuronEX docker image can be downloaded from the docker hub website.[docker hub](https://hub.docker.com/r/emqx/neuronex)
 
 ```bash
 ## pull NeuronEX

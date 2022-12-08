@@ -41,7 +41,7 @@ services:
       - nng-ipc:/tmp
 
   neuron:
-    image: emqx/neuron:2.2.4
+    image: emqx/neuron:2.3.0
     hostname: neuron
     container_name: neuron
     ports:
@@ -98,8 +98,8 @@ eKuiper 的具体使用操作可参考 [ekuiper 控制台使用](https://ekuiper
 这个数据流处理节点包含以下信息：
 
 * 应用程序名称 - **data-stream-processing**
-* 节点状态 - **初始化**
-* 状态切换按键 - 关闭
+* 工作状态 - **运行中**
+* 状态切换按键 - 打开
 * 连接状态 - **断开连接**
 * 插件模块名称 - **ekuiper**
 
@@ -111,7 +111,7 @@ eKuiper 的具体使用操作可参考 [ekuiper 控制台使用](https://ekuiper
 
 订阅南向设备的数据组：
 
-1. 点击右上角`添加订阅`；
-2. 点击下拉框，选择南向设备，本例中选择已构建的**modbus-tcp-1**；
-3. 点击下拉框，选择要订阅的 Group，本例中选择已构建的 **group-1**；
-4. 点击`提交`按键完成订阅。
+* 点击右上角`添加订阅`；
+* 点击下拉框，选择已构建的南向设备；
+* 点击下拉框，选择要订阅的 Group；
+* 点击`提交`按键完成订阅。
