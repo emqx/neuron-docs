@@ -931,7 +931,7 @@ step:
 
 **NODEID** Node ID, consistent with the string in the UA server.
 
-*例子：*
+*Example:*
 
 | Address                | Data Type | Description                                                  |
 | ---------------------- | --------- | ------------------------------------------------------------ |
@@ -945,11 +945,11 @@ step:
 
 ### Parameter Setting
 
-| 字段    | 说明                               |
-| ------- | ---------------------------------- |
-| host    | device ip address                  |
-| port    | device port, default 8193          |
-| timeout | connection timeout, default 3000ms |
+| Parameter | Description                        |
+| --------- | ---------------------------------- |
+| host      | device ip address                  |
+| port      | device port, default 8193          |
+| timeout   | connection timeout, default 3000ms |
 
 ### Support Data Type
 
@@ -990,7 +990,7 @@ step:
 | spmaxrpm       | maximum r.p.m ratio of serial spindle        | int32/uint32 | spindle number(.n) |
 | spgear         | gear ratio of the serial spindle             | int32/uint32 | spindle number(.n) |
 
-*CNC地址示例*
+*CNC address example*
 
 | address    | description                               |
 | ---------- | ----------------------------------------- |
@@ -1004,23 +1004,23 @@ step:
 
 ### PMC Data
 
-| tag address | description                     | data type | access |
-| ----------- | ------------------------------- | --------- | ------ |
-| A           | message demand                  | all       | 读写   |
-| C           | counter                         | all       | 读写   |
-| D           | data table                      | all       | 读写   |
-| E           | extended relay                  | all       | 读写   |
-| F           | signal to CNC -> PMC            | all       | 只读   |
-| G           | signal to PMC -> CNC            | all       | 读写   |
-| K           | keep relay                      | all       | 读写   |
-| M           | input signal from other device  | all       | 读写   |
-| N           | output signal from other device | all       | 读写   |
-| R           | internal relay                  | all       | 读写   |
-| T           | changeable timer                | all       | 读写   |
-| X           | signal to machine -> PMC        | all       | 只读   |
-| Y           | signal to PMC -> machine        | all       | 读写   |
+| tag address | description                     | data type | access     |
+| ----------- | ------------------------------- | --------- | ---------- |
+| A           | message demand                  | all       | read/write |
+| C           | counter                         | all       | read/write |
+| D           | data table                      | all       | read/write |
+| E           | extended relay                  | all       | read/write |
+| F           | signal to CNC -> PMC            | all       | read       |
+| G           | signal to PMC -> CNC            | all       | read/write |
+| K           | keep relay                      | all       | read/write |
+| M           | input signal from other device  | all       | read/write |
+| N           | output signal from other device | all       | read/write |
+| R           | internal relay                  | all       | read/write |
+| T           | changeable timer                | all       | read/write |
+| X           | signal to machine -> PMC        | all       | read       |
+| Y           | signal to PMC -> machine        | all       | read/write |
 
-*PMC点位示例*
+*PMC address example*
 
 | address | data type                                                    | descrption                                                   |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1058,39 +1058,39 @@ The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series
 
 #### AREA ADDRESS
 
-| 区域 | 数据类型 | 属性       | 备注                                  |
-| ---- | -------- | ---------- | ------------------------------------- |
-| X    | bit      | read/write | Input relay (FX3/iQ-F)                |
-| Y    | bit      | read/write | Output relay (FX3/iQ-F)               |
-| M    | bit      | read/write | Internal relay (FX3/iQ-F)             |
-| L    | bit      | read/write | Latch relay (FX3/iQ-F)                |
-| F    | bit      | read/write | Annunciator (FX3/iQ-F)                |
-| B    | bit      | read/write | Link relay (FX3/iQ-F)                 |
-| SB   | bit      | read/write | Link special relay (FX3/iQ-F)         |
-| S    | bit      | read/write | (FX3/iQ-F)                            |
-| D    | all      | read/write | Data register (FX3/iQ-F)              |
-| W    | all      | read/write | Link register (FX3/iQ-F)              |
-| TS   | bit      | read/write | Timer Contact (FX3/iQ-F)              |
-| TC   | bit      | read/write | Timer Coil (FX3/iQ-F)                 |
-| TN   | all      | read/write | Timer Current value (FX3/iQ-F)        |
-| STS  | bit      | read/write | Retentive timer Contact (FX3/iQ-F)    |
-| STC  | bit      | read/write | Retentive timer Coil (FX3/iQ-F)       |
-| STN  | all      | read/write | Retentive timer (FX3/iQ-F)            |
-| CS   | bit      | read/write | Counter Contact (FX3/iQ-F)            |
-| CC   | bit      | read/write | Counter Coil (FX3/iQ-F)               |
-| CN   | all      | read/write | Counter Current value (FX3/iQ-F)      |
-| LCS  | bit      | read/write | Long Counter Contact (FX3/iQ-F)       |
-| LCC  | bit      | read/write | Long Counter Coil (FX3/iQ-F)          |
-| LCN  | all      | read/write | Long Counter Current value (FX3/iQ-F) |
-| SB   | bit      | read/write | Link special relay (FX3/iQ-F)         |
-| SW   | all      | read/write | Link special register (FX3/iQ-F)      |
-| SM   | bit      | read/write | Special relay (FX3/iQ-F)              |
-| SD   | all      | read/write | Specical register (FX3/iQ-F)          |
-| Z    | all      | read/write | Index register (FX3/iQ-F)             |
-| LZ   | all      | read/write | Long Index register (FX3/iQ-F)        |
-| DX   | bit      | read/write | Link input (FX3/iQ-F)                 |
-| DY   | bit      | read/write | Link output(FX3/iQ-F)                 |
-| R    | all      | read/write | File register (FX3/iQ-F)              |
+| AREA | TYPE | ATTRIBUTE  | REMARK                                |
+| ---- | ---- | ---------- | ------------------------------------- |
+| X    | bit  | read/write | Input relay (FX3/iQ-F)                |
+| Y    | bit  | read/write | Output relay (FX3/iQ-F)               |
+| M    | bit  | read/write | Internal relay (FX3/iQ-F)             |
+| L    | bit  | read/write | Latch relay (FX3/iQ-F)                |
+| F    | bit  | read/write | Annunciator (FX3/iQ-F)                |
+| B    | bit  | read/write | Link relay (FX3/iQ-F)                 |
+| SB   | bit  | read/write | Link special relay (FX3/iQ-F)         |
+| S    | bit  | read/write | (FX3/iQ-F)                            |
+| D    | all  | read/write | Data register (FX3/iQ-F)              |
+| W    | all  | read/write | Link register (FX3/iQ-F)              |
+| TS   | bit  | read/write | Timer Contact (FX3/iQ-F)              |
+| TC   | bit  | read/write | Timer Coil (FX3/iQ-F)                 |
+| TN   | all  | read/write | Timer Current value (FX3/iQ-F)        |
+| STS  | bit  | read/write | Retentive timer Contact (FX3/iQ-F)    |
+| STC  | bit  | read/write | Retentive timer Coil (FX3/iQ-F)       |
+| STN  | all  | read/write | Retentive timer (FX3/iQ-F)            |
+| CS   | bit  | read/write | Counter Contact (FX3/iQ-F)            |
+| CC   | bit  | read/write | Counter Coil (FX3/iQ-F)               |
+| CN   | all  | read/write | Counter Current value (FX3/iQ-F)      |
+| LCS  | bit  | read/write | Long Counter Contact (FX3/iQ-F)       |
+| LCC  | bit  | read/write | Long Counter Coil (FX3/iQ-F)          |
+| LCN  | all  | read/write | Long Counter Current value (FX3/iQ-F) |
+| SB   | bit  | read/write | Link special relay (FX3/iQ-F)         |
+| SW   | all  | read/write | Link special register (FX3/iQ-F)      |
+| SM   | bit  | read/write | Special relay (FX3/iQ-F)              |
+| SD   | all  | read/write | Specical register (FX3/iQ-F)          |
+| Z    | all  | read/write | Index register (FX3/iQ-F)             |
+| LZ   | all  | read/write | Long Index register (FX3/iQ-F)        |
+| DX   | bit  | read/write | Link input (FX3/iQ-F)                 |
+| DY   | bit  | read/write | Link output(FX3/iQ-F)                 |
+| R    | all  | read/write | File register (FX3/iQ-F)              |
 
 *Example:*
 
