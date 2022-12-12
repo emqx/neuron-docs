@@ -324,6 +324,167 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
+## Node Setting
+
+*POST*  /api/v2/node/setting
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 400
+  * 2003 node not exist
+  * 2004 node setting invalid
+
+### Body
+
+```json
+//The parameter fields in json fill in different fields according to different plugins
+{
+    //node name
+    "node": "modbus-node",
+    "params": {
+        "param1": 1,
+        "param2": "1.1.1.1",
+        "param3": true,
+        "param4": 11.22
+    }
+}
+```
+
+:::tip
+Please refer to [Plugin Setting](./plugin-setting.md) for the configuration parameters of each plugin.
+:::
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Get Node Setting
+
+*GET*  /api/v2/node/setting
+
+### Request Params
+
+**node**  required
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+  * 2005 node setting not found
+* 404
+  * 2003 node not exist
+
+### Response
+
+```json
+//The parameter fields in json fill in different fields according to different plugins
+{
+    "node": "modbus-node",
+    "params": {
+        "param1": "1.1.1.1",
+        "param2": 502
+    }
+}
+```
+
+## Node CTL
+
+*POST*  /api/v2/node/ctl
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Request Status
+
+* 200 OK
+* 409
+  * 2006 node not ready
+  * 2007 node is running
+  * 2008 node not running
+  * 2009 node is stopped
+
+### Body
+
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //0 start, 1 stop
+    "cmd": 0
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Get Node State
+
+*GET*  /api/v2/node/state
+
+### Request Params
+
+**node**  optional
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+
+### Response
+
+```json
+{
+    //running state
+    "running": 2,
+    //link state
+    "link": 1,
+    //average round trip time communicating with devices
+    "average_rtt": 100
+}
+
+{
+    "states": [
+        {
+            "node": "modbus-node1",
+            "running": 2,
+            "link": 1,
+            "average_rtt": 100
+        },
+        {
+            "node": "modbus-node2",
+            "running": 1,
+            "link": 0,
+            "average_rtt": 9999
+        }
+    ]
+}
+```
+
 ## Add Group
 
 *POST*  /api/v2/group
@@ -733,6 +894,91 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
+## Read Tag
+
+*POST*  /api/v2/read
+
+### Request Headers
+
+**Content--Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200
+
+### Body
+
+```json
+{
+    //node name
+    "node": "modbus-tcp-1",
+    //group name
+    "group": "config_modbus_tcp_sample_2"
+}
+```
+
+### Response
+
+```json
+{
+    "tags": [
+        {
+            //tag nmae
+            "name": "data1",
+            //tag value
+            "value": 1,
+        },
+        {
+            "name": "data2",
+            "error": 2014
+        },
+        {
+            "name": "data3",
+            "value": true,
+        }
+    ]
+}
+```
+
+::: tip
+The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
+:::
+
+## Write Tag
+
+*POST*  /api/v2/write
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+
+### Body
+
+```json
+{
+    "node": "modbus-tcp-1",
+    "group": "config_modbus_tcp_sample_2",
+    "tag": "tag1",
+    "value": 1234
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
 ## Add Plugin
 
 *POST*  /api/v2/plugin
@@ -910,91 +1156,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Read Tag
-
-*POST*  /api/v2/read
-
-### Request Headers
-
-**Content--Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200
-
-### Body
-
-```json
-{
-    //node name
-    "node": "modbus-tcp-1",
-    //group name
-    "group": "config_modbus_tcp_sample_2"
-}
-```
-
-### Response
-
-```json
-{
-    "tags": [
-        {
-            //tag nmae
-            "name": "data1",
-            //tag value
-            "value": 1,
-        },
-        {
-            "name": "data2",
-            "error": 2014
-        },
-        {
-            "name": "data3",
-            "value": true,
-        }
-    ]
-}
-```
-
-::: tip
-The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
-:::
-
-## Write Tag
-
-*POST*  /api/v2/write
-
-### Request Headers
-
-**Content-Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200 OK
-
-### Body
-
-```json
-{
-    "node": "modbus-tcp-1",
-    "group": "config_modbus_tcp_sample_2",
-    "tag": "tag1",
-    "value": 1234
-}
-```
-
-### Response
-
-```json
-{
-    "error": 0
-}
-```
-
 ## Get Plugin Schema
 
 *GET*  /api/v2/schema
@@ -1094,163 +1255,6 @@ The value is displayed only when the value is read correctly, when the value is 
    "length": 1024
   }
  }
-}
-```
-
-## Node Setting
-
-*POST*  /api/v2/node/setting
-
-### Request Headers
-
-**Content-Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200 OK
-* 400
-  * 2003 node not exist
-  * 2004 node setting invalid
-
-### Body
-
-```json
-//The parameter fields in json fill in different fields according to different plugins
-{
-    //node name
-    "node": "modbus-node",
-    "params": {
-        "param1": 1,
-        "param2": "1.1.1.1",
-        "param3": true,
-        "param4": 11.22
-    }
-}
-```
-
-### Response
-
-```json
-{
-    "error": 0
-}
-```
-
-## Get Node Setting
-
-*GET*  /api/v2/node/setting
-
-### Request Params
-
-**node**  required
-
-### Request Headers
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200 OK
-  * 2005 node setting not found
-* 404
-  * 2003 node not exist
-
-### Response
-
-```json
-//The parameter fields in json fill in different fields according to different plugins
-{
-    "node": "modbus-node",
-    "params": {
-        "param1": "1.1.1.1",
-        "param2": 502
-    }
-}
-```
-
-## Node CTL
-
-*POST*  /api/v2/node/ctl
-
-### Request Headers
-
-**Content-Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### Request Status
-
-* 200 OK
-* 409
-  * 2006 node not ready
-  * 2007 node is running
-  * 2008 node not running
-  * 2009 node is stopped
-
-### Body
-
-```json
-{
-    //node name
-    "node": "modbus-node",
-    //0 start, 1 stop
-    "cmd": 0
-}
-```
-
-### Response
-
-```json
-{
-    "error": 0
-}
-```
-
-## Get Node State
-
-*GET*  /api/v2/node/state
-
-### Request Params
-
-**node**  optional
-
-### Request Headers
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200 OK
-
-### Response
-
-```json
-{
-    //running state
-    "running": 2,
-    //link state
-    "link": 1,
-    //average round trip time communicating with devices
-    "average_rtt": 100
-}
-
-{
-    "states": [
-        {
-            "node": "modbus-node1",
-            "running": 2,
-            "link": 1,
-            "average_rtt": 100
-        },
-        {
-            "node": "modbus-node2",
-            "running": 1,
-            "link": 0,
-            "average_rtt": 9999
-        }
-    ]
 }
 ```
 
