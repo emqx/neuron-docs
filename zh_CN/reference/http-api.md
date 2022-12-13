@@ -324,6 +324,167 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 配置 Node
+
+*POST*  /api/v2/node/setting
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 400
+  * 2003 node 不存在
+  * 2004 node 配置无效
+
+### 请求体
+
+```json
+//The parameter fields in json fill in different fields according to different plugins
+{
+    //node name
+    "node": "modbus-node",
+    "params": {
+        "param1": 1,
+        "param2": "1.1.1.1",
+        "param3": true,
+        "param4": 11.22
+    }
+}
+```
+
+:::tip
+每个插件的配置参数具体可参考 [插件设置](./plugin-setting.md)。
+:::
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 获取 Node 配置
+
+*GET*  /api/v2/node/setting
+
+### 请求参数
+
+**node**  必需
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+  * 2005 node 配置未发现
+* 404
+  * 2003 node 不存在
+
+### 响应
+
+```json
+//The parameter fields in json fill in different fields according to different plugins
+{
+    "node": "modbus-node",
+    "params": {
+        "param1": "1.1.1.1",
+        "param2": 502
+    }
+}
+```
+
+## 控制 Node
+
+*POST*  /api/v2/node/ctl
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 请求状态
+
+* 200 OK
+* 409
+  * 2006 node not ready
+  * 2007 node is running
+  * 2008 node not running
+  * 2009 node is stopped
+
+### 请求体
+
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //0 start, 1 stop
+    "cmd": 0
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 获取 Node 状态
+
+*GET*  /api/v2/node/state
+
+### 请求参数
+
+**node**  optional
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+
+### 响应
+
+```json
+{
+    //running state
+    "running": 2,
+    //link state
+    "link": 1,
+    //average round trip time communicating with devices
+    "average_rtt": 100
+}
+
+{
+    "states": [
+        {
+            "node": "modbus-node1",
+            "running": 2,
+            "link": 1,
+            "average_rtt": 100
+        },
+        {
+            "node": "modbus-node2",
+            "running": 1,
+            "link": 0,
+            "average_rtt": 9999
+        }
+    ]
+}
+```
+
 ## 添加 Group
 
 *POST*  /api/v2/group
@@ -733,6 +894,91 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 读 Tag
+
+*POST*  /api/v2/read
+
+### 请求头部
+
+**Content--Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200
+
+### 请求体
+
+```json
+{
+    //node name
+    "node": "modbus-tcp-1",
+    //group name
+    "group": "config_modbus_tcp_sample_2"
+}
+```
+
+### 响应
+
+```json
+{
+    "tags": [
+        {
+            //tag nmae
+            "name": "data1",
+            //tag value
+            "value": 1,
+        },
+        {
+            "name": "data2",
+            "error": 2014
+        },
+        {
+            "name": "data3",
+            "value": true,
+        }
+    ]
+}
+```
+
+::: tip
+当某个点位读数值出错时，将显示 **error** 字段，不再显示 **value** 字段。
+:::
+
+## 写 Tag
+
+*POST*  /api/v2/write
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+
+### 请求体
+
+```json
+{
+    "node": "modbus-tcp-1",
+    "group": "config_modbus_tcp_sample_2",
+    "tag": "tag1",
+    "value": 1234
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
 ## 添加插件
 
 *POST*  /api/v2/plugin
@@ -910,91 +1156,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-## 读 Tag
-
-*POST*  /api/v2/read
-
-### 请求头部
-
-**Content--Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### 响应状态
-
-* 200
-
-### 请求体
-
-```json
-{
-    //node name
-    "node": "modbus-tcp-1",
-    //group name
-    "group": "config_modbus_tcp_sample_2"
-}
-```
-
-### 响应
-
-```json
-{
-    "tags": [
-        {
-            //tag nmae
-            "name": "data1",
-            //tag value
-            "value": 1,
-        },
-        {
-            "name": "data2",
-            "error": 2014
-        },
-        {
-            "name": "data3",
-            "value": true,
-        }
-    ]
-}
-```
-
-::: tip
-当某个点位读数值出错时，将显示 **error** 字段，不再显示 **value** 字段。
-:::
-
-## 写 Tag
-
-*POST*  /api/v2/write
-
-### 请求头部
-
-**Content-Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### 响应状态
-
-* 200 OK
-
-### 请求体
-
-```json
-{
-    "node": "modbus-tcp-1",
-    "group": "config_modbus_tcp_sample_2",
-    "tag": "tag1",
-    "value": 1234
-}
-```
-
-### 响应
-
-```json
-{
-    "error": 0
-}
-```
-
 ## 获取插件 Schema
 
 *GET*  /api/v2/schema
@@ -1094,163 +1255,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
    "length": 1024
   }
  }
-}
-```
-
-## Node 配置
-
-*POST*  /api/v2/node/setting
-
-### 请求头部
-
-**Content-Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### 响应状态
-
-* 200 OK
-* 400
-  * 2003 node 不存在
-  * 2004 node 配置无效
-
-### 请求体
-
-```json
-//The parameter fields in json fill in different fields according to different plugins
-{
-    //node name
-    "node": "modbus-node",
-    "params": {
-        "param1": 1,
-        "param2": "1.1.1.1",
-        "param3": true,
-        "param4": 11.22
-    }
-}
-```
-
-### 响应
-
-```json
-{
-    "error": 0
-}
-```
-
-## 获取 Node 配置
-
-*GET*  /api/v2/node/setting
-
-### 请求参数
-
-**node**  必需
-
-### 请求头部
-
-**Authorization** Bearer \<token\>
-
-### 响应状态
-
-* 200 OK
-  * 2005 node 配置未发现
-* 404
-  * 2003 node 不存在
-
-### 响应
-
-```json
-//The parameter fields in json fill in different fields according to different plugins
-{
-    "node": "modbus-node",
-    "params": {
-        "param1": "1.1.1.1",
-        "param2": 502
-    }
-}
-```
-
-## Node 控制
-
-*POST*  /api/v2/node/ctl
-
-### 请求头部
-
-**Content-Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### 请求状态
-
-* 200 OK
-* 409
-  * 2006 node not ready
-  * 2007 node is running
-  * 2008 node not running
-  * 2009 node is stopped
-
-### 请求体
-
-```json
-{
-    //node name
-    "node": "modbus-node",
-    //0 start, 1 stop
-    "cmd": 0
-}
-```
-
-### 响应
-
-```json
-{
-    "error": 0
-}
-```
-
-## 获取 Node 状态
-
-*GET*  /api/v2/node/state
-
-### 请求参数
-
-**node**  optional
-
-### 请求头部
-
-**Authorization** Bearer \<token\>
-
-### 响应状态
-
-* 200 OK
-
-### 响应
-
-```json
-{
-    //running state
-    "running": 2,
-    //link state
-    "link": 1,
-    //average round trip time communicating with devices
-    "average_rtt": 100
-}
-
-{
-    "states": [
-        {
-            "node": "modbus-node1",
-            "running": 2,
-            "link": 1,
-            "average_rtt": 100
-        },
-        {
-            "node": "modbus-node2",
-            "running": 1,
-            "link": 0,
-            "average_rtt": 9999
-        }
-    ]
 }
 ```
 
