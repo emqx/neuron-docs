@@ -4,35 +4,37 @@
 
 ```json
 {
-	"node": "",
-	"params": {
-         // required, subscription data reporting channel
-		"upload-topic": "",
-         // required, the channel for heartbeat data reporting
-		"heartbeat-topic": "",
-		// optional, the json format selection of the reported data, 0 values, 1 tags
+    "node": "",
+    "params": {
+        // required, subscription data reporting channel
+        "upload-topic": "",
+        // required, the json format selection of the reported data, 0 values (default), 1 tags
         "format": 1,
-         // optional, upload data memory cache size, defaulat 64MB
-        "cache": 64,
-         // optional, whether to enable mqtt ssl
-		"ssl": true,
-         // required, MQTT Broker host
-		"host": "",
-         // required, MQTT Broker port number
-		"port": 1883,
-         // optional, username to use when connecting to the broker
-		"username": "",
-          // optional, the password to use when connecting to the broker
-		"password": "",
-         // ca file, only enabled when the ssl value is true, in which case it is required
-		"ca": "",
-         // optional, cert file, only enabled when the ssl value is true
-		"cert": "",
-         // optional, key file, only enabled when the ssl value is true
-		"key": "",
-         // optional, key file password, only enabled when the ssl value is true
-		"keypass": ""
-	}
+        // required, the size limit of memory cache
+        "cache-mem-size": 0,
+        // required, the size limit of disk cache 
+        "cache-disk-size":  0,
+
+        // required, MQTT Broker host
+        "host": "",
+        // required, MQTT Broker port number
+        "port": 1883,
+        // optional, username to use when connecting to the broker
+        "username": "",
+        // optional, the password to use when connecting to the broker
+        "password": "",
+
+        // optional, whether to enable mqtt ssl
+        "ssl": true,
+        // ca file, only enabled when the ssl value is true, in which case it is required
+        "ca": "",
+        // optional, cert file, only enabled when the ssl value is true
+        "cert": "",
+        // optional, key file, only enabled when the ssl value is true
+        "key": "",
+        // optional, key file password, only enabled when the ssl value is true
+        "keypass": ""
+    }
 }
 
 ```
