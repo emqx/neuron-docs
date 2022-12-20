@@ -1,15 +1,11 @@
 {
   "cn": [
     {
-      "title": "关于文档",
+      "title": "产品概览",
       "path": "./"
     },
     {
-      "title": "产品简介",
-      "path": "introduction"
-    },
-    {
-      "title": "入门",
+      "title": "开始使用",
       "children": [
         {
           "title": "安装",
@@ -29,19 +25,15 @@
       "title": "用户指南",
       "children": [
         {
-          "title": "管理插件模块",
-          "path": "user-guide/plugin-modules-management"
-        },
-        {
-          "title": "点位配置导入/导出",
+          "title": "配置点位导入/导出",
           "path": "user-guide/configuration-import-export"
         },
         {
-          "title": "设备控制",
+          "title": "反控设备",
           "path": "user-guide/device-control"
         },
         {
-          "title": "日志管理",
+          "title": "管理日志",
           "path": "user-guide/log-management"
         },
         {
@@ -51,6 +43,10 @@
         {
           "title": "数据统计",
           "path": "user-guide/data-statistics"
+        },
+        {
+          "title": "管理插件模块",
+          "path": "user-guide/plugin-modules-management"
         }
       ]
     },
@@ -72,7 +68,7 @@
       ]
     },
     {
-      "title": "可插拔模块",
+      "title": "驱动模块",
       "children": [
         {
           "title": "模块列表",
@@ -121,12 +117,26 @@
             {
               "title": "Siemens S7-1200/1500",
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
-            },
+            }
+          ]
+        },
+        {
+          "title": "附属工具设置",
+          "children": [
             {
-              "title": "neuopc运行环境设置",
+              "title": "设置 neuopc",
               "path": "module-plugins/plc-settings/opcda"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "设备连接示例",
+      "children": [
+        {
+          "title": "连接 DTU 示例",
+          "path": "reference/dtu-connection"
         }
       ]
     },
@@ -138,12 +148,12 @@
           "path": "sdk/sdk_based-driver-development"
         },
         {
-          "title": "Modbus 插件开发示例",
-          "path": "sdk/modbus_example"
-        },
-        {
           "title": "南向开发思维导图",
           "path": "sdk/mind_mapping"
+        },
+        {
+          "title": "Modbus 插件开发示例",
+          "path": "sdk/modbus_example"
         },
         {
           "title": "MQTT 插件开发示例",
@@ -181,22 +191,14 @@
         {
           "title": "插件设置",
           "path": "reference/plugin-setting"
-        },
-        {
-          "title": "DTU 连接",
-          "path": "reference/dtu-connection"
         }
       ]
     }
   ],
   "en": [
     {
-      "title": "About the documentation",
-      "path": "./"
-    },
-    {
       "title": "Introduction",
-      "path": "introduction"
+      "path": "./"
     },
     {
       "title": "Getting Started",
@@ -219,15 +221,11 @@
       "title": "User Guide",
       "children": [
         {
-          "title": "Plugin Module Management",
-          "path": "user-guide/plugin-modules-management"
-        },
-        {
-          "title": "Tag Configuration Import/Export",
+          "title": "Configuration Tag Import/Export",
           "path": "user-guide/configuration-import-export"
         },
         {
-          "title": "Device Control",
+          "title": "Control Device",
           "path": "user-guide/device-control"
         },
         {
@@ -239,13 +237,17 @@
           "path": "user-guide/change-password"
         },
         {
-          "title": "Data statistics",
+          "title": "Data Statistics",
           "path": "user-guide/data-statistics"
+        },
+        {
+          "title": "Plugin Module Management",
+          "path": "user-guide/plugin-modules-management"
         }
       ]
     },
     {
-      "title": "Data Processing Engine",
+      "title": "Data Streaming",
       "children": [
         {
           "title": "Prerequisite Setup",
@@ -256,13 +258,13 @@
           "path": "data-processing-engine/data-cleansing"
         },
         {
-          "title": "Device Control",
+          "title": "Control Device",
           "path": "data-processing-engine/device-control"
         }
       ]
     },
     {
-      "title": "Pluggable Modules",
+      "title": "Driver Modules",
       "children": [
         {
           "title": "Module List",
@@ -311,12 +313,26 @@
             {
               "title": "Siemens S7-1200/1500",
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
-            },
+            }
+          ]
+        },
+        {
+          "title": "Accessory Tools",
+          "children": [
             {
-              "title": "neuopc operating environment settings",
+              "title": "Neuopc Settings",
               "path": "module-plugins/plc-settings/opcda"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "Equipment Connections",
+      "children": [
+        {
+          "title": "DTU Connection",
+          "path": "reference/dtu-connection"
         }
       ]
     },
@@ -328,12 +344,12 @@
           "path": "sdk/sdk_based-driver-development"
         },
         {
-          "title": "Modbus plugin development example",
-          "path": "sdk/modbus_example"
-        },
-        {
           "title": "Southbound development mind map",
           "path": "sdk/mind_mapping"
+        },
+        {
+          "title": "Modbus plugin development example",
+          "path": "sdk/modbus_example"
         },
         {
           "title": "MQTT Application Development Example",
@@ -371,10 +387,6 @@
         {
           "title": "Plugin Setting",
           "path": "reference/plugin-setting"
-        },
-        {
-          "title": "DTU Connection",
-          "path": "reference/dtu-connection"
         }
       ]
     }
