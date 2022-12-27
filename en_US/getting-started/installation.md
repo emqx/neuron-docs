@@ -1,6 +1,12 @@
 # Installation
 
-In order to meet customer needs, Neuron is divided into two types, one that integrates eKuiper and carries a data stream processing engine interface, named NeuronEX, and the other that does not integrate eKuiper, named Neuron. Users can choose according to their own needs.
+In order to meet customer needs, Neuron is divided into two installation packages.
+
+* NeuronEX: Integrated eKuiper, which carries the function of data stream processing engine, allows users to collect and process data at the same time.
+
+* Neuron: Without integrating eKuiper, it mainly realizes the collection of industrial data.
+
+Users can choose according to their own needs.
 
 ## Download
 
@@ -14,9 +20,11 @@ Neuron software packages can be downloaded from the Neuron website [https://neug
 
 Version number x.y.z Description:
 
-* x is the major version number, which may change if the entire system architecture has been enhanced.
-* y is the minor version number, which may change if certain additional features exist.
-* z is the patch number for bug fixes in the Neuron software.
+* x is the major version number: in general, this version will introduce some important functions, such as the introduction of architectural changes. The upgrade of the major version does not guarantee the compatibility with the old version.
+
+* y is the minor version number: in general, this type of version will introduce some new functions, but the compatibility under this major version number will be guaranteed.
+
+* z is the maintenance version number: in general, this version only contains patches of bug fixes in the software, etc.
 
 ## Installation Conditions
 
