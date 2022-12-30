@@ -6,6 +6,27 @@ This document introduces how to setup parameter and data tag point information i
 uint16 corresponds to the word type. uint32 corresponds to dword type.
 :::
 
+## Monitor
+
+Neuron builtin monitor plugin.
+
+### Parameter Setting
+
+| Parameter              | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| **client-id**          | MQTT client id for communication (default to node name).     |
+| **heartbeat-interval** | Interval in seconds for hearbeat data reporting. Setting a value zero to disable heartbeat reporting. |
+| **heartbeat-topic**    | The channel for heartbeat data reporting, required           |
+| **host**               | MQTT Broker host, required                                   |
+| **port**               | MQTT Broker port number, required                            |
+| **username**           | Username to use when connecting to the broker, optional      |
+| **password**           | The password to use when connecting to the broker, optional  |
+| **ssl**                | Whether to enable mqtt ssl, default false                    |
+| **ca**                 | ca file, only enabled when the ssl value is true, in which case it is required |
+| **cert**               | cert file, only enabled when the ssl value is true, optional |
+| **key**                | key file, only enabled when the ssl value is true, optional  |
+| **keypass**            | key file password, only enabled when the ssl value is true, optional |
+
 ## MQTT
 
 The data collected from the device can be transmitted to the mqtt broker through mqtt application, and instructions can be sent to neuron through mqtt application.
