@@ -27,6 +27,30 @@ Neuron内置监控插件。
 | **key**                | key文件，只在ssl值为true时启用，选填。                       |
 | **keypass**            | key文件密码，只有在ssl值为true时启用，选填。                 |
 
+### 心跳报文
+
+心跳报文会发布到设定的主题**heartbeat-topic**，间隔每**heartbeat-interval**秒。
+
+心跳报文格式如下：
+
+```json
+{
+  "version": "2.1.0",
+  "timestamp": 1658134132237,
+  "states": [
+    {
+      "node": "mqtt-client",
+      "link": 2,
+      "running": 3
+    },
+    {
+      "node": "fx5u-client",
+      "link": 2,
+      "running": 3
+    }
+  ]
+}
+
 ## MQTT
 
 Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT Broker 中，用户也可以通过 MQTT 应用程序向 Neuron 发送指令。
