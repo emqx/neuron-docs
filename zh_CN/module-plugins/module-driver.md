@@ -6,52 +6,6 @@
 uint16 对应 word 类型。uint32 对应 dword 类型。
 :::
 
-## Monitor
-
-Neuron内置监控插件。
-
-### Parameter Setting
-
-| Parameter              | Description                                                  |
-| ---------------------- | ------------------------------------------------------------ |
-| **client-id**          | MQTT通信的客户端id，必填。（默认为节点名）                   |
-| **heartbeat-interval** | 心态报文上报周期（每秒），设为零则禁用心跳上报。             |
-| **heartbeat-topic**    | 心跳报文上报的主题, 必填。                                   |
-| **host**               | MQTT Broker 主机，必填。                                     |
-| **port**               | MQTT Broker 端口号，必填。                                   |
-| **username**           | 连接到 Broker 时使用的用户名，选填。                         |
-| **password**           | 连接到 Broker 时使用的密码，选填。                           |
-| **ssl**                | 是否启用 mqtt ssl，选填，默认 false                          |
-| **ca**                 | ca文件，只在ssl值为true时启用，这种情况下为必填。            |
-| **cert**               | cert文件，只在ssl值为true时启用，选填。                      |
-| **key**                | key文件，只在ssl值为true时启用，选填。                       |
-| **keypass**            | key文件密码，只有在ssl值为true时启用，选填。                 |
-
-### 心跳报文
-
-心跳报文会发布到设定的主题**heartbeat-topic**，间隔每**heartbeat-interval**秒。
-
-心跳报文格式如下：
-
-```json
-{
-  "version": "2.1.0",
-  "timestamp": 1658134132237,
-  "states": [
-    {
-      "node": "mqtt-client",
-      "link": 2,
-      "running": 3
-    },
-    {
-      "node": "fx5u-client",
-      "link": 2,
-      "running": 3
-    }
-  ]
-}
-```
-
 ## MQTT
 
 Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT Broker 中，用户也可以通过 MQTT 应用程序向 Neuron 发送指令。
