@@ -1289,3 +1289,95 @@ When the data type is string type, it is a required item, indicating the length 
 | ------------ | --------- | ---------------------------------------------- |
 | DB1.DBW12.20 | string    | DB area, address 1，start 12，string length 20 |
 
+
+
+## HJ212-2017
+
+HJ212-2017 is mainly used to read data that supports the HJ212-2017 standard, this driver only supports active uploading of data by the device.
+
+### Parameter Setting(Ethernet)
+
+| 字段        | 说明                                                         |
+| ----------- | ------------------------------------------------------------ |
+| **timeout** | 向设备发送请求超时时间                                       |
+| **host**    | 当 Neuron 作为客户端使用时，host 指远程设备的 IP。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 IP，默认可填写 0.0.0.0 |
+| **port**    | 当 Neuron 作为客户端使用时，post 指远程设备的 TCP 端口。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 TCP 端口，默认为 502 |
+
+### Parameter Setting(Serial)
+
+| 字段        | 说明                             |
+| ----------- | -------------------------------- |
+| **device**  | 使用串口设备，例如“/dev/ttyUSB0” |
+| **stop**    | 停止位，默认值是 1               |
+| **parity**  | 校验位，默认值是 2，代表偶校验   |
+| **baud**    | 波特率，默认值是 9600            |
+| **data**    | 数据位，默认值是 8               |
+| **timeout** | 向设备发送请求超时时间           |
+
+### Data Type
+
+* STRING
+* DOUBLE
+* UINT8
+* INT8
+
+
+
+### Address Format
+
+#### Pollutant real-time data
+
+> RT!xxxx-[Rtd\][Flag\][SampleTime\][EFlag]</span>
+
+| Address              | Type   | Description                    |
+| -------------------- | ------ | ------------------------------ |
+| RT!w01018-Rtd        | double | w01018 real-time data          |
+| RT!w01018-Flag       | string | w01018 real-time data flag     |
+| RT!w01018-SampleTime | string | w01018 real-time sampling time |
+| RT!w01018-EFlag      | string | w01018 device flag             |
+| RT!w01018-ZsRtd      | double | w01018 real-time zs data       |
+
+#### Pollutant minute data
+
+> MIN!xxxx-[Cou\][Min\][Avg\][Max\][Flag]
+
+| 地址             | 类型   | 说明                    |
+| ---------------- | ------ | ----------------------- |
+| MIN!w01018-Cou   | double | w01018 cumulative value |
+| MIN!w01018-Min   | double | w01018 min value        |
+| MIN!w01018-Avg   | double | w01018 average value    |
+| MIN!w01018-Max   | double | w01018 max value        |
+| MIN!w01018-Flag  | string | w01018 data flag        |
+| MIN!w01018-ZsMin | double | w01018 min zs value     |
+| MIN!w01018-ZsAvg | double | w01018 average zs value |
+| MIN!w01018-ZsMax | double | w01018 max zs value     |
+
+#### Pollutant hour data
+
+> HOUR!xxxx-[Cou\][Min\][Avg\][Max\][Flag]
+
+| 地址              | 类型   | 说明                    |
+| ----------------- | ------ | ----------------------- |
+| HOUR!w01018-Cou   | double | w01018 cumulative value |
+| HOUR!w01018-Min   | double | w01018 min value        |
+| HOUR!w01018-Avg   | double | w01018 average value    |
+| HOUR!w01018-Max   | double | w01018 max value        |
+| HOUR!w01018-Flag  | string | w01018 data flag        |
+| HOUR!w01018-ZsMin | double | w01018 min zs value     |
+| HOUR!w01018-ZsAvg | double | w01018 average zs value |
+| HOUR!w01018-ZsMax | double | w01018 max zs value     |
+
+#### Pollutant day data
+
+> DAY!xxxx-[Cou\][Min\][Avg\][Max\][Flag]
+
+| 地址             | 类型   | 说明                    |
+| ---------------- | ------ | ----------------------- |
+| DAY!w01018-Cou   | double | w01018 cumulative value |
+| DAY!w01018-Min   | double | w01018 min value        |
+| DAY!w01018-Avg   | double | w01018 average value    |
+| DAY!w01018-Max   | double | w01018 max value        |
+| DAY!w01018-Flag  | string | w01018 data flag        |
+| DAY!w01018-ZsMin | double | w01018 min zs value     |
+| DAY!w01018-ZsAvg | double | w01018 average zs value |
+| DAY!w01018-ZsMax | double | w01018 max zs value     |
