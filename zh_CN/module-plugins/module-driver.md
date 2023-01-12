@@ -75,6 +75,21 @@ Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT B
 | **key**             | key文件，只在ssl值为true时启用，选填。                       |
 | **keypass**         | key文件密码，只有在ssl值为true时启用，选填。                 |
 
+## WebSocket
+
+使用此插件, 从设备采集到的数据可以通过*ws*/*wss*协议传输到WebSocket服务器上。
+
+### 应用配置
+
+| 字段                | 说明                                                         |
+| ------------------- | ------------------------------------------------------------ |
+| **format**          | 上报数据的json格式选择，选填，有values模式和tags模式，默认为values模式 |
+| **url**             | WebSocket服务地址，必填。例如ws://127.0.0.1:8000, wss://example.com |
+| **ca**              | ca文件，只在使用*wss*协议时启用，这种情况下为必填。            |
+| **cert**            | cert文件，只在使用*wss*协议时启用，选填。                      |
+| **key**             | key文件，只在使用*wss*协议时启用，选填。                       |
+| **keypass**         | key文件密码，只有在使用*wss*协议时启用，选填。                 |
+
 ## Modbus
 
 Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TCP。三种协议除了设备配置方式不一致外，支持的数据类型及地址格式都一致。
