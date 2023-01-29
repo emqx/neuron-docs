@@ -1372,14 +1372,22 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
+    "valid_until": "2023-03-15 08:11:19",
+    "valid_since": "2022-03-15 08:11:19",
+    "valid": false,
+    "max_nodes": 1,
+    "max_node_tags": 1,
+    "used_nodes": 12,
+    "used_tags": 846,
+    "license_type": "retail",
     "error": 0,
-    "license_type": "trial",
-    "max_nodes": 1000,
-    "max_node_tags": 20000,
-    "valid": true,
-    "valid_since": "2022-03-30 09:10:40",
-    "valid_until": "2023-03-30 09:10:40",
-    "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
+    "enabled_plugins": [
+        "MODBUS TCP Advance",
+        "OPC UA"
+    ],
+    "hardware_token": "I+kZidSifiyVSbz0/EgcM6AcefnlfR4IU19ZZUnTS18=",
+    "object": "emq",
+    "email_address": "emq@emqx.io"
 }
 ```
 
