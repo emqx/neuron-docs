@@ -74,6 +74,21 @@ The data collected from the device can be transmitted to the mqtt broker through
 | **key**             | key file, only enabled when the ssl value is true, optional  |
 | **keypass**         | key file password, only enabled when the ssl value is true, optional |
 
+## WebSocket
+
+Through this plugin, collected data can be transmitted to WebSocket servers using *ws*/*wss* protocol.
+
+### Parameter Setting
+
+| Parameter           | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| **format**          | The json format selection of the reported data, required, there are values mode and tags mode, the default is values mode |
+| **url**             | WebSocket server address, required. Example: ws://127.0.0.1:8000, wss://example.com |
+| **ca**              | ca file, only enabled when using *wss* protocol, in which case it is required       |
+| **cert**            | cert file, only enabled when using *wss* protocol, optional                         |
+| **key**             | key file, only enabled when using *wss* protocol, optional                          |
+| **keypass**         | key file password, only enabled when using *wss* protocol, optional                 |
+
 ## Modbus
 
 The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus RTU over TCP.Except for the device configuration, the three protocols support the same data types and address formats.
