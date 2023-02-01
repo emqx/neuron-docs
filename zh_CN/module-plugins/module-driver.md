@@ -461,7 +461,7 @@ fins插件用于带有网口的欧姆龙 PLC，如 CP2E。
 | D5.30     | string | D 区域，地址为 5，字符串长度 30 个字节，字节顺序为 L  |
 | EM10.10   | string | EM 区域，地址为 10，字符串长度 10 个字节，字节顺序为 L  |
 
-## Mitsubishi MELSEC-Q E71
+## Mitsubishi MELSEC QnA3E
 
 qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（MC）、iQ-F系列（SLMP）和iQ-L系列。
 
@@ -859,7 +859,7 @@ ADS路由.
 | 16448,51029     | uint8              | index_group 0x4040, index_offset 0x7d01d                  |
 | 0x4040,512896.5 | string             | index_group 0x4040, index_offset 0x7d380, 字符串长度为5   |
 
-## OPCDA
+## OPC DA
 
 Neuron 可通过外部辅助程序 neuopc.exe 间接访问运行于 Windows 操作系统的 OPCDA 服务器。neuopc 通过将 DA 协议转换为 UA 协议，再通过 Neuron已有的 opcua driver 进行数据获取，DA 的所有可访问点位都被映射至 UA 的"命名空间2"当中，点位的 ID 则与 DA 保持一致。
 
@@ -1021,7 +1021,7 @@ neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neug
 | A0.2 | string                                                       | PMC **message demand** 区域，地址0开始，长度为2的字符串 |
 | D0.2 | string                                                       | PMC **data table** 区域，地址0开始，长度为2的字符串     |
 | D0.7 | bit                                                          | PMC **data table** 区域，地址0的字节，第7个bit位        |
-## Mitsubishi MELSEC-Q A1E
+## Mitsubishi MELSEC A1E
 
 a1e 插件用于通过以太网访问三菱的 A 系列、FX3U、FX3G、iQ-F 系列 PLC（iQ-F 需要特定固件版本支持）。
 

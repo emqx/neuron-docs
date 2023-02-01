@@ -459,7 +459,7 @@ When the data type is string type, it is a required, **.LEN** indicates the leng
 | D5.30     | string | D area, address 5, the string length is 30 bytes and the endianness is L  |
 | EM10.10   | string | EM area, address 10, the string length is 10 bytes and the endianness is L  |
 
-## Mitsubishi MELSEC-Q E71
+## Mitsubishi MELSEC QnA3E
 
 The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
 
@@ -860,7 +860,7 @@ Both `INDEX_GROUP` and `INDEX_OFFSET` could be in decimal or hexadecimal format 
 | 16448,51029     | uint8              | index_group 0x4040, index_offset 0x7d01d                  |
 | 0x4040,512896.5 | string             | index_group 0x4040, index_offset 0x7d380, string length 5 |
 
-## OPCDA
+## OPC DA
 
 Neuron can indirectly access OPCDA servers running on Windows operating systems through the external auxiliary program neuopc.exe. neuopc converts the DA protocol to the UA protocol, and then obtains data through Neuron's existing opcua driver. All accessible points of DA are mapped to the "namespace 2" of UA, and the ID of the point is kept with DA. unanimous.
 
@@ -1023,7 +1023,7 @@ step:
 | A0.2    | string                                                       | PMC **message demand** ，address 0 starts with a string of length 2 |
 | D0.2    | string                                                       | PMC **data table** ，address 0 starts with a string of length 2 |
 | D0.7    | bit                                                          | PMC **data table** ，no.7 bit of address 0                   |
-## Mitsubishi MELSEC-Q A1E
+## Mitsubishi MELSEC A1E
 
 The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series PLCs via Ethernet, iQ-F requires a specific firmware version.
 
