@@ -213,6 +213,36 @@ When the data type is string type, **.LEN** is a required, indicating the length
 | 1!400001.10D | String  | Refers to station number is 1, input area, the address is 400001, the string length is 10, and endianness is D, the occupied address is 400001-400010 |
 | 1!400001.10E | String  | Refers to station number is 1, input area, the address is 400001, the string length is 10, and endianness is E, the occupied address is 400001-400010 |
 
+## File
+
+File plugin is used to read or write files.
+
+### Parameter Setting
+
+| Parameter   | Description                                           |
+| ----------- | ----------------------------------------------------- |
+| file_length | Set the character length for reading or writing file |
+
+### Support Data Type
+
+* STRING
+
+### Address Format
+
+> FILE PATH</span>
+
+*Example:*
+
+| Address                  | Data Type | Description              |
+| ------------------------ | --------- | ----------------------------------------------- |
+| /home/root/test/test.txt | string    | Read or write the contents of the test.txt file |
+
+:::tip
+The address needs to fill in the GetFullPath.
+
+When writing, the written content will overwrite the previous file content.
+:::
+
 ## OPC UA
 
 ### Parameter Setting
