@@ -34,7 +34,9 @@ Try to turn off the firewall in Windows, otherwise Neuron may not connect to the
 
 ## Quick Using Neuron
 
-Open a Web browser and enter the address and port number of the gateway running Neuron to enter the management console dasboard. The default port number is 7000, for example, [http://127.0.0.1:7000](http://127.0.0.1:7000).
+Open a Web browser and enter the address and port number of the gateway running Neuron to enter the management console dasboard. The default port number is 7000.
+
+Access format, http://x.x.x.x:7000. x.x.x.x represents the address of the gateway where Neuron is installed.
 
 ### Step 1, Login
 

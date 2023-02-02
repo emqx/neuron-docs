@@ -9,13 +9,13 @@ Neuron 提供多种安装方式，用户可在 [安装](./installation.md) 中�
 获取 Docker 镜像
 
 ```bash
-$ docker pull emqx/neuron:2.3.4
+$ docker pull emqx/neuron:latest
 ```
 
 启动 Docker 容器
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:2.3.4
+$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:latest
 ```
 
 ## 安装 Modbus 模拟器
@@ -34,7 +34,9 @@ Windows 中尽量关闭防火墙，否则可能会导致 Neuron 连接不上模�
 
 ## Neuron 快速使用
 
-打开 Web 浏览器，输入运行 Neuron 的网关地址和端口号，即可进入到管理控制台页面，默认端口号为 7000，例如：[http://127.0.0.1:7000](http://127.0.0.1:7000)。
+打开 Web 浏览器，输入运行 Neuron 的网关地址和端口号，即可进入到管理控制台页面，默认端口号为 7000。
+
+访问格式，http://x.x.x.x:7000。x.x.x.x 代表安装 Neuron 的网关地址。
 
 ### 第一步，登录
 
