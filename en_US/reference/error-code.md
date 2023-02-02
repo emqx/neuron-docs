@@ -82,6 +82,13 @@ This document describes the errors that neuron will reply to sender when calling
 * 3011    plugin tag not ready
 * 3012    plugin packet out of order
 
+## FILE error codes
+
+* 4100  file too long
+* 4101  file open failure
+* 4102  file read failure
+* 4103  file write failure
+
 ## S7COMM error codes
 
 * 10101  s7comm hardware error
