@@ -117,6 +117,10 @@
             {
               "title": "Siemens S7-1200/1500",
               "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
+            },
+            {
+              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
+              "path": "module-plugins/plc-settings/ads/ads"
             }
           ]
         },
