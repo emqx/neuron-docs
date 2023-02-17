@@ -719,6 +719,13 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             "address": "1!400009",
             "attribute": 3,
             "type": 11
+        },
+        {
+            "name": "static_tag",
+            "address": "",
+            "attribute": 10,
+            "type": 1,
+            "value": 42
         }
     ]
 }
@@ -841,6 +848,13 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             "type": 6,
             "attribute": 0,
             "address": "1!400002"
+        },
+        {
+            "name": "static_tag",
+            "address": "",
+            "attribute": 10,
+            "type": 1,
+            "value": 42
         }
     ]
 }
