@@ -1107,7 +1107,12 @@ The value is displayed only when the value is read correctly, when the value is 
     //driver name
     "driver": "modbus-node",
     //driver node group name
-    "group": "gconfig1"
+    "group": "gconfig1",
+    // data for the app node, optional
+    "params": {
+        "param1": "one",
+        "param2": 2
+    }
 }
 ```
 
