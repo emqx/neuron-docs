@@ -719,6 +719,13 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "address": "1!400009",
             "attribute": 3,
             "type": 11
+        },
+        {
+            "name": "static_tag",
+            "address": "",
+            "attribute": 10,
+            "type": 1,
+            "value": 42
         }
     ]
 }
@@ -841,6 +848,13 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             "type": 6,
             "attribute": 0,
             "address": "1!400002"
+        },
+        {
+            "name": "static_tag",
+            "address": "",
+            "attribute": 10,
+            "type": 1,
+            "value": 42
         }
     ]
 }
@@ -1107,7 +1121,12 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     //driver name
     "driver": "modbus-node",
     //driver node group name
-    "group": "gconfig1"
+    "group": "gconfig1",
+    // data for the app node, optional
+    "params": {
+        "param1": "one",
+        "param2": 2
+    }
 }
 ```
 

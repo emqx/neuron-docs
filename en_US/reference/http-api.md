@@ -719,6 +719,13 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             "address": "1!400009",
             "attribute": 3,
             "type": 11
+        },
+        {
+            "name": "static_tag",
+            "address": "",
+            "attribute": 10,
+            "type": 1,
+            "value": 42
         }
     ]
 }
@@ -841,6 +848,13 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             "type": 6,
             "attribute": 0,
             "address": "1!400002"
+        },
+        {
+            "name": "static_tag",
+            "address": "",
+            "attribute": 10,
+            "type": 1,
+            "value": 42
         }
     ]
 }
@@ -1107,7 +1121,12 @@ The value is displayed only when the value is read correctly, when the value is 
     //driver name
     "driver": "modbus-node",
     //driver node group name
-    "group": "gconfig1"
+    "group": "gconfig1",
+    // data for the app node, optional
+    "params": {
+        "param1": "one",
+        "param2": 2
+    }
 }
 ```
 
