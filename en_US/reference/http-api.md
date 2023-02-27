@@ -1482,7 +1482,7 @@ Call the api to modify the log level of the node to debug, and automatically swi
 
 **Authorization** Bearer \<token\>
 
-### Request Headers
+### Request Params
 
 **file_path** Required, absolute path of the file
 
@@ -1495,9 +1495,58 @@ Call the api to modify the log level of the node to debug, and automatically swi
 
 ### Response
 
-Normal response returns the file content and downloads the file.
+Return the contents of the file and download the file, when responding correctly.
 
-Respond if there is an error returned:
+Return the error code, when an error response occurs.
+
+```json
+{
+    "error": 1011
+}
+```
+
+## Get file list information
+
+*GET* /api/v2/file/info
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Request Params
+
+**dir_path** Required, absolute path of the directory.
+
+### Response Status
+
+* 404
+    * 1011 file not exist
+    * 4101 file open failure
+
+### Response
+
+Response to the file name, size, creation time and update time, when responding correctly.
+
+```json
+{
+    "files": [
+        {
+            "name": "neuron",
+            "size": 4096,
+            "ctime": "Wed Jan  4 02:38:12 2023",
+            "mtime": "Mon Dec 26 09:48:42 2022"
+        },
+        {
+            "name": "test.txt",
+            "size": 13,
+            "ctime": "Wed Jan  4 02:38:12 2023",
+            "mtime": "Mon Dec 26 09:48:42 2022"
+        }
+    ]
+}
+```
+
+Response to the error code, when an error response occurs.
 
 ```json
 {
