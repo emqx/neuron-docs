@@ -1474,6 +1474,37 @@ Response if there is an error returned:
 Call the api to modify the log level of the node to debug, and automatically switch to the default level in about ten minutes.
 :::
 
+## Download File
+
+*GET* /api/v2/file
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Request Headers
+
+**file_path** Required, absolute path of the file
+
+### Response Status
+
+* 404
+    * 1011 file not exist
+    * 4101 file open failure
+    * 4102 file read failure
+
+### Response
+
+Normal response returns the file content and downloads the file.
+
+Respond if there is an error returned:
+
+```json
+{
+    "error": 1011
+}
+```
+
 ## Get Metrics
 
 *GET*  /api/v2/metrics
