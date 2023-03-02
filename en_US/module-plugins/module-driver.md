@@ -6,51 +6,6 @@ This document introduces how to setup parameter and data tag point information i
 uint16 corresponds to the word type. uint32 corresponds to dword type.
 :::
 
-## Monitor
-
-Neuron builtin monitor plugin.
-
-### Parameter Setting
-
-| Parameter              | Description                                                  |
-| ---------------------- | ------------------------------------------------------------ |
-| **client-id**          | MQTT client id for communication (default to node name).     |
-| **heartbeat-interval** | Interval in seconds for hearbeat data reporting. Setting a value zero to disable heartbeat reporting. |
-| **heartbeat-topic**    | The channel for heartbeat data reporting, required           |
-| **host**               | MQTT Broker host, required                                   |
-| **port**               | MQTT Broker port number, required                            |
-| **username**           | Username to use when connecting to the broker, optional      |
-| **password**           | The password to use when connecting to the broker, optional  |
-| **ssl**                | Whether to enable mqtt ssl, default false                    |
-| **ca**                 | ca file, only enabled when the ssl value is true, in which case it is required |
-| **cert**               | cert file, only enabled when the ssl value is true, optional |
-| **key**                | key file, only enabled when the ssl value is true, optional  |
-| **keypass**            | key file password, only enabled when the ssl value is true, optional |
-
-### Heartbeat
-
-Heartbeat messages are published to the configured topic **heartbeat-topic**
-in every **heartbeat-interval** seconds, with the following format:
-
-```json
-{
-  "version": "2.1.0",
-  "timestamp": 1658134132237,
-  "states": [
-    {
-      "node": "mqtt-client",
-      "link": 2,
-      "running": 3
-    },
-    {
-      "node": "fx5u-client",
-      "link": 2,
-      "running": 3
-    }
-  ]
-}
-```
-
 ## MQTT
 
 The data collected from the device can be transmitted to the mqtt broker through mqtt application, and instructions can be sent to neuron through mqtt application.
@@ -549,7 +504,7 @@ When the data type is string type, it is a required, **.LEN** indicates the leng
 | D5.30     | string | D area, address 5, the string length is 30 bytes and the endianness is L  |
 | EM10.10   | string | EM area, address 10, the string length is 10 bytes and the endianness is L  |
 
-## Mitsubishi MELSEC-Q E71
+## Mitsubishi MELSEC QnA3E
 
 The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
 
@@ -1113,7 +1068,7 @@ step:
 | A0.2    | string                                                       | PMC **message demand** ，address 0 starts with a string of length 2 |
 | D0.2    | string                                                       | PMC **data table** ，address 0 starts with a string of length 2 |
 | D0.7    | bit                                                          | PMC **data table** ，no.7 bit of address 0                   |
-## Mitsubishi MELSEC-Q A1E
+## Mitsubishi MELSEC A1E
 
 The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series PLCs via Ethernet, iQ-F requires a specific firmware version.
 

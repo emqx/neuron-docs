@@ -6,52 +6,6 @@
 uint16 对应 word 类型。uint32 对应 dword 类型。
 :::
 
-## Monitor
-
-Neuron内置监控插件。
-
-### Parameter Setting
-
-| Parameter              | Description                                                  |
-| ---------------------- | ------------------------------------------------------------ |
-| **client-id**          | MQTT通信的客户端id，必填。（默认为节点名）                   |
-| **heartbeat-interval** | 心态报文上报周期（每秒），设为零则禁用心跳上报。             |
-| **heartbeat-topic**    | 心跳报文上报的主题, 必填。                                   |
-| **host**               | MQTT Broker 主机，必填。                                     |
-| **port**               | MQTT Broker 端口号，必填。                                   |
-| **username**           | 连接到 Broker 时使用的用户名，选填。                         |
-| **password**           | 连接到 Broker 时使用的密码，选填。                           |
-| **ssl**                | 是否启用 mqtt ssl，选填，默认 false                          |
-| **ca**                 | ca文件，只在ssl值为true时启用，这种情况下为必填。            |
-| **cert**               | cert文件，只在ssl值为true时启用，选填。                      |
-| **key**                | key文件，只在ssl值为true时启用，选填。                       |
-| **keypass**            | key文件密码，只有在ssl值为true时启用，选填。                 |
-
-### 心跳报文
-
-心跳报文会发布到设定的主题**heartbeat-topic**，间隔每**heartbeat-interval**秒。
-
-心跳报文格式如下：
-
-```json
-{
-  "version": "2.1.0",
-  "timestamp": 1658134132237,
-  "states": [
-    {
-      "node": "mqtt-client",
-      "link": 2,
-      "running": 3
-    },
-    {
-      "node": "fx5u-client",
-      "link": 2,
-      "running": 3
-    }
-  ]
-}
-```
-
 ## MQTT
 
 Neuron 从设备采集到的数据可以通过 MQTT 应用程序传输到 MQTT Broker 中，用户也可以通过 MQTT 应用程序向 Neuron 发送指令。
@@ -552,7 +506,7 @@ fins插件用于带有网口的欧姆龙 PLC，如 CP2E。
 | D5.30     | string | D 区域，地址为 5，字符串长度 30 个字节，字节顺序为 L  |
 | EM10.10   | string | EM 区域，地址为 10，字符串长度 10 个字节，字节顺序为 L  |
 
-## Mitsubishi MELSEC-Q E71
+## Mitsubishi MELSEC QnA3E
 
 qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（MC）、iQ-F系列（SLMP）和iQ-L系列。
 
@@ -1112,7 +1066,7 @@ neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neug
 | A0.2 | string                                                       | PMC **message demand** 区域，地址0开始，长度为2的字符串 |
 | D0.2 | string                                                       | PMC **data table** 区域，地址0开始，长度为2的字符串     |
 | D0.7 | bit                                                          | PMC **data table** 区域，地址0的字节，第7个bit位        |
-## Mitsubishi MELSEC-Q A1E
+## Mitsubishi MELSEC A1E
 
 a1e 插件用于通过以太网访问三菱的 A 系列、FX3U、FX3G、iQ-F 系列 PLC（iQ-F 需要特定固件版本支持）。
 

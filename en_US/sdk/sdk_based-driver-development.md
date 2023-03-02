@@ -64,9 +64,9 @@ set(CMAKE_BUILD_RPATH ./)
 set(MODBUS_TCP_PLUGIN plugin-modbus-tcp)
 # set the driver development code file
 set(MODBUS_TCP_PLUGIN_SOURCES  modbus_tcp.c)
-add_library(${MODBUS_RTU_PLUGIN} SHARED)
-target_sources(${MODBUS_RTU_PLUGIN} PRIVATE ${MODBUS_RTU_PLUGIN_SOURCES})
-target_link_libraries(${MODBUS_RTU_PLUGIN} neuron-base)
+add_library(${MODBUS_TCP_PLUGIN} SHARED)
+target_sources(${MODBUS_TCP_PLUGIN} PRIVATE ${MODBUS_TCP_PLUGIN_SOURCES})
+target_link_libraries(${MODBUS_TCP_PLUGIN} neuron-base)
 ```
 
 #### modbus_tcp.c

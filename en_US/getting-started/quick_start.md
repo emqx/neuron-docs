@@ -1,361 +1,258 @@
 # Quick Start
 
-## Environment setup
+This chapter will guide users to quickly start using Neuron to collect data simulating Modbus equipment and upload the data to MQTT Broker, taking Modbus TCP driver protocol as an example.
 
-### Package Installation
+## Install Neuron
 
-The environment used in this example is Ubuntu 20.04.3, X86_64.Use NeuronEX version.
+Neuron provides a variety of installation methods, and users can view the detailed installation methods in [Installation](./installation.md). This example adopts containerized deployment mode, so as to start experiencing Neuron as soon as possible.
 
-1. Download the installation package
-NeuronEX packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).
-
-2. Unzip the installation package
-Unzip the package into any directory (e.g. /home/Neuron) and enter the command：
+Get Docker image
 
 ```bash
-sudo dpkg -i neuronex-2.3.0-linux-amd64.deb
+$ docker pull emqx/neuron:2.3.4
 ```
+
+Run the Docker container
+
+```bash
+$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:2.3.4
+```
+
+## Install Modbus Simulator
+
+Install PeakHMI Slave Simulators software, and the installation package can be downloaded from [PeakHMI official website ](https://hmisys.com).
+
+After installation, run Modbus TCP slave EX. Set the simulator salve ID and tag value, as shown in the figure below.
+
+![modbus-simulator](./assets/modbus-simulator.png)
 
 ::: tip
-After successful installation of the deb package, Neuron is automatically started.
+Neuron and simulator must be run in the same LAN.
+
+Try to turn off the firewall in Windows, otherwise Neuron may not connect to the simulator.
 :::
 
-### Neuron operation
+## Quick Using Neuron
 
-#### Checking Neuron Status
+Open a Web browser and enter the address and port number of the gateway running Neuron to enter the management console dasboard. The default port number is 7000.
 
-```bash
-sudo systemctl status neuron
-```
+Access format, http://x.x.x.x:7000. x.x.x.x represents the address of the gateway where Neuron is installed.
 
-#### Stop Neuron
+### Step 1, Login
 
-```bash
-sudo systemctl stop neuron
-```
-
-#### Restart Neuron
-
-```bash
-sudo systemctl restart neuron
-```
-
-### Running EMQX In Docker
-
-We need to deploy an MQTT Broker to do the connection processing of messages, here we recommend using EMQX. Again EMQX can be installed and used quickly using a Docker container.The latest version can be obtained from the [EMQX](https://www.emqx.com/en/try?product=broker).
-
-1. Get the Docker image
-
-```bash
-docker pull emqx/emqx:4.4.3
-```
-
-2. Start the Docker container
-
-```bash
-docker run -d --name emqx -p 1883:1883 -p 8081:8081 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:4.4.3
-```
-
-### Install Modbus Simulator
-
-Install PeakHMI Slave Simulator, download the software from the [PeakHMI official website](https://hmisys.com).
-After installation, open the Modbus TCP slave.
-
-::: tip
-Disable the firewall on Windows, otherwise the Neuron may not be able to connect to the simulator.
-:::
-
-## Run for the First Time
-
-When the installation environment is ready, open a web browser and enter the address and port number where you are running Neuron to get into the administration console page, the default port number is 7000, e.g [http://127.0.0.1:7000](http://127.0.0.1:7000)。
-
-### Step 1 Login
-
-The first screen is the login page, where users can login using their username and password as shown below.
+After the page opens, enter the login interface, and users can log in with their initial user name and password (initial user name: admin, initial password: 0000), as shown in the following figure.
 
 ![login](./assets/login.png)
 
-To login to dashboard control panel,
+### Step 2, Add Southbound Device
 
-* Fill in default username `admin`.
-* Fill in default password `0000`.
-* Click on the `Login` button.
+Creating southbound device cards can be used to establish connections between Neuron and devices, select device driver protocols and configure device data acquisition tags.
 
-### Step 2 Add southbound plugin modules for device drivers
+Select `South Devices` from the `Configuration` menu to enter the southbound device management interface, and click `Add Device` to add deivces, as shown in the figure below.
 
-Click on `Southbound Device` in the `Configuration` menu to show the Southbound Device Management screen, where no devices have been found in this case, we now create a Modbus TCP device, as shown below.
+![south-add](./assets/south-add.png)
 
-![south_devices_add](./assets/south_devices_add.png)
+Add a new southbound device:
 
-To add a new southbound device,
+* Name: fill in the name of the device, such as modbus-tcp-1;
+* Plugin: select the plugin of modbus-tcp from the drop-down box;
+* Click the `Create` button to add a new device.
 
-* Click on the `Add Device` button at top left corner to show New Device dialog box.
-* Fill in the device name, e.g. modbus-tcp-1.
-* Click on the drop-down box, which shows all the southbound driver protocols available for this software version, in this case we choose modbus-tcp plugin module.
-* Click on `Create` button to create the device.
+### Step 3, Setting Southbound Device's Parameters
 
-::: tip
-You suppose to install a valid trial or commercial license to be able selecting the pluggable modules other than modbus-tcp. Only modbus-tcp is an open source pluggable module in the list.
-:::
+Configure the parameters required for Neuron to establish a connection with the device.
 
-### Step 3 Manage southbound device node list
-
-After the device has been successfully created, the new device node information will appear in the southbound device screen, as shown below.
-
-![south_devices](./assets/south_devices.png)
-
-The device node contains the following information
-
-* Device Name - the unique name you give to the device.
-* Device Configuration - click on this button to show the device configuration screen.
-* Data Statistics - statistics node card information.
-* More
-    * DEBUG log - Print the debug log of the node and restore the default log level in ten minutes.
-    * Delete Button - remove this node from southbound device list.
-* Status - show the current status of device node.Five working states.
-    * **Init**, the initial status for the first creation of southbound devices.
-    * **Setup**, when the configuration of device node is started, it goes to setup state.
-    * **Ready**, after successfully configuring the device node, it goes to ready state.
-    * **Running**, when the device node is started and is collecting data from device. it goes running state.
-    * **Stop**, when the device node is stopped or for reason it can't connect to device, it goes to stop state.
-* State Change Button - switch on to connect to device.
-* Connection Status - show connection status to device.
-* Delay time - time interval between sending and receiving an instruction.
-* Plugin Module Name - the name of plugin module used for this device.
-
-### Step 4 Setup southbound device parameters
-
-Click on `Device Configuration Button` in device node to configure the southbound device parameters, as shown below.
+Click the `Device Configuration` button on the southbound device card to enter the device configuration interface, as shown in the figure below.
 
 ![south-setting](./assets/south-setting.png)
 
-Items with `*` are required, and each item is followed by a field description key. Hovering over on exclaimation mark will display a detailed description.
+* Host: fill in the IP of the PC where PeakHMI Slave Simulators software is installed.
+* Click `Submit` to complete the equipment configuration, and the equipment card will automatically enter the working state of **Running**;
 
-To setup southbound device parameters,
+:::tip
+The configuration parameters required by each device are different. Please refer to [Module Setting](../module-plugins/module-driver.md) for detailed description of southbound device parameters.
 
-* Fill in the Host IP running the Modbus simulator.
-* Fill in the Port number of the Modbus simulator, the default is 502.
-* Fill in the request timeout, the default is 3000.
-* Click `Submit` to complete the device configuration and the device card automatically enters the state of **Running**.
-
-::: tip
-The running Neuron instance and the simulator must be under the same network segment.
-
-Different drivers have different configuration parameters. For detailed driver configuration parameters, please refer to [Module Setting](../module-plugins/module-driver.md).
 :::
+### Step 4, Create A Group
 
-### Step 5 Create groups for device node
+Creating groups can be used to classify devicw acquisition tags.
 
-Click on any blank space in the device node to enter the Group list management screen, where this time will show an empty list. as shown below.
+Click any blank space in the device card to enter the group list management interface, and click `Create` to open the `Create Group` dialog box, as shown in the following figure.
 
 ![group-add](./assets/group-add.png)
 
-To create a group for device node,
+Create a group for the device:
 
-* Click on the `Create` at the top right corner to show up `Create Group` dialog box.
-* Fill in the Group name, e.g. group-1.
-* Fill in the Interval, set the time interval for the neuron to collect data from the device and upload the data to MQTT. The minimum can be set to 100ms, but when there is a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, you can adjust the value a bit higher to fix the error.
-* Click on the `Submit` button to complete the creation of the Group.
+* Group Name: fill in the name of the Group, such as group-1.
+* Click `Create` to complete the creation of the group.
 
-### Step 6 Manage group list
+### Step 5, Add Tags To The Group
 
-The newly created Group will be shown in the Group list, as shown below.
+Add the device tags to be collected, including tag address, tag attribute, tag type, etc.
 
-![group-list](./assets/group-list.png)
-
-The Group List contains following elements,
-
-* `Import` button, in Excel form, and batch import in groups. The `Export` button exports the information of the selected group to Excel.`Clear` button, delete all created groups with one click. When you select some groups, and then click the `Delete` button, you can quickly delete the selected groups in batches. `Cretae` button is used to create a new group.
-* Select all groups in the list
-* Select this group in the list
-* `Edit icon` Edit the group configuration
-* `Tag List icon` Create data tags for this group.
-* `Delete icon` Delete this group.
-
-:::tip
-For detailed import/export functions, please refer to [Tag Configuration Import/Export](../user-guide/configuration-import-export.md).
-:::
-
-### Step 7 Add data tags into group
-
-Click on the `Tag List icon` at the end of a group row to show up the tags configuration list screen, as shown below.
+Click the `Tag list` icon in the group to enter the tag list management interface, as shown in the figure below.
 
 ![tag-list-null](./assets/tag-list-null.png)
 
-Select the `Create` button to enter the Add Tags page.
-
-### Step 8 Setup data tag details
-
-Clicking the `Create icon`,  data tags details setup screen will be shown as below.In the example, we will describe the manual way of adding tags.
+Select the `Create` icon to enter the tag page.
 
 ![tags-add](./assets/tags-add.png)
 
-All data tags will be manually added one by one to show you how to setup the tag details. However, all data tags could be inputted in Excel sheet first and then import to the group.
+Manually create a tag for a group:
 
-To create a tag for the group list,
+* Name: fill in the tag name, for example, tag1.
+* Attribute: drop-down selection tag's attribute, for example, read, write.
+* Type: drop-down selection data type, for example, int16.
+* Address: fill in the drive address, for example, 1!40001. 1 stands for the tag salve id that setted in Modbus simulator, and 40001 stands for the tag register address. Please refer to [Module Setting](../module-plugins/module-driver.md) for detailed instructions on driving address.
+* Click the `Create` icon to complete the creation of the tag;
 
-* Fill in the Tag name, e.g. tag1.
-* Scroll down to select the Tag attribute;
-* Drop down to select the data type, for example, int16. Due to the different types supported by each driver, the data types that can be selected from the drop-down box are also different;
-* Fill in the drive address, for example, 1!40001. For detailed driver address instructions, please refer to [Module Setting](../module-plugins/module-driver.md);
-* The optional parameter Decimal can set the multiplier after the value collected by Neuron. For example, the value collected by neuron is 11, and Decimal is set to 0.1, then the value displayed at this point is 1.1;
-* Optional parameter Description, used to add some description information to the label;
-* Click the `Add` button to add the next tag, repeat steps 1-6 until the last tag is added;
-* After adding a tag, a `delete` button will be added next to the information box, and you can choose to delete the tag;
-* Click the `Create` button to complete the creation of the Tag;
+:::tip
+For more tag operations, please refer to **Advanced Operations** at the end of the document.
 
-::: tip
-Currently, the Tag attribute supports three types: Read, Write, and Subscribe. When the Subscribe attribute is selected, the changed value will be uploaded to the cloud only when the collected value changes.
+After the tag is created, the working status of the equipment card is **running**, and the connection status should be **Connected**. If the connection status is still **Disconnected** at this time, please execute the following instructions at the terminal of the Neuron running environment to confirm whether the Neuron running environment can access the corresponding IP and port.
 
-When the data type is float/double, an optional parameter precision is displayed to set the precision, and the optional range is 1-17.
+```bash
+$ telnet <Running IP on PC side of Modbus simulator> 502
+```
+
+Please confirm whether the IP and Port are set correctly and whether the firewall is closed when configuring the device.
 :::
 
-![precision](./assets/precision.png)
+### Step 6, Check The Collected Data In Data Monitoring.
 
-### Step 9 Manage data tags of group
-
-After all tags creation are complete, tag list will be shown as below.
-
-![tag-list](./assets/tag-list.png)
-
-* `Create` button to create a new label;
-* `Clear` button, delete all tags with one click;
-* `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, which can delete all tags. When selecting some tags, click the `delete` button to quickly delete the selected tags in batches;
-* Select all tags in the list;
-* A label in the radio list;
-* `Edit`, Each tag contains name, address, type, read/write properties, description, button to `edit` tag information.
-* `Delete`, delete this tag.
-
-### Step 10 Check over the data in monitoring screen
-
-Click on `Data Monitoring` in the `Monitoring` menu to show the data monitoring screen, where you can find those tags created and its data value as shown below.
+Select `Data Monitoring` under the `Monitoring` menu to enter the data monitoring interface to view the values read by the created tags, as shown in the figure below.
 
 ![data-monitoring](./assets/data-monitoring.png)
 
-To switch between data group for monitoring,
+Data monitoring displays values in groups:
 
-* Select the southbound device you want to view from the drop down box, in this case, select modbus-tcp-1 which has been created above.
-* Click on the drop down box to select the Group you want to view under the selected southbound device, in this case, select group-1 which has been created above.
-* When the selection is complete, the page will show the value of each Tag read under the Group.
+* Southbound device: select the southbound device you want to view from the drop-down box, for example, select modbus-tcp-1 that has been created in the above steps;
+* Group name: select the group under the selected southbound device from the drop-down box, for example, select Group-1 that has been created in the above steps;
+* Select Finish, and the page will show the value of each tag read under the group;
 
-::: tip
-If you find data value is a non-sense large number, you can adjust the byte order settings in simulator. The default byte order for the Modbus TCP simulator is BE 3,4,1,2
-:::
+### Step 7, Add A Northbound Application
 
-### Step 11 Make change to simulator data tag value
+Create northbound application card for Neuron to establish connection with northbound application and upload the collected device data to MQTT Broker.
 
-By setting the value of the register in the simulator, check whether the value displayed by the data monitoring is consistent with the value in the simulator, as shown below.
-
-![monitor](./assets/monitor.png)
-
-### Step 12 Input device control value in dashboard
-
-When the tag is set with the write attribute, the tag of the data monitoring interface will have a write operation. When the point also has the writable attribute on the device, click `Write` to realize the reverse control device, as shown in the following figure.
-
-![write](./assets/write.png)
-
-To perform dashboard data write operation,
-
-* Click on `Write` button at the end of the tag which is going to change value.
-* Choose whether to enter the value in hexadecimal.
-* Enter the new value for the tag.
-* Click on `Submit` button to submit new value.
-
-### Step 13 Add northbound plugin modules for application
-
-Click on `Northbound Application` in the `Configuration` menu to show the Northbound Application Management screen. There will be a default data stream application node, now you can add more manually, in this case we will create an mqtt application node, as shown below.
+Select `North Apps` in the `Configuration` menu, and click the `Add App` icon to add an application, as shown in the following figure.
 
 ![north-add](./assets/north-add.png)
 
-To add MQTT cloud connection module,
+Add an MQTT cloud connection module:
 
-* Click on the `Add Application` button in the top right hand corner.
-* Fill in the name of the application, for example, mqtt-1.
-* The drop-down box shows the northbound applications available for this software version, in this case we choose the mqtt plugin.
+* Name: fill in the application name, for example, mqtt；;
+* Plugin: drop-down box to select the plugin of mqtt;
+* Click the `Create` icon to add an application.
 
-### Step 14 Manage northbound application node list
+### Step 8, Setting Northbound Application's Parameters.
 
-After the application node has been successfully created, an new application node will appear in the northbound application management screen, as shown below.
+Configure the parameters required for Neuron to establish a connection with the northbound application.
 
-![north](./assets/north.png)
+Click the `Application Configuration` icon on the application card to enter the application configuration interface, as shown in the figure below.
 
-The device node contains the following information
+![mqtt-config](./assets/mqtt-config.png)
 
-* Application Name - the unique name you give to the application.
-* Application Configuration Button - click on this button to show the application configuration screen.
-* Data Statistics - statistics node card information.
-* More
-    * DEBUG log - Print the debug log of the node and restore the default log level in ten minutes.
-    * Delete Button - click on this to remove this application from northbound application list.
-* Status - show the current status of application node.Five working states.
-    * **Init**, the initial status for the first creation of northbound applications.
-    * **Setup**, when the configuration of application node is started, it goes to setup state.
-    * **Ready**, after successfully configuring the application node, it goes to ready state.
-    * **Running**, when the application node is started and is sending data to cloud. it goes running state.
-    * **Stop**, when the applicaiton node is stopped or for reason it can't connect to cloud, it goes to stop state.
-* State Change Button - switch on to connect to application.
-* Connection Status - show connection status to application.
-* Plugin Module Name - the name of plugin module used for this application.
+Set MQTT connection:
 
-### Step 15 Setup northbound application parameters
+* Use the default escalation topic (/neuron/mqtt/upload).
+* Use the default public EMQX Broker (broker.emqx.io).
+* Click `Submit` to complete the configuration of northbound application, and the application card will automatically enter the working state of **Running**.
 
-Click on the `Application Configuration` button to enter the application configuration screen, as shown below.
+### Step 9, Subscribe To The Southbound Group.
 
-![mqtt_config](./assets/mqtt_config.png)
+The collected data are uploaded to the cloud in groups, and users need to choose which groups of data to upload.
 
-Items with `*` are required, and each item is followed by a field description key. Hovering over it will display a detailed description.
+Click any blank space in the application node card to enter the subscription group interface, and click the `Add Subscription` icon in the upper right corner to add a subscription, as shown in the following figure.
 
-To setup MQTT connection,
+![subscriptions-add](./assets/subscription-add.png)
 
-* Client-id, Required.
-* Upload topic, Required, fill in the topic of subscription data report, please refer to the [MQTT API](../reference/mqtt-api.md).
-* Heartbeat topic, Required, fill in the subject reported by the heartbeat message.
-* Upload format, Select the upload format.
-* Cache memory size, Required, when the mqtt connection is abnormal, set the size limit of the uploaded data cache in memory.
-* Cache disk size, Required, when the mqtt connection is abnormal, set the size limit of the uploaded data cache in disk.
-* Host, Required, Fill in the hostname of MQTT Broker, where the default connection is to the emqx public broker.
-* Port, Required, Fill in the port number of the MQTT Broker, the default is 1883.
-* Username, Optional, Set up a username, which is optional.
-* Password, Optional, Set up a password, which is optional.
-* Click on the `Submit` button to complete the configuration of the northbound application, and the application card automatically enters the **running** state.
+Subscribe to the data group of the southbound device:
 
-### Step 16 Subscribe to southbound tag groups
+* Southbound device: select the southbound device that has been created from the drop-down box, for example, modbus-tcp-1;
+* Group: click the drop-down box to select the group you want to subscribe to, for example, group-1;
+* Click `Submit` to complete the subscription.
 
-Click any blank space of the application node to show the subscription group interface, as shown below.
+### Step 10, Check The Data At The MQTT Client.
 
-![subscriptions-add](./assets/subscriptions-add.png)
-
-To subscribe data group of southbound devices,
-
-* Click on the `Add subscription` button in the upper-right corner to add a subscription.
-* Click on the drop down box to select the southbound device, in this case, we select the modbus-tcp-1 device built above.
-* Select the Group you want to subscribe to in the drop-down box, in this case, we select the group-1 created above.
-* Click on `Submit` button to complete the subscription.
-
-### Step 17 Manage subscribed group list
-
-After the subscription is added successfully, all subscribed Groups will be displayed in the Group list, as shown below.
-
-![subscription](./assets/subscription.png)
-
-The Group list contains following components,
-
-* `Clear` button to cancel all subscribed groups with one click.
-* `Delete` button, when selecting all, click the `Delete` button, the effect is equivalent to `Clear`, which can cancel the subscription of all Groups. When you select some groups, and then click the `Delete` button, you can quickly cancel the subscription of the selected groups in batches.
-* Each group contains Group name, device name and `Delete` button.
-
-### Step 18 Check over the payload in MQTT broker
-
-Once the subscription is completed, we can use the MQTT client (MQTTX is recommended here and can be downloaded from the official website [https://www.emqx.com/en/products/mqttx](https://www.emqx.com/en/products/mqttx) to connect to the EMQX broker to view the subscirbed topic's data, as shown below.
+After the subscription is completed, users can use the MQTT client (MQTX is recommended and can be downloaded from [official website](https://www.EMQX.com/zh/products/MQTTX) to connect to the public emqx proxy to view the reported data, as shown in the following figure.
 
 ![mqttx](./assets/mqttx.png)
 
-After successfully subscribed the topic, you can see that MQTTX can receive the data from Neuron.
+After successful subscription, we can see that MQTTX can directly receive the data collected and reported by Neuron.
 
-* Open MQTTX to add a new connection, Fill in the correct name and the Host and Port of the EMQX broker you have just connected, and then start the connection.
-
-* Add a new subscription, the default upload topic format is `/neuron/{node_name}/upload`, where {node_name} is the configured in the northbound application node of MQTT, in this case, we fill in `/neuron/mqtt/upload`.
+* open MQTTX to add a new connection, correctly fill in the name and the Host and Port of the public EMQX Broker, and complete the connection;
+* Add a new subscription, and the Topic should be consistent with the Upload topic in setting northbound application parameters, for example, fill in `/neuron/mqtt/upload`.
 
 :::tip
-When the Subscribe attribute is set for the point, the changed value will be uploaded to the cloud only when the collected value changes.
+The default topic format for uploading topic is `/neuron/{node_name}/upload`, where {node_name} is the name of the created northbound application. Users can also customize the reporting theme.
 :::
+
+## Advanced Operation
+
+### License
+
+At present, Neuron has open source MQTT, RESTful API and Modbus TCP, and users can directly use the open source driver protocols. However, by uploading a valid license, users can use more driving protocols such as OPC UA, Modbus RTU, Mitsubishi PLC and Omron PLC.
+
+Please refer to [License Policy](./license_policy.md) for detailed instructions on how to obtain and upload licenses.
+
+Please refer to [Module List](../module-plugins/module-list.md) for the driver protocols supported by Neuron.
+
+### Tag Advanced Operation
+
+* [Configuration Tag Import/Export](../user-guide/configuration-import-export.md): Import tags in batches with Excel tables.
+* Decimal: used to simply process the collected data, and the usage is: equipment value * decimal = display value;
+* Setting precision: when the data type is float/double, an optional parameter **Precision** will be displayed, which is used to set precision, and the optional range is 1-17.
+* [Control Device](../user-guide/device-control.md)：You can operate the device tag with write attribute through the Neuron/northbound application.
+
+### Data Stream Processing
+
+Neuron supports integration with eKuiper to realize data stream processing functions such as cleaning data and controlling equipment. Please refer to [Data Streamnig](../data-processing-engine/prerequisite-setup.md) for details.
+
+### Upload Changed value to MQTT Broker
+
+When the tag attribute is set to Subscribe, the changed value will be uploaded to the cloud only when the collected value changes.
+
+### Management Operation
+
+* [Log Management](../user-guide/log-management.md)。
+* [Change Password](../user-guide/change-password.md)。
+* [Data Statistics](../user-guide/data-statistics.md)。
+* [Plugin Module Management](../user-guide/plugin-modules-management.md)。
+
+## Description Of Parameters
+
+Parameters marked with `*` are required, and each parameter is followed by a field description key. Hover the mouse over it to explain the field in detail.
+
+### Description Of Group Related Parameters
+
+* Interval, which is used to set the time interval for Neuron to collect data from equipment and report the data to MQTT. The minimum setting can be 100ms, but when there are a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, the value of interval can be appropriately increased;
+
+### Southbound Device/Northbound Application Card Parameters
+
+After the southbound device/northbound application is successfully created, a newly created card will appear in the southbound/northbound management interface, as shown in the following figure.
+
+![south-devices](./assets/south-devices.png)
+
+This device card contains the following information:
+
+* Name: the unique name provided by the user for the southbound equipment/northbound application. After setting, the name cannot be modified temporarily.
+* Device/application configuration: Click this button to enter the configuration interface, which is used to set the parameter settings required for connecting Neuron with southbound devices/northbound applications.
+* Data statistics：statistics node card information.
+* More
+    * DEBUG log: print the node debug log, and restore the default log level after ten minutes.
+    * Delete: delete this node from the list of southbound devices.
+* Status: displays the current status of the equipment node and five working statuses.
+    * **Init**: after the southbound device/northbound application card is added for the first time, it will enter the initialization state.
+    * **Setup**: enter the device/application configuration and enter the configuration state.
+    * **Ready**: after successful configuration, enter the ready state.
+    * **Running**：running device card.
+* Working state switch button: open to connect to the device.
+    * Open, Neuron establishes connection with equipment/application, and begins to collect data.
+    * Close, disconnect, stop collecting data.
+* Connection Status: displays the connection status of the device.
+    :::tip
+    After adding group and tag, Neuron will connect the device to collect data, and the connection status will show **Connected**.
+    :::
+* Delay time: the time interval between sending and receiving an instruction.
+* Plugin: Used to display the name of the plugin module used by this device.
+
