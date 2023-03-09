@@ -82,7 +82,6 @@
 |![mqtt](./assets/MQTT.png)| <div style="width:285pt">MQTT</div>                   | <div style="width:40pt">开源</div>   | <div style="width:50pt">是</div>       | <div style="width:110pt"> </div> |
 |![mqtt](./assets/MQTT.png)| <div style="width:285pt">MQTT + Sparkplug B</div>     | <div style="width:40pt">商业</div>   | <div style="width:50pt">是</div>       |  |
 |![sparkplug](./assets/Sparkplug.png)| <div style="width:285pt">Websocket</div>              | <div style="width:40pt">商业</div>   | <div style="width:50pt">否</div>       |  |
-|![websocket](./assets/Websocket.png)| <div style="width:285pt">RESTful API</div>            | <div style="width:40pt">开源</div>   | <div style="width:50pt">是</div>       |  |
 
 ### 应用程序
 
