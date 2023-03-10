@@ -63,7 +63,7 @@
         },
         {
           "title": "连接到MQTT",
-          "path": "quick-start/license-install/mqtt-config"
+          "path": "quick-start/mqtt-config"
         }
       ]
     },
