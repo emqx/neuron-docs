@@ -320,6 +320,27 @@ The name of the json file should be the same as the module name module_name.
     }
 }
 ```
+The **type**value in the plug-in configuration file is described as follows：
+**Data Type**
+
+* INT8   = 1
+* UINT8  = 2
+* INT16  = 3
+* UINT16 = 4
+* INT32  = 5
+* UINT32 = 6
+* INT64  = 7
+* UINT64 = 8
+* FLOAT  = 9
+* DOUBLE = 10
+* BIT    = 11
+* BOOL   = 12
+* STRING = 13
+* BYTES  = 14
+* ERROR = 15
+* WORD = 16
+* DWORD = 17
+* LWORD = 18
 
 ### build
 
