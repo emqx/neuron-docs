@@ -1,4 +1,4 @@
-# 安装 Modbus 模拟器
+# 下载安装 Modbus 模拟器
 
 安装 PeakHMI Slave Simulators 软件，安装包可在 [PeakHMI 官网](https://hmisys.com) 中下载。
 

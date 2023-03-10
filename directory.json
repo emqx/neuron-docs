@@ -38,11 +38,11 @@
           "path": "quick-start/installation"
         },
         {
-          "title": "下载安装Modbus模拟器",
+          "title": "下载安装 Modbus 模拟器",
           "path": "quick-start/installation-modbus"
         },
         {
-          "title": "登陆Neuron页面",
+          "title": "登陆 Neuron 页面",
           "path": "quick-start/login-neuron"
         },
         {
@@ -62,8 +62,8 @@
           "path": "quick-start/data-monitoring"
         },
         {
-          "title": "连接到MQTT",
-          "path": "quick-start/license-install/mqtt-config"
+          "title": "连接到 MQTT",
+          "path": "quick-start/mqtt-config"
         }
       ]
     },
