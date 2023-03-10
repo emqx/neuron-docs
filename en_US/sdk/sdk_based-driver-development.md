@@ -320,7 +320,7 @@ The name of the json file should be the same as the module name module_name.
     }
 }
 ```
-The  value of **type** in the plugin configuration file is described as follows:
+The  value of **tag_regex.type** in the plugin configuration file is described as follows:
 
 * INT8   = 1
 * UINT8  = 2

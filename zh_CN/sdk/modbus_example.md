@@ -394,7 +394,7 @@ modbus-tcp.json 文件配置插件设置，其中 tag_regex 和 timeout 是必�
     }
 }
 ```
-插件配置文件中的**type**值说明如下：
+插件配置文件中的**tag_regex.type**值说明如下：
 
 * INT8   = 1
 * UINT8  = 2
