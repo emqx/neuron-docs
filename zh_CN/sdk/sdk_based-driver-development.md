@@ -320,6 +320,27 @@ json 文件的名称应与模块名称 module_name 保持一致。
     }
 }
 ```
+插件配置文件中的**type**值说明如下：
+
+* INT8   = 1
+* UINT8  = 2
+* INT16  = 3
+* UINT16 = 4
+* INT32  = 5
+* UINT32 = 6
+* INT64  = 7
+* UINT64 = 8
+* FLOAT  = 9
+* DOUBLE = 10
+* BIT    = 11
+* BOOL   = 12
+* STRING = 13
+* BYTES  = 14
+* ERROR = 15
+* WORD = 16
+* DWORD = 17
+* LWORD = 18
+
 
 ### build
 
