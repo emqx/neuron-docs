@@ -34,6 +34,10 @@
       "title": "快速入门",
       "children": [
         {
+          "title": "硬件规格",
+          "path": "quick-start/hardware-specifications"
+        },
+        {
           "title": "下载安装",
           "path": "quick-start/installation-neuron"
         },
@@ -43,7 +47,7 @@
         },
         {
           "title": "申请和安装许可证",
-          "path": "quick-start/license-applyinstall"
+          "path": "quick-start/license-install/license-install"
         },
         {
           "title": "连接到南向设备",
@@ -60,7 +64,20 @@
         {
           "title": "连接到MQTT",
           "path": "quick-start/mqtt-config"
+        },
+        {
+          "title": "数据处理",
+          "children": [
+            {
+              "title": "清洗数据",
+              "path": "quick-start/data-clean"
+            },
+            {
+              "title": "反控设备",
+              "path": "quick-start/equipment-control"
+            }]
         }
+      
       ]
     },
     {
