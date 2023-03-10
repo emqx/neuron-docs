@@ -1,8 +1,8 @@
 # HTTP API
 
-Neuron provide a series of API services for IIoT platform, to query the basic information, to control gateway behaviors or to setup the polling configuration. IIoT platform can initiate the communication by sending request message to Neuron. By return, Neuron would send back the required information or execute the deserved action. If there is error, a error code would be returned to tell the reason of failure.
+Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息、控制网关行为或设置轮询配置。 IIoT 平台必须通过向 Neuron 发送请求消息来启动通信。 通过返回，Neuron 将返回所需的信息或执行相应的操作。 如果有错误，将返回一个错误代码来说明失败的原因。
 
-## Value
+## 值
 
 ### Baud
 
@@ -32,7 +32,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * Data_7 = 2
 * Data_8 = 3
 
-### Data Type
+### 数据类型
 
 * INT8   = 1
 * UINT8  = 2
@@ -53,7 +53,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * DWORD = 17
 * LWORD = 18
 
-### Data Attribute
+### 点位属性
 
 * READ = 0x01
 
@@ -61,30 +61,30 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 * SUBSCRIBE = 0x04
 
-### Node Type
+### Node 类型
 
 * DRIVER = 1
 * APP = 2
 
-### Plugin Kind
+### 插件类型
 
 * STATIC = 0
 * SYSTEM = 1
 * CUSTOM = 2
 
-### Node CTL
+### Node 控制
 
 * START = 0
 * STOP = 1
 
-### Node State
+### Node 状态
 
 * INIT = 1
 * READY = 2
 * RUNNING = 3
 * STOPPED = 4
 
-### Node Link State
+### Node 连接状态
 
 * DISCONNECTED = 0
 * CONNECTED = 1
@@ -93,23 +93,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 *POST*  **/api/v2/ping**
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-## Login
+## 登录
 
 *POST*   **/api/v2/login**
 
-### Request Headers
+### 请求头部
 
 **Content-Type**          application/json
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 401
@@ -120,7 +120,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
   * 1007, 验证令牌错误
   * 1008, 无效令牌
 
-### Body
+### 请求体
 
 ```json
 {
@@ -129,7 +129,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -137,30 +137,30 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Password
+## 更改密码
 
 *POST*   **/api/v2/password**
 
-### Request Headers
+### 请求头部
 
 **Content-Type** application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 401
-  * 1004 missing token
-  * 1005 decoding token error
-  * 1012 password length too short or too long
-  * 1013 duplicate password
+  * 1004, 缺少令牌
+  * 1005, 解码令牌错误
+  * 1012, 密码长度太短或太长
+  * 1013, 密码重复
 * 403
-  * 1006 expired token
-  * 1007 validate token error
-  * 1008 invalid token
+  * 1006, 令牌过期
+  * 1007, 验证令牌错误
+  * 1008, 无效令牌
 
-### Body
+### 请求体
 
 ```json
 {
@@ -170,7 +170,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -178,27 +178,27 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Add Node
+## 添加 Node
 
 *POST*  **/api/v2/node**
 
-### Request Headers
+### 请求头部
 
 **Content-Type** application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-  * 2001 node type invalid
+  * 2001 node 类型无效
 * 404
-  * 2301 library not found
+  * 2301 未找到插件库
 * 409
-  * 2002 node exist
+  * 2002 node 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -209,7 +209,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -217,23 +217,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Del Node
+## 删除 Node
 
 *Delete* /api/v2/node
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
   * 2003 node not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -242,7 +242,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -250,23 +250,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Node(Not Implemented)
+## 更新 Node(未实现)
 
 *PUT* **/api/v2/node**
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
   * 2003 node exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -277,7 +277,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -285,27 +285,27 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Get Node
+## 获取 Node
 
 *GET*  /api/v2/node
 
-### Request Params
+### 请求参数
 
-**type**  required
+**type**  必需
 
-**plugin** optional
+**plugin** 可选
 
-**node** optional
+**node** 可选
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -324,24 +324,24 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Node Setting
+## 配置 Node
 
 *POST*  /api/v2/node/setting
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-  * 2003 node not exist
-  * 2004 node setting invalid
+  * 2003 node 不存在
+  * 2004 node 配置无效
 
-### Body
+### 请求体
 
 ```json
 //The parameter fields in json fill in different fields according to different plugins
@@ -358,10 +358,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```
 
 :::tip
-Please refer to [Plugin Setting](./plugin-setting.md) for the configuration parameters of each plugin.
+每个插件的配置参数具体可参考 [插件设置](../reference/plugin-setting.md)。
 :::
 
-### Response
+### 响应
 
 ```json
 {
@@ -369,26 +369,26 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Get Node Setting
+## 获取 Node 配置
 
 *GET*  /api/v2/node/setting
 
-### Request Params
+### 请求参数
 
-**node**  required
+**node**  必需
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
-  * 2005 node setting not found
+  * 2005 node 配置未发现
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
-### Response
+### 响应
 
 ```json
 //The parameter fields in json fill in different fields according to different plugins
@@ -401,17 +401,17 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Node CTL
+## 控制 Node
 
 *POST*  /api/v2/node/ctl
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Request Status
+### 请求状态
 
 * 200 OK
 * 409
@@ -420,7 +420,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
   * 2008 node not running
   * 2009 node is stopped
 
-### Body
+### 请求体
 
 ```json
 {
@@ -431,7 +431,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -439,23 +439,23 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Get Node State
+## 获取 Node 状态
 
 *GET*  /api/v2/node/state
 
-### Request Params
+### 请求参数
 
 **node**  optional
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -485,17 +485,17 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Add Group
+## 添加 Group
 
 *POST*  /api/v2/group
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
@@ -503,82 +503,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 * 409
   * 2103 group not allow
 
-### Body
-
-```json
-{
-    //group name
-    "name": "gconfig1",
-    //node name
-    "node": "modbus-node",
-    //read/upload interval(ms)
-    "interval": 10000
-}
-```
-
-### Response
-
-```json
-{
-    "error": 0
-}
-```
-
-## Del Group
-
-*DELETE*  /api/v2/group
-
-### Request Headers
-
-**Content-Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200 OK
-* 412
-  * 2101 group already subscribed
-* 404
-  * 2003 node not exist
-  * 2106 group not exist
-
-### Body
-
-```json
-{
-    //node name
-    "node": "modbus-node",
-    //group name
-    "group": "gconfig1"
-}
-```
-
-### Response
-
-```json
-{
-    "error": 0
-}
-```
-
-## Update Group
-
-*PUT*  /api/v2/group
-
-### Request Headers
-
-**Content-Type**  application/json
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200 OK
-* 404
-  * 2106 group not exist
-
-### Body
+### 请求体
 
 ```json
 {
@@ -591,7 +516,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -599,23 +524,98 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Get Group
+## 删除 Group
 
-*GET*  /api/v2/group
+*DELETE*  /api/v2/group
 
-### Request Params
+### 请求头部
 
-**node**  optional
-
-### Request Headers
+**Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
+
+* 200 OK
+* 412
+  * 2101 group already subscribed
+* 404
+  * 2003 node not exist
+  * 2101 group not exist
+
+### 请求体
+
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1"
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 更新 Group
+
+*PUT*  /api/v2/group
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+  * 2106 group not exist
+
+### 请求体
+
+```json
+{
+    //node name
+    "node": "node1",
+    //group name
+    "group": "group",
+    //read/upload interval(ms)
+    "interval": 20000
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 获取 Group
+
+*GET*  /api/v2/group
+
+### 请求参数
+
+**node**  可选
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ````json
 {
@@ -664,17 +664,17 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Add Tag
+## 添加 Tag
 
 *POST*  /api/v2/tags
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 206
@@ -685,7 +685,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 * 404
   * 2003 node not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -703,10 +703,10 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             "attribute": 1,
            //tag type
             "type": 4,
-           //float/double precision, optional(0-17)
+           //floag precision, optional(0-17)
             "precision": 3,
-           //decimal
-            "decimal": 1
+           //decimal, optional
+            "decimal": 0.1
         },
         {
             "name": "tag2",
@@ -724,7 +724,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -733,29 +733,29 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Get Tag
+## 获取 Tag
 
 *GET*  /api/v2/tags
 
-### Request Params
+### 请求参数
 
-**node**  required
+**node**  必需
 
-**group**  required
+**group**  必需
 
-**name** name
+**name** 可选
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
-### Response
+### 响应
 
 ```json
 {
@@ -770,9 +770,9 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             //tag attribute
             "attribute": 1,
             //float/double precision
-            "precision": 1,
+             "precison": 1,
             //decimal
-            "decimal": 0.1
+             "decimal": 0
         },
         {
             "name": "tag2",
@@ -790,34 +790,34 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Update Tag
+## 更新 Tag
 
 *PUT*  /api/v2/tags
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response status
+### 响应状态
 
 * 200 OK
 * 206
-  * 2201 tag not exist
-  * 2202 tag name conflict
-  * 2203 tag attribute not support
-  * 2204 tag type not support
-  * 2205 tag address format invalid
+  * 2201 tag 不存在
+  * 2202 tag 名字冲突
+  * 2203 tag 属性不支持
+  * 2204 tag 类型不支持
+  * 2205 tag 地址格式无效
 * 404
-  * 2003 node not exist
-  * 2106 group not exist
+  * 2003 node 不存在
+  * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
-    //node name
+     //node name
     "node": "modbus-tcp-test",
     //group name
     "group": "group1",
@@ -831,10 +831,10 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             "attribute": 0,
             //tag address
             "address": "1!400001",
-            //float/double precison
-            "precision": 1,
+            //float/double precision
+            "precison": 1,
             //decimal
-            "decimal": 0.001
+            "decimal": 1
         },
         {
             "name": "tag2",
@@ -846,7 +846,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -854,23 +854,23 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Del Tag
+## 删除 Tag
 
 *DELETE*  /api/v2/tags
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -878,7 +878,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
     "group": "config_modbus_tcp_sample_2",
     //node name
     "node": "modbus-node",
-    //tag name
+    //tag names
     "tags": [
         "tag1",
         "tag2"
@@ -886,7 +886,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -894,21 +894,21 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Read Tag
+## 读 Tag
 
 *POST*  /api/v2/read
 
-### Request Headers
+### 请求头部
 
 **Content--Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
 
-### Body
+### 请求体
 
 ```json
 {
@@ -919,7 +919,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -943,24 +943,24 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 ```
 
 ::: tip
-The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
+当某个点位读数值出错时，将显示 **error** 字段，不再显示 **value** 字段。
 :::
 
-## Write Tag
+## 写 Tag
 
 *POST*  /api/v2/write
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Body
+### 请求体
 
 ```json
 {
@@ -971,7 +971,7 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -979,25 +979,25 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Add Plugin
+## 添加插件
 
 *POST*  /api/v2/plugin
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
 * 400
   
-  * 2302 library info invalid
+  * 2302 库信息无效
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1006,7 +1006,7 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1014,30 +1014,30 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Del Plugin
+## 删除插件
 
 *DELETE*  /api/v2/plugin
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Body
+### 请求体
 
 ```json
 {
     //plugin name
-   "plugin": "modbus-tcp"
+    "plugin": "modbus-tcp"
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1045,23 +1045,23 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Plugin
+## 获取插件
 
 *GET*  /api/v2/plugin
 
-### Request Params
+### 请求参数
 
 **plugin**  optional
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -1082,23 +1082,23 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Subscribe
+## 订阅
 
 *POST*  /api/v2/subscribe
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1111,7 +1111,7 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1119,23 +1119,23 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## UnSubscribe
+## 取消订阅
 
 *DELETE*  /api/v2/subscribe
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1143,12 +1143,12 @@ The value is displayed only when the value is read correctly, when the value is 
     "app": "mqtt-node",
     //driver name
     "driver": "driver-node",
-    //driver node group name
+    //driver node group config name
     "group": "gconfig1"
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1156,23 +1156,23 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Plugin Schema
+## 获取插件 Schema
 
 *GET*  /api/v2/schema
 
-### Request Params
+### 请求参数
 
-**plugin_name**  required
+**plugin_name**  必需
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -1258,24 +1258,24 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Subscribe Group
+## 获取订阅的 Group
 
 *GET*  /api/v2/subscribe
 
-### Request Params
+### 请求参数
 
-**app**  required
+**app**  必需
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
 * 400
 
-### Response
+### 响应
 
 ```json
 {
@@ -1294,49 +1294,49 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get Version
+## 获取版本信息
 
 *GET*  /api/v2/version
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Response
+### 响应
 
 ```json
 {
     "build_date": "2022-06-01",
-    "revision": "99e2184+dirty", // dirty indicates uncommit changes
+    "revision": "99e2184+dirty", // dirty 表示有未提交的更改
     "version": "2.0.1"
 }
 ```
 
-## Upload License
+## 上传 License
 
 *POST*  /api/v2/license
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
   * 0    OK
-  * 2402 license expired
+  * 2402 license过期
 * 400
-  * 2401 license invalid
+  * 2401 license无效
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1344,7 +1344,7 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1352,23 +1352,23 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Get License Info
+## 获取 License 信息
 
 *GET*  /api/v2/license
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2400 license not found
+  * 2400 license未找到
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Response
+### 响应
 
 ```json
 {
@@ -1383,26 +1383,26 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-## Download log files
+## 下载日志文件
 
 *GET*  /api/v2/logs
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 1011 file not exist
-  * 1014 command execution failed
+  * 1011 文件不存在
+  * 1014 执行指令失败
 * 500
-  * 1001 internal error
+  * 1001 内部错误
 
-### Response
+### 响应
 
-Response if there is an error returned:
+如果有错误返回时响应：
 
 ```json
 {
@@ -1410,32 +1410,33 @@ Response if there is an error returned:
 }
 ```
 
-## Update node log level
+## 修改节点日志等级
 
-*PUT*  /api/v2/level
+*PUT*  /api/v2/log/level
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 * 500
-  * 1001 internal error
-  * 1010 is busy
+  * 1001 内部错误
+  * 1010 程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
-    "node_name": "modbus-tcp"
+    // node name
+    "node": "modbus-tcp"
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1444,29 +1445,29 @@ Response if there is an error returned:
 ```
 
 :::tip
-Call the api to modify the log level of the node to debug, and automatically switch to the default level in about ten minutes.
+调用接口修改节点的日志等级为 debug，十分钟左右自动切回默认等级。
 :::
 
-## Get Metrics
+## 获取统计信息
 
 *GET*  /api/v2/metrics
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Request Params
+### 请求参数
 
-**category**  optional, one of `global`, `driver` and `app`
-**node**      optional, filter with node name, only meaningful when `category=driver` or `category=app`
+**category**  可选, 取值为`global`, `driver` and `app`之一
+**node**      可选, 用节点名过滤, 且必须指定`category=driver`或`category=app`
 
-### Response Status
+### 响应状态
 
 * 200 OK
-* 400 Bad request
-* 500 Internal server error
+* 400 请求错误
+* 500 服务器内部错误
 
-### Response
+### 响应
 
 ```text
 # HELP core_dumped Whether there is any core dump

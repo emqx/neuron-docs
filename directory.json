@@ -1,23 +1,49 @@
 {
   "cn": [
     {
-      "title": "产品概览",
-      "path": "./"
-    },
-    {
-      "title": "开始使用",
+      "title": "介绍",
       "children": [
         {
-          "title": "安装",
-          "path": "getting-started/installation"
+          "title": "产品概览",
+          "path": "./"
         },
         {
-          "title": "快速教程",
-          "path": "getting-started/quick_start"
+          "title": "使用场景",
+          "children": [
+            {
+              "title": "集成",
+              "path": "introduction/use-scenes/integration/integration"
+            },
+            {
+              "title": "案例",
+              "path": "introduction/use-scenes/use-cases/use_cases"
+            }
+          ]
+        },
+        {
+          "title": "模块列表",
+          "path": "introduction/module-list/module-list"
         },
         {
           "title": "许可证政策",
-          "path": "getting-started/license_policy"
+          "path": "introduction/license-describe"
+        }
+      ]
+    },
+    {
+      "title": "快速入门",
+      "children": [
+        {
+          "title": "安装",
+          "path": "quick-start/installation"
+        },
+        {
+          "title": "快速教程",
+          "path": "quick-start/quick_start"
+        },
+        {
+          "title": "安装许可证",
+          "path": "quick-start/license-install/license-install"
         }
       ]
     },
@@ -51,29 +77,8 @@
       ]
     },
     {
-      "title": "数据处理引擎",
-      "children": [
-        {
-          "title": "设置先决条件",
-          "path": "data-processing-engine/prerequisite-setup"
-        },
-        {
-          "title": "清洗数据",
-          "path": "data-processing-engine/data-cleansing"
-        },
-        {
-          "title": "控制设备",
-          "path": "data-processing-engine/device-control"
-        }
-      ]
-    },
-    {
       "title": "驱动模块",
       "children": [
-        {
-          "title": "模块列表",
-          "path": "module-plugins/module-list"
-        },
         {
           "title": "模块描述",
           "children": [
@@ -136,6 +141,70 @@
       ]
     },
     {
+      "title": "数据处理引擎",
+      "children": [
+        {
+          "title": "设置先决条件",
+          "path": "data-processing-engine/prerequisite-setup"
+        },
+        {
+          "title": "清洗数据",
+          "path": "data-processing-engine/data-cleansing"
+        },
+        {
+          "title": "控制设备",
+          "path": "data-processing-engine/device-control"
+        }
+      ]
+    },
+    {
+      "title": "API 接口",
+      "children": [
+        {
+          "title": "HTTP API",
+          "path": "api/http-api"
+        },
+        {
+          "title": "MQTT API",
+          "path": "api/mqtt-api"
+        },
+        {
+          "title": "错误代码",
+          "path": "api/error-code"
+        }
+      ]
+    },
+    {
+      "title": "参与项目",
+      "children": [
+        {
+          "title": "架构设计",
+          "path": "project/architecture/architecture"
+        },
+        {
+          "title": "SDK 教程",
+          "children": [
+            {
+              "title": "基于 SDK 的驱动开发",
+              "path": "project/sdk/sdk_based-driver-development"
+            },
+            {
+              "title": "南向开发思维导图",
+              "path": "project/sdk/mind_mapping"
+            },
+            {
+              "title": "Modbus 插件开发示例",
+              "path": "project/sdk/modbus_example"
+            },
+            {
+              "title": "MQTT 插件开发示例",
+              "path": "project/sdk/mqtt_example"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "设备连接示例",
       "children": [
         {
@@ -145,53 +214,8 @@
       ]
     },
     {
-      "title": "SDK 教程",
-      "children": [
-        {
-          "title": "基于 SDK 的驱动开发",
-          "path": "sdk/sdk_based-driver-development"
-        },
-        {
-          "title": "南向开发思维导图",
-          "path": "sdk/mind_mapping"
-        },
-        {
-          "title": "Modbus 插件开发示例",
-          "path": "sdk/modbus_example"
-        },
-        {
-          "title": "MQTT 插件开发示例",
-          "path": "sdk/mqtt_example"
-        }
-      ]
-    },
-    {
-      "title": "架构设计",
-      "path": "architecture"
-    },
-    {
-      "title": "集成",
-      "path": "integration"
-    },
-    {
-      "title": "案例",
-      "path": "use_cases"
-    },
-    {
       "title": "参考",
       "children": [
-        {
-          "title": "HTTP API",
-          "path": "reference/http-api"
-        },
-        {
-          "title": "MQTT API",
-          "path": "reference/mqtt-api"
-        },
-        {
-          "title": "错误代码",
-          "path": "reference/error-code"
-        },
         {
           "title": "插件设置",
           "path": "reference/plugin-setting"
@@ -202,22 +226,48 @@
   "en": [
     {
       "title": "Introduction",
-      "path": "./"
-    },
-    {
-      "title": "Getting Started",
       "children": [
         {
-          "title": "Installation",
-          "path": "getting-started/installation"
+          "title": "Product Overview",
+          "path": "./"
         },
         {
-          "title": "Quick Start",
-          "path": "getting-started/quick_start"
+          "title": "Use Scenes",
+          "children": [
+            {
+              "title": "Integrations",
+              "path": "introduction/use-scenes/integration/integration"
+            },
+            {
+              "title": "Use Cases",
+              "path": "introduction/use-scenes/use-cases/use_cases"
+            }
+          ]
+        },
+        {
+          "title": "Module List",
+          "path": "introduction/module-list/module-list"
         },
         {
           "title": "License Policy",
-          "path": "getting-started/license_policy"
+          "path": "introduction/license-describe"
+        }
+      ]
+    },
+    {
+      "title": "Quick Start",
+      "children": [
+        {
+          "title": "Installation",
+          "path": "quick-start/installation"
+        },
+        {
+          "title": "Quick Start",
+          "path": "quick-start/quick_start"
+        },
+        {
+          "title": "Install License",
+          "path": "quick-start/license-install/license-install"
         }
       ]
     },
@@ -251,29 +301,8 @@
       ]
     },
     {
-      "title": "Data Streaming",
-      "children": [
-        {
-          "title": "Prerequisite Setup",
-          "path": "data-processing-engine/prerequisite-setup"
-        },
-        {
-          "title": "Data Cleansing",
-          "path": "data-processing-engine/data-cleansing"
-        },
-        {
-          "title": "Control Device",
-          "path": "data-processing-engine/device-control"
-        }
-      ]
-    },
-    {
       "title": "Driver Modules",
       "children": [
-        {
-          "title": "Module List",
-          "path": "module-plugins/module-list"
-        },
         {
           "title": "Module Description",
           "children": [
@@ -332,6 +361,70 @@
       ]
     },
     {
+      "title": "Data Streaming",
+      "children": [
+        {
+          "title": "Prerequisite Setup",
+          "path": "data-processing-engine/prerequisite-setup"
+        },
+        {
+          "title": "Data Cleansing",
+          "path": "data-processing-engine/data-cleansing"
+        },
+        {
+          "title": "Control Device",
+          "path": "data-processing-engine/device-control"
+        }
+      ]
+    },
+    {
+      "title": "API",
+      "children": [
+        {
+          "title": "HTTP API",
+          "path": "api/http-api"
+        },
+        {
+          "title": "MQTT API",
+          "path": "api/mqtt-api"
+        },
+        {
+          "title": "Error Codes",
+          "path": "api/error-code"
+        }
+      ]
+    },
+    {
+      "title": "Project",
+      "children": [
+        {
+          "title": "Architecture",
+          "path": "project/architecture/architecture"
+        },
+        {
+          "title": "SDK Tutorial",
+          "children": [
+            {
+              "title": "SDK-based driver development",
+              "path": "project/sdk/sdk_based-driver-development"
+            },
+            {
+              "title": "Southbound development mind map",
+              "path": "project/sdk/mind_mapping"
+            },
+            {
+              "title": "Modbus plugin development example",
+              "path": "project/sdk/modbus_example"
+            },
+            {
+              "title": "MQTT Application Development Example",
+              "path": "project/sdk/mqtt_example"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "Equipment Connections",
       "children": [
         {
@@ -341,53 +434,8 @@
       ]
     },
     {
-      "title": "SDK Tutorial",
-      "children": [
-        {
-          "title": "SDK-based driver development",
-          "path": "sdk/sdk_based-driver-development"
-        },
-        {
-          "title": "Southbound development mind map",
-          "path": "sdk/mind_mapping"
-        },
-        {
-          "title": "Modbus plugin development example",
-          "path": "sdk/modbus_example"
-        },
-        {
-          "title": "MQTT Application Development Example",
-          "path": "sdk/mqtt_example"
-        }
-      ]
-    },
-    {
-      "title": "Architecture",
-      "path": "architecture"
-    },
-    {
-      "title": "Integrations",
-      "path": "integration"
-    },
-    {
-      "title": "Use Cases",
-      "path": "use_cases"
-    },
-    {
       "title": "Reference",
       "children": [
-        {
-          "title": "HTTP API",
-          "path": "reference/http-api"
-        },
-        {
-          "title": "MQTT API",
-          "path": "reference/mqtt-api"
-        },
-        {
-          "title": "Error Codes",
-          "path": "reference/error-code"
-        },
         {
           "title": "Plugin Setting",
           "path": "reference/plugin-setting"

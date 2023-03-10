@@ -193,9 +193,9 @@ The default topic format for uploading topic is `/neuron/{node_name}/upload`, wh
 
 At present, Neuron has open source MQTT, RESTful API and Modbus TCP, and users can directly use the open source driver protocols. However, by uploading a valid license, users can use more driving protocols such as OPC UA, Modbus RTU, Mitsubishi PLC and Omron PLC.
 
-Please refer to [License Policy](./license_policy.md) for detailed instructions on how to obtain and upload licenses.
+Please refer to [Inatsll License](../quick-start/license-install/license-install.md) for detailed instructions on how to obtain and upload licenses.
 
-Please refer to [Module List](../module-plugins/module-list.md) for the driver protocols supported by Neuron.
+Please refer to [Module List](../introduction/module-list/module-list.md) for the driver protocols supported by Neuron.
 
 ### Tag Advanced Operation
 

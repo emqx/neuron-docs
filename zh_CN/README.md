@@ -12,15 +12,15 @@ Neuron 的设计基于实时异步事件驱动处理，以充分利用低延迟�
 
 ## 松耦合模块化
 
-基于解耦模块化插件的 Neuron [架构设计](./architecture.md)，通过热插拔更多的服务模块允许更多的功能扩展。每个可插拔模块独立工作，互不干扰，具有自己特定的服务能力。
+基于解耦模块化插件的 Neuron [架构设计](./project/architecture/architecture.md)，通过热插拔更多的服务模块允许更多的功能扩展。每个可插拔模块独立工作，互不干扰，具有自己特定的服务能力。
 
 ## 多样化的连接
 
-Neuron 为各个行业提供广泛多样的南向可插拔模块，包括楼宇自动化、CNC 机器、机器人、电力、各种 PLC 甚至智能传感器。 Neuron 支持对 30 多种工业协议的最广泛访问，例如 Modbus、OPCUA、Ethernet/IP、IEC104、BACnet、Siemens、Mitsubishi 等 [更多插件模块](./module-plugins/module-list.md)。北向可插拔模块包括用于云和本地 IIoT 平台连接的 MQTT 和 Websocket。
+Neuron 为各个行业提供广泛多样的南向可插拔模块，包括楼宇自动化、CNC 机器、机器人、电力、各种 PLC 甚至智能传感器。 Neuron 支持对 30 多种工业协议的最广泛访问，例如 Modbus、OPCUA、Ethernet/IP、IEC104、BACnet、Siemens、Mitsubishi 等 [更多插件模块](./introduction/module-list/module-list.md)。北向可插拔模块包括用于云和本地 IIoT 平台连接的 MQTT 和 Websocket。
 
 ## 多源聚合
 
-Neuron 可以同时与各种工业设备建立 1000 个或以上的连接。 同时收集所有连接的所有数据并根据用户指定的配置转发到指定的 MQTT 消息代理。也就是说，通过指定的 MQTT 代理向数据消费者提供所有信息的单一入口点，从而简化 IIoT 平台或工业应用程序从各种来源获取这些数据，例如 [统一命名空间](./use_cases.md) 架构 .
+Neuron 可以同时与各种工业设备建立 1000 个或以上的连接。 同时收集所有连接的所有数据并根据用户指定的配置转发到指定的 MQTT 消息代理。也就是说，通过指定的 MQTT 代理向数据消费者提供所有信息的单一入口点，从而简化 IIoT 平台或工业应用程序从各种来源获取这些数据，例如 [统一命名空间](./introduction/use-scenes/use-cases/use_cases.md) 架构 .
 
 ## 流式处理引擎
 
@@ -32,15 +32,15 @@ Neuron 集成了 [eKuiper](https://www.lfedge.org/projects/ekuiper) 流式 SQL �
 
 ## API 和 MQTT 服务
 
-Neuron 提供 [HTTP-API](./reference/http-api.md) 和 [MQTT-API](./reference/mqtt-api.md) 服务，无需现场操作即可操作 Neuron 和工业设备。这允许云和本地 IIoT 平台将命令传递给连接的机器/设备，根据大数据分析结果更改其参数设置，或修改数据标签配置以适应更多机器/设备。
+Neuron 提供 [HTTP-API](./api/http-api.md) 和 [MQTT-API](./api/mqtt-api.md) 服务，无需现场操作即可操作 Neuron 和工业设备。这允许云和本地 IIoT 平台将命令传递给连接的机器/设备，根据大数据分析结果更改其参数设置，或修改数据标签配置以适应更多机器/设备。
 
 ## 更好的集成
 
-Neuron 通过专用的北向 MQTT 模块将 IIoT 平台、大数据和 AI/ML 分析软件更好地[集成](./integration.md)到私有云、EMQX Cloud、AWS、Google Cloud、Azure 或本地服务器中。
+Neuron 通过专用的北向 MQTT 模块将 IIoT 平台、大数据和 AI/ML 分析软件更好地[集成](./introduction/use-scenes/integration/integration.md)到私有云、EMQX Cloud、AWS、Google Cloud、Azure 或本地服务器中。
 
 ## 统一数据运营
 
-Neuron 支持 SparkplugB 协议，可以通过 EMQX 代理充当 [SparkplugB 统一工业架构](./use_cases.md)的 EoN 节点，为工业应用提供统一的数据操作，消除 ERP、MES、SCADA 和 historian 访问设备数据的复杂性。
+Neuron 支持 SparkplugB 协议，可以通过 EMQX 代理充当 [SparkplugB 统一工业架构](./introduction/use-scenes/use-cases/use_cases.md)的 EoN 节点，为工业应用提供统一的数据操作，消除 ERP、MES、SCADA 和 historian 访问设备数据的复杂性。
 
 ## 数据标签优化
 
