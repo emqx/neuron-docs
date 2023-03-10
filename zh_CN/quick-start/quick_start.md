@@ -192,9 +192,9 @@ $ telnet <运行 Modbus 模拟器 PC 端的 IP> 502
 
 目前，Neuron 开源了 MQTT、RESTful API、Modbus TCP，用户可以直接使用开源的驱动协议。但是，通过上传有效的许可证，用户可使用 OPC UA、Modbus RTU、三菱 PLC、欧姆龙 PLC 等更多的驱动协议。
 
-许可证的获取及上传方式的详细说明请参考 [许可证政策](./license_policy.md)。
+许可证的获取及上传方式的详细说明请参考 [许可证政策](../quick-start/license-install/license-install.md)。
 
-Neuron 已支持的驱动协议可参考 [模块列表](../module-plugins/module-list.md)。
+Neuron 已支持的驱动协议可参考 [模块列表](../introduction/module-list/module-list.md)。
 
 ### 点位进阶操作
 

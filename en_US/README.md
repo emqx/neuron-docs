@@ -12,15 +12,15 @@ Neuron is designed based on asynchourous real-time processing to take full advan
 
 **Loosely-coupled Modularity**
 
-Neuron design framework is based on decoupled modular plugin [architecture](./architecture.md) which allows more extension services by hot-plugging modules. Each pluggable module has its own specific capability of service and would work independently without interfering with each other.
+Neuron design framework is based on decoupled modular plugin [architecture](./project/architecture/architecture.md) which allows more extension services by hot-plugging modules. Each pluggable module has its own specific capability of service and would work independently without interfering with each other.
 
 **Diverse Connectivity**
 
-Neuron offers diverse southbound pluggable communication modules including 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./module-plugins/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise industrial IoT platform connection. These modules are widely used in building automation, CNC machines, Robotics, Electricity, and various PLCs communication.
+Neuron offers diverse southbound pluggable communication modules including 30+ kinds of industrial protocols such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi and [more](./introduction/module-list/module-list.md). Northbound pluggable modules include MQTT and Websocket for cloud and on-premise industrial IoT platform connection. These modules are widely used in building automation, CNC machines, Robotics, Electricity, and various PLCs communication.
 
 **Multi-source Aggregation**
 
-Neuron can simultaneously make a 1000 or above connections to various industrial devices. All source data from these connections would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That is a single point of access of all information like what [unified namespace](./use_cases.md) architecture provides for data consumers, thus streamlining the data acquisition of industrial IoT platform and industrial applications.
+Neuron can simultaneously make a 1000 or above connections to various industrial devices. All source data from these connections would be collected concurrently and forwarded to a designated MQTT message broker based on user-specified configuration. That is a single point of access of all information like what [unified namespace](./introduction/use-scenes/use-cases/use_cases.md) architecture provides for data consumers, thus streamlining the data acquisition of industrial IoT platform and industrial applications.
 
 **Streaming Process Engine**
 
@@ -32,15 +32,15 @@ With ultra-low resource consumption, Neuron executables can be deployed natively
 
 **API and MQTT Services**
 
-Neuron offers cloud industrial IoT platform or on-premise industrial applications various [HTTP-API](./reference/http-api.md) and [MQTT-API](./reference/mqtt-api.md) services which includes sending the control command to connected machines or devices, modifying device parameters based on big data and AI/ML analysis results, and changing configuration to accommodate more data tags and device connections without onsite operation.
+Neuron offers cloud industrial IoT platform or on-premise industrial applications various [HTTP-API](./api/http-api.md) and [MQTT-API](./api/mqtt-api.md) services which includes sending the control command to connected machines or devices, modifying device parameters based on big data and AI/ML analysis results, and changing configuration to accommodate more data tags and device connections without onsite operation.
 
 **Better Integration**
 
-Neuron has better [integration](./integration.md) with industrial IoT platform, big data, and AI/ML analytic software into private cloud, EMQX Cloud, AWS, Google Cloud, Azure, or on-premise server via dedicated northbound MQTT modules.
+Neuron has better [integration](./introduction/use-scenes/integration/integration.md) with industrial IoT platform, big data, and AI/ML analytic software into private cloud, EMQX Cloud, AWS, Google Cloud, Azure, or on-premise server via dedicated northbound MQTT modules.
 
 **Unified DataOps**
 
-Neuron supports [Sparkplug B communication](./use_cases.md) and thus assists the "data polling" devices to be smarter to report Sparkplug B format data message in asynchronous way, eliminating the complexity of ERP, MES, SCADA and historian to access the device data by using an open, unified, interoperable standard for industrial data exchange. 
+Neuron supports [Sparkplug B communication](./introduction/use-scenes/use-cases/use_cases.md) and thus assists the "data polling" devices to be smarter to report Sparkplug B format data message in asynchronous way, eliminating the complexity of ERP, MES, SCADA and historian to access the device data by using an open, unified, interoperable standard for industrial data exchange. 
 
 **Data Tags Optimization**
 
