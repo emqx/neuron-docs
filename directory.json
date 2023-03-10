@@ -97,39 +97,6 @@
       "title": "驱动模块",
       "children": [
         {
-          "title": "模块描述",
-          "children": [
-            {
-              "title": "云连接",
-              "path": "module-plugins/module-description/cloud-connectivity"
-            },
-            {
-              "title": "应用",
-              "path": "module-plugins/module-description/application"
-            },
-            {
-              "title": "PLC 设备",
-              "path": "module-plugins/module-description/plc-drivers"
-            },
-            {
-              "title": "全球标准",
-              "path": "module-plugins/module-description/global-standards"
-            },
-            {
-              "title": "电力",
-              "path": "module-plugins/module-description/electricity"
-            },
-            {
-              "title": "楼宇自动化",
-              "path": "module-plugins/module-description/building-automation"
-            },
-            {
-              "title": "数控机床和机器人",
-              "path": "module-plugins/module-description/cnc-machines-robotics"
-            }
-          ]
-        },
-        {
           "title": "模块配置",
           "path": "module-plugins/module-driver"
         },
