@@ -85,7 +85,7 @@
 ### Application
 
 |Icon| Protocol Name         | Type        | Available | Remark |
-|| --------------------- | ----------- | --------- | ------- |
+|----| --------------------- | ----------- | --------- | ------- |
 |![ekuiper](./assets/ekuiper.png)| <div style="width:295pt">eKuiper Stream Processing Engine</div>    | <div style="width:110pt">Open Source</div>  | <div style="width:50pt">Yes</div>        | <div style="width:110pt"> </div> |
 
 ## EMQ License for commercial modules
