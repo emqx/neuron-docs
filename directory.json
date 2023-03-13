@@ -34,6 +34,10 @@
       "title": "快速入门",
       "children": [
         {
+          "title": "硬件规格",
+          "path": "quick-start/hardware-specifications"
+        },
+        {
           "title": "下载安装",
           "path": "quick-start/installation"
         },
@@ -43,7 +47,7 @@
         },
         {
           "title": "登陆 Neuron 页面",
-          "path": "quick-start/login-neuron"
+          "path": "quick-start/login"
         },
         {
           "title": "申请和安装许可证",
@@ -55,15 +59,28 @@
         },
         {
           "title": "配置采集数据组和点位",
-          "path": "quick-start/data-set"
+          "path": "quick-start/data-config"
         },
         {
           "title": "数据监控",
-          "path": "quick-start/data-monitoring"
+          "path": "quick-start/monitoring"
         },
         {
           "title": "连接到 MQTT",
           "path": "quick-start/mqtt-config"
+        },
+        {
+          "title": "数据处理",
+          "children": [
+            {
+              "title": "清洗数据",
+              "path": "data-processing-engine/data-cleansing"
+            },
+            {
+              "title": "反控设备",
+              "path": "data-processing-engine/device-control"
+            }
+          ]
         }
       ]
     },
@@ -71,12 +88,24 @@
       "title": "用户指南",
       "children": [
         {
-          "title": "配置点位导入/导出",
-          "path": "user-guide/configuration-import-export"
+          "title": "点位配置",
+          "path": "user-guide/configuration"
+        },
+        {
+          "title": "点位导入/导出",
+          "path": "user-guide/import-export"
         },
         {
           "title": "反控设备",
           "path": "user-guide/device-control"
+        },
+        {
+          "title": "数据统计",
+          "path": "user-guide/data-statistics"
+        },
+        {
+          "title": "离线数据缓存",
+          "path": "user-guide/offline-data-cache"
         },
         {
           "title": "管理日志",
@@ -85,10 +114,6 @@
         {
           "title": "修改密码",
           "path": "user-guide/change-password"
-        },
-        {
-          "title": "数据统计",
-          "path": "user-guide/data-statistics"
         },
         {
           "title": "管理插件模块",
@@ -278,16 +303,53 @@
       "title": "Quick Start",
       "children": [
         {
+          "title": "Hardware Specifications",
+          "path": "quick-start/hardware-specifications"
+        },
+        {
           "title": "Installation",
           "path": "quick-start/installation"
         },
         {
-          "title": "Quick Start",
-          "path": "quick-start/quick_start"
+          "title": "Install Modbus Simulator",
+          "path": "quick-start/installation-modbus"
         },
         {
-          "title": "Install License",
+          "title": "Log In Neuron",
+          "path": "quick-start/login"
+        },
+        {
+          "title": "Apply For And Install License",
           "path": "quick-start/license-install/license-install"
+        },
+        {
+          "title": "Connect To Southbound Devices",
+          "path": "quick-start/southdevices-connect"
+        },
+        {
+          "title": "Configure Data Groups And Tags",
+          "path": "quick-start/data-config"
+        },
+        {
+          "title": "Monitoring Data",
+          "path": "quick-start/monitoring"
+        },
+        {
+          "title": "Connect To MQTT",
+          "path": "quick-start/mqtt-config"
+        },
+        {
+          "title": "Data Processing",
+          "children": [
+            {
+              "title": "Data Cleansing",
+              "path": "data-processing-engine/data-cleansing"
+            },
+            {
+              "title": "Device Control",
+              "path": "data-processing-engine/device-control"
+            }
+          ]
         }
       ]
     },
@@ -295,12 +357,24 @@
       "title": "User Guide",
       "children": [
         {
-          "title": "Configuration Tag Import/Export",
-          "path": "user-guide/configuration-import-export"
+          "title": "Configurate Tag",
+          "path": "user-guide/configuration"
+        },
+        {
+          "title": "Tag Import/Export",
+          "path": "user-guide/import-export"
         },
         {
           "title": "Control Device",
           "path": "user-guide/device-control"
+        },
+        {
+          "title": "Data Statistics",
+          "path": "user-guide/data-statistics"
+        },
+        {
+          "title": "Offline Data Cache",
+          "path": "user-guide/offline-data-cache"
         },
         {
           "title": "Log Management",
@@ -309,10 +383,6 @@
         {
           "title": "Change Password",
           "path": "user-guide/change-password"
-        },
-        {
-          "title": "Data Statistics",
-          "path": "user-guide/data-statistics"
         },
         {
           "title": "Plugin Module Management",

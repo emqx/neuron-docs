@@ -1,4 +1,4 @@
-# Install License
+# Apply For And Install License
 
 Neuron is an open source project. We encourage our community to develop their own pluggable modules.
 
@@ -8,22 +8,19 @@ A trial EMQ license can be download from our [official website](https://www.emqx
 
 Of course, you can also directly [contact us](https://www.emqx.com/en/contact?product=neuron) to obtain the official license.
 
-## License Installation
+## Step 1 Check the hardware token
 
-### Step 1 Check the hardware token
+Click **System Information -> About** to view the hardware logo and copy it.
 
-Check the hardware token, as shown below.
+## Step 2 Apply for license
 
-![about](./assets/about.png)
+Go to the [official website](https://www.emqx.com/en/apply-licenses/neuron) and fill in relevant information to apply for the license. The license will be sent to your mailbox.
 
-### Step 2 Install License
+## Step 3 Install License
 
-To install a license, as shown below.
+Click **System Information -> License** to install a license
 
-![license-null](./assets/license-null.png)
-
-* Click on the `License` from the System Information drop-down box in the upper-right corner.
-* Click on the `Upload` button to select the license file and then submit.
+* Click on the `Upload` button to select the license file received in the mailbox and then submit.
 
 ::: tip
 When applying for a valid license, you need to fill in the hardware token.
@@ -33,11 +30,9 @@ The pluggable modules of the commercial version cannot be used when the license 
 Users can apply for a trial license from official website by clicking on the `Apply`, or contact our sales representatives to purchase a commercial license by clicking on the `Contact us`.
 :::
 
-## Step 3 Check over the License details
+## Step 4 Check over the License details
 
-After the license is successfully installed, it will display the license information, as shown below.
-
-![license](./assets/license.png)
+After the license is successfully installed, it will display the license information.
 
 The license page details includes following items.
 

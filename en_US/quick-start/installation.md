@@ -1,6 +1,6 @@
 # Installation
 
-In order to meet customer needs, Neuron is divided into two installation packages.
+Neuron is divided into two installation packages:
 
 * NeuronEX: Integrated eKuiper, which carries the function of data stream processing engine, allows users to collect and process data at the same time.
 
@@ -8,9 +8,20 @@ In order to meet customer needs, Neuron is divided into two installation package
 
 Users can choose according to their own needs.
 
+## Installation Conditions
+
+| Linux distribution                                    | Required packages  |
+| ------------------------------------------------------------ | ------------------ |
+| **Debian package system**</br>Ubuntu 20.04 </br>Ubuntu 18.04 </br>Ubuntu16.04</br>Debian 11</br>Debian 9</br>Debian 8               | deb         |
+| **Redhat package system**</br>CentOS Stream 9</br>CentOS Stream 8</br>CentOS 7    | rpm         |
+
+:::tip
+The rpm/deb package uses systemd to manage the neuron process and it is recommended that the rpm/deb package is used in preference.
+:::
+
 ## Download
 
-Neuron software packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads).The installation package downloaded from official website is adapted to a newer system, so please download more system version packages and version packages adapted to the old system from [Github](https://github.com/emqx/neuron/releases).
+Neuron software packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads). You can also download Neuron from [Github](https://github.com/emqx/neuron/releases).
 
 | Download files                    | Architecture  |
 | --------------------------------- | ------------- |
@@ -25,17 +36,6 @@ Version number x.y.z Description:
 * y is the minor version number: in general, this type of version will introduce some new functions, but the compatibility under this major version number will be guaranteed.
 
 * z is the maintenance version number: in general, this version only contains patches of bug fixes in the software, etc.
-
-## Installation Conditions
-
-| Linux distribution/device                                    | Required packages  |
-| ------------------------------------------------------------ | ------------------ |
-| **Debian package system**</br>Ubuntu 20 </br>Ubuntu 18               | deb/tar.gz         |
-| **Redhat package system**</br>Contos stream 8</br>Centos stream 9    | rpm/tar.gz         |
-
-:::tip
-The rpm/deb package uses systemd to manage the neuron process and it is recommended that the rpm/deb package is used in preference.
-:::
 
 ## Install using deb package
 
@@ -96,7 +96,7 @@ $ wget https://www.emqx.com/en/downloads/neuron/2.3.0/neuron-2.3.0-linux-armhf.t
 ### Unpacking
 
 ```bash
-$ sudo tar -zxvf neuron-2.3.0-linux-armhf.tar.gz
+$ tar -zxvf neuron-2.3.0-linux-armhf.tar.gz
 $ cd neuron-2.3.0-linux-armhf
 ```
 
@@ -139,22 +139,22 @@ Start Neuron.
 
 ```bash
 ## run Neuron
-$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:latest
+$ docker run -d --name neuron -p 7000:7000 --privileged=true -v /host/dir:/opt/neuron/persistence --device /dev/ttyUSB0:/dev/ttyS0 --restart=always emqx/neuron:latest
 ```
 
 Start NeuronEX
 
 ```bash
 ## run NeuronEX
-$ docker run -d --name neuronex -p 7000:7000 --privileged=true --restart=always emqx/neuronex:latest
+$ docker run -d --name neuronex -p 7000:7000 --privileged=true -v /host/dir:/opt/neuron/persistence --device /dev/ttyUSB0:/dev/ttyS0 --restart=always emqx/neuronex:latest
 ```
 
 * tcp 7000: Used to access the web and http api port.
 * --restart=always: Automatically restart the neuron container when the docker process is restarted.
 * --privileged=true: Optional parameter for easy troubleshooting.
 * --env DISABLE_AUTH=true: Optional parameter to turn off authentication.
-* -v /host/dir:/opt/neuron/persistence: Used to store Neuron configuration information in docker to a local directory, e.g. /host/dir.
-* --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker.
+* -v /host/dir:/opt/neuron/persistence: Used to store Neuron configuration information in docker to a local directory, e.g. /host/dir to /opt/neuron/persistence.
+* --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker. /dev/ttyUSB0 // Serial port device under Ubuntu；/dev/ttyS0 // Serial port device under Docker。
 
 ## Operate Neuron in command line
 

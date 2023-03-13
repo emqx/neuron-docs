@@ -1,4 +1,4 @@
-# Tag Configuration Import/Export
+# Tag Import/Export
 
 Neuron provides the function of batch import and export of label configuration information in Excel form, which can speed up the configuration of data labels, and can easily export the created data label information to external storage.
 
@@ -6,9 +6,7 @@ Neuron provides the function of batch import and export of label configuration i
 
 ### Step 1 Download Template
 
-Hover the mouse over `Import` and the button `Download Template` will appear, as shown below.
-
-![download-template](./assets/download-template.png)
+Select **South Devices -> Group List**.Hover the mouse over `Import` and the button `Download Template` will appear.
 
 Click the `Download Template` button to download the Excel sheet.
 
@@ -33,11 +31,7 @@ The following items must be filled accordingly.
 
 Click on the `Import` button and select the Excel file to be imported.
 
-![import](./assets/import.png)
-
 ## Data Tags Excel sheet Export
-
-![export](./assets/export.png)
 
 * Select the group to be exported, you can select all with one click;
 * Click the `Export` button, the information in the group, including the label information under the group, will be exported to an Excel table.

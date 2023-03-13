@@ -1,14 +1,25 @@
 # 下载安装
 
-为满足客户需求，Neuron 分成两个安装包，
+Neuron 分成两个安装包：
 - NeuronEX：集成 eKuiper，携带数据流处理引擎功能，用户可以在采集数据的同时对数据进行处理；
 - Neuron：不集成 eKuiper，主要实现工业数据的采集；
 
 用户可以根据自身需求选择。
 
+## 安装条件
+
+| Linux 发行版                                                   | 所需包          |
+| :----------------------------------------------------------------- | :--------- |
+| **Debian package system**</br>Ubuntu 20.04 </br>Ubuntu 18.04 </br>Ubuntu 16.04 </br>Debian 11</br>Debian 9</br>Debian 8             | deb |
+| **Redhat package system**</br>CentOS Stream 9</br>CentOS Stream 8</br>CentOS 7  | rpm |
+
+:::tip
+rpm/deb package 中使用了 systemd 管理 neuron 进程，建议优先使用 rpm/deb package。
+:::
+
 ## 下载
 
-Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 上下载。官网下载的安装包适配的系统较新，更多系统版本包及适配老系统的版本包请到 [Github 仓库](https://github.com/emqx/neuron/releases) 下载。
+Neuron 软件包可由 Neuron 官网 [https://neugates.io/zh/downloads](https://neugates.io/zh/downloads) 下载。也可以到 [Github 仓库](https://github.com/emqx/neuron/releases) 下载。
 
 | 下载文件                           | 架构    |
 | --------------------------------- | ------ |
@@ -21,17 +32,6 @@ Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://
 * x 为主要版本号：一般情况下，该版本会引入一些重大功能，如引入架构性的更改，主版本升级不保证与老版本之间的兼容性；
 * y 是次要版本号：一般情况下，该类型版本会引入一些新功能，但是会保证在该主要版本号下的兼容性；
 * z 是维护版本号：一般情况下，该版本只包含软件中错误修复的补丁等。
-
-## 安装条件
-
-| Linux 发行版或设备                                                   | 所需包          |
-| :----------------------------------------------------------------- | :--------- |
-| **Debian package system**</br>Ubuntu 20 </br>Ubuntu 18             | deb/tar.gz |
-| **Redhat package system**</br>Contos stream 8</br>Centos stream 9  | rpm/tar.gz |
-
-:::tip
-rpm/deb package 中使用了 systemd 管理 neuron 进程，建议优先使用 rpm/deb package。
-:::
 
 ## 使用 deb 包安装
 
@@ -92,7 +92,7 @@ $ wget https://www.emqx.com/en/downloads/neuron/2.3.0/neuron-2.3.0-linux-armhf.t
 ### 解压
 
 ```bash
-$ sudo tar -zxvf neuron-2.3.0-linux-armhf.tar.gz
+$ tar -zxvf neuron-2.3.0-linux-armhf.tar.gz
 $ cd neuron-2.3.0-linux-armhf
 ```
 
@@ -135,22 +135,22 @@ $ docker pull emqx/neuronex:latest
 
 ```bash
 ## run Neuron
-$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:latest
+$ docker run -d --name neuron -p 7000:7000 --privileged=true -v /host/dir:/opt/neuron/persistence --device /dev/ttyUSB0:/dev/ttyS0 --restart=always emqx/neuron:latest
 ```
 
 启动 NeuronEX:
 
 ```bash
 ## run NeuronEX
-$ docker run -d --name neuronex -p 7000:7000 --privileged=true --restart=always emqx/neuronex:latest
+$ docker run -d --name neuronex -p 7000:7000 --privileged=true -v /host/dir:/opt/neuron/persistence --device /dev/ttyUSB0:/dev/ttyS0 --restart=always emqx/neuronex:latest
 ```
 
 * tcp 7000: 用于访问 web 和 http api 端口。
 * --restart=always: docker 进程重启时，自动重启 neuron 容器。
 * --privileged=true: 可选参数，便于排查问题。
 * --env DISABLE_AUTH=true: 可选参数，用于关闭鉴权。
-* -v /host/dir:/opt/neuron/persistence: 用于将 docker 中 Neuron 配置信息存放在本地目录（例如，/host/dir）。
-* --device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到 docker。
+* -v /host/dir:/opt/neuron/persistence: 用于将 docker 中 Neuron 配置信息存放在本地目录（例如，/host/dir放在/opt/neuron/persistence）。
+* --device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到 docker。/dev/ttyUSB0 是 Linux 下串口设备；/dev/ttyS0 是 Docker 下串口设备。
 
 ## Neuron 操作
 

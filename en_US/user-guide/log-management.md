@@ -10,6 +10,11 @@ The log download function bundles the /neuron/build/logs folder into neuron_logs
 
 ![neuron_logs](./assets/neuron_logs.png)
 
+* data-stream-processing.log:data processing configuration;
+* dlt645.log:northbound application configuration;
+* modbus-plus-tcp.log:sorthbound application configuration;
+* neuron.log:log of Neuron.
+
 ## Set The Debug Log Of The Node
 
 Neuron supports the setting of printing debug logs of a node and automatically switching back to the default log level after approximately ten minutes. The Settings for each node are independent of each other.

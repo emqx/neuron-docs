@@ -4,19 +4,18 @@
 
 ## 第一步，添加新的规则
 
-点击`新建规则`，如下图所示。
-
-![data-stream-rules-add](./assets/data-stream-rules-add.png)
+在**规则**界面点击`新建规则` 按键添加规则。
 
 ## 第二步，设置规则详细信息
 
-在规则编辑界面，填写规则信息，如下图所示。
+在**规则->创建**界面，填写规则信息，如下图所示。
 
 ![data-stream-rules-add-action](./assets/data-stream-rules-add-action.png)
 
 * 填写 `Rule ID` 和`SQL` 的描述；
 * 点击`添加` ，为规则添加 sink 动作，每条规则可添加多条 sink 动作，详见第三步；
 * 点击`提交` 完成规则的定义。
+
 
 ## 第三步，设置 sink 详细信息
 
@@ -39,9 +38,7 @@
 
 ## 第四步，开始执行规则
 
-启动规则，如下图所示。
-
-![data-stream-rules-list](./assets/data-stream-rules-list.png)
+在**规则**界面启动新创建的规则。
 
 ## 第五步，检查 MQTT 代理中的有效负载
 
