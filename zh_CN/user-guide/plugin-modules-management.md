@@ -20,7 +20,7 @@
 
 ## 添加一个新的可插拔模块
 
-点击左上角的`添加Plugin`按钮如下图所示。
+点击左上角的 `添加Plugin`按钮如下图所示。
 
 ![plugin-add](./assets/plugin-add.png)
 
@@ -30,5 +30,5 @@
 * 单击“创建”按钮将 .so 文件添加到构建目录。
 
 :::tip
-请确保已将自己编写的 .so 插件文件放置在 neuron/build/plugins 目录底下后，再进行添加。具体的插件开发教程请参考 [SKD 教程](../project/sdk/sdk_based-driver-development.md)。
+请确保已将自己编写的 .so 插件文件放置在 neuron/build/plugins 目录底下后，再进行添加。具体的插件开发教程请参考 [SDK 教程](../project/sdk/sdk_based-driver-development.md)。
 :::
