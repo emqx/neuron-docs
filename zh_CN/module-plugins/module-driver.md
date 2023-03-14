@@ -902,7 +902,7 @@ neuopc 的组件包可以前往 neuopc 的[项目页面](https://github.com/neug
 1. 在 neuron 南向设备管理中添加一个 opcua 设备；
 2. 在设备配置中修改 endpoint url 为 neuopc 的 UA Server 地址；
 3. 在设备配置中填写 Username，与 neuopc 中设置的一致；
-4. 在设备配置中填写 Password，与neuopc 中设置的一直；
+4. 在设备配置中填写 Password，与 neuopc 中设置的一致；
 5. 无需填写 Cert 和 Key，直接提交设置表单。
 
 ### 支持的数据类型
