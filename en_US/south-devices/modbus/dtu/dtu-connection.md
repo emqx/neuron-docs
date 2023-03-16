@@ -1,8 +1,12 @@
-# Cloud Usr DTU Connection Neuron Example
+# DTU Connection Example
 
-This article will take the example of connecting the device through the RS485 mode of the Cloud-Usr DTU pass-through module to introduce how to convert the serial device into a network connection to Neuron. The connection diagram is shown in the figure below.
+This article takes the example of using a Modbus RTU protocol device connected to Neuron via the Cloud-Usr DTU transparent transmission module, to illustrate how to convert serial port data into network data. The connection diagram is shown in the following figure.
 
 ![neuron-dtu](./assets/neuron-dtu.png)
+
+:::tip
+Although Modbus RTU is converted for network transmission, it still uses the Modbus RTU message format. If the DTU converts Modbus RTU to Modbus TCP, a Modbus TCP driver module is required.
+:::
 
 DTU supports two-way conversion of data, supports mutual conversion of common serial data such as RS232, RS485, RS422 and TCP/IP data, and transmits them through the wireless communication network. The communication methods generally used by DTU are 2/3/4G, NB-IoT, LoRaWAN, WIFI, etc.
 

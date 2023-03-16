@@ -122,6 +122,33 @@
       ]
     },
     {
+      "title": "南向驱动",
+      "children": [
+        {
+          "title": "Modbus",
+          "children": [
+            {
+              "title": "Modbus 介绍与使用",
+              "path": "south-devices/modbus/modbus-tcp"
+            },
+            {
+              "title": "DTU 连接示例",
+              "path": "south-devices/modbus/dtu/dtu-connection"
+            }
+          ]
+        },
+        {
+          "title": "OPC UA",
+          "children": [
+            {
+              "title": "OPC UA 介绍与使用",
+              "path": "south-devices/opc-ua/opc-ua"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "驱动模块",
       "children": [
         {
@@ -246,15 +273,6 @@
               "path": "project/sdk/mqtt_example"
             }
           ]
-        }
-      ]
-    },
-    {
-      "title": "设备连接示例",
-      "children": [
-        {
-          "title": "连接 DTU 示例",
-          "path": "reference/dtu-connection"
         }
       ]
     },
@@ -391,6 +409,33 @@
       ]
     },
     {
+      "title": "Southbound Drivers",
+      "children": [
+        {
+          "title": "Modbus",
+          "children": [
+            {
+              "title": "Introduction and Usage of Modbus",
+              "path": "south-devices/modbus/modbus-tcp"
+            },
+            {
+              "title": "DTU Connection Example",
+              "path": "south-devices/modbus/dtu/dtu-connection"
+            }
+          ]
+        },
+        {
+          "title": "OPC UA",
+          "children": [
+            {
+              "title": "Introduction and Usage of OPC UA",
+              "path": "south-devices/opc-ua/opc-ua"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "Driver Modules",
       "children": [
         {
@@ -511,15 +556,6 @@
               "path": "project/sdk/mqtt_example"
             }
           ]
-        }
-      ]
-    },
-    {
-      "title": "Equipment Connections",
-      "children": [
-        {
-          "title": "DTU Connection",
-          "path": "reference/dtu-connection"
         }
       ]
     },
