@@ -1,4 +1,4 @@
-# Configurate Tag
+# Configure Tag
 
 ## Usage Of Decimal
 
