@@ -73,6 +73,7 @@ Click the `Device Configuration` button on the southbound device card to enter t
 The configuration parameters required by each device are different. Please refer to [Module Setting](../module-plugins/module-driver.md) for detailed description of southbound device parameters.
 
 :::
+
 ### Step 4, Create A Group
 
 Creating groups can be used to classify devicw acquisition tags.

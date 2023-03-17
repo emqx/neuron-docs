@@ -2,26 +2,35 @@
 
 ## Southbound Plugin Modules
 
+### Global Standards
+
+| Protocol Name           | Interface  | Type        | Available | Remark |
+| ----------------------- | ---------- | ----------- | --------- | -------------------------------- |
+| <div style="width:220pt">Modbus TCP</div>              | <div style="width:40pt">Ethernet</div>   | <div style="width:40pt">Open Source</div> | <div style="width:50pt">Yes</div>       |  |
+| <div style="width:220pt">Modbus RTU</div>              | <div style="width:40pt">Serial</div>     | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>        |  |
+| <div style="width:220pt">Modbus RTU over TCP</div>     | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>       |  |
+| <div style="width:220pt">OPC UA</div>                  | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>       |  |
+| <div style="width:220pt">CIP Ethernet/IP</div>         | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>        | <div style="width:110pt">CIP – Common Industrial Protocol</div>  |
+
 ### PLC Drivers
 
 | Protocol Name                                                | Interface | Type       | Available  | Remark                           |
 | ------------------------------------------------------------ | --------- | ---------- | ---------- | -------------------------------- |
+| <div style="width:220pt">Omron FINS on TCP</div>                                            | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>        | |
+| <div style="width:220pt">Siemens Industrial Ethernet ISO for S7-200/300/400/1200/1500</div> | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>        | |
+| <div style="width:220pt">Mitsubishi MC Protocol for Q series and E71 module</div>           | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>        | |
 | <div style="width:220pt">Allen-Bradley DF1 half-duplex for PLC2</div>     | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | <div style="width:110pt">For PLC2 and PLC5</div>                |
-| <div style="width:220pt">Allen-Bradley CIP EtherNet/IP</div>                                | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>         | <div style="width:110pt">CIP – Common Industrial Protocol</div> |
 | <div style="width:220pt">Schneider PLC Modbus RTU</div>                                     | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | |
 | <div style="width:220pt">Schneider PLC Modbus TCP</div>                                     | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | |
 | <div style="width:220pt">Schneider Telemecanique UNI-TE</div>                               | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | |
 | <div style="width:220pt">ABB SattControl Comli</div>                                        | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | |
 | <div style="width:220pt">Omron Host Link</div>                                              | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | <div style="width:110pt">For Single and Multiple connection</div> |
 | <div style="width:220pt">Omron FINS on Host Link</div>                                      | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | |
-| <div style="width:220pt">Omron FINS on TCP</div>                                            | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>        | |
 | <div style="width:220pt">Siemens 3964R/RK512</div>                                          | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | <div style="width:110pt">For S5 and S7</div> |
 | <div style="width:220pt">Siemens Fetch Write for S7-300/400 and CP443 module</div>          | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | |
-| <div style="width:220pt">Siemens Industrial Ethernet ISO for S7-200/300/400/1200/1500</div> | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>        | |
 | <div style="width:220pt">Mitsubishi FX Series</div>                                         | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | |
-| <div style="width:220pt">Mitsubishi 232ADP/485BD: Serial/RS485</div>                        | <div style="width:40pt">Serialv</div>   | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>         | |
 | <div style="width:220pt">Mitsubishi MC Protocol for Q series and C24 module</div>           | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">V1.x only</div>  | |
-| <div style="width:220pt">Mitsubishi MC Protocol for Q series and E71 module</div>           | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>        | |
+| <div style="width:220pt">Mitsubishi 232ADP/485BD: Serial/RS485</div>                        | <div style="width:40pt">Serialv</div>   | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>         | |
 | <div style="width:220pt">Mitsubishi FX3U-ENET-ADP</div>                                     | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>         | <div style="width:110pt">For FX only</div> |
 | <div style="width:220pt">Panasonic FP series MEWTOCOL-COM</div>                             | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>         | |
 | <div style="width:220pt">Panasonic FP series MEWTOCOL-COM</div>                             | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>         | |
@@ -37,40 +46,30 @@
 | <div style="width:220pt">GE FANUC 90-30 SNPX</div>                                          | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>         | |
 | <div style="width:220pt">GE FANUC 90-30 Ethernet SRTP</div>                                 | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>         | |
 
-### Global Standards
-
-| Protocol Name           | Interface  | Type        | Available | Remark |
-| ----------------------- | ---------- | ----------- | --------- | -------------------------------- |
-| <div style="width:220pt">Modbus RTU</div>              | <div style="width:40pt">Serial</div>     | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>        |  |
-| <div style="width:220pt">Modbus RTU over TCP</div>     | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>       |  |
-| <div style="width:220pt">Modbus TCP</div>              | <div style="width:40pt">Ethernet</div>   | <div style="width:40pt">Open Source</div> | <div style="width:50pt">Yes</div>       |  |
-| <div style="width:220pt">OPC UA</div>                  | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>       |  |
-| <div style="width:220pt">CIP Ethernet/IP</div>         | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>        | <div style="width:110pt">CIP – Common Industrial Protocol</div>  |
-
 ### Electricity
 
 | Protocol Name       | Interface | Type       | Available | Remark     |
 | ------------------- | --------- | ---------- | --------- | ---------- |
-| <div style="width:220pt">IEC 60870-5-101</div>      | <div style="width:40pt">Serial</div>     | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>         | |
+| <div style="width:220pt">DL/T645-07</div>          | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>       | <div style="width:110pt">Chinese standards for power meters</div>  |
 | <div style="width:220pt">IEC 60870-5-104</div>     | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>       | |
+| <div style="width:220pt">IEC 60870-5-101</div>      | <div style="width:40pt">Serial</div>     | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>         | |
 | <div style="width:220pt">IEC 61850</div>           | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>        | |
 | <div style="width:220pt">DNP3</div>                | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>        | |
-| <div style="width:220pt">DL/T645-07</div>          | <div style="width:40pt">Serial</div>    | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div>       | <div style="width:110pt">Chinese standards for power meters</div>  |
 
 ### Building Automation
 
 | Protocol Name  | Interface  | Type       | Available | Remark |
 | -------------- | ---------- | ---------- | --------- | --------- |
-| <div style="width:220pt">BACnet MS/TP</div>    | <div style="width:40pt">Serial</div>      | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>  | <div style="width:110pt"> </div> |
-| <div style="width:220pt">BACnet IP</div>      | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div> |  |
 | <div style="width:220pt">KNXnet IP</div>      | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div> |  |
+| <div style="width:220pt">BACnet IP</div>      | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div> | <div style="width:50pt">Yes</div> |  |
+| <div style="width:220pt">BACnet MS/TP</div>    | <div style="width:40pt">Serial</div>      | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>  | <div style="width:110pt"> </div> |
 | <div style="width:220pt">LON</div>            | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div> |  |
 
 ### CNC Machines & Robotics
 
 | Protocol Name  | Interface  | Type       | Available | Remark |
 | ------------- | ------- | ----- | --------- | ------- |
-| <div style="width:220pt">MTConnect</div>      | <div style="width:40pt">Ethernet</div>    | <div style="width:110pt">Commercial</div>    | <div style="width:50pt">No</div>         | <div style="width:110pt"> </div> |
+|![mt-connect](./assets/MT.png)| <div style="width:220pt">MTConnect</div>      | <div style="width:40pt">Ethernet</div>    | <div style="width:110pt">Commercial</div>    | <div style="width:50pt">No</div>         | <div style="width:110pt"> </div> |
 
 ## Northbound Plugin Modules
 
@@ -78,10 +77,10 @@
 
 | Protocol Name         | Type        | Available | Remark |
 | --------------------- | ----------- | --------- | ------- |
+| <div style="width:295pt">RESTful API</div>           | <div style="width:110pt">Open Soure</div>  | <div style="width:50pt">Yes</div>       |  |
 | <div style="width:295pt">MQTT</div>                   | <div style="width:110pt">Open Source</div>  | <div style="width:50pt">Yes</div>        | <div style="width:110pt"> </div> |
 | <div style="width:295pt">MQTT + Sparkplug B</div>    | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>       |  |
 | <div style="width:295pt">Websocket</div>             | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>        |  |
-| <div style="width:295pt">RESTful API</div>           | <div style="width:110pt">Open Soure</div>  | <div style="width:50pt">Yes</div>       |  |
 
 ### Application
 
@@ -96,3 +95,4 @@
 * A trial EMQ license can be download from our official website [https://www.emqx.com/en/apply-licenses/neuron](https://www.emqx.com/en/apply-licenses/neuron). All available modules could be used with limitation on 100 connections and 1000 data tags for 15 days. If trial EMQ license is expired, you can re-apply the trial EMQ license via our official website again. However, a mailbox can only apply for a trial license up to two times.
 
 * Each plugin module can be authorized independently in EMQ license.
+

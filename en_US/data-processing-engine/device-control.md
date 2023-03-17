@@ -4,13 +4,11 @@ This rule implements +1 processing of the data collected by neuron from the devi
 
 ## Step 1 Add a new rule
 
-Click `New Rule` to create a new rule in the rule page, as shown below.
-
-![data-stream-rules-add](./assets/data-stream-rules-add.png)
+Click `New Rule` to create a new rule in **Rules** page.
 
 ## Step 2 Setup rule details
 
-In the rule editing interface, fill in the rule information, as shown below.
+In the **Rules Create** interface, fill in the rule information, as shown below.
 
 ![data-stream-rules-add-action-1](./assets/data-stream-rules-add-action-1.png)
 
@@ -36,9 +34,7 @@ After the action is added, as shown below.
 
 ## Step 4 Start rule execution
 
-Start the rules, as shown below.
-
-![data-stream-rules-list-1](./assets/data-stream-rules-list-1.png)
+Start the rule in **Rules** page.
 
 ## Step 5 Check over the data in Modbus simulator
 
