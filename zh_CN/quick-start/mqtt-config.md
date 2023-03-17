@@ -17,10 +17,10 @@
 
 ![mqtt-config](./assets/mqtt-config.png)
 
-* Client-id：客户端ID，注意每个ID要相互独立，不可以重复，使用默认值mqtt；
-* Upload topic：发布点位数据的主题，使用默认值/neuron/mqtt/upload；
-* Host：使用默认的公共的 EMQX Broker（broker.emqx.io）；
-* Port：使用 MQTT broker port（1883）；
+设置 MQTT 连接：
+
+* 使用默认的上报主题（/neuron/mqtt/upload）；
+* 使用默认的公共的 EMQX Broker（broker.emqx.io）；
 * 点击`提交`，完成北向应用的配置，应用卡片自动进入 **运行中** 的工作状态。
 
 ## 第三步，订阅设备点位组
@@ -29,8 +29,7 @@
 
 点击 MQTT 节点卡片，进入组列表，点击 `添加订阅` 选择要订阅的点位组，订阅南向设备的点位组：
 
-* 南向设备：选择要订阅的南向设备，例如，modbus-tcp-1；
-* 组：选择南向设备下的某个组，例如，group-1；
+![subscriptions-add](./assets/subscription-add.png)
 
 ## 第四步，使用 MQTTX 查看数据
 
@@ -38,11 +37,11 @@
 
 ![mqttx](./assets/mqttx.png)
 
-在 MQTTX 中订阅对应的Topic后，可看到此Topic中能持续收到由 Neuron 上报的数据。
+订阅成功之后可以看到 MQTTX 可以一直接收到 Neuron 采集并上报过来的数据。
 
-* 打开 MQTTX 添加新的连接，正确填写名称与公共 EMQX Broker 的 Host 与 Port（默认为broker.emqx.io，1883），完成连接;
+* 打开 MQTTX 添加新的连接，正确填写名称与公共 EMQX Broker 的 Host 与 Port，完成连接;
 * 添加新的订阅，Topic 要与设置北向应用参数中的 Upload topic 保持一致，例如，填写 `/neuron/mqtt/upload`。
 
 :::tip
-默认的上传 Topic 的主题格式为 `/neuron/{node_name}/upload`，其中 {node_name} 为创建的北向应用的名称。用户也可自定义上报主题。
+默认的上传 Topic 的主题格式为 /neuron/{node_name}/upload，其中 `{node_name}` 为创建的北向应用的名称。用户也可自定义上报主题。
 :::

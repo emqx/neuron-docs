@@ -46,8 +46,8 @@
 启动 MQTTX ，订阅主题 `{{.node_name}}/{{.group_name}}`，结果如下图所示。
 :::
 
-::: tip
-此例中使用的 node_name 为 **modbus-tcp-1**，group_name 为 **group-1**，即，订阅主题为 modbus-tcp-1/group-1。
-:::
-
 ![result](./assets/result.png)
+
+::: tip
+此例中使用的 `node_name` 为 **modbus-tcp-1**，`group_name` 为 **group-1**，即，订阅主题为 modbus-tcp-1/group-1。
+:::

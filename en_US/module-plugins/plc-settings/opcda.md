@@ -4,9 +4,13 @@
 
 This example uses windows 7 SP1 32-bit system to demonstrate
 
+::: tip
+Neuopc can only run on Windows 7 SP1 and above and requires the installation of the [KB3063858](https://www.microsoft.com/zh-CN/download/details.aspx?id=47409)  and [KB2999226](https://www.microsoft.com/zh-cn/download/details.aspx?id=49077) updates.
+:::
+
 ### Install the neuopc runtime environment
 
-1. Enter neuopc [project page](https://github.com/neugates/neuopc) to download the latest Release component package "neuopc-package.zip". After decompression, you can see the following files:
+1. Enter neuopc [project releases page](https://github.com/neugates/neuopc/releases) to download the latest version component package "neuopc-package.zip". After decompression, you can see the following files:
 
 ![](./assets-opcda/package.png)
 

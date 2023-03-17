@@ -7,6 +7,6 @@ The following table lists the hardware conditions required for the minimum deman
 |Specifications|Minimum configuration recommendation|Hardware architecture|remarks|
 | :-------------------- | :----------------------------------- | :------------------------------ | :----------------------------------- |
 | 100 tags | At least 128M memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Small gateway device |
-| 1000 tags | At least 256M memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium gateway device |
-| 10000 tags | At least 512M memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium gateway, industrial computer, etc |
-| More than 10000 tags | At least 1G memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium or large gateway, industrial computer, servers, etc |
+| 1,000 tags | At least 256M memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium gateway device |
+| 10,000 tags | At least 512M memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium gateway, industrial computer, etc |
+| More than 10,000 tags | At least 1G memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium or large gateway, industrial computer, servers, etc |

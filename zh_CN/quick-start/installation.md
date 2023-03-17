@@ -149,7 +149,7 @@ $ docker run -d --name neuronex -p 7000:7000 --privileged=true -v /host/dir:/opt
 * --restart=always: docker 进程重启时，自动重启 neuron 容器。
 * --privileged=true: 可选参数，便于排查问题。
 * --env DISABLE_AUTH=true: 可选参数，用于关闭鉴权。
-* -v /host/dir:/opt/neuron/persistence: 用于将 docker 中 Neuron 配置信息存放在本地目录（例如，/host/dir放在/opt/neuron/persistence）。
+* -v /host/dir:/opt/neuron/persistence: 用于将 docker 中 Neuron 配置信息存放在本地目录（例如，/host/dir 放在 /opt/neuron/persistence）。
 * --device /dev/ttyUSB0:/dev/ttyS0: 用于映射串口到 docker。/dev/ttyUSB0 是 Linux 下串口设备；/dev/ttyS0 是 Docker 下串口设备。
 
 ## Neuron 操作

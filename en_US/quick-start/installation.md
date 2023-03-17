@@ -154,11 +154,11 @@ $ docker run -d --name neuronex -p 7000:7000 --privileged=true -v /host/dir:/opt
 * --privileged=true: Optional parameter for easy troubleshooting.
 * --env DISABLE_AUTH=true: Optional parameter to turn off authentication.
 * -v /host/dir:/opt/neuron/persistence: Used to store Neuron configuration information in docker to a local directory, e.g. /host/dir to /opt/neuron/persistence.
-* --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker. /dev/ttyUSB0 // Serial port device under Ubuntu；/dev/ttyS0 // Serial port device under Docker。
+* --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker. /dev/ttyUSB0 // Serial port device under Ubuntu; /dev/ttyS0 // Serial port device under Docker.
 
 ## Operate Neuron in command line
 
-For rpm and deb installations, Neuron can perform the operation with following commands：
+For rpm and deb installations, Neuron can perform the operation with following commands:
 
 ### View Neuron Status
 
