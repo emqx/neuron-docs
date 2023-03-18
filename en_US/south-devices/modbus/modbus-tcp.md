@@ -70,7 +70,6 @@ example, function is 0x03, and register address is 0, then address used by neuro
 
 Optional, a bit of a register address.
 
-
 #### **#ENDIAN**
 
 Optional, endianness, applicable to int16/uint16/int32/uint32/float data types, see the table below for details.
@@ -82,7 +81,6 @@ Optional, endianness, applicable to int16/uint16/int32/uint32/float data types, 
 | #LB        | 2,1,4,3   | int32/uint32/float      | |
 | #BB        | 3,4,1,2   | int32/uint32/float      | |
 | #BL        | 4,3,2,1   | int32/uint32/float      | |
-
 
 #### .LEN\[H]\[L]\[D]\[E]
 

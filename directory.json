@@ -145,6 +145,131 @@
               "path": "south-devices/opc-ua/opc-ua"
             }
           ]
+        },
+        {
+          "title": "OPC DA",
+          "children": [
+            {
+              "title": "OPC DA 介绍与使用",
+              "path": "south-devices/opc-da/opc-da"
+            },
+            {
+              "title": "NeuOPC 设置",
+              "path": "south-devices/opc-da/neuopc/neuopc"
+            }
+          ]
+        },
+        {
+          "title": "EtherNet/IP(CIP)",
+          "children": [
+            {
+              "title": "EtherNet/IP(CIP) 介绍与使用",
+              "path": "south-devices/ethernet-ip/ethernet-ip"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 3E",
+          "children": [
+            {
+              "title": "Mitsubishi MELSEC QnA3E 介绍与使用",
+              "path": "south-devices/mitsubishi-3e/mitsubishi-3e"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 1E",
+          "children": [
+            {
+              "title": "Mitsubishi MELSEC A1E 介绍及使用",
+              "path": "south-devices/mitsubishi-1e/mitsubishi-1e"
+            }
+          ]
+        },
+        {
+          "title": "Siemens S7 ISO TCP",
+          "children": [
+            {
+              "title": "Siemens S7 ISOTCP 介绍与使用",
+              "path": "south-devices/siemens-s7/s7"
+            },
+            {
+              "title": "Siemens S7-1200/1500 设置",
+              "path": "south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+            }
+          ]
+        },
+        {
+          "title": "Omron FINS TCP",
+          "children": [
+            {
+              "title": "OMRON FINS on TCP 介绍与用法",
+              "path": "south-devices/omron-fins/omron-fins"
+            }
+          ]
+        },
+        {
+          "title": "Beckhoff ADS",
+          "children": [
+            {
+              "title": "Beckhoff ADS 介绍与用法",
+              "path": "south-devices/ads/ads"
+            }
+          ]
+        },
+        {
+          "title": "IEC60870-5-104",
+          "children": [
+            {
+              "title": "IEC 60870-5-104 介绍与使用",
+              "path": "south-devices/iec-104/iec-104"
+            }
+          ]
+        },
+        {
+          "title": "DL/T645-2007",
+          "children": [
+            {
+              "title": "DL/T645-2007 介绍与使用",
+              "path": "south-devices/dlt645-2007/dlt645-2007"
+            }
+          ]
+        },
+        {
+          "title": "BACnet/IP",
+          "children": [
+            {
+              "title": "BACnet/IP 介绍与使用",
+              "path": "south-devices/bacnet-ip/bacnet-ip"
+            }
+          ]
+        },
+        {
+          "title": "KNXnet/IP",
+          "children": [
+            {
+              "title": "KNXnet/IP 介绍与使用",
+              "path": "south-devices/knxnet-ip/knxnet-ip"
+            }
+          ]
+        },
+        {
+          "title": "Fanuc Focas Ethernet",
+          "children": [
+            {
+              "title": "Fanuc Focas Ethernet 介绍与使用",
+              "path": "south-devices/fanuc-focas/fanuc-focas"
+            }
+          ]
+        },
+        {
+          "title": "NON A11",
+          "children": [
+            {
+              "title": "NON A11 介绍与使用",
+              "path": "south-devices/nona11/nona11"
+            }
+          ]
         }
       ]
     },
@@ -187,28 +312,6 @@
         {
           "title": "模块配置",
           "path": "module-plugins/module-driver"
-        },
-        {
-          "title": "PLC 设置",
-          "children": [
-            {
-              "title": "Siemens S7-1200/1500",
-              "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
-            },
-            {
-              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
-              "path": "module-plugins/plc-settings/ads/ads"
-            }
-          ]
-        },
-        {
-          "title": "附属工具设置",
-          "children": [
-            {
-              "title": "设置 neuopc",
-              "path": "module-plugins/plc-settings/opcda"
-            }
-          ]
         }
       ]
     },
@@ -432,6 +535,135 @@
               "path": "south-devices/opc-ua/opc-ua"
             }
           ]
+        },
+        {
+          "title": "OPC DA",
+          "children": [
+            {
+              "title": "Introduction and Usage of OPC DA",
+              "path": "south-devices/opc-da/opc-da"
+            },
+            {
+              "title": "NeuOPC Settings",
+              "path": "south-devices/opc-da/neuopc/neuopc"
+            }
+          ]
+        },
+        {
+          "title": "EtherNet/IP(CIP)",
+          "children": [
+            {
+              "title": "Introduction and Usage of EtherNet/IP(CIP)",
+              "path": "south-devices/ethernet-ip/ethernet-ip"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 3E",
+          "children": [
+            {
+              "title": "Introduction and Usage of Mitsubishi MELSEC QnA3E",
+              "path": "south-devices/mitsubishi-3e/mitsubishi-3e"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 1E",
+          "children": [
+            {
+              "title": "Introduction and Usage of Mitsubishi MELSEC A1E",
+              "path": "south-devices/mitsubishi-1e/mitsubishi-1e"
+            }
+          ]
+        },
+        {
+          "title": "Siemens S7 ISO TCP",
+          "children": [
+            {
+              "title": "Introduction and Usage of Siemens S7 ISOTCP",
+              "path": "south-devices/siemens-s7/s7"
+            },
+            {
+              "title": "Siemens S7-1200/1500 Settings",
+              "path": "south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+            }
+          ]
+        },
+        {
+          "title": "Omron FINS TCP",
+          "children": [
+            {
+              "title": "Introduction and Usage of OMRON FINS on TCP",
+              "path": "south-devices/omron-fins/omron-fins"
+            }
+          ]
+        },
+        {
+          "title": "Beckhoff ADS",
+          "children": [
+            {
+              "title": "Introduction and Usage of Beckhoff ADS",
+              "path": "south-devices/ads/ads"
+            },
+            {
+              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
+              "path": "south-devices/ads/plc-ads/ads"
+            }
+          ]
+        },
+        {
+          "title": "IEC60870-5-104",
+          "children": [
+            {
+              "title": "Introduction and Usage of IEC 60870-5-104",
+              "path": "south-devices/iec-104/iec-104"
+            }
+          ]
+        },
+        {
+          "title": "DL/T645-2007",
+          "children": [
+            {
+              "title": "Introduction and Usage of DL/T645-2007",
+              "path": "south-devices/dlt645-2007/dlt645-2007"
+            }
+          ]
+        },
+        {
+          "title": "BACnet/IP",
+          "children": [
+            {
+              "title": "Introduction and Usage of BACnet/IP",
+              "path": "south-devices/bacnet-ip/bacnet-ip"
+            }
+          ]
+        },
+        {
+          "title": "KNXnet/IP",
+          "children": [
+            {
+              "title": "Introduction and Usage of KNXnet/IP",
+              "path": "south-devices/knxnet-ip/knxnet-ip"
+            }
+          ]
+        },
+        {
+          "title": "Fanuc Focas Ethernet",
+          "children": [
+            {
+              "title": "Introduction and Usage of Fanuc Focas Ethernet",
+              "path": "south-devices/fanuc-focas/fanuc-focas"
+            }
+          ]
+        },
+        {
+          "title": "NON A11",
+          "children": [
+            {
+              "title": "Introduction and Usage of NON A11",
+              "path": "south-devices/nona11/nona11"
+            }
+          ]
         }
       ]
     },
@@ -474,24 +706,6 @@
         {
           "title": "Module Setting",
           "path": "module-plugins/module-driver"
-        },
-        {
-          "title": "PLC Setup Instructions",
-          "children": [
-            {
-              "title": "Siemens S7-1200/1500",
-              "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
-            }
-          ]
-        },
-        {
-          "title": "Accessory Tools",
-          "children": [
-            {
-              "title": "Neuopc Settings",
-              "path": "module-plugins/plc-settings/opcda"
-            }
-          ]
         }
       ]
     },

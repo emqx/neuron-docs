@@ -12,7 +12,7 @@ Neuopc can only run on Windows 7 SP1 and above and requires the installation of 
 
 1. Enter neuopc [project releases page](https://github.com/neugates/neuopc/releases) to download the latest version component package "neuopc-package.zip". After decompression, you can see the following files:
 
-![](./assets-opcda/package.png)
+![](./assets/package.png)
 
 * neuopc - the main program to run OPCDA to convert OPCUA;
 * dotnetfx-1.1——.Net framework 1.1, you need to correct this program before installing OPC DAAuto;
@@ -24,13 +24,13 @@ Neuopc can only run on Windows 7 SP1 and above and requires the installation of 
 
 3. Use the task manager to install OPC DA Auto 2.02 Source Code 5.30.msi, open the "Windows Task Manager", open "File" - "New Task", enter the MSI file path, and check "Create this task with system administrative rights";
 
-![](./assets-opcda/install-auto.png)
+![](./assets/install-auto.png)
 
 4. Check if the component is installed
 
 * If it is a 32-bit operating system, enter the C:\Windows\System32 directory, if it is a 64-bit operating system, enter the C:\Windows\SysWOW64 directory, and check whether the following files exist:
 
-![](./assets-opcda/core-components.png)
+![](./assets/core-components.png)
 
 ::: tip
 If the file does not exist then contact sales for support.
@@ -38,7 +38,7 @@ If the file does not exist then contact sales for support.
 
 * Open "Windows Task Manager" to check whether the OpcEnum system service is running, as shown in the figure:
 
-![](./assets-opcda/opcenum.png)
+![](./assets/opcenum.png)
 
 ::: tip
 If it works normally, it means that OPC DA Auto 2.02 has been installed normally.
@@ -48,7 +48,7 @@ If it works normally, it means that OPC DA Auto 2.02 has been installed normally
 
 6. Run the neuopc.exe program, select DA Host and DA Server and click Connect, set the parameters of UA and click Run, the operation is successful, as shown in the figure:
 
-![](./assets-opcda/local-neuopc.png)
+![](./assets/local-neuopc.png)
 
 ## Remote host OPCDA server access
 
@@ -60,35 +60,35 @@ Install MatrikonOPC Server for Simulation on the remote host, and close the fire
 
 1. Press the WIN + R keys and enter dcomcnfg in the pop-up dialog box to confirm and enter the component service, as shown in the figure:
 
-![](./assets-opcda/comcnf.png)
+![](./assets/comcnf.png)
 
 2. First set the overall properties of the machine, expand "Component Services\Computers\My Computer", right-click My Computer to open the Properties setting in the menu:
 
-![](./assets-opcda/comcnf1.png)
+![](./assets/comcnf1.png)
 
 Check "Enable Distributed COM on this computer" in "Default Properties", and set "Default Authentication Level" to "None":
 
-![](./assets-opcda/comcnf2.png)
+![](./assets/comcnf2.png)
 
 In "Default Protocols" keep only "Connection-oriented TCP/IP":
 
-![](./assets-opcda/comcnf3.png)
+![](./assets/comcnf3.png)
 
 In "COM Security", add "Everyone", "Administrators", and "ANONYMOUS LOGON" users to "Edit Limits" and "Edit Default Limits" in "Access Permissions" and "Launch and Activation Permissions" respectively, and set them Check all permissions below:
 
-![](./assets-opcda/comcnf4.png)
+![](./assets/comcnf4.png)
 
 3. Expand "Component Services\Computers\My Computer\DCOM Config", set the properties of "OpcEnum" and "MatrikonOPC Server for Simulation and Testing" respectively, and select "None" in "General"-"Authentication Level":
 
-![](./assets-opcda/comcnf5.png)
+![](./assets/comcnf5.png)
 
 在"Location"中勾选"Run application on the computer where the data is located"和"Run application on this computer"：
 
-![](./assets-opcda/comcnf6.png)
+![](./assets/comcnf6.png)
 
 In "Security", select Custom for all permissions and add users "Everyone", "Administrators", and "ANONYMOUS LOGON" respectively, and check all permissions under them:
 
-![](./assets-opcda/comcnf7.png)
+![](./assets/comcnf7.png)
 
 4. Make sure to close the system firewall or add a security policy to allow programs such as OpcEnum and Matrikon to pass through.
 
@@ -100,23 +100,23 @@ In order to remotely access the set remote host, it is also necessary to perform
 
 1. First set the overall properties of the machine, expand "Component Services\Computers\My Computer", right-click My Computer to open the Properties setting in the menu, the content and method of setting are consistent with the remote host:
 
-![](./assets-opcda/client-cfg1.png)
+![](./assets/client-cfg1.png)
 
-![](./assets-opcda/client-cfg2.png)
+![](./assets/client-cfg2.png)
 
-![](./assets-opcda/client-cfg3.png)
+![](./assets/client-cfg3.png)
 
 2. Expand "Component Services\Computers\My Computer\DCOM Config", set "OpcEnum", the content and method of setting are consistent with the remote host:
 
-![](./assets-opcda/client-cfg4.png)
+![](./assets/client-cfg4.png)
 
-![](./assets-opcda/client-cfg5.png)
+![](./assets/client-cfg5.png)
 
-![](./assets-opcda/client-cfg6.png)
+![](./assets/client-cfg6.png)
 
 3. Make sure to close the system firewall or add a security policy to allow the OpcEnum program to pass.
 
 So far, the local host test environment of OPCDA has been set up.
 
-![](./assets-opcda/client-worked.png)
+![](./assets/client-worked.png)
 
