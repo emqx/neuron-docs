@@ -15,14 +15,14 @@ The difference between the two modules is that the modbus-tcp module is open sou
 | ------------- | ---------------------------- |
 | **connection mode** | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client       |
 | **host**            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default    |
-| **port**           | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. default 502    |
+| **port**           | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally.   |
 | **timeout**         | Timeout for sending requests to the device                                   |
 
 ### Modbus RTU Parameter Setting
 
 | Parameter     | Description                                         |
 | ------------- | --------------------------------------------------- |
-| **device**    | Use a serial device, e.g."/dev/ttyUSB0"             |
+| **device**    | Use a serial device, e.g. **/dev/ttyUSB0**          |
 | **stop**      | stopbits, default 1                                 |
 | **parity**    | parity bit, default 2, which means even parity      |
 | **baud**      | baudrate, default 9600                              |
