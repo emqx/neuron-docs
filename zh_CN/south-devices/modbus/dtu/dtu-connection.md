@@ -1,10 +1,14 @@
-# 有人云 DTU 连接 Neuron 示例
+# DTU 连接示例
 
-本文将以有人云 DTU 透传模块通过 RS485 方式连接设备为例，介绍如何将串口设备转换为网络连接到 Neuron。连接示意图如下图所示。
+本文将以使用 Modbus RTU 协议的设备通过有人云 DTU 透传模块连接到 Neuron 为例，介绍如何将串口数据转换为网络数据。连接示意图如下图所示。
 
 ![neuron-dtu](./assets/neuron-dtu.png)
 
-DTU 支持数据的双向转换，支持将 RS232、RS485、RS422 等常见的串口数据与 TCP/IP数据进行相互转换，并通过无线通信网络进行传送。DTU 一般采用的通信方式有2/3/4G、NB-IoT、LoRaWAN、WIFI 等.
+:::tip
+Modbus RTU 虽转为网络传输，但仍然是 Modbus RTU 报文格式。若 DTU 将 Modbus RTU 转为 Modbus TCP，此时需要使用 Modbus TCP 驱动模块。
+:::
+
+DTU 支持数据的双向转换，支持将 RS232、RS485、RS422 等常见的串口数据与 TCP/IP 数据进行相互转换，并通过无线通信网络进行传输。DTU 一般采用的通信方式有 2/3/4G、NB-IoT、LoRaWAN、WIFI 等。
 
 ## 什么是 client/server 模式？
 
