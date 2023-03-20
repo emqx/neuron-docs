@@ -120,3 +120,9 @@ $ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
 
 Neuron 设置的数据类型必须与 OPC UA 数据类型相匹配。
 :::
+
+## 常见问题处理
+* PLC 设备开启 OPC UA Server 时需要打开“接受客户端证书”选项。
+* KepServer 或 Industrial Gateway OPC Server 在不使用匿名登录的情况下需要将“受信任的客户端”列表中的 NeuronClient 设置为信任。
+* 只有 PEM 的证书/密钥时需要参照上文进行转换。
+* Neuron 连接不上时，可以使用其他 OPC UA 测试软件测试一下是不是 OPC UA 服务器无法连接。
