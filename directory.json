@@ -347,8 +347,20 @@
       "title": "参与项目",
       "children": [
         {
-          "title": "架构设计",
+          "title": "学会编译",
+          "path": "project/compile/compile"
+        },
+        {
+          "title": "了解架构",
           "path": "project/architecture/architecture"
+        },
+        {
+          "title": "开始开发",
+          "path": "project/development/development"
+        },
+        {
+          "title": "Neuron 编码规范",
+          "path": "project/specification/specification"
         },
         {
           "title": "SDK 教程",
@@ -358,8 +370,8 @@
               "path": "project/sdk/sdk_based-driver-development"
             },
             {
-              "title": "南向开发思维导图",
-              "path": "project/sdk/mind_mapping"
+              "title": "插件配置文件详解",
+              "path": "project/sdk/plugin_configuration_file"
             },
             {
               "title": "Modbus 插件开发示例",
@@ -368,6 +380,19 @@
             {
               "title": "MQTT 插件开发示例",
               "path": "project/sdk/mqtt_example"
+            },
+            {
+              "title": "南向开发思维导图",
+              "path": "project/sdk/mind_mapping"
+            }
+          ]
+        },
+        {
+          "title": "协议介绍",
+          "children": [
+            {
+              "title": "Modbus TCP",
+              "path": "project/protocol/modbus_tcp"
             }
           ]
         }
