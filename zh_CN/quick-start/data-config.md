@@ -18,7 +18,7 @@
 * 名称：填写 Tag 名称，例如，tag1；
 * 属性：下拉选择 Tag 属性，例如，read，write，subscribe；
 * 类型：下拉选择数据类型，例如，int16，uint16，int32，uint32，float，bit；
-* 地址：填写驱动地址，例如，1!40001。1 代表 Modbus 模拟器中设置的点位站点号，40001 代表点位寄存器地址，详细的驱动地址使用说明请参阅 [模块配置](../module-plugins/module-driver.md)；
+* 地址：填写驱动地址，例如，1!40001。1 代表 Modbus 模拟器中设置的点位站点号，40001 代表点位寄存器地址，详细的驱动地址使用说明请参阅 [Modbus 介绍与使用](../south-devices/modbus/modbus-tcp.md)；
 * 乘系数：默认不填；
 * 描述：默认不填。
 
