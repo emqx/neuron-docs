@@ -214,6 +214,10 @@
             {
               "title": "Beckhoff ADS 介绍与用法",
               "path": "south-devices/ads/ads"
+            },
+            {
+              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
+              "path": "south-devices/ads/plc-ads/ads"
             }
           ]
         },
@@ -268,6 +272,29 @@
             {
               "title": "NON A11 介绍与使用",
               "path": "south-devices/nona11/nona11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "北向应用",
+      "children": [
+        {
+          "title": "MQTT",
+          "children": [
+            {
+              "title": "MQTT 介绍及使用",
+              "path": "north-apps/mqtt/mqtt"
+            }
+          ]
+        },
+        {
+          "title": "SparkPlugB",
+          "children": [
+            {
+              "title": "SparkPlugB 介绍及使用",
+              "path": "north-apps/sparkplugb/sparkplugb"
             }
           ]
         }
@@ -604,10 +631,6 @@
             {
               "title": "Introduction and Usage of Beckhoff ADS",
               "path": "south-devices/ads/ads"
-            },
-            {
-              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
-              "path": "south-devices/ads/plc-ads/ads"
             }
           ]
         },
@@ -662,6 +685,29 @@
             {
               "title": "Introduction and Usage of NON A11",
               "path": "south-devices/nona11/nona11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Northbound Applications",
+      "children": [
+        {
+          "title": "MQTT",
+          "children": [
+            {
+              "title": "Introduction and Usage of MQTT",
+              "path": "north-apps/mqtt/mqtt"
+            }
+          ]
+        },
+        {
+          "title": "SparkPlugB",
+          "children": [
+            {
+              "title": "Introduction and Usage of SparkPlugB",
+              "path": "north-apps/sparkplugb/sparkplugb"
             }
           ]
         }
