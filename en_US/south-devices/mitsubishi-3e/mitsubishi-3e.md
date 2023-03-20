@@ -1,4 +1,4 @@
-# Mitsubishi MELSEC QnA3E 介绍与使用
+# Introduction and Usage of Mitsubishi MELSEC QnA3E
 
 ## Module Description
 

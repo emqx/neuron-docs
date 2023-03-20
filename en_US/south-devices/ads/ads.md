@@ -1,4 +1,4 @@
-# Beckhoff ADS 介绍与使用
+# Introduction and Usage of Beckhoff ADS
 
 ## Module Description
 

@@ -1,4 +1,4 @@
-# EtherNet/IP(CIP) 介绍与使用
+# Introduction and Usage of EtherNet/IP(CIP)
 
 ## Parameter Configuration
 
