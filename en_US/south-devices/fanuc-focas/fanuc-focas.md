@@ -1,4 +1,4 @@
-# Fanuc Focas Ethernet 介绍与使用
+# Introduction and Usage of Fanuc Focas Ethernet
 
 **Support arch**: amd64, armv7
 

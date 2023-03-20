@@ -1,4 +1,4 @@
-# OMRON FINS on TCP 介绍与用法
+# Introduction and Usage of OMRON FINS on TCP
 
 ## Module Description
 
