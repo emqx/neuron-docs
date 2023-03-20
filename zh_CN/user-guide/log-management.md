@@ -1,4 +1,4 @@
-# 日志管理
+# 管理日志
 
 ## 下载日志
 
@@ -10,6 +10,11 @@ Neuron 在 2.3 版本中已支持在 web 页面一键下载所有日志文件的
 
 ![neuron_logs](./assets/neuron_logs.png)
 
+* data-stream-processing.log：数据处理配置；
+* dlt645.log：北向应用配置；
+* modbus-plus-tcp.log：南向设备配置；
+* neuron.log：Neuron日志
+
 ## 设置打印节点 debug 日志
 
 Neuron 支持设置打印某个节点的 debug 日志，并在大致十分钟后自动切回默认的日志等级。每个节点之间的设置相互独立。
@@ -18,7 +23,7 @@ Neuron 支持设置打印某个节点的 debug 日志，并在大致十分钟后
 
 ![debug_log](./assets/debug_log.png)
 
-单击此按键后，页面将跳出如下图所示的提示。
+点击此按键后，页面将跳出如下图所示的提示。
 
 ![debug_log_tip](./assets/debug_log_tip.png)
 

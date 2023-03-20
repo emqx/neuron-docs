@@ -30,5 +30,5 @@ To add a new Pluggable module,
 * Click on the `Create` button to move .so file to the build directory.
 
 :::tip
-Please make sure that the plugin .so file you have written is placed under the neuron/build/plugins directory before adding it. For specific plugin development tutorials, please refer to [SKD Tutorial](../sdk/sdk_based-driver-development.md).
+Please make sure that the plugin .so file you have written is placed under the neuron/build/plugins directory before adding it. For specific plugin development tutorials, please refer to [SDK Tutorial](../project/sdk/sdk_based-driver-development.md).
 :::

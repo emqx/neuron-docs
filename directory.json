@@ -1,23 +1,86 @@
 {
   "cn": [
     {
-      "title": "产品概览",
-      "path": "./"
-    },
-    {
-      "title": "开始使用",
+      "title": "介绍",
       "children": [
         {
-          "title": "安装",
-          "path": "getting-started/installation"
+          "title": "产品概览",
+          "path": "./"
         },
         {
-          "title": "快速教程",
-          "path": "getting-started/quick_start"
+          "title": "使用场景",
+          "children": [
+            {
+              "title": "集成",
+              "path": "introduction/use-scenes/integration/integration"
+            },
+            {
+              "title": "案例",
+              "path": "introduction/use-scenes/use-cases/use_cases"
+            }
+          ]
+        },
+        {
+          "title": "模块列表",
+          "path": "introduction/module-list/module-list"
         },
         {
           "title": "许可证政策",
-          "path": "getting-started/license_policy"
+          "path": "introduction/license-describe"
+        }
+      ]
+    },
+    {
+      "title": "快速入门",
+      "children": [
+        {
+          "title": "硬件规格",
+          "path": "quick-start/hardware-specifications"
+        },
+        {
+          "title": "下载安装",
+          "path": "quick-start/installation"
+        },
+        {
+          "title": "下载安装 Modbus 模拟器",
+          "path": "quick-start/installation-modbus"
+        },
+        {
+          "title": "登陆 Neuron 页面",
+          "path": "quick-start/login"
+        },
+        {
+          "title": "申请和安装许可证",
+          "path": "quick-start/license-install/license-install"
+        },
+        {
+          "title": "连接到南向设备",
+          "path": "quick-start/southdevices-connect"
+        },
+        {
+          "title": "配置采集数据组和点位",
+          "path": "quick-start/data-config"
+        },
+        {
+          "title": "数据监控",
+          "path": "quick-start/monitoring"
+        },
+        {
+          "title": "连接到 MQTT",
+          "path": "quick-start/mqtt-config"
+        },
+        {
+          "title": "数据处理",
+          "children": [
+            {
+              "title": "清洗数据",
+              "path": "data-processing-engine/data-cleansing"
+            },
+            {
+              "title": "反控设备",
+              "path": "data-processing-engine/device-control"
+            }
+          ]
         }
       ]
     },
@@ -25,12 +88,24 @@
       "title": "用户指南",
       "children": [
         {
-          "title": "配置点位导入/导出",
-          "path": "user-guide/configuration-import-export"
+          "title": "点位配置",
+          "path": "user-guide/configuration"
+        },
+        {
+          "title": "点位导入/导出",
+          "path": "user-guide/import-export"
         },
         {
           "title": "反控设备",
           "path": "user-guide/device-control"
+        },
+        {
+          "title": "数据统计",
+          "path": "user-guide/data-statistics"
+        },
+        {
+          "title": "离线数据缓存",
+          "path": "user-guide/offline-data-cache"
         },
         {
           "title": "管理日志",
@@ -41,12 +116,187 @@
           "path": "user-guide/change-password"
         },
         {
-          "title": "数据统计",
-          "path": "user-guide/data-statistics"
-        },
-        {
           "title": "管理插件模块",
           "path": "user-guide/plugin-modules-management"
+        }
+      ]
+    },
+    {
+      "title": "南向驱动",
+      "children": [
+        {
+          "title": "Modbus",
+          "children": [
+            {
+              "title": "Modbus 介绍与使用",
+              "path": "south-devices/modbus/modbus-tcp"
+            },
+            {
+              "title": "DTU 连接示例",
+              "path": "south-devices/modbus/dtu/dtu-connection"
+            }
+          ]
+        },
+        {
+          "title": "OPC UA",
+          "children": [
+            {
+              "title": "OPC UA 介绍与使用",
+              "path": "south-devices/opc-ua/opc-ua"
+            }
+          ]
+        },
+        {
+          "title": "OPC DA",
+          "children": [
+            {
+              "title": "OPC DA 介绍与使用",
+              "path": "south-devices/opc-da/opc-da"
+            },
+            {
+              "title": "NeuOPC 设置",
+              "path": "south-devices/opc-da/neuopc/neuopc"
+            }
+          ]
+        },
+        {
+          "title": "EtherNet/IP(CIP)",
+          "children": [
+            {
+              "title": "EtherNet/IP(CIP) 介绍与使用",
+              "path": "south-devices/ethernet-ip/ethernet-ip"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 3E",
+          "children": [
+            {
+              "title": "Mitsubishi MELSEC QnA3E 介绍与使用",
+              "path": "south-devices/mitsubishi-3e/mitsubishi-3e"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 1E",
+          "children": [
+            {
+              "title": "Mitsubishi MELSEC A1E 介绍及使用",
+              "path": "south-devices/mitsubishi-1e/mitsubishi-1e"
+            }
+          ]
+        },
+        {
+          "title": "Siemens S7 ISO TCP",
+          "children": [
+            {
+              "title": "Siemens S7 ISOTCP 介绍与使用",
+              "path": "south-devices/siemens-s7/s7"
+            },
+            {
+              "title": "Siemens S7-1200/1500 设置",
+              "path": "south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+            }
+          ]
+        },
+        {
+          "title": "Omron FINS TCP",
+          "children": [
+            {
+              "title": "OMRON FINS on TCP 介绍与用法",
+              "path": "south-devices/omron-fins/omron-fins"
+            }
+          ]
+        },
+        {
+          "title": "Beckhoff ADS",
+          "children": [
+            {
+              "title": "Beckhoff ADS 介绍与用法",
+              "path": "south-devices/ads/ads"
+            },
+            {
+              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
+              "path": "south-devices/ads/plc-ads/ads"
+            }
+          ]
+        },
+        {
+          "title": "IEC60870-5-104",
+          "children": [
+            {
+              "title": "IEC 60870-5-104 介绍与使用",
+              "path": "south-devices/iec-104/iec-104"
+            }
+          ]
+        },
+        {
+          "title": "DL/T645-2007",
+          "children": [
+            {
+              "title": "DL/T645-2007 介绍与使用",
+              "path": "south-devices/dlt645-2007/dlt645-2007"
+            }
+          ]
+        },
+        {
+          "title": "BACnet/IP",
+          "children": [
+            {
+              "title": "BACnet/IP 介绍与使用",
+              "path": "south-devices/bacnet-ip/bacnet-ip"
+            }
+          ]
+        },
+        {
+          "title": "KNXnet/IP",
+          "children": [
+            {
+              "title": "KNXnet/IP 介绍与使用",
+              "path": "south-devices/knxnet-ip/knxnet-ip"
+            }
+          ]
+        },
+        {
+          "title": "Fanuc Focas Ethernet",
+          "children": [
+            {
+              "title": "Fanuc Focas Ethernet 介绍与使用",
+              "path": "south-devices/fanuc-focas/fanuc-focas"
+            }
+          ]
+        },
+        {
+          "title": "NON A11",
+          "children": [
+            {
+              "title": "NON A11 介绍与使用",
+              "path": "south-devices/nona11/nona11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "北向应用",
+      "children": [
+        {
+          "title": "MQTT",
+          "children": [
+            {
+              "title": "MQTT 介绍及使用",
+              "path": "north-apps/mqtt/mqtt"
+            }
+          ]
+        },
+        {
+          "title": "SparkPlugB",
+          "children": [
+            {
+              "title": "SparkPlugB 介绍及使用",
+              "path": "north-apps/sparkplugb/sparkplugb"
+            }
+          ]
         }
       ]
     },
@@ -68,130 +318,55 @@
       ]
     },
     {
-      "title": "驱动模块",
+      "title": "API 接口",
       "children": [
         {
-          "title": "模块列表",
-          "path": "module-plugins/module-list"
+          "title": "HTTP API",
+          "path": "api/http-api"
         },
         {
-          "title": "模块描述",
-          "children": [
-            {
-              "title": "云连接",
-              "path": "module-plugins/module-description/cloud-connectivity"
-            },
-            {
-              "title": "应用",
-              "path": "module-plugins/module-description/application"
-            },
-            {
-              "title": "PLC 设备",
-              "path": "module-plugins/module-description/plc-drivers"
-            },
-            {
-              "title": "全球标准",
-              "path": "module-plugins/module-description/global-standards"
-            },
-            {
-              "title": "电力",
-              "path": "module-plugins/module-description/electricity"
-            },
-            {
-              "title": "楼宇自动化",
-              "path": "module-plugins/module-description/building-automation"
-            },
-            {
-              "title": "数控机床和机器人",
-              "path": "module-plugins/module-description/cnc-machines-robotics"
-            }
-          ]
+          "title": "MQTT API",
+          "path": "api/mqtt-api"
         },
         {
-          "title": "模块配置",
-          "path": "module-plugins/module-driver"
-        },
-        {
-          "title": "PLC 设置",
-          "children": [
-            {
-              "title": "Siemens S7-1200/1500",
-              "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
-            },
-            {
-              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
-              "path": "module-plugins/plc-settings/ads/ads"
-            }
-          ]
-        },
-        {
-          "title": "附属工具设置",
-          "children": [
-            {
-              "title": "设置 neuopc",
-              "path": "module-plugins/plc-settings/opcda"
-            }
-          ]
+          "title": "错误代码",
+          "path": "api/error-code"
         }
       ]
     },
     {
-      "title": "设备连接示例",
+      "title": "参与项目",
       "children": [
         {
-          "title": "连接 DTU 示例",
-          "path": "reference/dtu-connection"
+          "title": "架构设计",
+          "path": "project/architecture/architecture"
+        },
+        {
+          "title": "SDK 教程",
+          "children": [
+            {
+              "title": "基于 SDK 的驱动开发",
+              "path": "project/sdk/sdk_based-driver-development"
+            },
+            {
+              "title": "南向开发思维导图",
+              "path": "project/sdk/mind_mapping"
+            },
+            {
+              "title": "Modbus 插件开发示例",
+              "path": "project/sdk/modbus_example"
+            },
+            {
+              "title": "MQTT 插件开发示例",
+              "path": "project/sdk/mqtt_example"
+            }
+          ]
         }
       ]
-    },
-    {
-      "title": "SDK 教程",
-      "children": [
-        {
-          "title": "基于 SDK 的驱动开发",
-          "path": "sdk/sdk_based-driver-development"
-        },
-        {
-          "title": "南向开发思维导图",
-          "path": "sdk/mind_mapping"
-        },
-        {
-          "title": "Modbus 插件开发示例",
-          "path": "sdk/modbus_example"
-        },
-        {
-          "title": "MQTT 插件开发示例",
-          "path": "sdk/mqtt_example"
-        }
-      ]
-    },
-    {
-      "title": "架构设计",
-      "path": "architecture"
-    },
-    {
-      "title": "集成",
-      "path": "integration"
-    },
-    {
-      "title": "案例",
-      "path": "use_cases"
     },
     {
       "title": "参考",
       "children": [
-        {
-          "title": "HTTP API",
-          "path": "reference/http-api"
-        },
-        {
-          "title": "MQTT API",
-          "path": "reference/mqtt-api"
-        },
-        {
-          "title": "错误代码",
-          "path": "reference/error-code"
-        },
         {
           "title": "插件设置",
           "path": "reference/plugin-setting"
@@ -202,22 +377,85 @@
   "en": [
     {
       "title": "Introduction",
-      "path": "./"
-    },
-    {
-      "title": "Getting Started",
       "children": [
         {
-          "title": "Installation",
-          "path": "getting-started/installation"
+          "title": "Product Overview",
+          "path": "./"
         },
         {
-          "title": "Quick Start",
-          "path": "getting-started/quick_start"
+          "title": "Use Scenes",
+          "children": [
+            {
+              "title": "Integrations",
+              "path": "introduction/use-scenes/integration/integration"
+            },
+            {
+              "title": "Use Cases",
+              "path": "introduction/use-scenes/use-cases/use_cases"
+            }
+          ]
+        },
+        {
+          "title": "Module List",
+          "path": "introduction/module-list/module-list"
         },
         {
           "title": "License Policy",
-          "path": "getting-started/license_policy"
+          "path": "introduction/license-describe"
+        }
+      ]
+    },
+    {
+      "title": "Quick Start",
+      "children": [
+        {
+          "title": "Hardware Specifications",
+          "path": "quick-start/hardware-specifications"
+        },
+        {
+          "title": "Installation",
+          "path": "quick-start/installation"
+        },
+        {
+          "title": "Install Modbus Simulator",
+          "path": "quick-start/installation-modbus"
+        },
+        {
+          "title": "Login Neuron",
+          "path": "quick-start/login"
+        },
+        {
+          "title": "Apply For And Install License",
+          "path": "quick-start/license-install/license-install"
+        },
+        {
+          "title": "Connect To Southbound Devices",
+          "path": "quick-start/southdevices-connect"
+        },
+        {
+          "title": "Configure Data Groups And Tags",
+          "path": "quick-start/data-config"
+        },
+        {
+          "title": "Monitoring Data",
+          "path": "quick-start/monitoring"
+        },
+        {
+          "title": "Connect To MQTT",
+          "path": "quick-start/mqtt-config"
+        },
+        {
+          "title": "Data Processing",
+          "children": [
+            {
+              "title": "Data Cleansing",
+              "path": "data-processing-engine/data-cleansing"
+            },
+            {
+              "title": "Device Control",
+              "path": "data-processing-engine/device-control"
+            }
+          ]
         }
       ]
     },
@@ -225,12 +463,24 @@
       "title": "User Guide",
       "children": [
         {
-          "title": "Configuration Tag Import/Export",
-          "path": "user-guide/configuration-import-export"
+          "title": "Configure Tag",
+          "path": "user-guide/configuration"
+        },
+        {
+          "title": "Tag Import/Export",
+          "path": "user-guide/import-export"
         },
         {
           "title": "Control Device",
           "path": "user-guide/device-control"
+        },
+        {
+          "title": "Data Statistics",
+          "path": "user-guide/data-statistics"
+        },
+        {
+          "title": "Offline Data Cache",
+          "path": "user-guide/offline-data-cache"
         },
         {
           "title": "Log Management",
@@ -241,12 +491,183 @@
           "path": "user-guide/change-password"
         },
         {
-          "title": "Data Statistics",
-          "path": "user-guide/data-statistics"
-        },
-        {
           "title": "Plugin Module Management",
           "path": "user-guide/plugin-modules-management"
+        }
+      ]
+    },
+    {
+      "title": "Southbound Drivers",
+      "children": [
+        {
+          "title": "Modbus",
+          "children": [
+            {
+              "title": "Introduction and Usage of Modbus",
+              "path": "south-devices/modbus/modbus-tcp"
+            },
+            {
+              "title": "DTU Connection Example",
+              "path": "south-devices/modbus/dtu/dtu-connection"
+            }
+          ]
+        },
+        {
+          "title": "OPC UA",
+          "children": [
+            {
+              "title": "Introduction and Usage of OPC UA",
+              "path": "south-devices/opc-ua/opc-ua"
+            }
+          ]
+        },
+        {
+          "title": "OPC DA",
+          "children": [
+            {
+              "title": "Introduction and Usage of OPC DA",
+              "path": "south-devices/opc-da/opc-da"
+            },
+            {
+              "title": "NeuOPC Settings",
+              "path": "south-devices/opc-da/neuopc/neuopc"
+            }
+          ]
+        },
+        {
+          "title": "EtherNet/IP(CIP)",
+          "children": [
+            {
+              "title": "Introduction and Usage of EtherNet/IP(CIP)",
+              "path": "south-devices/ethernet-ip/ethernet-ip"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 3E",
+          "children": [
+            {
+              "title": "Introduction and Usage of Mitsubishi MELSEC QnA3E",
+              "path": "south-devices/mitsubishi-3e/mitsubishi-3e"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 1E",
+          "children": [
+            {
+              "title": "Introduction and Usage of Mitsubishi MELSEC A1E",
+              "path": "south-devices/mitsubishi-1e/mitsubishi-1e"
+            }
+          ]
+        },
+        {
+          "title": "Siemens S7 ISO TCP",
+          "children": [
+            {
+              "title": "Introduction and Usage of Siemens S7 ISOTCP",
+              "path": "south-devices/siemens-s7/s7"
+            },
+            {
+              "title": "Siemens S7-1200/1500 Settings",
+              "path": "south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+            }
+          ]
+        },
+        {
+          "title": "Omron FINS TCP",
+          "children": [
+            {
+              "title": "Introduction and Usage of OMRON FINS on TCP",
+              "path": "south-devices/omron-fins/omron-fins"
+            }
+          ]
+        },
+        {
+          "title": "Beckhoff ADS",
+          "children": [
+            {
+              "title": "Introduction and Usage of Beckhoff ADS",
+              "path": "south-devices/ads/ads"
+            }
+          ]
+        },
+        {
+          "title": "IEC60870-5-104",
+          "children": [
+            {
+              "title": "Introduction and Usage of IEC 60870-5-104",
+              "path": "south-devices/iec-104/iec-104"
+            }
+          ]
+        },
+        {
+          "title": "DL/T645-2007",
+          "children": [
+            {
+              "title": "Introduction and Usage of DL/T645-2007",
+              "path": "south-devices/dlt645-2007/dlt645-2007"
+            }
+          ]
+        },
+        {
+          "title": "BACnet/IP",
+          "children": [
+            {
+              "title": "Introduction and Usage of BACnet/IP",
+              "path": "south-devices/bacnet-ip/bacnet-ip"
+            }
+          ]
+        },
+        {
+          "title": "KNXnet/IP",
+          "children": [
+            {
+              "title": "Introduction and Usage of KNXnet/IP",
+              "path": "south-devices/knxnet-ip/knxnet-ip"
+            }
+          ]
+        },
+        {
+          "title": "Fanuc Focas Ethernet",
+          "children": [
+            {
+              "title": "Introduction and Usage of Fanuc Focas Ethernet",
+              "path": "south-devices/fanuc-focas/fanuc-focas"
+            }
+          ]
+        },
+        {
+          "title": "NON A11",
+          "children": [
+            {
+              "title": "Introduction and Usage of NON A11",
+              "path": "south-devices/nona11/nona11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Northbound Applications",
+      "children": [
+        {
+          "title": "MQTT",
+          "children": [
+            {
+              "title": "Introduction and Usage of MQTT",
+              "path": "north-apps/mqtt/mqtt"
+            }
+          ]
+        },
+        {
+          "title": "SparkPlugB",
+          "children": [
+            {
+              "title": "Introduction and Usage of SparkPlugB",
+              "path": "north-apps/sparkplugb/sparkplugb"
+            }
+          ]
         }
       ]
     },
@@ -268,126 +689,55 @@
       ]
     },
     {
-      "title": "Driver Modules",
+      "title": "API",
       "children": [
         {
-          "title": "Module List",
-          "path": "module-plugins/module-list"
+          "title": "HTTP API",
+          "path": "api/http-api"
         },
         {
-          "title": "Module Description",
-          "children": [
-            {
-              "title": "Cloud Connectivity",
-              "path": "module-plugins/module-description/cloud-connectivity"
-            },
-            {
-              "title": "Application",
-              "path": "module-plugins/module-description/application"
-            },
-            {
-              "title": "PLC Drivers",
-              "path": "module-plugins/module-description/plc-drivers"
-            },
-            {
-              "title": "Global Standards",
-              "path": "module-plugins/module-description/global-standards"
-            },
-            {
-              "title": "Electricity",
-              "path": "module-plugins/module-description/electricity"
-            },
-            {
-              "title": "Building Automation",
-              "path": "module-plugins/module-description/building-automation"
-            },
-            {
-              "title": "CNC Machines & Robotics",
-              "path": "module-plugins/module-description/cnc-machines-robotics"
-            }
-          ]
+          "title": "MQTT API",
+          "path": "api/mqtt-api"
         },
         {
-          "title": "Module Setting",
-          "path": "module-plugins/module-driver"
-        },
-        {
-          "title": "PLC Setup Instructions",
-          "children": [
-            {
-              "title": "Siemens S7-1200/1500",
-              "path": "module-plugins/plc-settings/siemens-s7-1200-1500"
-            }
-          ]
-        },
-        {
-          "title": "Accessory Tools",
-          "children": [
-            {
-              "title": "Neuopc Settings",
-              "path": "module-plugins/plc-settings/opcda"
-            }
-          ]
+          "title": "Error Codes",
+          "path": "api/error-code"
         }
       ]
     },
     {
-      "title": "Equipment Connections",
+      "title": "Project",
       "children": [
         {
-          "title": "DTU Connection",
-          "path": "reference/dtu-connection"
+          "title": "Architecture",
+          "path": "project/architecture/architecture"
+        },
+        {
+          "title": "SDK Tutorial",
+          "children": [
+            {
+              "title": "SDK-based driver development",
+              "path": "project/sdk/sdk_based-driver-development"
+            },
+            {
+              "title": "Southbound development mind map",
+              "path": "project/sdk/mind_mapping"
+            },
+            {
+              "title": "Modbus plugin development example",
+              "path": "project/sdk/modbus_example"
+            },
+            {
+              "title": "MQTT Application Development Example",
+              "path": "project/sdk/mqtt_example"
+            }
+          ]
         }
       ]
-    },
-    {
-      "title": "SDK Tutorial",
-      "children": [
-        {
-          "title": "SDK-based driver development",
-          "path": "sdk/sdk_based-driver-development"
-        },
-        {
-          "title": "Southbound development mind map",
-          "path": "sdk/mind_mapping"
-        },
-        {
-          "title": "Modbus plugin development example",
-          "path": "sdk/modbus_example"
-        },
-        {
-          "title": "MQTT Application Development Example",
-          "path": "sdk/mqtt_example"
-        }
-      ]
-    },
-    {
-      "title": "Architecture",
-      "path": "architecture"
-    },
-    {
-      "title": "Integrations",
-      "path": "integration"
-    },
-    {
-      "title": "Use Cases",
-      "path": "use_cases"
     },
     {
       "title": "Reference",
       "children": [
-        {
-          "title": "HTTP API",
-          "path": "reference/http-api"
-        },
-        {
-          "title": "MQTT API",
-          "path": "reference/mqtt-api"
-        },
-        {
-          "title": "Error Codes",
-          "path": "reference/error-code"
-        },
         {
           "title": "Plugin Setting",
           "path": "reference/plugin-setting"
