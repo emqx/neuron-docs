@@ -274,6 +274,15 @@
               "path": "south-devices/nona11/nona11"
             }
           ]
+        },
+        {
+          "title": "File",
+          "children": [
+            {
+              "title": "File 介绍与使用",
+              "path": "south-devices/file/file"
+            }
+          ]
         }
       ]
     },
@@ -643,6 +652,15 @@
             {
               "title": "Introduction and Usage of NON A11",
               "path": "south-devices/nona11/nona11"
+            }
+          ]
+        },
+        {
+          "title": "File",
+          "children": [
+            {
+              "title": "Introduction and Usage of File",
+              "path": "south-devices/file/file"
             }
           ]
         }
