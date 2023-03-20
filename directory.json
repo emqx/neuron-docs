@@ -200,6 +200,15 @@
           ]
         },
         {
+          "title": "Siemens S5 FetchWrite",
+          "children": [
+            {
+              "title": "Siemens S5 FetchWrite 介绍与使用",
+              "path": "south-devices/siemens-fetchwrite/fetchwrite"
+            }
+          ]
+        },
+        {
           "title": "Omron FINS TCP",
           "children": [
             {
@@ -227,6 +236,15 @@
             {
               "title": "IEC 60870-5-104 介绍与使用",
               "path": "south-devices/iec-104/iec-104"
+            }
+          ]
+        },
+        {
+          "title": "IEC61850",
+          "children": [
+            {
+              "title": "IEC61850 介绍与使用",
+              "path": "south-devices/iec61850/iec61850"
             }
           ]
         },
@@ -267,6 +285,15 @@
           ]
         },
         {
+          "title": "HJ212-2017",
+          "children": [
+            {
+              "title": "HJ212-2017 介绍与使用",
+              "path": "south-devices/hj212-2017/hj212-2017"
+            }
+          ]
+        },
+        {
           "title": "NON A11",
           "children": [
             {
@@ -295,6 +322,15 @@
             {
               "title": "SparkPlugB 介绍及使用",
               "path": "north-apps/sparkplugb/sparkplugb"
+            }
+          ]
+        },
+        {
+          "title": "WebSocket",
+          "children": [
+            {
+              "title": "WebSocket 介绍与使用",
+              "path": "north-apps/websocket/websocket"
             }
           ]
         }
@@ -575,6 +611,15 @@
           ]
         },
         {
+          "title": "Siemens S5 FetchWrite",
+          "children": [
+            {
+              "title": "Introduction and Usage of Siemens S5 FetchWrite",
+              "path": "south-devices/siemens-fetchwrite/fetchwrite"
+            }
+          ]
+        },
+        {
           "title": "Omron FINS TCP",
           "children": [
             {
@@ -598,6 +643,15 @@
             {
               "title": "Introduction and Usage of IEC 60870-5-104",
               "path": "south-devices/iec-104/iec-104"
+            }
+          ]
+        },
+        {
+          "title": "IEC61850",
+          "children": [
+            {
+              "title": "Introduction and Usage of IEC61850",
+              "path": "south-devices/iec61850/iec61850"
             }
           ]
         },
@@ -638,6 +692,15 @@
           ]
         },
         {
+          "title": "HJ212-2017",
+          "children": [
+            {
+              "title": "Introduction and Usage of HJ212-2017",
+              "path": "south-devices/hj212-2017/hj212-2017"
+            }
+          ]
+        },
+        {
           "title": "NON A11",
           "children": [
             {
@@ -666,6 +729,15 @@
             {
               "title": "Introduction and Usage of SparkPlugB",
               "path": "north-apps/sparkplugb/sparkplugb"
+            }
+          ]
+        },
+        {
+          "title": "WebSocket",
+          "children": [
+            {
+              "title": "Introduction and Usage of WebSocket",
+              "path": "north-apps/websocket/websocket"
             }
           ]
         }

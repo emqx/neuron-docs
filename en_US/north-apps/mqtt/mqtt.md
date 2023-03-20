@@ -4,7 +4,7 @@
 
 The data collected from the device can be transmitted to the mqtt broker through mqtt application, and instructions can be sent to neuron through mqtt application.
 
-## Parameter Configurations
+## Parameter Configuration
 
 | Parameter           | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
