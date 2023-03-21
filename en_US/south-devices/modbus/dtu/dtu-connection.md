@@ -74,10 +74,8 @@ First, you need to configure the parameters of the connection between the DTU an
 You can execute the following command on the server terminal to determine whether the listening port is occupied.
 
 ```bash
-# Check port range
-$ cat /proc/sys/net/ipv4/ip_local_port_range
 # Confirm whether the port is occupied
-$ telnet <ip> <port>
+$ netstat -anp |grep <port>
 ```
 :::
 

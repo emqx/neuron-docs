@@ -74,12 +74,9 @@ DTU 作为 Client，主动向 Neuron 发起连接请求，用户需要保证 DTU
 可在 Server 端的终端执行以下指令，确定监听端口是否被占用。
 
 ```bash
-# 查看端口范围
-$ cat /proc/sys/net/ipv4/ip_local_port_range
 # 确认端口是否占用
-$ telnet <ip> <port>
+$ netstat -anp |grep <port>
 ```
-
 :::
 
 ### 配置 Neuron 南向驱动 Server
