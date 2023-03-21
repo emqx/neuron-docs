@@ -141,8 +141,20 @@
           "title": "OPC UA",
           "children": [
             {
-              "title": "OPC UA 介绍与使用",
-              "path": "south-devices/opc-ua/opc-ua"
+              "title": "模块介绍",
+              "path": "south-devices/opc-ua/introduction"
+            },
+            {
+              "title": "参数示例",
+              "path": "south-devices/opc-ua/example"
+            },
+            {
+              "title": "连接设备",
+              "path": "south-devices/opc-ua/connection"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/opc-ua/faq"
             }
           ]
         },
