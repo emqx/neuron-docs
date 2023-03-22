@@ -10,6 +10,19 @@ Although Modbus RTU is converted for network transmission, it still uses the Mod
 
 DTU supports two-way conversion of data, supports mutual conversion of common serial data such as RS232, RS485, RS422 and TCP/IP data, and transmits them through the wireless communication network. The communication methods generally used by DTU are 2/3/4G, NB-IoT, LoRaWAN, WIFI, etc.
 
+## DTU Main Configuration
+![dtu](./assets/dtu_en.png)
+
+| Parameter                 | Description              |
+| -------------------- | ------------------------------------------------------- |
+| **Work Mode** | Typically, a DTU supports connecting via TCP or UDP in either client or server mode. It can transmit data using the Modbus TCP standard protocol, or it can transmit None (transparent) data.|
+| **Remote Server Addr** | When DTU acts as a client, fill in the address bound to Neuron Modbus.|
+| **Local/Remote Port Number** | When DTU acts as a client, fill in the port bound to Neuron Modbus. When DTU acts as a server, use the port of DTU.|
+
+:::tip
+DTU usually support serial port heartbeats, or enable network heartbeats and registration packets. These features cannot be used in the standard Modbus protocol, and Neuron currently cannot be compatible with these features. When using Neuron to connect to a DTU, be sure to turn off these options.
+:::
+
 ## What Is Client/server Mode?
 
 Client/Server, also known as client/server mode, referred to as C/S mode, is a network communication architecture, which is used to distinguish the two parties who establish a communication connection as a client (Clent) and a server (Server).
