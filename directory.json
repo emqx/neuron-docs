@@ -125,15 +125,36 @@
       "title": "南向驱动",
       "children": [
         {
-          "title": "Modbus",
+          "title": "Modbus RTU",
           "children": [
             {
-              "title": "Modbus 介绍与使用",
-              "path": "south-devices/modbus/modbus-tcp"
+              "title": "介绍与使用",
+              "path": "south-devices/modbus-rtu/modbus-rtu"
             },
             {
-              "title": "DTU 连接示例",
-              "path": "south-devices/modbus/dtu/dtu-connection"
+              "title": "连接 DTU",
+              "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/modbus-rtu/faq/faq"
+            }
+          ]
+        },
+        {
+          "title": "Modbus TCP",
+          "children": [
+            {
+              "title": "介绍与使用",
+              "path": "south-devices/modbus-tcp/modbus-tcp"
+            },
+            {
+              "title": "连接 PeakHMI Slave 模拟器",
+              "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/modbus-tcp/faq/faq"
             }
           ]
         },
