@@ -1,6 +1,6 @@
-# Pluggable Modules Management
+# Pluggable modules management
 
-## Check Over All Available Modules
+## Check over all available modules
 
 The plugin management page displays all the pluggable modules available and detailed information, including the name of the plug-in, associated node type, plug-in category, driver library name and description, as shown in the following figure.
 
@@ -18,7 +18,7 @@ The plug-in types include the following 3 modes:
 Users can filter out the plugins for northbound applications or southbound devices from the dropdown box.
 :::
 
-## Add A New Pluggable Module
+## Add a new pluggable module
 
 Click on the `Add Plugin` button in the upper right corner as shown below
 

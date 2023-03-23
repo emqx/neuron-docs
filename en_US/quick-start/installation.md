@@ -8,7 +8,7 @@ Neuron is divided into two installation packages:
 
 Users can choose according to their own needs.
 
-## Installation Conditions
+## Installation conditions
 
 | Linux distribution                                    | Required packages  |
 | ------------------------------------------------------------ | ------------------ |
@@ -161,7 +161,7 @@ $ docker run -d --name neuronex -p 7000:7000 --privileged=true -v /host/dir:/opt
 
 For rpm and deb installations, Neuron can perform the operation with following commands:
 
-### View Neuron Status
+### View Neuron status
 
 ```bash
 $ sudo systemctl status neuron

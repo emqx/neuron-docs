@@ -1,4 +1,4 @@
-# Plugin Setting
+# Plugin setting
 
 ## MQTT
 

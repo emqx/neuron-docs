@@ -1,6 +1,6 @@
-# Connect To Southbound Devices
+# Connect to southbound devices
 
-## Step 1, Add A Southbound Device
+## Step 1, Add a southbound device
 
 Create a southbound device node to connect to a real device or simulator.
 
@@ -9,7 +9,7 @@ Select **South Devices -> Configuration** menu to enter the southbound device ma
 * Name: fill in the name of the device, such as modbus-tcp-1;
 * Plugin: select the plugin of modbus-tcp from the drop-down box.
 
-## Step 2, Setting Southbound Device's Parameters
+## Step 2, Setting southbound device's parameters
 
 Configure the parameters required for Neuron to establish a connection with the device. In the upper right corner, you can select a list or card to display southward equipment
 

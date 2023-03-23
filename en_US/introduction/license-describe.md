@@ -1,4 +1,4 @@
-# License Policy
+# License policy
 
 Neuron is an open source project. We encourage our community to develop their own pluggable modules.
 

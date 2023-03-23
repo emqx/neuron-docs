@@ -1,4 +1,4 @@
-# Change Password
+# Change password
 
 Select the function of `Change Password` in `Administration` to change the login password, as shown in the figure below.
 
