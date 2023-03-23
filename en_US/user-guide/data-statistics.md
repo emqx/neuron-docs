@@ -4,7 +4,7 @@ Neuron supports the north-south node data statistics function based on Prometheu
 
 Each node card has an operation button of `Data statistics`, which is used to display the statistical information of the node. At present, Neuron has realized the statistics of some global fields and north-south fields, and will continue to increase statistical fields according to the demand.
 
-## Global Statistics
+## Global statistics
 
 Some global fields are described below.
 
@@ -13,7 +13,7 @@ Some global fields are described below.
 | uptime_seconds  | Displays the running time of Neuron, and the page is refreshed at a frequency of 5 s |
 | core_dumped     | Shows whether there is any abnormality in the running state of the system                   |
 
-## Northbound Node Statistics
+## Northbound node statistics
 
 The northbound application node already supports the statistics of some fields, but there will be some differences in the fields to be counted for each application. There are plans to update the statistical fields of each application in the later version, and some fields are described below.
 

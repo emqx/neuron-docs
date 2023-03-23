@@ -1,4 +1,4 @@
-# Offline Data Cache
+# Offline data cache
 
 Neuron can store data in memory and also support caching data on disk, making it convenient for users to store larger amounts of data. The size of disk storage data is set in the ```Cache disk size``` section of **Northbound Application Management -> Application Configuration**.
 

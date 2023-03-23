@@ -1,4 +1,4 @@
-# Monitoring Data
+# Monitoring data
 
 Select `Data Monitoring` under the `Monitoring` menu to enter the data monitoring interface to view the values read by the created tags, as shown in the figure below.
 

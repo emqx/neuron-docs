@@ -1,6 +1,6 @@
-# Connect To MQTT
+# Connect to MQTT
 
-## Step 1, Add Northbound MQTT Plug-in Node
+## Step 1, Add northbound MQTT plug-in node
 
 Create northbound MQTT node, and upload the collected device data to MQTT Broker.
 
@@ -9,7 +9,7 @@ Select **North Apps -> Configuration** , and click `Add App` to add MQTT client 
 * Name: fill in the application name, for example, mqtt;
 * Plugin: select the plugin of mqtt;
 
-## Step 2, Setting Parameters of MQTT client.
+## Step 2, Setting parameters of MQTT client.
 
 Configure the parameters required for MQTT client.
 
@@ -22,7 +22,7 @@ Click the `Application Configuration` icon on the application card to enter the 
 * Port:Use MQTT broker port(1883);
 * Click `Submit` to complete the configuration of northbound application, and the application card will automatically enter the working state of **Running**.
 
-## Step 3, Subscribe To The Group Of Tags.
+## Step 3, Subscribe to the group of tags.
 
 The collected tags are uploaded to the cloud in groups. Subscribe to the tag group to upload.
 
@@ -31,7 +31,7 @@ Click MQTT node to enter the subscription group interface. Select the tag group 
 * Southbound device: select the southbound device that you want to subscribe to, for example, modbus-tcp-1;
 * Group: select a group from the southbound device, for example, group-1;
 
-## Step 4, Check The Data By MQTTX.
+## Step 4, Check the data by MQTTX.
 
 After the subscription is completed, you can use the MQTT client (MQTTX is recommended and can be downloaded from [official website](https://www.EMQX.com/zh/products/MQTTX)) to connect to the public emqx proxy to view the reported data, as shown in the following figure.
 

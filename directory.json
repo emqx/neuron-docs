@@ -369,7 +369,7 @@
       "children": [
         {
           "title": "学会编译",
-          "path": "project/compile/compile"
+          "path": "project/compile"
         },
         {
           "title": "了解架构",
@@ -377,11 +377,15 @@
         },
         {
           "title": "开始开发",
-          "path": "project/development/development"
+          "path": "project/development"
         },
         {
-          "title": "Neuron 编码规范",
-          "path": "project/specification/specification"
+          "title": "编码规范",
+          "path": "project/specification"
+        },
+        {
+          "title": "修改文档",
+          "path": "project/document"
         },
         {
           "title": "SDK 教程",
@@ -389,10 +393,6 @@
             {
               "title": "基于 SDK 的驱动开发",
               "path": "project/sdk/sdk_based-driver-development"
-            },
-            {
-              "title": "插件配置文件详解",
-              "path": "project/sdk/plugin_configuration_file"
             },
             {
               "title": "Modbus 插件开发示例",
@@ -434,80 +434,80 @@
       "title": "Introduction",
       "children": [
         {
-          "title": "Product Overview",
+          "title": "Product overview",
           "path": "./"
         },
         {
-          "title": "Use Scenes",
+          "title": "Use scenes",
           "children": [
             {
               "title": "Integrations",
               "path": "introduction/use-scenes/integration/integration"
             },
             {
-              "title": "Use Cases",
+              "title": "Use cases",
               "path": "introduction/use-scenes/use-cases/use_cases"
             }
           ]
         },
         {
-          "title": "Module List",
+          "title": "Module list",
           "path": "introduction/module-list/module-list"
         },
         {
-          "title": "License Policy",
+          "title": "License policy",
           "path": "introduction/license-describe"
         }
       ]
     },
     {
-      "title": "Quick Start",
+      "title": "Quick start",
       "children": [
         {
-          "title": "Hardware Specifications",
+          "title": "Hardware specifications",
           "path": "quick-start/hardware-specifications"
         },
         {
-          "title": "Installation",
+          "title": "installation",
           "path": "quick-start/installation"
         },
         {
-          "title": "Install Modbus Simulator",
+          "title": "Install modbus simulator",
           "path": "quick-start/installation-modbus"
         },
         {
-          "title": "Login Neuron",
+          "title": "Login neuron",
           "path": "quick-start/login"
         },
         {
-          "title": "Apply For And Install License",
+          "title": "Apply for and install license",
           "path": "quick-start/license-install/license-install"
         },
         {
-          "title": "Connect To Southbound Devices",
+          "title": "Connect to southbound devices",
           "path": "quick-start/southdevices-connect"
         },
         {
-          "title": "Configure Data Groups And Tags",
+          "title": "Configure data groups and tags",
           "path": "quick-start/data-config"
         },
         {
-          "title": "Monitoring Data",
+          "title": "Monitoring data",
           "path": "quick-start/monitoring"
         },
         {
-          "title": "Connect To MQTT",
+          "title": "Connect to MQTT",
           "path": "quick-start/mqtt-config"
         },
         {
-          "title": "Data Processing",
+          "title": "Data processing",
           "children": [
             {
-              "title": "Data Cleansing",
+              "title": "Data cleansing",
               "path": "data-processing-engine/data-cleansing"
             },
             {
-              "title": "Device Control",
+              "title": "Device control",
               "path": "data-processing-engine/device-control"
             }
           ]
@@ -515,54 +515,54 @@
       ]
     },
     {
-      "title": "User Guide",
+      "title": "User guide",
       "children": [
         {
-          "title": "Configure Tag",
+          "title": "Configure tag",
           "path": "user-guide/configuration"
         },
         {
-          "title": "Tag Import/Export",
+          "title": "Tag import/export",
           "path": "user-guide/import-export"
         },
         {
-          "title": "Control Device",
+          "title": "Control device",
           "path": "user-guide/device-control"
         },
         {
-          "title": "Data Statistics",
+          "title": "Data statistics",
           "path": "user-guide/data-statistics"
         },
         {
-          "title": "Offline Data Cache",
+          "title": "Offline data cache",
           "path": "user-guide/offline-data-cache"
         },
         {
-          "title": "Log Management",
+          "title": "Log management",
           "path": "user-guide/log-management"
         },
         {
-          "title": "Change Password",
+          "title": "Change password",
           "path": "user-guide/change-password"
         },
         {
-          "title": "Plugin Module Management",
+          "title": "Plugin module management",
           "path": "user-guide/plugin-modules-management"
         }
       ]
     },
     {
-      "title": "Southbound Drivers",
+      "title": "Southbound drivers",
       "children": [
         {
           "title": "Modbus RTU",
           "children": [
             {
-              "title": "Introduction and Usage",
+              "title": "Introduction and usage",
               "path": "south-devices/modbus-rtu/modbus-rtu"
             },
             {
-              "title": "DTU Connection Example",
+              "title": "DTU connection example",
               "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
@@ -575,7 +575,7 @@
           "title": "Modbus TCP",
           "children": [
             {
-              "title": "Introduction and Usage",
+              "title": "Introduction and usage",
               "path": "south-devices/modbus-tcp/modbus-tcp"
             },
             {
@@ -592,7 +592,7 @@
           "title": "OPC UA",
           "children": [
             {
-              "title": "Introduction and Usage of OPC UA",
+              "title": "Introduction and usage of OPC UA",
               "path": "south-devices/opc-ua/opc-ua"
             }
           ]
@@ -601,11 +601,11 @@
           "title": "OPC DA",
           "children": [
             {
-              "title": "Introduction and Usage of OPC DA",
+              "title": "Introduction and usage of OPC DA",
               "path": "south-devices/opc-da/opc-da"
             },
             {
-              "title": "NeuOPC Settings",
+              "title": "NeuOPC settings",
               "path": "south-devices/opc-da/neuopc/neuopc"
             }
           ]
@@ -614,7 +614,7 @@
           "title": "EtherNet/IP(CIP)",
           "children": [
             {
-              "title": "Introduction and Usage of EtherNet/IP(CIP)",
+              "title": "Introduction and usage of EtherNet/IP(CIP)",
               "path": "south-devices/ethernet-ip/ethernet-ip"
             }
           ]
@@ -623,7 +623,7 @@
           "title": "Mitsubishi 3E",
           "children": [
             {
-              "title": "Introduction and Usage of Mitsubishi MELSEC QnA3E",
+              "title": "Introduction and usage of Mitsubishi MELSEC QnA3E",
               "path": "south-devices/mitsubishi-3e/mitsubishi-3e"
             }
           ]
@@ -632,7 +632,7 @@
           "title": "Mitsubishi 1E",
           "children": [
             {
-              "title": "Introduction and Usage of Mitsubishi MELSEC A1E",
+              "title": "Introduction and usage of Mitsubishi MELSEC A1E",
               "path": "south-devices/mitsubishi-1e/mitsubishi-1e"
             }
           ]
@@ -641,11 +641,11 @@
           "title": "Siemens S7 ISO TCP",
           "children": [
             {
-              "title": "Introduction and Usage of Siemens S7 ISOTCP",
+              "title": "Introduction and usage of Siemens S7 ISOTCP",
               "path": "south-devices/siemens-s7/s7"
             },
             {
-              "title": "Siemens S7-1200/1500 Settings",
+              "title": "Siemens S7-1200/1500 settings",
               "path": "south-devices/siemens-s7/plc/siemens-s7-1200-1500"
             }
           ]
@@ -654,7 +654,7 @@
           "title": "Omron FINS TCP",
           "children": [
             {
-              "title": "Introduction and Usage of OMRON FINS on TCP",
+              "title": "Introduction and usage of OMRON FINS on TCP",
               "path": "south-devices/omron-fins/omron-fins"
             }
           ]
@@ -663,7 +663,7 @@
           "title": "Beckhoff ADS",
           "children": [
             {
-              "title": "Introduction and Usage of Beckhoff ADS",
+              "title": "Introduction and usage of Beckhoff ADS",
               "path": "south-devices/ads/ads"
             }
           ]
@@ -672,7 +672,7 @@
           "title": "IEC60870-5-104",
           "children": [
             {
-              "title": "Introduction and Usage of IEC 60870-5-104",
+              "title": "Introduction and usage of IEC 60870-5-104",
               "path": "south-devices/iec-104/iec-104"
             }
           ]
@@ -681,7 +681,7 @@
           "title": "DL/T645-2007",
           "children": [
             {
-              "title": "Introduction and Usage of DL/T645-2007",
+              "title": "Introduction and usage of DL/T645-2007",
               "path": "south-devices/dlt645-2007/dlt645-2007"
             }
           ]
@@ -690,7 +690,7 @@
           "title": "BACnet/IP",
           "children": [
             {
-              "title": "Introduction and Usage of BACnet/IP",
+              "title": "Introduction and usage of BACnet/IP",
               "path": "south-devices/bacnet-ip/bacnet-ip"
             }
           ]
@@ -699,7 +699,7 @@
           "title": "KNXnet/IP",
           "children": [
             {
-              "title": "Introduction and Usage of KNXnet/IP",
+              "title": "Introduction and usage of KNXnet/IP",
               "path": "south-devices/knxnet-ip/knxnet-ip"
             }
           ]
@@ -708,7 +708,7 @@
           "title": "Fanuc Focas Ethernet",
           "children": [
             {
-              "title": "Introduction and Usage of Fanuc Focas Ethernet",
+              "title": "Introduction and usage of Fanuc Focas Ethernet",
               "path": "south-devices/fanuc-focas/fanuc-focas"
             }
           ]
@@ -717,7 +717,7 @@
           "title": "NON A11",
           "children": [
             {
-              "title": "Introduction and Usage of NON A11",
+              "title": "Introduction and usage of NON A11",
               "path": "south-devices/nona11/nona11"
             }
           ]
@@ -726,7 +726,7 @@
           "title": "File",
           "children": [
             {
-              "title": "Introduction and Usage of File",
+              "title": "Introduction and usage of File",
               "path": "south-devices/file/file"
             }
           ]
@@ -734,13 +734,13 @@
       ]
     },
     {
-      "title": "Northbound Applications",
+      "title": "Northbound applications",
       "children": [
         {
           "title": "MQTT",
           "children": [
             {
-              "title": "Introduction and Usage of MQTT",
+              "title": "Introduction and usage of MQTT",
               "path": "north-apps/mqtt/mqtt"
             }
           ]
@@ -749,7 +749,7 @@
           "title": "SparkPlugB",
           "children": [
             {
-              "title": "Introduction and Usage of SparkPlugB",
+              "title": "Introduction and usage of SparkPlugB",
               "path": "north-apps/sparkplugb/sparkplugb"
             }
           ]
@@ -757,18 +757,18 @@
       ]
     },
     {
-      "title": "Data Streaming",
+      "title": "Data streaming",
       "children": [
         {
-          "title": "Prerequisite Setup",
+          "title": "Prerequisite setup",
           "path": "data-processing-engine/prerequisite-setup"
         },
         {
-          "title": "Data Cleansing",
+          "title": "Data cleansing",
           "path": "data-processing-engine/data-cleansing"
         },
         {
-          "title": "Control Device",
+          "title": "Control device",
           "path": "data-processing-engine/device-control"
         }
       ]
@@ -785,7 +785,7 @@
           "path": "api/mqtt-api"
         },
         {
-          "title": "Error Codes",
+          "title": "Error codes",
           "path": "api/error-code"
         }
       ]
@@ -794,27 +794,52 @@
       "title": "Project",
       "children": [
         {
+          "title": "Learn to compile",
+          "path": "project/compile"
+        },
+        {
           "title": "Architecture",
           "path": "project/architecture/architecture"
         },
         {
-          "title": "SDK Tutorial",
+          "title": "Start development",
+          "path": "project/development"
+        },
+        {
+          "title": "Coding specification",
+          "path": "project/specification"
+        },
+        {
+          "title": "modify document",
+          "path": "project/document"
+        },
+        {
+          "title": "SDK tutorial",
           "children": [
             {
               "title": "SDK-based driver development",
               "path": "project/sdk/sdk_based-driver-development"
             },
             {
-              "title": "Southbound development mind map",
-              "path": "project/sdk/mind_mapping"
-            },
-            {
               "title": "Modbus plugin development example",
               "path": "project/sdk/modbus_example"
             },
             {
-              "title": "MQTT Application Development Example",
+              "title": "MQTT Application development example",
               "path": "project/sdk/mqtt_example"
+            },
+            {
+              "title": "Southbound development mind map",
+              "path": "project/sdk/mind_mapping"
+            }
+          ]
+        },
+        {
+          "title": "Protocol introduction",
+          "children": [
+            {
+              "title": "Modbus TCP",
+              "path": "project/protocol/modbus_tcp"
             }
           ]
         }
@@ -824,7 +849,7 @@
       "title": "Reference",
       "children": [
         {
-          "title": "Plugin Setting",
+          "title": "Plugin setting",
           "path": "reference/plugin-setting"
         }
       ]

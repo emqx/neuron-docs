@@ -1,10 +1,10 @@
-# Introduction and Usage of MQTT
+# Introduction and usage of MQTT
 
-## Module Description
+## Module description
 
 The data collected from the device can be transmitted to the mqtt broker through mqtt application, and instructions can be sent to neuron through mqtt application.
 
-## Parameter Configurations
+## Parameter configurations
 
 | Parameter           | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |

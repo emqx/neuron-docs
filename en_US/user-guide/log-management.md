@@ -1,6 +1,6 @@
-# Log Management
+# Log management
 
-## Downloading Logs
+## Downloading logs
 
 Neuron supports one-click download of all log filed on web pages in version 2.3, as shown below.
 
@@ -15,7 +15,7 @@ The log download function bundles the /neuron/build/logs folder into neuron_logs
 * modbus-plus-tcp.log:sorthbound application configuration;
 * neuron.log:log of Neuron.
 
-## Set The Debug Log Of The Node
+## Set the debug log of the node
 
 Neuron supports the setting of printing debug logs of a node and automatically switching back to the default log level after approximately ten minutes. The Settings for each node are independent of each other.
 
