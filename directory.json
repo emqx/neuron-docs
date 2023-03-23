@@ -316,6 +316,10 @@
             {
               "title": "MQTT 介绍及使用",
               "path": "north-apps/mqtt/mqtt"
+            },
+            {
+              "title": "API",
+              "path": "north-apps/mqtt/api"
             }
           ]
         },
@@ -353,10 +357,6 @@
         {
           "title": "HTTP API",
           "path": "api/http-api"
-        },
-        {
-          "title": "MQTT API",
-          "path": "api/mqtt-api"
         },
         {
           "title": "错误代码",
@@ -742,6 +742,10 @@
             {
               "title": "Introduction and Usage of MQTT",
               "path": "north-apps/mqtt/mqtt"
+            },
+            {
+              "title": "API",
+              "path": "north-apps/mqtt/api"
             }
           ]
         },
@@ -779,10 +783,6 @@
         {
           "title": "HTTP API",
           "path": "api/http-api"
-        },
-        {
-          "title": "MQTT API",
-          "path": "api/mqtt-api"
         },
         {
           "title": "Error Codes",
