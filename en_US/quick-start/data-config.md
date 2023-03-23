@@ -22,7 +22,7 @@ Select the `Create` icon to enter the tag page.
 * Name: fill in the tag name, for example, tag1.
 * Attribute: drop-down selection tag's attribute, for example, read, write，subscribe.
 * Type: drop-down selection data type, for example, int16，uint16，int32，uint32，float，bit.
-* Address: fill in the drive address, for example, 1!40001. 1 stands for the tag salve id that setted in Modbus simulator, and 40001 stands for the tag register address. Please refer to [Introduction and Usage of Modbus](../south-devices/modbus/modbus-tcp.md) for detailed instructions on driving address.
+* Address: fill in the drive address, for example, 1!40001. 1 stands for the tag salve id that setted in Modbus simulator, and 40001 stands for the tag register address. Please refer to [Introduction and Usage of Modbus](../south-devices/modbus-tcp/modbus-tcp.md) for detailed instructions on driving address.
 * Decimal: It is not filled by default.
 * Description: It is not filled by default. You can fill in the relevant description of the label.
 

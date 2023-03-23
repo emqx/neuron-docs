@@ -10,6 +10,21 @@ Modbus RTU 虽转为网络传输，但仍然是 Modbus RTU 报文格式。若 DT
 
 DTU 支持数据的双向转换，支持将 RS232、RS485、RS422 等常见的串口数据与 TCP/IP 数据进行相互转换，并通过无线通信网络进行传输。DTU 一般采用的通信方式有 2/3/4G、NB-IoT、LoRaWAN、WIFI 等。
 
+## DTU 主要配置项
+
+![dtu-config](./assets/DTU.png)
+
+| 配置项                  | 说明                                                    |
+| -------------------- | ------------------------------------------------------- |
+| **工作方式** | 一般DTU都支持 TCP、UDP 以客户端或服务端方式进行连接。以及以 Modbus TCP 标准协议传输数据，或是 None（透传）数据|
+| **服务器地址** | DTU 作为客户端时，填写 Neuron Modbus 绑定的地址。|
+| **本地/远程端口** | DTU 作为客户端时，填写 Neuron Modbus 绑定的端口，DTU 作为服务端时，为 DTU 的端口。 |
+
+:::tip
+DTU 一般都支持串口心跳包，或者是使能网络心跳包，以及注册包，这些特性在标准 Modbus 协议中都无法使用，Neuron 目前还无法兼容处理这些特性，使用 Neuron 连接 DTU 时，注意关闭相关选项。
+:::
+
+
 ## 什么是 client/server 模式？
 
 Client/Server 又称客户/伺服器模式，简称 C/S 模式，是一种网络通讯架构，用以将通讯建立连接的双方以客户端（Clent）与服务器（Server）的身份区分开来。
@@ -36,9 +51,9 @@ Neuron 作为 Client，主动向 DTU 发起连接请求，用户需要保证 Neu
 * 下面参数作为可选项。
 
 :::tip
-当 DTU 的工作方式为 Modbus TCP 时，因为 DTU 将 modbus rtu 串口协议转换为 modbus tcp 协议，所以，应使用 Neuron 中的 modbus-plus-tcp 驱动。
+当 DTU 的工作方式为 Modbus TCP 时，因为 DTU 将 Modbus RTU 串口协议转换为 Modbus TCP 协议，所以，应使用 Neuron 中的 Modbus TCP 驱动。
 
-当 DTU 的工作方式为透传模式时，此时应当使用 Neuron 中的 modbus-rtu 驱动。
+当 DTU 的工作方式为透传模式时，此时应当使用 Neuron 中的 Modbus RTU 驱动。
 :::
 
 ### 查看 DTU IP
@@ -48,7 +63,7 @@ Neuron 作为 Client，主动向 DTU 发起连接请求，用户需要保证 Neu
 
 ### 配置 Neuron 南向驱动 Client
 
-在南向驱动管理中建立插件为 modbus-plus-tcp 的节点，并进行驱动配置，如下图所示。
+在南向驱动管理中建立插件为 modbus-tcp-client 的节点，并进行驱动配置，如下图所示。
 ![neuron-client-config](./assets/neuron-client-config.png)
 
 * 连接模式选择 client；
@@ -81,7 +96,7 @@ $ netstat -anp |grep <port>
 
 ### 配置 Neuron 南向驱动 Server
 
-在南向驱动管理中建立插件为 modbus-plus-tcp 的节点，并进行驱动配置，如下图所示。
+在南向驱动管理中建立插件为 modbus-tcp-server 的节点，并进行驱动配置，如下图所示。
 ![neuron-server-config](./assets/neuron-server-config.png)
 
 * 连接模式选择 server；
