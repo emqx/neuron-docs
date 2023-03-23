@@ -35,7 +35,7 @@ Modbus Slave支持以下方式读写设备数据：
 * Modbus UDP/IP
 * Modbus Over UDP/IP。（Modbus RTU/ASCII封装于UDP报文）
 
-安装 Mobus Slave 软件，安装包可从[modbus tool download](https://www.modbustools.com/download.html)页面，根据运行环境选择对应的安装包下载。
+安装 Modbus Slave 软件，安装包可从[modbus tool download](https://www.modbustools.com/download.html)页面，根据运行环境选择对应的安装包下载。
 
 * 安装完成后，运行Modbus Slave。
 * 按下F3或者进入菜单 **Connection -> Connect**，根据实际情况选择连接方式，设置连接参数，然后点击 **OK** 完成配置。
