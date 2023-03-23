@@ -128,7 +128,7 @@
           "title": "Modbus RTU",
           "children": [
             {
-              "title": "介绍与使用",
+              "title": "概览",
               "path": "south-devices/modbus-rtu/modbus-rtu"
             },
             {
@@ -145,7 +145,7 @@
           "title": "Modbus TCP",
           "children": [
             {
-              "title": "介绍与使用",
+              "title": "概览",
               "path": "south-devices/modbus-tcp/modbus-tcp"
             },
             {
@@ -558,11 +558,11 @@
           "title": "Modbus RTU",
           "children": [
             {
-              "title": "Introduction and Usage",
+              "title": "Overview",
               "path": "south-devices/modbus-rtu/modbus-rtu"
             },
             {
-              "title": "DTU Connection Example",
+              "title": "Connection to DTU",
               "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
@@ -575,11 +575,11 @@
           "title": "Modbus TCP",
           "children": [
             {
-              "title": "Introduction and Usage",
+              "title": "Overview",
               "path": "south-devices/modbus-tcp/modbus-tcp"
             },
             {
-              "title": "Connect PeakHMI Slave Simulator",
+              "title": "Connect to PeakHMI Slave Simulator",
               "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
             },
             {

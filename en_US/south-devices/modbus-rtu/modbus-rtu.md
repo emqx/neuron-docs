@@ -1,13 +1,10 @@
-# Introduction and Usage of Modbus RTU
-
-## Description
+# Overview
 
 Modbus RTU is a version of the Modbus protocol that is based on serial communication. Unlike the Modbus TCP protocol, Modbus RTU is typically used to connect sensors, actuators, and other control devices on a factory production line. It is a fast, reliable, and flexible serial communication protocol that provides reliable data transmission and control functions.
 
 The Modbus RTU protocol uses binary encoding and can transmit data over RS-232, RS-485, or other serial communication media. The Modbus RTU plugin for Neuron adds an implementation based on Ethernet TCP and enables remote device data acquisition and control through a DTU device.
 
-
-## Parameter Configuration
+## Parameters
 
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
@@ -23,7 +20,7 @@ The Modbus RTU protocol uses binary encoding and can transmit data over RS-232, 
 | **IP Address** |  The IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0.|
 | **Port** | The port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server.|
 
-## Support Data Type
+## Data types
 
 * INT16
 * UINT16
@@ -36,17 +33,15 @@ The Modbus RTU protocol uses binary encoding and can transmit data over RS-232, 
 * BIT
 * STRING
 
-## Address Format Description
-
-### Address Format
+## Address format
 
 > SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
 
-#### **SLAVE**
+### **SLAVE**
 
 Required, Slave is the slave address or site number.
 
-#### **ADDRESS**
+### **ADDRESS**
 
 Required, Address is the register address.The Modbus protocol has four areas, each area has a maximum of 65536 registers, and the address range of each area is shown in the table below. It should be noted that the storage area as large as 65536 is generally not required in practical applications. Generally, PLC manufacturers generally use an address range within 10000. Please pay attention to fill in the correct point address according to the area and function code of the device.
 
@@ -65,7 +60,7 @@ The conversion rule for the configuration address specification is as follows: d
 
 For example, if the function code is 0x03 and the register address is 0, the address used in Neuron is 400001. If the function code is 0x02 and the register address is 5, the address used in Neuron is 100006.
 
-#### **.BIT**
+### **.BIT**
 
 Optional, specify a specific bit in a registe
 
@@ -75,7 +70,7 @@ Optional, specify a specific bit in a registe
 | 1!400010.4  | bit     | Refers to station 1, hold register area, address 400010, bit 4    |
 | 2!400001.15 | bit     | Refers to station 2, hold register area, address 400001, bit 15   |
 
-#### **#ENDIAN**
+### **#ENDIAN**
 
 Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, see the table below for details.
 | Symbol | Byte Order | Supported Data Types | Note |
@@ -87,7 +82,7 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #BB | 3,4,1,2 | int32/uint32/float | |
 | #BL | 4,3,2,1 | int32/uint32/float | |
 
-#### .LEN\[H]\[L]\[D]\[E]
+### .LEN\[H]\[L]\[D]\[E]
 
 When the data type is STRING, .LEN is a required field, indicating the number of bytes the string occupies. Each register contains four storage methods: H, L, D, and E, as shown in the table below.
 | Symbol | Description                                 |
@@ -97,7 +92,7 @@ When the data type is STRING, .LEN is a required field, indicating the number of
 | D   | One register stores one byte, and it is stored in the low byte      |
 | E   | One register stores one byte, and it is stored in the high byte|
 
-### Address Examples
+## Examples
 
 | Address        | Data Type | Description |
 | ----------- | ------- | --------- |
