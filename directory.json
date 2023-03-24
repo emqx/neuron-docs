@@ -162,8 +162,36 @@
           "title": "OPC UA",
           "children": [
             {
-              "title": "OPC UA 介绍与使用",
-              "path": "south-devices/opc-ua/opc-ua"
+              "title": "概览",
+              "path": "south-devices/opc-ua/overview"
+            },
+            {
+              "title": "连接策略",
+              "path": "south-devices/opc-ua/policy"
+            },
+            {
+              "title": "连接 Siemens S7-1200",
+              "path": "south-devices/opc-ua/s71200"
+            },
+            {
+              "title": "连接 KEPServerEX",
+              "path": "south-devices/opc-ua/kepserverex"
+            },
+            {
+              "title": "连接 Industrial Gateway OPC Server",
+              "path": "south-devices/opc-ua/igs"
+            },
+            {
+              "title": "连接 Ignition",
+              "path": "south-devices/opc-ua/ignition"
+            },
+            {
+              "title": "连接 Prosys Simulation Server",
+              "path": "south-devices/opc-ua/prosys"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/opc-ua/faq"
             }
           ]
         },
@@ -604,10 +632,39 @@
           "title": "OPC UA",
           "children": [
             {
-              "title": "Introduction and Usage of OPC UA",
-              "path": "south-devices/opc-ua/opc-ua"
+              "title": "Overview",
+              "path": "south-devices/opc-ua/overview"
+            },
+            {
+              "title": "Connection policy",
+              "path": "south-devices/opc-ua/policy"
+            },
+            {
+              "title": "Connect to Siemens S7-1200",
+              "path": "south-devices/opc-ua/s71200"
+            },
+            {
+              "title": "Connect to KEPServerEX",
+              "path": "south-devices/opc-ua/kepserverex"
+            },
+            {
+              "title": "Connect to Industrial Gateway OPC Server",
+              "path": "south-devices/opc-ua/igs"
+            },
+            {
+              "title": "Connect to Ignition",
+              "path": "south-devices/opc-ua/ignition"
+            },
+            {
+              "title": "Connect to Prosys Simulation Server",
+              "path": "south-devices/opc-ua/prosys"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/opc-ua/faq"
             }
           ]
+
         },
         {
           "title": "OPC DA",
