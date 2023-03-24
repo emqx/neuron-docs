@@ -128,7 +128,7 @@
           "title": "Modbus RTU",
           "children": [
             {
-              "title": "介绍与使用",
+              "title": "概览",
               "path": "south-devices/modbus-rtu/modbus-rtu"
             },
             {
@@ -145,7 +145,7 @@
           "title": "Modbus TCP",
           "children": [
             {
-              "title": "介绍与使用",
+              "title": "概览",
               "path": "south-devices/modbus-tcp/modbus-tcp"
             },
             {
@@ -352,7 +352,28 @@
       "children": [
         {
           "title": "HTTP API",
-          "path": "api/http-api"
+          "children": [
+            {
+              "title": "JWT",
+              "path": "api/http-api/jwt"
+            },
+            {
+              "title": "数据类型",
+              "path": "api/http-api/data-type"
+            },
+            {
+              "title": "配置",
+              "path": "api/http-api/configuration"
+            },
+            {
+              "title": "读写",
+              "path": "api/http-api/rw"
+            },
+            {
+              "title": "插件设置",
+              "path": "api/http-api/plugin-setting"
+            }
+          ]
         },
         {
           "title": "MQTT API",
@@ -416,15 +437,6 @@
               "path": "project/protocol/modbus_tcp"
             }
           ]
-        }
-      ]
-    },
-    {
-      "title": "参考",
-      "children": [
-        {
-          "title": "插件设置",
-          "path": "reference/plugin-setting"
         }
       ]
     }
@@ -579,7 +591,7 @@
               "path": "south-devices/modbus-tcp/modbus-tcp"
             },
             {
-              "title": "Connect PeakHMI Slave Simulator",
+              "title": "Connect to PeakHMI Slave Simulator",
               "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
             },
             {
@@ -778,7 +790,28 @@
       "children": [
         {
           "title": "HTTP API",
-          "path": "api/http-api"
+          "children": [
+            {
+              "title": "JWT",
+              "path": "api/http-api/jwt"
+            },
+            {
+              "title": "Data Type",
+              "path": "api/http-api/data-type"
+            },
+            {
+              "title": "Configuration",
+              "path": "api/http-api/configuration"
+            },
+            {
+              "title": "Read & Write",
+              "path": "api/http-api/rw"
+            },
+            {
+              "title": "Plugin Setting",
+              "path": "api/http-api/plugin-setting"
+            }
+          ]
         },
         {
           "title": "MQTT API",
