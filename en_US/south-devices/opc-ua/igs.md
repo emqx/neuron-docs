@@ -16,7 +16,7 @@
 
 1. Set up an anonymous login as described above.
 
-2. Refer to [parameter example](./example.md) to generate or convert a certificate/key;
+2. Refer to [Connection policy](./policy.md) to generate or convert a certificate/key;
 
 3. Right-click the Industrial Gateway OPC Server icon in the system tray, select "OPC UA Configuration" in the menu, switch to "Trusted Clients", and import the client certificate in DER format into the list.
 ![](./assets/igs-3.jpg)

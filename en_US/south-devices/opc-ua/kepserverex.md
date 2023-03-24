@@ -24,7 +24,7 @@
 
 1. Set the username/password as above;
 
-2. Refer to [parameter example](. /example.md) to generate or convert a certificate/key;
+2. Refer to [Connection policy](./policy.md) to generate or convert a certificate/key;
 
 3. Right-click on the KEPServerEX icon in the system tray, select "OPC UA Configuration" in the menu, switch to "Trusted Clients" and import the client certificate in DER format into the list;
 

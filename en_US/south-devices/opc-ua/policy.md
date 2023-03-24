@@ -8,7 +8,7 @@
 
     The Neuron OPC UA module requires no user name/password and certificate/key.
 
-* User name/password
+* User name/password mode
 
     The user name and password that have access permission have been created on the OPC UA server.
 
@@ -20,7 +20,7 @@
 
     Neuron OPC UA module adds corresponding client certificate/key without filling in user name/password.
 
-* Certificate/key + user name/password
+* Certificate/key + user name/password mode
 
     On the OPC UA server, you have created a user name and password with the access permission, enabled appropriate security Settings, and added the client certificate to the trust list.
 

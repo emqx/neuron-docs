@@ -12,7 +12,7 @@
 
 ## 证书/密钥 + 匿名登录
 
-1. 参考[参数示例](./example.md)生成或转换证书/密钥；
+1. 参考[连接策略](./policy.md)生成或转换证书/密钥；
 
 2. Prosys OPC UA Simulation Server 界面中切换到 Endpoints 选项卡，Security Modes 取消选择 None，选择 Sign 和 Sign&Encrypt；
 

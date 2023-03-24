@@ -16,7 +16,7 @@
 
 1. 按照上文设置匿名登录；
 
-2. 参考[参数示例](./example.md)生成或转换证书/密钥；
+2. 参考[连接策略](./policy.md)生成或转换证书/密钥；
 
 3. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择“OPC UA 配置”，切换到“受信任的客户端”，将 DER 格式的客户端证书导入列表；
 ![](./assets/igs-3.jpg)

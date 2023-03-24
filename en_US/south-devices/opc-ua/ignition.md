@@ -12,7 +12,7 @@
 
 ## Certificate/key + username/password login
 
-1. Refer to [parameter example](. /example.md) to generate or convert a certificate/key;
+1. Refer to [Connection policy](./policy.md) to generate or convert a certificate/key;
 
 2. Open the Config page of Ignition's administration interface, select OPC UA/Security, switch to the Server tab, upload the client certificate and set it to Trust;
 

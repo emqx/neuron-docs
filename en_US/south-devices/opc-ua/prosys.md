@@ -12,7 +12,7 @@
 
 ## Certificate/Key + Anonymous Login
 
-1. Refer to [parameter example](./example.md) to generate or convert a certificate/key;
+1. Refer to [Connection policy](./policy.md) to generate or convert a certificate/key;
 
 2. Switch to the Endpoints tab in the Prosys OPC UA Simulation Server interface, deselect None for Security Modes, and select Sign and Sign&Encrypt;
 
