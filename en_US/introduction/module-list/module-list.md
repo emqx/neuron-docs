@@ -1,8 +1,8 @@
-# Module List
+# Module list
 
-## Southbound Plugin Modules
+## Southbound plugin modules
 
-### Global Standards
+### Global standards
 
 | Protocol Name           | Interface  | Type        | Available | Remark |
 | ----------------------- | ---------- | ----------- | --------- | -------------------------------- |
@@ -12,7 +12,7 @@
 | <div style="width:220pt">OPC UA</div>                  | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>       |  |
 | <div style="width:220pt">CIP Ethernet/IP</div>         | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>        | <div style="width:110pt">CIP – Common Industrial Protocol</div>  |
 
-### PLC Drivers
+### PLC drivers
 
 | Protocol Name                                                | Interface | Type       | Available  | Remark                           |
 | ------------------------------------------------------------ | --------- | ---------- | ---------- | -------------------------------- |
@@ -56,7 +56,7 @@
 | <div style="width:220pt">IEC 61850</div>           | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>        | |
 | <div style="width:220pt">DNP3</div>                | <div style="width:40pt">Ethernet</div>  | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div>        | |
 
-### Building Automation
+### Building automation
 
 | Protocol Name  | Interface  | Type       | Available | Remark |
 | -------------- | ---------- | ---------- | --------- | --------- |
@@ -65,15 +65,15 @@
 | <div style="width:220pt">BACnet MS/TP</div>    | <div style="width:40pt">Serial</div>      | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">No</div>  | <div style="width:110pt"> </div> |
 | <div style="width:220pt">LON</div>            | <div style="width:40pt">Ethernet</div>   | <div style="width:110pt">Commercial</div> | <div style="width:50pt">No</div> |  |
 
-### CNC Machines & Robotics
+### CNC machines & robotics
 
 | Protocol Name  | Interface  | Type       | Available | Remark |
 | ------------- | ------- | ----- | --------- | ------- |
 |![mt-connect](./assets/MT.png)| <div style="width:220pt">MTConnect</div>      | <div style="width:40pt">Ethernet</div>    | <div style="width:110pt">Commercial</div>    | <div style="width:50pt">No</div>         | <div style="width:110pt"> </div> |
 
-## Northbound Plugin Modules
+## Northbound plugin modules
 
-### Cloud Connectivity
+### Cloud connectivity
 
 | Protocol Name         | Type        | Available | Remark |
 | --------------------- | ----------- | --------- | ------- |

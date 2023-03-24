@@ -1,6 +1,6 @@
-# Configure Tag
+# Configure tag
 
-## Usage Of Decimal
+## Usage of decimal
 
 Device value * Decimal = Display value
 

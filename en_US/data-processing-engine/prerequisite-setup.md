@@ -1,4 +1,4 @@
-# Prerequisite Setup
+# Prerequisite setup
 
 ## Installstion
 

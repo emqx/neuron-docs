@@ -1,4 +1,4 @@
-# Device Control
+# Device control
 
 This rule implements +1 processing of the data collected by neuron from the device, and writes the result back to the device. At this time, the tag attribute must be a write attribute, otherwise it cannot be written successfully.
 

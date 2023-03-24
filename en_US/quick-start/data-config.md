@@ -1,6 +1,6 @@
-# Configure Data Groups And Tags
+# Configure data groups and tags
 
-## Step 1, Create A Group
+## Step 1, Create a group
 
 Create a group of tags, in which collect and report the data of the same group at the same frequency
 
@@ -9,7 +9,7 @@ Click the new device node to enter the group list management interface, and clic
 * Name: fill in the name of the Group, such as group-1.
 * Interval: the frequency of collection and reporting of this group of tags, in milliseconds, 100 means that the whole group of points is collected every 100 ms, and the value of the whole group of points is reported once
 
-## Step 2, Add Tags To The Group
+## Step 2, Add tags to the group
 
 Add the device tags to be collected, including tag address, tag attribute, tag type, etc.
 

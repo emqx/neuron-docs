@@ -1,4 +1,4 @@
-# Quick Start
+# Quick start
 
 This chapter will guide users to quickly start using Neuron to collect data simulating Modbus equipment and upload the data to MQTT Broker, taking Modbus TCP driver protocol as an example.
 
@@ -18,7 +18,7 @@ Run the Docker container
 $ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:2.3.4
 ```
 
-## Install Modbus Simulator
+## Install Modbus simulator
 
 Install PeakHMI Slave Simulators software, and the installation package can be downloaded from [PeakHMI official website ](https://hmisys.com).
 
@@ -32,7 +32,7 @@ Neuron and simulator must be run in the same LAN.
 Try to turn off the firewall in Windows, otherwise Neuron may not connect to the simulator.
 :::
 
-## Quick Using Neuron
+## Quick using Neuron
 
 Open a Web browser and enter the address and port number of the gateway running Neuron to enter the management console dasboard. The default port number is 7000.
 
@@ -44,7 +44,7 @@ After the page opens, enter the login interface, and users can log in with their
 
 ![login](./assets/login.png)
 
-### Step 2, Add Southbound Device
+### Step 2, Add southbound device
 
 Creating southbound device cards can be used to establish connections between Neuron and devices, select device driver protocols and configure device data acquisition tags.
 
@@ -58,7 +58,7 @@ Add a new southbound device:
 * Plugin: select the plugin of modbus-tcp from the drop-down box;
 * Click the `Create` button to add a new device.
 
-### Step 3, Setting Southbound Device's Parameters
+### Step 3, Setting southbound device's parameters
 
 Configure the parameters required for Neuron to establish a connection with the device.
 
@@ -74,7 +74,7 @@ The configuration parameters required by each device are different. Please refer
 
 :::
 
-### Step 4, Create A Group
+### Step 4, Create a group
 
 Creating groups can be used to classify devicw acquisition tags.
 
@@ -87,7 +87,7 @@ Create a group for the device:
 * Group Name: fill in the name of the Group, such as group-1.
 * Click `Create` to complete the creation of the group.
 
-### Step 5, Add Tags To The Group
+### Step 5, Add tags to the group
 
 Add the device tags to be collected, including tag address, tag attribute, tag type, etc.
 
@@ -119,7 +119,7 @@ $ telnet <Running IP on PC side of Modbus simulator> 502
 Please confirm whether the IP and Port are set correctly and whether the firewall is closed when configuring the device.
 :::
 
-### Step 6, Check The Collected Data In Data Monitoring.
+### Step 6, Check the collected data in data monitoring.
 
 Select `Data Monitoring` under the `Monitoring` menu to enter the data monitoring interface to view the values read by the created tags, as shown in the figure below.
 
@@ -131,7 +131,7 @@ Data monitoring displays values in groups:
 * Group name: select the group under the selected southbound device from the drop-down box, for example, select Group-1 that has been created in the above steps;
 * Select Finish, and the page will show the value of each tag read under the group;
 
-### Step 7, Add A Northbound Application
+### Step 7, Add a northbound application
 
 Create northbound application card for Neuron to establish connection with northbound application and upload the collected device data to MQTT Broker.
 
@@ -145,7 +145,7 @@ Add an MQTT cloud connection module:
 * Plugin: drop-down box to select the plugin of mqtt;
 * Click the `Create` icon to add an application.
 
-### Step 8, Setting Northbound Application's Parameters.
+### Step 8, Setting northbound application's parameters.
 
 Configure the parameters required for Neuron to establish a connection with the northbound application.
 
@@ -159,7 +159,7 @@ Set MQTT connection:
 * Use the default public EMQX Broker (broker.emqx.io).
 * Click `Submit` to complete the configuration of northbound application, and the application card will automatically enter the working state of **Running**.
 
-### Step 9, Subscribe To The Southbound Group.
+### Step 9, Subscribe to the southbound group.
 
 The collected data are uploaded to the cloud in groups, and users need to choose which groups of data to upload.
 
@@ -173,7 +173,7 @@ Subscribe to the data group of the southbound device:
 * Group: click the drop-down box to select the group you want to subscribe to, for example, group-1;
 * Click `Submit` to complete the subscription.
 
-### Step 10, Check The Data At The MQTT Client.
+### Step 10, Check the data at the MQTT client.
 
 After the subscription is completed, users can use the MQTT client (MQTX is recommended and can be downloaded from [official website](https://www.EMQX.com/zh/products/MQTTX) to connect to the public emqx proxy to view the reported data, as shown in the following figure.
 
@@ -188,7 +188,7 @@ After successful subscription, we can see that MQTTX can directly receive the da
 The default topic format for uploading topic is `/neuron/{node_name}/upload`, where {node_name} is the name of the created northbound application. Users can also customize the reporting theme.
 :::
 
-## Advanced Operation
+## Advanced operation
 
 ### License
 
@@ -198,37 +198,37 @@ Please refer to [Inatsll License](../quick-start/license-install/license-install
 
 Please refer to [Module List](../introduction/module-list/module-list.md) for the driver protocols supported by Neuron.
 
-### Tag Advanced Operation
+### Tag advanced operation
 
 * [Configuration Tag Import/Export](../user-guide/configuration-import-export.md): Import tags in batches with Excel tables.
 * Decimal: used to simply process the collected data, and the usage is: equipment value * decimal = display value;
 * Setting precision: when the data type is float/double, an optional parameter **Precision** will be displayed, which is used to set precision, and the optional range is 1-17.
 * [Control Device](../user-guide/device-control.md)：You can operate the device tag with write attribute through the Neuron/northbound application.
 
-### Data Stream Processing
+### Data stream processing
 
 Neuron supports integration with eKuiper to realize data stream processing functions such as cleaning data and controlling equipment. Please refer to [Data Streamnig](../data-processing-engine/prerequisite-setup.md) for details.
 
-### Upload Changed value to MQTT Broker
+### Upload changed value to MQTT broker
 
 When the tag attribute is set to Subscribe, the changed value will be uploaded to the cloud only when the collected value changes.
 
-### Management Operation
+### Management operation
 
 * [Log Management](../user-guide/log-management.md)。
 * [Change Password](../user-guide/change-password.md)。
 * [Data Statistics](../user-guide/data-statistics.md)。
 * [Plugin Module Management](../user-guide/plugin-modules-management.md)。
 
-## Description Of Parameters
+## Description of parameters
 
 Parameters marked with `*` are required, and each parameter is followed by a field description key. Hover the mouse over it to explain the field in detail.
 
-### Description Of Group Related Parameters
+### Description of group related parameters
 
 * Interval, which is used to set the time interval for Neuron to collect data from equipment and report the data to MQTT. The minimum setting can be 100ms, but when there are a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, the value of interval can be appropriately increased;
 
-### Southbound Device/Northbound Application Card Parameters
+### Southbound device/northbound application card parameters
 
 After the southbound device/northbound application is successfully created, a newly created card will appear in the southbound/northbound management interface, as shown in the following figure.
 

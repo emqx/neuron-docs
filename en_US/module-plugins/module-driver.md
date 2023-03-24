@@ -1,4 +1,4 @@
-# Module Setting
+# Module setting
 
 This document introduces how to setup parameter and data tag point information in configuration for northbound applications and southbound drivers.
 

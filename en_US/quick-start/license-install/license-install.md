@@ -1,4 +1,4 @@
-# Apply For And Install License
+# Apply for and install license
 
 Neuron is an open source project. We encourage our community to develop their own pluggable modules.
 
@@ -16,7 +16,7 @@ Click **System Information -> About** to view the hardware logo and copy it.
 
 Go to the [official website](https://www.emqx.com/en/apply-licenses/neuron) and fill in relevant information to apply for the license. The license will be sent to your mailbox.
 
-## Step 3 Install License
+## Step 3 Install license
 
 To install a license, as shown below.
 
@@ -33,7 +33,7 @@ The pluggable modules of the commercial version cannot be used when the license 
 Users can apply for a trial license from official website by clicking `Apply`, or contact our sales representatives to purchase a commercial license by clicking `Contact us`.
 :::
 
-## Step 4 Check over the License details
+## Step 4 Check over the license details
 
 After the license is successfully installed, it will display the license information.
 

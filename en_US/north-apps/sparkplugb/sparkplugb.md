@@ -1,10 +1,10 @@
-# Introduction and Usage of Sparkplug B
+# Introduction and usage of Sparkplug B
 
-## Module Description
+## Module description
 
 Data collected by Neuron from the device can be transmitted from the edge to the Sparkplug_B application using the Sparkplug_B protocol. Users can also send data modification instructions to Neuron from the application. Sparkplug_B is an application-type protocol that runs on top of MQTT, so the setup in Neuron is similar to the MQTT driver.
 
-## Parameter Configuration
+## Parameter configuration
 
 | Parameter     | Description                                                  |
 | ------------- | ------------------------------------------------------------ |

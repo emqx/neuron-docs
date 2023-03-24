@@ -1,4 +1,4 @@
-# Data Cleansing
+# Data cleansing
 
 This rule implements +1 processing of the data collected by the neuron from the device, renames it to a meaningful name, and sends the result to the MQTT dynamic topic `${node_name}/${group_name}` in the cloud.
 

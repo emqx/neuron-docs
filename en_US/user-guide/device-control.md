@@ -1,4 +1,4 @@
-# Device Control
+# Device control
 
 ## Step 1 Change the value from the dashboard
 

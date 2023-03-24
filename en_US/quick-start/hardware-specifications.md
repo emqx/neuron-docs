@@ -1,4 +1,4 @@
-# Hardware Specifications
+# Hardware specifications
 
 Neuron is fully developed in C language and supports running on X86, ARM, MIPS, RISC-V and other hardware architectures as well as container deployment, such as K8s, KubeEdge, etc. On devices with limited hardware resources, it can also achieve data acquisition of 100 ms or even 10 ms level. On servers with sufficient hardware resources, Neuron can also make full use of multi-core CPUs, and can simultaneously conduct data acquisition and point write control of hundreds of thousands of points at the frequency of 100 ms.
 
