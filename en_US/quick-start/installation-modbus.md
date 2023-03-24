@@ -22,7 +22,7 @@ Install Modbus Poll software, and the installation package can be download form
 * Press F3 or enter **Connection -> Connect**, choose a connection method based on actual circumstances and set up the connection parameters, clicking **OK** will complete the configuration.
 * Press F8, enter **Setup -> Read/Write Definition**, or click![Read/Write Definition](assets/mbpoll-definition-button.png) on toolbar set read/write definition. Setting up address parameters based on the read/write requirements, clicking **ok** will complete configuration.
 * The data about read/write definition show on single document interface. If you want to see data for multiple read/write definition, click **File -> New**, create a new document windows, repeat step 3. You can input site number, address, and value to modify data on slave using double-clicking item in table.
-* If you need to connect multiple slave devices simultaneously, run Modbus Poll on multiple instances.Repeat the above steps.
+* If you need to connect multiple slave devices simultaneously, run Modbus Poll on multiple instances. Repeat the above steps.
 
 ## Modbus Slave
 Modbus Slave is a Modbus slave simulator. Speed up your PLC programming with this simulating tools. Start programming and test before you receive your slave device from supplier.
@@ -40,7 +40,7 @@ Install Modbus Slave software, and the installation package can be download form
 * Press F3 or enter **Connection -> Connect**, choose a connection method based on actual circumstances and set up the connection parameters, clicking **OK** will complete the configuration.
 * Press F8, enter **Setup -> Slave Definition**, or click![Slave Definition](assets/mbpoll-definition-button.png) on toolbar set slave definition. Setting up address parameters based on the read/write requirements, clicking **ok** will complete configuration.
 * The data about slave definition show on single document interface. If you want to see data for multiple slave definition, click **File -> New**, create a new document windows, repeat step 3. You can input value to modify data using double-clicking item in table.
-* If you need to simulate multiple slave devices simultaneously, run Modbus Slave on multiple instances.Repeat the above steps.
+* If you need to simulate multiple slave devices simultaneously, run Modbus Slave on multiple instances. Repeat the above steps.
 
 
 ::: tip
