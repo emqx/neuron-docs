@@ -422,7 +422,7 @@
       "children": [
         {
           "title": "学会编译",
-          "path": "project/compile/compile"
+          "path": "project/compile"
         },
         {
           "title": "了解架构",
@@ -430,11 +430,15 @@
         },
         {
           "title": "开始开发",
-          "path": "project/development/development"
+          "path": "project/development"
         },
         {
-          "title": "Neuron 编码规范",
-          "path": "project/specification/specification"
+          "title": "编码规范",
+          "path": "project/specification"
+        },
+        {
+          "title": "修改文档",
+          "path": "project/document"
         },
         {
           "title": "SDK 教程",
@@ -442,10 +446,6 @@
             {
               "title": "基于 SDK 的驱动开发",
               "path": "project/sdk/sdk_based-driver-development"
-            },
-            {
-              "title": "插件配置文件详解",
-              "path": "project/sdk/plugin_configuration_file"
             },
             {
               "title": "Modbus 插件开发示例",
@@ -892,27 +892,52 @@
       "title": "Project",
       "children": [
         {
+          "title": "Learn to compile",
+          "path": "project/compile"
+        },
+        {
           "title": "Architecture",
           "path": "project/architecture/architecture"
         },
         {
-          "title": "SDK Tutorial",
+          "title": "Start development",
+          "path": "project/development"
+        },
+        {
+          "title": "Coding specification",
+          "path": "project/specification"
+        },
+        {
+          "title": "modify document",
+          "path": "project/document"
+        },
+        {
+          "title": "SDK tutorial",
           "children": [
             {
               "title": "SDK-based driver development",
               "path": "project/sdk/sdk_based-driver-development"
             },
             {
-              "title": "Southbound development mind map",
-              "path": "project/sdk/mind_mapping"
-            },
-            {
               "title": "Modbus plugin development example",
               "path": "project/sdk/modbus_example"
             },
             {
-              "title": "MQTT Application Development Example",
+              "title": "MQTT Application development example",
               "path": "project/sdk/mqtt_example"
+            },
+            {
+              "title": "Southbound development mind map",
+              "path": "project/sdk/mind_mapping"
+            }
+          ]
+        },
+        {
+          "title": "Protocol introduction",
+          "children": [
+            {
+              "title": "Modbus TCP",
+              "path": "project/protocol/modbus_tcp"
             }
           ]
         }
