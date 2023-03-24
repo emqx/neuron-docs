@@ -1,5 +1,6 @@
 # Install Modbus Simulator
 
+## PeakHMI Slave Simulators
 Install PeakHMI Slave Simulators software, and the installation package can be downloaded from [PeakHMI official website ](https://hmisys.com). Enter **Download ->PeakHMI Slave Simulators** on the official website, and click **Slave Simulator Installer** to download.
 
 * After installation, run Modbus TCP slave EX. 
