@@ -342,8 +342,16 @@
           "title": "MQTT",
           "children": [
             {
-              "title": "MQTT 介绍及使用",
-              "path": "north-apps/mqtt/mqtt"
+              "title": "概览",
+              "path": "north-apps/mqtt/overview"
+            },
+            {
+              "title": "API",
+              "path": "north-apps/mqtt/api"
+            },
+            {
+              "title": "常见问题",
+              "path": "north-apps/mqtt/faq"
             }
           ]
         },
@@ -402,10 +410,6 @@
               "path": "api/http-api/plugin-setting"
             }
           ]
-        },
-        {
-          "title": "MQTT API",
-          "path": "api/mqtt-api"
         },
         {
           "title": "错误代码",
@@ -809,8 +813,16 @@
           "title": "MQTT",
           "children": [
             {
-              "title": "Introduction and Usage of MQTT",
-              "path": "north-apps/mqtt/mqtt"
+              "title": "Overview",
+              "path": "north-apps/mqtt/overview"
+            },
+            {
+              "title": "API",
+              "path": "north-apps/mqtt/api"
+            },
+            {
+              "title": "FAQ",
+              "path": "north-apps/mqtt/faq"
             }
           ]
         },
@@ -869,10 +881,6 @@
               "path": "api/http-api/plugin-setting"
             }
           ]
-        },
-        {
-          "title": "MQTT API",
-          "path": "api/mqtt-api"
         },
         {
           "title": "Error Codes",
