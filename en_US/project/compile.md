@@ -24,7 +24,7 @@ There are three optional parameters in CMakeLists:
 
 ### Install Dashboard
 
-On the [neuron dashboard](https://github.com/emqx/neuron-dashboard/releases) download the latest 'neuron dashboard. zip' from the page, extract it, and place it in the dist directory under the Neuron executable directory.
+On the [neuron dashboard](https://github.com/emqx/neuron-dashboard/releases) download the latest `neuron-dashboard.zip` from the page, extract it, and place it in the dist directory under the Neuron executable directory.
 
 ### Operation
 
