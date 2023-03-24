@@ -30,11 +30,11 @@
 
 OPC UA Users can log in to the OPC UA server using a self-signed Certificate. The certificate and Key must meet the following conditions:
 
-* CERTIFICATE and KEYFILE must be set together;
+* CERTIFICATE and KEYFILE must be set together.
 
-* Certificate must be generated in standard X.509v3;
+* Certificate must be generated in standard X.509v3.
 
-* The SAN field in Certficate must contain `URI:urn:xxx.xxx.xxx`，`xxx` is the custom part;
+* The SAN field in Certficate must contain `URI:urn:xxx.xxx.xxx`，`xxx` is the custom part.
 
 * The Certificate file and Key file must be encoded in DER format.
 

@@ -1,4 +1,4 @@
-# Industrial Gateway OPC Server
+# 连接 Industrial Gateway OPC Server
 
 ## 匿名登录
 

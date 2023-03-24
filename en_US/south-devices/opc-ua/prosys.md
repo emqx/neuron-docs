@@ -5,22 +5,22 @@
 1. Switch to the Endpoints tab in the Prosys OPC UA Simulation Server interface, deselect Sign and Sign&Encrypt for Security Modes, and select None.
 ![](./assets/prosys-1.jpg)
 
-2. Switch to the Users tab in the Prosys OPC UA Simulation Server interface, deselect Username&Password, Certificate and IssuedToken/External System, and select Anonymous;
+2. Switch to the Users tab in the Prosys OPC UA Simulation Server interface, deselect Username&Password, Certificate and IssuedToken/External System, and select Anonymous.
 ![](./assets/prosys-2.jpg)
 
-3. Neuron adds a new southbound OPC UA device, opens "Device Configuration", fills in the "Endpoint URL" of the target Server, without filling in username/password, without adding certificate/key, and starts the device connection;
+3. Neuron adds a new southbound OPC UA device, opens "Device Configuration", fills in the "Endpoint URL" of the target Server, without filling in username/password, without adding certificate/key, and starts the device connection.
 
 ## Certificate/Key + Anonymous Login
 
-1. Refer to [Connection policy](./policy.md) to generate or convert a certificate/key;
+1. Refer to [Connection policy](./policy.md) to generate or convert a certificate/key.
 
-2. Switch to the Endpoints tab in the Prosys OPC UA Simulation Server interface, deselect None for Security Modes, and select Sign and Sign&Encrypt;
+2. Switch to the Endpoints tab in the Prosys OPC UA Simulation Server interface, deselect None for Security Modes, and select Sign and Sign&Encrypt.
 
-3. Switch to the Users tab in the Prosys OPC UA Simulation Server interface, deselect Username&Password, Certificate and IssuedToken/External System, and select Anonymous;
+3. Switch to the Users tab in the Prosys OPC UA Simulation Server interface, deselect Username&Password, Certificate and IssuedToken/External System, and select Anonymous.
 
-4. Neuron adds a new southbound OPC UA device, opens "Device Configuration", fills in the "Endpoint URL" of the target Server, does not need to fill in the username/password, adds the certificate/key and starts the device connection;
+4. Neuron adds a new southbound OPC UA device, opens "Device Configuration", fills in the "Endpoint URL" of the target Server, does not need to fill in the username/password, adds the certificate/key and starts the device connection.
 
-5. Switch to the Certificates tab in the Prosys OPC UA Simulation Server interface and set the client certificate in the list to Trust;
+5. Switch to the Certificates tab in the Prosys OPC UA Simulation Server interface and set the client certificate in the list to Trust.
 ![](./assets/prosys-3.jpg)
 
 ## Username/Password Login
@@ -36,11 +36,11 @@
 
 ## Certificate/key + username/password login
 
-1. Same username/password settings as above;
+1. Same username/password settings as above.
 
-2. Neuron adds a new southbound OPC UA device, opens "Device Configuration", fills in the "Endpoint URL" of the target Server, fills in the user name/password, adds the certificate/key, and starts the device connection;
+2. Neuron adds a new southbound OPC UA device, opens "Device Configuration", fills in the "Endpoint URL" of the target Server, fills in the user name/password, adds the certificate/key, and starts the device connection.
 
-3. Switch to the Certificates tab in the Prosys OPC UA Simulation Server interface and set the client certificate in the list to Trust;
+3. Switch to the Certificates tab in the Prosys OPC UA Simulation Server interface and set the client certificate in the list to Trust.
 
 ## Test data list
 

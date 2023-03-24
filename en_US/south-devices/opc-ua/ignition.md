@@ -2,7 +2,7 @@
 
 ## Username/Password Login
 
-1. Open the Config page of Ignition's management interface, select OPC UA/Server Setting, add IP addresses that can be accessed by other hosts to Bind Addresses, and save the configuration;
+1. Open the Config page of Ignition's management interface, select OPC UA/Server Setting, add IP addresses that can be accessed by other hosts to Bind Addresses, and save the configuration.
 ![](./assets/ignition-1.jpg)
 
 2. Neuron adds a new southbound OPC UA device, open "Device Configuration", fill in the "Endpoint URL" of the target Ignition - opc.tcp://192.168.10.195:62541/discovery, username - opcuauser (Ignition default), password - password (Igniton default) without adding a certificate/key, start the device connection.
@@ -12,9 +12,9 @@
 
 ## Certificate/key + username/password login
 
-1. Refer to [Connection policy](./policy.md) to generate or convert a certificate/key;
+1. Refer to [Connection policy](./policy.md) to generate or convert a certificate/key.
 
-2. Open the Config page of Ignition's administration interface, select OPC UA/Security, switch to the Server tab, upload the client certificate and set it to Trust;
+2. Open the Config page of Ignition's administration interface, select OPC UA/Security, switch to the Server tab, upload the client certificate and set it to Trust.
 
 3. Neuron adds a new southbound OPC UA device, open "Device Configuration", fill in the "Endpoint URL" of the target Ignition - opc.tcp://192.168.10.195:62541/discovery, username - opcuauser (Ignition default), password - password (Igniton default) Add the certificate/key, and start the device connection.
 
