@@ -384,36 +384,31 @@
       ]
     },
     {
-      "title": "API 接口",
+      "title": "HTTP API",
       "children": [
         {
-          "title": "HTTP API",
-          "children": [
-            {
-              "title": "JWT",
-              "path": "api/http-api/jwt"
-            },
-            {
-              "title": "数据类型",
-              "path": "api/http-api/data-type"
-            },
-            {
-              "title": "配置",
-              "path": "api/http-api/configuration"
-            },
-            {
-              "title": "读写",
-              "path": "api/http-api/rw"
-            },
-            {
-              "title": "插件设置",
-              "path": "api/http-api/plugin-setting"
-            }
-          ]
+          "title": "JWT",
+          "path": "http-api/jwt"
+        },
+        {
+          "title": "数据类型",
+          "path": "http-api/data-type"
+        },
+        {
+          "title": "配置",
+          "path": "http-api/configuration"
+        },
+        {
+          "title": "读写",
+          "path": "http-api/rw"
+        },
+        {
+          "title": "插件设置",
+          "path": "http-api/plugin-setting"
         },
         {
           "title": "错误代码",
-          "path": "api/error-code"
+          "path": "http-api/error-code"
         }
       ]
     },
@@ -668,7 +663,6 @@
               "path": "south-devices/opc-ua/faq"
             }
           ]
-
         },
         {
           "title": "OPC DA",
@@ -855,36 +849,31 @@
       ]
     },
     {
-      "title": "API",
+      "title": "HTTP API",
       "children": [
         {
-          "title": "HTTP API",
-          "children": [
-            {
-              "title": "JWT",
-              "path": "api/http-api/jwt"
-            },
-            {
-              "title": "Data Type",
-              "path": "api/http-api/data-type"
-            },
-            {
-              "title": "Configuration",
-              "path": "api/http-api/configuration"
-            },
-            {
-              "title": "Read & Write",
-              "path": "api/http-api/rw"
-            },
-            {
-              "title": "Plugin Setting",
-              "path": "api/http-api/plugin-setting"
-            }
-          ]
+          "title": "JWT",
+          "path": "http-api/jwt"
+        },
+        {
+          "title": "Data Type",
+          "path": "http-api/data-type"
+        },
+        {
+          "title": "Configuration",
+          "path": "http-api/configuration"
+        },
+        {
+          "title": "Read & Write",
+          "path": "http-api/rw"
+        },
+        {
+          "title": "Plugin Setting",
+          "path": "http-api/plugin-setting"
         },
         {
           "title": "Error Codes",
-          "path": "api/error-code"
+          "path": "http-api/error-code"
         }
       ]
     },
