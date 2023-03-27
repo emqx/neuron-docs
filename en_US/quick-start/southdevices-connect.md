@@ -21,5 +21,5 @@ Click the `Device Configuration` button on the southbound device card to enter t
 * Click `Submit` to complete the equipment configuration, and the equipment card will automatically enter the working state of **Running**.
 
 :::tip
-The configuration parameters required by each device are different. Please refer to [Southbound Drivers](../south-devices/modbus/modbus-tcp.md) for detailed description of southbound device parameters.
+The configuration parameters required by each device are different. Please refer to [Southbound Drivers](../south-devices/modbus-tcp/modbus-tcp.md) for detailed description of southbound device parameters.
 :::
