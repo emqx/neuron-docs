@@ -798,6 +798,19 @@
       "title": "Northbound Applications",
       "children": [
         {
+          "title": "eKuiper",
+          "children": [
+            {
+              "title": "Overview",
+              "path": "north-apps/ekuiper/overview"
+            },
+            {
+              "title": "FAQ",
+              "path": "north-apps/ekuiper/faq"
+            }
+          ]
+        },
+        {
           "title": "MQTT",
           "children": [
             {
