@@ -35,7 +35,7 @@ The main thing is that include_directories, link_directories and add_subdirector
 
 ```shell
 cmake_minimum_required(VERSION 3.12)
-
+project(modbus_tcp)
 enable_language(C)
 set(CMAKE_C_STANDARD 99)
 
@@ -47,7 +47,7 @@ include_directories(/usr/local/include /usr/local/include/neuron)
 link_directories(/usr/local/lib /usr/local/lib/neuron)
 
 # add driver submodule
-add_subdirectory(plugins/modbus)
+add_subdirectory(plugins/modbus-tcp)
 ```
 
 ### plugins/modbus

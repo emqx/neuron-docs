@@ -5,8 +5,8 @@ Neuron is fully developed in C language and supports running on X86, ARM, MIPS, 
 The following table lists the hardware conditions required for the minimum demand of Neuron at different number of tags.
 
 |Specifications|Minimum configuration recommendation|Hardware architecture|remarks|
-| :-------------------- | :----------------------------------- | :------------------------------ | :----------------------------------- |
-| 100 tags | At least 128M memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Small gateway device |
-| 1,000 tags | At least 256M memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium gateway device |
-| 10,000 tags | At least 512M memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium gateway, industrial computer, etc |
-| More than 10,000 tags | At least 1G memory, general CPU computing power | ARM/X86 architecture Linux system or Docker container environment | Medium or large gateway, industrial computer, servers, etc |
+| :-------------------- | :------------------------------ | :---------------------------------- | :----------------------------------- |
+| 100 tags | 128M memory | CPU architecture such as ARM, X86, MIPS, and RISC-V; Linux system or Docker container | Small gateway device |
+| 1,000 tags | 256M memory | CPU architecture such as ARM, X86, MIPS, and RISC-V; Linux system or Docker container | Medium gateway device |
+| 10,000 tags | 512M memory | CPU architecture such as ARM, X86, MIPS, and RISC-V; Linux system or Docker container | Medium gateway, industrial computer, etc |
+| More than 10,000 tags | 1G memory | CPU architecture such as ARM, X86, MIPS, and RISC-V; Linux system or Docker container | Medium or large gateway, industrial computer, servers, etc |
