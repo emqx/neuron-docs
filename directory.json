@@ -376,11 +376,19 @@
           ]
         },
         {
-          "title": "SparkPlugB",
+          "title": "SparkPlug B",
           "children": [
             {
-              "title": "SparkPlugB 介绍及使用",
-              "path": "north-apps/sparkplugb/sparkplugb"
+              "title": "概览",
+              "path": "north-apps/sparkplugb/overview"
+            },
+            {
+              "title": "连接 Ignition",
+              "path": "north-apps/sparkplugb/ignition"
+            },
+            {
+              "title": "连接 Cogent",
+              "path": "north-apps/sparkplugb/cogent"
             }
           ]
         }
