@@ -373,6 +373,19 @@
       "title": "北向应用",
       "children": [
         {
+          "title": "eKuiper",
+          "children": [
+            {
+              "title": "概览",
+              "path": "north-apps/ekuiper/overview"
+            },
+            {
+              "title": "常见问题",
+              "path": "north-apps/ekuiper/faq"
+            }
+          ]
+        },
+        {
           "title": "MQTT",
           "children": [
             {
