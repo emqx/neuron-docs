@@ -2,13 +2,11 @@
 
 ## NeuOPC 设置
 
-步骤：
-
 1. 填写 DA Host，可以填写 IP 或 Hostname，不填写则默认为本机；
 
 2. 尝试点击 DA Server 的下拉按钮，可以尝试获取目标 Host 的 DA Server 列表，如果下拉为空则说明检测不到任何目标主机上的 DA Server；
 
-3. 点击 Connect 按钮，服务器连接成功后会显示当前 DA Server 的所有可获取的测点信息，状态栏会出现当前服务器的连接信息，如图示8；
+3. 点击 Connect 按钮，服务器连接成功后会显示当前 DA Server 的所有可获取的测点信息，状态栏会出现当前服务器的连接信息；
 
 4. 设置 UA Port；
 
@@ -22,8 +20,6 @@
 ![](./assets/neuopc-connect1.png)
 
 ## Neuron OPC UA 设置
-
-步骤：
 
 1. 在 neuron 南向设备管理中添加一个 opcua 设备；
 
