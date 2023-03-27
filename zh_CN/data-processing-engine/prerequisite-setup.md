@@ -62,7 +62,7 @@ services:
       - neuron
 
 volumes:
-  nng-ipc:%  
+  nng-ipc:
 ```
 
 执行成功后 Neuron 和 eKuiper 已分别启动。
