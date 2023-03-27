@@ -28,10 +28,10 @@ Neuron version 2.0.0 first released the eKuiper plugin, while eKuiper 1.5.0 firs
 added the Neuron source and sink.
 The two sides use the [NNG pair0 protocol] based on the [IPC transport], which
 only allows one-to-one communication in the same host. Thus you need to deploy
-Neuron and eKuiper in the same host for proper functionality.
+Neuron and eKuiper in the same host to achieve correct functionality.
 
 ::: tip
-You may also use MQTT as a relay between both sides.
+You may also use MQTT as a relay between Neuron and eKuiper.
 :::
 
 ### NeuronEX
@@ -51,7 +51,7 @@ eKuiper. You may skip this section without problem.
 #### Data upload
 
 The Neuron eKuiper plugin publishes data collected from devices as JSON once
-connected to the eKuiper Neuron source.
+connected to the eKuiper.
 Data published to eKuiper have the following fields:
 * "timestamp": unix timestamp when the data is collected
 * "node_name": the name of a southbound node.
@@ -80,8 +80,9 @@ the error code is recorded instead in the *errors* dictionary.
 
 #### Device control
 
-eKuiper may control devices via Neuron by sending *write commands* to the Neuron
-sink, and Neuron will write data to the devices upon receiving the commands.
+eKuiper may control devices via Neuron by sending *write commands* using the
+Neuron sink, and Neuron will write data to the devices upon receiving the
+commands.
 
 The *write command* should be JSON data with the following fields:
 * "node_name": the name of a southbound node.
