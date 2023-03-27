@@ -3,16 +3,16 @@
 本例使用 windows 7 SP1 32位系统演示
 
 ::: tip
-Neuopc 只能运行于 Windows 7 SP1 以上操作系统，并且需安装 [KB3063858](https://www.microsoft.com/zh-CN/download/details.aspx?id=47409) 和 [KB2999226](https://www.microsoft.com/zh-cn/download/details.aspx?id=49077) 两个更新程序。
+NeuOPC 只能运行于 Windows 7 SP1 以上操作系统，并且需安装 [KB3063858](https://www.microsoft.com/zh-CN/download/details.aspx?id=47409) 和 [KB2999226](https://www.microsoft.com/zh-cn/download/details.aspx?id=49077) 两个更新程序。
 :::
 
-## neuopc 运行环境安装
+## NeuOPC 运行环境安装
 
-1. 进入 neuopc [项目 releases 页面](https://github.com/neugates/neuopc/releases)下载最新的组件包"neuopc-package.zip"，解压后可见如下文件：
+1. 进入 NeuOPC [项目 releases 页面](https://github.com/neugates/neuopc/releases)下载最新的组件包"neuopc-package.zip"，解压后可见如下文件：
 
 ![](./assets/package.png)
 
-* neuopc ——运行 OPCDA 转换 OPCUA 的主程序；
+* NeuOPC ——运行 OPC DA 转换 OPC UA 的主程序；
 * dotnetfx-1.1——.Net framework 1.1，安装 OPC DAAuto 需要先正确此程序；
 * OPC DA Auto 2.02 Source Code 5.30.msi ——OPC 基金会官方组件，使用"Windows任务管理器"安装；
 * OPC Core Components Redistributable (x64) 3.00.108.msi ——OPC 基金会官方组件，可不用安装；
