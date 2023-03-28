@@ -16,8 +16,9 @@ Neuron MQTT 插件允许用户快速构建使用 MQTT 协议的物联网应用�
 
 | 字段                | 说明                                                         |
 | ------------------- | ------------------------------------------------------------ |
-| **client-id**       | MQTT通信的客户端id，必填。                                   |
-| **upload-topic**    | 订阅数据上报的主题，必填。                                   |
+| **client-id**       | MQTT 通信的客户端 id，必填。                                 |
+| **qos**             | MQTT 通信的服务质量等级，可选，默认为 QoS 0 。（2.4.0 版新增） |
+| **~~upload-topic~~**| ~~订阅数据上报的主题，必填。~~ （2.4.0 版移除）              |
 | **format**          | 上报数据的JSON格式，必填。有VALUES格式和TAGS格式。           |
 | **cache-mem-size**  | 通信失败时内存消息缓存大小(MB)限制，必填。范围在[0, 1024]。 不能大于 *cache-disk-size*。|
 | **cache-disk-size** | 通信失败时磁盘消息缓存大小(MB)限制，必填。范围在[0, 10240]。设为非零值时, *cache-mem-size*也须为非零值。|
@@ -31,9 +32,29 @@ Neuron MQTT 插件允许用户快速构建使用 MQTT 协议的物联网应用�
 | **key**             | 客户端密钥，使用 SSL 双向认证时必填。                        |
 | **keypass**         | 客户端密钥密码，使用 SSL 双向认证时选填。                    |
 
-### 数据上传
+### 数据上报
 
-在订阅了南向节点之后，Neuron 的 MQTT 插件将收集到的数据以 JSON 形式发布到由 **upload-topic** 参数指定的主题上。
+在 Neuron 2.4.0 版本之前， Neuron 的 MQTT 插件将收集到的数据以 JSON 形式发布到由 **upload-topic** 参数指定的主题上。
+<figure align="center">
+  <img src="./assets/upload_topic.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Neuron version 2.3.0 upload topic setting">
+  <figcaption align = "center">
+    <sub><b>Fig.1 - 在 Neuron 2.3.0 版本中指定上报主题</b></sub>
+  </figcaption>
+</figure>
+
+Neuron 2.4.0 版本删除了 **upload-topic** 参数， 用户需要通过群组订阅页面指定上报主题。
+点击你的 MQTT 节点进入群组订阅页面，然后点击**添加订阅**即可。
+<figure align="center">
+  <img src="./assets/subscribe_topic.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Neuron version 2.4.0 MQTT subscribe interface">
+  <figcaption align = "center">
+    <sub><b>Fig.2 - 在 Neuron 2.4.0 版本中指定上报主题</b></sub>
+  </figcaption>
+</figure>
+
 上报数据的确切格式由 **format** 参数控制。
 有 **tags-format** 和 **values-format** 两种格式。
 
