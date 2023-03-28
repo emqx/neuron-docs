@@ -1,33 +1,19 @@
 ## FAQ
 
-## The device status is "Disconnected" for a long time.
+## The device status is "Disconnected" for a long time or Error code - ERROR(3002): Plug-in is not connected
 
-* You can use other OPC UA testing software, such as UaExpert, to test if the OPC UA server cannot be connected;
+* Test whether the OPC UA server port is available by Telnet tool, command `telnet target-ip target-port`, if it fails to connect, you need to check whether the OPC UA server is listening to the right network, and check whether the network firewall setting is open the relevant port.
 
-* PLC devices need to turn on the "Accept client certificate" option when OPC UA Server is enabled;
+* You can use other OPC UA testing software, such as UaExpert, to test if the OPC UA server cannot be connected.
 
-* OPC Server needs to set NeuronClient in the "Trusted Clients" list to be trusted if anonymous login is not used;
+* PLC devices need to turn on the "Accept client certificate" option when OPC UA Server is enabled.
 
-## Error code - ERROR(3002): Plug-in is not connected
+* OPC Server needs to set NeuronClient in the "Trusted Clients" list to be trusted if anonymous login is not used.
 
 * Abnormal connection, need to check whether Neuron OPC UA device configuration is correct.
+
+* Provide Neuron device logs to developers to help troubleshoot issues.
 
 ## Error code - ERROR(3008): Plug-in Tag value is invalid
 
 * Read timeout, you can adjust the Interval value of Group appropriately.
-
-## Error code - 10001
-
-* The set measurement point address does not exist in OPC UA Server.
-
-## Error Code - 10004
-
-* The set measurement point is not readable.
-
-## Error Code - 10005
-
-* The set measurement point is not writable.
-
-## Error Code - 10006
-
-* The set data type is not supported by Neuron.
