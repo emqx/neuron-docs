@@ -387,7 +387,7 @@
       "title": "HTTP API",
       "children": [
         {
-          "title": "JWT",
+          "title": "自定义 JWT",
           "path": "http-api/jwt"
         },
         {
@@ -852,7 +852,7 @@
       "title": "HTTP API",
       "children": [
         {
-          "title": "JWT",
+          "title": "Customize JWT",
           "path": "http-api/jwt"
         },
         {
