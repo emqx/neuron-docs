@@ -33,7 +33,7 @@ $ cd build
 $ ./ neuron
 ```
 
-## Step debugging
+## Debugging
 
 1. Use logs to print relevant debugging information
 2. Because Neuron is a multithreaded asynchronous concurrent program, it is not recommended to use GDB for breakpoint debugging, etc.

@@ -526,6 +526,15 @@
           ]
         }
       ]
+    },
+    {
+      "title": "F&Q",
+      "children": [
+        {
+          "title": "常见错误说明及排查",
+          "path": "fq/fq"
+        }
+      ]
     }
   ],
   "en": [
@@ -1049,6 +1058,15 @@
               "path": "project/protocol/modbus_tcp"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "F&Q",
+      "children": [
+        {
+          "title": "Frequently asked questions and troubleshooting",
+          "path": "fq/fq"
         }
       ]
     }
