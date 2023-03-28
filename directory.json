@@ -8,17 +8,8 @@
           "path": "./"
         },
         {
-          "title": "使用场景",
-          "children": [
-            {
-              "title": "集成",
-              "path": "introduction/use-scenes/integration/integration"
-            },
-            {
-              "title": "案例",
-              "path": "introduction/use-scenes/use-cases/use_cases"
-            }
-          ]
+          "title": "产品价值",
+          "path": "introduction/product-value"
         },
         {
           "title": "模块列表",
@@ -83,6 +74,10 @@
           ]
         }
       ]
+    },
+    {
+      "title": "应用场景",
+      "path": "use-cases/use_cases"
     },
     {
       "title": "用户指南",
@@ -413,6 +408,10 @@
       ]
     },
     {
+      "title": "集成",
+      "path": "integration/integration"
+    },
+    {
       "title": "参与项目",
       "children": [
         {
@@ -477,17 +476,8 @@
           "path": "./"
         },
         {
-          "title": "Use Scenes",
-          "children": [
-            {
-              "title": "Integrations",
-              "path": "introduction/use-scenes/integration/integration"
-            },
-            {
-              "title": "Use Cases",
-              "path": "introduction/use-scenes/use-cases/use_cases"
-            }
-          ]
+          "title": "Product Value",
+          "path": "introduction/product-value"
         },
         {
           "title": "Module List",
@@ -552,6 +542,10 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Use Cases",
+      "path": "use-cases/use_cases"
     },
     {
       "title": "User Guide",
@@ -876,6 +870,10 @@
           "path": "http-api/error-code"
         }
       ]
+    },
+    {
+      "title": "Integration",
+      "path": "integration/integration"
     },
     {
       "title": "Project",
