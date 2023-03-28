@@ -2,15 +2,15 @@
 
 ## 匿名登录
 
-1. 双击系统托盘中的 Industrial Gateway OPC Server 图标，在主界面中打开“项目”的“属性编辑器”，将 OPC UA - “允许匿名登录”设置为“是”;
-![](./assets/igs-1.jpg)
+1. 双击系统托盘中的 Industrial Gateway OPC Server 图标，在主界面中打开 **项目** -> **属性编辑器** -> **OPC UA** 将 `允许匿名登录` 设置为 `是`;
+![igs-1](./assets/igs-1.jpg)
 
-2. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择“OPC UA 配置”，切换到“服务器端点”，双击端点条目，勾选所有安全策略。
-![](./assets/igs-2.jpg)
+2. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择 **OPC UA 配置** -> **服务器端点**，双击端点条目，勾选所有安全策略。
+![igs-2](./assets/igs-2.jpg)
 
-3. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择“重新初始化”；
+3. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择 **重新初始化**；
 
-4. Neuron 新增南向 OPC UA 设备，打开“设备配置”，填写目标 Server 的“端点 URL”，无需填写用户名/密码，无需添加证书/密钥，启动设备连接；
+4. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，无需填写用户名/密码，无需添加证书/密钥，启动设备连接；
 
 ## 证书/密钥 + 匿名登录
 
@@ -18,12 +18,12 @@
 
 2. 参考[连接策略](./policy.md)生成或转换证书/密钥；
 
-3. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择“OPC UA 配置”，切换到“受信任的客户端”，将 DER 格式的客户端证书导入列表；
-![](./assets/igs-3.jpg)
+3. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择 **OPC UA 配置** -> **受信任的客户端**，将 DER 格式的客户端证书导入列表；
+![igs-3](./assets/igs-3.jpg)
 
-4. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择“重新初始化”；
+4. 右键点击系统托盘中的 Industrial Gateway OPC Server 图标，在菜单中选择 **重新初始化**；
 
-5. Neuron 新增南向 OPC UA 设备，打开“设备配置”，填写目标 Server 的“端点 URL”，无需填写用户名/密码，添加证书/密钥，启动设备连接；
+5. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，无需填写用户名/密码，添加证书/密钥，启动设备连接；
 
 ## 测试点位
 
