@@ -136,6 +136,14 @@
               "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
+              "title": "连接 Modbus Poll 模拟器",
+              "path": "south-devices/modbus-rtu/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "连接 Modbus Slave 模拟器",
+              "path": "south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
+            },
+            {
               "title": "常见问题",
               "path": "south-devices/modbus-rtu/faq/faq"
             }
@@ -151,6 +159,14 @@
             {
               "title": "连接 PeakHMI Slave 模拟器",
               "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
+            },
+            {
+              "title": "连接 Modbus Poll 模拟器",
+              "path": "south-devices/modbus-tcp/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "连接 Modbus Slave 模拟器",
+              "path": "south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
             },
             {
               "title": "常见问题",
@@ -668,7 +684,6 @@
               "path": "south-devices/opc-ua/faq"
             }
           ]
-
         },
         {
           "title": "OPC DA",

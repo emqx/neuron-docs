@@ -21,7 +21,8 @@ Neuron 作为 Client，主动向 Modbus Slave 发起连接请求，用户需要�
 ### 配置 Modbus Slave
 
 * 安装完成后，运行 Modbus Slave。
-* 按下 F3 或者进入菜单 **Connection -> Connect**，根据实际情况选择连接方式（本示例为Modbus TCP），设置连接参数（主要 Port），然后点击 **OK** 完成配置。
+* 按下 F3 或者进入菜单 **Connection -> Connect**，根据实际情况选择连接方式（本示例为Modbus TCP/IP），设置连接参数（监听 Port），然后点击 **OK** 完成配置，如下图所示。
+![modbus-slave-connection-setup](../assets/modbus-slave-connection-setup.png)
 * 按下 F8 ，进入菜单 **Setup -> Slave Definition**，或者点击工具栏 ![Slave Definition](../assets/mbpoll-definition-button.png) 配置从机地址信息。根据地址需求设置地址参数信息，点击 **OK** 完成配置。
 * 主界面中独立文档窗口就可以看到地址配置相关的数据信息显示。如果想要配置多个从机地址定义，点击 **File -> New** 新建文档窗口，重复上一步从机地址配置即可。在独立文档窗口双击表头为地址的表格项目可以对数据进行修改。
 * 如果需要同时模拟多个从设备，运行 Modbus Slave 多个实例，重复上述步骤即可。
