@@ -341,6 +341,15 @@
           ]
         },
         {
+          "title": "ABB COMLI",
+          "children": [
+            {
+              "title": "ABB COMLI 介绍与使用",
+              "path": "south-devices/comli/comli"
+            }
+          ]
+        },
+        {
           "title": "File",
           "children": [
             {
@@ -626,6 +635,14 @@
               "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
+              "title": "Connection to Modbus Poll Simulator",
+              "path": "south-devices/modbus-rtu/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "Connection to Modbus Slave Simulator",
+              "path": "south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
+            },
+            {
               "title": "FAQ",
               "path": "south-devices/modbus-rtu/faq/faq"
             }
@@ -641,6 +658,14 @@
             {
               "title": "Connect to PeakHMI Slave Simulator",
               "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
+            },
+            {
+              "title": "Connect to Modbus Poll Simulator",
+              "path": "south-devices/modbus-tcp/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "Connect to Modbus Slave Simulator",
+              "path": "south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
             },
             {
               "title": "FAQ",

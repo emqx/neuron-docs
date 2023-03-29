@@ -22,11 +22,11 @@ As a Client, Neuron initiates connection requests to Modbus Slave actively. The 
 ### Configure Modbus Slave
 
 * After installation, run Modbus Slave.
-* Enter **Connection -> Connect**, choose a connection method based on actual circumstances(this example is Modbus RTU Over TCP/IP) and set up the connection parameters(listening port), clicking **OK** will complete the configuration, as shown in the figure below.
+* Enter **Connection -> Connect**, choose a connection method based on actual circumstances(this example is Modbus TCP/IP) and set up the connection parameters(listening port), clicking **OK** will complete the configuration, as shown in the figure below.
 
-![modbus-slave-rtu-connection-setup](./assets/modbus-slave-rtu-connection-setup.png)
+![modbus-slave-connection-setup](../assets/modbus-slave-connection-setup.png)
 
-* Enter **Setup -> Slave Definition**, or click![Slave Definition](./assets/mbpoll-definition-button.png) on toolbar set slave definition. Setting up address parameters based on the read/write requirements, clicking **ok** will complete configuration.
+* Enter **Setup -> Slave Definition**, or click![Slave Definition](../assets/mbpoll-definition-button.png) on toolbar set slave definition. Setting up address parameters based on the read/write requirements, clicking **ok** will complete configuration.
 * The data about slave definition show on single document interface. If you want to see data for multiple slave definition, click **File -> New**, create a new document windows, repeat step 3. You can input value to modify data using double-clicking item in table.
 * If you need to simulate multiple slave devices simultaneously, run Modbus Slave on multiple instances. Repeat the above steps.
 
@@ -35,9 +35,8 @@ As a Client, Neuron initiates connection requests to Modbus Slave actively. The 
 
 In the southbound driver management, create a node whose plugin is modbus-rtu-client, and configure the driver, as shown in the figure below.
 
-![neuron-rtu-client-config](./assets/neuron-rtu-client-config-en.png)
+![neuron-tcp-client-config](../assets/neuron-tcp-client-config-en.png)
 
-* Select TCP as physical link;
 * Connection mode selection client;
 * Host fill in the IP address of Modbus Slave;
 * Port fill in the port of Modbus Slave configuration;
