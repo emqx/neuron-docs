@@ -4,7 +4,7 @@ This rule implements +1 processing of the data collected by the neuron from the 
 
 ## Step 1 Add a new rule
 
-Click `New Rule` to create a new rule in **Rules** page.
+Click `New Rule` to create a new rule in **Data stream process->Rules** page.
 
 ## Step 2 Setup rule details
 

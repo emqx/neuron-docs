@@ -4,7 +4,7 @@
 
 ### Installation dependencies
 
-Please refer to [Install dependencies](https://github.com/emqx/neuron/blob/main/Install-dependencies.md)
+Please refer to [Install dependencies](https://github.com/emqx/neuron/blob/main/Install-dependencies.md).
 
 ### Compilation
 
@@ -35,7 +35,7 @@ $ ./ neuron
 
 ## Debugging
 
-1. Use logs to print relevant debugging information
+1. Use logs to print relevant debugging information.
 2. Because Neuron is a multithreaded asynchronous concurrent program, it is not recommended to use GDB for breakpoint debugging, etc.
 3. Combining libasan runtime memory analysis, most memory issues can be resolved.
 
