@@ -194,12 +194,24 @@
           "title": "OPC DA",
           "children": [
             {
-              "title": "OPC DA 介绍与使用",
-              "path": "south-devices/opc-da/opc-da"
+              "title": "概览",
+              "path": "south-devices/opc-da/overview"
             },
             {
-              "title": "NeuOPC 设置",
-              "path": "south-devices/opc-da/neuopc/neuopc"
+              "title": "NeuOPC 安装",
+              "path": "south-devices/opc-da/install"
+            },
+            {
+              "title": "NeuOPC 远程访问",
+              "path": "south-devices/opc-da/remote"
+            },
+            {
+              "title": "连接 NeuOPC",
+              "path": "south-devices/opc-da/neuopc"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/opc-da/faq"
             }
           ]
         },
@@ -662,12 +674,24 @@
           "title": "OPC DA",
           "children": [
             {
-              "title": "Introduction and Usage of OPC DA",
-              "path": "south-devices/opc-da/opc-da"
+              "title": "Overview",
+              "path": "south-devices/opc-da/overview"
             },
             {
-              "title": "NeuOPC Settings",
-              "path": "south-devices/opc-da/neuopc/neuopc"
+              "title": "NeuOPC install",
+              "path": "south-devices/opc-da/install"
+            },
+            {
+              "title": "NeuOPC remote access",
+              "path": "south-devices/opc-da/remote"
+            },
+            {
+              "title": "Connect to NeuOPC",
+              "path": "south-devices/opc-da/neuopc"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/opc-da/faq"
             }
           ]
         },
