@@ -8,9 +8,9 @@ Modbus Poll is a Modbus master simulator designed primarily to help developers o
 
 Modbus Poll read/write data from devices using:
 * Modbus RTU or ASCII on RS232 or RS485 networks. (USB/RS232/485 Converter)
-* Modbus TCP/IP
+* Modbus TCP/IP.
 * Modbus Over TCP/IP. (Modbus RTU/ASCII encapsulated in a TCP packet)
-* Modbus UDP/IP
+* Modbus UDP/IP.
 * Modbus Over UDP/IP. (Modbus RTU/ASCII encapsulated in a UDP packet)
   
 Install Modbus Poll software, and the installation package can be download form [modbus tool download](https://www.modbustools.com/download.html), choose the appropriate version based on the operating environment.The software provides a free usage period of 30 days. For the free duration phase, the connection will be disconnected once every 10 minutes, and after disconnection, the software needs to be restarted.
