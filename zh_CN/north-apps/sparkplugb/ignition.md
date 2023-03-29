@@ -1,6 +1,6 @@
 # 连接 Ignition
 
-## 安装 Ignition
+## Ignition 设置
 
 1. 从 Ignition 官网下载 Ignition 安装包，按照官方文档进行安装。
 
