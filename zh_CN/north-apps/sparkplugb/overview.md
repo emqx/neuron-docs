@@ -20,3 +20,7 @@ Neuron 从设备采集到的数据可以通过 Sparkplug B 协议从边缘端传
 | **客户端证书**      | cert 文件，只在 ssl 值为 true 时启用                          |
 | **客户端私钥**       | key 文件，只在 ssl 值为 true 时启用                           |
 | **私钥密码**   | key 文件密码，只有在 ssl 值为 true 时启用                     |
+
+:::tip
+以上参数中只有 `组 ID` 和 `节点 ID` 来源于 Sparkplug B 规范，其余均为 MQTT Broker 的连接参数，可以参阅 [MQTT 概览](../mqtt/overview.md)。
+:::
