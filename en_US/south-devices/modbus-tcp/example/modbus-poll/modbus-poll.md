@@ -23,11 +23,10 @@ As a Client, Modbus Poll initiates connection requests to Neuron. Users need to 
 
 ### Configure Neuron Southbound Driver Server
 
-In the southbound driver management, create a node whose plugin is modbus-rtu-server, and configure the driver, as shown in the figure below.
+In the southbound driver management, create a node whose plugin is modbus-tcp-server, and configure the driver, as shown in the figure below.
 
-![neuron-rtu-server-config](./assets/neuron-rtu-server-config-en.png)
+![neuron-tcp-server-config](../assets/neuron-tcp-server-config-en.png)
 
-* Select TCP as physical link;
 * Select server as the connection mode;
 * Host, fill in 0.0.0.0;
 * Port, fill in the listening port;
@@ -35,10 +34,10 @@ In the southbound driver management, create a node whose plugin is modbus-rtu-se
 ### Configure Modbus Poll Client
 
 * After installation, run Modbus Poll.
-* Enter **Connection -> Connect**, choose a connection method based on actual circumstances(this example is Modbus RTU/ASCII Over TCP/IP) and set up the connection parameters(the IP address and listening port of the Neuron), clicking **OK** will complete the configuration, as shown in the figure below.
+* Enter **Connection -> Connect**, choose a connection method based on actual circumstances(this example is Modbus TCP/IP) and set up the connection parameters(the IP address and listening port of the Neuron), clicking **OK** will complete the configuration, as shown in the figure below.
 
-![modbus-poll-rtu-connection-setup](./assets/modbus-poll-rtu-connection-setup.png)
+![modbus-poll-connection-setup](../assets/modbus-poll-connection-setup.png)
 
-* Enter **Setup -> Read/Write Definition**, or click![Read/Write Definition](./assets/mbpoll-definition-button.png) on toolbar set read/write definition. Setting up address parameters based on the read/write requirements, clicking **ok** will complete configuration.
+* Enter **Setup -> Read/Write Definition**, or click![Read/Write Definition](../assets/mbpoll-definition-button.png) on toolbar set read/write definition. Setting up address parameters based on the read/write requirements, clicking **ok** will complete configuration.
 * The data about read/write definition show on single document interface. If you want to see data for multiple read/write definition, click **File -> New**, create a new document windows, repeat step 3. You can input site number, address, and value to modify data on slave using double-clicking item in table.
 * If you need to connect multiple slave devices simultaneously, run Modbus Poll on multiple instances. Repeat the above steps.

@@ -22,6 +22,7 @@ Modbus Poll 作为 Client，主动向 Neuron 发起连接请求，用户需要�
 ### 配置 Neuron 南向驱动 Server
 
 在南向驱动管理中建立插件为 modbus-rtu-server 的节点，并进行驱动配置，如下图所示。
+
 ![neuron-rtu-server-config](./assets/neuron-rtu-server-config.png)
 
 * 物理链路选择 TCP；
@@ -33,7 +34,9 @@ Modbus Poll 作为 Client，主动向 Neuron 发起连接请求，用户需要�
 
 * 安装完成后，运行 Modbus Poll。
 * 进入菜单 **Connection -> Connect**，根据实际情况选择连接方式（本示例为 Modbus RTU/ASCII Over TCP/IP），设置连接参数（Neuron 运行设备的 IP 和设置的 Port），然后点击 **OK** 完成配置， 如下图所示。
+
 ![modbus-poll-rtu-connection-setup](./assets/modbus-poll-rtu-connection-setup.png)
+
 * 进入菜单 **Setup -> Read/Write Definition** 或者点击工具栏 ![Read/Write Definition](./assets/mbpoll-definition-button.png) 配置读写。根据读写需求设置地址参数信息，点击 **OK** 完成配置。
 * 主界面独立文档窗口就可以看到读写配置相关的数据信息显示。如果想要配置多个读写定义，点击 **File -> New** 新建文档窗口，重复上一步读写配置即可。在独立文档窗口双击表头为地址的表格项目，输入站点号，地址，和值，即可对从机对应数据进行修改。
 * 如果需要同时连接多个从设备，运行 Modbus Poll 多个实例，重复上述步骤即可。
