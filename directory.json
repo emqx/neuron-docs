@@ -341,15 +341,6 @@
           ]
         },
         {
-          "title": "ABB COMLI",
-          "children": [
-            {
-              "title": "ABB COMLI 介绍与使用",
-              "path": "south-devices/comli/comli"
-            }
-          ]
-        },
-        {
           "title": "File",
           "children": [
             {
