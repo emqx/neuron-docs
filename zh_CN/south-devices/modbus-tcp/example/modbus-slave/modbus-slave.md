@@ -5,9 +5,9 @@ Modbus Slave 是一款 Modbus 从机模拟器，主要用于 Modbus 主设备开
 
 Modbus Slave 支持以下方式读写设备数据：
 * 在 RS232 或者 RS485 串口网络上使用 Modbus RTU, ASCII 通讯。（USB/RS232/485 转换器）
-* Modbus TCP/IP
+* Modbus TCP/IP。
 * Modbus Over TCP/IP。（Modbus RTU/ASCII 封装于 TCP 报文）
-* Modbus UDP/IP
+* Modbus UDP/IP。
 * Modbus Over UDP/IP。（Modbus RTU/ASCII 封装于 UDP 报文）
 
 安装 Modbus Slave 软件，安装包可从 [modbus tool 下载](https://www.modbustools.com/download.html) 页面，根据运行环境选择对应的安装包下载。软件提供30天的免费使用时长。免费时长阶段，连接10分钟会断开一次，断开之后需要重启软件。
