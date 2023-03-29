@@ -10,7 +10,7 @@ NeuOPC 只能运行于 Windows 7 SP1 以上操作系统，并且需安装 [KB306
 
 1. 进入 NeuOPC [项目 releases 页面](https://github.com/neugates/neuopc/releases)下载最新的组件包"neuopc-package.zip"，解压后可见如下文件：
 
-![](./assets/package.png)
+![package](./assets/package.png)
 
 * NeuOPC ——运行 OPC DA 转换 OPC UA 的主程序；
 * dotnetfx-1.1——.Net framework 1.1，安装 OPC DAAuto 需要先正确此程序；
@@ -22,13 +22,13 @@ NeuOPC 只能运行于 Windows 7 SP1 以上操作系统，并且需安装 [KB306
 
 3. 使用任务管理器安装 OPC DA Auto 2.02 Source Code 5.30.msi ，打开"Windows 任务管理器"，打开"文件"-"新建任务"，输入MSI文件路径，勾选"以系统管理权限创建此任务"；
 
-![](./assets/install-auto.png)
+![install-auto](./assets/install-auto.png)
 
 4. 检查组件是否已安装
 
 * 如果是32位操作系统，则进入到 C:\Windows\System32 目录下，如果是64位操作系统，则进入到 C:\Windows\SysWOW64 目录下，检查是否有如下文件存在：
 
-![](./assets/core-components.png)
+![core-components](./assets/core-components.png)
 
 ::: tip
 如果文件不存在则联系销售人员进行支持。
@@ -36,7 +36,7 @@ NeuOPC 只能运行于 Windows 7 SP1 以上操作系统，并且需安装 [KB306
 
 * 打开 "Windows 任务管理器"检查 OpcEnum 系统服务是否在运行，如图：
 
-![](./assets/opcenum.png)
+![opcenum](./assets/opcenum.png)
 
 ::: tip
 如果正常运行，说明 OPC DA Auto 2.02 已经正常安装。
@@ -46,4 +46,4 @@ NeuOPC 只能运行于 Windows 7 SP1 以上操作系统，并且需安装 [KB306
 
 6. 运行 neuopc.exe 程序，选择 DA Host 和 DA Server 后点击 Connect，设置 UA 的各项参数后点击 Run，运行成功，如图：
 
-![](./assets/local-neuopc.png)
+![local-neuopc](./assets/local-neuopc.png)

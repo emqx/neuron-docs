@@ -8,35 +8,35 @@
 
 1. 按下 WIN + R 键后在弹出的对话框中输入 dcomcnfg 确定后进入组件服务，如图：
 
-![](./assets/comcnf.png)
+![comcnf](./assets/comcnf.png)
 
 2. 先对本机属性进行总体的设置， 展开"组件服务\计算机\我的电脑"，右键我的电脑打开菜单中的属性设置：
 
-![](./assets/comcnf1.png)
+![comcnf1](./assets/comcnf1.png)
 
 在"默认属性"中勾选"在此计算机上启用分布式COM"，"默认身份验证级别"设置位"无"：
 
-![](./assets/comcnf2.png)
+![comcnf2](./assets/comcnf2.png)
 
-在"默认协议"中只保留"面向连接的TCP/IP"：
+在"默认协议"中只保留"面向连接的 TCP/IP"：
 
-![](./assets/comcnf3.png)
+![comcnf3](./assets/comcnf3.png)
 
 在"COM安全"中将"访问权限"和"启动和激活权限"中的"编辑限制"和"编辑默认值"都分别添加"Everyone"、"Administrators"、"ANONYMOUS LOGON"用户，并将其下所有权限都勾选上：
 
-![](./assets/comcnf4.png)
+![comcnf4](./assets/comcnf4.png)
 
 3. 展开"组件服务\计算机\我的电脑\DCOM配置"，分别设置"OpcEnum"和 "MatrikonOPC Server for Simulation and Testing" 的属性，在"常规"-"身份验证级别"中选择"无"：
 
-![](./assets/comcnf5.png)
+![comcnf5](./assets/comcnf5.png)
 
 在"位置"中勾选"在数据所在的计算机上运行应用程序"和"在此计算机上运行应用程序"：
 
-![](./assets/comcnf6.png)
+![comcnf6](./assets/comcnf6.png)
 
 在"安全"中所有权限选择自定义后分别添加"Everyone"、"Administrators"、"ANONYMOUS LOGON"用户，并将其下的所有权限勾选上：
 
-![](./assets/comcnf7.png)
+![comcnf7](./assets/comcnf7.png)
 
 4. 确认关闭系统防火墙或者添加安全策略允许 OpcEnum 和 Matrikon 等程序通过。
 
@@ -48,22 +48,22 @@
 
 1. 先对本机属性进行总体的设置， 展开"组件服务\计算机\我的电脑"，右键我的电脑打开菜单中的属性设置，设置的内容和方式与远程主机一致：
 
-![](./assets/client-cfg1.png)
+![client-cfg1](./assets/client-cfg1.png)
 
-![](./assets/client-cfg2.png)
+![client-cfg2](./assets/client-cfg2.png)
 
-![](./assets/client-cfg3.png)
+![client-cfg3](./assets/client-cfg3.png)
 
 2. 展开"组件服务\计算机\我的电脑\DCOM配置"，设置"OpcEnum"，设置的内容和方式与远程主机一致:
 
-![](./assets/client-cfg4.png)
+![client-cfg4](./assets/client-cfg4.png)
 
-![](./assets/client-cfg5.png)
+![client-cfg5](./assets/client-cfg5.png)
 
-![](./assets/client-cfg6.png)
+![client-cfg6](./assets/client-cfg6.png)
 
 3. 确认关闭系统防火墙或者添加安全策略允许 OpcEnum 程序通过。
 
 至此 OPC DA 的本地主机测试环境已经设置完成。
 
-![](./assets/client-worked.png)
+![client-worked](./assets/client-worked.png)
