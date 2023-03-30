@@ -400,11 +400,23 @@
           ]
         },
         {
-          "title": "SparkPlugB",
+          "title": "SparkPlug B",
           "children": [
             {
-              "title": "SparkPlugB 介绍及使用",
-              "path": "north-apps/sparkplugb/sparkplugb"
+              "title": "概览",
+              "path": "north-apps/sparkplugb/overview"
+            },
+            {
+              "title": "连接 Ignition",
+              "path": "north-apps/sparkplugb/ignition"
+            },
+            {
+              "title": "连接 Cogent",
+              "path": "north-apps/sparkplugb/cogent"
+            },
+            {
+              "title": "常见问题",
+              "path": "north-apps/sparkplugb/faq"
             }
           ]
         }
@@ -916,8 +928,20 @@
           "title": "SparkPlugB",
           "children": [
             {
-              "title": "Introduction and Usage of SparkPlugB",
-              "path": "north-apps/sparkplugb/sparkplugb"
+              "title": "Overview",
+              "path": "north-apps/sparkplugb/overview"
+            },
+            {
+              "title": "Connect to Ignition",
+              "path": "north-apps/sparkplugb/ignition"
+            },
+            {
+              "title": "Connect to Cogent",
+              "path": "north-apps/sparkplugb/cogent"
+            },
+            {
+              "title": "FAQ",
+              "path": "north-apps/sparkplugb/faq"
             }
           ]
         }
