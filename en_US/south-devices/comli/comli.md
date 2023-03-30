@@ -6,14 +6,14 @@ This comli plugin is used to access ABB's COMLI compatible control system throug
 
 | Parameter                 | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
-| **Recive Timeout** | The time of the system waits for a device to respond to a command.  |
+| **Recv Timeout** | The time of the system waits for a device to respond to a command.  |
 | **Send Interval** | 	The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
-| **Send Retry Count** | The number of retransmissions of the master request command when the slave returns with no response command. |
-| **Serial Device** | The path to the serial device when using a serial connection, e.g., /dev/ttyS0 in Linux systems. |
+| **Send Retry** | The number of retransmissions of the master request command when the slave returns with no response command. |
+| **Serial Port** | The path to the serial device when using a serial connection, e.g., /dev/ttyS0 in Linux systems. |
 | **Stop Bits** | Serial connection parameter. |
 | **Parity** | Serial connection parameter. |
 | **Baud Rate** | Serial connection parameter. |
-| **Data Bits** | Serial connection parameter. |
+| **Data Size** | Serial connection parameter. |
 
 
 ## Data types
