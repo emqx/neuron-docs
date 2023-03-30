@@ -332,6 +332,15 @@
           ]
         },
         {
+          "title": "ABB COMLI",
+          "children": [
+            {
+              "title": "ABB COMLI 介绍与使用",
+              "path": "south-devices/comli/comli"
+            }
+          ]
+        },
+        {
           "title": "File",
           "children": [
             {
@@ -804,6 +813,15 @@
             {
               "title": "Introduction and Usage of NON A11",
               "path": "south-devices/nona11/nona11"
+            }
+          ]
+        },
+        {
+          "title": "ABB COMLI",
+          "children": [
+            {
+              "title": "Introduction and Usage of ABB COMLI",
+              "path": "south-devices/comli/comli"
             }
           ]
         },
