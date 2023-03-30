@@ -11,7 +11,7 @@
 
 4. 本机启动一个 EMQX broker 实例，启动命令：`./bin/emqx start`。
 
-5. 打开 **Config** -> **MQTT ENGINE/Setting** -> **Servers** -> **Setting**，点击 `Create new MQTT Server Setting...` 创建一个 `Name` 为 EMQX 的连接，`URL` 设置为 `tcp:://localhost:1883`，点击 `Save Changes` 保存设置。
+5. 打开 **Config** -> **MQTT ENGINE/Setting** -> **Servers** -> **Setting**，点击 `Create new MQTT Server Setting...` 创建一个 `Name` 为 EMQX 的连接，`URL` 设置为 `tcp://localhost:1883`，点击 `Save Changes` 保存设置。
 
 ## Neuron 设置
 
