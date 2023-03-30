@@ -131,6 +131,14 @@
               "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
+              "title": "连接 Modbus Poll 模拟器",
+              "path": "south-devices/modbus-rtu/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "连接 Modbus Slave 模拟器",
+              "path": "south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
+            },
+            {
               "title": "常见问题",
               "path": "south-devices/modbus-rtu/faq/faq"
             }
@@ -146,6 +154,14 @@
             {
               "title": "连接 PeakHMI Slave 模拟器",
               "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
+            },
+            {
+              "title": "连接 Modbus Poll 模拟器",
+              "path": "south-devices/modbus-tcp/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "连接 Modbus Slave 模拟器",
+              "path": "south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
             },
             {
               "title": "常见问题",
@@ -624,6 +640,14 @@
               "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
+              "title": "Connection to Modbus Poll Simulator",
+              "path": "south-devices/modbus-rtu/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "Connection to Modbus Slave Simulator",
+              "path": "south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
+            },
+            {
               "title": "FAQ",
               "path": "south-devices/modbus-rtu/faq/faq"
             }
@@ -639,6 +663,14 @@
             {
               "title": "Connect to PeakHMI Slave Simulator",
               "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
+            },
+            {
+              "title": "Connect to Modbus Poll Simulator",
+              "path": "south-devices/modbus-tcp/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "Connect to Modbus Slave Simulator",
+              "path": "south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
             },
             {
               "title": "FAQ",
