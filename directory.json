@@ -297,8 +297,16 @@
           "title": "IEC60870-5-104",
           "children": [
             {
-              "title": "IEC 60870-5-104 介绍与使用",
+              "title": "概览",
               "path": "south-devices/iec-104/iec-104"
+            },
+            {
+              "title": "连接 IEC60870-5-104 Server 模拟器",
+              "path": "south-devices/iec-104/example/server-simulator/104-server-simulator"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/iec-104/faq/faq"
             }
           ]
         },
@@ -802,8 +810,16 @@
           "title": "IEC60870-5-104",
           "children": [
             {
-              "title": "Introduction and Usage of IEC 60870-5-104",
+              "title": "Overview",
               "path": "south-devices/iec-104/iec-104"
+            },
+            {
+              "title": "Connect to IEC60870-5-104 Server Simulator",
+              "path": "south-devices/iec-104/example/server-simulator/simulator"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/iec-104/faq/faq"
             }
           ]
         },
