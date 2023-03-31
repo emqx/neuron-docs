@@ -8,7 +8,7 @@
 ## 数据上报
 
 Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题。
-上报数据的具体格式由 **format** 参数指定，有 *tags-format* 和 *values-format* 两种格式。
+上报数据的具体格式由 **上报数据格式** 参数指定，有 *tags-format* 和 *values-format* 两种格式。
 
 ### 上报主题
 

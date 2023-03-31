@@ -19,23 +19,23 @@ and encrypted communication protocols to ensure data safety and privacy.
 
 These are the available parameters when configuring a node using the MQTT plugin.
 
-| Parameter           | Description                                                  |
-| ------------------- | ------------------------------------------------------------ |
-| **client-id**       | MQTT client id for communication, required.                  |
-| **qos**             | MQTT QoS level for message delivery, optional, default QoS 0. (since 2.4.0) |
-| **~~upload-topic~~**| ~~Subscription data reporting topic, required.~~ (removed in 2.4.0) |
-| **format**          | The json format of reported data, required. There are values format and tags format |
-| **cache-mem-size**  | In-memory cache limit (MB) in case of communication failure, required. Range in [0, 1024]. Should not be larger than *cache-disk-size*. |
-| **cache-disk-size** | In-disk cache limit (MB) in case of communication failure, required. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
-| **host**            | MQTT Broker host, required.                                  |
-| **port**            | MQTT Broker port number, required.                           |
-| **username**        | Username to use when connecting to the broker, optional.     |
-| **password**        | The password to use when connecting to the broker, optional. |
-| **ssl**             | Whether to enable MQTT SSL, default false.                   |
-| **ca**              | CA certificate, required when SSL enabled.                   |
-| **cert**            | client certificate, required when using SSL two way authentication. |
-| **key**             | client key, required when using SSL two way authentication. |
-| **keypass**         | client key password, optional when using SSL two way authentication. |
+| Parameter                       | Description                                                  |
+| ------------------------------- | ------------------------------------------------------------ |
+| **Client ID**                   | MQTT client id for communication, required.                  |
+| **QoS Level**                   | MQTT QoS level for message delivery, optional, default QoS 0. (since 2.4.0) |
+| **~~upload-topic~~**            | ~~Subscription data reporting topic, required.~~ (removed in 2.4.0) |
+| **Upload Format**               | The json format of reported data, required. There are values format and tags format |
+| **Cache Memroy Size**           | In-memory cache limit (MB) in case of communication failure, required. Range in [0, 1024]. Should not be larger than *cache-disk-size*. |
+| **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, required. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
+| **Broker Host**                 | MQTT Broker host, required.                                  |
+| **Broker Port**                 | MQTT Broker port number, required.                           |
+| **Username**                    | Username to use when connecting to the broker, optional.     |
+| **Password**                    | The password to use when connecting to the broker, optional. |
+| **SSL**                         | Whether to enable MQTT SSL, default false.                   |
+| **CA**                          | CA certificate, required when SSL enabled.                   |
+| **Client Cert**                 | client certificate, required when using SSL two way authentication. |
+| **Client Private Key**          | client key, required when using SSL two way authentication. |
+| **Client Private Key Password** | client key password, optional when using SSL two way authentication. |
 
 
 ### Data upload
@@ -65,8 +65,8 @@ Click your MQTT node to enter the group subscription page, and click
   </figcaption>
 </figure>
 
-The exact format of the data reported is controlled by the **format** parameter.
-There are two formats, *tags-format* and *values-format*.
+The exact format of the data reported is controlled by the **Upload Format**
+parameter. There are two formats, *tags-format* and *values-format*.
 
 For more detail information, see [MQTT API](./api.md#data-upload)
 
@@ -79,9 +79,9 @@ This feature is useful in scenarios where network connectivity may be limited,
 unstable, or intermittent. And provides a critical functionality that can enhance
 the robustness and reliability of applications built on Neuron.
 
-Offline data caching is controlled by the **cache-mem-size** and **cache-disk-size**
-parameters. The **cache-mem-size** parameter specified the memory cache size in
-megabytes, and the max allowed memory cache size is 1GB. The **cache-disk-size**
+Offline data caching is controlled by the **Cache Memory Size** and **Cache Disk Size**
+parameters. The **Cache Memory Size** parameter specified the memory cache size in
+megabytes, and the max allowed memory cache size is 1GB. The **Cache Disk Size**
 parameter specified the disk cache size in megabytes, and the max allowed disk cache
 size is 10GB.
 When network disruption occurs, the MQTT plugin will store data in the memory
@@ -89,8 +89,8 @@ cache first, and only flush data to the disk cache when memory cache is full.
 When network connection restores, the MQTT plugin will publish the cached data
 to the broker in FIFO (Fist In First Out) order.
 
-You may disable offline data caching by setting both **cache-mem-size** and
-**cache-disk-size** to zero.
+You may disable offline data caching by setting both **Cache Memory Size** and
+**Cache Disk Size** to zero.
 
 ### Data security
 
@@ -103,12 +103,12 @@ encryption. This ensures that all data passed between the clients and the broker
 are encrypted and secure.
 
 The Neuron MQTT plugin supports running MQTT over SSL. To enable SSL encryption,
-turn on the **ssl** parameter when configuring the node, and provide the **ca**
+turn on the **SSL** parameter when configuring the node, and provide the **CA**
 parameter with the CA's certificate. The certificate of the broker you are
 connecting to should be issued by the provided CA. And if you are using two-way
 authentication, you should also provide the client certificate, key file, and
-key file password through the **cert**, **key**, and **keypass** parameters
-respectively.
+key file password through the **Client Cert**, **Client Private key**, and
+**Client Private Key Password** parameters respectively.
 
 ## Examples
 

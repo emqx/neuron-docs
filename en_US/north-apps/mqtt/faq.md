@@ -10,10 +10,10 @@ broker is properly set up to accept connections from the node.
 ## My MQTT node keeps switching between connected and disconnected state
 
 This is highly probably the broker is kicking the MQTT client. Please check
-that the configured [**client-id**] parameter is unique, or that the broker
+that the configured [**Client ID**] parameter is unique, or that the broker
 is setup properly.
 
-[**client-id**]: ./overview.md#parameters
+[**Client ID**]: ./overview.md#parameters
 
 ## My MQTT node reports no data
 

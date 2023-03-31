@@ -11,7 +11,7 @@ node name, and **{group_name}** refers to some south node group name.
 
 The Neuron MQTT plugin publishes collected data in JSON to some user designated
 topic.
-The exact format of the data reported is controlled by the **format** parameter.
+The exact format of the data reported is controlled by the **Upload Format** parameter.
 There are two formats, *tags-format* and *values-format*.
 
 ### Upload topic
