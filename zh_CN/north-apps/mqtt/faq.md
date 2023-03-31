@@ -7,8 +7,7 @@
 
 ## MQTT 节点在连接状态与未连接状态来回切换
 
-这带概率是因为 broker 在踢除 MQTT 客户端。请检查配置的 [**client-id**] 参数
-没有与其他客户端冲突， 或者 broker 的配置是否正确。
+这大概率是因为 broker 在踢除 MQTT 客户端。请检查配置的 [**client-id**] 参数是否与其他客户端冲突， 或者 broker 的配置是否正确。
 
 [**client-id**]: ./overview.md#parameters
 

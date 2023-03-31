@@ -440,6 +440,15 @@
       ]
     },
     {
+      "title": "最佳实践",
+      "children": [
+        {
+          "title": "Neuron + eKuiper 配合",
+          "path": "best-practices/ekuiper"
+        }
+      ]
+    },
+    {
       "title": "HTTP API",
       "children": [
         {
@@ -473,15 +482,24 @@
       "path": "integration/integration"
     },
     {
+      "title": "架构和设计",
+      "children": [
+        {
+          "title": "架构",
+          "path": "architecture/architecture"
+        },
+        {
+          "title": "关键概念",
+          "path": "architecture/concepts"
+        }
+      ]
+    }, 
+    {
       "title": "参与项目",
       "children": [
         {
           "title": "学会编译",
           "path": "project/compile"
-        },
-        {
-          "title": "了解架构",
-          "path": "project/architecture/architecture"
         },
         {
           "title": "开始开发",
@@ -524,6 +542,24 @@
               "path": "project/protocol/modbus_tcp"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "F&Q",
+      "children": [
+        {
+          "title": "常见错误说明及排查",
+          "path": "fq/fq"
+        }
+      ]
+    },
+    {
+      "title": "附录",
+      "children": [
+        {
+          "title": "数据类型说明",
+          "path": "appendix/data-type"
         }
       ]
     }
@@ -965,6 +1001,15 @@
       ]
     },
     {
+      "title": "Best practices",
+      "children": [
+        {
+          "title": "Neuron + eKuiper cooperation",
+          "path": "best-practices/ekuiper"
+        }
+      ]
+    },
+    {
       "title": "HTTP API",
       "children": [
         {
@@ -998,15 +1043,24 @@
       "path": "integration/integration"
     },
     {
+      "title": "Architecture design",
+      "children": [
+        {
+          "title": "Architecture",
+          "path": "architecture/architecture"
+        },
+        {
+          "title": "Key concepts",
+          "path": "architecture/concepts"
+        }
+      ]
+    }, 
+    {
       "title": "Project",
       "children": [
         {
           "title": "Learn to compile",
           "path": "project/compile"
-        },
-        {
-          "title": "Architecture",
-          "path": "project/architecture/architecture"
         },
         {
           "title": "Start development",
@@ -1017,7 +1071,7 @@
           "path": "project/specification"
         },
         {
-          "title": "modify document",
+          "title": "Modify document",
           "path": "project/document"
         },
         {
@@ -1049,6 +1103,24 @@
               "path": "project/protocol/modbus_tcp"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "F&Q",
+      "children": [
+        {
+          "title": "Frequently asked questions and troubleshooting",
+          "path": "fq/fq"
+        }
+      ]
+    },
+    {
+      "title": "Appendix",
+      "children": [
+        {
+          "title": "Data type description",
+          "path": "appendix/data-type"
         }
       ]
     }
