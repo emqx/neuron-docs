@@ -8,10 +8,6 @@
           "path": "./"
         },
         {
-          "title": "产品价值",
-          "path": "introduction/product-value"
-        },
-        {
           "title": "模块列表",
           "path": "introduction/module-list/module-list"
         },
@@ -222,7 +218,7 @@
               "path": "south-devices/opc-da/neuopc"
             },
             {
-              "title": "FAQ",
+              "title": "常见问题",
               "path": "south-devices/opc-da/faq"
             }
           ]
@@ -567,10 +563,6 @@
         {
           "title": "Product Overview",
           "path": "./"
-        },
-        {
-          "title": "Product Value",
-          "path": "introduction/product-value"
         },
         {
           "title": "Module List",
