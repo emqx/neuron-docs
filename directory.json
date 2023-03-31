@@ -323,8 +323,16 @@
           "title": "IEC61850",
           "children": [
             {
-              "title": "IEC61850 介绍与使用",
-              "path": "south-devices/iec61850/iec61850"
+              "title": "概览",
+              "path": "south-devices/iec61850/overview"
+            },
+            {
+              "title": "连接 LibIEC61850 服务器",
+              "path": "south-devices/iec61850/libiec61850"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/iec61850/faq"
             }
           ]
         },
@@ -920,8 +928,16 @@
           "title": "IEC61850",
           "children": [
             {
-              "title": "Introduction and Usage of IEC61850",
-              "path": "south-devices/iec61850/iec61850"
+              "title": "Overview",
+              "path": "south-devices/iec61850/overview"
+            },
+            {
+              "title": "Connect to LibIEC61850 server",
+              "path": "south-devices/iec61850/libiec61850"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/iec61850/faq"
             }
           ]
         },
