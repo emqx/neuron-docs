@@ -15,6 +15,16 @@ both worlds, which significantly reduces the resource requirements of edge
 computing solutions and enables more use cases.
 Better yet, the Neuron eKuiper plugin is open source.
 
+## Parameters
+
+From Neuron version 2.4.0, these are the available parameters when configuring a
+node using the eKuiper plugin.
+
+| Parameter           | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| **Local IP address**| IP address to listen for connections from eKuiper.           |
+| **Local port**      | TCP port number to listen for connections from eKuiper.      |
+
 ## eKuiper integration
 
 The interaction between Neuron and eKuiper is bidirectional and needs support
@@ -32,6 +42,19 @@ Neuron and eKuiper in the same host to achieve correct functionality.
 
 ::: tip
 You may also use MQTT as a relay between Neuron and eKuiper.
+:::
+
+Since Neuron version 2.4.0 the eKuiper plugin switches from the IPC transport to
+the [TCP transport], and eKuiper version 1.9.0 adopts the TCP transport.
+Using the TCP transport eliminate the requirement that you deploy Neuron and
+eKuiper in the same host, and allows multiple connections between Neuron and
+eKuiper.
+
+::: tip
+Neuron 2.0 and eKuiper 1.5 onwards, the two sides use the IPC transport for
+one-to-one connectivity.
+Neuron 2.4 and eKuiper 1.9 onwards, the two sides use TCP transport and can
+support many-to-many connections.
 :::
 
 ### NeuronEX
@@ -109,4 +132,5 @@ Also there is an eKuiper tutorial [Stream processing of data collected by Neuron
 [eKuiper]: https://ekuiper.org
 [NNG pair0 protocol]: https://nng.nanomsg.org/man/v1.3.2/nng_pair.7.html
 [IPC transport]: https://nng.nanomsg.org/man/v1.3.2/nng_ipc.7.html
+[TCP transport]: https://nng.nanomsg.org/man/v1.3.2/nng_tcp.7.html
 [Stream processing of data collected by Neuron using eKuiper]: https://ekuiper.org/docs/en/latest/integrations/neuron/neuron_integration_tutorial.html#integration-of-neuron-and-ekuiper
