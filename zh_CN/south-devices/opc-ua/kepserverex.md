@@ -2,23 +2,23 @@
 
 ## 用户名/密码登录
 
-1. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择“设置”，打开“KEPServerEX 设置”，切换到“用户管理器”卡片，在 Administrators 组下新建用户，设置用户名/密码;
-![](./assets/kepware-1.jpg)
+1. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **设置** -> **KEPServerEX 设置** -> **用户管理器**，在 `Administrators` 组下新建用户，设置用户名/密码;
+![kepware-1](./assets/kepware-1.jpg)
 
-2. 双击系统托盘中的 KEPServerEX 图标，在主界面中打开“项目”的“属性编辑器”，将 OPC UA - “允许匿名登录”设置为“否”;
-![](./assets/kepware-2.jpg)
+2. 双击系统托盘中的 KEPServerEX 图标，在主界面中打开 **项目** -> **属性编辑器** -> **OPC UA**， `允许匿名登录` 设置为 `否`;
+![kepware-2](./assets/kepware-2.jpg)
 
-3. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择“OPC UA 配置”，切换到“服务器端点”，双击端点条目，勾选所有安全策略。
-![](./assets/kepware-3.jpg)
+3. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **OPC UA 配置** -> **服务器端点**，双击端点条目，勾选所有安全策略。
+![kepware-3](./assets/kepware-3.jpg)
 
-4. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择“重新初始化”；
+4. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **重新初始化**；
 
-5. Neuron 新增南向 OPC UA 设备，打开“设备配置”，填写目标 Server 的“端点 URL”，填写用户名/密码，无需添加证书/密钥，启动设备连接；
+5. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，填写用户名/密码，无需添加证书/密钥，启动设备连接；
 
-6. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择“OPC UA 配置”，切换到“受信任的客户端”，将 NeuronClient 证书设置为信任。
-![](./assets/kepware-4.jpg)
+6. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **OPC UA 配置** -> **受信任的客户端**，将 NeuronClient 证书设置为信任。
+![kepware-4](./assets/kepware-4.jpg)
 
-7. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择“重新初始化”；
+7. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **重新初始化**；
 
 ## 证书/密钥 + 用户名/密码登录
 
@@ -26,11 +26,11 @@
 
 2. 参考[连接策略](./policy.md)生成或转换证书/密钥；
 
-3. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择“OPC UA 配置”，切换到“受信任的客户端”，将 DER 格式的客户端证书导入列表；
+3. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **OPC UA 配置** -> **受信任的客户端**，将 DER 格式的客户端证书导入列表；
 
-4. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择“重新初始化”；
+4. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **重新初始化**；
 
-5. Neuron 新增南向 OPC UA 设备，打开“设备配置”，填写目标 Server 的“端点 URL”，填写用户名/密码，添加证书/密钥，启动设备连接；
+5. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，填写用户名/密码，添加证书/密钥，启动设备连接；
 
 ## 测试点位
 

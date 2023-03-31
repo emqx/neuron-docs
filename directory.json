@@ -8,17 +8,8 @@
           "path": "./"
         },
         {
-          "title": "使用场景",
-          "children": [
-            {
-              "title": "集成",
-              "path": "introduction/use-scenes/integration/integration"
-            },
-            {
-              "title": "案例",
-              "path": "introduction/use-scenes/use-cases/use_cases"
-            }
-          ]
+          "title": "产品价值",
+          "path": "introduction/product-value"
         },
         {
           "title": "模块列表",
@@ -85,6 +76,10 @@
       ]
     },
     {
+      "title": "应用场景",
+      "path": "use-cases/use_cases"
+    },
+    {
       "title": "用户指南",
       "children": [
         {
@@ -136,6 +131,14 @@
               "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
+              "title": "连接 Modbus Poll 模拟器",
+              "path": "south-devices/modbus-rtu/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "连接 Modbus Slave 模拟器",
+              "path": "south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
+            },
+            {
               "title": "常见问题",
               "path": "south-devices/modbus-rtu/faq/faq"
             }
@@ -151,6 +154,14 @@
             {
               "title": "连接 PeakHMI Slave 模拟器",
               "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
+            },
+            {
+              "title": "连接 Modbus Poll 模拟器",
+              "path": "south-devices/modbus-tcp/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "连接 Modbus Slave 模拟器",
+              "path": "south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
             },
             {
               "title": "常见问题",
@@ -199,12 +210,24 @@
           "title": "OPC DA",
           "children": [
             {
-              "title": "OPC DA 介绍与使用",
-              "path": "south-devices/opc-da/opc-da"
+              "title": "概览",
+              "path": "south-devices/opc-da/overview"
             },
             {
-              "title": "NeuOPC 设置",
-              "path": "south-devices/opc-da/neuopc/neuopc"
+              "title": "NeuOPC 安装",
+              "path": "south-devices/opc-da/install"
+            },
+            {
+              "title": "NeuOPC 远程访问",
+              "path": "south-devices/opc-da/remote"
+            },
+            {
+              "title": "连接 NeuOPC",
+              "path": "south-devices/opc-da/neuopc"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/opc-da/faq"
             }
           ]
         },
@@ -283,8 +306,16 @@
           "title": "IEC60870-5-104",
           "children": [
             {
-              "title": "IEC 60870-5-104 介绍与使用",
+              "title": "概览",
               "path": "south-devices/iec-104/iec-104"
+            },
+            {
+              "title": "连接 IEC60870-5-104 Server 模拟器",
+              "path": "south-devices/iec-104/example/server-simulator/104-server-simulator"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/iec-104/faq/faq"
             }
           ]
         },
@@ -366,6 +397,19 @@
       "title": "北向应用",
       "children": [
         {
+          "title": "eKuiper",
+          "children": [
+            {
+              "title": "概览",
+              "path": "north-apps/ekuiper/overview"
+            },
+            {
+              "title": "常见问题",
+              "path": "north-apps/ekuiper/faq"
+            }
+          ]
+        },
+        {
           "title": "MQTT",
           "children": [
             {
@@ -383,11 +427,23 @@
           ]
         },
         {
-          "title": "SparkPlugB",
+          "title": "SparkPlug B",
           "children": [
             {
-              "title": "SparkPlugB 介绍及使用",
-              "path": "north-apps/sparkplugb/sparkplugb"
+              "title": "概览",
+              "path": "north-apps/sparkplugb/overview"
+            },
+            {
+              "title": "连接 Ignition",
+              "path": "north-apps/sparkplugb/ignition"
+            },
+            {
+              "title": "连接 Cogent",
+              "path": "north-apps/sparkplugb/cogent"
+            },
+            {
+              "title": "常见问题",
+              "path": "north-apps/sparkplugb/faq"
             }
           ]
         },
@@ -420,36 +476,57 @@
       ]
     },
     {
-      "title": "API 接口",
+      "title": "最佳实践",
       "children": [
         {
-          "title": "HTTP API",
-          "children": [
-            {
-              "title": "JWT",
-              "path": "api/http-api/jwt"
-            },
-            {
-              "title": "数据类型",
-              "path": "api/http-api/data-type"
-            },
-            {
-              "title": "配置",
-              "path": "api/http-api/configuration"
-            },
-            {
-              "title": "读写",
-              "path": "api/http-api/rw"
-            },
-            {
-              "title": "插件设置",
-              "path": "api/http-api/plugin-setting"
-            }
-          ]
+          "title": "Neuron + eKuiper 配合",
+          "path": "best-practices/ekuiper"
+        }
+      ]
+    },
+    {
+      "title": "HTTP API",
+      "children": [
+        {
+          "title": "自定义 JWT",
+          "path": "http-api/jwt"
+        },
+        {
+          "title": "数据类型",
+          "path": "http-api/data-type"
+        },
+        {
+          "title": "配置",
+          "path": "http-api/configuration"
+        },
+        {
+          "title": "读写",
+          "path": "http-api/rw"
+        },
+        {
+          "title": "插件设置",
+          "path": "http-api/plugin-setting"
         },
         {
           "title": "错误代码",
-          "path": "api/error-code"
+          "path": "http-api/error-code"
+        }
+      ]
+    },
+    {
+      "title": "集成",
+      "path": "integration/integration"
+    },
+    {
+      "title": "架构和设计",
+      "children": [
+        {
+          "title": "架构",
+          "path": "architecture/architecture"
+        },
+        {
+          "title": "关键概念",
+          "path": "architecture/concepts"
         }
       ]
     },
@@ -459,10 +536,6 @@
         {
           "title": "学会编译",
           "path": "project/compile"
-        },
-        {
-          "title": "了解架构",
-          "path": "project/architecture/architecture"
         },
         {
           "title": "开始开发",
@@ -507,6 +580,24 @@
           ]
         }
       ]
+    },
+    {
+      "title": "F&Q",
+      "children": [
+        {
+          "title": "常见错误说明及排查",
+          "path": "fq/fq"
+        }
+      ]
+    },
+    {
+      "title": "附录",
+      "children": [
+        {
+          "title": "数据类型说明",
+          "path": "appendix/data-type"
+        }
+      ]
     }
   ],
   "en": [
@@ -518,17 +609,8 @@
           "path": "./"
         },
         {
-          "title": "Use Scenes",
-          "children": [
-            {
-              "title": "Integrations",
-              "path": "introduction/use-scenes/integration/integration"
-            },
-            {
-              "title": "Use Cases",
-              "path": "introduction/use-scenes/use-cases/use_cases"
-            }
-          ]
+          "title": "Product Value",
+          "path": "introduction/product-value"
         },
         {
           "title": "Module List",
@@ -595,6 +677,10 @@
       ]
     },
     {
+      "title": "Use Cases",
+      "path": "use-cases/use_cases"
+    },
+    {
       "title": "User Guide",
       "children": [
         {
@@ -646,6 +732,14 @@
               "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
+              "title": "Connection to Modbus Poll Simulator",
+              "path": "south-devices/modbus-rtu/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "Connection to Modbus Slave Simulator",
+              "path": "south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
+            },
+            {
               "title": "FAQ",
               "path": "south-devices/modbus-rtu/faq/faq"
             }
@@ -661,6 +755,14 @@
             {
               "title": "Connect to PeakHMI Slave Simulator",
               "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
+            },
+            {
+              "title": "Connect to Modbus Poll Simulator",
+              "path": "south-devices/modbus-tcp/example/modbus-poll/modbus-poll"
+            },
+            {
+              "title": "Connect to Modbus Slave Simulator",
+              "path": "south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
             },
             {
               "title": "FAQ",
@@ -709,12 +811,24 @@
           "title": "OPC DA",
           "children": [
             {
-              "title": "Introduction and Usage of OPC DA",
-              "path": "south-devices/opc-da/opc-da"
+              "title": "Overview",
+              "path": "south-devices/opc-da/overview"
             },
             {
-              "title": "NeuOPC Settings",
-              "path": "south-devices/opc-da/neuopc/neuopc"
+              "title": "NeuOPC install",
+              "path": "south-devices/opc-da/install"
+            },
+            {
+              "title": "NeuOPC remote access",
+              "path": "south-devices/opc-da/remote"
+            },
+            {
+              "title": "Connect to NeuOPC",
+              "path": "south-devices/opc-da/neuopc"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/opc-da/faq"
             }
           ]
         },
@@ -789,8 +903,16 @@
           "title": "IEC60870-5-104",
           "children": [
             {
-              "title": "Introduction and Usage of IEC 60870-5-104",
+              "title": "Overview",
               "path": "south-devices/iec-104/iec-104"
+            },
+            {
+              "title": "Connect to IEC60870-5-104 Server Simulator",
+              "path": "south-devices/iec-104/example/server-simulator/simulator"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/iec-104/faq/faq"
             }
           ]
         },
@@ -872,6 +994,19 @@
       "title": "Northbound Applications",
       "children": [
         {
+          "title": "eKuiper",
+          "children": [
+            {
+              "title": "Overview",
+              "path": "north-apps/ekuiper/overview"
+            },
+            {
+              "title": "FAQ",
+              "path": "north-apps/ekuiper/faq"
+            }
+          ]
+        },
+        {
           "title": "MQTT",
           "children": [
             {
@@ -892,8 +1027,20 @@
           "title": "SparkPlugB",
           "children": [
             {
-              "title": "Introduction and Usage of SparkPlugB",
-              "path": "north-apps/sparkplugb/sparkplugb"
+              "title": "Overview",
+              "path": "north-apps/sparkplugb/overview"
+            },
+            {
+              "title": "Connect to Ignition",
+              "path": "north-apps/sparkplugb/ignition"
+            },
+            {
+              "title": "Connect to Cogent",
+              "path": "north-apps/sparkplugb/cogent"
+            },
+            {
+              "title": "FAQ",
+              "path": "north-apps/sparkplugb/faq"
             }
           ]
         },
@@ -926,36 +1073,57 @@
       ]
     },
     {
-      "title": "API",
+      "title": "Best practices",
       "children": [
         {
-          "title": "HTTP API",
-          "children": [
-            {
-              "title": "JWT",
-              "path": "api/http-api/jwt"
-            },
-            {
-              "title": "Data Type",
-              "path": "api/http-api/data-type"
-            },
-            {
-              "title": "Configuration",
-              "path": "api/http-api/configuration"
-            },
-            {
-              "title": "Read & Write",
-              "path": "api/http-api/rw"
-            },
-            {
-              "title": "Plugin Setting",
-              "path": "api/http-api/plugin-setting"
-            }
-          ]
+          "title": "Neuron + eKuiper cooperation",
+          "path": "best-practices/ekuiper"
+        }
+      ]
+    },
+    {
+      "title": "HTTP API",
+      "children": [
+        {
+          "title": "Customize JWT",
+          "path": "http-api/jwt"
+        },
+        {
+          "title": "Data Type",
+          "path": "http-api/data-type"
+        },
+        {
+          "title": "Configuration",
+          "path": "http-api/configuration"
+        },
+        {
+          "title": "Read & Write",
+          "path": "http-api/rw"
+        },
+        {
+          "title": "Plugin Setting",
+          "path": "http-api/plugin-setting"
         },
         {
           "title": "Error Codes",
-          "path": "api/error-code"
+          "path": "http-api/error-code"
+        }
+      ]
+    },
+    {
+      "title": "Integration",
+      "path": "integration/integration"
+    },
+    {
+      "title": "Architecture design",
+      "children": [
+        {
+          "title": "Architecture",
+          "path": "architecture/architecture"
+        },
+        {
+          "title": "Key concepts",
+          "path": "architecture/concepts"
         }
       ]
     },
@@ -967,10 +1135,6 @@
           "path": "project/compile"
         },
         {
-          "title": "Architecture",
-          "path": "project/architecture/architecture"
-        },
-        {
           "title": "Start development",
           "path": "project/development"
         },
@@ -979,7 +1143,7 @@
           "path": "project/specification"
         },
         {
-          "title": "modify document",
+          "title": "Modify document",
           "path": "project/document"
         },
         {
@@ -1011,6 +1175,24 @@
               "path": "project/protocol/modbus_tcp"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "F&Q",
+      "children": [
+        {
+          "title": "Frequently asked questions and troubleshooting",
+          "path": "fq/fq"
+        }
+      ]
+    },
+    {
+      "title": "Appendix",
+      "children": [
+        {
+          "title": "Data type description",
+          "path": "appendix/data-type"
         }
       ]
     }
