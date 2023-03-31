@@ -8,10 +8,6 @@
           "path": "./"
         },
         {
-          "title": "产品价值",
-          "path": "introduction/product-value"
-        },
-        {
           "title": "模块列表",
           "path": "introduction/module-list/module-list"
         },
@@ -24,10 +20,6 @@
     {
       "title": "快速入门",
       "children": [
-        {
-          "title": "硬件规格",
-          "path": "quick-start/hardware-specifications"
-        },
         {
           "title": "下载安装",
           "path": "quick-start/installation"
@@ -226,7 +218,7 @@
               "path": "south-devices/opc-da/neuopc"
             },
             {
-              "title": "FAQ",
+              "title": "常见问题",
               "path": "south-devices/opc-da/faq"
             }
           ]
@@ -618,10 +610,6 @@
           "path": "./"
         },
         {
-          "title": "Product Value",
-          "path": "introduction/product-value"
-        },
-        {
           "title": "Module List",
           "path": "introduction/module-list/module-list"
         },
@@ -634,10 +622,6 @@
     {
       "title": "Quick Start",
       "children": [
-        {
-          "title": "Hardware Specifications",
-          "path": "quick-start/hardware-specifications"
-        },
         {
           "title": "Installation",
           "path": "quick-start/installation"
