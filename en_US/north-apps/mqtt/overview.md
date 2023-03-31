@@ -22,7 +22,8 @@ These are the available parameters when configuring a node using the MQTT plugin
 | Parameter           | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
 | **client-id**       | MQTT client id for communication, required.                  |
-| **upload-topic**    | Subscription data reporting topic, required                  |
+| **qos**             | MQTT QoS level for message delivery, optional, default QoS 0. (since 2.4.0) |
+| **~~upload-topic~~**| ~~Subscription data reporting topic, required.~~ (removed in 2.4.0) |
 | **format**          | The json format of reported data, required. There are values format and tags format |
 | **cache-mem-size**  | In-memory cache limit (MB) in case of communication failure, required. Range in [0, 1024]. Should not be larger than *cache-disk-size*. |
 | **cache-disk-size** | In-disk cache limit (MB) in case of communication failure, required. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
@@ -39,8 +40,31 @@ These are the available parameters when configuring a node using the MQTT plugin
 
 ### Data upload
 
-After subscribing to some south nodes, the Neuron MQTT plugin will publish collected
-data in JSON to the topic designated by the **upload-topic** parameter.
+Before Neuron version 2.4.0, the Neuron MQTT plugin will publish collected data
+in JSON to the topic designated by the **upload-topic** parameter.
+<figure align="center">
+  <img src="./assets/upload_topic.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Neuron version 2.3.0 upload topic setting">
+  <figcaption align = "center">
+    <sub><b>Fig.1 - Setting upload topic in Neuron version 2.3.0</b></sub>
+  </figcaption>
+</figure>
+
+Neuron version 2.4.0 removes the **upload-topic** parameter. Instead, users
+should provide the intended topic through the group subscription page.
+Click your MQTT node to enter the group subscription page, and click
+**Add Subscription** to add a subscription.
+
+<figure align="center">
+  <img src="./assets/subscribe_topic.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Neuron version 2.4.0 MQTT subscribe interface">
+  <figcaption align = "center">
+    <sub><b>Fig.2 - Setting upload topic in Neuron version 2.4.0</b></sub>
+  </figcaption>
+</figure>
+
 The exact format of the data reported is controlled by the **format** parameter.
 There are two formats, *tags-format* and *values-format*.
 
