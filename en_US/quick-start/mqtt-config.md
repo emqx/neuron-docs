@@ -17,7 +17,7 @@ Click the `Application Configuration` icon on the application card to enter the 
 
 ![mqtt-config](./assets/mqtt-config.png)
 
-* Client-id:Client ID, note that each ID should be independent of each other and cannot be repeated. Use the default value of mqtt;
+* Client-id:Note that each ID should be independent of each other and cannot be repeated. Use the default value of mqtt;
 * Host:Use the default public EMQX Broker (broker.emqx.io);
 * Port:Use MQTT broker port(1883);
 * Click `Submit` to complete the configuration of northbound application, and the application card will automatically enter the working state of **Running**.
