@@ -50,6 +50,11 @@ In Neuron, each plugin corresponds to an implementation of a protocol. For examp
 * 38400  = 2
 * 19200  = 3
 * 9600   = 4
+* 4800   = 5
+* 2400   = 6
+* 1800   = 7
+* 1200   = 8
+* 600    = 9
 
 ### Parity
 
