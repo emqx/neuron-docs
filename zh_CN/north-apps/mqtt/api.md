@@ -2,14 +2,20 @@
 
 以下内容描述 Neuron MQTT 插件如何上报采集的数据，以及如何通过 MQTT 协议读写点位数据。
 
-注意下文中涉及的 MQTT 主题中出现的 **{node_name}** 指代的是实际的 MQTT 北向节点名字。
+注意下文中涉及的 MQTT 主题中出现的 **{node_name}** 指代的是实际的 MQTT 北向节点名字， **{driver_name}** 指代南向节点名字，**{group_name}** 指代南向节点下的组的名字。
 
 
-## 上传数据
+## 数据上报
 
-Neuron MQTT 插件将采集到的数据以 JSON 形式发布到 **upload-topic** 参数指定的主题，通过控制面板配置时默认为 **/neuron/{node_name}/upload** 。
+Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题。
+上报数据的具体格式由 **上报数据格式** 参数指定，有 *tags-format* 和 *values-format* 两种格式。
 
-上报数据的具体格式由 **format** 参数指定，有 *tags-format* 和 *values-format* 两种格式。
+### 上报主题
+
+在 Neuron 2.4.0 版本之前，上报主题由 **upload-topic** 参数指定， 通过仪表板配置时默认为 **/neuron/{node_name}/upload** 。
+
+自 Neuron 2.4.0 版本起，**upload-topic** 参数被删除了。
+上报主题改为在群组订阅请求中指定，其默认值为 **/neuron/{node_name}/{driver_name}/{group_name}** 。
 
 ### Tags 格式
 

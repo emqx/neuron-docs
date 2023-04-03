@@ -632,6 +632,13 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             "address": "1!400009",
             "attribute": 3,
             "type": 11
+        },
+        {
+            "name": "static_tag",
+            "address": "",
+            "attribute": 10,
+            "type": 1,
+            "value": 42
         }
     ]
 }
@@ -754,6 +761,13 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             "type": 6,
             "attribute": 0,
             "address": "1!400002"
+        },
+        {
+            "name": "static_tag",
+            "address": "",
+            "attribute": 10,
+            "type": 1,
+            "value": 42
         }
     ]
 }
@@ -1200,14 +1214,22 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 
 ```json
 {
+    "valid_until": "2023-03-15 08:11:19",
+    "valid_since": "2022-03-15 08:11:19",
+    "valid": false,
+    "max_nodes": 1,
+    "max_node_tags": 1,
+    "used_nodes": 12,
+    "used_tags": 846,
+    "license_type": "retail",
     "error": 0,
-    "license_type": "trial",
-    "max_nodes": 1000,
-    "max_node_tags": 20000,
-    "valid": true,
-    "valid_since": "2022-03-30 09:10:40",
-    "valid_until": "2023-03-30 09:10:40",
-    "enabled_plugins": ["modbus-rtu", "opcua", "s7comm"]
+    "enabled_plugins": [
+        "MODBUS TCP Advance",
+        "OPC UA"
+    ],
+    "hardware_token": "I+kZidSifiyVSbz0/EgcM6AcefnlfR4IU19ZZUnTS18=",
+    "object": "emq",
+    "email_address": "emq@emqx.io"
 }
 ```
 
@@ -1274,6 +1296,86 @@ Response if there is an error returned:
 :::tip
 Call the api to modify the log level of the node to debug, and automatically switch to the default level in about ten minutes.
 :::
+
+## Download File
+
+*GET* /api/v2/file
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Request Params
+
+**file_path** Required, absolute path of the file
+
+### Response Status
+
+* 404
+    * 1011 file not exist
+    * 4101 file open failure
+    * 4102 file read failure
+
+### Response
+
+Return the contents of the file and download the file, when responding correctly.
+
+Return the error code, when an error response occurs.
+
+```json
+{
+    "error": 1011
+}
+```
+
+## Get file list information
+
+*GET* /api/v2/file/info
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Request Params
+
+**dir_path** Required, absolute path of the directory.
+
+### Response Status
+
+* 404
+    * 1011 file not exist
+    * 4101 file open failure
+
+### Response
+
+Response to the file name, size, creation time and update time, when responding correctly.
+
+```json
+{
+    "files": [
+        {
+            "name": "neuron",
+            "size": 4096,
+            "ctime": "Wed Jan  4 02:38:12 2023",
+            "mtime": "Mon Dec 26 09:48:42 2022"
+        },
+        {
+            "name": "test.txt",
+            "size": 13,
+            "ctime": "Wed Jan  4 02:38:12 2023",
+            "mtime": "Mon Dec 26 09:48:42 2022"
+        }
+    ]
+}
+```
+
+Response to the error code, when an error response occurs.
+
+```json
+{
+    "error": 1011
+}
+```
 
 ## Get Metrics
 

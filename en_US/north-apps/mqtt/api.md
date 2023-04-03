@@ -4,16 +4,25 @@ The following contents describe how the Neuron MQTT plugin publishes collected
 data, and how to read or write data through MQTT using the plugin.
 
 Note that **{node_name}** in all the following MQTT topics refers to the actual
-MQTT northbound application name.
+MQTT northbound application name, **{driver_name}** refers to some southbound
+node name, and **{group_name}** refers to some south node group name.
 
 ## Data upload
 
-The Neuron MQTT plugin publish collected data in JSON to the topic designated
-by the **upload-topic** parameter, the default one set through the dashboard
-is **/neuron/{node_name}/upload**.
-
-The exact format of the data reported is controlled by the **format** parameter.
+The Neuron MQTT plugin publishes collected data in JSON to some user designated
+topic.
+The exact format of the data reported is controlled by the **Upload Format** parameter.
 There are two formats, *tags-format* and *values-format*.
+
+### Upload topic
+
+Before Neuron version 2.4.0, the upload topic is specified by the
+**upload-topic** parameter, and the default one set through the dashboard is
+**/neuron/{node_name}/upload**.
+
+Since Neuron version 2.4.0, the **upload-topic** parameter is removed.
+And the upload topic is specified in the group subscription request instead
+which default to **/neuron/{node_name}/{driver_name}/{group_name}**.
 
 ### Tags format
 
