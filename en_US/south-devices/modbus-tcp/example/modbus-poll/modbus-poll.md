@@ -23,7 +23,7 @@ As a Client, Modbus Poll initiates connection requests to Neuron. Users need to 
 
 ### Configure Neuron Southbound Driver Server
 
-In the southbound driver management, create a node whose plugin is modbus-tcp-server, and configure the driver, as shown in the figure below.
+In the southbound driver management, using Modbus Plus TCP plugin create a node named modbus-tcp-server, and configure the driver, as shown in the figure below.
 
 ![neuron-tcp-server-config](../assets/neuron-tcp-server-config-en.png)
 
