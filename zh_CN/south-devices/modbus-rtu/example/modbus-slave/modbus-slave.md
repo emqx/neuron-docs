@@ -32,7 +32,7 @@ Neuron 作为 Client，主动向 Modbus Slave 发起连接请求，用户需要�
 
 ### 配置 Neuron 南向驱动 Client
 
-在南向驱动管理中建立插件为 modbus-rtu-client 的节点，并进行驱动配置，如下图所示。
+在南向驱动中，使用 Modbus RTU 插件新建一个名为 modbus-rtu-client 的节点，并进行驱动配置，如下图所示。
 
 ![neuron-rtu-client-config](./assets/neuron-rtu-client-config.png)
 

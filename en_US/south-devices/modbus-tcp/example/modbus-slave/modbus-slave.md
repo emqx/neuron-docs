@@ -33,7 +33,7 @@ As a Client, Neuron initiates connection requests to Modbus Slave actively. The 
 
 ### Configure Neuron Southbound Driver Client
 
-In the southbound driver management, create a node whose plugin is modbus-rtu-client, and configure the driver, as shown in the figure below.
+In the southbound driver management, using Modbus Plus TCP plugin create a node named modbus-tcp-client, and configure the driver, as shown in the figure below.
 
 ![neuron-tcp-client-config](../assets/neuron-tcp-client-config-en.png)
 
