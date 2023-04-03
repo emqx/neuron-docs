@@ -18,6 +18,7 @@
 ![mqtt-config](./assets/mqtt-config.png)
 
 * 客户端 ID：注意每个 ID 要相互独立，不可以重复，使用默认值 mqtt；
+* 服务质量等级：选择0，1，2。
 * 服务器地址：使用默认的公共的 EMQX Broker（broker.emqx.io）；
 * 服务器端口：使用 MQTT broker port（1883）；
 * 点击`提交`，完成北向应用的配置，应用卡片自动进入 **运行中** 的工作状态。
