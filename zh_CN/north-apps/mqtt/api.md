@@ -67,9 +67,9 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到 **upload-topic**
 #### 请求体
 
 读请求体由以下字段构成：
-* "uuid": 唯一的标志，会在响应中原样返回用以区分对应的请求。
-* "node": 某个南向节点名字。
-* "group": 南向节点的某个组的名字。
+* uuid: 唯一的标志，会在响应中原样返回用以区分对应的请求。
+* node: 某个南向节点名字。
+* group: 南向节点的某个组的名字。
 
 以下为一个读请求样例：
 
@@ -83,7 +83,7 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到 **upload-topic**
 
 ### 响应
 
-读响应会发布到 MQTT 主题 **/neuron/{node_name}/read/resp**。
+读响应会发布到 MQTT 主题 **/neuron/{node_name}/read/resp** 。
 
 #### 响应体
 
@@ -118,11 +118,11 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到 **upload-topic**
 #### 请求体
 
 写请求体由以下字段构成：
-* "uuid": 唯一的标志，会在响应中原样返回用以区分对应的请求。
-* "node": 某个南向节点名字。
-* "group": 南向节点的某个组的名字。
-* "tag": 要写入的点位名字。
-* "value": 要写入的数据值。
+* uuid: 唯一的标志，会在响应中原样返回用以区分对应的请求。
+* node: 某个南向节点名字。
+* group: 南向节点的某个组的名字。
+* tag: 要写入的点位名字。
+* value: 要写入的数据值。
 
 以下为一个写请求样例：
 
@@ -138,7 +138,7 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到 **upload-topic**
 
 ### 响应
 
-写响应会发布到 MQTT 主题 **/neuron/{node_name}/write/resp**。
+写响应会发布到 MQTT 主题 **/neuron/{node_name}/write/resp** 。
 
 #### 响应体
 
