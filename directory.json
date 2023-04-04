@@ -482,6 +482,10 @@
         {
           "title": "Neuron + eKuiper 配合",
           "path": "best-practices/ekuiper"
+        },
+        {
+          "title": "NeuronEX + InfluxDB",
+          "path": "best-practices/influxdb"
         }
       ]
     },
@@ -1084,6 +1088,10 @@
         {
           "title": "Neuron + eKuiper cooperation",
           "path": "best-practices/ekuiper"
+        },
+        {
+          "title": "NeuronEX + InfluxDB",
+          "path": "best-practices/influxdb"
         }
       ]
     },
