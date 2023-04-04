@@ -277,7 +277,7 @@
           "title": "Beckhoff ADS",
           "children": [
             {
-              "title": "Beckhoff ADS 介绍与用法",
+              "title": "概览",
               "path": "south-devices/ads/ads"
             },
             {
@@ -879,8 +879,12 @@
           "title": "Beckhoff ADS",
           "children": [
             {
-              "title": "Introduction and Usage of Beckhoff ADS",
+              "title": "Overview",
               "path": "south-devices/ads/ads"
+            },
+            {
+              "title": "Data acquisition using the Beckhoff ADS plugin",
+              "path": "south-devices/ads/plc-ads/ads"
             }
           ]
         },

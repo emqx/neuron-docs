@@ -16,13 +16,13 @@ def check_md_content(md_file):
         success = False
         return
 
-    md_content = open(md_file, 'r').read()
+    md_content = re.sub(r'<!--([\s\S]*?)-->', '', open(md_file, 'r').read())
     image_list = re.findall('(.*?)!\[(.*?)\]\((.*?)\)', md_content)
     url_list = re.findall('(.*?)\[(.*?)\]\((.*?)\)', md_content)
     for url in url_list:
         if url[0].endswith('!'):
             continue
-        if url[2].startswith(('http://', 'https://', '<', '#')):
+        if url[2].startswith(('http://', 'https://', '<', '#', 'mailto:', 'tel:')):
             continue
         url_path = url[2].split('.md')[0]
         ref_md_path = os.path.join(f'{"/".join(md_file.split("/")[:-1])}/', f'{url_path}.md')
@@ -51,19 +51,17 @@ def get_md_files(dir_config, path):
     for i in dir_config:
         md_name = i.get('path')
         md_children = i.get('children')
-        if md_name and md_children:
-            print(f'{i.get("title")} has path and children')
-            success = False
 
-        if md_children:
-            md_list += get_md_files(md_children, path)
-        else:
+        if md_name:
             if md_name.startswith(('http://', 'https://')):
                 continue
             elif md_name == './':
                 md_list.append(f'{docs_path}/{path}/README.md')
             else:
                 md_list.append(f'{docs_path}/{path}/{md_name}.md')
+
+        if md_children:
+            md_list += get_md_files(md_children, path)
 
     return list(set(md_list))
 
