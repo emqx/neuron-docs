@@ -11,7 +11,7 @@ Neuron eKuiper 插件使用户能够将收集到的数据发布到 eKuiper 以�
 
 ## 参数
 
-从 Neuron 2.4.0 版本开始，使用eKuiper插件时可使用如下参数。
+从 Neuron 2.4.0 版本开始，使用 eKuiper 插件时可使用如下参数。
 
 | 字段                | 说明                                                         |
 | ------------------- | ------------------------------------------------------------ |
@@ -32,7 +32,7 @@ Neuron 2.0.0 版本首次发布了 eKuiper 插件，而 eKuiper 1.5.0 版本首�
 您也可以使用 MQTT 作为 Neuron 和 eKuiper 双方之间的中继。
 :::
 
-从Neuron 2.4.0 版本开始， eKuiper插件从 IPC 传输层切换到了 [TCP 传输层]，而 eKuiper 1.9.0 版本开始也采用了 TCP 传输层。
+从Neuron 2.4.0 版本开始， eKuiper 插件从 IPC 传输层切换到了 [TCP 传输层]，而 eKuiper 1.9.0 版本开始也采用了 TCP 传输层。
 使用 TCP 传输层去除了在同一主机上部署 Neuron 和 eKuiper 的限制，并允许 Neuron 和 eKuiper 之间建立多个连接。
 
 ::: tip
@@ -53,7 +53,7 @@ NeuronEX 默认提供了一个 **data-stream-processing** 北向节点。
 
 #### 数据上报
 
-Neuron eKuiper 插件连接到 eKuiper 后，将从设备收集的数据以JSON形式发布。
+Neuron eKuiper 插件连接到 eKuiper 后，将从设备收集的数据以 JSON 形式发布。
 发布到 eKuiper 的数据具有以下字段：
 * timestamp: 数据采集时的UNIX时间戳。
 * node_name: 某个南向节点名字。
