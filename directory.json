@@ -604,10 +604,19 @@
   "en": [
     {
       "title": "Introduction",
+      "path": "./",
       "children": [
         {
-          "title": "Product Overview",
-          "path": "./"
+          "title": "Application Scenarios",
+          "path": "introduction/use-cases/use_cases"
+        },
+        {
+          "title": "Key Concepts",
+          "path": "introduction/concepts"
+        },
+        {
+          "title": "Architecture",
+          "path": "introduction/architecture/architecture"
         },
         {
           "title": "Module List",
@@ -670,8 +679,64 @@
       ]
     },
     {
-      "title": "Use Cases",
-      "path": "use-cases/use_cases"
+      "title": "Installation",
+      "path": "installation/installation",
+      "children": [
+        {
+          "title": "Neuron",
+          "children": [
+            {
+              "title": "Ubuntu/Debian",
+              "children": [
+                {
+                  "title": "deb",
+                  "path": "installation/neuron/deb"
+                },
+                {
+                  "title": "tar.gz",
+                  "path": "installation/neuron/tar.gz"
+                }
+              ]
+            },
+            {
+              "title": "CentOS",
+              "children": [
+                {
+                  "title": "rpm",
+                  "path": "installation/neuron/rpm"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NeuronEX",
+          "children": [
+            {
+              "title": "Ubuntu/Debian",
+              "children": [
+                {
+                  "title": "deb",
+                  "path": "installation/neuronex/deb"
+                },
+                {
+                  "title": "tar.gz",
+                  "path": "installation/neuronex/tar.gz"
+                }
+              ]
+            },
+            {
+              "title": "CentOS",
+              "children": [
+                {
+                  "title": "rpm",
+                  "path": "installation/neuronex/rpm"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "User Guide",
@@ -1119,19 +1184,6 @@
     {
       "title": "Integration",
       "path": "integration/integration"
-    },
-    {
-      "title": "Architecture design",
-      "children": [
-        {
-          "title": "Architecture",
-          "path": "architecture/architecture"
-        },
-        {
-          "title": "Key concepts",
-          "path": "architecture/concepts"
-        }
-      ]
     },
     {
       "title": "Project",
