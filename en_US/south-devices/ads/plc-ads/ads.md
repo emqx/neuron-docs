@@ -1,137 +1,320 @@
-# 使用 Beckhoff ADS 协议采集 PLC 数据
+# Data acquisition using the Beckhoff ADS plugin
+
+In this tutorial, we introduce how to collect data from Beckhoff software PLCs
+using the Neuron ADS plugin.
+
+## Setup
+
+We use two PCs connected in a local area network in this tutorial. One is a
+Linux machine with Neuron installed, the other is a Windows machine with
+TwinCAT 3 installed.
+Consult the [the installation instruction] on how to install Neuron.
+Refer to the [Beckhoff TwinCAT website] to download and install TwinCAT.
+
+|                  | PC 1              | PC 2                |
+| ---------------- | ----------------- | ------------------- |
+| Operating System | Linux             | Windows             |
+| IP address       | 192.168.1.152     | 192.168.1.107       |
+| AMS Net ID       | 192.168.1.152.1.1 | 192.168.1.107.1.1   |
+| Software         | Neuron            | TwinCAT 3           |
+| Network          | Connected         | Connected           |
+
+## Setup TwinCAT
+
+In order for Neuron and the TwinCAT PLC to communicate with each other, we first
+need to add a static route for Neuron in TwinCAT. We also need to find the AMS Net
+ID of the TwinCAT PLC and the index group and index offset of the variables.
+
+### Add static route in TwinCAT
+
+Open the **TwinCAT Static Routes** dialog
+
+<figure align="center">
+  <img src="./assets/add-route-1.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Open the TwinCAT static routes dialog">
+  <figcaption align = "center">
+    <sub><b>Fig.1 - Open the TwinCAT static routes dialog</b></sub>
+  </figcaption>
+</figure>
+
+Click **Add**
+
+<figure align="center">
+  <img src="./assets/add-route-2.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT static routes dialog">
+  <figcaption align = "center">
+    <sub><b>Fig.2 - TwinCAT static routes dialog</b></sub>
+  </figcaption>
+</figure>
+
+Provide the information as hilighted in the following image. Note that the
+**AmsNetId** is the IP address of the Neuron PC appended with ".1.1".
+
+<figure align="center">
+  <img src="./assets/add-route-3.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT add route dialog">
+  <figcaption align = "center">
+    <sub><b>Fig.3 - TwinCAT add route dialog</b></sub>
+  </figcaption>
+</figure>
+
+
+A successfully added route is shown as follow.
+
+<figure align="center">
+  <img src="./assets/add-route-4.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT static routes dialog updated">
+  <figcaption align = "center">
+    <sub><b>Fig.4 - TwinCAT static routes dialog updated</b></sub>
+  </figcaption>
+</figure>
+
+
+### Check the AMS Net ID and port number of the TwinCAT PLC
+
+Open the **TwinCAT System** dialog to show the AMS Net ID.
+
+<figure align="center">
+  <img src="./assets/amsnetid.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT system dialog">
+  <figcaption align = "center">
+    <sub><b>Fig.5 - TwinCAT system dialog</b></sub>
+  </figcaption>
+</figure>
+
+By default, TwinCAT PLC port number is 851.
+
+<figure align="center">
+  <img src="./assets/port.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT PLC project tab">
+  <figcaption align = "center">
+    <sub><b>Fig.6 - TwinCAT PLC project tab</b></sub>
+  </figcaption>
+</figure>
+
+### Find the index group and index offset of variables
+
+We use the following TwinCAT PLC program, which defines enough variables for
+testing in this tutorial.
 
-本示例介绍使用 Neuron 通过 ADS 协议采集倍福 PLC 上不同地址区域的数据。
-
-## 环境介绍
-
-本测试使用了在同一个局域网下的 2 台机器，机器 1 为 linux 系统，安装了 Neuron 软件；机器 2 为 windows 系统，安装了倍福 TWINCAT 3 编程软件。具体如下：
-
-|          | 机器1             | 机器2               |
-| -------- | ----------------- | ------------------- |
-| 操作系统 | linux             | windows             |
-| IP地址   | 192.168.1.152     | 192.168.1.107       |
-| amsnetid | 192.168.1.152.1.1 | 192.168.1.107.1.1   |
-| 安装软件 | Neuron            | TWINCAT TC3 Project |
-| 网络     | 连通              | 连通                |
-
-## TwinCAT 软件中的配置
-
-让 Neuron 和倍福 PLC 建立通讯，需要添加路由、查找 amsnetid、port、以及变量的 index group 和 index offset。以下部分介绍详细配置。
-
-### 1.在 TwinCAT 软件中添加路由
-
-打开配置页面
-
-![add-route-1](./assets/add-route-1.png)
-
-点击添加
-
-![add-route-2](./assets/add-route-2.png)
-
-​		输入下图红框内容，其中Amsnetid，请输入Neuron所在机器与倍福PLC相连的网卡的ip地址加''.1.1''
-
-​![add-route-3](./assets/add-route-3.png)
-
-​		添加成功后，页面如下：
-
-![add-route-4](./assets/add-route-4.png)
-
-### 2.查看 PLC 的 Amsnetid 以及 Port
-
-Amsnetid 如下：
-
-![amsnetid](./assets/amsnetid.png)
-
-TC3 PLC 默认端口号为 851
-
-![port](./assets/port.png)
-
-### 3.查找变量 index group 和 index offset
-
-PLC 工程 main 程序中定义的相关数据点位如下图所示：
-
-![main](./assets/main.png)
-
-* 通过倍福官方文档查询数据点的 index group
-
-  普通数据点（上图b、i8、u8、i16、u16、i32、u32、i64、u64、f32、f64、str）的 index group 为 0x4040
-
-  MW 地址区数据点的 index group 为 0x4020
-
-  MX 地址区数据点的 index group 为 0x4021
-
-  ![indexgroup1](./assets/indexgroup1.png)
-
-  其他地址区请查阅[倍福官网](https://infosys.beckhoff.com/)。
-
-* 通过 tpy 文件查找 index group
-
-  开启 tpy 存储
-
-![tpy1](./assets/tpy1.png)
-
-  项目路径打开 tpy 文件
-
-![tpy2](./assets/tpy2.png)
-
-  tpy 文件中包含了 plc 程序中所有变量的 index group 和 index offset 信息：
-
-![tpy3](./assets/tpy3.png)
-
-* 查询变量的 index offset
-
-![offset1](./assets/offset1.png)
-
-## Neuron 中的配置
-
-### 1.Neuron 安装
-
-请参考 Neuron 基础使用介绍。
-
-### 2.Neuron 配置
-
-* 新建南向 ADS 设备
-
-![add-driver](./assets/add-driver.png)
-
-* 配置连接参数
-
-  具体TwinCAT相关参数的获取，请看上一章节部分。
-
-![driver-setting](./assets/driver-setting.png)
-
-* 配置TAG标签
-
-​		根据PLC地址，如下：
-
-![plc-tag-1](./assets/plc-tag-1.png)
-
-![plc-tag-2](./assets/plc-tag-2.png)		
-
-在 Neuron 中添加如下标签：
-
-![tag-list](./assets/tag-list.png)
-
-## 数据监控
-
-### 1.TwinCAT PLC数据实时采集
-
-TwinCAT PLC 中的变量信息：
-
-![monitor-1](./assets/monitor-1.png)
-
-Neuron 页面信息：
-
-![monitor-2](./assets/monitor-2.png)
-
-### 2.数据下发控制
-
-Neuron 下发指令：
-
-![control-1](./assets/control-1.png)
-
-![control-2](./assets/control-2.png)
-
-写入成功：
-
-![control-3](./assets/control-3.png)
+<figure align="center">
+  <img src="./assets/main.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT PLC project main program">
+  <figcaption align = "center">
+    <sub><b>Fig.7 - TwinCAT PLC project main program</b></sub>
+  </figcaption>
+</figure>
+
+#### Find the index group
+
+The [Beckhoff index group/offset page] lists the index group to access the PLC
+memory range. For the %MW field, the index group is 0x4020. For the %MX field,
+the index group is 0x4021.
+For the variables *b、i8、u8、i16、u16、i32、u32、i64、u64、f32、f64、str*
+defined in the main program, the index group is 0x4040.
+
+<figure align="center">
+  <img src="./assets/indexgroup1.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT index group table">
+  <figcaption align = "center">
+    <sub><b>Fig.8 - TwinCAT index group table</b></sub>
+  </figcaption>
+</figure>
+
+#### Find the index offset through the data area tab
+
+Open the TwinCAT PLC data area tab to find the index offset of the variables.
+
+<figure align="center">
+  <img src="./assets/offset1.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT PLC data area tab">
+  <figcaption align = "center">
+    <sub><b>Fig.9 - TwinCAT PLC data area tab</b></sub>
+  </figcaption>
+</figure>
+
+
+#### Find the index group/offset by TPY file
+
+We could also find the index group and index offset through the TPY file.
+
+First ensure **TPY File** is enabled.
+
+<figure align="center">
+  <img src="./assets/tpy1.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT PLC project setting tab">
+  <figcaption align = "center">
+    <sub><b>Fig.10 - TwinCAT PLC project setting tab</b></sub>
+  </figcaption>
+</figure>
+
+
+Open the TPY file in the TwinCAT project directory.
+
+<figure align="center">
+  <img src="./assets/tpy2.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT PLC project tpy file path">
+  <figcaption align = "center">
+    <sub><b>Fig.11 - TwinCAT PLC project TPY file path</b></sub>
+  </figcaption>
+</figure>
+
+
+The TPY file contains the index group and index offset of each variable defined
+in the PLC program.
+
+<figure align="center">
+  <img src="./assets/tpy3.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT PLC project tpy file content">
+  <figcaption align = "center">
+    <sub><b>Fig.12 - TwinCAT PLC project TPY file content</b></sub>
+  </figcaption>
+</figure>
+
+
+## Setup Neuron
+
+### Add ADS south node
+
+In the Neuron dashboard, click **South Devices -> Add Device** to add an ADS node.
+
+<figure align="center">
+  <img src="./assets/add-driver.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Add ADS south device in Neuron dashboard">
+  <figcaption align = "center">
+    <sub><b>Fig.13 - Add ADS south device in Neuron dashboard</b></sub>
+  </figcaption>
+</figure>
+
+### Configure the ADS node
+
+Click the node configuration icon to configure the newly created ADS node.
+
+<figure align="center">
+  <img src="./assets/driver-setting.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Configure ADS node in Neuron dashboard">
+  <figcaption align = "center">
+    <sub><b>Fig.14 - Configure ADS node in Neuron dashboard</b></sub>
+  </figcaption>
+</figure>
+
+### Add tags to the ADS node
+
+For each variable in the aforementioned TwinCAT PLC program, we add a
+corresponding tag to the Neuron ADS node. The [Beckhoff data types] page lists
+the size of the data types. Together with the program source code we could
+derive the data types of the tags.
+
+<figure align="center">
+  <img src="./assets/plc-tag-1.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT PLC main program">
+  <figcaption align = "center">
+    <sub><b>Fig.15 - TwinCAT PLC main program</b></sub>
+  </figcaption>
+</figure>
+
+For tag addresses, the index offset component is shown in the TwinCAT PLC
+data area tab.
+
+<figure align="center">
+  <img src="./assets/plc-tag-2.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT PLC data area tab">
+  <figcaption align = "center">
+    <sub><b>Fig.16 - TwinCAT PLC data area tab</b></sub>
+  </figcaption>
+</figure>
+
+The following figure shows all added tags in the ADS node.
+
+<figure align="center">
+  <img src="./assets/tag-list.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Neuron version 2.3.0 upload topic setting">
+  <figcaption align = "center">
+    <sub><b>Fig.17 - ADS node tags in Neuron dashboard</b></sub>
+  </figcaption>
+</figure>
+
+
+## Data Monitor
+
+### Read tags
+
+Once the TwinCAT PLC is in running mode, we could see the variable values in the interface.
+
+<figure align="center">
+  <img src="./assets/monitor-1.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT variable values in running mode">
+  <figcaption align = "center">
+    <sub><b>Fig.18 - TwinCAT variable values in running mode</b></sub>
+  </figcaption>
+</figure>
+
+In the Neuron dashboard, click **Monitoring -> Data Monitoring**, see that tag values are read correctly.
+
+<figure align="center">
+  <img src="./assets/monitor-2.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Neuron data monitoring tab">
+  <figcaption align = "center">
+    <sub><b>Fig.19 - Neuron data monitoring tab</b></sub>
+  </figcaption>
+</figure>
+
+### Write tags
+
+In the Neuron **Data Monitoring** tab, click **Write** on the *main.MXtest1* tag
+to write a true value.
+
+<figure align="center">
+  <img src="./assets/control-1.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Neuron write main.MXtest1">
+  <figcaption align = "center">
+    <sub><b>Fig.20 - Neuron write main.MXtest1</b></sub>
+  </figcaption>
+</figure>
+
+Click **Write** on the *main.MWtest1* tag to write the value *6666*.
+
+<figure align="center">
+  <img src="./assets/control-2.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="Neuron write main.MWtest1">
+  <figcaption align = "center">
+    <sub><b>Fig.21 - Neuron write main.MWtest1</b></sub>
+  </figcaption>
+</figure>
+
+After a successful write, we could check that variable values do update in TwinCAT.
+
+<figure align="center">
+  <img src="./assets/control-3.png"
+       style="border:thin solid #E0DCD9; width: 60%"
+       alt="TwinCAT variable values updated">
+  <figcaption align = "center">
+    <sub><b>Fig.22 - TwinCAT variable values updated</b></sub>
+  </figcaption>
+</figure>
+
+[the installation instruction]: ../../../quick-start/installation.md
+[Beckhoff TwinCAT website]: https://www.beckhoff.com/en-us/products/automation/twincat
+[Beckhoff index group/offset page]: https://infosys.beckhoff.com/english.php?content=../content/1033/tcadscommon/12495369867.html
+[Bechhoff data types]: https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_plc_intro/2529399691.html
