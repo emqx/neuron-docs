@@ -1,8 +1,8 @@
 # 概览
 
-Neuron 可通过外部辅助程序 neuopc.exe 间接访问运行于 Windows 操作系统的 OPC DA 服务器。NeuOPC 通过将 DA 协议转换为 UA 协议，再通过 Neuron已有的 OPC UA 插件进行数据获取，DA 的所有可访问点位都被映射至 UA 的"命名空间2"当中，点位的 ID 则与 DA 保持一致。
+Neuron 可通过外部辅助程序 neuopc.exe 间接访问运行于 Windows 操作系统的 OPC DA 服务器。NeuOPC 通过将 DA 协议转换为 UA 协议，再通过 Neuron 已有的 OPC UA 插件进行数据获取，DA 的所有可访问点位都被映射至 UA 的"命名空间2"当中，点位的 ID 则与 DA 保持一致。
 
-NeuOPC 的组件包可以前往 NeuOPC 的[项目页面](https://github.com/neugates/neuopc)下载（NeuOPC 是GPL协议下的开源项目）。安装以及远程连接的系统配置参考 [NeuOPC 安装](./install.md)和 [NeuOPC 远程访问](./remote.md)。
+NeuOPC 的组件包可以前往 NeuOPC 的[项目页面](https://github.com/neugates/neuopc)下载（NeuOPC 是 GPL 协议下的开源项目）。安装以及远程连接的系统配置参考 [NeuOPC 安装](./install.md)和 [NeuOPC 远程访问](./remote.md)。
 
 ## 参数 
 

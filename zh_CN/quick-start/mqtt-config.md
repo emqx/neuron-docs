@@ -38,9 +38,9 @@
 
 ![mqttx](./assets/mqttx.png)
 
-在 MQTTX 中订阅对应的Topic后，可看到此Topic中能持续收到由 Neuron 上报的数据。
+在 MQTTX 中订阅对应的 Topic 后，可看到此 Topic 中能持续收到由 Neuron 上报的数据。
 
-* 打开 MQTTX 添加新的连接，正确填写名称与公共 EMQX Broker 的 Host 与 Port（默认为broker.emqx.io，1883），完成连接;
+* 打开 MQTTX 添加新的连接，正确填写名称与公共 EMQX Broker 的 Host 与 Port（默认为 broker.emqx.io，1883），完成连接;
 * 添加新的订阅，Topic 要与设置北向应用参数中的 Upload topic 保持一致，例如，填写 `/neuron/mqtt/upload`。
 
 :::tip

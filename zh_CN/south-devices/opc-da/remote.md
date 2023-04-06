@@ -14,7 +14,7 @@
 
 ![comcnf1](./assets/comcnf1.png)
 
-在 **默认属性** 中勾选 `在此计算机上启用分布式COM`，`默认身份验证级别` 设置位 `无`：
+在 **默认属性** 中勾选 `在此计算机上启用分布式 COM`，`默认身份验证级别` 设置位 `无`：
 
 ![comcnf2](./assets/comcnf2.png)
 
@@ -22,11 +22,11 @@
 
 ![comcnf3](./assets/comcnf3.png)
 
-在 **COM安全** 中将 `访问权限` 和 `启动和激活权限` 中的 `编辑限制` 和 `编辑默认值` 都分别添加  `Everyone`、`Administrators`、`ANONYMOUS LOGON` 用户，并将其下所有权限都勾选上：
+在 **COM 安全** 中将 `访问权限` 和 `启动和激活权限` 中的 `编辑限制` 和 `编辑默认值` 都分别添加  `Everyone`、`Administrators`、`ANONYMOUS LOGON` 用户，并将其下所有权限都勾选上：
 
 ![comcnf4](./assets/comcnf4.png)
 
-3. 展开 **组件服务\计算机\我的电脑\DCOM配置**，分别设置 `OpcEnum` 和 `MatrikonOPC Server for Simulation and Testing` 的属性，在 **常规** 中 `身份验证级别` 选择 `无`：
+3. 展开 **组件服务\计算机\我的电脑\DCOM 配置**，分别设置 `OpcEnum` 和 `MatrikonOPC Server for Simulation and Testing` 的属性，在 **常规** 中 `身份验证级别` 选择 `无`：
 
 ![comcnf5](./assets/comcnf5.png)
 
@@ -54,7 +54,7 @@
 
 ![client-cfg3](./assets/client-cfg3.png)
 
-2. 展开 **组件服务\计算机\我的电脑\DCOM配置**，设置 `OpcEnum`，设置的内容和方式与远程主机一致:
+2. 展开 **组件服务\计算机\我的电脑\DCOM 配置**，设置 `OpcEnum`，设置的内容和方式与远程主机一致:
 
 ![client-cfg4](./assets/client-cfg4.png)
 

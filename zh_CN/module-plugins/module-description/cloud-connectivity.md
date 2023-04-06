@@ -14,7 +14,7 @@ MQTT 是用于物联网 (IoT) 的 OASIS 标准消息传递协议。 它被设计
 
 ![north-commercial](./assets/north-commercial.png)
 
-Sparkplug 是基于 MQTT 协议的扩展公共协议，专为工业物联网，尤其是工业 4.0 分布式应用而设计。网络边缘的设备和传感器可以透过 Sparkplug B 与 SCADA 系统、Historian和分析程序等应用程序进行通信。
+Sparkplug 是基于 MQTT 协议的扩展公共协议，专为工业物联网，尤其是工业 4.0 分布式应用而设计。网络边缘的设备和传感器可以透过 Sparkplug B 与 SCADA 系统、Historian 和分析程序等应用程序进行通信。
 
 ## Websocket
 

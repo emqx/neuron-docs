@@ -6,7 +6,7 @@
 
 ![south-commercial](./assets/south-commercial.png)
 
-BACnet 是用于楼宇自动化和控制网络的数据通信协议。BACnet是一项国际（ISO）和美国国家标准协会（ANSI）的标准，用于实现合作建筑之间的互操作性。
+BACnet 是用于楼宇自动化和控制网络的数据通信协议。BACnet 是一项国际（ISO）和美国国家标准协会（ANSI）的标准，用于实现合作建筑之间的互操作性。
 
 ## KNXnet/IP
 
