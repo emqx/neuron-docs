@@ -32,7 +32,7 @@ Neuron 提供下列三菱 PLC 的驱动模块，包括 FX，Q 和 L 系列型号
 
 ![south-commercial](./assets/south-commercial.png)
 
-Neuron 提供下列欧姆龙PLC的驱动模块，包括CX，CJ和CPM系列型号。
+Neuron 提供下列欧姆龙 PLC 的驱动模块，包括 CX，CJ 和 CPM 系列型号。
 
 * Omron Host Link: Serial
 * Omron FINS on Host Link: Serial

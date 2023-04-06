@@ -13,7 +13,7 @@ Neuron 在 2.3 版本中已支持在 web 页面一键下载所有日志文件的
 * data-stream-processing.log：数据处理配置；
 * dlt645.log：北向应用配置；
 * modbus-plus-tcp.log：南向设备配置；
-* neuron.log：Neuron日志
+* neuron.log：Neuron 日志
 
 ## 设置打印节点 debug 日志
 

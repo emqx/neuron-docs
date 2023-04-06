@@ -21,7 +21,7 @@ Neuron 作为 Client，主动向 Modbus Slave 发起连接请求，用户需要�
 ### 配置 Modbus Slave
 
 * 安装完成后，运行 Modbus Slave。
-* 进入菜单 **Connection -> Connect**，根据实际情况选择连接方式（本示例为Modbus TCP/IP），设置连接参数（监听 Port），然后点击 **OK** 完成配置，如下图所示。
+* 进入菜单 **Connection -> Connect**，根据实际情况选择连接方式（本示例为 Modbus TCP/IP），设置连接参数（监听 Port），然后点击 **OK** 完成配置，如下图所示。
 
 ![modbus-slave-connection-setup](../assets/modbus-slave-connection-setup.png)
 
