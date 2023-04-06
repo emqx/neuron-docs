@@ -36,7 +36,7 @@ NeuronEX 默认提供了一个 **data-stream-processing** 北向节点。
 
 #### 数据上报
 
-Neuron eKuiper 插件连接到 eKuiper 后，将从设备收集的数据以JSON形式发布。
+Neuron eKuiper 插件连接到 eKuiper 后，将从设备收集的数据以 JSON 形式发布。
 发布到 eKuiper 的数据具有以下字段：
 * timestamp: 数据采集时的UNIX时间戳。
 * node_name: 某个南向节点名字。
