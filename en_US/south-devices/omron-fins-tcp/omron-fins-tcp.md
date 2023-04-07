@@ -1,17 +1,17 @@
-# Introduction and Usage of OMRON FINS on TCP
+# Overview
 
-## Module Description
+Omron Fins TCP is a protocol for communication between Omron PLCs and other devices. It is a TCP/IP based protocol. The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
-The fins plugin is used for Omron PLCs with network port, such as CP2E.
+Neuron supports Fins TCP protocol, which can be used to communicate with Omron PLCs through Fins TCP protocol.
 
-## Parameter Configuration
+## Parameters
 
 | Parameter         | Description                      |
 | ----------------- | -------------------------------- |
-| **host**          | remote plc ip                 |
-| **port**          | remote plc port, default 9600 ｜
+| **PLC IP Address**          | Target PLC IPv4 address|
+| **PLC Port**          | Target PLC port, default 9600 ｜
 
-## Support Data Type
+## Data types
 
 * UINT8
 * INT8
@@ -24,13 +24,11 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 * BIT
 * STRING
 
-## Usage of Address Format
-
-### Address Format
+## Address Format
 
 > AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
 
-#### AREA ADDRESS
+### AREA ADDRESS
 
 | AREA | DATA TYPE                                                 | ATTRIBUTE  | REMARK           |
 | ---- | --------------------------------------------------------- | ---------- | ---------------- |
@@ -61,15 +59,15 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 | D20         | float  | D area, address is 20    |
 | EM10W100    | float  | EM10 area, address is 100 |
 
-#### .BIT
+### .BIT
 
 Optional, referring to a bit of an address.
 
-#### .LEN\[H]\[L]
+### .LEN\[H]\[L]
 
 When the data type is string type, it is a required, **.LEN** indicates the length of the string, including **H** and **L** two endianness, the default is **H** .
 
-### Address Examples
+## Address Examples
 
 | Address   | Data Type  | Description                                             |
 | --------- | ------ | ----------------------------------------------------------- |
