@@ -276,8 +276,16 @@
           "title": "Omron FINS TCP",
           "children": [
             {
-              "title": "OMRON FINS on TCP 介绍与用法",
-              "path": "south-devices/omron-fins/omron-fins"
+              "title": "概览",
+              "path": "south-devices/omron-fins-tcp/omron-fins-tcp"
+            },
+            {
+              "title": "连接欧姆龙 CP2E PLC",
+              "path": "south-devices/omron-fins-tcp/example/cp2e/cp2e"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/omron-fins-tcp/faq/faq"
             }
           ]
         },
@@ -890,8 +898,16 @@
           "title": "Omron FINS TCP",
           "children": [
             {
-              "title": "Introduction and Usage of OMRON FINS on TCP",
-              "path": "south-devices/omron-fins/omron-fins"
+              "title": "Overview",
+              "path": "south-devices/omron-fins-tcp/omron-fins-tcp"
+            },
+            {
+              "title": "Connect to Omron CP2E PLC",
+              "path": "south-devices/omron-fins-tcp/example/cp2e/cp2e"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/omron-fins-tcp/faq/faq"
             }
           ]
         },
