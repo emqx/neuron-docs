@@ -683,95 +683,54 @@
       "path": "installation/installation",
       "children": [
         {
-          "title": "Neuron",
+          "title": "Installing Neuron",
           "children": [
             {
               "title": "Ubuntu/Debian",
-              "children": [
-                {
-                  "title": "deb",
-                  "path": "installation/neuron/deb"
-                },
-                {
-                  "title": "tar.gz",
-                  "path": "installation/neuron/tar.gz"
-                }
-              ]
+              "path": "installation/neuron/deb"
             },
             {
               "title": "CentOS",
-              "children": [
-                {
-                  "title": "rpm",
-                  "path": "installation/neuron/rpm"
-                }
-              ]
+              "path": "installation/neuron/rpm"
+            },
+            {
+              "title": "Other Linux",
+              "path": "installation/neuron/tar.gz"
+            },
+            {
+              "title": "Docker",
+              "path": "installation/neuron/docker"
+            },
+            {
+              "title": "Source",
+              "path": "installation/neuron/compile"
             }
           ]
         },
         {
-          "title": "NeuronEX",
+          "title": "Installing NeuronEX",
           "children": [
             {
               "title": "Ubuntu/Debian",
-              "children": [
-                {
-                  "title": "deb",
-                  "path": "installation/neuronex/deb"
-                },
-                {
-                  "title": "tar.gz",
-                  "path": "installation/neuronex/tar.gz"
-                }
-              ]
+              "path": "installation/neuronex/deb"
             },
             {
               "title": "CentOS",
-              "children": [
-                {
-                  "title": "rpm",
-                  "path": "installation/neuronex/rpm"
-                }
-              ]
-            }
+              "path": "installation/neuronex/rpm"
+            },
+            {
+              "title": "Other Linux",
+              "path": "installation/neuronex/tar.gz"
+            },
+            {
+              "title": "Docker",
+              "path": "installation/neuronex/docker"
+            },
+            {
+              "title": "Source",
+              "path": "installation/neuronex/compile"
+           }
           ]
-        }
-      ]
-    },
-    {
-      "title": "Operation",
-      "children": [
-        {
-          "title": "Configure Tag",
-          "path": "user-guide/configuration"
-        },
-        {
-          "title": "Tag Import/Export",
-          "path": "user-guide/import-export"
-        },
-        {
-          "title": "Control Device",
-          "path": "user-guide/device-control"
-        },
-        {
-          "title": "Data Statistics",
-          "path": "user-guide/data-statistics"
-        },
-        {
-          "title": "Offline Data Cache",
-          "path": "user-guide/offline-data-cache"
-        },
-        {
-          "title": "Log Management",
-          "path": "user-guide/log-management"
-        },
-        {
-          "title": "Change Password",
-          "path": "user-guide/change-password"
-        },
-        {
-          "title": "Plugin Module Management",
-          "path": "user-guide/plugin-modules-management"
         }
       ]
     },
@@ -1128,7 +1087,45 @@
       ]
     },
     {
-      "title": "Data Streaming",
+      "title": "Usage",
+      "children": [
+        {
+          "title": "Configure Tag",
+          "path": "user-guide/configuration"
+        },
+        {
+          "title": "Tag Import/Export",
+          "path": "user-guide/import-export"
+        },
+        {
+          "title": "Control Device",
+          "path": "user-guide/device-control"
+        },
+        {
+          "title": "Data Statistics",
+          "path": "user-guide/data-statistics"
+        },
+        {
+          "title": "Offline Data Cache",
+          "path": "user-guide/offline-data-cache"
+        },
+        {
+          "title": "Log Management",
+          "path": "user-guide/log-management"
+        },
+        {
+          "title": "Change Password",
+          "path": "user-guide/change-password"
+        },
+        {
+          "title": "Plugin Module Management",
+          "path": "user-guide/plugin-modules-management"
+        }
+      ]
+    },
+    {
+      "title": "Streaming SQL",
+      "path": "data-processing-engine/ekuiper",
       "children": [
         {
           "title": "Prerequisite Setup",
@@ -1141,15 +1138,6 @@
         {
           "title": "Control Device",
           "path": "data-processing-engine/device-control"
-        }
-      ]
-    },
-    {
-      "title": "Best practices",
-      "children": [
-        {
-          "title": "Neuron + eKuiper cooperation",
-          "path": "best-practices/ekuiper"
         }
       ]
     },
@@ -1187,12 +1175,8 @@
       "path": "integration/integration"
     },
     {
-      "title": "Project",
+      "title": "SDK Tutorial",
       "children": [
-        {
-          "title": "Learn to compile",
-          "path": "project/compile"
-        },
         {
           "title": "Start development",
           "path": "project/development"
