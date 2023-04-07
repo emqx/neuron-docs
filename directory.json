@@ -228,8 +228,20 @@
           "title": "Mitsubishi 3E",
           "children": [
             {
-              "title": "Mitsubishi MELSEC QnA3E 介绍与使用",
+              "title": "概览",
               "path": "south-devices/mitsubishi-3e/mitsubishi-3e"
+            },
+            {
+              "title": "连接 FX5U",
+              "path": "south-devices/mitsubishi-3e/fx5u"
+            },
+            {
+              "title": "连接 Q03UDE",
+              "path": "south-devices/mitsubishi-3e/q03ude"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/mitsubishi-3e/faq"
             }
           ]
         },
