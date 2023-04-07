@@ -243,15 +243,23 @@
           ]
         },
         {
-          "title": "Siemens S7 ISO TCP",
+          "title": "Siemens S7 ISOTCP",
           "children": [
             {
-              "title": "Siemens S7 ISOTCP 介绍与使用",
+              "title": "概览",
               "path": "south-devices/siemens-s7/s7"
             },
             {
               "title": "Siemens S7-1200/1500 设置",
               "path": "south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+            },
+            {
+              "title": "连接 S7-1200 PLC",
+              "path": "south-devices/siemens-s7/example/s71200/s71200"
+            },
+            {
+              "title": "常见问题",
+              "path": "south-devices/siemens-s7/faq/faq"
             }
           ]
         },
@@ -849,15 +857,23 @@
           ]
         },
         {
-          "title": "Siemens S7 ISO TCP",
+          "title": "Siemens S7 ISOTCP",
           "children": [
             {
-              "title": "Introduction and Usage of Siemens S7 ISOTCP",
+              "title": "Overview",
               "path": "south-devices/siemens-s7/s7"
             },
             {
               "title": "Siemens S7-1200/1500 Settings",
               "path": "south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+            },
+            {
+              "title": "Connect to S7-1200 PLC",
+              "path": "south-devices/siemens-s7/example/s71200/s71200"
+            },
+            {
+              "title": "FAQ",
+              "path": "south-devices/siemens-s7/faq/faq"
             }
           ]
         },
