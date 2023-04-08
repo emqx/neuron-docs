@@ -727,10 +727,11 @@
     },
     {
       "title": "Configuration",
-      "path": "configuration/configuration",
+      "path": "configuration/concepts",
       "children": [
         {
-          "title": "Southbound Drivers",
+          "title": "Creating Southbound Drivers",
+          "path": "configuration/south-devices/south-devices",
           "children": [
             {
               "title": "Modbus RTU",
@@ -921,7 +922,18 @@
           ]
         },
         {
+          "title": "Adding Groups and Tags on Device Plugin",
+          "path": "configuration/data-config/data-config",
+          "children": [
+            {
+              "title": "Setup Tag Decimal Details",
+              "path": "configuration/data-config/tag-decimal"
+            }
+          ]
+        },
+        {
           "title": "Northbound Applications",
+          "path": "configuration/north-apps/north-apps",
           "children": [
             {
               "title": "eKuiper",
