@@ -1,21 +1,22 @@
 # Installation
 
-Neuron and NeuronEX supports 32-bit/64-bit ARM and 64-bit x86 architectures on Linux-based operating systems and is available in the following formats:
+Neuron and NeuronEX support 32-bit/64-bit ARM and 64-bit x86 architectures on Linux-based operating systems and are available in the following installation package formats:
 
-* Debian Software Package (DEB) format for Debian, Ubuntu Linux-based operating systems.
+* Debian Software Package (.deb) format for Debian, Ubuntu Linux-based operating systems.
 
-* Redhat Package Manager (RPM) format for Red Hat, CentOS Linux-based operating systems.
+* Redhat Package Manager (.rpm) format for Red Hat, CentOS Linux-based operating systems.
 
 
-## Systems for Installation Packages
+## Installation Packages for Linux Distro
 
-| Linux distribution                                    | Required packages  |
+| Linux Distribution                                    | Required Package  |
 | ------------------------------------------------------------ | ------------------ |
 | Ubuntu 20.04 </br>Ubuntu 18.04 </br>Ubuntu16.04</br>Debian 11</br>Debian 10</br>Debian 9</br>Debian 8               | **Debian Software Package** (.deb)         |
 | CentOS Stream 9</br>CentOS Stream 8</br>CentOS 7    | **Redhat Package Manager** (.rpm)         |
+| Other Linux | **Tape Archiver** (tar.gz) |
 
 :::tip
-The installation of the rpm/deb package is recommended to set up the system service manager (systemd) to monitor the Neuron running instance.
+The rpm/deb packages installation is recommended for setting up the system service manager (systemd) to monitor the Neuron running instance.
 :::
 
 
@@ -23,10 +24,26 @@ The installation of the rpm/deb package is recommended to set up the system serv
 
 |Tag Limits|Minimum Memory Recommendation|Hardware Architecture|Remarks|
 | :-------------------- | :------------------------------ | :---------------------------------- | :----------------------------------- |
-| 100 tags    | 128M memory | CPU architecture such as ARM, X86, MIPS, and RISC-V; Linux system or Docker container | Small gateway device |
-| 1,000 tags  | 256M memory | CPU architecture such as ARM, X86, MIPS, and RISC-V; Linux system or Docker container | Medium gateway device |
-| 10,000 tags | 512M memory | CPU architecture such as ARM, X86, MIPS, and RISC-V; Linux system or Docker container | Medium gateway, industrial computer, etc |
-| More than 10,000 tags | 1G memory | CPU architecture such as ARM, X86, MIPS, and RISC-V; Linux system or Docker container | Medium or large gateway, industrial computer, servers, etc |
+| 100 tags    | 128M memory | 32-bit/64-bit ARM and 64-bit x86 architectures | Raspberry Pi 3 |
+| 1,000 tags  | 256M memory | 32-bit/64-bit ARM and 64-bit x86 architectures | Raspberry Pi 4 |
+| 10,000 tags | 512M memory | 64-bit ARM and 64-bit x86 architectures | Industrial PC, etc |
+| More than 10,000 tags | 1G memory | 64-bit x86 architectures | Powerful Industrial PC, Server, etc |
+
+:::tip
+Neuron or NeuronEX has no upper limitation on the number of tags. It depends on the allocated CPU and memory resources. Neuron is very portable to run on limited resource like single board hardware, or on powerful servers. The following figures are the results of Neuron performance test for your reference and these benchmark results are still not the upper limits. A more powerful server can be used for more tags.
+
+Platform                         : Intel(R) Xeon(R) Gold 6266C@3.00GHz</br>
+Memory                           : 4G</br>
+Architecture                     : x86</br>
+OS Support                       : Ubuntu 20.04</br>
+No. of connections               : 1000 connections</br>
+No. of tags for each connection  : 300 tags</br>
+Total tags                       : 300,000 tags</br>
+Memory Usage                     : 300M</br>
+CPU Usage                        : 90%</br>
+
+:::
+
 
 
 ## Download
