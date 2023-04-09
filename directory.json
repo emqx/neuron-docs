@@ -608,11 +608,7 @@
       "children": [
         {
           "title": "Application Scenarios",
-          "path": "introduction/use-cases/use_cases"
-        },
-        {
-          "title": "Key Concepts",
-          "path": "introduction/concepts"
+          "path": "introduction/application/application"
         },
         {
           "title": "Architecture",
@@ -733,6 +729,10 @@
           "title": "Creating Southbound Drivers",
           "path": "configuration/south-devices/south-devices",
           "children": [
+            {
+              "title": "File",
+              "path": "configuration/south-devices/file/file"
+            },
             {
               "title": "Modbus RTU",
               "path": "configuration/south-devices/modbus-rtu/modbus-rtu",
@@ -914,15 +914,11 @@
             {
               "title": "ABB COMLI",
               "path": "configuration/south-devices/comli/comli"
-            },
-            {
-              "title": "File",
-              "path": "configuration/south-devices/file/file"
             }
           ]
         },
         {
-          "title": "Adding Groups and Tags on Device Plugin",
+          "title": "Creating Groups and Tags",
           "path": "configuration/data-config/data-config",
           "children": [
             {
@@ -932,11 +928,11 @@
           ]
         },
         {
-          "title": "Northbound Applications",
+          "title": "Creating Northbound Applications",
           "path": "configuration/north-apps/north-apps",
           "children": [
             {
-              "title": "eKuiper",
+              "title": "eKuiper Streaming Engine",
               "path": "north-apps/ekuiper/overview",
               "children": [
                 {
@@ -946,7 +942,7 @@
               ]
             },
             {
-              "title": "MQTT",
+              "title": "MQTT Client",
               "path": "north-apps/mqtt/overview",
               "children": [
                 {
@@ -960,7 +956,7 @@
               ]
             },
             {
-              "title": "SparkPlugB",
+              "title": "MQTT SparkPlugB",
               "path": "north-apps/sparkplugb/overview",
               "children": [
                 {
@@ -978,10 +974,14 @@
               ]
             },
             {
-              "title": "WebSocket",
+              "title": "WebSocket Client",
               "path": "north-apps/websocket/websocket"
             }
           ]
+        },
+        {
+          "title": "Subscribing the Groups",
+          "path": "configuration/subscribe"
         }
       ]
     },
