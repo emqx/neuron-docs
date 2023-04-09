@@ -39,19 +39,22 @@ The collection of user-interested tags in a device is divided into several group
 ## Configuration Procedures
 This procedure is an idea of work flow how to set up he Neuron for various industrial protocol conversions.
 
-### Step 1. 
+### Step 1. Checking over All Available Plugins
 
 
-### Step 2.
+### Step 2. Creating a Southbound Driver
 
 
-### Step 3.
+### Step 3. Adding Groups and Tags to the Driver
 
 
-### Step 4.
+### Step 4. Repeating Step 2-3 to Build More Drivers
 
 
-### Step 5.
+### Step 5. Creating a Northbound Application
+
+
+### Step 6. Subscribing the Groups
 
 
 ## Configuration APIs

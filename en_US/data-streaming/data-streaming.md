@@ -1,6 +1,6 @@
-# Prerequisite Setup
+# Data Streaming
 
-## Installstion
+## Installation
 
 ### NeuronEX
 

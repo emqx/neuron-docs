@@ -120,7 +120,7 @@ static int mqtt_plugin_uninit(neu_plugin_t *plugin)
 
 Call the mqtt_plugin_start function. When the user clicks start on the neuron node page, neuron will call this function to notify the plug-in to start running and start connecting to the device. If the configuration is incorrect, it will return the node setting invalid error.
 
-![mqtt_start](./assets/mqtt_start.png)
+![mqtt-start](./assets/mqtt-start.png)
 
 ```c
 static int mqtt_plugin_start(neu_plugin_t *plugin)
@@ -140,7 +140,7 @@ static int mqtt_plugin_start(neu_plugin_t *plugin)
 
 Call the mqtt_plugin_stop function, when the user clicks stop on the neuron node page, neuron will call this function, stop notifies the plug-in to stop running, and closes the connection between the plug-in and neuron.
 
-![mqtt_stop](./assets/mqtt_stop.png)
+![mqtt-stop](./assets/mqtt-stop.png)
 
 ```c
 static int mqtt_plugin_stop(neu_plugin_t *plugin)
@@ -156,7 +156,7 @@ static int mqtt_plugin_stop(neu_plugin_t *plugin)
 
 Call the mqtt_plugin_config function, which is used by the user when making settings on the neuron node setting page. The parameters set by the node will be presented in json (for the configuration of the json file, please refer to **Plugin Setting File** ), and neuron will notify the plugin to set through this function. The mqtt_plugin_config function first parses and saves the configuration information, and then establishes the connection.
 
-![mqtt_config](./assets/mqtt_config.png)
+![mqtt-config](./assets/mqtt-config.png)
 
 ```c
 static int mqtt_plugin_config(neu_plugin_t *plugin, const char *config)

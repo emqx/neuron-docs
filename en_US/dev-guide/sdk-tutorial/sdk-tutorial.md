@@ -27,7 +27,7 @@ After the script is executed, you need to pay attention to the usage of the foll
 
 Create a new directory file in the development environment to store the files required for the development driver, create a compilation configuration file CMakeLists.txt under the directory file, a build directory file to store the compiled files and a plugins directory file for To store all the driver files that need to be developed, each driver needs to have an independent directory to store the required files for driver development. Taking the development of modbus-tcp driver plug-in as an example, the directory level is shown in the figure below.
 
-![driver_tree](./assets/driver_tree.png)
+![driver-tree](./assets/driver-tree.png)
 
 ### CMakeLists.txt example
 

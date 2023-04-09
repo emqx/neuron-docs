@@ -22,6 +22,10 @@ The rpm/deb packages installation is recommended for setting up the system servi
 
 ## Hardware Requirements
 
+Neuron is fully developed in C language and supports running on x86, ARM and other hardware architectures as well as container deployment, such as K8s, KubeEdge, etc. On devices with limited hardware resources, it can also achieve data acquisition of 100 ms or even 10 ms level. On servers with sufficient hardware resources, Neuron can also make full use of multi-core CPUs, and can simultaneously conduct data acquisition and point write control of hundreds of thousands of points at the frequency of 100 ms.
+
+The following table lists the hardware conditions required for the minimum demand of Neuron at different number of tags.
+
 |Tag Limits|Minimum Memory Recommendation|Hardware Architecture|Remarks|
 | :-------------------- | :------------------------------ | :---------------------------------- | :----------------------------------- |
 | 100 tags    | 128M memory | 32-bit/64-bit ARM and 64-bit x86 architectures | Raspberry Pi 3 |

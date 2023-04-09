@@ -1,6 +1,6 @@
-# Pluggable Modules Management
+# Plugins Management
 
-## Check Over All Available Modules
+## Check Over All Available Plugins
 
 The plugin management page displays all the pluggable modules available and detailed information, including the name of the plug-in, associated node type, plug-in category, driver library name and description, as shown in the following figure.
 

@@ -626,6 +626,7 @@
     },
     {
       "title": "Quick Start",
+      "path": "quick-start/quick-start",
       "children": [
         {
           "title": "Installation",
@@ -633,7 +634,7 @@
         },
         {
           "title": "Install Modbus Simulator",
-          "path": "quick-start/installation-modbus"
+          "path": "quick-start/modbus-simulator"
         },
         {
           "title": "Login Neuron",
@@ -641,11 +642,11 @@
         },
         {
           "title": "Connect To Southbound Devices",
-          "path": "quick-start/southdevices-connect"
+          "path": "quick-start/modbus-connect"
         },
         {
           "title": "Configure Data Groups And Tags",
-          "path": "quick-start/data-config"
+          "path": "quick-start/groups-tags"
         },
         {
           "title": "Monitoring Data",
@@ -653,7 +654,7 @@
         },
         {
           "title": "Connect To MQTT",
-          "path": "quick-start/mqtt-config"
+          "path": "quick-start/mqtt-connect"
         }
       ]
     },
@@ -716,17 +717,21 @@
           "path": "installation/license-install/license-install"
         },
         {
-          "title": "Frequently asked questions and troubleshooting",
-          "path": "installation/fq/fq"
+          "title": "Frequently Asked Questions and Troubleshooting",
+          "path": "installation/faq/faq"
         }
       ]
     },
     {
       "title": "Configuration",
-      "path": "configuration/concepts",
+      "path": "configuration/configuration",
       "children": [
         {
-          "title": "Creating Southbound Drivers",
+          "title": "Checking Over All Available Plugins",
+          "path": "configuration/plugin-management/plugin-management"
+        },
+        {
+          "title": "Creating a Southbound Driver",
           "path": "configuration/south-devices/south-devices",
           "children": [
             {
@@ -919,69 +924,73 @@
         },
         {
           "title": "Creating Groups and Tags",
-          "path": "configuration/data-config/data-config",
+          "path": "configuration/groups-tags/groups-tags",
           "children": [
             {
               "title": "Setup Tag Decimal Details",
-              "path": "configuration/data-config/tag-decimal"
+              "path": "configuration/groups-tags/tag-decimal"
             }
           ]
         },
         {
-          "title": "Creating Northbound Applications",
+          "title": "Importing and Exporting Excel Groups and Tags ",
+          "path": "configuration/import-export/import-export"
+        },
+        {
+          "title": "Creating a Northbound Application",
           "path": "configuration/north-apps/north-apps",
           "children": [
             {
               "title": "eKuiper Streaming Engine",
-              "path": "north-apps/ekuiper/overview",
+              "path": "configuration/north-apps/ekuiper/overview",
               "children": [
                 {
                   "title": "FAQ",
-                  "path": "north-apps/ekuiper/faq"
+                  "path": "configuration/north-apps/ekuiper/faq"
                 }
               ]
             },
             {
               "title": "MQTT Client",
-              "path": "north-apps/mqtt/overview",
+              "path": "configuration/north-apps/mqtt/overview",
               "children": [
                 {
                   "title": "API",
-                  "path": "north-apps/mqtt/api"
+                  "path": "configuration/north-apps/mqtt/api"
                 },
                 {
                   "title": "FAQ",
-                  "path": "north-apps/mqtt/faq"
+                  "path": "configuration/north-apps/mqtt/faq"
                 }
               ]
             },
             {
               "title": "MQTT SparkPlugB",
-              "path": "north-apps/sparkplugb/overview",
+              "path": "configuration/north-apps/sparkplugb/overview",
               "children": [
                 {
                   "title": "Connect to Ignition",
-                  "path": "north-apps/sparkplugb/ignition"
+                  "path": "configuration/north-apps/sparkplugb/ignition"
                 },
                 {
                   "title": "Connect to Cogent",
-                  "path": "north-apps/sparkplugb/cogent"
+                  "path": "configuration/north-apps/sparkplugb/cogent"
                 },
                 {
                   "title": "FAQ",
-                  "path": "north-apps/sparkplugb/faq"
+                  "path": "configuration/north-apps/sparkplugb/faq"
                 }
               ]
             },
             {
               "title": "WebSocket Client",
-              "path": "north-apps/websocket/websocket"
+              "path": "configuration/north-apps/websocket/websocket"
             }
           ]
         },
         {
           "title": "Subscribing the Groups",
-          "path": "configuration/subscribe"
+          "path": "configuration/subscription/subscription"
         }
       ]
     },
@@ -1020,20 +1029,16 @@
       ]
     },
     {
-      "title": "Streaming SQL",
-      "path": "data-processing-engine/ekuiper",
+      "title": "Data Streaming",
+      "path": "data-streaming/data-streaming",
       "children": [
         {
-          "title": "Prerequisite Setup",
-          "path": "data-processing-engine/prerequisite-setup"
-        },
-        {
           "title": "Data Cleansing",
-          "path": "data-processing-engine/data-cleansing"
+          "path": "data-streaming/data-cleansing/data-cleansing"
         },
         {
           "title": "Control Device",
-          "path": "data-processing-engine/device-control"
+          "path": "data-streaming/device-control/device-control"
         }
       ]
     },
@@ -1080,11 +1085,11 @@
           "children": [
             {
               "title": "Modbus Plugin Example",
-              "path": "dev-guide/sdk-tutorial/modbus_example"
+              "path": "dev-guide/sdk-tutorial/sdk-example/modbus-example"
             },
             {
               "title": "MQTT Application Example",
-              "path": "dev-guide/sdk-tutorial/mqtt_example"
+              "path": "dev-guide/sdk-tutorial/sdk-example/mqtt-example"
             }
           ]
         }
@@ -1094,11 +1099,11 @@
       "title": "Appendix",
       "children": [
         {
-          "title": "Data type description",
+          "title": "Data Type Description",
           "path": "appendix/data-type"
         },
         {
-          "title": "Protocol introduction",
+          "title": "Industrial Protocol Introduction",
           "children": [
             {
               "title": "Modbus TCP",
