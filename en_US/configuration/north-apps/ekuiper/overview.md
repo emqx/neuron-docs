@@ -76,11 +76,11 @@ eKuiper. You may skip this section without problem.
 The Neuron eKuiper plugin publishes data collected from devices as JSON once
 connected to the eKuiper.
 Data published to eKuiper have the following fields:
-* "timestamp": unix timestamp when the data is collected
-* "node_name": the name of a southbound node.
-* "group_name": the name of a group.
-* "values": dictionary storing tags with successfully collected values
-* "errors": dictionary storing tags with encountered error codes
+* `timestamp` : the Unix timestamp when the data was collected.
+* `node_name` : name of the south node from which data was collected.
+* `group_name` : name of the south node group that the tags belong to.
+* `values` : dictionary storing tags with successfully collected values
+* `errors` : dictionary storing tags with encountered error codes
 
 Following is an example data. When a tag is read successfully, its value is
 recorded in the *values* dictionary. If something goes wrong when reading a tag,
@@ -108,10 +108,10 @@ Neuron sink, and Neuron will write data to the devices upon receiving the
 commands.
 
 The *write command* should be JSON data with the following fields:
-* "node_name": the name of a southbound node.
-* "group_name": the name of a group.
-* "tag_name": the name of a tag.
-* "value": the value to write.
+* `node_name` : the name of a southbound node.
+* `group_name` : the name of a group.
+* `tag_name` : the name of a tag.
+* `value` : the value to write.
 
 Below is an example write command:
 

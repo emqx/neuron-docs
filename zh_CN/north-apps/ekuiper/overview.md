@@ -55,11 +55,11 @@ NeuronEX 默认提供了一个 **data-stream-processing** 北向节点。
 
 Neuron eKuiper 插件连接到 eKuiper 后，将从设备收集的数据以 JSON 形式发布。
 发布到 eKuiper 的数据具有以下字段：
-* timestamp: 数据采集时的 UNIX 时间戳。
-* node_name: 某个南向节点名字。
-* group_name: 南向节点的某个组的名字。
-* values: 存储采集成功的点位值的字典。
-* errors: 存储采集失败的错误码的字典。
+* `timestamp` : 数据采集时的 UNIX 时间戳。
+* `node_name` : 被采集的南向节点的名字。
+* `group_name` : 被采集的南向节点的点位组的名字。
+* `values` : 存储采集成功的点位值的字典。
+* `errors` : 存储采集失败的错误码的字典。
 
 以下是一个示例数据。当标签读取成功时，它的值将记录在 *values* 字典中。
 如果在读取标签时出错，则将错误代码记录在 *errors* 字典中。
@@ -84,10 +84,10 @@ Neuron eKuiper 插件连接到 eKuiper 后，将从设备收集的数据以 JSON
 eKuiper 可以通过使用 Neuron 动作发送写命令来控制设备，Neuron 在接收到命令后将向设备写入数据。
 
 写命令应该是一个带有以下字段的 JSON 数据：
-* node_name: 某个南向节点名字。
-* group_name: 南向节点的某个组的名字。
-* tag_name: 要写入的点位名字。
-* value: 要写入的数据值。
+* `node_name` : 某个南向节点名字。
+* `group_name` : 南向节点的某个组的名字。
+* `tag_name` : 要写入的点位名字。
+* `value` : 要写入的数据值。
 
 以下是一个写命令示例：
 
