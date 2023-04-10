@@ -1,5 +1,7 @@
 # Data Streaming
 
+Neuron supports integration with eKuiper to realize data stream processing functions such as data cleansing and device control.
+
 ## Installation
 
 ### NeuronEX

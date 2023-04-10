@@ -626,37 +626,7 @@
     },
     {
       "title": "Quick Start",
-      "path": "quick-start/quick-start",
-      "children": [
-        {
-          "title": "Installation",
-          "path": "quick-start/installation"
-        },
-        {
-          "title": "Install Modbus Simulator",
-          "path": "quick-start/modbus-simulator"
-        },
-        {
-          "title": "Login Neuron",
-          "path": "quick-start/login"
-        },
-        {
-          "title": "Connect To Southbound Devices",
-          "path": "quick-start/modbus-connect"
-        },
-        {
-          "title": "Configure Data Groups And Tags",
-          "path": "quick-start/groups-tags"
-        },
-        {
-          "title": "Monitoring Data",
-          "path": "quick-start/monitoring"
-        },
-        {
-          "title": "Connect To MQTT",
-          "path": "quick-start/mqtt-connect"
-        }
-      ]
+      "path": "quick-start/quick-start"
     },
     {
       "title": "Installation and Licensing",

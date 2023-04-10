@@ -82,3 +82,12 @@ Release number x.y.z have following description:
 * y is the minor release number: the change in this number introduces some new features. Upgrading to a minor release would ensure backward compatibility.
 
 * z is the maintenance release number: this new release number only contains patches, bug fixes, etc.
+
+
+## License
+
+At present, Neuron has open source MQTT, RESTful API and Modbus TCP, and users can directly use the open source driver protocols. However, by uploading a valid license, users can use more driving protocols such as OPC UA, Modbus RTU, Mitsubishi PLC and Omron PLC.
+
+Please refer to [Module List](../introduction/plugin-list/plugin-list.md) for the driver protocols supported by Neuron.
+
+
