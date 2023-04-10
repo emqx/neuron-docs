@@ -26,15 +26,21 @@ which default to **/neuron/{node_name}/{driver_name}/{group_name}**.
 
 ### Tags format
 
+In *tags-format*, the upload data has the following fields:
+* `timestamp` : the Unix timestamp when the data was collected.
+* `node` : name of the south node from which data was collected.
+* `group` : name of the south node group that the tags belong to.
+* `tags` : tags data array where each element corresponds to one tag in the group.
+
 The following example data is in *tags-format*, where tag data are stored in
 a array. Each element has the name of the tag, and the tag value or error code
 if something went wrong.
 
 ```json
 {
+  "timestamp": 1647497389075,
   "node": "modbus",
   "group": "grp",
-  "timestamp": 1647497389075,
   "tags": [
     {
       "name": "tag0",
@@ -50,14 +56,21 @@ if something went wrong.
 
 ### Values format
 
+In *values-format*, the upload data has the following fields:
+* `timestamp` : the Unix timestamp when the data was collected.
+* `node` : name of the south node from which data was collected.
+* `group` : name of the south node group that the tags belong to.
+* `values` : dictionary storing tags with successfully collected values
+* `errors` : dictionary storing tags with encountered error codes
+
 The following example data is in *values-format*, where tag values collected
 successfully are stored in a dictionary, while error codes in another.
 
 ```json
 {
+    "timestamp": 1650006388943,
     "node": "modbus",
     "group": "grp",
-    "timestamp": 1650006388943,
     "values":
     {
         "tag0": 123
@@ -84,9 +97,9 @@ You can read a group of tags by sending requests in JSON to the MQTT topic
 #### Body
 
 The read request body should have the following fields:
-* "uuid": a unique identifier, which will be echoed back in the response to help identify the corresponding request.
-* "node": the name of a southbound node.
-* "group": the name of a group to read.
+* `uuid` : a unique identifier, which will be echoed back in the response to help identify the corresponding request.
+* `node` : the name of a southbound node.
+* `group` : the name of a group to read.
 
 Below is an example read request:
 
@@ -103,6 +116,10 @@ Below is an example read request:
 Read response will be publish to the MQTT topic **/neuron/{node_name}/read/resp**.
 
 #### Body
+
+The read response body has the following fields:
+* `uuid` : the same unique identifier which is set by the corresponding request.
+* `tags` : tags data array, same as that in [tags format](#tags-format).
 
 Below is an example read response:
 
@@ -137,11 +154,11 @@ You could write a tag by sending requests in JSON to the MQTT topic
 #### Body
 
 The write request body should have the following fields:
-* "uuid": a unique identifier, which will be echoed back in the response to help identify the corresponding request.
-* "node": the name of a southbound node.
-* "group": the name of a group.
-* "tag": the name of a tag.
-* "value": the value to write.
+* `uuid` : a unique identifier, which will be echoed back in the response to help identify the corresponding request.
+* `node` : the name of a southbound node.
+* `group` : the name of a group.
+* `tag` : the name of a tag.
+* `value` : the value to write.
 
 Below is an example write request:
 
@@ -160,6 +177,10 @@ Below is an example write request:
 Write response will be published to the MQTT topic **/neuron/{node_name}/write/resp**.
 
 #### Body
+
+The write response body has the following fields:
+* `uuid` : the same unique identifier which is set by the corresponding request.
+* `error` : error code if something bad happens, `0` represents success.
 
 Below is an example write response:
 
