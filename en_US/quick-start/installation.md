@@ -87,13 +87,16 @@ Start NeuronEX
 $ docker run -d --name neuronex -p 7000:7000 --privileged=true -v /host/dir:/opt/neuron/persistence --device /dev/ttyUSB0:/dev/ttyS0 --restart=always emqx/neuronex:latest
 ```
 
-* tcp 7000: Used to access the web and http api port.
-* --restart=always: Automatically restart the neuron container when the docker process is restarted.
-* --privileged=true: Optional parameter for easy troubleshooting.
-* --env DISABLE_AUTH=1: Optional parameter to turn off authentication.
-* -v /host/dir:/opt/neuron/persistence: Used to store Neuron configuration information in docker to a local directory, e.g. /host/dir to /opt/neuron/persistence.
-* --device /dev/ttyUSB0:/dev/ttyS0: Used to map the serial port to docker. /dev/ttyUSB0 // Serial port device under Ubuntu; /dev/ttyS0 // Serial port device under Docker.
-* --ulimit nofile=65535: The default value is 1024. When there are many connected devices, increase the value of this field, such as 65535.
+|Parameter|Description|
+| :-------------------- | :----------------------------------- |
+| tcp 7000 | Used to access the web and http api port |
+|--restart=always|Automatically restart the neuron container when the docker process is restarted |
+|--privileged=true|Optional parameter for easy troubleshooting|
+|--env DISABLE_AUTH=1|Optional parameter to turn off authentication|
+|-v /host/dir:/opt/neuron/persistence|Used to store Neuron configuration information in docker to a local directory, E.g. /host/dir to /opt/neuron/persistence|
+|--device /dev/ttyUSB0 | Used to map the serial port to docker. /dev/ttyUSB0 is Serial port device under Ubuntu; /dev/ttyS0 is Serial port device under Docker|
+|--ulimit nofile=65535|The default value is 1024. When there are many connected devices, increase the value of this field, such as 65535|
+|--log-opt|Limit the size of Docker standard output (stdout), E.g. --log-opt max-size=10m|
 
 ## Install using deb package
 
