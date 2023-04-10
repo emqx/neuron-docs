@@ -1,4 +1,4 @@
-# Fanuc Focas Ethernet 介绍与使用
+# 概览
 
 **支持架构**: amd64, arm/v7
 
