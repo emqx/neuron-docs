@@ -933,7 +933,7 @@
           ]
         },
         {
-          "title": "Importing and Exporting Excel Groups and Tags ",
+          "title": "Importing/Exporting Groups and Tags ",
           "path": "configuration/import-export/import-export"
         },
         {
@@ -999,28 +999,30 @@
       "path": "usage/usage",
       "children": [
         {
-          "title": "Change Password",
-          "path": "usage/change-password"
+          "title": "Navigating Dashboard",
+          "path": "usage/dashboard/dashboard",
+          "children": [
+            {
+              "title": "Change Password",
+              "path": "usage/admin/change-password"
+            },
+            {
+              "title": "Log Management",
+              "path": "usage/admin/log-management"
+            },
+            {
+              "title": "Data Statistics",
+              "path": "usage/dashboard/data-statistics"
+            }
+          ]
         },
         {
-          "title": "Log Management",
-          "path": "usage/log-management"
-        },
-        {
-          "title": "Plugin Module Management",
-          "path": "usage/plugin-modules-management"
-        },
-        {
-          "title": "Tag Import/Export",
-          "path": "usage/import-export"
+          "title": "Monitoring Data",
+          "path": "usage/monitoring"
         },
         {
           "title": "Control Device",
           "path": "usage/device-control"
-        },
-        {
-          "title": "Data Statistics",
-          "path": "usage/data-statistics"
         },
         {
           "title": "Offline Data Cache",
@@ -1044,6 +1046,7 @@
     },
     {
       "title": "HTTP API",
+      "path": "http-api/http-api",
       "children": [
         {
           "title": "Customize JWT",
