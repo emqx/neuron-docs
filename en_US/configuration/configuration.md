@@ -27,20 +27,14 @@ This is a loosely-decoupled designed architecture. All nodes work independently 
 ### Tag
 A tag is a non-hierarchical unique keyword assigned to a piece of information including data storing location in the device, and data operation properties, which helps describe an item and allows it to be found in the device or processed to be read/written automatically. Users would identify those interested tags in a device to read data from the device or to write data to the device.
 
-
-
-
 ### Group
 The collection of user-interested tags in a device is divided into several groups to have better management. The routing mechanism is based on these groups as an information unit to be exchanged between nodes. A northbound node can subscribe to any groups in any southbound node. These subscriptions would be used for routing data messages between nodes.
-
-
-
 
 ## Configuration Procedures
 This procedure is an idea of work flow how to set up he Neuron for various industrial protocol conversions.
 
 ### Step 1. Checking over All Available Plugins
-
+Neuron data acquisition and delivery are enabled using various industrial plugins. A specific feature can be used only when corresponding plugin has installed and activated by the License. Since Neuron is a loosely-decoupled architecture, each plugin runs as an independent process thread without interfering each others. 
 
 ### Step 2. Creating a Southbound Driver
 
