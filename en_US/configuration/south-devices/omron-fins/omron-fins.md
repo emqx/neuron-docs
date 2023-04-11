@@ -1,8 +1,4 @@
-<<<<<<< HEAD:en_US/south-devices/omron-fins-tcp/omron-fins-tcp.md
-# Overview
-=======
 # OMRON FINS on TCP
->>>>>>> structure:en_US/configuration/south-devices/omron-fins/omron-fins.md
 
 Omron Fins TCP is a protocol for communication between Omron PLCs and other devices. It is a TCP/IP based protocol. The fins plugin is used for Omron PLCs with network port, such as CP2E.
 

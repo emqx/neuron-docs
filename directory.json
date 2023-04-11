@@ -624,14 +624,15 @@
   "en": [
     {
       "title": "Introduction",
+      "path": "./",
       "children": [
         {
-          "title": "Product Overview",
-          "path": "./"
+          "title": "Architecture",
+          "path": "introduction/architecture/architecture"
         },
         {
-          "title": "Module List",
-          "path": "introduction/module-list/module-list"
+          "title": "Plugin List",
+          "path": "introduction/plugin-list/plugin-list"
         },
         {
           "title": "License Policy",
@@ -641,494 +642,401 @@
     },
     {
       "title": "Quick Start",
+      "path": "quick-start/quick-start"
+    },
+    {
+      "title": "Installation and Licensing",
+      "path": "installation/installation",
       "children": [
         {
-          "title": "Installation",
-          "path": "quick-start/installation"
+          "title": "Installing Neuron",
+          "children": [
+            {
+              "title": "Ubuntu/Debian",
+              "path": "installation/neuron/deb"
+            },
+            {
+              "title": "CentOS",
+              "path": "installation/neuron/rpm"
+            },
+            {
+              "title": "Other Linux",
+              "path": "installation/neuron/tar.gz"
+            },
+            {
+              "title": "Docker",
+              "path": "installation/neuron/docker"
+            },
+            {
+              "title": "Source",
+              "path": "installation/neuron/compile"
+            }
+          ]
         },
         {
-          "title": "Install Modbus Simulator",
-          "path": "quick-start/installation-modbus"
+          "title": "Installing NeuronEX",
+          "children": [
+            {
+              "title": "Ubuntu/Debian",
+              "path": "installation/neuronex/deb"
+            },
+            {
+              "title": "CentOS",
+              "path": "installation/neuronex/rpm"
+            },
+            {
+              "title": "Other Linux",
+              "path": "installation/neuronex/tar.gz"
+            },
+            {
+              "title": "Docker",
+              "path": "installation/neuronex/docker"
+            },
+            {
+              "title": "Source",
+              "path": "installation/neuronex/compile"
+           }
+          ]
         },
         {
-          "title": "Login Neuron",
-          "path": "quick-start/login"
+          "title": "Installing and Activating License",
+          "path": "installation/license-install/license-install"
         },
         {
-          "title": "Apply For And Install License",
-          "path": "quick-start/license-install/license-install"
+          "title": "Frequently Asked Questions and Troubleshooting",
+          "path": "installation/faq/faq"
+        }
+      ]
+    },
+    {
+      "title": "Configuration",
+      "path": "configuration/configuration",
+      "children": [
+        {
+          "title": "Checking Over All Available Plugins",
+          "path": "configuration/plugin-management/plugin-management"
         },
         {
-          "title": "Connect To Southbound Devices",
-          "path": "quick-start/southdevices-connect"
+          "title": "Creating a Southbound Driver",
+          "path": "configuration/south-devices/south-devices",
+          "children": [
+            {
+              "title": "File",
+              "path": "configuration/south-devices/file/file"
+            },
+            {
+              "title": "Modbus RTU",
+              "path": "configuration/south-devices/modbus-rtu/modbus-rtu",
+              "children": [
+                {
+                  "title": "Connection to DTU",
+                  "path": "configuration/south-devices/modbus-rtu/example/dtu/dtu-connection"
+                },
+                {
+                  "title": "Connection to Modbus Slave Simulator",
+                  "path": "configuration/south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/south-devices/modbus-rtu/faq/faq"
+                }
+              ]
+            },
+            {
+              "title": "Modbus TCP",
+              "path": "configuration/south-devices/modbus-tcp/modbus-tcp",
+              "children": [
+                {
+                  "title": "Connect to PeakHMI Slave Simulator",
+                  "path": "configuration/south-devices/modbus-tcp/example/peakhmi/peakhmi"
+                },
+                {
+                  "title": "Connect to Modbus Slave Simulator",
+                  "path": "configuration/south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/south-devices/modbus-tcp/faq/faq"
+                }
+              ]
+            },
+            {
+              "title": "OPC UA",
+              "path": "configuration/south-devices/opc-ua/overview",
+              "children": [
+                {
+                  "title": "Connection policy",
+                  "path": "configuration/south-devices/opc-ua/policy"
+                },
+                {
+                  "title": "Connect to Siemens S7-1200",
+                  "path": "configuration/south-devices/opc-ua/s71200"
+                },
+                {
+                  "title": "Connect to KEPServerEX",
+                  "path": "configuration/south-devices/opc-ua/kepserverex"
+                },
+                {
+                  "title": "Connect to Industrial Gateway OPC Server",
+                  "path": "configuration/south-devices/opc-ua/igs"
+                },
+                {
+                  "title": "Connect to Ignition",
+                  "path": "configuration/south-devices/opc-ua/ignition"
+                },
+                {
+                  "title": "Connect to Prosys Simulation Server",
+                  "path": "configuration/south-devices/opc-ua/prosys"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/south-devices/opc-ua/faq"
+                }
+              ]
+            },
+            {
+              "title": "OPC DA",
+              "path": "configuration/south-devices/opc-da/overview",
+              "children": [
+                {
+                  "title": "NeuOPC install",
+                  "path": "configuration/south-devices/opc-da/install"
+                },
+                {
+                  "title": "NeuOPC remote access",
+                  "path": "configuration/south-devices/opc-da/remote"
+                },
+                {
+                  "title": "Connect to NeuOPC",
+                  "path": "configuration/south-devices/opc-da/neuopc"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/south-devices/opc-da/faq"
+                }
+              ]
+            },
+            {
+              "title": "EtherNet/IP(CIP)",
+              "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
+            },
+            {
+              "title": "Mitsubishi 3E",
+              "path": "configuration/south-devices/mitsubishi-3e/mitsubishi-3e"
+            },
+            {
+              "title": "Mitsubishi 1E",
+              "path": "configuration/south-devices/mitsubishi-1e/mitsubishi-1e"
+            },
+            {
+              "title": "Siemens S7 ISO TCP",
+              "path": "configuration/south-devices/siemens-s7/s7",
+              "children": [
+                {
+                  "title": "Siemens S7-1200/1500 Settings",
+                  "path": "configuration/south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+                }
+              ]
+            },
+            {
+              "title": "Siemens S5 FetchWrite",
+              "path": "configuration/south-devices/siemens-fetchwrite/fetchwrite"
+            },
+            {
+              "title": "Omron FINS TCP",
+              "path": "configuration/south-devices/omron-fins/omron-fins"
+            },
+            {
+              "title": "Beckhoff ADS",
+              "path": "configuration/south-devices/ads/ads"
+            },
+            {
+              "title": "IEC60870-5-104",
+              "path": "configuration/south-devices/iec-104/iec-104",
+              "children": [
+                {
+                  "title": "Connect to IEC60870-5-104 Server Simulator",
+                  "path": "configuration/south-devices/iec-104/example/server-simulator/simulator"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/south-devices/iec-104/faq/faq"
+                }
+              ]
+            },
+            {
+              "title": "IEC61850",
+              "path": "configuration/south-devices/iec61850/overview",
+              "children": [
+                {
+                  "title": "Connect to LibIEC61850 server",
+                  "path": "configuration/south-devices/iec61850/libiec61850"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/south-devices/iec61850/faq"
+                }
+              ]
+            },
+            {
+              "title": "DL/T645-2007",
+              "path": "configuration/south-devices/dlt645-2007/dlt645-2007"
+            },
+            {
+              "title": "BACnet/IP",
+              "path": "configuration/south-devices/bacnet-ip/bacnet-ip"
+            },
+            {
+              "title": "KNXnet/IP",
+              "path": "configuration/south-devices/knxnet-ip/knxnet-ip"
+            },
+            {
+              "title": "Fanuc Focas Ethernet",
+              "path": "configuration/south-devices/fanuc-focas/fanuc-focas"
+            },
+            {
+              "title": "HJ212-2017",
+              "path": "configuration/south-devices/hj212-2017/hj212-2017"
+            },
+            {
+              "title": "NON A11",
+              "path": "configuration/south-devices/nona11/nona11"
+            },
+            {
+              "title": "ABB COMLI",
+              "path": "configuration/south-devices/comli/comli"
+            }
+          ]
         },
         {
-          "title": "Configure Data Groups And Tags",
-          "path": "quick-start/data-config"
+          "title": "Creating Groups and Tags",
+          "path": "configuration/groups-tags/groups-tags",
+          "children": [
+            {
+              "title": "Setup Tag Decimal Details",
+              "path": "configuration/groups-tags/tag-decimal"
+            }
+          ]
+        },
+        {
+          "title": "Importing/Exporting Groups and Tags ",
+          "path": "configuration/import-export/import-export"
+        },
+        {
+          "title": "Creating a Northbound Application",
+          "path": "configuration/north-apps/north-apps",
+          "children": [
+            {
+              "title": "eKuiper Streaming Engine",
+              "path": "configuration/north-apps/ekuiper/overview",
+              "children": [
+                {
+                  "title": "FAQ",
+                  "path": "configuration/north-apps/ekuiper/faq"
+                }
+              ]
+            },
+            {
+              "title": "MQTT Client",
+              "path": "configuration/north-apps/mqtt/overview",
+              "children": [
+                {
+                  "title": "API",
+                  "path": "configuration/north-apps/mqtt/api"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/north-apps/mqtt/faq"
+                }
+              ]
+            },
+            {
+              "title": "MQTT SparkPlugB",
+              "path": "configuration/north-apps/sparkplugb/overview",
+              "children": [
+                {
+                  "title": "Connect to Ignition",
+                  "path": "configuration/north-apps/sparkplugb/ignition"
+                },
+                {
+                  "title": "Connect to Cogent",
+                  "path": "configuration/north-apps/sparkplugb/cogent"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/north-apps/sparkplugb/faq"
+                }
+              ]
+            },
+            {
+              "title": "WebSocket Client",
+              "path": "configuration/north-apps/websocket/websocket"
+            }
+          ]
+        },
+        {
+          "title": "Subscribing the Groups",
+          "path": "configuration/subscription/subscription"
+        }
+      ]
+    },
+    {
+      "title": "Usage",
+      "path": "usage/usage",
+      "children": [
+        {
+          "title": "Administration",
+          "path": "usage/admin/admin",
+          "children": [
+            {
+              "title": "Change Password",
+              "path": "usage/admin/change-password"
+            },
+            {
+              "title": "Log Management",
+              "path": "usage/admin/log-management"
+            },
+            {
+              "title": "Data Statistics",
+              "path": "usage/dashboard/data-statistics"
+            }
+          ]
         },
         {
           "title": "Monitoring Data",
-          "path": "quick-start/monitoring"
-        },
-        {
-          "title": "Connect To MQTT",
-          "path": "quick-start/mqtt-config"
-        },
-        {
-          "title": "Data Processing",
-          "children": [
-            {
-              "title": "Data Cleansing",
-              "path": "data-processing-engine/data-cleansing"
-            },
-            {
-              "title": "Device Control",
-              "path": "data-processing-engine/device-control"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Use Cases",
-      "path": "use-cases/use_cases"
-    },
-    {
-      "title": "User Guide",
-      "children": [
-        {
-          "title": "Configure Tag",
-          "path": "user-guide/configuration"
-        },
-        {
-          "title": "Tag Import/Export",
-          "path": "user-guide/import-export"
+          "path": "usage/monitoring"
         },
         {
           "title": "Control Device",
-          "path": "user-guide/device-control"
-        },
-        {
-          "title": "Data Statistics",
-          "path": "user-guide/data-statistics"
+          "path": "usage/device-control"
         },
         {
           "title": "Offline Data Cache",
-          "path": "user-guide/offline-data-cache"
-        },
-        {
-          "title": "Log Management",
-          "path": "user-guide/log-management"
-        },
-        {
-          "title": "Change Password",
-          "path": "user-guide/change-password"
-        },
-        {
-          "title": "Plugin Module Management",
-          "path": "user-guide/plugin-modules-management"
-        }
-      ]
-    },
-    {
-      "title": "Southbound Drivers",
-      "children": [
-        {
-          "title": "Modbus RTU",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/modbus-rtu/modbus-rtu"
-            },
-            {
-              "title": "Connection to DTU",
-              "path": "south-devices/modbus-rtu/example/dtu/dtu-connection"
-            },
-            {
-              "title": "Connection to Modbus Slave Simulator",
-              "path": "south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
-            },
-            {
-              "title": "FAQ",
-              "path": "south-devices/modbus-rtu/faq/faq"
-            }
-          ]
-        },
-        {
-          "title": "Modbus TCP",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/modbus-tcp/modbus-tcp"
-            },
-            {
-              "title": "Connect to PeakHMI Slave Simulator",
-              "path": "south-devices/modbus-tcp/example/peakhmi/peakhmi"
-            },
-            {
-              "title": "Connect to Modbus Slave Simulator",
-              "path": "south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
-            },
-            {
-              "title": "FAQ",
-              "path": "south-devices/modbus-tcp/faq/faq"
-            }
-          ]
-        },
-        {
-          "title": "OPC UA",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/opc-ua/overview"
-            },
-            {
-              "title": "Connection policy",
-              "path": "south-devices/opc-ua/policy"
-            },
-            {
-              "title": "Connect to Siemens S7-1200",
-              "path": "south-devices/opc-ua/s71200"
-            },
-            {
-              "title": "Connect to KEPServerEX",
-              "path": "south-devices/opc-ua/kepserverex"
-            },
-            {
-              "title": "Connect to Industrial Gateway OPC Server",
-              "path": "south-devices/opc-ua/igs"
-            },
-            {
-              "title": "Connect to Ignition",
-              "path": "south-devices/opc-ua/ignition"
-            },
-            {
-              "title": "Connect to Prosys Simulation Server",
-              "path": "south-devices/opc-ua/prosys"
-            },
-            {
-              "title": "FAQ",
-              "path": "south-devices/opc-ua/faq"
-            }
-          ]
-        },
-        {
-          "title": "OPC DA",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/opc-da/overview"
-            },
-            {
-              "title": "NeuOPC install",
-              "path": "south-devices/opc-da/install"
-            },
-            {
-              "title": "NeuOPC remote access",
-              "path": "south-devices/opc-da/remote"
-            },
-            {
-              "title": "Connect to NeuOPC",
-              "path": "south-devices/opc-da/neuopc"
-            },
-            {
-              "title": "FAQ",
-              "path": "south-devices/opc-da/faq"
-            }
-          ]
-        },
-        {
-          "title": "EtherNet/IP(CIP)",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/ethernet-ip/ethernet-ip"
-            }
-          ]
-        },
-        {
-          "title": "Mitsubishi 3E",
-          "children": [
-            {
-              "title": "Introduction and Usage of Mitsubishi MELSEC QnA3E",
-              "path": "south-devices/mitsubishi-3e/mitsubishi-3e"
-            }
-          ]
-        },
-        {
-          "title": "Mitsubishi 1E",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/mitsubishi-1e/mitsubishi-1e"
-            }
-          ]
-        },
-        {
-          "title": "Siemens S7 ISOTCP",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/siemens-s7/s7"
-            },
-            {
-              "title": "Siemens S7-1200/1500 Settings",
-              "path": "south-devices/siemens-s7/plc/siemens-s7-1200-1500"
-            },
-            {
-              "title": "Connect to S7-1200 PLC",
-              "path": "south-devices/siemens-s7/example/s71200/s71200"
-            },
-            {
-              "title": "FAQ",
-              "path": "south-devices/siemens-s7/faq/faq"
-            }
-          ]
-        },
-        {
-          "title": "Siemens S5 FetchWrite",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/siemens-fetchwrite/fetchwrite"
-            }
-          ]
-        },
-        {
-          "title": "Omron FINS TCP",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/omron-fins-tcp/omron-fins-tcp"
-            },
-            {
-              "title": "Connect to Omron CP2E PLC",
-              "path": "south-devices/omron-fins-tcp/example/cp2e/cp2e"
-            },
-            {
-              "title": "FAQ",
-              "path": "south-devices/omron-fins-tcp/faq/faq"
-            }
-          ]
-        },
-        {
-          "title": "Beckhoff ADS",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/ads/ads"
-            },
-            {
-              "title": "Data acquisition using the Beckhoff ADS plugin",
-              "path": "south-devices/ads/plc-ads/ads"
-            }
-          ]
-        },
-        {
-          "title": "IEC60870-5-104",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/iec-104/iec-104"
-            },
-            {
-              "title": "Connect to IEC60870-5-104 Server Simulator",
-              "path": "south-devices/iec-104/example/server-simulator/simulator"
-            },
-            {
-              "title": "FAQ",
-              "path": "south-devices/iec-104/faq/faq"
-            }
-          ]
-        },
-        {
-          "title": "IEC61850",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/iec61850/overview"
-            },
-            {
-              "title": "Connect to LibIEC61850 server",
-              "path": "south-devices/iec61850/libiec61850"
-            },
-            {
-              "title": "FAQ",
-              "path": "south-devices/iec61850/faq"
-            }
-          ]
-        },
-        {
-          "title": "DL/T645-2007",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/dlt645-2007/dlt645-2007"
-            }
-          ]
-        },
-        {
-          "title": "BACnet/IP",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/bacnet-ip/bacnet-ip"
-            }
-          ]
-        },
-        {
-          "title": "KNXnet/IP",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/knxnet-ip/knxnet-ip"
-            }
-          ]
-        },
-        {
-          "title": "Fanuc Focas Ethernet",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/fanuc-focas/fanuc-focas"
-            }
-          ]
-        },
-        {
-          "title": "HJ212-2017",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/hj212-2017/hj212-2017"
-            }
-          ]
-        },
-        {
-          "title": "NON A11",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/nona11/nona11"
-            }
-          ]
-        },
-        {
-          "title": "ABB COMLI",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/comli/comli"
-            }
-          ]
-        },
-        {
-          "title": "File",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "south-devices/file/file"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Northbound Applications",
-      "children": [
-        {
-          "title": "eKuiper",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "north-apps/ekuiper/overview"
-            },
-            {
-              "title": "FAQ",
-              "path": "north-apps/ekuiper/faq"
-            }
-          ]
-        },
-        {
-          "title": "MQTT",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "north-apps/mqtt/overview"
-            },
-            {
-              "title": "API",
-              "path": "north-apps/mqtt/api"
-            },
-            {
-              "title": "FAQ",
-              "path": "north-apps/mqtt/faq"
-            }
-          ]
-        },
-        {
-          "title": "SparkPlugB",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "north-apps/sparkplugb/overview"
-            },
-            {
-              "title": "Connect to Ignition",
-              "path": "north-apps/sparkplugb/ignition"
-            },
-            {
-              "title": "Connect to Cogent",
-              "path": "north-apps/sparkplugb/cogent"
-            },
-            {
-              "title": "FAQ",
-              "path": "north-apps/sparkplugb/faq"
-            }
-          ]
-        },
-        {
-          "title": "WebSocket",
-          "children": [
-            {
-              "title": "Overview",
-              "path": "north-apps/websocket/websocket"
-            }
-          ]
+          "path": "usage/offline-data-cache"
         }
       ]
     },
     {
       "title": "Data Streaming",
+      "path": "data-streaming/data-streaming",
       "children": [
         {
-          "title": "Prerequisite Setup",
-          "path": "data-processing-engine/prerequisite-setup"
-        },
-        {
           "title": "Data Cleansing",
-          "path": "data-processing-engine/data-cleansing"
+          "path": "data-streaming/data-cleansing/data-cleansing"
         },
         {
           "title": "Control Device",
-          "path": "data-processing-engine/device-control"
+          "path": "data-streaming/device-control/device-control"
         }
       ]
     },
     {
-      "title": "Best practices",
-      "children": [
-        {
-          "title": "Neuron + eKuiper cooperation",
-          "path": "best-practices/ekuiper"
-        },
-        {
-          "title": "NeuronEX + InfluxDB",
-          "path": "best-practices/influxdb"
-        }
-      ]
+      "title": "Use Case",
+      "path": "use-cases/use-cases"
     },
     {
       "title": "HTTP API",
+      "path": "http-api/http-api",
       "children": [
         {
           "title": "Customize JWT",
@@ -1161,75 +1069,22 @@
       "path": "integration/integration"
     },
     {
-      "title": "Architecture design",
+      "title": "Development Guide",
+      "path": "dev-guide/dev-guide",
       "children": [
         {
-          "title": "Architecture",
-          "path": "architecture/architecture"
-        },
-        {
-          "title": "Key concepts",
-          "path": "architecture/concepts"
-        }
-      ]
-    },
-    {
-      "title": "Project",
-      "children": [
-        {
-          "title": "Learn to compile",
-          "path": "project/compile"
-        },
-        {
-          "title": "Start development",
-          "path": "project/development"
-        },
-        {
-          "title": "Coding specification",
-          "path": "project/specification"
-        },
-        {
-          "title": "Modify document",
-          "path": "project/document"
-        },
-        {
-          "title": "SDK tutorial",
+          "title": "SDK Tutorial",
+          "path": "dev-guide/sdk-tutorial/sdk-tutorial",
           "children": [
             {
-              "title": "SDK-based driver development",
-              "path": "project/sdk/sdk_based-driver-development"
+              "title": "Modbus Plugin Example",
+              "path": "dev-guide/sdk-tutorial/sdk-example/modbus-example"
             },
             {
-              "title": "Modbus plugin development example",
-              "path": "project/sdk/modbus_example"
-            },
-            {
-              "title": "MQTT Application development example",
-              "path": "project/sdk/mqtt_example"
-            },
-            {
-              "title": "Southbound development mind map",
-              "path": "project/sdk/mind_mapping"
+              "title": "MQTT Application Example",
+              "path": "dev-guide/sdk-tutorial/sdk-example/mqtt-example"
             }
           ]
-        },
-        {
-          "title": "Protocol introduction",
-          "children": [
-            {
-              "title": "Modbus TCP",
-              "path": "project/protocol/modbus_tcp"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "F&Q",
-      "children": [
-        {
-          "title": "Frequently asked questions and troubleshooting",
-          "path": "fq/fq"
         }
       ]
     },
@@ -1237,8 +1092,17 @@
       "title": "Appendix",
       "children": [
         {
-          "title": "Data type description",
+          "title": "Data Type Description",
           "path": "appendix/data-type"
+        },
+        {
+          "title": "Industrial Protocol Introduction",
+          "children": [
+            {
+              "title": "Modbus TCP",
+              "path": "appendix/protocol/modbus_tcp"
+            }
+          ]
         }
       ]
     }

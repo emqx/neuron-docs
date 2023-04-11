@@ -2,76 +2,52 @@
 
 ## What is Neuron?
 
-Neuron provides extensive and diverse driver support for various industries. It can simultaneously connect to devices with multiple different driver protocols for data acquisition and control, enabling interconnection between industrial IoT platforms and various devices, and ultimately providing data support for data-centric automation and intelligent manufacturing.
+Neuron is a modern industrial IoT connectivity server that simultaneously communicates with many diverse industrial devices through the standard or its own dedicated protocols, realizing the multiple device connections to the Industrial IoT platform.
 
-Neuron is a lightweight industrial protocol gateway software based on the LGPL license open source, which can add new driver or application support to Neuron through extension plugins. Its aim is to solve the problem of difficult unified access to device data in the context of Industry 4.0.
+Neuron is a very lightweight industrial software running all kinds of limited resource IoT edge hardware. It aims to solve the problem of difficult unified access to device data for data-centric automation, providing foundational support for the intelligent manufacturing.
 
-### What is NeuronEX?
+## What is NeuronEX?
 
-NeuronEX is a version of the Neuron integrated data stream processing engine eKuiper. With the NeuronEX UI, it is easy to create data streams and perform other stream processing operations.
+NeuronEX is another distribution version that implements the data streaming processing at the edge side by integrating the eKuiper rule-based engine.
 
-## Product Functions and Features
+![subscriptions-add](introduction/assets/neuronex.png)
 
-### Diversified Connectivity
+NeuronEX is designed to be a complete edge server that can fully exploit data stream processing and data acquisition together as a whole for edge computing.
 
-Neuron provides diversified driver protocol support for various industries, including building automation, CNC machines, Robotics, Electricity, various PLCs, and even intelligent sensors, such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi, and more.</br>
-Neuron supports applications that connect to various cloud or IIoT platforms, such as MQTT, WebSocket, SparkPlug B, and other custom applications.</br>
-With MQTT, IIoT platforms, big data, and AI/ML analysis software can be better integrated into private clouds, EMQX Cloud, AWS, Google Cloud, Azure, or local servers.</br>
-Through SparkPlug B, unified data operations will be provided for industrial applications, eliminating the complexity of ERP, MES, SCADA, and historian accessing device data.
+The advantages of NeuronEX instead of Neuron + eKuiper
+* A direct data channel will be established instead of using middleware to transmit data indirectly.
+* A single WebUI allows users to operate both Neuron and eKuiper without changing the operation screen.
+* A single installation package is provided for both Neuron and eKuiper installation and configuration.
+* A NeuronEX docker image with both Neuron and eKuiper installed is provided by just a single image pull.
 
-### Lightweight
+## Edge Native
 
-Neuron is developed entirely in C language and supports running on devices with hardware architectures such as X86, ARM, MIPS, RISC-V, as well as containerized deployments such as K8s, KubeEdge, and more. Neuron can achieve data acquisition at the level of 100 milliseconds or even 10 milliseconds on devices with limited hardware resources, and on servers with sufficient hardware resources, Neuron can fully utilize multi-core CPUs to simultaneously collect data from hundreds of thousands of data points at a frequency of 100 milliseconds and perform point writing control.
+Neuron is a real-time asynchronous processing server that delivers a response time as low as 100 milliseconds, taking full advantage of the low-latency network approach at the edge. 
 
-### Stream Processing
+## Diverse Connectivity
 
-NeuronEX integrates the stream SQL processing rule engine eKuiper, which enables edge-side AI/ML analysis and control logic on the collected industrial data. It can also store the filtered industrial data in local time-series databases or quickly implement rule-based device control.
+Neuron offers many diverse pluggable modules such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi, and more. These modules are widely used in building automation, CNC machines, Robotics, Electricity, and various PLCs communication.
 
-### Web-based Dashboard
+## Large-scale Concurrency
 
-Neuron provides users with a simple and easy-to-use web-based user interface that allows users to manage device connections, view real-time device data, and perform control operations on devices through a browser on any device. Users can also monitor devices in real-time to check whether devices are online and whether data points are abnormal.
+Neuron can simultaneously make unlimited connections to diverse industrial devices. This benefits from decoupled modular architecture design to run each connection individually. The practical number of concurrent connections depend on the allocated processing resources.
 
-### Multi-source Aggregation
+## Portable Deployment
 
-Neuron can simultaneously establish 1,000 or more connections with various industrial devices. It collects all the data from these connections and forwards it to the specified MQTT message broker based on user-defined configurations. In other words, by specifying an MQTT broker, Neuron provides a single entry point for data consumers to access all information, simplifying the process for IIoT platforms or industrial applications to retrieve data from various sources, such as a unified namespace architecture.
+Neuron has very low memory footprints, less than 7M at startup, suitable for running on low-profile architecture devices like x86, ARM, RISC-V, and so on. It also supports docker-like containerized deployment, running with other co-located containers in K8s environments.
 
-### API Services
+## Better Integration
 
-Neuron provides HTTP-API and MQTT-API services, allowing users to operate Neuron and industrial devices remotely. This enables cloud and local IIoT platforms to send commands to connected machines/devices, change their parameter settings based on big data analysis results, or modify data label configurations to adapt to more machines/devices, without the need for on-site operations.
+Neuron has seamless integration with industrial IoT applications, big data, and AI/ML analytic software into the platforms like private cloud, EMQX Cloud, AWS, Microsoft Azure, or on-premises servers via API and MQTT connection.
 
-### Data Security
+## Unified DataOps
 
-Neuron supports TLS/SSL encrypted data to ensure data security during transmission.
+Neuron assists the legacy industrial devices to deliver data messages in an asynchronous way as the edge node specified in Sparkplug B standard. Sparkplug B is an open, unified, interoperable standard for industrial data exchange between industrial information systems like ERP, MES, SCADA and historian via an MQTT broker.
 
-### Device Monitoring
+## Authentication and Security
 
-Neuron provides monitoring API that conform to the Prometheus specification, which can provide real-time monitoring data on device connection and operation status. Neuron can also be integrated into the Prometheus monitoring system, and alert notifications can be promptly sent when devices experience exceptions based on predefined alert rules.
+Neuron supports TLS and HTTPS encryption for API services to ensure the data security in transmission and use JWT authentication mechanism to verify the data owner.
 
-### Driver Applications Modularization
+## Streaming Process Engine (NeuronEX only)
 
-Neuron is designed to facilitate the extension of southbound drivers and northbound applications. Based on the core framework of Neuron, users can easily customize and develop southbound and northbound plugins according to their needs.
-
-### Data Tags Optimization
-
-Neuron automatically optimizes the read and write of configured data points to improve data transmission and efficiency. This tag adjustment and reduction mechanism can reduce the workload on networks and devices.
-
-## Product Value
-
-In fields such as industrial automation, IoT, and energy management, large amounts of data need to be collected, processed, and analyzed. However, different devices use different communication protocols, making it difficult to implement functions such as data collection, monitoring, and control. To solve this problem, Neuron can connect to multiple devices using different protocols, collect data from multiple devices in real-time, and upload data to the cloud in real-time. Neuron realizes the interconnection between the industrial IoT platform and various devices.
-
-In addition to real-time data collection, monitoring, and device control, Neuron combined with the data stream processing engine eKuiper can also perform data processing, analysis, and storage. Neuron has the following advantages:
-
-### Solution
-Neuron is an industrial IoT connection solution that can meet the requirements of multiple data collection and operation use cases for both discrete and process manufacturers.
-
-### Improve Data Processing Efficiency
-
-In industrial data collection, different devices use different communication protocols, so protocol conversion is often required during data collection. Neuron can collect data from devices using different protocols and upload the data to various cloud or IIoT platform applications via MQTT. The use of Neuron eliminates the tedious operations during data collection and processing, improving data processing efficiency and accuracy.
-
-### Reduce System Integration Complexity
-
-In fields such as industrial automation, multiple devices and systems need to be integrated to achieve functions such as data collection, monitoring, and control. Due to different devices and systems using different communication protocols, complex protocol conversion is often required during system integration. Neuron can run on different hardware architectures such as X86 and ARM and can achieve data collection at the level of 100 milliseconds or even 10 milliseconds on limited hardware resources. The use of Neuron reduces the cost and difficulty of system integration, improving the efficiency and reliability of system integration.
-
-### Data Storage
-
-Combined with the use of the data stream processing engine eKuiper, Neuron can store data in the InfluxDB database. The data can be used for analysis and processing.
+NeuronEX includes eKuiper rule-based processing engine to implement AI/ML analytics, data filtration, data manipulation, device control, and data persistence in time-series database via streaming SQL statements at the edge side.
