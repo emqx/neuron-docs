@@ -650,6 +650,7 @@
       "children": [
         {
           "title": "Installing Neuron",
+          "path": "installation/neuron/neuron",
           "children": [
             {
               "title": "Ubuntu/Debian",
@@ -675,6 +676,7 @@
         },
         {
           "title": "Installing NeuronEX",
+          "path": "installation/neuronex/neuronex",
           "children": [
             {
               "title": "Ubuntu/Debian",

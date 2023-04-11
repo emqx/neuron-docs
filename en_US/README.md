@@ -10,7 +10,7 @@ Neuron is a very lightweight industrial software running all kinds of limited re
 
 NeuronEX is another distribution version that implements the data streaming processing at the edge side by integrating the eKuiper rule-based engine.
 
-![subscriptions-add](introduction/assets/neuronex.png)
+![NeuronEX](./introduction/assets/neuronex.png)
 
 NeuronEX is designed to be a complete edge server that can fully exploit data stream processing and data acquisition together as a whole for edge computing.
 

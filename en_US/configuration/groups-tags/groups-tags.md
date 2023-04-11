@@ -9,7 +9,9 @@ Click the new device node to enter the group list management interface, and clic
 * Name: fill in the name of the Group, such as group-1.
 * Interval: the frequency of collection and reporting of this group of tags, in milliseconds, 100 means that the whole group of points is collected every 100 ms, and the value of the whole group of points is reported once.
 
-Note: Interval is a time interval which is used to collect data from equipment and report the data to MQTT. The minimum setting can be 100ms, but when there are a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, the value of interval can be appropriately increased.
+:::tip
+Interval is a time interval which is used to collect data from equipment and report the data to MQTT. The minimum setting can be 100ms, but when there are a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, the value of interval can be appropriately increased.
+:::
 
 
 ## Step 2, Add Tags To The Group

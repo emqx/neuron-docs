@@ -1,4 +1,4 @@
-# Apply For And Install License
+# Installing and Activating License
 
 Neuron is an open source project. We encourage our community to develop their own pluggable modules.
 

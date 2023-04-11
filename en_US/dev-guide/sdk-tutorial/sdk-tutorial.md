@@ -1,4 +1,4 @@
-# SDK-based driver development
+# SDK-based Driver Development
 
 This article mainly introduces how to develop a new driver plugin based on the SDK package and apply it to Neuron.
 

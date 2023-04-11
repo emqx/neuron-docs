@@ -5,6 +5,7 @@ This chapter introduces the usage of Neuron after configuration.
 ## Navigating the Dashboard
 
 ### Menu Bar
+
 Monitoring - This is data monitoring screen.
 
 * [Data Monitoring](./monitoring.md)
@@ -25,13 +26,17 @@ Administration - This menu gives you access to a variety of functions, including
 * [Administration](./admin/admin.md)
 
 ### Header Bar
+
 The header bar gives you access to various statistic in terms of message inbound and outbound figures.
 
 * [Performance Statistics](./dashboard/data-statistics.md)
 
-Note: Parameters marked with `*` are required, and each parameter is followed by a field description key. Hover the mouse over it to explain the field in detail.
+:::tip
+Parameters marked with `*` are required, and each parameter is followed by a field description key. Hover the mouse over it to explain the field in detail.
+:::
 
 ## Configuring the Delivery Message Streams
+
 There are two message streams when configuring data delivery plugins such as MQTT client.
 * data message stream (Telemetry)
 * status message stream (Heartbeat)
@@ -43,12 +48,15 @@ Offline data cache is another important feature to prevent the data loss when ne
 * [Offline Data Cache](./offline-data-cache.md)
 
 ### Telemetry
+
 Telemetry is the time series metric data stream publishing to the predefined destination like cloud platform or on-premise application. For each group defined in configuration process, it will create an telemetry message to destination application.
 
 ### Heartbeat
+
 Heartbeat is the time series states of both devices and Neuron instance itself. It contains the device status and alarms, running mode, communication link status, etc. Moreover, if the platform or application can't receive this message stream for a certain time (10 seconds or above), those connections to devices from the Neuron can be regarded as broken.
 
 ## Delivering the Control Command to Devices
+
 Neuron offer the southbound node command and control capability. This southbound control and command enables the issuance of commands or actions to devices on behalf of:
 
 * other northbound nodes within same instance (for example, an edge analytics or rules engine service)
@@ -61,5 +69,7 @@ There are three ways to deliver command to a device.
 * any external system like cloud-based platform can publish the command to specific topic where the command would be sent to Neuron and then to the device.
 
 * [Control Device](./device-control.md)
-Note: The write attribute must be activated when configuring the tags details. Otherwise, there is no way to control the device.
 
+:::tip
+The write attribute must be activated when configuring the tags details. Otherwise, there is no way to control the device.
+:::

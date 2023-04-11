@@ -1,4 +1,4 @@
-# Data statistics
+# Performance Statistics
 
 Neuron supports the north-south node data statistics function based on Prometheus data model, which is used to monitor the running state of nodes. The basic principle of Prometheus is to periodically capture the status of monitored components through HTTP protocol. Any component can access monitoring by providing the corresponding HTTP interface. Neuron provides the corresponding interface and can successfully access Prometheus for monitoring.
 
