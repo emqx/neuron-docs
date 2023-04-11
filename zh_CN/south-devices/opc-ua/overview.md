@@ -29,6 +29,24 @@ Neuron OPC UA 插件可作为客户端访问 KEPServerEX、Industrial Gateway OP
 * BOOL
 * STRING
 
+### 数据类型转换
+
+| OPC UA 数据类型 | Neuron 数据类型 |
+| --------------- | --------------- |
+| SByte           | INT8            |
+| Int16           | INT16           |
+| Int32           | INT32           |
+| Int64           | INT64           |
+| Byte            | UINT8           |
+| UInt16          | UINT16          |
+| UInt32          | UINT32          |
+| UInt64          | UINT64          |
+| Float           | FLOAT           |
+| Double          | DOUBLE          |
+| Boolean         | BOOL            |
+| String          | STRING          |
+| Datetime        | UINT32          |
+
 ## 地址格式
 
 > NS!NODEID</span>
@@ -44,7 +62,7 @@ Neuron OPC UA 插件可作为客户端访问 KEPServerEX、Industrial Gateway OP
 | 0!2258                 | UINT32   | 使用数字类型的 NODEID，获取 OPC UA 服务器的时间戳；NS 为0，NODEID 为2258 |
 | 2!Device1.Module1.Tag1 | INT8     | 使用字符串类型的 NODEID，获取类型为 SBYTE 的数据点；NS 为2，NODEID 为 Device1.Module1.Tag1 |
 
-可以使用 UaExpert 软件协助查看所需点位的名字空间索引和节点 ID 信息。
+可以使用 UaExpert 软件协助查看所需点位的名字空间索引和节点 ID 信息，参考 [UaExpert 使用方法](./uaexpert.md)。
 
 :::tip
 关于命名空间索引和节点 ID 的解释，请参考 OPC UA 标准。
