@@ -969,8 +969,8 @@
       "path": "usage/usage",
       "children": [
         {
-          "title": "Navigating Dashboard",
-          "path": "usage/dashboard/dashboard",
+          "title": "Administration",
+          "path": "usage/admin/admin",
           "children": [
             {
               "title": "Change Password",

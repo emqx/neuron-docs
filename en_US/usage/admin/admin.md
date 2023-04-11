@@ -1,6 +1,6 @@
 # Navigating the Dashboard
 
-## Login Neuron
+## Login
 
 Open a Web browser and enter the address and port number of the gateway running Neuron to enter the management console dasboard. The default port number is 7000.
 
@@ -20,24 +20,9 @@ $ systemctl status neuron
 ```
 :::
 
-
-## Main Screen
-
-* [Log Management](../usage/admin/log-management.md)。
-* [Change Password](../usage/admin/change-password.md)。
-* [Data Statistics](../usage/dashboard/data-statistics.md)。
-
-Parameters marked with `*` are required, and each parameter is followed by a field description key. Hover the mouse over it to explain the field in detail.
-
-
-## Message Stream Delivery
-
-When the tag attribute is set to Subscribe, the changed value will be uploaded to the cloud only when the collected value changes.
-
-
-## Device Control
-
-* [Control Device](../user-guide/device-control.md)：You can operate the device tag with write attribute through the Neuron/northbound application.
+## Administration
+* [Log Management](./admin/log-management.md)。
+* [Change Password](./admin/change-password.md)。
 
 
 
