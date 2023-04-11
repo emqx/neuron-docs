@@ -104,7 +104,7 @@ Manually create a tag for a group:
 * Name: fill in the tag name, for example, tag1.
 * Attribute: drop-down selection tag's attribute, for example, read, write.
 * Type: drop-down selection data type, for example, int16.
-* Address: fill in the drive address, for example, 1!40001. 1 stands for the tag salve id that setted in Modbus simulator, and 40001 stands for the tag register address. Please refer to [Module Setting](../module-plugins/module-driver.md) for detailed instructions on driving address.
+* Address: fill in the drive address, for example, 1!40001. 1 stands for the tag salve id that setted in Modbus simulator, and 40001 stands for the tag register address. Please refer to [Module Setting](../configuration/south-devices/south-devices.md) for detailed instructions on driving address.
 * Click the `Create` icon to complete the creation of the tag;
 
 :::tip
