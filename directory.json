@@ -607,10 +607,6 @@
       "path": "./",
       "children": [
         {
-          "title": "Application Scenarios",
-          "path": "introduction/application/application"
-        },
-        {
           "title": "Architecture",
           "path": "introduction/architecture/architecture"
         },
@@ -1013,6 +1009,10 @@
           "path": "data-streaming/device-control/device-control"
         }
       ]
+    },
+    {
+      "title": "Use Case",
+      "path": "use-cases/use_cases"
     },
     {
       "title": "HTTP API",

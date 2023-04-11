@@ -126,7 +126,7 @@ Below is an example write command:
 
 ## Examples
 
-See the [Data Streaming](../../data-processing-engine/prerequisite-setup.md) chapter.
+See the [Data Streaming](../../../data-streaming/data-streaming.md) chapter.
 Also there is an eKuiper tutorial [Stream processing of data collected by Neuron using eKuiper]
 
 [eKuiper]: https://ekuiper.org

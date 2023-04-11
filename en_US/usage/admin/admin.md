@@ -21,8 +21,8 @@ $ systemctl status neuron
 :::
 
 ## Administration
-* [Log Management](./admin/log-management.md)。
-* [Change Password](./admin/change-password.md)。
+* [Log Management](./log-management.md)。
+* [Change Password](./change-password.md)。
 
 
 

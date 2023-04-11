@@ -4,7 +4,7 @@ This chapter will guide users to quickly start using Neuron to collect data simu
 
 ## Install Neuron
 
-Neuron provides a variety of installation methods, and users can view the detailed installation methods in [Installation](./installation.md). This example adopts containerized deployment mode, so as to start experiencing Neuron as soon as possible.
+Neuron provides a variety of installation methods, and users can view the detailed installation methods in [Installation](../installation/installation.md). This example adopts containerized deployment mode, so as to start experiencing Neuron as soon as possible.
 
 Get Docker image
 
@@ -70,7 +70,7 @@ Click the `Device Configuration` button on the southbound device card to enter t
 * Click `Submit` to complete the equipment configuration, and the equipment card will automatically enter the working state of **Running**;
 
 :::tip
-The configuration parameters required by each device are different. Please refer to [Module Setting](../module-plugins/module-driver.md) for detailed description of southbound device parameters.
+The configuration parameters required by each device are different. Please refer to [Configuration](../configuration/south-devices/south-devices.md) for detailed description of southbound device parameters.
 
 :::
 
