@@ -642,7 +642,7 @@
     },
     {
       "title": "Quick Start",
-      "path": "quick-start/quick-start"
+      "path": "quick-start/installation"
     },
     {
       "title": "Installation and Licensing",
@@ -1034,7 +1034,7 @@
     },
     {
       "title": "Use Case",
-      "path": "use-cases/use-cases"
+      "path": "use-cases/use_cases"
     },
     {
       "title": "HTTP API",
