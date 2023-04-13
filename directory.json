@@ -972,7 +972,13 @@
             },
             {
               "title": "WebSocket Client",
-              "path": "configuration/north-apps/websocket/websocket"
+              "path": "configuration/north-apps/websocket/websocket",
+              "children": [
+                  {
+                    "title": "Data upload using the WebSocket plugin",
+                    "path": "configuration/north-apps/websocket/example"
+                  }
+              ]
             }
           ]
         },
