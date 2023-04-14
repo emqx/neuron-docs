@@ -351,6 +351,10 @@
             {
               "title": "概览",
               "path": "south-devices/bacnet-ip/bacnet-ip"
+            },
+            {
+              "title": "连接 Yabe 示例",
+              "path": "south-devices/bacnet-ip/example/yabe/yabe"
             }
           ]
         },
@@ -697,7 +701,7 @@
             {
               "title": "Source",
               "path": "installation/neuronex/compile"
-           }
+            }
           ]
         },
         {
@@ -886,7 +890,13 @@
             },
             {
               "title": "BACnet/IP",
-              "path": "configuration/south-devices/bacnet-ip/bacnet-ip"
+              "path": "configuration/south-devices/bacnet-ip/bacnet-ip",
+              "children": [
+                {
+                  "title": "Yabe Example",
+                  "path": "configuration/south-devices/bacnet-ip/example/yabe/yabe"
+                }
+              ]
             },
             {
               "title": "KNXnet/IP",
