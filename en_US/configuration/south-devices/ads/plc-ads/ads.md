@@ -314,7 +314,7 @@ After a successful write, we could check that variable values do update in TwinC
   </figcaption>
 </figure>
 
-[the installation instruction]: ../../../quick-start/installation.md
+[the installation instruction]: ../../../../installation/installation.md
 [Beckhoff TwinCAT website]: https://www.beckhoff.com/en-us/products/automation/twincat
 [Beckhoff index group/offset page]: https://infosys.beckhoff.com/english.php?content=../content/1033/tcadscommon/12495369867.html
 [Bechhoff data types]: https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_plc_intro/2529399691.html

@@ -850,7 +850,13 @@
             },
             {
               "title": "Beckhoff ADS",
-              "path": "configuration/south-devices/ads/ads"
+              "path": "configuration/south-devices/ads/ads",
+              "children": [
+                  {
+                    "title": "Data acquisition using the Beckhoff ADS plugin",
+                    "path": "configuration/south-devices/ads/plc-ads/ads"
+                  }
+              ]
             },
             {
               "title": "IEC60870-5-104",
