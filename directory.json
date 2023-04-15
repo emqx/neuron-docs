@@ -862,7 +862,13 @@
             },
             {
               "title": "Beckhoff ADS",
-              "path": "configuration/south-devices/ads/ads"
+              "path": "configuration/south-devices/ads/ads",
+              "children": [
+                  {
+                    "title": "Data acquisition using the Beckhoff ADS plugin",
+                    "path": "configuration/south-devices/ads/plc-ads/ads"
+                  }
+              ]
             },
             {
               "title": "IEC60870-5-104",
@@ -996,7 +1002,13 @@
             },
             {
               "title": "WebSocket Client",
-              "path": "configuration/north-apps/websocket/websocket"
+              "path": "configuration/north-apps/websocket/websocket",
+              "children": [
+                  {
+                    "title": "Data upload using the WebSocket plugin",
+                    "path": "configuration/north-apps/websocket/example"
+                  }
+              ]
             }
           ]
         },
