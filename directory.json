@@ -165,6 +165,10 @@
               "path": "south-devices/opc-ua/policy"
             },
             {
+              "title": "UaExpert 使用方法",
+              "path": "south-devices/opc-ua/uaexpert"
+            },
+            {
               "title": "连接 Siemens S7-1200",
               "path": "south-devices/opc-ua/s71200"
             },
