@@ -346,6 +346,10 @@
             {
               "title": "概览",
               "path": "south-devices/dlt645-2007/dlt645-2007"
+            },
+            {
+              "title": "连接正泰单相导轨表",
+              "path": "south-devices/dlt645-2007/example/connect"
             }
           ]
         },
@@ -701,7 +705,7 @@
             {
               "title": "Source",
               "path": "installation/neuronex/compile"
-           }
+            }
           ]
         },
         {
@@ -886,7 +890,13 @@
             },
             {
               "title": "DL/T645-2007",
-              "path": "configuration/south-devices/dlt645-2007/dlt645-2007"
+              "path": "configuration/south-devices/dlt645-2007/dlt645-2007",
+              "children": [
+                {
+                  "title": "Connect to Chint Single-phase Rail Meter",
+                  "path": "configuration/south-devices/dlt645-2007/example/connect"
+                }
+              ]
             },
             {
               "title": "BACnet/IP",

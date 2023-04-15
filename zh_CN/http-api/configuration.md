@@ -118,7 +118,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     //node name
     "name": "modbus-tcp-node",
     //plugin name
-    "plugin": "modbus-plugin-tcp"
+    "plugin": "Modbus TCP"
 }
 ```
 
@@ -150,8 +150,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-     //node name
-    "name": "modbus-tcp-test"
+    //node name
+    "name": "modbus-tcp-node"
 }
 ```
 
@@ -227,11 +227,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //node name
             "name": "sample-driver-adapter",
             //plugin name
-            "plugin": "modbus-tcp"
+            "plugin": "Modbus TCP"
         },
         {
             "name": "modbus-tcp-adapter",
-            "plugin": "modbus-tcp"
+            "plugin": "Modbus TCP"
         }
     ]
 }
@@ -372,27 +372,22 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    //running state
-    "running": 2,
-    //link state
-    "link": 1,
-    //average round trip time communicating with devices
-    "average_rtt": 100
-}
-
-{
     "states": [
         {
+            // node name
             "node": "modbus-node1",
+            //running state
             "running": 2,
+            //link state
             "link": 1,
-            "average_rtt": 100
+            //average round trip time communicating with devices
+            "rtt": 100
         },
         {
             "node": "modbus-node2",
             "running": 1,
             "link": 0,
-            "average_rtt": 9999
+            "rtt": 9999
         }
     ]
 }
@@ -550,33 +545,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ````
 
-```json
-{
-    "groups": [
-        {
-            //node name
-            "driver": "modbus",
-            //group name
-            "group": "group1",
-            "tag_count": 1,
-            "interval": 1000
-        },
-        {
-            "driver": "modbus",
-            "group": "group2",
-            "tag_count": 0,
-            "interval": 100
-        },
-        {
-            "driver": "modbus1",
-            "group": "group",
-            "tag_count": 0,
-            "interval": 10001
-        }
-    ]
-}
-```
-
 ## 添加 Tag
 
 *POST*  /api/v2/tags
@@ -613,31 +581,38 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
            //tag address
             "address": "1!400001",
            //tag attribute
-            "attribute": 1,
+            "attribute": 8,
            //tag type
             "type": 4,
-           //floag precision, optional(0-17)
-            "precision": 3,
-           //decimal, optional
-            "decimal": 0.1
+           //optional, float/double precision, optional(0-17)
+            "precision": 0,
+           //optional, decimal
+            "decimal": 0,
+           //optional, description
+           "description": "",
+           //optional, when the attribute is static,the value field needs to be added.
+           "value": 12
         },
         {
             "name": "tag2",
             "address": "1!00001",
             "attribute": 3,
-            "type": 14
+            "type": 3,
+            "decimal": 0.01
         },
         {
             "name": "tag3",
             "address": "1!400009",
             "attribute": 3,
-            "type": 11
+            "type": 9,
+            "precision": 3
         },
         {
             "name": "static_tag",
             "address": "",
             "attribute": 10,
             "type": 1,
+            "description": "It is a static tag",
             "value": 42
         }
     ]
@@ -688,23 +663,33 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //tag address
             "address": "1!400001",
             //tag attribute
-            "attribute": 1,
+            "attribute": 8,
+            //description
+            "description": "",
             //float/double precision
-             "precison": 1,
+            "precison": 0,
             //decimal
-             "decimal": 0
+            "decimal": 0,
+            //optional, when the attribute is static
+            "value": 12
         },
         {
             "name": "tag2",
             "type": 14,
             "address": "1!00001",
-            "attribute": 3
+            "attribute": 3,
+            "description": "",
+            "precison": 0,
+            "decimal": 0,
         },
         {
             "name": "tag3",
             "type": 11,
             "address": "1!400009",
-            "attribute": 3
+            "attribute": 3,
+            "description": "",
+            "precison": 0,
+            "decimal": 0,
         }
     ]
 }
@@ -737,7 +722,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-     //node name
+    //node name
     "node": "modbus-tcp-test",
     //group name
     "group": "group1",
@@ -746,27 +731,37 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //tag name
             "name": "tag1",
             //tag type
-            "type": 6,
+            "type": 8,
             //tag attribute
             "attribute": 0,
             //tag address
             "address": "1!400001",
+            //description
+            "description":"",
             //float/double precision
-            "precison": 1,
+            "precison": 0,
             //decimal
-            "decimal": 1
+            "decimal": 0,
+            //when the attribute is static,the value field needs to be added.
+            "value": 12
         },
         {
             "name": "tag2",
             "type": 6,
             "attribute": 0,
-            "address": "1!400002"
+            "address": "1!400002",
+            "description":"",
+            "precison": 0,
+            "decimal": 0,
         },
         {
             "name": "static_tag",
             "address": "",
             "attribute": 10,
             "type": 1,
+            "description":"",
+            "precison": 0,
+            "decimal": 0,
             "value": 42
         }
     ]
@@ -777,7 +772,8 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
-    "error": 0
+    "error": 0,
+    "index": 1
 }
 ```
 
@@ -914,11 +910,21 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //node type
             "node_type": 1,
             //plugin name
-            "name": "plugin_name",
+            "name": "Modbus TCP",
             //plugin library name
-            "library": "plugin_lib_name",
+            "library": "libplugin-modbus-tcp.so",
             "description": "description",
-            "description_zh": "描述"
+            "description_zh": "描述",
+            "schema": "modbus-tcp"
+        },
+        {
+            "kind": 1,
+            "node_type": 2,
+            "name": "MQTT",
+            "library": "libplugin-mqtt.so",
+            "description": "Neuron northbound MQTT plugin bases on NanoSDK.",
+            "description_zh": "基于 NanoSDK 的 Neuron 北向应用 MQTT 插件",
+            "schema": "mqtt"
         }
     ]
 }
@@ -930,7 +936,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求参数
 
-**plugin_name**  必需
+**schema_name**  必需
 
 ### 请求头部
 
@@ -944,85 +950,121 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ```json
 {
- "tag_type": [
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  14
- ],
- "params": [
-  "host",
-  "port",
-  "mode",
-  "baud_rate",
-  "real_param"
- ],
- "host": {
-  "name": "host",
-  "description": "host",
-  "type": "string",
-  "default": "127.0.0.1",
-  "valid": {
-   "length": 30
-  }
- },
- "port": {
-  "name": "port",
-  "description": "port",
-  "type": "int",
-  "default": 502,
-  "valid": {
-   "min": 1024,
-   "max": 65535
-  }
- },
- "mode": {
-  "name": "mode",
-  "description": "mode",
-  "type": "bool",
-  "default": false,
-  "valid": {}
- },
- "baud_rate": {
-  "name": "baud rate",
-  "description": "port",
-  "type": "int",
-  "default": 9600,
-  "valid": {
-   "value": [
-    9600,
-    112800
-   ]
-  }
- },
- "real_param": {
-  "name": "real param",
-  "description": "real",
-  "type": "real",
-  "default": 11.22,
-  "valid": {
-   "min": 1.1,
-   "max": 20.2
-  }
- },
- "ca": {
-  "name": "ca",
-  "description": "",
-  "attribute": "optional",
-  "type": "file",
-  "condition": {
-   "field": "mode",
-   "value": true
-  },
-  "valid": {
-   "length": 1024
-  }
- }
+    "tag_regex": [
+        {
+            "type": 3,
+            "regex": "^[0-9]+![3-4][0-9]+(#B|#L|)$"
+        },
+        {
+            "type": 4,
+            "regex": "^[0-9]+![3-4][0-9]+(#B|#L|)$"
+        },
+        {
+            "type": 5,
+            "regex": "^[0-9]+![3-4][0-9]+(#BB|#BL|#LL|#LB|)$"
+        },
+        {
+            "type": 6,
+            "regex": "^[0-9]+![3-4][0-9]+(#BB|#BL|#LL|#LB|)$"
+        },
+        {
+            "type": 7,
+            "regex": "^[0-9]+![3-4][0-9]+(#B|#L|)$"
+        },
+        {
+            "type": 8,
+            "regex": "^[0-9]+![3-4][0-9]+(#B|#L|)$"
+        },
+        {
+            "type": 9,
+            "regex": "^[0-9]+![3-4][0-9]+(#BB|#BL|#LL|#LB|)$"
+        },
+        {
+            "type": 10,
+            "regex": "^[0-9]+![3-4][0-9]+(#B|#L|)$"
+        },
+        {
+            "type": 11,
+            "regex": "^[0-9]+!([0-1][0-9]+|[3-4][0-9]+\\.([0-9]|[0-1][0-5]))$"
+        },
+        {
+            "type": 13,
+            "regex": "^[0-9]+![3-4][0-9]+\\.[0-9]+(H|L|)$"
+        }
+    ],
+    "group_interval": 1000,
+    "connection_mode": {
+        "name": "Connection Mode",
+        "name_zh": "连接模式",
+        "description": "Neuron as the client, or as the server",
+        "description_zh": "Neuron 作为客户端或服务端",
+        "attribute": "required",
+        "type": "map",
+        "default": 0,
+        "valid": {
+            "map": [
+                {
+                    "key": "Client",
+                    "value": 0
+                },
+                {
+                    "key": "Server",
+                    "value": 1
+                }
+            ]
+        }
+    },
+    "interval": {
+        "name": "Send Interval",
+        "name_zh": "指令发送间隔",
+        "description": "Send reading instruction interval(ms)",
+        "description_zh": "发送读指令时间间隔，单位为毫秒",
+        "attribute": "required",
+        "type": "int",
+        "default": 20,
+        "valid": {
+            "min": 0,
+            "max": 3000
+        }
+    },
+    "host": {
+        "name": "IP Address",
+        "name_zh": "IP地址",
+        "description": "Local IP in server mode, remote device IP in client mode",
+        "description_zh": "服务端模式中填写本地 IP，客户端模式中填写目标设备 IP",
+        "attribute": "required",
+        "type": "string",
+        "valid": {
+            "regex": "/^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$/",
+            "length": 30
+        }
+    },
+    "port": {
+        "name": "Port",
+        "name_zh": "端口号",
+        "description": "Local port in server mode, remote device port in client mode",
+        "description_zh": "服务端模式中填写本地端口号，客户端模式中填写远程设备端口号",
+        "attribute": "required",
+        "type": "int",
+        "default": 502,
+        "valid": {
+            "min": 1,
+            "max": 65535
+        }
+    },
+    "timeout": {
+        "name": "Connection Timeout",
+        "name_zh": "连接超时时间",
+        "description": "Connection timeout(ms)",
+        "description_zh": "连接超时时间，单位为毫秒",
+        "attribute": "required",
+        "type": "int",
+        "default": 3000,
+        "valid": {
+            "min": 1000,
+            "max": 65535
+        }
+    }
 }
 ```
 
@@ -1047,11 +1089,15 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 {
     //app name
-    "app": "mqtt-node",
+    "app": "mqtt",
     //driver name
-    "driver": "modbus-node",
+    "driver": "modbus-tcp",
     //driver node group name
-    "group": "gconfig1"
+    "group": "group-1",
+    //when using the MQTT plugin, the topic field needs to be added
+    "params": {
+        "topic": "/neuron/mqtt/group-1"
+    }
 }
 ```
 
@@ -1084,11 +1130,15 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 {
     //app name
-    "app": "mqtt-node",
+    "app": "mqtt",
     //driver name
-    "driver": "driver-node",
-    //driver node group config name
-    "group": "gconfig1"
+    "driver": "modbus-tcp",
+    //driver node group name
+    "group": "group-1",
+    //optional, when using the MQTT plugin, the topic field needs to be added
+    "params": {
+        "topic": "/neuron/mqtt/group-1"
+    }
 }
 ```
 
@@ -1124,13 +1174,23 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "groups": [
         {
             //driver name
-            "driver": "modbus-node",
+            "driver": "modbus-tcp",
             //group name
-            "group": "g1name"
+            "group": "group-1",
+            //optional, when using the MQTT plugin, the topic field needs to be added
+            "params": {
+                "topic": "/neuron/mqtt/group-1"
+            }
         },
         {
-            "driver": "modbus-node",
-            "group": "g2name"
+            //driver name
+            "driver": "modbus-tcp",
+            //group name
+            "group": "group-2",
+            //when using the MQTT plugin, the topic field needs to be added
+            "params": {
+                "topic": "/neuron/mqtt/group-2"
+            }
         }
     ]
 }
@@ -1156,7 +1216,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 {
     "build_date": "2022-06-01",
     "revision": "99e2184+dirty", // dirty 表示有未提交的更改
-    "version": "2.0.1"
+    "version": "2.4.0"
 }
 ```
 
