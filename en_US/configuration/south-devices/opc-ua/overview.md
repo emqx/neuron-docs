@@ -29,6 +29,23 @@ The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industr
 * BOOL
 * STRING
 
+## Data Type Conversion
+
+| OPC UA Data Type | Neuron Data Type |
+| --------------- | --------------- |
+| SByte           | INT8            |
+| Int16           | INT16           |
+| Int32           | INT32           |
+| Int64           | INT64           |
+| Byte            | UINT8           |
+| UInt16          | UINT16          |
+| UInt32          | UINT32          |
+| UInt64          | UINT64          |
+| Float           | FLOAT           |
+| Double          | DOUBLE          |
+| Boolean         | BOOL            |
+| String          | STRING          |
+| Datetime        | UINT32          |
 
 ## Address format
 
@@ -45,7 +62,7 @@ The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industr
 | 0!2258                 | UINT32   | Get the timestamp of the OPC UA server using the digital NODEID. The NS value is 0, and the NODEID is 2258 |
 | 2!Device1.Module1.Tag1 | INT8     | Use the string NODEID to get the data point of type SBYTE. If NS is 2, NODEID is Device1.Module1.Tag1 |
 
-You can use UaExpert software to help you view the namespace index and node ID information for the required points.
+You can use UaExpert software to help you view the namespace index and node ID information for the required points, Refer to [UaExpert usage](./uaexpert.md).
 
 :::tip
 For an explanation of namespace indexes and node ids, refer to the OPC UA standard.

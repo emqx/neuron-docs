@@ -22,7 +22,7 @@
 1. 通过 UaExpert 软件查看 Ignition 测点信息， 参考 [UaExpert 试用方法](./uaexpert.md)。
 ![ignition-3](./assets/ignition-3.jpg)
 
-3. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Ignition 的 `端点 URL`——`opc.tcp://192.168.10.195:62541/discovery`，`用户名`——`opcuauser`（Ignition 默认），`密码`——`password`（Igniton 默认），添加证书/密钥, 启动设备连接。
+2. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Ignition 的 `端点 URL`——`opc.tcp://192.168.10.195:62541/discovery`，`用户名`——`opcuauser`（Ignition 默认），`密码`——`password`（Igniton 默认），添加证书/密钥, 启动设备连接。
 
 3. 根据测点信息添加 `Groups` 和 `Tags`。
 

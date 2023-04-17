@@ -783,6 +783,10 @@
                   "path": "configuration/south-devices/opc-ua/policy"
                 },
                 {
+                  "title": "UaExpert Usage",
+                  "path": "configuration/south-devices/opc-ua/uaexpert"
+                },
+                {
                   "title": "Connect to Siemens S7-1200",
                   "path": "configuration/south-devices/opc-ua/s71200"
                 },

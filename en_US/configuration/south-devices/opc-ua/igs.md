@@ -23,7 +23,14 @@
 
 4. Right-click on the Industrial Gateway OPC Server icon in the system tray and select **Reinitialize** in the menu.
 
-5. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the `Endpoint URL` of the target Server, does not need to fill in the username/password, adds the certificate/key and starts the device connection.
+## Neuron setting
+
+1. To view the PLC measurement point information via the UaExpert software, Refer to [UaExpert usage](./uaexpert.md).
+![igs-4_en](./assets/igs-4_en.jpg)
+
+2. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the `Endpoint URL` of the target Server, does not need to fill in the username/password, adds the certificate/key and starts the device connection.
+
+3. Add `Groups` and `Tags` based on the measurement point information.
 
 ## Test Data List
 
