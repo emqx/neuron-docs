@@ -991,6 +991,10 @@
           "path": "http-api/configuration"
         },
         {
+          "title": "Metrics",
+          "path": "http-api/metrics"
+        },
+        {
           "title": "Read & Write",
           "path": "http-api/rw"
         },
