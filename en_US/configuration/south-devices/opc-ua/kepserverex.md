@@ -30,7 +30,15 @@
 
 4. Right-click on the KEPServerEX icon in the system tray and select **Reinitialize** in the menu.
 
-5. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the `Endpoint URL` of the target Server, fills in the user name/password, adds the certificate/key, and starts the device connection.
+
+## Neuron setting
+
+1. To view the PLC measurement point information via the UaExpert software, Refer to [UaExpert usage](./uaexpert.md).
+![kepware-5_en](./assets/kepware-5_en.jpg)
+
+2. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the `Endpoint URL` of the target Server, fills in the user name/password, adds the certificate/key, and starts the device connection.
+
+3. Add `Groups` and `Tags` based on the measurement point information.
 
 ## Test Data List
 

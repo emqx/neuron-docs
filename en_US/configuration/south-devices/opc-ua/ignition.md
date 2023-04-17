@@ -16,7 +16,15 @@
 
 2. Open the **Config** -> **OPC UA** -> **Security** -> **Server**, and upload the client certificate and set it to Trust.
 
-3. Neuron adds a new southbound OPC UA device, open **Device Configuration**, fill in the `Endpoint URL` of the target Ignition - `opc.tcp://192.168.10.195:62541/discovery`, `Username` - `opcuauser` (Ignition default), `Password` - `password` (Igniton default) Add the certificate/key, and start the device connection.
+
+## Neuron setting
+
+1. To view the PLC measurement point information via the UaExpert software, Refer to [UaExpert usage](./uaexpert.md).
+![ignition-3](./assets/ignition-3.jpg)
+
+2. Neuron adds a new southbound OPC UA device, open **Device Configuration**, fill in the `Endpoint URL` of the target Ignition - `opc.tcp://192.168.10.195:62541/discovery`, `Username` - `opcuauser` (Ignition default), `Password` - `password` (Igniton default) Add the certificate/key, and start the device connection.
+
+3. Add `Groups` and `Tags` based on the measurement point information.
 
 ## Test Data List
 

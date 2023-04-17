@@ -1,5 +1,7 @@
 # 连接 Prosys Simulation Server
 
+需要先将 Prosys Simulation Server 切换到 `Expert Mode`，点击菜单 `Options` -> `Switch to Expert Mode`。
+
 ## 匿名登录
 
 1. Prosys OPC UA Simulation Server 界面中切换到 **Endpoints** -> **Security Modes** 取消选择 `Sign` 和 `Sign&Encrypt`，选择 `None`；
@@ -8,7 +10,9 @@
 2. Prosys OPC UA Simulation Server 界面中切换到 **Users** -> **User Authentication Methods** 取消选择 `Username&Password`、`Certificate` 和 `IssuedToken/External System`，选择 `Anonymous`；
 ![prosys-2](./assets/prosys-2.jpg)
 
-3. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，无需填写用户名/密码，无需添加证书/密钥，启动设备连接；
+3. 保存设置并重新启动 Prosys OPC UA Simulation Server。
+
+4. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，无需填写用户名/密码，无需添加证书/密钥，启动设备连接；
 
 ## 证书/密钥 + 匿名登录
 
@@ -18,9 +22,11 @@
 
 3. Prosys OPC UA Simulation Server 界面中切换到 **Users** -> **User Authentication Methods** 取消选择 `Username&Password`、`Certificate` 和 `IssuedToken/External System`，选择 `Anonymous`；
 
-4. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，无需填写用户名/密码，添加证书/密钥，启动设备连接；
+4. 保存设置并重新启动 Prosys OPC UA Simulation Server。
 
-5. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任；
+5. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，无需填写用户名/密码，添加证书/密钥，启动设备连接；
+
+6. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任；
 ![prosys-3](./assets/prosys-3.jpg)
 
 ## 用户名/密码登录
@@ -30,9 +36,11 @@
 2. Prosys OPC UA Simulation Server 界面中切换到 **Users** -> **User Authentication Methods** 取消选择 `Anonymous`、`Certificate` 和 `IssuedToken/External System`，选择 `Username&Password`，添加自定义用户名/密码；
 ![prosys-4](./assets/prosys-4.jpg)
 
-3. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，填写用户名/密码，无需添加证书/密钥，启动设备连接；
+3. 保存设置并重新启动 Prosys OPC UA Simulation Server。
 
-4. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任；
+4. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，填写用户名/密码，无需添加证书/密钥，启动设备连接；
+
+5. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任；
 
 ## 证书/密钥 + 用户名/密码登录
 
@@ -41,6 +49,13 @@
 2. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，填写用户名/密码，添加证书/密钥，启动设备连接；
 
 3. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任；
+
+## Neuron 设置
+
+1. 通过 UaExpert 软件查看 Ignition 测点信息， 参考 [UaExpert 试用方法](./uaexpert.md)。
+![prosys-5](./assets/prosys-5.jpg)
+
+2. 根据测点信息添加 `Groups` 和 `Tags`。
 
 ## 测试点位
 
