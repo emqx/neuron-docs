@@ -871,6 +871,10 @@
               ]
             },
             {
+              "title": "Monitor",
+              "path": "configuration/north-apps/monitor/overview"
+            },
+            {
               "title": "MQTT Client",
               "path": "configuration/north-apps/mqtt/overview",
               "children": [
