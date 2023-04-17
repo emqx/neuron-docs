@@ -1,17 +1,17 @@
-# Mitsubishi MELSEC QnA3E
+# Mitsubishi 3E
 
-## Module Description
+The Mitsubishi 3E plug-in is used to access Mitsubishi's QnA-compatible PLCs, including the Q Series (MC), iQ-F Series (SLMP), and iQ-L Series, via Ethernet.
 
-The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet, including Q series (MC), iQ-F series (SLMP) and iQ-L series.
+The Mitsubishi 3E is fully compatible with the Mitsubishi SLMP protocol.
 
-## Parameter Configuration
+## Parameters
 
-| Parameter | Description |
+|  Parameter      |  Description                      |
 | -------- | -------------------------- |
-| **host** | remote plc ip                 |
-| **port** | remote plc port, default 2000 |
+| **PLC IP Address** |  Target PLC IPv4 address         |
+| **PLC Port** | Target PLC IPv4 address, Default 2000 |
 
-## Support Data Type
+## Data types
 
 * INT16
 * UINT16
@@ -22,13 +22,19 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 * BIT
 * STRING
 
-## Usage of Address Fromat
-
-### Address Format
+## Address format
 
 > AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
 
-#### AREA ADDRESS
+### .BIT
+
+Only available for **non-bit type area**, means read the specified binary bit of the specified address, the binary bit index interval is [0, 15].
+
+### .LEN\[H]\[L]
+
+When the data type is string type, **.LEN** indicates the length of the string; you can optionally fill in **H** and **L** to indicate two byte orders, and the default is the byte order of **H**.
+
+### PLC Area 
 
 | AREA | DATA TYPE | ATTRIBUTE  | REMARK                           |
 | ---- | --------- | ---------- | -------------------------------- |
@@ -71,32 +77,20 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 | ZRSL | --        |            |                                  |
 | Z    | all       | read/write | Index register (Q/iQ-F)          |
 
-#### .BIT
+## Examples
 
-It can only be used in **non-bit type area**, which means to read the specified bit of the specified address, and the binary bit index range is [0, 15].
-
-| Address | Data Type | Description |
-| ------- | --------- | --------- |
-| D20.0 | bit | D area, address is 20, bit 0   |
-| D20.2 | bit | D area, address is 20, bit 2   |
-
-#### .LEN\[H]\[L]
-
-When the data type is string, **.LEN** indicates the length of the string;   **H** and **L** can be optional to indicate two byte orders, the default is **H** byte order.
-
-### Address Examples
-
-| Address     | Data Type  | Description          |
-| ------- | ------- | --------------- |
-| X0    | bit     | X area, address is 0    |
-| X1    | bit     | X area, address is 1    |
-| Y0    | bit     | Y area, address is 0    |
-| Y1    | bit     | Y area, address is 1    |
-| D100  | int16   | D area, address is 100  |
-| D1000 | uint16  | D area, address is 1000 |
-| D200  | uint32  | D area, address is 200  |
-| D10   | float   | D area, address is 10   |
-| D20   | double  | D area, address is 20   |
-| D1002.16L | string  | D area, address is 1002, string length is 16, endianness is L |
-| D1003.16 | string  | D area, address is 1003, string length is 16, endianness is H |
-mac
+|  Address  | Data type | Description |
+| ----- | ------- | ----- |
+| X0    | bit     | X area，Address 0    |
+| X1    | bit     | X area，Address 1    |
+| Y0    | bit     | Y area，Address 0    |
+| Y1    | bit     | Y area，Address 1    |
+| D100  | int16   | D area，Address 100  |
+| D1000 | uint16  | D area，Address 1000 |
+| D200  | uint32  | D area，Address 200  |
+| D10   | float   | D area，Address 10   |
+| D20   | double  | D area，Address 20   |
+| D20.0 | bit | D area，Address 20，0 bit|
+| D20.2 | bit | D area，Address 20，2 bit|
+| D1002.16L | string  | D area，Address 1002，String length 16，Endian L |
+| D1003.16 | string  | D area，Address 1003，String length 16，Endian H |
