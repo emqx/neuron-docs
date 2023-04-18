@@ -461,6 +461,10 @@
           "path": "http-api/configuration"
         },
         {
+          "title": "数据统计",
+          "path": "http-api/metrics"
+        },
+        {
           "title": "读写",
           "path": "http-api/rw"
         },
