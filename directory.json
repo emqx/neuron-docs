@@ -347,6 +347,10 @@
               ]
             },
             {
+              "title": "数据统计与监控",
+              "path": "configuration/north-apps/monitor/overview"
+            },
+            {
               "title": "MQTT 客户端",
               "path": "configuration/north-apps/mqtt/overview",
               "children": [
@@ -459,6 +463,10 @@
         {
           "title": "配置",
           "path": "http-api/configuration"
+        },
+        {
+          "title": "数据统计",
+          "path": "http-api/metrics"
         },
         {
           "title": "读写",
@@ -871,6 +879,10 @@
               ]
             },
             {
+              "title": "Metrics and Monitoring",
+              "path": "configuration/north-apps/monitor/overview"
+            },
+            {
               "title": "MQTT Client",
               "path": "configuration/north-apps/mqtt/overview",
               "children": [
@@ -989,6 +1001,10 @@
         {
           "title": "Configuration",
           "path": "http-api/configuration"
+        },
+        {
+          "title": "Metrics",
+          "path": "http-api/metrics"
         },
         {
           "title": "Read & Write",
