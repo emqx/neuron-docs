@@ -68,8 +68,8 @@
 ### CNC Machines & Robotics
 
 | Protocol Name  | Interface  | Type       | Available | Remark |
-| ------------- | ------- | ----- | --------- | ------- |
-|![mt-connect](./assets/MT.png)| <div style="width:220pt">MTConnect</div>      | <div style="width:40pt">Ethernet</div>    | <div style="width:110pt">Commercial</div>    | <div style="width:50pt">No</div>         | <div style="width:110pt"> </div> |
+| ------- | ----- | --------- | ------- |
+| <div style="width:220pt">MTConnect</div>      | <div style="width:40pt">Ethernet</div>    | <div style="width:110pt">Commercial</div>    | <div style="width:50pt">No</div>         | <div style="width:110pt"> </div> |
 
 ## Northbound Plugin Modules
 
