@@ -1,40 +1,38 @@
 # 安装
 
-Neuron and NeuronEX support 32-bit/64-bit ARM and 64-bit x86 architectures on Linux-based operating systems and are available in the following installation package formats:
+Neuron 和 NeuronEX 在基于 Linux 的操作系统上支持 32位/64位 ARM 和 64位 X86 架构，并提供以下安装包格式：
 
-* Debian Software Package (.deb) format for Debian, Ubuntu Linux-based operating systems.
+* Debian 软件包（.deb）格式，用于基于 Debian、Ubuntu Linux 的操作系统；
 
-* Redhat Package Manager (.rpm) format for Red Hat, CentOS Linux-based operating systems.
+* Radhat 包管理器（.rpm）格式，适用于基于 Red Hat、CentOS Linux 的操作系统。
 
+## Linux 发行版的安装包
 
-## Installation Packages for Linux Distro
-
-| Linux Distribution                                    | Required Package  |
+| Linux 发行版                                    | 所需包        |
 | ------------------------------------------------------------ | ------------------ |
 | Ubuntu 20.04 </br>Ubuntu 18.04 </br>Ubuntu16.04</br>Debian 11</br>Debian 10</br>Debian 9</br>Debian 8               | **Debian Software Package** (.deb)         |
 | CentOS Stream 9</br>CentOS Stream 8</br>CentOS 7    | **Redhat Package Manager** (.rpm)         |
 | Other Linux | **Tape Archiver** (tar.gz) |
 
 :::tip
-The rpm/deb packages installation is recommended for setting up the system service manager (systemd) to monitor the Neuron running instance.
+建议安装 rpm/deb 包来设置系统服务管理器（systemd）以监视 Neuron 运行实例。
 :::
-
 
 ## 硬件要求
 
-Neuron is fully developed in C language and supports running on x86, ARM and other hardware architectures as well as container deployment, such as K8s, KubeEdge, etc. On devices with limited hardware resources, it can also achieve data acquisition of 100 ms or even 10 ms level. On servers with sufficient hardware resources, Neuron can also make full use of multi-core CPUs, and can simultaneously conduct data acquisition and point write control of hundreds of thousands of points at the frequency of 100 ms.
+Neuron 完全使用 C 语言开发，支持运行在 X86，ARM，MIPS，RISC-V 等硬件架构的设备上以及支持容器化的部署，如 K8s、KubeEdge 等。在有限硬件资源的设备上也能达到 100 毫秒，甚至 10 毫秒级别的数据采集，在硬件资源充足的服务器上，Neuron 也能充分利用多核 CPU，能够同时对几十万的点位进行 100 毫秒频率的数据采集以及点位写入控制。
 
-The following table lists the hardware conditions required for the minimum demand of Neuron at different number of tags.
+下表列出了 Neuron 在不同点位数量下的最低硬件要求。
 
-|Tag Limits|Minimum Memory Recommendation|Hardware Architecture|Remarks|
-| :-------------------- | :------------------------------ | :---------------------------------- | :----------------------------------- |
-| 100 tags    | 128M memory | 32-bit/64-bit ARM and 64-bit x86 architectures | Raspberry Pi 3 |
-| 1,000 tags  | 256M memory | 32-bit/64-bit ARM and 64-bit x86 architectures | Raspberry Pi 4 |
-| 10,000 tags | 512M memory | 64-bit ARM and 64-bit x86 architectures | Industrial PC, etc |
-| More than 10,000 tags | 1G memory | 64-bit x86 architectures | Powerful Industrial PC, Server, etc |
+| 点位数                 | 建议最小内存   | 硬件架构                              | 备注          |
+| :-------------------- | :----------- | :---------------------------------- | :----------------------------------- |
+| 100 tags               | 128M memory | 32-bit/64-bit ARM 和 64-bit x86 架构 | Raspberry Pi 3 |
+| 1,000 tags             | 256M memory | 32-bit/64-bit ARM 和 64-bit x86 架构  | Raspberry Pi 4 |
+| 10,000 tags            | 512M memory | 64-bit ARM 和 64-bit x86 架构         | Industrial PC 等 |
+| More than 10,000 tags  | 1G memory   | 64-bit x86 架构                       | Powerful Industrial PC, Server 等 |
 
 :::tip
-Neuron or NeuronEX has no upper limitation on the number of tags. It depends on the allocated CPU and memory resources. Neuron is very portable to run on limited resource like single board hardware, or on powerful servers. The following figures are the results of Neuron performance test for your reference and these benchmark results are still not the upper limits. A more powerful server can be used for more tags.
+Neuron 或 NeuronEX 没有点位数量上限。取决于分配的 CPU 和内存资源。Neuron 非常容易移植，可以运行在类似单板机等有限的资源的硬件上，也可以运行在功能强大的服务器上。以下提供一些 Neuron 的性能测试结果供用户参考，这些测试数据仍然不是上限。更强大的服务器支持配置更多的数据点位。
 
 Platform                         : Intel(R) Xeon(R) Gold 6266C@3.00GHz</br>
 Memory                           : 4G</br>
@@ -50,7 +48,7 @@ CPU Usage                        : 90%</br>
 
 ## 下载
 
-Neuron software packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads). You can also download Neuron from [Github](https://github.com/emqx/neuron/releases).
+Neuron 软件包可由 Neuron 官网 [https://neugates.io/downloads](https://neugates.io/downloads)下载。也可以到 [Github](https://github.com/emqx/neuron/releases) 仓库下载。
 
 | 下载文件                           | 架构           |
 | --------------------------------- | ------------- |
@@ -67,25 +65,24 @@ Neuron software packages can be downloaded from the Neuron website [https://neug
 | neuronex-x.y.z-linux-armhf.rpm    | ARM_32        |
 | neuronex-x.y.z-linux-arm64.rpm    | ARM_64        |
 
-Neuron has two distributions:
+Neuron 有两种发布版本：
 
-* neuron: Industrial IIoT Server
+* Neuron：工业 IIOT 服务器；
 
-* neuronex: Industrial IIoT Server with eKuiper processing engine
+* Neuronex：集成数据流处理引擎 eKuiper 的共有人 IIoT 服务器。
 
-Release number x.y.z have following description:
+版本号 x.y.z 说明：
 
-* x is the major release number: the change in this number means that the software architecture has changed. Therefore, upgrading to a major release does not guarantee compatibility with the previous major release.
-
-* y is the minor release number: the change in this number introduces some new features. Upgrading to a minor release would ensure backward compatibility.
-
-* z is the maintenance release number: this new release number only contains patches, bug fixes, etc.
+* x 为主要版本号：一般情况下，该版本会引入一些重大功能，如引入架构性的更改，主版本升级不保证与老版本之间的兼容性；
+* y 是次要版本号：一般情况下，该类型版本会引入一些新功能，但是会保证在该主要版本号下的兼容性；
+* z 是维护版本号：一般情况下，该版本只包含软件中错误修复的补丁等。
 
 
 ## License
 
-At present, Neuron has open source MQTT, RESTful API and Modbus TCP, and users can directly use the open source driver protocols. However, by uploading a valid license, users can use more driving protocols such as OPC UA, Modbus RTU, Mitsubishi PLC and Omron PLC.
+目前 Neuron 已开源 MQTT、RESTful API 和 Modbus TCP，用户可以直接使用开源的驱动协议。但是，通过上传有效的许可证，用户可以使用更多的驱动协议，如 OPC UA，Modbus RTU，三菱 PLC 和欧姆龙 PLC。
 
-Please refer to [Module List](../introduction/plugin-list/plugin-list.md) for the driver protocols supported by Neuron.
+
+请参考 [模块列表](../introduction/plugin-list/plugin-list.md)获取更多的 Neuron 支持的驱动模块。
 
 

@@ -206,7 +206,21 @@
             },
             {
               "title": "Mitsubishi 3E",
-              "path": "configuration/south-devices/mitsubishi-3e/mitsubishi-3e"
+              "path": "configuration/south-devices/mitsubishi-3e/overview",
+              "children": [
+                {
+                  "title": "连接 FX5U",
+                  "path": "configuration/south-devices/mitsubishi-3e/fx5u"
+                },
+                {
+                  "title": "连接 Q03UDE",
+                  "path": "configuration/south-devices/mitsubishi-3e/q03ude"
+                },
+                {
+                  "title": "常见问题",
+                  "path": "configuration/south-devices/mitsubishi-3e/faq"
+                }
+              ]
             },
             {
               "title": "Mitsubishi 1E",
