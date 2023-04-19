@@ -347,6 +347,10 @@
               ]
             },
             {
+              "title": "数据统计与监控",
+              "path": "configuration/north-apps/monitor/overview"
+            },
+            {
               "title": "MQTT 客户端",
               "path": "configuration/north-apps/mqtt/overview",
               "children": [
@@ -875,7 +879,7 @@
               ]
             },
             {
-              "title": "Monitor",
+              "title": "Metrics and Monitoring",
               "path": "configuration/north-apps/monitor/overview"
             },
             {
