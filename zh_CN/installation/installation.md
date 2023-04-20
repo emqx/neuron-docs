@@ -83,6 +83,6 @@ Neuron 有两种发布版本：
 目前 Neuron 已开源 MQTT、RESTful API 和 Modbus TCP，用户可以直接使用开源的驱动协议。但是，通过上传有效的许可证，用户可以使用更多的驱动协议，如 OPC UA，Modbus RTU，三菱 PLC 和欧姆龙 PLC。
 
 
-请参考 [模块列表](../introduction/plugin-list/plugin-list.md)获取更多的 Neuron 支持的驱动模块。
+请参考[模块列表](../introduction/plugin-list/plugin-list.md)获取更多的 Neuron 支持的驱动模块。
 
 

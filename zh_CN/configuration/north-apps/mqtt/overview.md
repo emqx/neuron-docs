@@ -84,3 +84,31 @@ Neuron 的 MQTT 插件支持 MQTT over SSL。要启用 SSL 加密，请在配置
 要连接到的服务器的证书应由提供的证书授权机构颁发。
 如果使用双向身份验证，还应通过**客户端证书**，**客户端私钥**，和**客户端私钥密码**参数分别提供客户端证书，私钥文件，和私钥文件密码。
 
+## MQTT 客户端配置参数
+
+配置 MQTT 客户端相关参数。
+
+点击应用卡片上的 `应用配置` 按键进入应用配置界面设置 MQTT 连接，如下图所示。
+
+![mqtt-config](./assets/mqtt-config.png)
+
+* 客户端 ID：注意每个 ID 要相互独立，不可以重复，使用默认值 mqtt；
+* 服务质量等级：选择0，1，2。
+* 服务器地址：使用默认的公共的 EMQX Broker（broker.emqx.io）；
+* 服务器端口：使用 MQTT broker port（1883）；
+* 点击`提交`，完成北向应用的配置，应用卡片自动进入 **运行中** 的工作状态。
+
+## 使用 MQTTX 查看数据
+
+订阅完成后，用户可以使用 MQTT 客户端（推荐使用 MQTTX，可在[官网](https://www.emqx.com/zh/products/mqttx)中下载）连接到公共的 EMQX 代理来查看上报的数据，如下图所示。
+
+![mqttx](./assets/mqttx.png)
+
+在 MQTTX 中订阅对应的 Topic 后，可看到此 Topic 中能持续收到由 Neuron 上报的数据。
+
+* 打开 MQTTX 添加新的连接，正确填写名称与公共 EMQX Broker 的 Host 与 Port（默认为 broker.emqx.io，1883），完成连接;
+* 添加新的订阅，Topic 要与设置北向应用参数中的 Upload topic 保持一致，例如，填写 `/neuron/mqtt/upload`。
+
+:::tip
+默认的上传 Topic 的主题格式为 `/neuron/{node_name}/upload`，其中 {node_name} 为创建的北向应用的名称。用户也可自定义上报主题。
+:::

@@ -93,7 +93,7 @@
       "path": "configuration/configuration",
       "children": [
         {
-          "title": "查看有效插件",
+          "title": "查看可用插件",
           "path": "configuration/plugin-management/plugin-management"
         },
         {
@@ -773,6 +773,14 @@
                 {
                   "title": "Siemens S7-1200/1500 Settings",
                   "path": "configuration/south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+                },
+                {
+                  "title": "Connect to S7-1200 PLC",
+                  "path": "configuration/south-devices/siemens-s7/example/s71200/s71200"
+                },
+                {
+                  "title": "FAQ",
+                  "path": "configuration/south-devices/siemens-s7/faq/faq"
                 }
               ]
             },
