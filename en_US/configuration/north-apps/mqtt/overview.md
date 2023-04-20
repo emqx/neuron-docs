@@ -25,6 +25,7 @@ These are the available parameters when configuring a node using the MQTT plugin
 | **QoS Level**                   | MQTT QoS level for message delivery, optional, default QoS 0. (since 2.4.0) |
 | **~~upload-topic~~**            | ~~Subscription data reporting topic, required.~~ (removed in 2.4.0) |
 | **Upload Format**               | JSON format of reported data, required. There are *values-format* and *tags-format*. In *values-format*, data are split into `values` and `errors` sub objects. In *tags-format*, tag data are put in a single array. |
+| **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. (Since 2.4.3) |
 | **Cache Memroy Size**           | In-memory cache limit (MB) in case of communication failure, required. Range in [0, 1024]. Should not be larger than *cache-disk-size*. |
 | **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, required. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
 | **Broker Host**                 | MQTT Broker host, required.                                  |
@@ -79,8 +80,12 @@ This feature is useful in scenarios where network connectivity may be limited,
 unstable, or intermittent. And provides a critical functionality that can enhance
 the robustness and reliability of applications built on Neuron.
 
-Offline data caching is controlled by the **Cache Memory Size** and **Cache Disk Size**
-parameters. The **Cache Memory Size** parameter specified the memory cache size in
+Offline data caching is controlled by the **Offline Data Caching**,
+**Cache Memory Size**, and **Cache Disk Size** parameters.
+Setting the **Offline Data Caching** parameter to *true* switches on offline
+data caching, in which case, users should also set the **Cache Memory Size**
+and **Cache Disk size** parameters.
+The **Cache Memory Size** parameter specified the memory cache size in
 megabytes, and the max allowed memory cache size is 1GB. The **Cache Disk Size**
 parameter specified the disk cache size in megabytes, and the max allowed disk cache
 size is 10GB.
@@ -89,8 +94,11 @@ cache first, and only flush data to the disk cache when memory cache is full.
 When network connection restores, the MQTT plugin will publish the cached data
 to the broker in FIFO (Fist In First Out) order.
 
-You may disable offline data caching by setting both **Cache Memory Size** and
-**Cache Disk Size** to zero.
+::: tip
+The **Offline Data Caching** parameter is added since Neuron version 2.4.3. For
+For older versions, you may disable offline data caching by setting both
+**Cache Memory Size** and **Cache Disk Size** to zero.
+:::
 
 ### Data security
 
