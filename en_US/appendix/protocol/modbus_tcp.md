@@ -13,10 +13,10 @@ The client transmits data in hexadecimal, two bits at a time; The server also re
 |2 bytes | 2 bytes | 2 bytes | 1 byte|
 |00 00|00 00|00 00|01|
 
-*Transaction identifier: It can be interpreted as the serial number of the message. For example, the Modbus Poll client used in the test always sends data, so each time the data identifier is sent, it is added with one. The server will return this data unopened when it receives it.
-*Protocol representation: 00 00 represents the TCP protocol.
-*Length: Indicates the length of data starting from the unit identifier. For example, 00 06 represents data with a length of 0X06 bytes.
-*Unit identifier: Equivalent to the address of the device. Typically 01.
+* Transaction identifier: It can be interpreted as the serial number of the message. For example, the Modbus Poll client used in the test always sends data, so each time the data identifier is sent, it is added with one. The server will return this data unopened when it receives it.
+* Protocol representation: 00 00 represents the TCP protocol.
+* Length: Indicates the length of data starting from the unit identifier. For example, 00 06 represents data with a length of 0X06 bytes.
+* Unit identifier: Equivalent to the address of the device. Typically 01.
 
 ## PDU
 
