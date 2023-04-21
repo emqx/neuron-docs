@@ -91,7 +91,7 @@ IP.1 = 127.0.0.1
 #IP.2 = 0.0.0.0
 ```
 
-## 文件附件 localhost.cnf
+## Attachment localhost.cnf
 
 ```sh
 #
