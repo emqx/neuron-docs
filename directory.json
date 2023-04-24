@@ -23,7 +23,7 @@
       "path": "quick-start/hardware-specifications"
     },
     {
-      "title": "安装和许可证",
+      "title": "安装",
       "path": "installation/installation",
       "children": [
         {
@@ -563,7 +563,7 @@
       "path": "quick-start/hardware-specifications"
     },
     {
-      "title": "Installation and Licensing",
+      "title": "Installation",
       "path": "installation/installation",
       "children": [
         {
