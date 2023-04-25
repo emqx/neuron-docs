@@ -41,7 +41,7 @@ Required, Slave is the slave address or site number.
 
 | Area |Data Type | Register Size|Attribute  | Address Range| Area Description|Note                           |
 | ---- | ---------|----- | ---------- | ---- | ---- | -------------------------------- |
-| 0    | bit     | 1bit | Read/Write | 0 ~ 16384 | I/O-bits             ||
+| 0    | bit     | 1bit | Read/Write | 0 ~ 16383 | I/O-bits             ||
 | 1   | ALL      | 16bit, 2byte| Read/Write| 0 ~ 3071 | Register                         | the type of bit  read only|
 
 
