@@ -45,6 +45,39 @@ IEC61850 插件用于对 IEC61850 服务器的读/写，目前支持 MMS 协议�
 
 > Logical Devices/Logical Nodes$FC$DO$DA</span>
 
+IEC61850 数据分层模型通常有以下几种：
+
+| 模型层名称                           | 描述         |
+| ------------------------------------ | ------------ |
+| IED（Intelligent Electronic Device） | 智能电子设备 |
+| LD（Logical Devices）                | 逻辑设备     |
+| LN（Logical Nodes）                  | 逻辑节点     |
+| DO（Data Objects）                   | 数据对象     |
+| DA （Data Attributes）               | 数据属性     |
+
+**FC** 是功能的约束值（即功能码），如下表所示：
+
+|   功能约束   | 描述         |
+| -----  | ------------ |
+| ST | 状态信息          |
+| MX | 测量值 - 模拟值   |
+| SP | 设定点            |
+| SV | 替换              |
+| CF | 配置              |
+| DC | 说明              |
+| SG | 设置组            |
+| SE | 设置组别可编辑    |
+| SR | 服务响应/服务跟踪 |
+| OR | 操作收到          |
+| BL | 屏蔽              |
+| EX | 扩展定义          |
+| CO | 控制              |
+| US | 单播 SV           |
+| MS | 多播 SV           |
+| RP | 无缓冲报告        |
+| BR | 缓冲报告          |
+| LG | 日志控制块        |
+
 ## 地址示例
 
 | 地址                                  | 数据类型 | 说明                                                 |
