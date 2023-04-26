@@ -253,6 +253,10 @@
               "path": "configuration/south-devices/omron-fins/omron-fins"
             },
             {
+              "title": "Omron FINS UDP",
+              "path": "configuration/south-devices/omron-fins/omron-fins-udp"
+            },
+            {
               "title": "Beckhoff ADS",
               "path": "configuration/south-devices/ads/ads",
               "children": [
@@ -791,6 +795,10 @@
             {
               "title": "Omron FINS TCP",
               "path": "configuration/south-devices/omron-fins/omron-fins"
+            },
+            {
+              "title": "Omron FINS UDP",
+              "path": "configuration/south-devices/omron-fins/omron-fins-udp"
             },
             {
               "title": "Beckhoff ADS",
