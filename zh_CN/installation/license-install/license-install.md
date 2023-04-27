@@ -8,6 +8,12 @@ Neuron 是一个开源项目。我们鼓励社区开发自己的插件模块。
 
 当然，您也可以直接 [联系我们](https://www.emqx.com/zh/contact?product=neuron)获取正式的 License。
 
+:::tip
+官网申请试用 License 时，必须使用硬件标识进行设备的绑定。
+
+可以直接[联系我们](https://www.emqx.com/zh/contact?product=neuron)申请不需要硬件标识绑定设备的 License。
+:::
+
 ## 第一步，查看硬件标志
 
 点击右上角 **系统信息->关于** 查看硬件标志并将其拷贝。
