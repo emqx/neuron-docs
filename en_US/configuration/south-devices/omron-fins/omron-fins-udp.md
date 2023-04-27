@@ -8,7 +8,7 @@ Neuron supports Fins UDP protocol, which can be used to communicate with Omron P
 
 | Parameter         | Description                      |
 | ----------------- | -------------------------------- |
-| **Equipment Type** | Target PLC Equipment Type |
+| **Equipment Type** | Target PLC Equipment type |
 | **PLC IP Address** | Target PLC IPv4 address|
 | **PLC Port**       | Target PLC port, default 9600 |
 
