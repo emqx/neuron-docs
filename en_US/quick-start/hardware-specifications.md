@@ -140,58 +140,59 @@ Data monitoring displays values in groups, you can group the devices by device o
 
 ### Add A Northbound Application
 
-Create northbound application card for Neuron to establish connection with northbound application and upload the collected device data to MQTT Broker.
+In Neuron, northbound refers to the connection between Neuron and MQTT broker. . This step illustrates how to create a southbound device.
 
-Select `North Apps` in the `Configuration` menu, and click the `Add App` icon to add an application, as shown in the following figure.
+Select **North Apps** in the **Configuration** menu, and click the **Add Application** buttton to add an application, as shown in the following figure.
 
 ![north-add](./assets/north-add.png)
 
 Add an MQTT cloud connection module:
 
-* Name: fill in the application name, for example, mqtt；;
-* Plugin: drop-down box to select the plugin of mqtt;
-* Click the `Create` icon to add an application.
+* **Name**: Fill in the application name, for example, mqtt;
+* **Plugin**: Select the plugin of mqtt from the drop-down list;
+* Click the **Create** icon to add an application.
 
-### Step 8, Setting Northbound Application's Parameters.
+### Establish the Connection
 
 Configure the parameters required for Neuron to establish a connection with the northbound application.
 
-Click the `Application Configuration` icon on the application card to enter the application configuration interface, as shown in the figure below.
+Click the **Application Configuration** icon on the application card to enter the application configuration interface, as shown in the figure below.
 
 ![mqtt-config](./assets/mqtt-config.png)
 
 Set MQTT connection:
 
-* Use the default escalation topic (/neuron/mqtt/upload).
-* Use the default public EMQX Broker (broker.emqx.io).
-* Click `Submit` to complete the configuration of northbound application, and the application card will automatically enter the working state of **Running**.
+* **Upload topic**: Use the default escalation topic (/neuron/mqtt/upload).
+* **Host**: Use the default [public EMQX Broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) (broker.emqx.io).
+* For the rest fields, you can keep the default settings. 
+* Click **Submit** to complete the configuration of northbound application, and the application card will automatically enter the working state of **Running**.
 
-### Step 9, Subscribe To The Southbound Group.
+### Subscribe to Southbound Group
 
 The collected data are uploaded to the cloud in groups, and users need to choose which groups of data to upload.
 
-Click any blank space in the application node card to enter the subscription group interface, and click the `Add Subscription` icon in the upper right corner to add a subscription, as shown in the following figure.
+Click any blank space in the application node card to enter the **Group List** page, and click the **Add Subscription** icon in the upper right corner to add a subscription, as shown in the following figure.
 
 ![subscriptions-add](./assets/subscription-add.png)
 
 Subscribe to the data group of the southbound device:
 
-* Southbound device: select the southbound device that has been created from the drop-down box, for example, modbus-tcp-1;
-* Group: click the drop-down box to select the group you want to subscribe to, for example, group-1;
-* Click `Submit` to complete the subscription.
+* **South device**: Select the southbound device that has been created from the drop-down box, for example, modbus-tcp-1;
+* **Group**: Click the drop-down box to select the group you want to subscribe to, for example, group-1;
+* Click **Submit** to complete the subscription.
 
-### Step 10, Check The Data At The MQTT Client.
+### View Data with MQTT Client
 
 After the subscription is completed, users can use the MQTT client (MQTX is recommended and can be downloaded from [official website](https://www.EMQX.com/zh/products/MQTTX) to connect to the public emqx proxy to view the reported data, as shown in the following figure.
 
 ![mqttx](./assets/mqttx.png)
 
-After successful subscription, we can see that MQTTX can directly receive the data collected and reported by Neuron.
+After successful subscription, we can see that MQTT X can directly receive the data collected and reported by Neuron.
 
-* open MQTTX to add a new connection, correctly fill in the name and the Host and Port of the public EMQX Broker, and complete the connection;
-* Add a new subscription, and the Topic should be consistent with the Upload topic in setting northbound application parameters, for example, fill in `/neuron/mqtt/upload`.
+* Ppen MQTT X to add a new connection, correctly fill in the name and the Host and Port of the public EMQX Broker, and complete the connection;
+* Add a new subscription, and the **Topic** should be consistent with the **Upload topic** in the applicatin configuration step, for example, `/neuron/mqtt/upload`.
 
 :::tip
-The default topic format for uploading topic is `/neuron/{node_name}/upload`, where {node_name} is the name of the created northbound application. Users can also customize the reporting theme.
+The default topic format for uploading topic is `/neuron/{node_name}/upload`, where `{node_name}` is the name of the created northbound application. Users can also customize the reporting theme.
 :::
 
