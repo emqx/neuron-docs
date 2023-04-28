@@ -20,92 +20,99 @@ $ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always em
 
 ## Install Modbus Simulator
 
-Install PeakHMI Slave Simulators software, and the installation package can be downloaded from [PeakHMI official website ](https://hmisys.com).
+Install [PeakHMI Slave Simulators software](https://hmisys.com).
 
 After installation, run Modbus TCP slave EX. Set the simulator salve ID and tag value, as shown in the figure below.
 
 ![modbus-simulator](./assets/modbus-simulator.png)
 
 ::: tip
-Neuron and simulator must be run in the same LAN.
+Neuron and the simulator must be run on the same LAN.
 
 Try to turn off the firewall in Windows, otherwise Neuron may not connect to the simulator.
 :::
 
 ## Quick Using Neuron
 
-Open a Web browser and enter the address and port number of the gateway running Neuron to enter the management console dasboard. The default port number is 7000.
+Access the Neuron gateway management console, open a web browser and enter the address and port number of the gateway running Neuron ([http://x.x.x.x:7000](http://x.x.x.x:7000/)). Replace "x.x.x.x" with the actual IP address of the gateway where Neuron is installed. 
 
-Access format, http://x.x.x.x:7000. x.x.x.x represents the address of the gateway where Neuron is installed.
+### Login
 
-### Step 1, Login
+Log in with the initial username and password:
 
-After the page opens, enter the login interface, and users can log in with their initial user name and password (initial user name: admin, initial password: 0000), as shown in the following figure.
+- Username: `admin` 
+- Password: `0000`
 
 ![login](./assets/login.png)
 
-### Step 2, Add Southbound Device
+### Add a Southbound Device
 
-Creating southbound device cards can be used to establish connections between Neuron and devices, select device driver protocols and configure device data acquisition tags.
+In Neuron, southbound refers to the connection between Neuron and devices. This step illustrates how to create a southbound device.
 
-Select `South Devices` from the `Configuration` menu to enter the southbound device management interface, and click `Add Device` to add deivces, as shown in the figure below.
+Select **South Devices** from the **Configuration** menu to enter the southbound device management interface, and click **Add Device** to add devices, as shown in the figure below.
 
 ![south-add](./assets/south-add.png)
 
 Add a new southbound device:
 
-* Name: fill in the name of the device, such as modbus-tcp-1;
-* Plugin: select the plugin of modbus-tcp from the drop-down box;
-* Click the `Create` button to add a new device.
+* **Name**: fill in the name of the device, such as "modbus-tcp-1";
+* **Plugin**: select the plugin of modbus-tcp from the drop-down box;
+* Click the **Create** button to add a new device.
 
-### Step 3, Setting Southbound Device's Parameters
+### Connect the Device to Neuron
+
+#### Set Device Address
 
 Configure the parameters required for Neuron to establish a connection with the device.
 
-Click the `Device Configuration` button on the southbound device card to enter the device configuration interface, as shown in the figure below.
+Click the Device Configuration icon on the southbound device card to enter the **Device configuration** interface, as shown in the figure below.
 
 ![south-setting](./assets/south-setting.png)
 
-* Host: fill in the IP of the PC where PeakHMI Slave Simulators software is installed.
-* Click `Submit` to complete the equipment configuration, and the equipment card will automatically enter the working state of **Running**;
+* **Host**: fill in the IP of the PC where PeakHMI Slave Simulators software is installed.
+* For **Port** and **Timeout**, you can keep the default value. 
+* Click **Submit** to complete the equipment configuration, and the equipment card will automatically enter the working state of **Running**;
 
 :::tip
 The configuration parameters required by each device are different. Please refer to [Configuration](../configuration/south-devices/south-devices.md) for detailed description of southbound device parameters.
 
 :::
 
-### Step 4, Create A Group
+#### Add Tags for Data Communication
 
-Creating groups can be used to classify devicw acquisition tags.
+Before adding tags, you should first create a group for the device to facilate tag management. 
 
-Click any blank space in the device card to enter the group list management interface, and click `Create` to open the `Create Group` dialog box, as shown in the following figure.
+##### Create a Group
+
+Click any blank space in the device card to enter the **Group List** management interface, and click **Create** to open the **Create Group** dialog box, as shown in the following figure.
 
 ![group-add](./assets/group-add.png)
 
 Create a group for the device:
 
-* Group Name: fill in the name of the Group, such as group-1.
-* Click `Create` to complete the creation of the group.
+* **Group Name**: Fill in the name of the group, such as group-1.
+* **Interval**: Keep the default value. <!--need some explanation-->
+* Click **Create** to complete the creation of the group.
 
-### Step 5, Add Tags To The Group
+##### Add Tags
 
 Add the device tags to be collected, including tag address, tag attribute, tag type, etc.
 
-Click the `Tag list` icon in the group to enter the tag list management interface, as shown in the figure below.
+Click the **Tag List** icon in the group to enter the tag list management interface, as shown in the figure below.
 
 ![tag-list-null](./assets/tag-list-null.png)
 
-Select the `Create` icon to enter the tag page.
+Select the **Create** button to enter the tag page.
 
 ![tags-add](./assets/tags-add.png)
 
 Manually create a tag for a group:
 
-* Name: fill in the tag name, for example, tag1.
-* Attribute: drop-down selection tag's attribute, for example, read, write.
-* Type: drop-down selection data type, for example, int16.
-* Address: fill in the drive address, for example, 1!40001. 1 stands for the tag salve id that setted in Modbus simulator, and 40001 stands for the tag register address. Please refer to [Module Setting](../configuration/south-devices/south-devices.md) for detailed instructions on driving address.
-* Click the `Create` icon to complete the creation of the tag;
+* **Name**: Fill in the tag name, for example, tag1.
+* **Attribute**: Select the tag attribute from the drop-down list, for example, read, write, or subscribe.
+* **Type**: Select data type from the drop-down list, for example, int16.
+* **Address**: fill in the drive address, for example, 1!40001, where 1 stands for the tag salve id setted in Modbus simulator, and 40001 stands for the tag register address. Please refer to [Module Setting](../configuration/south-devices/south-devices.md) for detailed instructions on driving address.
+* Click the **Create** button to complete the creation of the tag;
 
 :::tip
 For more tag operations, please refer to **Advanced Operations** at the end of the document.
@@ -119,19 +126,19 @@ $ telnet <Running IP on PC side of Modbus simulator> 502
 Please confirm whether the IP and Port are set correctly and whether the firewall is closed when configuring the device.
 :::
 
-### Step 6, Check The Collected Data In Data Monitoring.
+### View Collected Data
 
-Select `Data Monitoring` under the `Monitoring` menu to enter the data monitoring interface to view the values read by the created tags, as shown in the figure below.
+Click **Monitoring** -> **Data Monitoring** to enter the data monitoring interface to view the values read by the created tags, as shown in the figure below.
 
 ![data-monitoring](./assets/data-monitoring.png)
 
-Data monitoring displays values in groups:
+Data monitoring displays values in groups, you can group the devices by device or groups:
 
-* Southbound device: select the southbound device you want to view from the drop-down box, for example, select modbus-tcp-1 that has been created in the above steps;
-* Group name: select the group under the selected southbound device from the drop-down box, for example, select Group-1 that has been created in the above steps;
-* Select Finish, and the page will show the value of each tag read under the group;
+* South device: select the southbound device you want to view from the drop-down box, for example, select modbus-tcp-1 that has been created in the above steps;
+* Group Name: select the group under the selected southbound device from the drop-down box, for example, select Group-1 that has been created in the above steps;
+* Select **Finish**, and the page will show the value of each tag read under the group;
 
-### Step 7, Add A Northbound Application
+### Add A Northbound Application
 
 Create northbound application card for Neuron to establish connection with northbound application and upload the collected device data to MQTT Broker.
 
