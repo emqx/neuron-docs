@@ -8,6 +8,12 @@ A trial EMQ license can be download from our [official website](https://www.emqx
 
 Of course, you can also directly [contact us](https://www.emqx.com/en/contact?product=neuron) to obtain the official license.
 
+:::tip
+When you applies for trial License from official website, you must use hardware token to bind the equipment.
+
+You can contact us directly to apply for a License that does not require hardware token to bind the equipment.
+:::
+
 ## Step 1 Check the hardware token
 
 Click **System Information -> About** to view the hardware logo and copy it.
