@@ -435,7 +435,7 @@
               "path": "usage/admin/log-management"
             },
             {
-              "title": "静态点位",
+              "title": "数据统计",
               "path": "usage/dashboard/data-statistics"
             }
           ]
