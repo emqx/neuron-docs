@@ -1,16 +1,16 @@
-# OMRON FINS on TCP
+# Overview
 
-Omron Fins TCP is a protocol for communication between Omron PLCs and other devices. It is a TCP/IP based protocol. The fins plugin is used for Omron PLCs with network port, such as CP2E.
+Omron Fins UDP is a protocol for communication between Omron PLCs and other devices. It is a TCP/IP based protocol. The fins plugin is used for Omron PLCs with network port, such as NX1P.
 
-Neuron supports Fins TCP protocol, which can be used to communicate with Omron PLCs through Fins TCP protocol.
+Neuron supports Fins UDP protocol, which can be used to communicate with Omron PLCs through Fins UDP protocol.
 
 ## Parameters
 
 | Parameter         | Description                      |
 | ----------------- | -------------------------------- |
 | **Equipment Type** | Target PLC Equipment type |
-| **PLC IP Address**          | Target PLC IPv4 address|
-| **PLC Port**          | Target PLC port, default 9600 |
+| **PLC IP Address** | Target PLC IPv4 address|
+| **PLC Port**       | Target PLC port, default 9600 |
 
 ## Data types
 
