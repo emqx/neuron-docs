@@ -335,7 +335,11 @@
             {
               "title": "Mitsubishi FX",
               "path": "configuration/south-devices/mitsubishi-fx/overview"
-            }
+            },
+            {
+              "title": "Profinet IO",
+              "path": "configuration/south-devices/profinet/profinet"
+            },
           ]
         },
         {
@@ -554,7 +558,8 @@
         }
       ]
     },
-    {      "title": "开发指南",
+    {
+      "title": "开发指南",
       "path": "dev-guide/dev-guide",
       "children": [
         {
@@ -928,6 +933,10 @@
             {
               "title": "Mitsubishi FX",
               "path": "configuration/south-devices/mitsubishi-fx/overview"
+            },
+            {
+              "title": "Profinet IO",
+              "path": "configuration/south-devices/profinet/profinet"
             }
           ]
         },
@@ -1153,7 +1162,8 @@
         }
       ]
     },
-    {      "title": "Development Guide",
+    {
+      "title": "Development Guide",
       "path": "dev-guide/dev-guide",
       "children": [
         {
