@@ -1,6 +1,6 @@
 # 安装
 
-Neuron 和 NeuronEX 在基于 Linux 的操作系统上支持 32位/64位 ARM 和 64位 X86 架构，并提供以下安装包格式：
+Neuron 在基于 Linux 的操作系统上支持 32位/64位 ARM 和 64位 X86 架构，并提供以下安装包格式：
 
 * Debian 软件包（.deb）格式，用于基于 Debian、Ubuntu Linux 的操作系统；
 
@@ -32,7 +32,7 @@ Neuron 完全使用 C 语言开发，支持运行在 X86，ARM，MIPS，RISC-V �
 | More than 10,000 tags  | 1G memory   | 64-bit x86 架构                       | Powerful Industrial PC, Server 等 |
 
 :::tip
-Neuron 或 NeuronEX 没有点位数量上限。取决于分配的 CPU 和内存资源。Neuron 非常容易移植，可以运行在类似单板机等有限的资源的硬件上，也可以运行在功能强大的服务器上。以下提供一些 Neuron 的性能测试结果供用户参考，这些测试数据仍然不是上限。更强大的服务器支持配置更多的数据点位。
+Neuron 没有点位数量上限。取决于分配的 CPU 和内存资源。Neuron 非常容易移植，可以运行在类似单板机等有限的资源的硬件上，也可以运行在功能强大的服务器上。以下提供一些 Neuron 的性能测试结果供用户参考，这些测试数据仍然不是上限。更强大的服务器支持配置更多的数据点位。
 
 Platform                         : Intel(R) Xeon(R) Gold 6266C@3.00GHz</br>
 Memory                           : 4G</br>
@@ -50,26 +50,45 @@ CPU Usage                        : 90%</br>
 
 Neuron 软件包可由 Neuron 官网 [https://neugates.io/downloads](https://neugates.io/downloads)下载。也可以到 [Github](https://github.com/emqx/neuron/releases) 仓库下载。
 
-| 下载文件                           | 架构           |
-| --------------------------------- | ------------- |
-| neuron-x.y.z-linux-amd64.deb      | X86_64        |
-| neuron-x.y.z-linux-armhf.deb      | ARM_32        |
-| neuron-x.y.z-linux-arm64.deb      | ARM_64        |
-| neuron-x.y.z-linux-amd64.rpm      | X86_64        |
-| neuron-x.y.z-linux-armhf.rpm      | ARM_32        |
-| neuron-x.y.z-linux-arm64.rpm      | ARM_64        |
-| neuronex-x.y.z-linux-amd64.deb    | X86_64        |
-| neuronex-x.y.z-linux-armhf.deb    | ARM_32        |
-| neuronex-x.y.z-linux-arm64.deb    | ARM_64        |
-| neuronex-x.y.z-linux-amd64.rpm    | X86_64        |
-| neuronex-x.y.z-linux-armhf.rpm    | ARM_32        |
-| neuronex-x.y.z-linux-arm64.rpm    | ARM_64        |
+## Debian 软件包
 
-Neuron 有两种发布版本：
+| 下载文件                     | 架构   |
+| ---------------------------- | ------ |
+| neuron-x.y.z-linux-amd64.deb | X86_64 |
+| neuron-x.y.z-linux-armhf.deb | ARM_32 |
+| neuron-x.y.z-linux-arm64.deb | ARM_64 |
 
-* Neuron：工业 IIOT 服务器；
 
-* Neuronex：集成数据流处理引擎 eKuiper 的共有人 IIoT 服务器。
+## Redhat 软件包管理工具
+
+| 下载文件                     | 架构   |
+| ---------------------------- | ------ |
+| neuron-x.y.z-linux-amd64.rpm | X86_64 |
+| neuron-x.y.z-linux-armhf.rpm | ARM_32 |
+| neuron-x.y.z-linux-arm64.rpm | ARM_64 |
+
+
+## Tape Archive（tar）
+
+| 下载文件                        | 架构   |
+| ------------------------------- | ------ |
+| neuron-x.y.z-linux-amd64.tar.gz | X86_64 |
+| neuron-x.y.z-linux-armhf.tar.gz | ARM_32 |
+| neuron-x.y.z-linux-arm64.tar.gz | ARM_64 |
+
+
+## Docker 镜像
+
+| 下载文件            | 架构   |
+| ------------------- | ------ |
+| neuron-x.y.z-alpine | Docker |
+
+
+## 源码构建
+
+| 下载文件                      | 备注          |
+| ----------------------------- | ------------- |
+| http://github.com/emqx/neuron | Github Source |
 
 版本号 x.y.z 说明：
 
@@ -84,5 +103,4 @@ Neuron 有两种发布版本：
 
 
 请参考[模块列表](../introduction/plugin-list/plugin-list.md)获取更多的 Neuron 支持的驱动模块。
-
 

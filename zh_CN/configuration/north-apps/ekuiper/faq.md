@@ -11,7 +11,8 @@
 ## 如何查看 eKuiper 是否成功从 Neuron 采集到数据
 
 1. 检查 **data-stream-processing** 节点处于连接状态，并且订阅了南向节点。
+
 2. 通过仪表板的性能监控面板，检查 **data-stream-processing** 节点确实采集到了设备数据。
    ![check data-stream-processing metrics](./assets/ekuiper_metrics.gif)
-3. 如果使用 NeuronEX 仪表板，可以通过规则的统计面板，检查规则确实触发了。
-   ![check rule statistics](./assets/ekuiper_rule_statistics.gif)
+   
+   

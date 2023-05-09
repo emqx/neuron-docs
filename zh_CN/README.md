@@ -6,23 +6,6 @@ Neuron 是一款现代的工业物联网连接服务器，可以连接多种使�
 
 Neuron 是一款轻量级的工业软件，运行在各种有限资源的物联网边缘硬件设备上。旨在解决以数据为中心的自动化设备数据难以统一访问的问题，为智能制造提供基础支撑。
 
-## 什么是 NeuronEX?
-
-NeuronEX 是 Neuron 集成数据流处理引擎 eKuiper 的版本。在 NeuronEX 界面可以便捷地进行创建数据流等流处理操作。
-
-NeuronEX 是另一个发布版本，通过集成 eKuiper 基于规则的数据流处理引擎，实现在边缘端进行数据流处理。
-
-![NeuronEX](./introduction/assets/neuronex.png)
-
-NeuronEX 被设计为一个完整的边缘服务器，可以同时进行数据采集和数据流处理，作为一个完整的边缘计算。
-
-NeuronEX 替代 Neuron 与 eKuiper 分开部署的优势：
-
-* 在 Neuron 和 eKuiper 之间建立直接的数据通道，而不是使用代理作为中间件间接传输数据；
-* 单个 Web UI 界面可以让用户在不切换用户界面的情况下轻松地操作 Neuron 和 eKuiper；
-* 一个安装包就包含了 Neuron 和 eKuiper 的安装和配置；
-* 一个 NeuronEX 镜像包含了 Neuron 和 eKuiper 的镜像，实现一次镜像拉取。
-
 ## 边缘原生
 
 Neuron 是一个实时异步处理的服务器，充分利用边缘的低延迟网络方法实现 100 毫秒响应时间。
@@ -50,7 +33,3 @@ Neuron 帮助传统工业设备以异步方式传递数据消息，作为 Sparkp
 ## 身份验证和安全性
 
 Neuron 支持 API 服务的 TLS 和 HTTPS 加密，以确保数据在传输中的安全性，并使用 JWT 身份验证机制来验证数据所有者。
-
-## 数据流处理引擎（仅限 NeuronEX）
-
-NeuronEX 集成基于规则的处理引擎 eKuiper，可以通过边缘端的流式 SQL 语句实现 AI/ML 分析、数据过滤、数据操作、设备控制和时间序列数据库中的数据持久化。

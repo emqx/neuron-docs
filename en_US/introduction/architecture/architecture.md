@@ -1,26 +1,33 @@
 # Architecture
 
-Modern CPUs are all multi-core in design, even though it is lower-end ARM and RISC-V for embedded systems. Multi-core is already a standard. Neuron must have a very good multi-thread management to take advantages of modern CPUs multi-core architecture. As a edge native application, Neuron must have real-time characteristic to execute tasks in certain time frame as running in concurrent. Therefore, We use NNG as our base library for message exchange between threads as NNG provides optimized asynchronous I/O processing for data message delivery.
+Neuron is an edge-native software designed to handle data collection, forwarding, and aggregation for the Industrial IoT. It focuses on ultra-low latency processing at the edge, ensuring fast and efficient handling of diverse data from multiple sources.
 
-NNG offers following features.
-* Asynchronous I/O - Built on the optimized NNG's asynchronous I/O framework 
-* SMP & Multi-threading - Scale out easily to engage multiple cores in the modern SMP system
-* Brokerless - Easily integrated into components, lightweight deployment 
+## Efficient Thread Management
 
-## Overview
-The core message bus is based on pairs-1 feature of NNG library to organize a star-like scalable framework. There is a message router core at the center. Outside there are two kinds of nodes surround the router core. Southbound driver nodes are the nodes to communicate with devices, which is a data producer. Northbound application nodes are the data consumer to process or to forward data message. Each node (southbound or northbound) consists of plugin adapter and plugin module. Communication between nodes rely on NNG high efficiency asynchronous I/O to make good use of multi-core CPU capability. 
+Neuron adopts an edge-native design optimized for modern CPUs' multi-core architecture, including ARM and RISC-V embedded systems.
+
+At the core of Neuron's efficiency lies our adept multi-thread management, which enables Neuron to deliver real-time performance and execute tasks concurrently within specific time constraints. Inter-thread communication is achieved through the NNG library, offering optimized asynchronous I/O processing for rapid and reliable data message exchange between threads. NNG offers the following features.
+
+* Asynchronous I/O - Neuron utilizes the NNG library's optimized asynchronous I/O framework for swift data processing.
+* SMP & Multi-threading - Scale out easily to engage multiple cores in the modern SMP system.
+* Brokerless - With lightweight deployment and easy integration into components, Neuron enables seamless incorporation into various systems.
+
+## Message Bus
+
+Neuron's core message bus is based on the pairs-1 feature of NNG library to organize a star-like scalable framework, with a message router core at the center and two types of nodes surrounding it. 
+
+The southbound driver nodes work as the data producer, they are the nodes to communicate with devices; the northbound application nodes are the data consumer to process or forward data messages. 
+
+Each node (southbound or northbound) consists of a plugin adapter and plugin module. Communication between nodes relies on NNG high-efficiency asynchronous I/O to make good use of multi-core CPU capability. 
 
 ![arch-overview](./assets/arch-overview.png)
 
-## Scatter and Gatter
-Scatter-Gather is a better choice for asynchronous I/O processing since messages are required to process in concurrent, that is, sending the messages to desired nodes at the same time through a parallel thread pool. Therefore, as Neuron adopt this scatter-gather processing pattern, southbound drivers (data producers) are requested to group together the data stream so that northbound applications (data consumers) can subscribe the desired data stream groups from various nodes.
+## Scatter-Gather Processing 
+Neuron incorporates Scatter-Gather processing, which is ideal for asynchronous I/O processing, as it allows messages to be processed concurrently by sending them to desired nodes simultaneously through a parallel thread pool. Southbound driver nodes (data producers) are therefore requested to group data streams together so that northbound application nodes (data consumers) can subscribe to the desired data stream groups from various nodes.
 
 ![arch-bus-topo](./assets/arch-dataflow.png)
 
-## Hot Plugin service
-All nodes in Neuron are running in loosely-coupled threading services. Therefore, except the build-in web server node, any node in Neuron can be created or destroyed dynamically without interfering other running nodes. That means Neuron is very flexible to load a plugin module and start a new node service, or to off-load the a plugin module of stopped node service, in run time. This "hot-plugin" module mechanism can facilitate the individual plugin module upgrades or increase more application features by adding more plugin modules dynamically, providing that the hosts platform/container has enough CPU processing capacity to accommodate more nodes.
+## Hot Plugin
+Neuron's nodes operate as loosely-coupled threading services, allowing for dynamic creation or destruction of nodes without affecting other running nodes, except for the built-in web server node. This flexible design enables the loading or off-loading of plugin modules in real time, facilitating the addition or upgrade of plugin modules and increasing the application's feature set. However, the "hot-plugin" module mechanism is dependent on the CPU processing capacity of the host platform or container. 
 
 ![arch-dataflow](./assets/arch-bus-topo.png)
-
-Neuron is targeting on data collection, forwarding and aggregation for the Industrial IoT multiple diverse devices in concurrent mode since edge native software are all running in real-time to fulfill the ultra-low latency processing at the edge.
-

@@ -27,56 +27,24 @@
       "path": "installation/installation",
       "children": [
         {
-          "title": "安装 Neuron",
-          "path": "installation/neuron/neuron",
-          "children": [
-            {
-              "title": "Ubuntu/Debian",
-              "path": "installation/neuron/deb"
-            },
-            {
-              "title": "CentOS",
-              "path": "installation/neuron/rpm"
-            },
-            {
-              "title": "其他 Linux",
-              "path": "installation/neuron/tar.gz"
-            },
-            {
-              "title": "Docker",
-              "path": "installation/neuron/docker"
-            },
-            {
-              "title": "源代码",
-              "path": "installation/neuron/compile"
-            }
-          ]
+          "title": "Ubuntu/Debian",
+          "path": "installation/neuron/deb"
         },
         {
-          "title": "安装 NeuronEX",
-          "path": "installation/neuronex/neuronex",
-          "children": [
-            {
-              "title": "Ubuntu/Debian",
-              "path": "installation/neuronex/deb"
-            },
-            {
-              "title": "CentOS",
-              "path": "installation/neuronex/rpm"
-            },
-            {
-              "title": "其他 Linux",
-              "path": "installation/neuronex/tar.gz"
-            },
-            {
-              "title": "Docker",
-              "path": "installation/neuronex/docker"
-            },
-            {
-              "title": "源代码",
-              "path": "installation/neuronex/compile"
-            }
-          ]
+          "title": "CentOS",
+          "path": "installation/neuron/rpm"
+        },
+        {
+          "title": "其他 Linux",
+          "path": "installation/neuron/tar.gz"
+        },
+        {
+           "title": "Docker",
+           "path": "installation/neuron/docker"
+        },
+        {
+           "title": "源代码",
+           "path": "installation/neuron/compile"
         },
         {
           "title": "安装和申请许可证",
@@ -455,20 +423,6 @@
       ]
     },
     {
-      "title": "数据流处理",
-      "path": "data-streaming/data-streaming",
-      "children": [
-        {
-          "title": "清洗数据",
-          "path": "data-streaming/data-cleansing/data-cleansing"
-        },
-        {
-          "title": "控制设备",
-          "path": "data-streaming/device-control/device-control"
-        }
-      ]
-    },
-    {
       "title": "用户案例",
       "path": "use-cases/use_cases"
     },
@@ -577,56 +531,24 @@
       "path": "installation/installation",
       "children": [
         {
-          "title": "Installing Neuron",
-          "path": "installation/neuron/neuron",
-          "children": [
-            {
-              "title": "Ubuntu/Debian",
-              "path": "installation/neuron/deb"
-            },
-            {
-              "title": "CentOS",
-              "path": "installation/neuron/rpm"
-            },
-            {
-              "title": "Other Linux",
-              "path": "installation/neuron/tar.gz"
-            },
-            {
-              "title": "Docker",
-              "path": "installation/neuron/docker"
-            },
-            {
-              "title": "Source",
-              "path": "installation/neuron/compile"
-            }
-          ]
+          "title": "Ubuntu/Debian",
+          "path": "installation/neuron/deb"
         },
         {
-          "title": "Installing NeuronEX",
-          "path": "installation/neuronex/neuronex",
-          "children": [
-            {
-              "title": "Ubuntu/Debian",
-              "path": "installation/neuronex/deb"
-            },
-            {
-              "title": "CentOS",
-              "path": "installation/neuronex/rpm"
-            },
-            {
-              "title": "Other Linux",
-              "path": "installation/neuronex/tar.gz"
-            },
-            {
-              "title": "Docker",
-              "path": "installation/neuronex/docker"
-            },
-            {
-              "title": "Source",
-              "path": "installation/neuronex/compile"
-            }
-          ]
+          "title": "CentOS",
+          "path": "installation/neuron/rpm"
+        },
+        {
+          "title": "Other Linux",
+          "path": "installation/neuron/tar.gz"
+        },
+        {
+          "title": "Docker",
+          "path": "installation/neuron/docker"
+        },
+        {
+          "title": "Source",
+          "path": "installation/neuron/compile"
         },
         {
           "title": "Installing and Activating License",
@@ -1007,20 +929,6 @@
         {
           "title": "Offline Data Cache",
           "path": "usage/offline-data-cache"
-        }
-      ]
-    },
-    {
-      "title": "Data Streaming",
-      "path": "data-streaming/data-streaming",
-      "children": [
-        {
-          "title": "Data Cleansing",
-          "path": "data-streaming/data-cleansing/data-cleansing"
-        },
-        {
-          "title": "Control Device",
-          "path": "data-streaming/device-control/device-control"
         }
       ]
     },
