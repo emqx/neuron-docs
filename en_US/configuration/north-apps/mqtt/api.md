@@ -148,8 +148,13 @@ wrong when reading a tag, the error code is returned.
 
 ### Request
 
-You could write a tag by sending requests in JSON to the MQTT topic
+You could write a tag by sending requests in JSON to the MQTT topic designated
+by the **Write Request Topic** parameter.
+
+::: tip
+Before Neuron version 2.4.5, the write request topic was hard-coded to
 **/neuron/{node_name}/write/req**.
+:::
 
 #### Body
 
