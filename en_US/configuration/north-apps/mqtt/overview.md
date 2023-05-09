@@ -25,6 +25,8 @@ These are the available parameters when configuring a node using the MQTT plugin
 | **QoS Level**                   | MQTT QoS level for message delivery, optional, default QoS 0. (since 2.4.0) |
 | **~~upload-topic~~**            | ~~Subscription data reporting topic, required.~~ (removed in 2.4.0) |
 | **Upload Format**               | JSON format of reported data, required. There are *values-format* and *tags-format*. In *values-format*, data are split into `values` and `errors` sub objects. In *tags-format*, tag data are put in a single array. |
+| **Write Request Topic**         | MQTT topic to which the plugin subscribes for write requests. See [MQTT API](./api.md#write-tag) (since 2.4.5) |
+| **Write Response Topic**        | MQTT topic to which the plugin sends write responses. (since 2.4.5) |
 | **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. (Since 2.4.3) |
 | **Cache Memroy Size**           | In-memory cache limit (MB) in case of communication failure, required. Range in [0, 1024]. Should not be larger than *cache-disk-size*. |
 | **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, required. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |

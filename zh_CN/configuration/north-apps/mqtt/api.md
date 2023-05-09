@@ -136,7 +136,11 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
 
 ### 请求
 
-通过发送 JSON 形式的请求到 MQTT 主题 **/neuron/{node_name}/write/req** ，您可以写一个点位数据。
+通过发送 JSON 形式的请求到**写请求主题**参数指定的 MQTT 主题，您可以写一个点位数据。
+
+::: tip
+在 Neuron 2.4.5 之前的版本中，写请求的主题是硬编码为 **/neuron/{node_name}/write/req** 的。
+:::
 
 #### 请求体
 
