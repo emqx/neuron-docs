@@ -1,6 +1,6 @@
 # Installation
 
-Neuron and NeuronEX support 32-bit/64-bit ARM and 64-bit x86 architectures on Linux-based operating systems and are available in the following installation package formats:
+Neuron supports 32-bit/64-bit ARM and 64-bit x86 architectures on Linux-based operating systems and are available in the following installation package formats:
 
 * Debian Software Package (.deb) format for Debian, Ubuntu Linux-based operating systems.
 
@@ -34,7 +34,7 @@ The following table lists the hardware conditions required for the minimum deman
 | More than 10,000 tags | 1G memory | 64-bit x86 architectures | Powerful Industrial PC, Server, etc |
 
 :::tip
-Neuron or NeuronEX has no upper limitation on the number of tags. It depends on the allocated CPU and memory resources. Neuron is very portable to run on limited resource like single board hardware, or on powerful servers. The following figures are the results of Neuron performance test for your reference and these benchmark results are still not the upper limits. A more powerful server can be used for more tags.
+Neuron has no upper limitation on the number of tags. It depends on the allocated CPU and memory resources. Neuron is very portable to run on limited resource like single board hardware, or on powerful servers. The following figures are the results of Neuron performance test for your reference and these benchmark results are still not the upper limits. A more powerful server can be used for more tags.
 
 Platform                         : Intel(R) Xeon(R) Gold 6266C@3.00GHz</br>
 Memory                           : 4G</br>
@@ -54,26 +54,45 @@ CPU Usage                        : 90%</br>
 
 Neuron software packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads). You can also download Neuron from [Github](https://github.com/emqx/neuron/releases).
 
-| Download files                    | Architecture  |
-| --------------------------------- | ------------- |
-| neuron-x.y.z-linux-amd64.deb      | X86_64        |
-| neuron-x.y.z-linux-armhf.deb      | ARM_32        |
-| neuron-x.y.z-linux-arm64.deb      | ARM_64        |
-| neuron-x.y.z-linux-amd64.rpm      | X86_64        |
-| neuron-x.y.z-linux-armhf.rpm      | ARM_32        |
-| neuron-x.y.z-linux-arm64.rpm      | ARM_64        |
-| neuronex-x.y.z-linux-amd64.deb    | X86_64        |
-| neuronex-x.y.z-linux-armhf.deb    | ARM_32        |
-| neuronex-x.y.z-linux-arm64.deb    | ARM_64        |
-| neuronex-x.y.z-linux-amd64.rpm    | X86_64        |
-| neuronex-x.y.z-linux-armhf.rpm    | ARM_32        |
-| neuronex-x.y.z-linux-arm64.rpm    | ARM_64        |
+## Debian Software Package
 
-Neuron has two distributions:
+| Download files               | Architecture |
+| ---------------------------- | ------------ |
+| neuron-x.y.z-linux-amd64.deb | X86_64       |
+| neuron-x.y.z-linux-armhf.deb | ARM_32       |
+| neuron-x.y.z-linux-arm64.deb | ARM_64       |
 
-* neuron: Industrial IIoT Server
 
-* neuronex: Industrial IIoT Server with eKuiper processing engine
+## Redhat Package Manager
+
+| Download files               | Architecture |
+| ---------------------------- | ------------ |
+| neuron-x.y.z-linux-amd64.rpm | X86_64       |
+| neuron-x.y.z-linux-armhf.rpm | ARM_32       |
+| neuron-x.y.z-linux-arm64.rpm | ARM_64       |
+
+
+## Tape Archive
+
+| Download files               | Architecture |
+| ---------------------------- | ------------ |
+| neuron-x.y.z-linux-amd64.rpm | X86_64       |
+| neuron-x.y.z-linux-armhf.rpm | ARM_32       |
+| neuron-x.y.z-linux-arm64.rpm | ARM_64       |
+
+
+## Docker Image
+
+| Download files      | Architecture |
+| ------------------- | ------------ |
+| neuron-x.y.z-alpine | Docker       |
+
+
+## Build from Source
+
+| Download files                | Remark        |
+| ----------------------------- | ------------- |
+| http://github.com/emqx/neuron | Github Source |
 
 Release number x.y.z have following description:
 
@@ -89,5 +108,4 @@ Release number x.y.z have following description:
 At present, Neuron has open source MQTT, RESTful API and Modbus TCP, and users can directly use the open source driver protocols. However, by uploading a valid license, users can use more driving protocols such as OPC UA, Modbus RTU, Mitsubishi PLC and Omron PLC.
 
 Please refer to [Module List](../introduction/plugin-list/plugin-list.md) for the driver protocols supported by Neuron.
-
 

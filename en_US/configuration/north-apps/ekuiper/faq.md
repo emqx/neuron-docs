@@ -16,6 +16,3 @@ the connection until the rules are started.
 2. Check that the **data-stream-processing** node actually collects data using
    the dashboard metrics panel.
    ![check data-stream-processing metrics](./assets/ekuiper_metrics.gif)
-3. If you are using the NeuronEX dashboard, check that rules are triggered
-   using the rule statistics panel.
-   ![check rule statistics](./assets/ekuiper_rule_statistics.gif)

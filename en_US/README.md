@@ -6,20 +6,6 @@ Neuron is a modern industrial IoT connectivity server that simultaneously commun
 
 As a lightweight industrial software running all kinds of limited resource IoT edge hardware, neuron aims to solve the problem of difficult unified access to device data for data-centric automation, providing foundational support for intelligent manufacturing.
 
-## What is NeuronEX?
-
-NeuronEX is another distribution version that implements the data stream processing at the edge side by integrating eKuiper's rules-based engine.
-
-![NeuronEX](./introduction/assets/neuronex.png)
-
-NeuronEX is designed to be a complete edge server that can fully exploit data stream processing and data acquisition together as a whole for edge computing.
-
-The advantages of NeuronEX instead of Neuron + eKuiper include:
-* A direct data channel between Neuron and eKuiper eliminates the need for a broker as middleware.
-* The unified WebUI enhances user experience by merging Neuron and eKuiper operations into one seamless interface, removing the need to toggle between interfaces.
-* A single installation package simplifies the process of installing and configuring both Neuron and eKuiper.
-* A readily available NeuronEX docker image with pre-installed Neuron and eKuiper can be easily accessed through a single image pull.
-
 
 ## Edge Native
 
@@ -48,7 +34,3 @@ Neuron assists the legacy industrial devices to [deliver data messages in an asy
 ## Authentication and Security
 
 Neuron supports TLS and HTTPS encryption for API services to ensure the data security in transmission and use [JWT authentication](./http-api/jwt.md) mechanism to verify the data owner.
-
-## Streaming Process Engine (NeuronEX only)
-
-NeuronEX includes eKuiper rule-based processing engine to implement [AI/ML analytics, data filtration, data manipulation, device control, and data persistence](./data-streaming/data-streaming.md) in time-series database via streaming SQL statements at the edge side.
