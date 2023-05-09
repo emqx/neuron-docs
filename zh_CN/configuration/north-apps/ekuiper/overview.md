@@ -95,9 +95,6 @@ eKuiper 可以通过使用 Neuron 动作发送写命令来控制设备，Neuron 
 
 ## 示例
 
-参考[数据处理引擎](../../../data-streaming/data-streaming.md)章节。
-eKuiper 也有一份教程[使用 eKuiper 对 Neuron 采集的数据进行流式处理]。
-
 [eKuiper]: https://ekuiper.org
 [NNG pair0 协议]: https://nng.nanomsg.org/man/v1.3.2/nng_pair.7.html
 [IPC 传输层]: https://nng.nanomsg.org/man/v1.3.2/nng_ipc.7.html

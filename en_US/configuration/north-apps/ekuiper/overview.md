@@ -117,9 +117,6 @@ Below is an example write command:
 
 ## Examples
 
-See the [Data Streaming](../../../data-streaming/data-streaming.md) chapter.
-Also there is an eKuiper tutorial [Stream processing of data collected by Neuron using eKuiper]
-
 [eKuiper]: https://ekuiper.org
 [NNG pair0 protocol]: https://nng.nanomsg.org/man/v1.3.2/nng_pair.7.html
 [IPC transport]: https://nng.nanomsg.org/man/v1.3.2/nng_ipc.7.html
