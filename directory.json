@@ -315,8 +315,16 @@
           "path": "configuration/groups-tags/groups-tags",
           "children": [
             {
+              "title": "设置属性",
+              "path": "configuration/groups-tags/tag-attribute"
+            },
+            {
               "title": "设置乘系数",
               "path": "configuration/groups-tags/tag-decimal"
+            },
+            {
+              "title": "设置精度",
+              "path": "configuration/groups-tags/tag-precision"
             }
           ]
         },
@@ -819,8 +827,16 @@
           "path": "configuration/groups-tags/groups-tags",
           "children": [
             {
+              "title": "Setup Attribute",
+              "path": "configuration/groups-tags/tag-attribute"
+            },
+            {
               "title": "Setup Tag Decimal Details",
               "path": "configuration/groups-tags/tag-decimal"
+            },
+            {
+              "title": "Setup Tag Precision",
+              "path": "configuration/groups-tags/tag-precision"
             }
           ]
         },
