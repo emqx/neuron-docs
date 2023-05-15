@@ -253,16 +253,6 @@
               "path": "configuration/south-devices/omron-fins/omron-fins"
             },
             {
-              "title": "Omron FINS UDP",
-              "path": "configuration/south-devices/omron-fins/omron-fins-udp",
-              "children": [
-                {
-                  "title": "连接 NX1P",
-                  "path": "configuration/south-devices/omron-fins/example/nx1p/nx1p"
-                }
-              ]
-            },
-            {
               "title": "Beckhoff ADS",
               "path": "configuration/south-devices/ads/ads",
               "children": [
@@ -801,16 +791,6 @@
             {
               "title": "Omron FINS TCP",
               "path": "configuration/south-devices/omron-fins/omron-fins"
-            },
-            {
-              "title": "Omron FINS UDP",
-              "path": "configuration/south-devices/omron-fins/omron-fins-udp",
-              "children": [
-                {
-                  "title": "Connect to NX1P",
-                  "path": "configuration/south-devices/omron-fins/example/nx1p/nx1p"
-                }
-              ]
             },
             {
               "title": "Beckhoff ADS",
