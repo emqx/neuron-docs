@@ -51,6 +51,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2207    tag address too long
 * 2208    tag description too long
 * 2209    tag precision invalid
+* 2210    tag exist
 * 2301    library not found
 * 2302    library info invalid
 * 2303    library name conflict
@@ -67,6 +68,10 @@ This document describes the errors that neuron will reply to sender when calling
 * 2405    reach licensed max number of tags per node
 * 2406    license hardware token not match
 * 2407    license detect bad clock
+* 2408    license module invalid
+* 2500    template exist
+* 2501    template not found
+* 2502    template name too long
 
 ## plugin common error codes
 
@@ -81,6 +86,9 @@ This document describes the errors that neuron will reply to sender when calling
 * 3010    plugin not running
 * 3011    plugin tag not ready
 * 3012    plugin packet out of order
+* 3013    plugin name too long
+* 3014    plugin not found
+* 3015    plugin device not response
 
 ## FILE error codes
 
