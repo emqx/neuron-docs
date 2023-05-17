@@ -307,6 +307,16 @@
             {
               "title": "ABB COMLI",
               "path": "configuration/south-devices/comli/comli"
+            },
+            {
+              "title": "Panasonic Mewtocol",
+              "path": "configuration/south-devices/panasonic-mewtocol/overview",
+              "children": [
+                {
+                  "title": "常见问题",
+                  "path": "configuration/south-devices/panasonic-mewtocol/faq"
+                }
+              ]
             }
           ]
         },
@@ -811,6 +821,16 @@
             {
               "title": "ABB COMLI",
               "path": "configuration/south-devices/comli/comli"
+            },
+            {
+              "title": "Panasonic Mewtocol",
+              "path": "configuration/south-devices/panasonic-mewtocol/overview",
+              "children": [
+                {
+                  "title": "FAQ",
+                  "path": "configuration/south-devices/panasonic-mewtocol/faq"
+                }
+              ]
             }
           ]
         },
