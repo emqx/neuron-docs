@@ -20,6 +20,8 @@ The advantages of NeuronEX instead of Neuron + eKuiper
 * A single installation package is provided for both Neuron and eKuiper installation and configuration.
 * A NeuronEX docker image with both Neuron and eKuiper installed is provided and can be used with a single image pull.
 
+**Note**: Starting from version v2.5, NeuronEX functionalities will be officially incorporated into the EMQX ECP (Edge-to-Cloud Platform). For a deeper understanding of EMQX ECP and its features, please visit the [EMQX ECP official webpage](https://www.emqx.com/en/products/emqx-ecp).
+
 ## Edge Native
 
 Neuron is an advanced real-time asynchronous processing server designed to achieve response times as low as 100 milliseconds. By leveraging the benefits of edge computing and low-latency network architectures, it ensures rapid and efficient data processing.
