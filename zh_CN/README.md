@@ -23,6 +23,8 @@ NeuronEX 替代 Neuron 与 eKuiper 分开部署的优势：
 * 一个安装包就包含了 Neuron 和 eKuiper 的安装和配置；
 * 一个 NeuronEX 镜像包含了 Neuron 和 eKuiper 的镜像，实现一次镜像拉取。
 
+**注意**：从 Neuron 2.5 开始，NeuronEX 的功能将正式并入 EMQX ECP。如希望深入了解 EMQX ECP 及其功能，请访问 [EMQX ECP官方网页](https://www.emqx.com/en/products/emqx-ecp)。
+
 ## 边缘原生
 
 Neuron 是一个实时异步处理的服务器，充分利用边缘的低延迟网络方法实现 100 毫秒响应时间。
