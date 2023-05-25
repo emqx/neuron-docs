@@ -17,6 +17,10 @@ Configuration/Plugin - This is a management interface for those northbound and s
 
 * [Configuration](../configuration/configuration.md)
 
+Data Streaming - This is used to set up the SQL streaming rules and configure to integrate with the external AI/ML platfrom (for NeuronEX only). 
+
+* [Data Streaming](../data-streaming/data-streaming.md)
+
 Administration - This menu gives you access to a variety of functions, including log management, password change.
 
 * [Administration](./admin/admin.md)

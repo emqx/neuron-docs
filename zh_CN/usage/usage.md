@@ -20,6 +20,10 @@
 
 配置/插件 - 北向和南向插件的管理接口。
 
+* [数据流处理](../data-streaming/data-streaming.md)
+
+数据流处理 - 用于设置 SQL 流规则，并配置为与外部 AI/ML 平台集成(仅适用于 NeuronEX)。
+
 * [管理](./admin/admin.md)
 
 管理 - 该菜单提供了多种功能，包括日志管理和密码更改。

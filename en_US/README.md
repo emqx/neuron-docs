@@ -6,6 +6,19 @@ Neuron is a modern industrial IoT connectivity server that simultaneously commun
 
 As a lightweight industrial software running all kinds of limited resource IoT edge hardware, neuron aims to solve the problem of difficult unified access to device data for data-centric automation, providing foundational support for intelligent manufacturing.
 
+## What is NeuronEX?
+
+NeuronEX is another distribution version that implements the data stream processing at the edge side by integrating the LF Edge eKuiper rules-based engine. LF Edge eKuiper is a lightweight IoT data analytics and stream processing engine running on resource-constraint edge devices. Go [LF Edge ekuiper](ekuiper.org) for more details.
+
+![NeuronEX](./introduction/assets/neuronex.png)
+
+NeuronEX is designed to be a complete edge server that can fully exploit data stream processing and data acquisition together as a whole for edge computing.
+
+The advantages of NeuronEX instead of Neuron + eKuiper
+* A direct data channel is established between Neuron and eKuiper instead of using a broker as middleware to transfer data indirectly.
+* A single WebUI makes it easy for users to operate both Neuron and eKuiper without changing the user interface.
+* A single installation package is provided for both Neuron and eKuiper installation and configuration.
+* A NeuronEX docker image with both Neuron and eKuiper installed is provided and can be used with a single image pull.
 
 ## Edge Native
 
@@ -34,3 +47,7 @@ Neuron assists the legacy industrial devices to [deliver data messages in an asy
 ## Authentication and Security
 
 Neuron supports TLS and HTTPS encryption for API services to ensure the data security in transmission and use [JWT authentication](./http-api/jwt.md) mechanism to verify the data owner.
+
+## Streaming Process Engine (NeuronEX only)
+
+NeuronEX includes eKuiper rule-based processing engine to implement AI/ML analytics, data filtration, data manipulation, device control, and data persistence in time-series database via streaming SQL statements at the edge side.

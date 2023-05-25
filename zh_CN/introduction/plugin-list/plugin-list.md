@@ -7,41 +7,42 @@
 | 协议名称                                                      | 连接    | 类型  | 是否可用      | 备注                           |
 | ------------------------------------------------------------ | ------ | ---- | ------------ | -------------------------------- |
 | <div style="width:220pt">Modbus TCP</div>              | <div style="width:40pt">以太网</div>  | <div style="width:40pt">开源</div> | <div style="width:50pt">是</div>            |  |
-| <div style="width:220pt">Modbus RTU</div>              | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>           |  |
-| <div style="width:220pt">Modbus RTU over TCP</div>     | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            |  |
+| <div style="width:220pt">Modbus RTU</div>              | <div style="width:40pt">串口</div>    | <div style="width:40pt">开源</div> | <div style="width:50pt">是</div>           |  |
+| <div style="width:220pt">Modbus RTU over TCP</div>     | <div style="width:40pt">以太网</div>  | <div style="width:40pt">开源</div> | <div style="width:50pt">是</div>            |  |
 | <div style="width:220pt">OPC UA</div>                  | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            |  |
-| <div style="width:220pt">CIP Ethernet/IP</div>         | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>             | <div style="width:110pt">CIP –通用工业协议</div> |
+| <div style="width:220pt">CIP Ethernet/IP</div>         | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>             | <div style="width:110pt">CIP –通用工业协议</div> |
 
 ### PLC 驱动
 
 | 协议名称                                                      | 连接    | 类型  | 是否可用      | 备注                           |
 | ------------------------------------------------------------ | ------ | ---- | ------------ | -------------------------------- |
-| <div style="width:220pt">Omron FINS on TCP</div>                                            | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | |
+| <div style="width:220pt">Siemens 3964R/RK512</div>                                          | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | <div style="width:110pt">用于 S5 和 S7</div> |
 | <div style="width:220pt">Siemens Industrial Ethernet ISO for S7-200/300/400/1200/1500</div> | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | |
-| <div style="width:220pt">Mitsubishi MC Protocol for Q series and E71 module</div>           | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | |
-| <div style="width:220pt">Mitsubishi MC Protocol for Q series and C24 module</div>           | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
-| <div style="width:220pt">Mitsubishi FX Series</div>                                         | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
-| <div style="width:220pt">Allen-Bradley DF1 half-duplex for PLC2</div>                       | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | <div style="width:110pt">用于 PLC2 和 PLC5</div>                |
-| <div style="width:220pt">Schneider PLC Modbus RTU</div>                                     | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
-| <div style="width:220pt">Schneider PLC Modbus TCP</div>                                     | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
+| <div style="width:220pt">Siemens Fetch Write for S7-300/400 and CP443 module</div>          | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>  | |
+| <div style="width:220pt">Allen-Bradley DF1 half-duplex</div>                       | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>  | <div style="width:110pt">用于 PLC2 和 PLC5</div>                |
+| <div style="width:220pt">Allen-Bradley CIP EtherNet/IP</div>                                | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | <div style="width:110pt">CIP – 通用工业协议</div> |
+| <div style="width:220pt">Schneider PLC Modbus RTU</div>                                     | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>  | |
+| <div style="width:220pt">Schneider PLC Modbus TCP</div>                                     | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>  | |
 | <div style="width:220pt">Schneider Telemecanique UNI-TE</div>                               | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
-| <div style="width:220pt">ABB SattControl Comli</div>                                        | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
+| <div style="width:220pt">ABB SattControl Comli</div>                                        | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>  | |
 | <div style="width:220pt">Omron Host Link</div>                                              | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | <div style="width:110pt">用于单连接和多连接</div> |
 | <div style="width:220pt">Omron FINS on Host Link</div>                                      | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
-| <div style="width:220pt">Siemens 3964R/RK512</div>                                          | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | <div style="width:110pt">用于 S5 和 S7</div> |
-| <div style="width:220pt">Siemens Fetch Write for S7-300/400 and CP443 module</div>          | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
-| <div style="width:220pt">Allen-Bradley CIP EtherNet/IP</div>                                | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | <div style="width:110pt">CIP – 通用工业协议</div> |
+| <div style="width:220pt">Omron FINS on TCP</div>                                            | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | |
+| <div style="width:220pt">Omron FINS on UDP</div>                                            | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | |
+| <div style="width:220pt">Mitsubishi MC Protocol for Q series and C24 module</div>           | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
+| <div style="width:220pt">Mitsubishi MC Protocol for Q series and E71 module</div>           | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | <div style="width:110pt">3E frame</div> |
+| <div style="width:220pt">Mitsubishi FX Series</div>                                         | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">仅 V1.x 可用</div>  | |
+| <div style="width:220pt">Mitsubishi FX3U-ENET-ADP</div>                                     | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | <div style="width:110pt">1E frame</div>   |
 | <div style="width:220pt">Mitsubishi 232ADP/485BD: Serial/RS485</div>                        | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>           | |
-| <div style="width:220pt">Mitsubishi FX3U-ENET-ADP</div>                                     | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | <div style="width:110pt">只用于 FX</div>   |
 | <div style="width:220pt">Panasonic FP series MEWTOCOL-COM</div>                             | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
-| <div style="width:220pt">Panasonic FP series MEWTOCOL-COM</div>                             | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
+| <div style="width:220pt">Panasonic FP series MEWTOCOL-COM</div>                             | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | |
 | <div style="width:220pt">Panasonic FP series MEWTOCOL-DAT</div>                             | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
-| <div style="width:220pt">Beckhoff ADS/AMS TCPIP</div>                                       | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
-| <div style="width:220pt">Keyence CIP Ethernet/IP</div>                                      | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | <div style="width:110pt">CIP – 通用工业协议</div> |
-| <div style="width:220pt">Keyence MC Protocol</div>                                          | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | <div style="width:110pt">三菱 MC 协议</div> |
+| <div style="width:220pt">Beckhoff ADS/AMS TCPIP</div>                                       | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | |
+| <div style="width:220pt">Keyence CIP Ethernet/IP</div>                                      | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | <div style="width:110pt">CIP – 通用工业协议</div> |
+| <div style="width:220pt">Keyence MC Protocol</div>                                          | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | <div style="width:110pt">三菱 MC 协议</div> |
 | <div style="width:220pt">Delta DVP communication protocol</div>                             | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
-| <div style="width:220pt">Delta Modbus TCP</div>                                             | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
-| <div style="width:220pt">Delta CIP Ethernet/IP</div>                                        | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
+| <div style="width:220pt">Delta Modbus TCP</div>                                             | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | |
+| <div style="width:220pt">Delta CIP Ethernet/IP</div>                                        | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">是</div>            | <div style="width:110pt">CIP – 通用工业协议</div> |
 | <div style="width:220pt">Fatek FACON serial</div>                                           | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
 | <div style="width:220pt">Fatek FACON ethernet</div>                                         | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
 | <div style="width:220pt">GE FANUC 90-30 SNPX</div>                                          | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div> | <div style="width:50pt">否</div>            | |
@@ -51,10 +52,13 @@
 
 | 协议名称             | 连接    | 类型       | 是否可用   | 备注     |
 | ------------------- | ------ | --------- | --------- | ---------- |
-| <div style="width:220pt">DL/T645-07</div>          | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div>       | <div style="width:50">是</div>       | <div style="width:110pt">中国电力仪表标准</div>  |
-| <div style="width:220pt">IEC 60870-5-104</div>     | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div>       | <div style="width:50">是</div>        | |
+| <div style="width:220pt">DL/T645-1997</div>          | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div>       | <div style="width:50">是</div>       | <div style="width:110pt">中国电力仪表标准</div>  |
+| <div style="width:220pt">DL/T645-2007</div>          | <div style="width:40pt">串口</div>    | <div style="width:40pt">商业</div>       | <div style="width:50">是</div>       | <div style="width:110pt">中国电力仪表标准</div>  |
 | <div style="width:220pt">IEC 60870-5-101</div>     | <div style="width:40pt">串口</div>     | <div style="width:40pt">商业</div>      | <div style="width:50">否</div>         | |
-| <div style="width:220pt">IEC 61850</div>           | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div>       | <div style="width:50">否</div>        | |
+| <div style="width:220pt">IEC 60870-5-102</div>     | <div style="width:40pt">串口</div>     | <div style="width:40pt">商业</div>      | <div style="width:50">否</div>         | |
+| <div style="width:220pt">IEC 60870-5-103</div>     | <div style="width:40pt">串口</div>     | <div style="width:40pt">商业</div>      | <div style="width:50">否</div>         | |
+| <div style="width:220pt">IEC 60870-5-104</div>     | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div>       | <div style="width:50">是</div>        | |
+| <div style="width:220pt">IEC 61850</div>           | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div>       | <div style="width:50">是</div>        | |
 | <div style="width:220pt">DNP3</div>                | <div style="width:40pt">以太网</div>  | <div style="width:40pt">商业</div>       | <div style="width:50">否</div>        | |
 
 ### 楼宇自动化
@@ -71,6 +75,9 @@
 | 协议名称       | 连接     | 类型   | 是否可用   | 备注     |
 | ------------- | ------- | ----- | --------- | ------- |
 | <div style="width:220pt">MTConnect</div>      | <div style="width:40pt">以太网</div>    | <div style="width:40pt">商业</div>    | <div style="width:50pt">否</div>         | <div style="width:110pt"> </div> |
+| <div style="width:220pt">Fanuc 0i, 30i, 31i, 32i and 35i</div>      | <div style="width:40pt">以太网</div>    | <div style="width:40pt">商业</div>    | <div style="width:50pt">是</div>         | <div style="width:110pt"> </div> |
+| <div style="width:220pt">Mitsubishi M800/M80</div>      | <div style="width:40pt">以太网</div>    | <div style="width:40pt">商业</div>    | <div style="width:50pt">否</div>         | <div style="width:110pt"> </div> |
+| <div style="width:220pt">Siemens 840D、810、828D</div>      | <div style="width:40pt">以太网</div>    | <div style="width:40pt">商业</div>    | <div style="width:50pt">否</div>         | <div style="width:110pt"> </div> |
 
 ## 北向插件模块
 
@@ -80,14 +87,14 @@
 | --------------------------------------- | ----------------------------------- | -------------------------------------- | -------------------- |
 | <div style="width:285pt">RESTful API</div>            | <div style="width:40pt">开源</div>   | <div style="width:50pt">是</div>       |  |
 | <div style="width:285pt">MQTT</div>                   | <div style="width:40pt">开源</div>   | <div style="width:50pt">是</div>       | <div style="width:110pt"> </div> |
-| <div style="width:285pt">MQTT + Sparkplug B</div>     | <div style="width:40pt">商业</div>   | <div style="width:50pt">是</div>       |  |
-| <div style="width:285pt">Websocket</div>              | <div style="width:40pt">商业</div>   | <div style="width:50pt">否</div>       |  |
+| <div style="width:285pt">MQTT Sparkplug B</div>     | <div style="width:40pt">商业</div>   | <div style="width:50pt">是</div>       |  |
+| <div style="width:285pt">Websocket</div>              | <div style="width:40pt">商业</div>   | <div style="width:50pt">是</div>       |  |
 
 ### 应用程序
 
 | 协议名称                                                            | 类型                                  | 是否可用                                 | 备注 |
 | ----------------------------------------------------------------- | ------------------------------------- | --------------------------------------- | ------ |
-| <div style="width:285pt">eKuiper Stream Processing Engine</div>   | <div style="width:40pt">开源</div>    | <div style="width:50pt">是</div>         | <div style="width:110pt"> </div>  |
+| <div style="width:285pt">eKuiper Stream Processing</div>   | <div style="width:40pt">开源</div>    | <div style="width:50pt">是</div>         | <div style="width:110pt"> </div>  |
 
 ## 商业模块的 EMQ 许可证
 

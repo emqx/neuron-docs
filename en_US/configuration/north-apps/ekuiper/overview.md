@@ -57,6 +57,15 @@ Neuron 2.4 and eKuiper 1.9 onwards, the two sides use TCP transport and can
 support many-to-many connections.
 :::
 
+### NeuronEX
+
+To ease deployment and for better user experience, NeuronEX is released alongside
+Neuron since version 2.3.0. NeuronEX is a package of Neuron integrated with
+eKuiper and an augmented dashboard. NeuronEX comes with a default north node
+**data-stream-processing** created for you. Using NeuronEX, users can easily manage
+eKuiper rules directly through the dashboard and perform other stream processing
+operations.
+
 ### Internals
 
 This section describes low level communication details between Neuron and
@@ -116,6 +125,9 @@ Below is an example write command:
 ```
 
 ## Examples
+
+See the [Data Streaming](../../../data-streaming/data-streaming.md) chapter.
+Also there is an eKuiper tutorial [Stream processing of data collected by Neuron using eKuiper]
 
 [eKuiper]: https://ekuiper.org
 [NNG pair0 protocol]: https://nng.nanomsg.org/man/v1.3.2/nng_pair.7.html
