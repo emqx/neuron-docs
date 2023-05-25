@@ -10,7 +10,7 @@ Neuron 是一款轻量级的工业软件，运行在各种有限资源的物联�
 
 NeuronEX 是 Neuron 集成数据流处理引擎 eKuiper 的版本。在 NeuronEX 界面可以便捷地进行创建数据流等流处理操作。
 
-NeuronEX 是另一个发布版本，通过集成 eKuiper 基于规则的数据流处理引擎，实现在边缘端进行数据流处理。LF Edge eKuiper 是一个运行在资源受限边缘设备上的轻量级物联网数据分析和流处理引擎。 前往 [LF Edge ekuiper](ekuiper.org) 了解更多详情。
+NeuronEX 是另一个发布版本，通过集成 eKuiper 基于规则的数据流处理引擎，实现在边缘端进行数据流处理。LF Edge eKuiper 是一个运行在资源受限边缘设备上的轻量级物联网数据分析和流处理引擎。 前往 [LF Edge ekuiper](https://ekuiper.org/) 了解更多详情。
 
 ![NeuronEX](./introduction/assets/neuronex.png)
 

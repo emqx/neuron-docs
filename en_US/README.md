@@ -8,7 +8,7 @@ As a lightweight industrial software running all kinds of limited resource IoT e
 
 ## What is NeuronEX?
 
-NeuronEX is another distribution version that implements the data stream processing at the edge side by integrating the LF Edge eKuiper rules-based engine. LF Edge eKuiper is a lightweight IoT data analytics and stream processing engine running on resource-constraint edge devices. Go [LF Edge ekuiper](ekuiper.org) for more details.
+NeuronEX is another distribution version that implements the data stream processing at the edge side by integrating the LF Edge eKuiper rules-based engine. LF Edge eKuiper is a lightweight IoT data analytics and stream processing engine running on resource-constraint edge devices. Go [LF Edge ekuiper](https://ekuiper.org/) for more details.
 
 ![NeuronEX](./introduction/assets/neuronex.png)
 
