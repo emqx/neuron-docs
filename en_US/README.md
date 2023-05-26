@@ -8,17 +8,17 @@ As a lightweight industrial software running all kinds of limited resource IoT e
 
 ## What is NeuronEX?
 
-NeuronEX is another distribution version that implements the data stream processing at the edge side by integrating the LF Edge eKuiper rules-based engine. LF Edge eKuiper is a lightweight IoT data analytics and stream processing engine running on resource-constraint edge devices. Go [LF Edge ekuiper](https://ekuiper.org/) for more details.
+NeuronEX is a specialized distribution version that incorporates LF Edge eKuiper, a rules-based engine for data stream processing, at the edge. LF Edge eKuiper is a lightweight IoT data analytics and stream processing engine specifically designed to run on edge devices with limited resources. For more detailed information, you can visit the [LF Edge ekuiper website](https://ekuiper.org/).
 
 ![NeuronEX](./introduction/assets/neuronex.png)
 
-NeuronEX is designed to be a complete edge server that can fully exploit data stream processing and data acquisition together as a whole for edge computing.
+NeuronEX serves as a comprehensive edge server that combines data stream processing and data acquisition into a unified solution for edge computing.
 
-The advantages of NeuronEX instead of Neuron + eKuiper
-* A direct data channel is established between Neuron and eKuiper instead of using a broker as middleware to transfer data indirectly.
-* A single WebUI makes it easy for users to operate both Neuron and eKuiper without changing the user interface.
-* A single installation package is provided for both Neuron and eKuiper installation and configuration.
-* A NeuronEX docker image with both Neuron and eKuiper installed is provided and can be used with a single image pull.
+Here are the advantages of NeuronEX over using Neuron and eKuiper separately:
+* NeuronEX establishes a direct data channel between Neuron and eKuiper, eliminating the need for a middleware broker to indirectly transfer data.
+* A single WebUI allows users to seamlessly operate both Neuron and eKuiper without the need to switch between different user interfaces.
+* NeuronEX provides a single installation package that simplifies the installation and configuration process for both Neuron and eKuiper.
+* A NeuronEX docker image is available, which includes pre-installed versions of both Neuron and eKuiper. Users can conveniently pull and use a single image for deployment.
 
 **Note**: Starting from version v2.5, NeuronEX functionalities will be officially incorporated into the EMQX ECP (Edge-to-Cloud Platform). For a deeper understanding of EMQX ECP and its features, please visit the [EMQX ECP official webpage](https://www.emqx.com/en/products/emqx-ecp).
 
