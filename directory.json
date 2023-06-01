@@ -530,11 +530,11 @@
       "children": [
         {
           "title": "Neuron 与 eKuiper 集成",
-          "path": "integration/integration/ekuiper/ekuiper"
+          "path": "integration/ekuiper/ekuiper"
         },
         {
           "title": "Sparkplug 应用",
-          "path": "integration/integration/sparkplug/sparkplug"
+          "path": "integration/sparkplug/sparkplug"
         }
       ]
     },
@@ -1114,11 +1114,11 @@
       "children": [
         {
           "title": "Neuron and eKuiper Integration",
-          "path": "integration/integration/ekuiper/ekuiper"
+          "path": "integration/ekuiper/ekuiper"
         },
         {
           "title": "Sparkplug Application",
-          "path": "integration/integration/sparkplug/sparkplug"
+          "path": "integration/sparkplug/sparkplug"
         }
       ]
     },
