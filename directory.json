@@ -329,6 +329,10 @@
               "path": "configuration/south-devices/fanuc-focas/fanuc-focas"
             },
             {
+              "title": "Mitsubishi CNC",
+              "path": "configuration/south-devices/mitsubishi-cnc/mitsubishi-cnc"
+            },
+            {
               "title": "HJ212-2017",
               "path": "configuration/south-devices/hj212-2017/hj212-2017"
             },
@@ -877,6 +881,10 @@
             {
               "title": "Fanuc Focas Ethernet",
               "path": "configuration/south-devices/fanuc-focas/fanuc-focas"
+            },
+            {
+              "title": "Mitsubishi CNC",
+              "path": "configuration/south-devices/mitsubishi-cnc/mitsubishi-cnc"
             },
             {
               "title": "HJ212-2017",
