@@ -5,3 +5,7 @@ Neuron 可以通过 MQTT 和 REST 与各种云平台集成，包括 EMQX Cloud�
 Neuron 还为数据分析 AI/ML 提供了一个集成的 SQL 流处理规则引擎 eKuiper，以利用边缘侧低延迟处理的优势。输出的流数据可以存储在边缘侧的 influxdb 等时间序列数据库中。
 
 ![integrations](./assets/integration.png)
+
+Neuron可以与eKuiper集成，提供[边缘处理](./ekuiper/ekuiper.md)能力。
+
+Neuron可以与EMQX集成，提供[支持Sparkplug](./sparkplug/sparkplug.md)的工业通信功能。
