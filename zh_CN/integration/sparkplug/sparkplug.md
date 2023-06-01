@@ -66,7 +66,7 @@ Neuron 从设备采集到的数据可以通过 Sparkplug B 协议从边缘端传
 
 ![image-20230419140724126](./assets/image-20230419140724126.png)
 
-~~~protobuf
+```
 ## 完整proto文件
 syntax = "proto2";
 
@@ -257,18 +257,18 @@ message Payload {
     optional bytes    body          = 5;        // To optionally bypass the whole definition above
     extensions                      6 to max;   // For third party extensions
 }
-~~~
+```
 
 ### 创建规则
 
 **SQL语句**
 
-~~~sql
+```
 SELECT
   schema_decode('neuron', payload, 'Payload') as SparkPlugB
 FROM
   "spBv1.0/group1/DDATA/node1/modbus"
-~~~
+```
 
 这里的关键点在于 `schema_decode('neuron', payload, 'Payload')`:
 

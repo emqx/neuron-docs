@@ -66,7 +66,7 @@ Therefore, through the encoding and decoding capabilities of the EMQX rule engin
 
 ![image-20230421142920299](./assets/image-20230421142920299.png)
 
-~~~protobuf
+```
 // Complete proto file
 syntax = "proto2";
 
@@ -257,18 +257,18 @@ message Payload {
     optional bytes    body          = 5;        // To optionally bypass the whole definition above
     extensions                      6 to max;   // For third party extensions
 }
-~~~
+```
 
 ### Create rule
 
 **SQL statement**
 
-~~~sql
+```
 SELECT
   schema_decode('neuron', payload, 'Payload') as SparkPlugB
 FROM
   "spBv1.0/group1/DDATA/node1/modbus"
-~~~
+```
 
 The key point here is  `schema_decode('neuron', payload, 'Payload')`:
 

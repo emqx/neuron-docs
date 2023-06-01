@@ -14,7 +14,7 @@ Neuron support for data extraction, transformation, and loading (ETL) enables Ne
 <b>Data-driven Decision-Making at the Edge</b> 
 Neuron can analyze and process AI-driven insights locally, without relying solely on cloud-based decision-making systems.
 
-# Neuron2.4 and eKuiper1.9 Integration Configuration
+## Neuron2.4 and eKuiper1.9 Integration Configuration
 
 Before version 2.4 of Neuron and version 1.9 of eKuiper, Neuron and eKuiper communicated and integrated with each other using the NNG-IPC (Nanomsg Inter-Process Communication) method, which had several limitations.
 
