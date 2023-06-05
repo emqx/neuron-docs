@@ -20,6 +20,9 @@ Before version 2.4 of Neuron and version 1.9 of eKuiper, Neuron and eKuiper comm
 
 Starting from version 2.4.0, the eKuiper plugin for Neuron switched from the IPC transport layer to the TCP transport layer. Similarly, starting from version 1.9.0, eKuiper also adopted the TCP transport layer. The use of the TCP transport layer removes the restriction of deploying Neuron and eKuiper on the same host and allows for multiple connections between Neuron and eKuiper.
 
+   ![connection_change](./assets/connection_change.png)
+
+
 TCP provides a reliable and cross-host communication method, enabling stable data transmission over the network.
 
 This article provides a detailed introduction to deploying Neuron 2.4.x and eKuiper 1.9.x with TCP connection using Docker Compose. Here is the specific configuration process:

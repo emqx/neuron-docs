@@ -22,6 +22,9 @@ Neuron是一款工业协议网关软件，可以实现工业设备的数据采�
 
 从 Neuron 2.4.0 版本开始， Neuron北向的eKuiper 插件从 IPC 传输层切换到了 TCP 传输层，而 eKuiper 1.9.0 版本开始也采用了 TCP 传输层。 使用 TCP 传输层去除了在同一主机上部署 Neuron 和 eKuiper 的限制，并允许 Neuron 和 eKuiper 之间建立多个连接。
 
+   ![connection_change](./assets/connection_change.png)
+
+
 本篇文章详细介绍通过docker compose的部署方式，实现Neuron2.4.x 和eKuiper1.9.x的TCP连接，以下为具体的配置过程。
 
 ## 快速部署
