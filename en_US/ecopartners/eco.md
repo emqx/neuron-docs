@@ -2,7 +2,7 @@
 
 The wave of Industry 4.0 is sweeping the world. As a result of the deep integration of a new generation of information technology and the manufacturing industry, the Industrial Internet has become the infrastructure to support the fourth industrial revolution. Accelerating the development of the industrial Internet is not only a strategic choice to meet the trend of industrial development and seize the high ground of industry in the future, but also an objective requirement to promote quality change, efficiency change, and power change in the manufacturing industry and realize high-quality development.
 
-As a lightweight connectivity server for industrial data ops, Neuron is always committed to promoting its ecological partnerships with various industrial internet companies. At present, Neuron has established ecological cooperation with [SMDT](https://www.smartdevicetech.com/) and [3onedata]().
+As a lightweight connectivity server for industrial data ops, Neuron is always committed to promoting its ecological partnerships with various industrial internet companies. At present, Neuron has established ecological cooperation with [SMDT](https://www.smartdevicetech.com/) and [3onedata](https://www.3onedata.com/).
 
 ## [Smart Device Technology](./smdt/smdt.md)
 
