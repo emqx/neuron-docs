@@ -14,13 +14,13 @@
         },
         {
           "title": "许可证政策",
-          "path": "introduction/license-describe"
+          "path": "introduction/license/license-policy"
         }
       ]
     },
     {
       "title": "快速入门",
-      "path": "quick-start/hardware-specifications"
+      "path": "quick-start/quick-start"
     },
     {
       "title": "安装",
@@ -433,26 +433,34 @@
         {
           "title": "离线数据缓存",
           "path": "usage/offline-data-cache"
-        }
-      ]
-    },
-    {
-      "title": "数据流处理",
-      "path": "data-streaming/data-streaming",
-      "children": [
-        {
-          "title": "清洗数据",
-          "path": "data-streaming/data-cleansing/data-cleansing"
         },
         {
-          "title": "控制设备",
-          "path": "data-streaming/device-control/device-control"
+          "title": "性能表现",
+          "path": "usage/performance/performance"
         }
       ]
     },
     {
       "title": "用户案例",
-      "path": "use-cases/use_cases"
+      "path": "use-cases/use-cases",
+      "children": [
+        {
+          "title": "工业设备连接",
+          "path": "use-cases/connectivity/connectivity"
+        },
+        {
+          "title": "边缘处理",
+          "path": "use-cases/edge/edge"
+        },
+        {
+          "title": "Sparkplug 解决方案",
+          "path": "use-cases/sparkplug/sparkplug"
+        },
+        {
+          "title": "统一命名空间",
+          "path": "use-cases/uns/uns"
+        }
+      ]
     },
     {
       "title": "HTTP API",
@@ -556,13 +564,13 @@
         },
         {
           "title": "License Policy",
-          "path": "introduction/license-describe"
+          "path": "introduction/license/license-policy"
         }
       ]
     },
     {
       "title": "Quick Start",
-      "path": "quick-start/hardware-specifications"
+      "path": "quick-start/quick-start"
     },
     {
       "title": "Installation",
@@ -981,26 +989,34 @@
         {
           "title": "Offline Data Cache",
           "path": "usage/offline-data-cache"
-        }
-      ]
-    },
-    {
-      "title": "Data Streaming",
-      "path": "data-streaming/data-streaming",
-      "children": [
-        {
-          "title": "Data Cleansing",
-          "path": "data-streaming/data-cleansing/data-cleansing"
         },
         {
-          "title": "Control Device",
-          "path": "data-streaming/device-control/device-control"
+          "title": "Performance",
+          "path": "usage/performance/performance"
         }
       ]
     },
     {
       "title": "Use Case",
-      "path": "use-cases/use_cases"
+      "path": "use-cases/use-cases",
+      "children": [
+        {
+          "title": "Industrial Connectivity",
+          "path": "use-cases/connectivity/connectivity"
+        },
+        {
+          "title": "Edge Processing",
+          "path": "use-cases/edge/edge"
+        },
+        {
+          "title": "Sparkplug Solution",
+          "path": "use-cases/sparkplug/sparkplug"
+        },
+        {
+          "title": "Unified Namespace",
+          "path": "use-cases/uns/uns"
+        }
+      ]
     },
     {
       "title": "HTTP API",
