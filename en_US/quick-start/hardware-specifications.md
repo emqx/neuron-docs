@@ -32,7 +32,7 @@ Neuron and the simulator must be run on the same LAN.
 Try to turn off the firewall in Windows, otherwise Neuron may not connect to the simulator.
 :::
 
-## Quick Using Neuron
+## Quick Start Tutorial
 
 Access the Neuron gateway management console, open a web browser and enter the address and port number of the gateway running Neuron ([http://x.x.x.x:7000](http://x.x.x.x:7000/)). Replace "x.x.x.x" with the actual IP address of the gateway where Neuron is installed. 
 
