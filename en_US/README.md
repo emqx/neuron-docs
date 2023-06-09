@@ -32,7 +32,7 @@ Neuron has seamless [Integration](./integration/integration.md) with other indus
 
 ### Unified DataOps
 
-Neuron assists the legacy industrial devices to deliver data messages in an asynchronous way as the edge node specified in Sparkplug B standard. [Sparkplug B](./use-cases/use_cases.md#mqtt-sparkplugb-solution) is an open, unified, interoperable standard for industrial data exchange between industrial information systems like ERP, MES, SCADA and historian via an MQTT broker.
+Neuron assists the legacy industrial devices to deliver data messages in an asynchronous way as the edge node specified in Sparkplug standard. [Sparkplug](./use-cases/sparkplug/sparkplug.md) is an open, unified, interoperable standard for industrial data exchange between industrial information systems like ERP, MES, SCADA and historian via an MQTT broker.
 
 ### Authentication and Security
 
