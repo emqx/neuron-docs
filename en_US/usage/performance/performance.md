@@ -20,7 +20,7 @@ Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection wit
 | ----------------- | ------------------------------ | -------------------- | --------------- |
 | 500               | 30                             | 0.5s                 | 15000           |
 
-Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection with 500 devices. It collects data from 30 data tags per device, at a rate of two collections per second. This results in an aggregate collection of 15,000 data tags.
+Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection with 500 devices. It collects data from 30 data tags per device, at a rate of two collections per second. This results in an aggregate collection of 15,000 data tags within 0.5s.
 
 ### Data Distribution Test 1
 
@@ -38,79 +38,82 @@ Utilizing the Modbus TCP protocol, Neuron simulates a connection with a single d
 
 Utilizing the Modbus TCP protocol, Neuron simulates connections with 4 devices and transmits a total of 200 data points to these devices via the Neuron API interface. The test aims to measure the total time required to accomplish this data distribution task.
 
-### Bulk Write to TDengine
+### Bulk Write Test to TDengine
 
 A simulation is run where Neuron collects data from 100 devices, each containing 100 data tags. This adds up to a total of 10,000 data tags being reported per second to the EMQX Enterprise Edition. This data is then written in real-time to the TDengine database using EMQX Rule Engine.
 
-## 测试架构
+## Test Architecture
 
-1. 测试资源
+### Test Resources
 
-Modbus 模拟器模拟现场 PLC 设备，Neuron 通过 Modbus TCP 连接模拟器，Neuron 采集到数据后通过 MQTT 协议发送至 EMQX 企业版，数据通过 EMQX 内置规则引擎写入涛思数据库。
+The Modbus simulator emulates onsite PLC devices. Neuron connects to this simulator via Modbus TCP, collects data, and transmits it to the EMQX Enterprise Edition using the MQTT protocol. This data is then written into TDengine utilizing EMQX's built-in rule engine.
 
-所使用 Neuron EMQX 企业版、Modbus 模拟器资源如下：
+The Neuron, EMQX Enterprise Edition, and Modbus simulator resources used are as follows:
 
-服务1: 笔记本电脑
-* Modbus 模拟器
-* JMeter 软件
+Setup 1: Laptop
+* Modbus Simulator
+* JMeter
 
-服务2: Linux 服务器 4C/16G
+Setup 2: Linux Server (4C/16G)
 * Neuron V2.2.1
-* EMQX 企业版
-* TDengine 数据库
-* 云边协同管理软件
+* EMQX Enterprise Edition
+* TDengine
+* Cloud-Edge Collaboration Management Software
 
-2. 测试架构图
+### Test Architecture Diagram
 
 ![Simulation](./assets/performance1.png)
 
-3. 测试工具介绍
+### Test Tools
 
-<b>Modbus 模拟器</b>
+<b>Modbus Simulator</b>
 
-[PeakHMI Modbus TCP slave simulator](https://www.hmisys.com)，是一款功能齐全、性能优秀的 Modbus 模拟器。
+[PeakHMI Modbus TCP slave simulator](https://www.hmisys.com) is a full-featured, high-performance Modbus simulator.
 
-<b>性能测试工具 JMeter</b>
+<b>JMeter</b>
 
-性能测试工具 JMeter 是一款基于 Java 的压力测试工具。它可以用于对服务器、网络或对象模拟繁重的负载来测试它们的强度或分析不同压力类型下的整体性能。
+ JMeter is a Java-based test tool to simulate a heavy load on a server, group of servers, network, or object to test its strength or to analyze overall performance under different load types. 
 
-## 测试结论及报告
+## Test Conclusion and Report
 
-1. Neuron 数据采集测试一
+### Data Collection Test 1
 
-Neuron 通过 ModbusTCP 协议，模拟连接 500 台设备，每台设备采集 30 个数据点，采集频率为 1 秒一次，总计Neuron 每秒采集 15000 个数据点位。
-* Neuron 采集程序 CPU 使用率约为 124.3%，内存使用率约为 0.6%
-* 服务器资源 CPU 空闲在 55% 左右，内存空闲在 9.8G 左右。
+Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection with 500 devices. It collects data from 30 data tags per device, at a rate of one collection per second. This results in an aggregate collection of 15,000 data tags within one second.
+
+* The Neuron collection program consumes about 124.3% of CPU resources and approximately 0.6% of memory resources.
+*  As for the server, around 55% of CPU resources and approximately 9.8 GB of memory are free.
 
 ![Test1](./assets/performance2.png) 
 
-2. Neuron 数据采集测试二
+### Data Collection Test 2
 
-Neuron 通过 ModbusTC P协议，模拟连接 500 台设备，每台设备采集 30 个数据点，采集频率为 0.5 秒一次，总计 Neuron 每 0.5 秒采集 15000 个数据点位。
-* Neuron 采集程序 CPU 使用率约为111.3%，内存使用率约为 1.1%
-* 服务器资源 CPU 空闲在 35% 左右，内存空闲在 9.5G 左右。
+Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection with 500 devices. It collects data from 30 data tags per device, at a rate of two collections per second. This results in an aggregate collection of 15,000 data tags within 0.5s.
+* The Neuron collection program consumes about 111.3% of CPU resources and approximately 1.1% of memory resources.
+*  As for the server, around 35% of CPU resources and approximately 9.5 GB of memory are free.
 
 ![Test2](./assets/performance3.png)
 
-3. Neuron 数据下发测试一
+### Data Distribution Test 1
 
-Neuron 通过 ModbusTCP 协议，模拟连接 1 台设备，通过 Neuron API 接口向设备写入 50 个数据点，测试完成数据下发总计时间。
-Neuron 对 1 个设备下发50个数据点位，最大响应时间 159 毫秒，最小响应时间 3 毫秒，平均响应时间 91 毫秒，总计耗时 159 毫秒。
+Utilizing the Modbus TCP protocol, Neuron simulates a connection with a single device and writes 50 data tags to it via the Neuron API interface. The test measures the total time taken to complete this data distribution task.
+
+Neuron writes 50 data tags to a single device, where the maximum, minimum, and average response times are 159 ms, 3 ms, and 91 ms, respectively. The total time taken to complete the operation is 159 ms.
 
 ![Test3](./assets/performance4.png)
 
-4. Neuron 数据下发测试二
+### Data Distribution Test 2
 
-Neuron 通过 ModbusTCP 协议，模拟连接 4 台设备，通过 Neuron API 接口向设备总计写入 200 个数据点，测试完成数据下发总计时间。
-Neuron 对 4 个设备下发共计 200 个数据点位，最大响应时间 107 毫秒，最小响应时间 3 毫秒，平均响应时间 52 毫秒，总计耗时 107 毫秒。
+Utilizing the Modbus TCP protocol, Neuron simulates connections with 4 devices and transmits a total of 200 data points to these devices via the Neuron API interface. The test aims to measure the total time required to accomplish this data distribution task.
+
+Neuron writes 200 data tags to 4 devices, where the maximum, minimum, and average response times are 107 ms, 3 ms, and 52 ms, respectively. The total time taken to complete the operation is 107 ms.
 
 ![Test4](./assets/performance5.png)
 
-5. Neuron 采集数据批量写入涛思数据测试
+### Bulk Write Test to TDengine
 
-模拟 Neuron 采集 100 个设备的数据，每个设备包含 100 个数据点位，每秒上报共 10000 个数据点位到 EMQX 企业版，通过 EMQX 内置规则引擎将以上数据实时写入涛思数据库。
-* EMQX 软件 CPU 使用率约为 91.2%，内存使用率约为 1.2%
-* 服务器资源 CPU 空闲在 13% 左右，内存空闲在 156M 左右。
+A simulation is run where Neuron collects data from 100 devices, each containing 100 data tags. This adds up to a total of 10,000 data tags being reported per second to the EMQX Enterprise Edition. This data is then written in real-time to the TDengine database using EMQX Rule Engine.
+* EMQX consumes about 91.2% of CPU resources and approximately 1.2% of memory resources.
+*  As for the server, around 13% of CPU resources and approximately 156 MB of memory are free.
 
 ![Test5](./assets/performance6.png)	 
 
