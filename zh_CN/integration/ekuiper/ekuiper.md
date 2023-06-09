@@ -14,18 +14,20 @@ Neuron支持数据提取、转换和加载（ETL），可以在数据用于分�
 <b>基于数据驱动的边缘决策</b>
 Neuron可以在本地分析和处理基于AI的洞察，而不仅仅依赖于基于云的决策系统。
 
-## Neuron2.4 对接 eKuiper1.9 配置文档
+## 建立直接的数据通道
+
+在 Neuron 和 eKuiper 之间建立直接的数据通道，而不是使用代理作为中间件间接传输数据。
 
 Neuron是一款工业协议网关软件，可以实现工业设备的数据采集，Neuron结合eKuiper的流式数据处理分析能力，可以在数据采集基础之上实现边端的数据过滤清洗、预处理、分析等操作，提升边端智能。
 
-在Neuron2.4 和eKuiper1.9版本之前，Neuron与eKuiper通过NNG-IPC方式进行通讯与对接，有诸多限制，比如Neuron与eKuiper必须部署在同一物理节点上，并且只能一对一通讯。
+在 Neuron2.4 和 eKuiper1.9 版本之前，Neuron与eKuiper通过NNG-IPC方式进行通讯与对接，有诸多限制，比如Neuron与eKuiper必须部署在同一物理节点上，并且只能一对一通讯。
 
-从 Neuron 2.4.0 版本开始， Neuron北向的eKuiper 插件从 IPC 传输层切换到了 TCP 传输层，而 eKuiper 1.9.0 版本开始也采用了 TCP 传输层。 使用 TCP 传输层去除了在同一主机上部署 Neuron 和 eKuiper 的限制，并允许 Neuron 和 eKuiper 之间建立多个连接。
+从 Neuron 2.4 版本开始， Neuron北向的eKuiper 插件从 IPC 传输层切换到了 TCP 传输层，而 eKuiper 1.9 版本开始也采用了 TCP 传输层。 使用 TCP 传输层去除了在同一主机上部署 Neuron 和 eKuiper 的限制，并允许 Neuron 和 eKuiper 之间建立多个连接。
 
    ![connection_change](./assets/connection_change.png)
 
 
-本篇文章详细介绍通过docker compose的部署方式，实现Neuron2.4.x 和eKuiper1.9.x的TCP连接，以下为具体的配置过程。
+本篇文章详细介绍通过docker compose的部署方式，实现 Neuron2.4 和 eKuiper1.9 的TCP连接，以下为具体的配置过程。
 
 ## 快速部署
 

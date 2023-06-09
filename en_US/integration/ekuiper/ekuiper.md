@@ -1,4 +1,6 @@
-# Neuron and eKuiper Integration
+# LF Edge eKuiper Integration
+
+LF Edge eKuiper is a lightweight, rules-based data stream processing engine specifically designed to run on edge devices with limited resources. It is typically used for IoT data analytics and stream processing at the edge. For more detailed information, please visit the [LF Edge ekuiper website](https://ekuiper.org/).
 
 The integration of Neuron and eKuiper brings numerous benefits to the world of IoT data analytics and edge computing. By integrating eKuiper, Neuron has following capabilities
 
@@ -14,18 +16,20 @@ Neuron support for data extraction, transformation, and loading (ETL) enables Ne
 <b>Data-driven Decision-Making at the Edge</b> 
 Neuron can analyze and process AI-driven insights locally, without relying solely on cloud-based decision-making systems.
 
-## Neuron2.4 and eKuiper1.9 Integration Configuration
+## Direct Communication Channel
+
+Neuron establishes a direct data channel to eKuiper, eliminating the need for a middleware broker to indirectly transfer data.
 
 Before version 2.4 of Neuron and version 1.9 of eKuiper, Neuron and eKuiper communicated and integrated with each other using the NNG-IPC (Nanomsg Inter-Process Communication) method, which had several limitations.
 
-Starting from version 2.4.0, the eKuiper plugin for Neuron switched from the IPC transport layer to the TCP transport layer. Similarly, starting from version 1.9.0, eKuiper also adopted the TCP transport layer. The use of the TCP transport layer removes the restriction of deploying Neuron and eKuiper on the same host and allows for multiple connections between Neuron and eKuiper.
+Starting from version 2.4, the eKuiper plugin for Neuron switched from the IPC transport layer to the TCP transport layer. Similarly, starting from version 1.9, eKuiper also adopted the TCP transport layer. The use of the TCP transport layer removes the restriction of deploying Neuron and eKuiper on the same host and allows for multiple connections between Neuron and eKuiper.
 
-   ![connection_change](./assets/connection_change.png)
+![connection_change](./assets/connection_change.png)
 
 
 TCP provides a reliable and cross-host communication method, enabling stable data transmission over the network.
 
-This article provides a detailed introduction to deploying Neuron 2.4.x and eKuiper 1.9.x with TCP connection using Docker Compose. Here is the specific configuration process:
+This article provides a detailed introduction to deploying Neuron 2.4 and eKuiper 1.9 with TCP connection using Docker Compose. Here is the specific configuration process:
 
 ## Quick Deployment
 

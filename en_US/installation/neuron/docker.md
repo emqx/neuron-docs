@@ -16,13 +16,6 @@ To support the Alpine image with smaller occupation, please download it from the
 $ docker pull emqx/neuron:2.3.0-alpine
 ```
 
-The NeuronEX docker image can be downloaded from the docker hub website.[docker hub](https://hub.docker.com/r/emqx/neuronex)
-
-```bash
-## pull NeuronEX
-$ docker pull emqx/neuronex:latest
-```
-
 ## Start
 
 ```bash

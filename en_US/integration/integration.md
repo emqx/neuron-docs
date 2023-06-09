@@ -6,6 +6,9 @@ Neuron also provides an integrated SQL streaming processing rule engine eKuiper 
 
 ![integrations](./assets/integration.png)
 
-Neuron can be integrated with eKuiper to provide [edge processing](./ekuiper/ekuiper.md) capabilities.
+Neuron can be integrated with eKuiper to provide [edge processing](./ekuiper/ekuiper.md) capabilities,
+including eKuiper rule-based processing engine to implement AI/ML analytics, data filtration, data manipulation, device control, and data persistence in time-series database via streaming SQL statements at the edge side.
+
 
 Neuron can be integrated with EMQX to provide Industrial Communication with [Sparkplug support](./sparkplug/sparkplug.md).
+
