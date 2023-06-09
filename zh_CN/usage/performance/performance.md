@@ -34,19 +34,19 @@ Neuron 通过 ModbusTCP 协议，模拟连接 1 台设备，通过 Neuron API �
 
 | 设备数量 | 单设备下发数据标签数 | 总计下发数据标签数 | 下发方式 |
 | ------------ | --------- | ---------- | --------- |
-| 1 | 50 | 200 | Neuron API |
+| 4 | 50 | 200 | Neuron API |
 
 Neuron 通过 ModbusTCP 协议，模拟连接 4 台设备，通过 Neuron API 接口向设备总计写入 200 个数据标签，测试完成数据下发总计时间。
 
-5. Neuron 采集数据批量写入涛思数据测试
+5. Neuron 采集数据批量写入 TDengine 测试
 
-模拟 Neuron 采集 100 个设备的数据，每个设备包含 100 个数据标签，每秒上报共 10000 个数据标签到 EMQX 企业版，通过 EMQX 内置规则引擎将以上数据实时写入涛思数据库。
+模拟 Neuron 采集 100 个设备的数据，每个设备包含 100 个数据标签，每秒上报共 10000 个数据标签到 EMQX 企业版，通过 EMQX 内置规则引擎将以上数据实时写入 TDengine。
 
 ## 测试架构
 
 1. 测试资源
 
-Modbus 模拟器模拟现场 PLC 设备，Neuron 通过 Modbus TCP 连接模拟器，Neuron 采集到数据后通过 MQTT 协议发送至 EMQX 企业版，数据通过 EMQX 内置规则引擎写入涛思数据库。
+Modbus 模拟器模拟现场 PLC 设备，Neuron 通过 Modbus TCP 连接模拟器，Neuron 采集到数据后通过 MQTT 协议发送至 EMQX 企业版，数据通过 EMQX 内置规则引擎写入 TDengine。
 
 所使用 Neuron EMQX 企业版、Modbus 模拟器资源如下：
 
@@ -106,9 +106,9 @@ Neuron 对 4 个设备下发共计 200 个数据标签，最大响应时间 107 
 
 ![Test4](./assets/performance5.png)
 
-5. Neuron 采集数据批量写入涛思数据测试
+5. Neuron 采集数据批量写入 TDengine 测试
 
-模拟 Neuron 采集 100 个设备的数据，每个设备包含 100 个数据标签，每秒上报共 10000 个数据标签到 EMQX 企业版，通过 EMQX 内置规则引擎将以上数据实时写入涛思数据库。
+模拟 Neuron 采集 100 个设备的数据，每个设备包含 100 个数据标签，每秒上报共 10000 个数据标签到 EMQX 企业版，通过 EMQX 内置规则引擎将以上数据实时写入 TDengine。
 * EMQX 软件 CPU 使用率约为 91.2%，内存使用率约为 1.2%
 * 服务器资源 CPU 空闲在 13% 左右，内存空闲在 156M 左右。
 

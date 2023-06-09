@@ -6,43 +6,41 @@ Neuron performance verification tests for Neuron data collection, distribution, 
 
 The following test scenarios have been planned according to the actual business needs:
 
-### Neuron Data Collection Test 1
+### Data Collection Test 1
 
-| Number of Simulated Devices | Number of Data Points per Device | Collection Frequency | Total Data Points |
-| --------------------------- | -------------------------------- | -------------------- | ----------------- |
-| 500                         | 30                               | 1s                   | 15000             |
+| Number of Devices | Number of Data Tags per Device | Collection Frequency | Total Data Tags |
+| ----------------- | ------------------------------ | -------------------- | --------------- |
+| 500               | 30                             | 1s                   | 15000           |
 
-Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection with 500 devices. It collects data from 30 data tags per device, at a rate of one collection per second. This results in an aggregate collection of 15,000 data tags per second.
+Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection with 500 devices. It collects data from 30 data tags per device, at a rate of one collection per second. This results in an aggregate collection of 15,000 data tags.
 
+### Data Collection Test 2
 
+| Number of Devices | Number of Data Tags per Device | Collection Frequency | Total Data Tags |
+| ----------------- | ------------------------------ | -------------------- | --------------- |
+| 500               | 30                             | 0.5s                 | 15000           |
 
-### Neuron Data Collection Test 2
+Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection with 500 devices. It collects data from 30 data tags per device, at a rate of two collections per second. This results in an aggregate collection of 15,000 data tags.
 
-| 模拟设备数量 | 每个设备数据点数量 | 采集频率 | 总计数据点位 |
-| ------------ | --------- | ---------- | --------- | 
-| 500 | 30 | 0.5s | 15000 |
+### Data Distribution Test 1
 
-Neuron 通过 ModbusTCP 协议，模拟连接 500 台设备，每台设备采集 30 个数据点，采集频率为 0.5 秒一次，总计 Neuron 每 0.5 秒采集 15000 个数据点位。
+| Number of Devices | Number of Data Tags per Device | Total Data Tags | Distribution Method |
+| ----------------- | ------------------------------ | --------------- | ------------------- |
+| 1                 | 50                             | 50              | Neuron API          |
 
-### Neuron Data Collection Test 3
+Utilizing the Modbus TCP protocol, Neuron simulates a connection with a single device and writes 50 data tags to it via the Neuron API interface. The test measures the total time taken to complete this data distribution task.
 
-| 设备数量 | 单设备下发数据点数 | 总计下发数据点数 | 下发方式 |
-| ------------ | --------- | ---------- | --------- | 
-| 1 | 50 | 50 | Neuron API |
+### Data Distribution Test 2
 
-Neuron 通过 ModbusTCP 协议，模拟连接 1 台设备，通过 Neuron API 接口向设备写入 50 个数据点，测试完成数据下发总计时间。
+| Number of Devices | Number of Data Tags per Device | Total Data Tags | Distribution Method |
+| ----------------- | ------------------------------ | --------------- | ------------------- |
+| 4                 | 50                             | 200             | Neuron API          |
 
-4. Neuron 数据下发测试二
+Utilizing the Modbus TCP protocol, Neuron simulates connections with 4 devices and transmits a total of 200 data points to these devices via the Neuron API interface. The test aims to measure the total time required to accomplish this data distribution task.
 
-| 设备数量 | 单设备下发数据点数 | 总计下发数据点数 | 下发方式 |
-| ------------ | --------- | ---------- | --------- | 
-| 1 | 50 | 200 | Neuron API |
+### Bulk Write to TDengine
 
-Neuron 通过 ModbusTCP 协议，模拟连接 4 台设备，通过 Neuron API 接口向设备总计写入 200 个数据点，测试完成数据下发总计时间。
-
-5. Neuron 采集数据批量写入涛思数据测试
-
-模拟 Neuron 采集 100 个设备的数据，每个设备包含 100 个数据点位，每秒上报共 10000 个数据点位到 EMQX 企业版，通过 EMQX 内置规则引擎将以上数据实时写入涛思数据库。
+A simulation is run where Neuron collects data from 100 devices, each containing 100 data tags. This adds up to a total of 10,000 data tags being reported per second to the EMQX Enterprise Edition. This data is then written in real-time to the TDengine database using EMQX Rule Engine.
 
 ## 测试架构
 
