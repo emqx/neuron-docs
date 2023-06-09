@@ -6,17 +6,17 @@ Neuron performance verification tests for Neuron data collection, distribution, 
 
 The following test scenarios have been planned according to the actual business needs:
 
-### Neuron Data Collection Test One
+### Neuron Data Collection Test 1
 
 | Number of Simulated Devices | Number of Data Points per Device | Collection Frequency | Total Data Points |
 | --------------------------- | -------------------------------- | -------------------- | ----------------- |
 | 500                         | 30                               | 1s                   | 15000             |
 
-Neuron 通过 ModbusTCP 协议，模拟连接 500 台设备，每台设备采集 30 个数据点，采集频率为 1 秒一次，总计Neuron 每秒采集 15000 个数据点位。
+Utilizing the Modbus TCP protocol, Neuron establishes a simulated connection with 500 devices. It collects data from 30 data tags per device, at a rate of one collection per second. This results in an aggregate collection of 15,000 data tags per second.
 
-Neuron follows the ModbusTCP protocol to simulate the connection of 500 devices, each device collects 30 data points, the collection frequency is once every second, and Neuron collects a total of 15000 data points per second.
 
-2. Neuron数据采集测试二
+
+### Neuron Data Collection Test 2
 
 | 模拟设备数量 | 每个设备数据点数量 | 采集频率 | 总计数据点位 |
 | ------------ | --------- | ---------- | --------- | 
@@ -24,7 +24,7 @@ Neuron follows the ModbusTCP protocol to simulate the connection of 500 devices,
 
 Neuron 通过 ModbusTCP 协议，模拟连接 500 台设备，每台设备采集 30 个数据点，采集频率为 0.5 秒一次，总计 Neuron 每 0.5 秒采集 15000 个数据点位。
 
-3. Neuron数据下发测试一
+### Neuron Data Collection Test 3
 
 | 设备数量 | 单设备下发数据点数 | 总计下发数据点数 | 下发方式 |
 | ------------ | --------- | ---------- | --------- | 
