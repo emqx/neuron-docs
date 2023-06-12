@@ -35,6 +35,7 @@
 * 2010    node 名称太长
 * 2011    node 不允许删除
 * 2012    node 不允许订阅
+* 2013    node 不允许更新
 
 * 2101    group 已经被订阅
 * 2102    group 未被订阅
@@ -94,13 +95,24 @@
 * 3013    插件名称太长
 * 3014    插件未找到
 * 3015    插件设备未回复
+* 3016    插件不支持模板
+* 3017    插件不支持写点位
 
 ## FILE 错误码
 
-* 4100  文件太长
+* 4100  字符串太长
 * 4101  打开文件失败
 * 4102  读文件失败
 * 4103  写文件失败
+
+## OPCUA 错误码
+
+* 10001    opcua tag 不存在
+* 10002    opcua 连接配置错误
+* 10003    opcua 访问超时
+* 10004    opcua tag 不可读
+* 10005    opcua tag 不可写
+* 10006    opcua tag 不支持
 
 ## S7COMM 错误码
 
@@ -112,6 +124,8 @@
 * 10110  对象不存在
 * 10150  COTP 连接断开
 * 10151  S7 连接断开
+* 10152  没有值
+* 10153  值长度太短
 
 ## KNX 错误码
 
@@ -142,17 +156,22 @@
 * 10516    访问权限错误
 * 10517    中止
 
-## OPCUA 错误码
+## FOCAS 错误码
 
-* 10001    opcua tag 不存在
-* 10002    opcua 连接配置错误
-* 10003    opcua 访问超时
-* 10004    opcua tag 不可读
-* 10005    opcua tag 不可写
-* 10006    opcua tag 不支持
+* 10600  focas 错误
 
 ## EtherNet/IP 错误码
 
 * 10701 - 10744 EtherNet/IP 错误
+* 10797 EtherNet/IP 没有 CIP 连接
 * 10798 EtherNet/IP 数据类型不匹配
 * 10799 EtherNet/IP 未注册 session
+
+## Profinet IO 错误码
+
+* 10800 Profinet IO 未识别
+* 10801 Profinet IO 未连接
+* 10802 Profinet IO 未准备好
+* 10803 Profinet IO 参数未准备好
+* 10804 Profinet IO 没有写入权限
+* 10805 Profinet IO 等待 HELLO 响应
