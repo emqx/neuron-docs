@@ -35,6 +35,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2010    node name too long
 * 2011    node not allow delete
 * 2012    node not allow subscribe
+* 2013    node not allow update
 * 2101    group already subscribed
 * 2102    group not subscribe
 * 2103    group not allow
@@ -67,6 +68,9 @@ This document describes the errors that neuron will reply to sender when calling
 * 2405    reach licensed max number of tags per node
 * 2406    license hardware token not match
 * 2407    license detect bad clock
+* 2500    template already exists
+* 2501    template not found
+* 2502    template name too long
 
 ## plugin common error codes
 
@@ -81,6 +85,10 @@ This document describes the errors that neuron will reply to sender when calling
 * 3010    plugin not running
 * 3011    plugin tag not ready
 * 3012    plugin packet out of order
+* 3013    plugin name too long
+* 3014    plugin not found
+* 3015    plugin device not response
+* 3016    plugin does not support template
 
 ## FILE error codes
 
