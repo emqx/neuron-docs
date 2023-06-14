@@ -7,7 +7,7 @@ MQTT SparkplugB 具有以下优势。
 * 高可扩展性
 * 统一的基础设施
 
-![sparkplugB](./assets/sparkplugB.png)
+![sparkplugB](./assets/sparkplug.png)
 
 Neuron 是 Sparkplug 解决方案的基础设施中的 EoN 节点。它的作用是实现 EoN 节点网关，将各种不同的工业数据转换为 Sparkplug 消息，并通过 EMQX Broker or Cluster 传递给工业应用。在 Sparkplug 解决方案中使用 Neuron 的第二个原因是协助一些 "数据轮询 "设备变得更聪明，并以异步方式报告数据。
 
