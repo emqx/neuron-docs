@@ -21,6 +21,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 1012    password length too short or too long
 * 1013    duplicate password
 * 1014    command execution failed
+* 1015    invalid ip address
 
 ## add/del/update node/tag/plugin/group error codes
 
