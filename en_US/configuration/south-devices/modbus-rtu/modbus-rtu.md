@@ -19,6 +19,9 @@ The Modbus RTU protocol uses binary encoding and can transmit data over RS-232, 
 | **Connection Mode** | When selecting Ethernet TCP connection, you can choose Neuron as the TCP client or server.|
 | **IP Address** |  The IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0.|
 | **Port** | The port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server.|
+| **Transport Mode** | TCP transfer or UDP transfer.|
+| **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command.|
+| **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command.|
 
 ## Data types
 

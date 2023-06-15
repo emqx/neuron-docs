@@ -40,7 +40,7 @@
 
 ## Modbus
 
-### modbus-tcp
+### Modbus TCP QH
 
 ```json
 {
@@ -56,25 +56,33 @@
 }
 ```
 
-### modbus-plus-tcp
+### Modbus TCP
 
 ```json
 {
-    "node": "modbus-plus-tcp",
+    "node": "modbus-tcp",
     "params": {
         // required, 0 the neuron driver is used as the client, 1 the neuron driver is used as the server
         "connection_mode": 0,
+        //Send reading instruction interval(ms)
+        "interval": 20,
         // required, client: host means the ip of the remote device. server: it means the ip used by neuron locally
         "host": "127.0.0.1",
         // required, client: port means the tcp port of the remote device. server: it means the tcp port used by neuron locally
         "port": 502,
         // required, timeout for sending requests to the device
-        "timeout": 3000
+        "timeout": 3000,
+        // the maximum number of retries after a failed attempt to send a read command
+        "max_retries": 0,
+        //resend reading instruction interval(ms) after a failed attempt to send a read command
+        "retry_interval": 0,
+        //TCP transfer(0) or UDP transfer(1)
+        "transport_mode": 0
     }
 }
 ```
 
-### modbus-rtu
+### Modbus RTU
 
 #### Serial connection setting
 
@@ -100,7 +108,7 @@
 }
 ```
 
-#### TCP connection setting
+#### TCP/UDP connection setting
 
 ```json
 {
@@ -110,12 +118,20 @@
         "link": 1,
         // required, timeout for sending requests to the device
         "timeout": 3000,
-        // tcp required, client: host means the ip of the remote device. server: it means the ip used by neuron locally
+        //Send reading instruction interval(ms)
+        "interval": 20,
+        // tcp/udp required, client: host means the ip of the remote device. server: it means the ip used by neuron locally
         "host": "127.0.0.1",
         // tcp required, client: port means the tcp port of the remote device. server: it means the tcp port used by neuron locally
         "port": 502,
         // tcp required, 0 the neuron driver is used as the client, 1 the neuron driver is used as the server
-        "connection_mode": 0
+        "connection_mode": 0,
+        // the maximum number of retries after a failed attempt to send a read command
+        "max_retries": 0,
+        //resend reading instruction interval(ms) after a failed attempt to send a read command
+        "retry_interval": 0,
+        //TCP transfer(0) or UDP transfer(1)
+        "transport_mode": 0
     }
 }
 ```

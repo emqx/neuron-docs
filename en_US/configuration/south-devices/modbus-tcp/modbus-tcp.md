@@ -9,7 +9,6 @@ In addition to supporting data acquisition and processing via TCP client mode, t
 | Plugin | Description |
 | --- | --- | 
 | **Modbus TCP** |Standard Modbus TCP protocol implementation supports both TCP client and server modes, providing better compatibility with devices. |
-| **Modbus TCP community** | The open-source version of the standard Modbus TCP protocol only supports TCP client mode.|
 | **Modbus TCP QH** | Customized Modbus TCP protocol implementation supports a maximum of 65530 bytes for one read operation, while the standard protocol only allows a maximum of 250 bytes to be read at a time.|
 
 
@@ -22,6 +21,9 @@ In addition to supporting data acquisition and processing via TCP client mode, t
 | **IP Address** |  The IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0.|
 | **Port** | The port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server.|
 | **Connection Timeout** |  The time the system waits for a device to respond to a command. |
+| **Transport Mode** | TCP transfer or UDP transfer.|
+| **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command.|
+| **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command.|
 
 ## Data types
 
