@@ -71,7 +71,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2406    license hardware token not match
 * 2407    license detect bad clock
 * 2408    license module invalid
-* 2500    template exist
+* 2500    template already exists
 * 2501    template not found
 * 2502    template name too long
 
@@ -91,8 +91,8 @@ This document describes the errors that neuron will reply to sender when calling
 * 3013    plugin name too long
 * 3014    plugin not found
 * 3015    plugin device not response
-* 3016    plugin not support template
-* 3017    plugin not support write tags
+* 3016    plugin does not support template
+* 3017    plugin does not support write tags
 
 ## FILE error codes
 
