@@ -35,7 +35,7 @@ When the node debug log is printed, the neuron log will also be printed, and the
 
 ## zlog.conf
 
-Explanation of log configuration file.
+Explanation of the log configuration file. In addition, there is also dev.conf, which is used for development debugging, printing logs and outputting them to the terminal. When launching neuron, add `--log` parameter to call dev.conf.
 
 ```bash
 [global]
@@ -51,6 +51,8 @@ simple = "%d [%V] %f:%L %m%n"
 *.*     "./logs/%c.log", 50MB * 1 ~ "./logs/%c.#2s.log"; simple
 ```
 
+The configuration file is divided into three sections: [global], [formats], [rules].
+
 ### Global
 
 file perms: specify the default access permissions when creating a file.
@@ -65,8 +67,10 @@ file perms: specify the default access permissions when creating a file.
 
 ### Formats
 
-Conversion format string: Conversion format string is similar to C's printf function.
-
+Conversion format string: Conversion format string is similar to C's printf function. It is possible to customize the format of the logs. The method is as follows: specify the name of the format with format_name, replace 'your format' with your own custom format, which should be enclosed in quotes.
+```bash
+format_name = "your format"
+```
 * %d, print the log time;
 * %V, log level, in uppercase;
 * %f, source code file name;
@@ -116,6 +120,21 @@ zlog has six default levels: "DEBUG", "INFO", "NOTICE", "WARN", "ERROR", "FATAL"
 | File                   | "File path"  | File rotation, 10M * 3 ～ "press.#r.log". For example, "./logs/%c.log", 50MB * 1 ~ "./logs/%c.#2s.log" means rotate every 50M, #2s means the length of the serial number is at least 2 digits, starting from 00.  |
 | Synchronous IO file    | -"File path" | N/A |
 | User-defined output    | $name        | "path" is used for record output, dynamic or static.|
+
+For example, only output logs to syslog.
+```bash
+[global]
+
+file perms = 666
+
+[formats]
+
+simple = "%d [%V] %f:%L %m%n"
+
+[rules]
+
+*.*    	>syslog, LOG_LOCAL0; simple
+```
 
 #### (format name, optional)
 
