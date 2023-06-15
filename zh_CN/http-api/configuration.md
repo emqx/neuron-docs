@@ -1438,3 +1438,631 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 添加 Template
+
+*POST* /api/v2/template
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 206
+    * 2203    tag 属性不支持
+    * 2204    tag 类型不支持
+    * 2205    tag 地址格式无效
+    * 2206    tag 名字太长
+    * 2207    tag 地址太长
+    * 2208    tag 描述太长
+    * 2209    tag 精度无效
+* 400
+    * 2105    group 参数无效
+    * 2107    group 名称太长
+    * 2502    模板名字太长
+    * 3013    插件名字太长
+    * 3016    插件不支持模板
+* 404
+    * 3014    插件不存在
+* 409
+    * 2104    group 已存在
+    * 2202    tag 名称冲突
+    * 2500    模板已存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "name": "rtu template",
+    "plugin": "modbus rtu",
+    "groups": [
+        {
+            "name": "group1",
+            "interval": 2000,
+            "tags": [
+                {
+                    "name": "tag1",
+                    "type": 4,
+                    "address": "1!400001",
+                    "attribute": 1,
+                    "precison": 1,
+                    "decimal": 0
+                },
+                {
+                    "name": "tag2",
+                    "type": 11,
+                    "address": "1!400009",
+                    "attribute": 3
+                }
+            ]
+        }
+    ]
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 删除 Template
+
+*DELETE*  /api/v2/template
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 请求参数
+
+**name** 可选，要删除的模板的名字。若未提供该参数，则删除所有模板。
+
+### 响应状态
+
+* 200 OK
+* 404
+    * 2501    模板不存在
+* 500
+    * 1010    程序繁忙
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 获取 Template
+
+*GET*  /api/v2/template
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 请求参数
+
+**name** 可选，要获取的 template 的名字。
+
+### 响应状态
+
+* 200 OK
+* 400
+    * 1003    请求 param 无效
+* 404
+    * 2501    模板不存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 响应
+
+未指定 **name** 参数时，则返回所有模板的列表。
+
+```json
+{
+    "templates": [
+        {
+            "name": "template1",
+            "plugin": "modbus tcp"
+        },
+        {
+            "name": "template2",
+            "plugin": "opc ua"
+        }
+    ]
+}
+```
+
+如果请求指定了 **name** 参数，则返回相应模板的详细信息。
+
+```json
+{
+    "name": "rtu template",
+    "plugin": "modbus rtu",
+    "groups": [
+        {
+            "name": "group1",
+            "interval": 2000,
+            "tags": [
+                {
+                    "name": "tag1",
+                    "type": 4,
+                    "address": "1!400001",
+                    "attribute": 1,
+                    "precison": 1,
+                    "decimal": 0
+                },
+                {
+                    "name": "tag2",
+                    "type": 11,
+                    "address": "1!400009",
+                    "attribute": 3
+                }
+            ]
+        }
+    ]
+}
+```
+
+## 实例化 Template
+
+*POST* /api/v2/template/inst
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 400
+    * 2304    库打开失败
+    * 2502    模板名字太长
+* 404
+    * 2301    库未找到
+    * 2501    模板不存在
+* 409
+    * 2002    node 已存在
+    * 2307    插件不允许实例化
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "name": "rtu template",
+    "node": "modbus-rtu",
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 添加 Template Group
+
+*POST*  /api/v2/template/group
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 400
+    * 2105    group 参数无效
+    * 2107    group 名称太长
+    * 2502    模板名字太长
+* 404
+    * 2501    模板不存在
+* 409
+    * 2104    group 已存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "interval": 10000
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 删除 Template Group
+
+*DELETE*  /api/v2/template/group
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 400
+    * 2107    group 名称太长
+    * 2502    模板名字太长
+* 404
+    * 2106    group 不存在
+    * 2501    模板不存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1"
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 更新 Template Group
+
+*PUT*  /api/v2/template/group
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+
+* 200 OK
+* 400
+    * 2105    group 参数无效
+    * 2107    group 名称太长
+    * 2502    模板名字太长
+* 404
+    * 2106    group 不存在
+    * 2501    模板不存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "interval": 20000
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 获取 Template Group
+
+*GET*  /api/v2/template/group
+
+### 请求参数
+
+**name**  必需，template 的名字。
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 400
+    * 1003    请求 param 无效
+* 404
+    * 2501    模板不存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 响应
+
+````json
+{
+    "groups": [
+        {
+            "name": "group1",
+            "interval": 2000,
+            "tag_count": 2
+        }
+    ]
+}
+````
+
+## 添加 Template Tag
+
+*POST*  /api/v2/template/tag
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 206
+    * 2203    tag 属性不支持
+    * 2204    tag 类型不支持
+    * 2205    tag 地址格式无效
+    * 2206    tag 名字太长
+    * 2207    tag 地址太长
+    * 2208    tag 描述太长
+    * 2209    tag 精度无效
+* 400
+    * 2107    group 名称太长
+    * 2502    模板名字太长
+* 404
+    * 2106    group 不存在
+    * 2501    模板不存在
+* 409
+    * 2202    tag 名称冲突
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "tags": [
+        {
+            "name": "tag1",
+            "address": "1!400001",
+            "attribute": 8,
+            "type": 4,
+            "precision": 0,
+            "decimal": 0,
+            "description": "",
+            "value": 12
+        },
+        {
+            "name": "tag2",
+            "address": "1!00001",
+            "attribute": 3,
+            "type": 3,
+            "decimal": 0.01
+        }
+    ]
+}
+```
+
+### 响应
+
+```json
+{
+    "index": 2,
+    "error": 0
+}
+```
+
+## 更新 Template Tag
+
+*PUT*  /api/v2/template/tag
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 206
+    * 2201    tag 不存在
+    * 2203    tag 属性不支持
+    * 2204    tag 类型不支持
+    * 2205    tag 地址格式无效
+    * 2206    tag 名字太长
+    * 2207    tag 地址太长
+    * 2208    tag 描述太长
+    * 2209    tag 精度无效
+* 400
+    * 2107    group 名称太长
+    * 2502    模板名字太长
+* 404
+    * 2106    group 不存在
+    * 2501    模板不存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "tags": [
+        {
+            "name": "tag1",
+            "address": "1!400001",
+            "attribute": 8,
+            "type": 4,
+            "precision": 0,
+            "decimal": 0,
+            "description": "",
+            "value": 12
+        },
+        {
+            "name": "tag2",
+            "address": "1!00001",
+            "attribute": 3,
+            "type": 3,
+            "decimal": 0.01
+        }
+    ]
+}
+```
+
+### 响应
+
+```json
+{
+    "index": 2,
+    "error": 0
+}
+```
+
+## 删除 Template Tag
+
+*DELETE*  /api/v2/template/tag
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 206
+    * 2206    tag 名字太长
+* 400
+    * 2107    group 名称太长
+    * 2502    模板名字太长
+* 404
+    * 2106    group 不存在
+    * 2501    模板不存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "tags": [
+        "tag1",
+        "tag2"
+    ]
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 获取 Template Tag
+
+*GET*  /api/v2/template/tag
+
+### 请求参数
+
+**template**  必需，template 的名字。
+
+**group**  必需，group 的名字。
+
+**name** 可选，用于过滤 tag 名字。
+
+### 请求头部
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 400
+    * 1003    请求 param 无效
+* 404
+    * 2106    group 不存在
+    * 2501    模板不存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+
+### 响应
+
+```json
+{
+    "tags": [
+        {
+            "name": "tag1",
+            "type": 4,
+            "address": "1!400001",
+            "attribute": 8,
+            "description": "",
+            "precision": 0,
+            "decimal": 0,
+            "value": 12
+        },
+        {
+            "name": "tag2",
+            "type": 14,
+            "address": "1!00001",
+            "attribute": 3,
+            "description": "",
+            "precison": 0,
+            "decimal": 0,
+        }
+    ]
+}
+```
