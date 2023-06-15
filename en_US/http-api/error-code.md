@@ -37,6 +37,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2011    node not allow delete
 * 2012    node not allow subscribe
 * 2013    node not allow update
+* 2015    node name is empty
 * 2101    group already subscribed
 * 2102    group not subscribe
 * 2103    group not allow

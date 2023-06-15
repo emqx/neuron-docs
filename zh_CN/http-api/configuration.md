@@ -163,7 +163,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
-## 更新 Node(未实现)
+## 更新 Node
 
 *PUT* **/api/v2/node**
 
@@ -176,17 +176,23 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ### 响应状态
 
 * 200 OK
+* 400
+  * 2013 node 不允许更新
+  * 2015 node 名称不允许为空
 * 404
-  * 2003 node exist
+  * 2003 node 不存在
+* 409
+  * 2002 node 已存在
+* 500
+  * 1001 内部错误
+  * 1010 程序繁忙
 
 ### 请求体
 
 ```json
 {
-    //node id
-    "id": 1,
-    //node name
-    "name": "modbus-tcp-node"
+    "name": "modbus-node"
+    "new_name": "modbus-tcp-node"
 }
 ```
 
