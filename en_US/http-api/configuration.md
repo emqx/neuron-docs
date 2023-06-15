@@ -163,7 +163,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Node(Not Implemented)
+## Update Node
 
 *PUT* **/api/v2/node**
 
@@ -176,17 +176,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ### Response Status
 
 * 200 OK
+* 400
+  * 2013 node not allow update
+  * 2015 node name is empty
 * 404
-  * 2003 node exist
+  * 2003 node not exist
+* 409
+  * 2002 node exist
+* 500
+  * 1001 internal server error
+  * 1010 server is busy
 
 ### Body
 
 ```json
 {
-    //node id
-    "id": 1,
-    //node name
-    "name": "modbus-tcp-node"
+    "name": "modbus-node",
+    "new_name": "modbus-tcp-node"
 }
 ```
 
