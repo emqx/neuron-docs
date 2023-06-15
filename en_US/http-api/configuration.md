@@ -1436,3 +1436,632 @@ Response to the error code, when an error response occurs.
     "error": 1011
 }
 ```
+
+## Add Template
+
+*POST* /api/v2/template
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 206
+    * 2203    tag attribute not support
+    * 2204    tag type not support
+    * 2205    tag address format invalid
+    * 2206    tag name too long
+    * 2207    tag address too long
+    * 2208    tag description too long
+    * 2209    tag precision invalid
+* 400
+    * 2105    group parameter invalid
+    * 2107    group name too long
+    * 2502    template name too long
+    * 3013    plugin name too long
+    * 3016    plugin does not support template
+* 404
+    * 3014    plugin not found
+* 409
+    * 2104    group exist
+    * 2202    tag name conflict
+    * 2500    template already exists
+* 500
+    * 1010    server is busy
+    * 1001    internal error
+
+### Body
+
+```json
+{
+    "name": "rtu template",
+    "plugin": "modbus rtu",
+    "groups": [
+        {
+            "name": "group1",
+            "interval": 2000,
+            "tags": [
+                {
+                    "name": "tag1",
+                    "type": 4,
+                    "address": "1!400001",
+                    "attribute": 1,
+                    "precison": 1,
+                    "decimal": 0
+                },
+                {
+                    "name": "tag2",
+                    "type": 11,
+                    "address": "1!400009",
+                    "attribute": 3
+                }
+            ]
+        }
+    ]
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Delete Template
+
+*DELETE*  /api/v2/template
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Request Params
+
+**name** optional, name of the template to delete. If not specified, then delete all templates.
+
+### Response Status
+
+* 200 OK
+* 404
+    * 2501    template not found
+* 500
+    * 1010    server is busy
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Get Template
+
+*GET*  /api/v2/template
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Request Params
+
+**name** optional, name of a particular template.
+
+### Response Status
+
+* 200 OK
+* 400
+    * 1003    request param invalid
+* 404
+    * 2501    template not found
+* 500
+    * 1001    internal error
+    * 1010    server is busy
+
+### Response
+
+Without the **name** request parameter, return all templates.
+
+```json
+{
+    "templates": [
+        {
+            "name": "template1",
+            "plugin": "modbus tcp"
+        },
+        {
+            "name": "template2",
+            "plugin": "opc ua"
+        }
+    ]
+}
+```
+
+When the **name** request parameter is specified, return detail information of the template
+of the given name.
+
+```json
+{
+    "name": "rtu template",
+    "plugin": "modbus rtu",
+    "groups": [
+        {
+            "name": "group1",
+            "interval": 2000,
+            "tags": [
+                {
+                    "name": "tag1",
+                    "type": 4,
+                    "address": "1!400001",
+                    "attribute": 1,
+                    "precison": 1,
+                    "decimal": 0
+                },
+                {
+                    "name": "tag2",
+                    "type": 11,
+                    "address": "1!400009",
+                    "attribute": 3
+                }
+            ]
+        }
+    ]
+}
+```
+
+## Instantiate Template
+
+*POST* /api/v2/template/inst
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 400
+    * 2304    library failed to open
+    * 2502    template name too long
+* 404
+    * 2301    library not found
+    * 2501    template not found
+* 409
+    * 2002    node exist
+    * 2307    library not allow create instance
+* 500
+    * 1001    internal error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "name": "rtu template",
+    "node": "modbus-rtu",
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Add Template Group
+
+*POST*  /api/v2/template/group
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 400
+    * 2105    group parameter invalid
+    * 2107    group name too long
+    * 2502    template name too long
+* 404
+    * 2501    template not found
+* 409
+    * 2104    group exist
+* 500
+    * 1001    internal server error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "interval": 10000
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Del Template Group
+
+*DELETE*  /api/v2/template/group
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 400
+    * 2107    group name too long
+    * 2502    template name too long
+* 404
+    * 2106    group not exist
+    * 2501    template not found
+* 500
+    * 1001    internal server error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1"
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Update Group
+
+*PUT*  /api/v2/template/group
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+
+* 200 OK
+* 400
+    * 2105    group parameter invalid
+    * 2107    group name too long
+    * 2502    template name too long
+* 404
+    * 2106    group not exist
+    * 2501    template not found
+* 500
+    * 1001    internal server error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "interval": 20000
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Get Template Group
+
+*GET*  /api/v2/template/group
+
+### Request Params
+
+**name**  required, name of the template.
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 400
+    * 1003    request param invalid
+* 404
+    * 2501    template not found
+* 500
+    * 1001    internal server error
+    * 1010    server is busy
+
+### Response
+
+````json
+{
+    "groups": [
+        {
+            "name": "group1",
+            "interval": 2000,
+            "tag_count": 2
+        }
+    ]
+}
+````
+
+## Add Template Tag
+
+*POST*  /api/v2/template/tag
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 206
+    * 2203    tag attribute not support
+    * 2204    tag type not support
+    * 2205    tag address format invalid
+    * 2206    tag name too long
+    * 2207    tag address too long
+    * 2208    tag description too long
+    * 2209    tag precision invalid
+* 400
+    * 2107    group name too long
+    * 2502    template name too long
+* 404
+    * 2106    group not exist
+    * 2501    template not found
+* 409
+    * 2202    tag name conflict
+* 500
+    * 1001    internal server error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "tags": [
+        {
+            "name": "tag1",
+            "address": "1!400001",
+            "attribute": 8,
+            "type": 4,
+            "precision": 0,
+            "decimal": 0,
+            "description": "",
+            "value": 12
+        },
+        {
+            "name": "tag2",
+            "address": "1!00001",
+            "attribute": 3,
+            "type": 3,
+            "decimal": 0.01
+        }
+    ]
+}
+```
+
+### Response
+
+```json
+{
+    "index": 2,
+    "error": 0
+}
+```
+
+## Update Template Tag
+
+*PUT*  /api/v2/template/tag
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response status
+
+* 200 OK
+* 206
+    * 2201    tag not exist
+    * 2203    tag attribute not support
+    * 2204    tag type not support
+    * 2205    tag address format invalid
+    * 2206    tag name too long
+    * 2207    tag address too long
+    * 2208    tag description too long
+    * 2209    tag precision invalid
+* 400
+    * 2107    group name too long
+    * 2502    template name too long
+* 404
+    * 2106    group not exist
+    * 2501    template not found
+* 500
+    * 1001    internal server error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "tags": [
+        {
+            "name": "tag1",
+            "address": "1!400001",
+            "attribute": 8,
+            "type": 4,
+            "precision": 0,
+            "decimal": 0,
+            "description": "",
+            "value": 12
+        },
+        {
+            "name": "tag2",
+            "address": "1!00001",
+            "attribute": 3,
+            "type": 3,
+            "decimal": 0.01
+        }
+    ]
+}
+```
+
+### Response
+
+```json
+{
+    "index": 2,
+    "error": 0
+}
+```
+
+## Del Template Tag
+
+*DELETE*  /api/v2/template/tag
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 206
+    * 2206    tag name too long
+* 400
+    * 2107    group name too long
+    * 2502    template name too long
+* 404
+    * 2106    group not exist
+    * 2501    template not found
+* 500
+    * 1001    internal server error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "template": "modbus-template",
+    "group": "group1",
+    "tags": [
+        "tag1",
+        "tag2"
+    ]
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Get Template Tag
+
+*GET*  /api/v2/template/tag
+
+### Request Params
+
+**template**  required, name of the template.
+
+**group**  required, name of the group.
+
+**name** optional, to filter by tag name.
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 400
+    * 1003    request param invalid
+* 404
+    * 2106    group not exist
+    * 2501    template not found
+* 500
+    * 1001    internal server error
+    * 1010    server is busy
+
+### Response
+
+```json
+{
+    "tags": [
+        {
+            "name": "tag1",
+            "type": 4,
+            "address": "1!400001",
+            "attribute": 8,
+            "description": "",
+            "precision": 0,
+            "decimal": 0,
+            "value": 12
+        },
+        {
+            "name": "tag2",
+            "type": 14,
+            "address": "1!00001",
+            "attribute": 3,
+            "description": "",
+            "precison": 0,
+            "decimal": 0,
+        }
+    ]
+}
+```
