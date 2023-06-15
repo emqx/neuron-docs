@@ -4,15 +4,6 @@ Neuron supports integration with eKuiper to realize data stream processing funct
 
 ## Installation
 
-### NeuronEX
-
-Because the NeuronEX version integrates eKuiper, and the page adds a data stream processing section, so only the NeuronEX version needs to be installed.
-
-```shell
-$ sudo docker pull emqx/neuronex:latest
-$ sudo docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuronex:latest
-```
-
 ### Install Neuron and eKuiper separately
 
 Users can choose to install Neuorn and eKuiper separately, and use docker-compose to install and configure them directly. The docker-compose.yml example is as follows, and the installed version can be selected according to requirements.

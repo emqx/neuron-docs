@@ -53,32 +53,6 @@
           ]
         },
         {
-          "title": "安装 NeuronEX",
-          "path": "installation/neuronex/neuronex",
-          "children": [
-            {
-              "title": "Ubuntu/Debian",
-              "path": "installation/neuronex/deb"
-            },
-            {
-              "title": "CentOS",
-              "path": "installation/neuronex/rpm"
-            },
-            {
-              "title": "其他 Linux",
-              "path": "installation/neuronex/tar.gz"
-            },
-            {
-              "title": "Docker",
-              "path": "installation/neuronex/docker"
-            },
-            {
-              "title": "源代码",
-              "path": "installation/neuronex/compile"
-            }
-          ]
-        },
-        {
           "title": "安装和申请许可证",
           "path": "installation/license-install/license-install"
         },
@@ -603,32 +577,6 @@
             {
               "title": "Source",
               "path": "installation/neuron/compile"
-            }
-          ]
-        },
-        {
-          "title": "Installing NeuronEX",
-          "path": "installation/neuronex/neuronex",
-          "children": [
-            {
-              "title": "Ubuntu/Debian",
-              "path": "installation/neuronex/deb"
-            },
-            {
-              "title": "CentOS",
-              "path": "installation/neuronex/rpm"
-            },
-            {
-              "title": "Other Linux",
-              "path": "installation/neuronex/tar.gz"
-            },
-            {
-              "title": "Docker",
-              "path": "installation/neuronex/docker"
-            },
-            {
-              "title": "Source",
-              "path": "installation/neuronex/compile"
             }
           ]
         },
