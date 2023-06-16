@@ -335,6 +335,10 @@
               "path": "configuration/south-devices/panasonic-mewtocol/overview",
               "children": [
                 {
+                  "title": "连接 FP-XH C30T",
+                  "path": "configuration/south-devices/panasonic-mewtocol/fp-xh-c30t"
+                },
+                {
                   "title": "常见问题",
                   "path": "configuration/south-devices/panasonic-mewtocol/faq"
                 }
@@ -902,6 +906,10 @@
               "title": "Panasonic Mewtocol",
               "path": "configuration/south-devices/panasonic-mewtocol/overview",
               "children": [
+                {
+                  "title": "Connect to FP-XH C30T",
+                  "path": "configuration/south-devices/panasonic-mewtocol/fp-xh-c30t"
+                },
                 {
                   "title": "FAQ",
                   "path": "configuration/south-devices/panasonic-mewtocol/faq"
