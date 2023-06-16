@@ -419,6 +419,10 @@
         {
           "title": "订阅组",
           "path": "configuration/subscription/subscription"
+        },
+        {
+          "title": "更新节点名称",
+          "path": "configuration/node-update/update"
         }
       ]
     },
@@ -979,6 +983,10 @@
         {
           "title": "Subscribing the Groups",
           "path": "configuration/subscription/subscription"
+        },
+        {
+          "title": "Update node name",
+          "path": "configuration/node-update/update"
         }
       ]
     },
