@@ -11,15 +11,14 @@ Monitoring - This is data monitoring screen.
 * [Data Monitoring](./monitoring.md)
 
 Configuration - This is used to configure the Neuron usage.
-Configuration/North Apps - This is to set up the northbound application parameters
+
+Configuration/North Apps - This is to set up the northbound application parameters.
+
 Configuration/South Drivers - This is to set up the southbound driver parameters, groups and tags details.
+
 Configuration/Plugin - This is a management interface for those northbound and southbound plugins.
 
 * [Configuration](../configuration/configuration.md)
-
-Data Streaming - This is used to set up the SQL streaming rules and configure to integrate with the external AI/ML platfrom (for NeuronEX only). 
-
-* [Data Streaming](../data-streaming/data-streaming.md)
 
 Administration - This menu gives you access to a variety of functions, including log management, password change.
 
@@ -73,3 +72,9 @@ There are three ways to deliver command to a device.
 :::tip
 The write attribute must be activated when configuring the tags details. Otherwise, there is no way to control the device.
 :::
+
+## Performance
+
+Neuron is designed to excel in acquiring data with excellent performance. As an industrial gateway, Neuron is equipped with optimized hardware and software components that enable efficient and high-speed data acquisition from various sources.
+
+* [Performance Statistic](./performance/performance.md)

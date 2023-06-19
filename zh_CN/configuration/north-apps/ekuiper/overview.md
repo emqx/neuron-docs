@@ -40,13 +40,6 @@ Neuron 2.0.0 版本首次发布了 eKuiper 插件，而 eKuiper 1.5.0 版本首�
 从 Neuron 2.4 和 eKuiper 1.9 开始，两端使用 TCP 传输层，并支持多对多的连接
 :::
 
-### NeuronEX
-
-为了简化部署和更好的用户体验，从 2.3.0 版本起，与 Neuron 一起发布了 NeuronEX。
-NeuronEX 在一个包里集成了 Neuron 和 eKuiper，并且使用增强版的仪表板。
-NeuronEX 默认提供了一个 **data-stream-processing** 北向节点。
-使用 NeuronEX，用户可以直接通过仪表板轻松管理 eKuiper 规则或者执行其他流处理操作。
-
 ### 内部实现
 
 本节描述了 Neuron 和 eKuiper 之间的底层通信细节。如果您不关心这些细节，可以跳过本节。
@@ -102,7 +95,6 @@ eKuiper 可以通过使用 Neuron 动作发送写命令来控制设备，Neuron 
 
 ## 示例
 
-参考[数据处理引擎](../../../data-streaming/data-streaming.md)章节。
 eKuiper 也有一份教程[使用 eKuiper 对 Neuron 采集的数据进行流式处理]。
 
 [eKuiper]: https://ekuiper.org
