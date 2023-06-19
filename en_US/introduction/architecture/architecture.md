@@ -28,7 +28,7 @@ The message routing core (manager) plays a central role in the Neuron framework.
 
 ## Routing Core Services
 
-The message rounting core (manager) plays a crucial role in overseeing the message bus and the two types of adapters.
+The message routing core (manager) plays a crucial role in overseeing the message bus and the two types of adapters.
 
 ![Manager](./assets/manager.png)
 
