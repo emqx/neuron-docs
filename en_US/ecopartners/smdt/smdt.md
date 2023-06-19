@@ -10,7 +10,7 @@ The integration with SMDT GBOX-66X1 and Neuron + eKuiper  brings the following a
 - Offers data cleansing and aggregation processing at the edge
 - Facilitates the extension of AI algorithms
 
-![image-20230609105407864](/Users/lena/Documents/GitHub/Lena Pan/neuron-docs/zh_CN/ecopartners/smdt/assets/smdt-66X1-model.png)
+![image-20230609105407864](./assets/smdt-66X1-model.png)
 
 **Specifications**
 
@@ -44,7 +44,7 @@ The integration with SMDT GBOX-68IE and Neuron + eKuiper brings the following ad
 - Offers data cleansing and aggregation processing at the edge
 - Facilitates the extension of AI algorithms
 
-![Model Diagram Back](/Users/lena/Documents/GitHub/Lena Pan/neuron-docs/zh_CN/ecopartners/smdt/assets/smdt-68IE.png)
+![Model Diagram Back](./assets/smdt-68IE.png)
 
 **Specification**
 
@@ -78,7 +78,7 @@ The integration with SMDT 3588D and Neuron + eKuiper + EMQX brings the following
 * Capable of supporting a large number of MQTT device connections
 * Features a rule engine for comprehensive, one-stop data integration
 
-![Model Diagram Back](/Users/lena/Documents/GitHub/Lena Pan/neuron-docs/zh_CN/ecopartners/smdt/assets/smdt-3588D.png)
+![Model Diagram Back](./assets/smdt-3588D.png)
 
 **Specification**
 
