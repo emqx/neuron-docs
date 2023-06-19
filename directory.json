@@ -319,6 +319,10 @@
               "path": "configuration/south-devices/fanuc-focas/fanuc-focas"
             },
             {
+              "title": "Mitsubishi CNC",
+              "path": "configuration/south-devices/mitsubishi-cnc/mitsubishi-cnc"
+            },
+            {
               "title": "HJ212-2017",
               "path": "configuration/south-devices/hj212-2017/hj212-2017"
             },
@@ -427,6 +431,10 @@
         {
           "title": "订阅组",
           "path": "configuration/subscription/subscription"
+        },
+        {
+          "title": "更新节点名称",
+          "path": "configuration/node-update/update"
         }
       ]
     },
@@ -891,6 +899,10 @@
               "path": "configuration/south-devices/fanuc-focas/fanuc-focas"
             },
             {
+              "title": "Mitsubishi CNC",
+              "path": "configuration/south-devices/mitsubishi-cnc/mitsubishi-cnc"
+            },
+            {
               "title": "HJ212-2017",
               "path": "configuration/south-devices/hj212-2017/hj212-2017"
             },
@@ -1005,6 +1017,10 @@
         {
           "title": "Subscribing the Groups",
           "path": "configuration/subscription/subscription"
+        },
+        {
+          "title": "Update node name",
+          "path": "configuration/node-update/update"
         }
       ]
     },

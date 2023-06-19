@@ -21,6 +21,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 1012    password length too short or too long
 * 1013    duplicate password
 * 1014    command execution failed
+* 1015    invalid ip address
 
 ## add/del/update node/tag/plugin/group error codes
 
@@ -35,6 +36,9 @@ This document describes the errors that neuron will reply to sender when calling
 * 2010    node name too long
 * 2011    node not allow delete
 * 2012    node not allow subscribe
+* 2013    node not allow update
+* 2014    node not allow map
+* 2015    node name is empty
 * 2101    group already subscribed
 * 2102    group not subscribe
 * 2103    group not allow
@@ -69,7 +73,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2406    license hardware token not match
 * 2407    license detect bad clock
 * 2408    license module invalid
-* 2500    template exist
+* 2500    template already exists
 * 2501    template not found
 * 2502    template name too long
 
@@ -89,13 +93,24 @@ This document describes the errors that neuron will reply to sender when calling
 * 3013    plugin name too long
 * 3014    plugin not found
 * 3015    plugin device not response
+* 3016    plugin does not support template
+* 3017    plugin does not support write tags
 
 ## FILE error codes
 
-* 4100  file too long
+* 4100  string too long
 * 4101  file open failure
 * 4102  file read failure
 * 4103  file write failure
+
+## OPCUA error codes
+
+* 10001 opcua tag does not exist
+* 10002 opcua connection configuration error
+* 10003 opcua access timeout
+* 10004 opcua tag is not readable
+* 10005 opcua tag is not writable
+* 10006 opcua tag is not supported
 
 ## S7COMM error codes
 
@@ -107,6 +122,8 @@ This document describes the errors that neuron will reply to sender when calling
 * 10110  s7comm object not exist
 * 10150  s7comm cotp disconnected
 * 10151  s7comm disconnected
+* 10152  s7comm no value
+* 10153  s7comm value too short
 
 ## KNX error codes
 
@@ -137,17 +154,22 @@ This document describes the errors that neuron will reply to sender when calling
 * 10516    fins access error
 * 10517    fins abort
 
-## OPCUA error codes
+## FOCAS error codes
 
-* 10001 opcua tag does not exist
-* 10002 opcua connection configuration error
-* 10003 opcua access timeout
-* 10004 opcua tag is not readable
-* 10005 opcua tag is not writable
-* 10006 opcua tag is not supported
+* 10600 focas error
 
 ## EtherNet/IP error codes
 
 * 10701 - 10744 EtherNet/IP error
+* 10797 EtherNet/IP no CIP connection
 * 10798 EtherNet/IP data type mismatch
 * 10799 EtherNet/IP no session
+
+## Profinet IO error codes
+
+* 10800 Profinet IO unidentified
+* 10801 Profinet IO not connected
+* 10802 Profinet IO not ready
+* 10803 Profinet IO not param end
+* 10804 Profinet IO not DWRITE
+* 10805 Profinet IO wait HELLO
