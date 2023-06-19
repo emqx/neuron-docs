@@ -321,6 +321,10 @@
                   "path": "configuration/south-devices/panasonic-mewtocol/faq"
                 }
               ]
+            },
+            {
+              "title": "Mitsubishi FX",
+              "path": "configuration/south-devices/mitsubishi-fx/overview"
             }
           ]
         },
@@ -883,6 +887,10 @@
                   "path": "configuration/south-devices/panasonic-mewtocol/faq"
                 }
               ]
+            },
+            {
+              "title": "Mitsubishi FX",
+              "path": "configuration/south-devices/mitsubishi-fx/overview"
             }
           ]
         },
