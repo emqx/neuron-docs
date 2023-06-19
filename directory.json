@@ -533,7 +533,20 @@
       ]
     },
     {
-      "title": "开发指南",
+      "title": "生态合作伙伴",
+      "path": "ecopartners/eco",
+      "children": [
+        {
+          "title": "三旺通信",
+          "path": "ecopartners/3onedata/3onedata"
+        },
+        {
+          "title": "视美泰",
+          "path": "ecopartners/smdt/smdt"
+        }
+      ]
+    },
+    {      "title": "开发指南",
       "path": "dev-guide/dev-guide",
       "children": [
         {
@@ -1111,7 +1124,20 @@
       ]
     },
     {
-      "title": "Development Guide",
+      "title": "Eco Partners",
+      "path": "ecopartners/eco",
+      "children": [
+        {
+          "title": "3 One Data",
+          "path": "ecopartners/3onedata/3onedata"
+        },
+        {
+          "title": "Smart Device Technology",
+          "path": "ecopartners/smdt/smdt"
+        }
+      ]
+    },
+    {      "title": "Development Guide",
       "path": "dev-guide/dev-guide",
       "children": [
         {
