@@ -44,6 +44,10 @@ NeuOPC 只能运行于 Windows 7 SP1 以上操作系统，并且需安装 [KB306
 
 5. 本机安装 MatrikonOPCSimulation 模拟器程序，如果安装失败可安装 KepServerEX 测试。
 
-6. 运行 neuopc.exe 程序，选择 `DA Host` 和 `DA Server` 后点击 `Connect`，设置 UA 的各项参数后点击 `Run`，运行成功，如图：
+6. 运行 neuopc.exe 程序，选择 `OPCDA Host` 和 `OPCDA Server` 后点击 `Connection Test`
 
-![local-neuopc](./assets/local-neuopc.png)
+7. ，设置 UA 的各项参数后点击 `Start`，运行成功，如图：
+
+![local-neuopc](./assets/local-neuopc1.png)
+
+![local-neuopc](./assets/local-neuopc2.png)
