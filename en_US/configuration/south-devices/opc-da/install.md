@@ -44,6 +44,8 @@ If it works normally, it means that `OPC DA Auto 2.02` has been installed normal
 
 5. Install the MatrikonOPCSimulation simulator program locally, if the installation fails, you can install KepServerEX for testing;
 
-6. Run the neuopc.exe program, select `DA Host` and `DA Server` and click `Connect`, set the parameters of UA and click `Run`, the operation is successful, as shown in the figure:
+6. Run the neuopc.exe program, select `OPCDA Host` and `OPCDA Server` and click `Connection Test`, set the parameters of UA and click `Start`, the operation is successful, as shown in the figure:
 
-![local-neuopc](./assets/local-neuopc.png)
+![local-neuopc](./assets/local-neuopc1.png)
+
+![local-neuopc](./assets/local-neuopc2.png)
