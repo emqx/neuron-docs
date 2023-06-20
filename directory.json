@@ -423,6 +423,10 @@
         {
           "title": "更新节点名称",
           "path": "configuration/node-update/update"
+        },
+        {
+          "title": "模板",
+          "path": "configuration/templates/templates"
         }
       ]
     },
@@ -1018,6 +1022,10 @@
         {
           "title": "Update node name",
           "path": "configuration/node-update/update"
+        },
+        {
+          "title": "Templates",
+          "path": "configuration/templates/templates"
         }
       ]
     },
