@@ -339,7 +339,7 @@
             {
               "title": "Profinet IO",
               "path": "configuration/south-devices/profinet/profinet"
-            },
+            }
           ]
         },
         {

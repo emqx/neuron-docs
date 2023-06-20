@@ -34,3 +34,5 @@
 ## PLC 数据地址
 
 >  TAG NAME </span>
+
+使用 PLC 软件连接到 PLC，PLC 上点位的名称即为 Neuron 中点位地址。

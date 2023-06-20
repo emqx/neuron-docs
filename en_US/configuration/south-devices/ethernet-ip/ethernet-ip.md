@@ -30,3 +30,5 @@
 ### Address Format
 
 >  TAG NAME </span>
+
+Connect to PLC with PLC software, the name of the point on the PLC is the address of the point in Neuron.
