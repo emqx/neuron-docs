@@ -19,7 +19,7 @@ These are the available parameters when configuring a node using the WebSocket p
 | ------------------------------- | ------------------------------------------------------------ |
 | **Upload Format**               | JSON format of reported data, required. There are *values-format* and *tags-format*. In *values-format*, data are split into `values` and `errors` sub objects. In *tags-format*, tag data are put in a single array. |
 | **Server URL**                  | WebSocket server address, required. Example: `ws://127.0.0.1:8000`, `wss://example.com`. |
-| **CA**                          | CA certificate which signs the server certificate, required when using `wss` scheme.     |
+| **CA**                          | CA certificate which signs the server certificate, required when using `wss` scheme and self signed certificates.     |
 | **Client Cert**                 | Client certificate, required only when using `wss` scheme and two way authentication.    |
 | **Client Private Key**          | Client private key, required only when using `wss` scheme and two way authentication.    |
 | **Client Private Key Password** | Client private key password, required only when **Client Private Key**, if provided, is encrypted. |

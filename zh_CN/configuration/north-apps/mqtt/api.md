@@ -165,7 +165,11 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
 
 ### 响应
 
-写响应会发布到 MQTT 主题 **/neuron/{node_name}/write/resp** 。
+写响应会发布到**写响应主题**参数指定的 MQTT 主题。
+
+::: tip
+在 Neuron 2.4.5 之前的版本中，写响应的主题是硬编码为 **/neuron/{node_name}/write/resp** 的。
+:::
 
 #### 响应体
 

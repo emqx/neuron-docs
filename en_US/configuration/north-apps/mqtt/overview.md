@@ -28,14 +28,14 @@ These are the available parameters when configuring a node using the MQTT plugin
 | **Write Request Topic**         | MQTT topic to which the plugin subscribes for write requests. See [MQTT API](./api.md#write-tag) (since 2.4.5) |
 | **Write Response Topic**        | MQTT topic to which the plugin sends write responses. (since 2.4.5) |
 | **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. (Since 2.4.3) |
-| **Cache Memroy Size**           | In-memory cache limit (MB) in case of communication failure, required. Range in [0, 1024]. Should not be larger than *cache-disk-size*. |
+| **Cache Memory Size**           | In-memory cache limit (MB) in case of communication failure, required. Range in [0, 1024]. Should not be larger than *cache-disk-size*. |
 | **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, required. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
 | **Broker Host**                 | MQTT Broker host, required.                                  |
 | **Broker Port**                 | MQTT Broker port number, required.                           |
 | **Username**                    | Username to use when connecting to the broker, optional.     |
 | **Password**                    | The password to use when connecting to the broker, optional. |
 | **SSL**                         | Whether to enable MQTT SSL, default false.                   |
-| **CA**                          | CA certificate, required when SSL enabled.                   |
+| **CA**                          | CA certificate, required when SSL enabled and using self signed certificates. |
 | **Client Cert**                 | client certificate, required when using SSL two way authentication. |
 | **Client Private Key**          | client key, required when using SSL two way authentication. |
 | **Client Private Key Password** | client key password, optional when using SSL two way authentication. |
@@ -113,8 +113,9 @@ encryption. This ensures that all data passed between the clients and the broker
 are encrypted and secure.
 
 The Neuron MQTT plugin supports running MQTT over SSL. To enable SSL encryption,
-turn on the **SSL** parameter when configuring the node, and provide the **CA**
-parameter with the CA's certificate. The certificate of the broker you are
+turn on the **SSL** parameter when configuring the node. If using self signed
+certificates, the **CA** parameter should be provided with the server-side
+CA certificate. The certificate of the broker you are
 connecting to should be issued by the provided CA. And if you are using two-way
 authentication, you should also provide the client certificate, key file, and
 key file password through the **Client Cert**, **Client Private key**, and
