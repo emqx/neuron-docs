@@ -335,6 +335,16 @@
             {
               "title": "Mitsubishi FX",
               "path": "configuration/south-devices/mitsubishi-fx/overview"
+            },
+            {
+              "title": "SECS GEM HSMS",
+              "path": "configuration/south-devices/secs-gem/secs-gem.md",
+              "children": [
+                {
+                  "title": "连接 Ignition SECS GEM 模拟器",
+                  "path": "configuration/south-devices/secs-gem/example/ignition"
+                }
+              ]
             }
           ]
         },
@@ -554,7 +564,8 @@
         }
       ]
     },
-    {      "title": "开发指南",
+    {
+      "title": "开发指南",
       "path": "dev-guide/dev-guide",
       "children": [
         {
@@ -928,6 +939,16 @@
             {
               "title": "Mitsubishi FX",
               "path": "configuration/south-devices/mitsubishi-fx/overview"
+            },
+            {
+              "title": "SECS GEM HSMS",
+              "path": "configuration/south-devices/secs-gem/secs-gem.md",
+              "children": [
+                {
+                  "title": "Ignition SECS GEM Example",
+                  "path": "configuration/south-devices/secs-gem/example/ignition"
+                }
+              ]
             }
           ]
         },
@@ -1153,7 +1174,8 @@
         }
       ]
     },
-    {      "title": "Development Guide",
+    {
+      "title": "Development Guide",
       "path": "dev-guide/dev-guide",
       "children": [
         {
