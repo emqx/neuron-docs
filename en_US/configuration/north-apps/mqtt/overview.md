@@ -102,6 +102,23 @@ For older versions, you may disable offline data caching by setting both
 **Cache Memory Size** and **Cache Disk Size** to zero.
 :::
 
+
+The following table gives some statistics on disk space usage for offline
+caching (using the [Modbus TCP plugin](../../south-devices/modbus-tcp/modbus-tcp)).
+The first column is the number of tags in each MQTT message, and the second
+column is the MQTT message payload size in bytes for that many tags.
+The third column is the number of cached messages in disk, and the fourth column
+is the resulting disk space usage in kilobytes.
+
+| *Tags / Message*  | *Message Payload (Bytes)* | *Cached Messages*     | *Used Disk Size (KB)*  |
+| ----------------- | ------------------------- | --------------------- | ---------------------- |
+| 10                | 219                       | 100                   | 64                     |
+| 10                | 219                       | 1000                  | 349                    |
+| 100               | 1284                      | 100                   | 228                    |
+| 100               | 1284                      | 1000                  | 2077                   |
+| 1000              | 12993                     | 100                   | 1401                   |
+| 1000              | 12993                     | 1000                  | 13427                  |
+
 ### Data security
 
 SSL/TLS (Secure Sockets Layer/Transport Layer Security) is a security protocol
