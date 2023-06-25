@@ -205,7 +205,7 @@
               "path": "configuration/south-devices/siemens-s7/s7",
               "children": [
                 {
-                  "title": "Siemens S7-1200/1500 设置",
+                  "title": "配置 Siemens S7-1200/1500",
                   "path": "configuration/south-devices/siemens-s7/plc/siemens-s7-1200-1500"
                 },
                 {

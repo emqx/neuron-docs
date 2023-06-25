@@ -210,7 +210,7 @@ TPY 文件中包含了 PLC 程序中所有变量的 index group 和 index offset
   </figcaption>
 </figure>
 
-对于点位地址，index offset 可在在 TwinCAT PLC 数据区页面查看。
+对于点位地址，index offset 可在 TwinCAT PLC 数据区页面查看。
 
 <figure align="center">
   <img src="./assets/plc-tag-2.png"
