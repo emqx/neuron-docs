@@ -8,13 +8,13 @@ The NeuOPC component packages can be downloaded from the [Project page](https://
 
 ### NeuOPC Parameters
 
-| Parameter   | Description                                                  |
-| ----------- | ------------------------------------------------------------ |
-| DA Host     | Need to connect to the target host ID, which can be the target IP or Hostname, and this machine can not be set |
-| DA Server   | The name of the DA server, such as "Matrikon.OPC.Simulation.1", after filling in the DA Host, you can click the drop-down button to try to get the Server list |
-| UA Port     | The listening port setting of the UA server, the default `48401` |
-| UA User     | Authorized access user name of UA server, default `admin`    |
-| UA Password | Access password of UA server, default `123456`               |
+| Parameter      | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| OPCDA Host     | Need to connect to the target host ID, which can be the target IP or Hostname, and this machine can not be set |
+| OPCDA Server   | The name of the DA server, such as "Matrikon.OPC.Simulation.1", after filling in the DA Host, you can click the drop-down button to try to get the Server list |
+| OPCUA Port     | The listening port setting of the UA server, the default `48401` |
+| OPCUA User     | Authorized access user name of UA server, default `admin`    |
+| OPCUA Password | Access password of UA server, default `123456`               |
 
 
 ### Neuron opcua Parameters

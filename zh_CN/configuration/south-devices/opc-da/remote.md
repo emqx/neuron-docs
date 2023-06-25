@@ -67,3 +67,5 @@
 至此 OPC DA 的本地主机测试环境已经设置完成。
 
 ![client-worked](./assets/client-worked.png)
+
+![client-worked](./assets/client-worked1.png)

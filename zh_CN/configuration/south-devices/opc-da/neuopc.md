@@ -2,22 +2,18 @@
 
 ## NeuOPC 设置
 
-1. 填写 `DA Host`，可以填写 IP 或 Hostname，不填写则默认为本机；
-
-2. 尝试点击 DA Server 的下拉按钮，可以尝试获取目标 Host 的 DA Server 列表，如果下拉为空则说明检测不到任何目标主机上的 DA Server；
-
-3. 点击 `Connect` 按钮，服务器连接成功后会显示当前 DA Server 的所有可获取的测点信息，状态栏会出现当前服务器的连接信息；
-
-4. 设置 `UA Port`；
-
-5. 设置 `UA User`；
-
-6. 设置 `UA Password`；
-
-7. 点击 `Run` 按钮，UA 服务器启动后，所有列表中的测点都会被映射到 UA Server 的 NeuOPC 目录下，所有测点的 UA namespace 为2，此时 UA 的相关设置项目会变为不可设置状态；
-
-8. 通过鼠标双击 neuopc 测点列表的 `Name` 列可将对应的测点名称复制到剪贴板中，然后在 Neuron 的 Tag 表单中粘贴。
-![](./assets/neuopc-connect1.png)
+1. 点击 `Setting` 按钮，进入设置界面；
+2. 填写 `OPCDA Host`，可以填写 IP 或 Hostname，不填写则默认为本机；
+3. 尝试点击 `OPCDA Server` 的下拉按钮，可以尝试获取目标 Host 的 DA Server 列表，如果下拉为空则说明检测不到任何目标主机上的 DA Server；
+4. 点击 `Connection` 按钮，服务器连接成功后会显示“Connection tested successfully”。
+5. 设置 `OPCUA Port`；
+6. 设置 `OPCUA User`；
+7. 设置 `OPCUA Password`；
+8. 点击 `Start` 按钮，UA 服务器启动后，OPCDA 测点都会被映射到 UA Server 的 NeuOPC 节点下，所有测点的 UA namespace 为2，此时 `Setting` 的相关项目会变为不可设置状态；
+9. 勾选 `Auto connection` 后，可在后续启动中自动连接连接和监听；
+10. 点击 `Data view` 按钮，进入测点列表界面，通过鼠标双击测点列表的 `Name` 列可将对应的测点名称复制到剪贴板中，然后在 Neuron 的 Tag 表单中粘贴。
+    ![neuopc-connect1-1](./assets/neuopc-connect1-1.png)
+    ![euopc-connect1-2](./assets/neuopc-connect1-2.png)
 
 ## Neuron OPC UA 设置
 
