@@ -339,6 +339,10 @@
             {
               "title": "Mitsubishi FX",
               "path": "configuration/south-devices/mitsubishi-fx/overview"
+            },
+            {
+              "title": "Profinet IO",
+              "path": "configuration/south-devices/profinet/profinet"
             }
           ]
         },
@@ -937,6 +941,10 @@
             {
               "title": "Mitsubishi FX",
               "path": "configuration/south-devices/mitsubishi-fx/overview"
+            },
+            {
+              "title": "Profinet IO",
+              "path": "configuration/south-devices/profinet/profinet"
             }
           ]
         },
