@@ -52,10 +52,10 @@
 
 ## Neuron 设置
 
-1. 通过 UaExpert 软件查看 Ignition 测点信息， 参考 [UaExpert 试用方法](./uaexpert.md)。
+1. 通过 UaExpert 软件查看 Ignition 测点信息， 参考 [配置 UaExpert](./uaexpert.md)。
 ![prosys-5](./assets/prosys-5.jpg)
 
-2. 根据测点信息添加 `Groups` 和 `Tags`。
+1. 根据测点信息添加 `Groups` 和 `Tags`。
 
 ## 测试点位
 

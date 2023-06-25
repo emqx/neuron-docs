@@ -92,6 +92,8 @@ IP.1 = 127.0.0.1
 
 ## 文件附件 localhost.cnf
 
+以下为 OpenSSL 配置文件示例，其中定义了用于一些用于生成证书请求、证书签发、时间戳颁发者（TSA）、证书吊销列表（CRL）等操作的参数。
+
 ```sh
 #
 # OpenSSL example configuration file.

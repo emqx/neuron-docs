@@ -32,12 +32,12 @@
 
 ## Neuron 设置
 
-1. 通过 UaExpert 软件查看 KepServerEx 测点信息， 参考 [UaExpert 试用方法](./uaexpert.md)。
+1. 通过 UaExpert 软件查看 KepServerEx 测点信息， 参考 [配置 UaExpert](./uaexpert.md)。
 ![kepware-5](./assets/kepware-5.jpg)
 
-2. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，填写用户名/密码，添加证书/密钥，启动设备连接；
+1. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 `端点 URL`，填写用户名/密码，添加证书/密钥，启动设备连接；
 
-3. 根据测点信息添加 `Groups` 和 `Tags`。
+2. 根据测点信息添加 `Groups` 和 `Tags`。
 
 ## 测试点位
 
