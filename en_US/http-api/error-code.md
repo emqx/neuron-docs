@@ -22,6 +22,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 1013    duplicate password
 * 1014    command execution failed
 * 1015    invalid ip address
+* 1016    ip address in use
 
 ## add/del/update node/tag/plugin/group error codes
 
