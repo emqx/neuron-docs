@@ -285,6 +285,10 @@
               ]
             },
             {
+              "title": "DL/T645-1997",
+              "path": "configuration/south-devices/dlt645-1997/dlt645-1997"
+            },
+            {
               "title": "BACnet/IP",
               "path": "configuration/south-devices/bacnet-ip/bacnet-ip",
               "children": [
@@ -554,7 +558,8 @@
         }
       ]
     },
-    {      "title": "开发指南",
+    {
+      "title": "开发指南",
       "path": "dev-guide/dev-guide",
       "children": [
         {
@@ -878,6 +883,10 @@
               ]
             },
             {
+              "title": "DL/T645-1997",
+              "path": "configuration/south-devices/dlt645-1997/dlt645-1997"
+            },
+            {
               "title": "BACnet/IP",
               "path": "configuration/south-devices/bacnet-ip/bacnet-ip",
               "children": [
@@ -1153,7 +1162,8 @@
         }
       ]
     },
-    {      "title": "Development Guide",
+    {
+      "title": "Development Guide",
       "path": "dev-guide/dev-guide",
       "children": [
         {
