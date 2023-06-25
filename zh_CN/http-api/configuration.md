@@ -1486,7 +1486,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 {
     "name": "rtu template",
-    "plugin": "modbus rtu",
+    "plugin": "Modbus RTU",
     "groups": [
         {
             "name": "group1",
@@ -1599,7 +1599,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 {
     "name": "rtu template",
-    "plugin": "modbus rtu",
+    "plugin": "Modbus RTU",
     "groups": [
         {
             "name": "group1",
