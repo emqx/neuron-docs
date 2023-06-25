@@ -49,9 +49,9 @@ category or type.
 | host            | IP address of the remote device.                             |
 | port            | TCP port of the remote device (default 48898).               |
 | src-ams-net-id  | AMS Net ID of the machine running neuron.                    |
-| src-ads-port    | AMS port number of the machine running neuron.               |
+| src-ads-port    | AMS port number of the machine running neuron (default 851). |
 | dst-ams-net-id  | AMS Net ID of the target PLC.                                |
-| dst-ads-port    | AMS port number of the target PLC.                           |
+| dst-ads-port    | AMS port number of the target PLC (default 851).             |
 
 Note that a ADS route corresponding to the parameter setting should be created
 in the target TwinCAT software, so that neuron could correctly communicate with

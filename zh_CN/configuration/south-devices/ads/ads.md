@@ -39,9 +39,9 @@ Index group 用于指定正在访问的数据的类别或类型，而 index offs
 | host            | 远程设备 IP 。                                               |
 | port            | 远程设备 TCP 端口（默认 48898） 。                           |
 | src-ams-net-id  | 运行 Neuron 的设备的 AMS Net ID 。                           |
-| src-ads-port    | 运行 Neuron 的设备的 AMS Port 。                             |
+| src-ads-port    | 运行 Neuron 的设备的 AMS Port （默认 851）。                 |
 | dst-ams-net-id  | 目标 PLC 的 AMS Net ID 。                                    |
-| dst-ads-port    | 目标 PLC 的 AMS Port 。                                      |
+| dst-ads-port    | 目标 PLC 的 AMS Port（默认 851） 。                          |
 
 请注意，为了让 Neuron 能与 TwinCAT PLC 正常通信，需要在目标 TwinCAT 软件中添加和设置对应的 ADS 路由。
 
