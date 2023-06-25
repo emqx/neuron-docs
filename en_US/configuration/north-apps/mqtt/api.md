@@ -179,7 +179,13 @@ Below is an example write request:
 
 ### Response
 
-Write response will be published to the MQTT topic **/neuron/{node_name}/write/resp**.
+Write response will be published to the MQTT topic designated by the
+**Write Response Topic** parameter.
+
+::: tip
+Before Neuron version 2.4.5, the write response topic was hard-coded to
+**/neuron/{node_name}/write/resp**.
+:::
 
 #### Body
 

@@ -30,7 +30,7 @@ These are the available parameters when configuring the *monitor* node.
 | **Username**                    | MQTT user name, optional.                                    |
 | **Password**                    | MQTT user password, optional.                                |
 | **SSL**                         | Whether to enable MQTT SSL, default false.                   |
-| **CA**                          | CA certificate which signs the server certificate, required when SSL enabled. |
+| **CA**                          | CA certificate which signs the server certificate, required when SSL enabled and using self signed certificates. |
 | **Client Cert**                 | Client certificate, required when using SSL two way authentication. |
 | **Client Private Key**          | Client private key, required when using SSL two way authentication. |
 | **Client Private Key Password** | Client private key password, required only when **Client Private Key**, if provided, is encrypted. |
