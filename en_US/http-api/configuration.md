@@ -1485,7 +1485,7 @@ Response to the error code, when an error response occurs.
 ```json
 {
     "name": "rtu template",
-    "plugin": "modbus rtu",
+    "plugin": "Modbus RTU",
     "groups": [
         {
             "name": "group1",
@@ -1599,7 +1599,7 @@ of the given name.
 ```json
 {
     "name": "rtu template",
-    "plugin": "modbus rtu",
+    "plugin": "Modbus RTU",
     "groups": [
         {
             "name": "group1",
