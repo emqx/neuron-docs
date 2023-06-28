@@ -27,12 +27,6 @@
 
 ### 地址格式
 
-代表 KNX 组地址，只能在 Neuron 中写入，属于该组的 KNX 设备将对发送到该组的消息做出响应。
-
-*例子：*
-
-`0/0/1` 是一个 KNX 组地址，只在 Neuron 中写入，属于 `0/0/1` 组的 KNX 设备将对发送到 `0/0/1` 组的消息做出响应。
-
 * > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
 
 表示一个 KNX 设备地址及其所属的组地址。进行读操作时，KNX 插件发送`GroupValueRead`
@@ -43,6 +37,8 @@
 
 `0/0/1,1.1.1` 代表 KNX 组地址 `0/0/1`下的设备地址 `1.1.1`。
 
+</br>
+</br>
 * > GROUP_ADDRESS,INDIVIDUAL_ADDRESS,BIT</span>
 
 与上相同，但为读取比特位数少于8的`uint8`类型数据时使用，如 KNX data point 类型`B2`和`B1U3`等。

@@ -43,6 +43,8 @@ the specified group address.
 `0/0/1,1.1.1` represents a KNX individual address `1.1.1` that is a member
   of the group address `0/0/1`.
 
+</br>
+</br>
 * > GROUP_ADDRESS,INDIVIDUAL_ADDRESS,BIT</span>
 
 Same as above, but for `uint8` values with fewer than 8 bits, such as KNX data point
