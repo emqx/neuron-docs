@@ -7,47 +7,130 @@ Neuron 支持 BACnet IP 协议，可以通过 UDP 协议与 BACnet 设备进行�
 
 ## 设备配置
 
-| 字段      | 说明                            |
-|--------- | ------------------------------ |
-| **host** | BACnet 设备的 IP                |
+| 字段     | 说明                              |
+| -------- | --------------------------------- |
+| **host** | BACnet 设备的 IP                  |
 | **port** | BACnet 设备的端口号，默认为 47808 |
 
 ## 支持的数据类型
 
 * FLOAT
 * BIT
+* INT8
 * UINT8
+* UINT16
+* BOOL
+* STRING
 
 ## 地址格式用法
 
 ### 地址格式
 
-> AREA ADDRESS</span>
+> AREA ADDRESS(.PROPERTY_ID)</span>
 
-| 区域  | 地址范围      | 属性    | 数据类型 |  备注        |
-| ---- | ------------ | ------ | ------- | ----------- |
-| AI   | 0 - 0x3fffff | 读     | float   | 模拟输入      |
-| AO   | 0 - 0x3fffff | 读/写  | float   | 模拟输出      |
-| AV   | 0 - 0x3fffff | 读/写  | float   | 模拟量        |
-| BI   | 0 - 0x3fffff | 读     | bit     | 二进制输入     |
-| BO   | 0 - 0x3fffff | 读/写  | bit      | 二进制输出    |
-| BV   | 0 - 0x3fffff | 读/写  | bit      | 二进制值      |
-| MSI  | 0 - 0x3fffff | 读     | uint8      | 多状态输入    |
-| MSO  | 0 - 0x3fffff | 读/写  | uint8      | 多状态输出    |
-| MSV  | 0 - 0x3fffff | 读/写  | uint8      | 多状态值     |
+
+支持区域
+
+| 区域 | 地址范围     | 属性  | 数据类型 | 备注       |
+| ---- | ------------ | ----- | -------- | ---------- |
+| AI   | 0 - 0x3fffff | 读    | float    | 模拟输入   |
+| AO   | 0 - 0x3fffff | 读/写 | float    | 模拟输出   |
+| AV   | 0 - 0x3fffff | 读/写 | float    | 模拟量     |
+| BI   | 0 - 0x3fffff | 读    | bit      | 二进制输入 |
+| BO   | 0 - 0x3fffff | 读/写 | bit      | 二进制输出 |
+| BV   | 0 - 0x3fffff | 读/写 | bit      | 二进制值   |
+| MSI  | 0 - 0x3fffff | 读    | uint8    | 多状态输入 |
+| MSO  | 0 - 0x3fffff | 读/写 | uint8    | 多状态输出 |
+| MSV  | 0 - 0x3fffff | 读/写 | uint8    | 多状态值   |
+| DEV  | 0 - 0x3fffff | 读    |          | 设备       |
+| ACC  | 0 - 0x3fffff | 读/写 | uint8    | 累加器     |
+
+
+目前支持标准属性和自定义属性
+
+标准属性
+
+| 属性             | 地址                            | 类型   |
+| ---------------- | ------------------------------- | ------ |
+| 对象名称         | Object_Name                     | string |
+| 对象类型         | Object_Tyep                     | uint8  |
+| 描述             | Description                     | string |
+| 设备类型         | Device_Type                     | string |
+| 状态标志         | Status_Flags                    | string |
+| 事件状态         | Event_State                     | uint8  |
+| 脱离服务         | Out_Of_Service                  | bool   |
+| 更新间隔         | Update_Interval                 | uint8  |
+| 最小值           | Min_Pres_Value                  | float  |
+| 最大值           | Max_Pres_Value                  | float  |
+| 分辨率           | Resolution                      | float  |
+| COV增量          | COV_Increment                   | float  |
+| 时间延迟         | Time_Delay                      | uint8  |
+| 通告类           | Notification_Class              | uint8  |
+| 通告类型         | Notify_Type                     | uint8  |
+| 单位             | Units                           | uint8  |
+| 高阈值           | High_Limit                      | float  |
+| 低阈值           | Low_Limit                       | float  |
+| 阈值宽度         | Deadband                        | float  |
+| 可靠性           | Reliability                     | uint8  |
+| 极性             | Polarity                        | uint8  |
+| 系统状态         | System_Status                   | uint8  |
+| 厂商名           | Vendor_Name                     | string |
+| 厂商ID           | Vendor_Identifier               | uint8  |
+| 型号名称         | Model_Name                      | string |
+| 固件版本         | Firmware_Revision               | string |
+| 应用软件版本     | Application_Software_Version    | string |
+| 位置             | Location                        | string |
+| 协议版本         | Protocol_Version                | uint16 |
+| 协议一致类别     | Protocol_Conformance_Class      | uint8  |
+| 协议服务支持     | Protocol_Service_Supported      | string |
+| 协议对象类型支持 | Protocol_Object_Types_Supported | string |
+| 序列号           | Serial_Number                   | string |
+| 最大APDU长度支持 | Max_APDU_Length_Accepted        | uint16 |
+| 分段支持         | Segmentation_Supported          | uint8  |
+| 本地时间         | LOCAL_TIME                      | string |
+| 本地日期         | LOCAL_DATE                      | string |
+| 时差             | UTC_Offset                      | int8   |
+| 夏令时状态       | Daylight_Savings_Status         | bool   |
+| APDU分段超时     | APUD_Segment_Timeout            | uint8  |
+| APDU超时         | APUD_Timeout                    | uint16 |
+| APDU重传次数     | Number_Of_APDU_Retries          | uint8  |
+| 最大主节点数     | Max_Master                      | uint8  |
+| 最大信息帧数     | Max_Info_Frame                  | uint8  |
+| 配置名           | Profile_Name                    | string |
+| 频率             | Pulse_Rate                      | uint8  |
+| 分频             | Scale                           | float  |
+| 预分频           | Prescale                        | float  |
+| 原值             | Value_Before_Change             | uint8  |
+| 修改时间         | Value_Change_Time               | string |
+
+
+不指定属性，默认为当前值（Present_Value）属性，DEV 区域除外。
+
+自定义属性
+
+PROPERTY_ID 由两部分组成，一个是 custom 标志，一个是属性的值（int），整体格式为 AREA ADDRESS.custom.id。
+
+支持 Present Value 置零操作，目前支持 AO 和 BO 区域，地址形式为 (AO|BO)xxx.NULL，只支持写操作，根据区域的类型，写入类型的零值即可。
+
+
 
 ### 地址示例
 
-| 地址    | 数据属性 | 说明              |
-| ------ | ------- | ---------------- |
-| AI0    | float   | AI 区域，地址为 0  |
-| AI1    | float   | AI 区域，地址为 1  |
-| BO10   | float   | BO 区域，地址为 10 |
-| BO20   | float   | BO 区域，地址为 20 |
-| AV30   | float   | AV 区域，地址为 30 |
-| BI0    | bit     | BI 区域，地址为 0  |
-| BI1    | bit     | BI 区域，地址为 1  |
-| BV3    | bit     | BV 区域，地址为 3  |
-| MSI10  | uint8     | MAI 区域，地址为 10 |
-| MSI20  | uint8     | MSI 区域，地址为 20 |
-| MSI30  | uint8     | MSI 区域，地址为 30 |
+| 地址                  | 数据属性 | 说明                                    |
+| --------------------- | -------- | --------------------------------------- |
+| AI0                   | float    | AI 区域，地址为 0                       |
+| AI1                   | float    | AI 区域，地址为 1                       |
+| AV30                  | float    | AV 区域，地址为 30                      |
+| BO10                  | bit      | BO 区域，地址为 10                      |
+| BO10.NULL             | bit      | BO 区域，地址为 10，写入NULL值          |
+| BO20                  | bit      | BO 区域，地址为 20                      |
+| BI0                   | bit      | BI 区域，地址为 0                       |
+| BI1                   | bit      | BI 区域，地址为 1                       |
+| BV3                   | bit      | BV 区域，地址为 3                       |
+| MSI10                 | uint8    | MAI 区域，地址为 10                     |
+| MSI20                 | uint8    | MSI 区域，地址为 20                     |
+| MSI30                 | uint8    | MSI 区域，地址为 30                     |
+| ACC1                  | string   | ACC 区域，地址为 1                      |
+| AI0.Object_Name       | string   | AI 区域，地址为 0，属性为对象名         |
+| AI0.custom.1234       | ALL      | AI 区域，地址为 0，属性值为1234         |
+| DEV400001.Vendor_Name | string   | DEV 区域，地址为 400001，属性值为厂商名 |
