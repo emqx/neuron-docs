@@ -24,7 +24,7 @@ Neuron 可以分为核心框架和多种可插拔模块。可插拔意味着这�
 
 当一个插件插入核心框架中时，会创建一个连接节点来与外部设备或应用程序通信。节点在 Neuron 中被定义为将框架接口与通信例程合并的实体。在单个运行实例中可能会创建多个节点，用于与各方通信。核心框架负责管理这些节点之间的消息路由。
 
-A node is simply a combination of an adapter and a plugin module. Message exchange between nodes is based on NNG high-speed bus.
+节点由适配器和插件模块组合而成，节点间的通信基于 NNG 高速消息实现。
 
 简单来说，一个节点就是适配器和插件模块的组合。节点之间的消息交换基于 NNG 高速总线。
 
@@ -54,7 +54,7 @@ A node is simply a combination of an adapter and a plugin module. Message exchan
 
 ### 第二步，创建一个南向驱动
 
-在查看所有可用的插件后，根据工业协议为设备通信选择所有必需的南向插件。每个南向插件根据协议规范只有一个与设备或多个设备总线的连接。
+在查看所有可用的插件后，根据工业协议为设备通信选择所有必需的南向插件。根据协议规范，每个南向插件只能与一个设备或关联多个设备的一条消息总线建立连接。
 
 [创建一个南向驱动](./south-devices/south-devices.md)
 
