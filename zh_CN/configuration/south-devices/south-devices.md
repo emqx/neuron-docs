@@ -1,53 +1,199 @@
 # 连接南向设备
 
-## 第一步，添加南向设备
+本章将介绍如何通过 Neuron 对各种工业协议的转化支持，实现从各类南向设备的数据收集。本节将通过 PeakHMI Slave Simulators 来模拟 Modbus TCP 设备，介绍一个完整的南向设备添加和设置流程。
+
+Modbus TCP 是一种基于以太网的 Modbus 协议版本，它使用 TCP/IP 协议进行通信。与传统的 Modbus RTU 协议不同，Modbus TCP 允许设备直接通过以太网互联，不需要任何专用的硬件或通信接口。因此，Modbus TCP 具有更高的通信速率和更广泛的应用范围。
+
+## 添加南向设备
 
 创建南向设备节点，用于连接到真实设备或模拟器。
 
-在 **配置 -> 南向设备管理**，点击 `添加设备` 来创建设备节点，添加一个新的南向设备：
+在 **配置 -> 南向设备**，点击**添加设备**来创建设备节点，您可选择以插件方式添加南向设备，或通过[模版](../templates/templates.md)直接完成插件的添加和相关配置。这里将以插件方式为例进行演示。
 
-* 名称：此设备名称，例如 modbus-tcp-1；
-* 插件：选择 modbus-tcp 插件。
+* 名称：输入设备名称，例如 `modbus-tcp-1`。
+* 插件：Neuron 目前支持三类 Modbus TCP 插件，**Modbus TCP**、**Modbus TCP community** 和 **Modbus TCP QH**，这里将选择 **Modbus TCP** 插件。
 
-## 第二步，设置南向设备参数
+点击**创建**后，将跳转至**设备配置**页面，我们将在这里配置 Neuron 与设备建立连接所需的参数。您也可点击南向设备卡片上的设备配置图标进入**设备配置**界面。
 
-配置 Neuron 与设备建立连接所需的参数。在右上角可以选择列表或卡片展示南向设备。
+## 设备配置
 
-点击南向设备卡片上的 `设备配置` 进入设备配置界面:
+配置 Neuron 与设备建立连接所需的参数。
 
-* 设备 IP 地址：填写安装 PeakHMI Slave Simulators 软件的 PC 端 IP 地址；
-* 设备端口：填写 modbus 模拟器所使用的端口，默认使用 502 端口；
-* 接收超时时间：单位 ms，默认为 3,000，超过设置时间未接收到消息则报错。
-* 点击 `提交`，完成设备配置，设备卡片自动进入 **运行中** 的工作状态。
+::: tip
 
-:::tip
-每个设备所需的配置参数有所不同，详细南向设备参数说明可参考 [南向驱动](../south-devices/modbus-tcp/modbus-tcp.md)。
+为实现 Neuron 与南向设备之间的通信，请确认 IP 与 Port 正确设置，防火墙关闭。
+
 :::
 
-南向设备/北向应用创建成功后，南向/北向管理界面会出现新创建的卡片，如下图所示。
+- **连接模式**：选择以太网 TCP 连接时，可以选择 Neuron 作为 TCP 的客户端或是服务端。
 
-![south-devices](./assets/south-devices.png)
+* **指令发送间隔**：发送每条读写指令之间的等待时间。单位为毫秒。注意：如间隔时间设置较小，某些串口设备在较短时间内接收到连续指令时，可能会丢弃某些指令，因此请合理设置改参数。
 
-该设备卡包含以下信息：
+* **IP 地址**：填写安装 PeakHMI Slave Simulators 软件的 PC 端 IP 地址，服务端模式中填写本地 IP，客户端模式中填写目标设备 IP。
 
-* 名称：用户为南向设备/北向应用提供的唯一名称。设置后，名称暂时不能修改。
-* 设备/应用配置：点击该按钮进入配置界面，用于设置Neuron连接南向设备/北向应用所需的参数设置。
-* 数据统计：统计节点卡片信息。
-* 更多
-    * DEBUG 日志：打印节点调试日志，打印节点调试日志，用户可通过该选项打印该节点的 Debug 级别日志，十分钟后恢复打印默认日志级别。
-    * 删除：从南向设备列表中删除该节点。
-* 状态：显示设备节点的当前状态，目前节点分为五种工作状态：
-    * **初始化**：首次添加南向设备/北向应用卡后，将进入初始化状态。
-    * **配置中**：进入设备/应用程序配置，并进入配置状态。
+* **端口号**：填写 Modbus 模拟器所使用的端口，默认为 502 端口。
+
+* **连接超时时间**：单位 ms，默认为 3000，超过设置时间未接收到消息则报错。
+
+* 点击**提交**，完成设备配置，设备卡片自动进入 **运行中** 的工作状态。
+
+  
+
+  <img src="./assets/south-devices.png" alt="south-devices" style="zoom:50%;" />
+
+## 设备卡片
+
+在**南向设备**页，在右上角可以选择列表或卡片展示南向设备，这里将以设备卡片为例介绍其中各选项的含义。
+
+* **名称**：用户为南向设备/北向应用提供的唯一名称。设置后，名称不可修改。
+* **设备配置**：点击该按钮进入配置界面，用于设置 Neuron 连接南向设备/北向应用所需的参数设置。
+* **编辑** （Neuron 2.5 及以上）：从 2.5.0 版本开始，Neuron 支持更新节点名称。在希望更改名称的目标节点，点击**编辑**图标，在弹出的**编辑设备**对话框，即可修改节点名称。
+* **数据统计**：统计节点卡片信息。
+* **DEBUG 日志**：打印当前节点的 DEBUG 级别日志，十分钟，Neuron 将恢复打印默认级别日志。
+* **删除**：从南向设备列表中删除该节点。
+* **工作状态**：显示设备节点的当前状态，目前节点分为五种工作状态。
+    * **初始化**：首次添加南向设备后，将进入初始化状态。
+    * **配置中**：进入设备配置，并进入配置状态。
     * **就绪**：配置成功后，进入就绪状态。
     * **运行中**：运行设备卡片。
     * **停止**：停止设备卡片。
-* 工作状态切换按钮：是否打开与设备的连接。
+* **工作状态切换按钮**：是否打开与设备的连接。
     * 打开：Neuron与设备/应用建立连接，开始收集数据。
     * 关闭：断开设备连接，停止收集数据。
-* 连接状态：显示设备的连接状态。
-    :::tip
-    添加组和标签后，Neuron会连接设备采集数据，连接状态会显示**已连接**。
-    :::
-* 延迟时间：发送和接收指令之间的时间间隔。
-* 插件：用于显示该设备使用的插件模块的名称。
+* **连接状态**：显示设备的连接状态。设置组和标签后，Neuron 会连接设备采集数据，状态自动切换为**已连接**。
+* **延时**：发送和接收指令之间的时间间隔。
+* **插件**：用于显示该设备使用的插件模块的名称。
+
+## 设置组和点位
+
+完成南向插件的添加和配置后，要建立设备与 Neuron 之间的通信，首先为南向驱动程序添加组和点位。
+
+点位是分配给一条信息的非分层唯一关键字，其中定义了设备中的数据存储位置和数据操作属性，还包含有关数据的一些元数据信息，如缩放、精确度和读/写属性等。点位将被分配到组中。同一个组的数据以相同的频率进行采集以及上报。创建好组和点位，即可从数据监控中获取点位的实时值。
+
+### 创建组
+
+在**南向设备**页，点击设备卡片/设备列进入**组列表**页。
+
+点击**创建**来创建组。
+
+- **组名称**: 填入组名，如 group-1。
+- **间隔**：这组点位的采集和上报频率，以毫秒为单位，100 表示每 100 ms 采集一次，整组点位的值上报一次。
+
+### 创建点位
+
+在**组列表**页，点击组名称进入**点位列表**页，添加需要采集的设备点位，包括点位地址，点位属性，数据类型等。
+
+点击**创建**，进入**添加点位**页面并进行如下设置：
+
+- **名称**：填写点位名称，例如，tag1；
+- **属性**：下拉选择点位属性，例如，read，write，subscribe，static，支持配置多个点位类型。
+  - Read：用于读取数据
+  - Write：用于写入数据
+  - Subscribe：仅会在数据变化时发送消息。例如，默认数据为 0，当该数据改为 2 时，则将发送消息
+  - Static：需要在配置时赋值，配置完成后在监控页面中也可以看到对应的赋值
+- **类型**：下拉选择数据类型，例如，INT16、UINT16、INT32、UINT32、INT64、UINT64、FLOAT、DOUBLE、BIT、STRING
+- **地址**：填写驱动地址，例如，1!40001。1 代表 Modbus 模拟器中设置的点位站点号，40001 代表点位寄存器地址，详细的驱动地址使用说明请参阅 [Modbus 介绍与使用](./modbus-tcp/modbus-tcp.md)；
+- **乘系数**：默认不填；当点位属性为 write 时，支持设置乘系数，此时 `设备值 * 乘系数 = 显示值`，如点位乘系数值为 0.1，写入设备中的值为 234，页面显示值为 23.4。
+- **精度**：点位类型选择 `float` 或 `double` 时配置精度，精度范围为 0 ～17
+- **描述**：默认不填。
+
+::: tip
+
+点位创建完成后，设备卡片的工作状态处于 **运行中**，连接状态应处于**已连接**。若此时连接状态仍然处于**未连接** 的状态，请先在 Neuron 运行环境终端执行以下指令，以确认 ECP Edge 运行环境能否访问到到对应的 IP 及端口：
+
+```bash
+telnet <运行 Modbus 模拟器 PC 端的 IP> 502
+```
+
+:::
+
+## 批量配置
+
+Neuron 提供以 Excel 表格方式批量导入和导出标签配置信息的功能，以加速数据标签的配置，同时实现将创建的数据标签信息保存到外部存储中。
+
+### 配置导入
+
+#### 下载模版
+
+在**南向设备页**，点击设备卡片进入**组列表**页，将鼠标悬浮在**导入**上方，会出现**下载模版**按键，点击**下载模版**按键，下载 Excel 表格。
+
+### 填写点位信息
+
+按照表格格式，填写相应的信息，如下图所示。
+
+![excel](/Users/lena/Documents/GitHub/neuron-docs/zh_CN/configuration/import-export/assets/excel.png)
+
+其中各项的说明如下：
+
+* group：填写 Group 名称，当填写的组的名称不存在时，会以这个组的名称自动新建一个组；
+* name：填写 Tag 名称；
+* address：填写 Tag 的地址；
+* attribute：下拉框选择属性；
+* type：下拉框选择数据类型；
+* description：填写描述，可为空；
+* decimal：选填，用于设置读到数值的乘数，可为空；
+* precision: 选填，当数据类型为 float 或 double 时，用于设置精度；
+
+#### 导入 Excel 表格
+
+在组列表页，点击**导入**，选择需要导入的 Excel 文件。
+
+### 配置导出
+
+* 选择需要导出的组，可以一键全选；
+* 点击**导出**按键，组名及组内的标签信息都将被导出到一张 Excel 表格中。
+
+## 插件列表
+
+不同设备所需的配置参数有所不同，您可点击以下链接快速了解不同南向设备的参数说明。
+
+- [File](./file-file.md)
+- [Modbus RTU](./modbus-rtu-modbus-rtu.md)
+  - [连接 DTU](./modbus-rtu-example-dtu-dtu-connection.md)
+  - [连接 Modbus Slave 模拟器](./modbus-rtu-example-modbus-slave-modbus-slave.md)
+- [Modbus TCP](./modbus-tcp-modbus-tcp.md) 
+  - [连接 PeakHMI Slave 模拟器](./modbus-tcp-example-peakhmi-peakhmi.md) 
+  - [连接 Modbus Slave 模拟器](./modbus-tcp-example-modbus-slave-modbus-slave.md) 
+- [OPC UA](./opc-ua-overview.md) 
+  - [连接策略](./opc-ua-policy.md)
+  - [配置 UaExpert](./opc-ua-uaexpert.md) 
+  - [连接 Siemens S7-1200](./opc-ua-s71200.md) 
+  - [连接 KEPServerEX](./opc-ua-kepserverex.md) 
+  - [连接 Industrial Gateway OPC Server](./opc-ua-igs.md) 
+  - [连接 Ignition](./opc-ua-ignition.md) 
+  - [连接 Prosys Simulation Server](./opc-ua-prosys.md) 
+- [OPC DA](./opc-da-overview.md) 
+  - [NeuOPC 安装](./opc-da-install.md) 
+  - [NeuOPC 远程访问](./opc-da-remote.md) 
+  - [连接 NeuOPC](./opc-da-neuopc.md) 
+- [EtherNet/IP(CIP)](./ethernet-ip-ethernet-ip.md) 
+- [Mitsubishi 3E](./mitsubishi-3e-overview.md) 
+  - [连接 FX5U](./mitsubishi-3e-fx5u.md) 
+  - [连接 Q03UDE](./mitsubishi-3e-q03ude.md) 
+- [Mitsubishi 1E](./mitsubishi-1e-mitsubishi-1e.md) 
+- [Siemens S7 ISO TCP](./siemens-s7-s7.md) 
+  - [配置 Siemens S7-1200/1500](./siemens-s7-plc-siemens-s7-1200-1500.md) 
+  - [连接 S7-1200 PLC](./siemens-s7-example-s71200-s71200.md) 
+- [Siemens S5 FetchWrite](./siemens-fetchwrite-fetchwrite.md) 
+- [Omron FINS TCP](./omron-fins-omron-fins.md) 
+- [Omron FINS UDP](./omron-fins-omron-fins-udp.md) 
+  - [连接 NX1P](./omron-fins-example-nx1p-nx1p.md) 
+- [Beckhoff ADS](./ads-ads.md) 
+  - [使用 Beckhoff ADS 协议采集 PLC 数据](./ads-plc-ads-ads.md) 
+- [IEC60870-5-104](./iec-104-iec-104.md) 
+  - [连接 IEC60870-5-104 Server 模拟器](./iec-104-example-server-simulator-simulator.md) 
+- [IEC61850](./iec61850-overview.md) 
+  - [连接 LibIEC61850 服务器](./iec61850-libiec61850.md) 
+- [DL/T645-2007](./dlt645-2007-dlt645-2007.md) 
+  - [连接正泰单相导轨表](./dlt645-2007-example-connect.md) 
+- [DL/T645-1997](./dlt645-1997-dlt645-1997.md) 
+- [BACnet/IP](./bacnet-ip-bacnet-ip.md) 
+- [连接 Yabe 示例](./bacnet-ip-example-yabe-yabe.md) 
+- [KNXnet/IP](./knxnet-ip-knxnet-ip.md) 
+- [HJ212-2017](./hj212-2017-hj212-2017.md) 
+- [NON A11](./nona11-nona11.md) 
+- [ABB COMLI](./comli-comli.md) 
+- [Panasonic Mewtocol](./panasonic-mewtocol-overview.md)
+  - [连接 FP-XH C30T](./panasonic-mewtocol-fp-xh-c30t.md) 
+- [Mitsubishi FX](./mitsubishi-fx-overview.md) 
+- [Profinet IO](./profinet-profinet.md)

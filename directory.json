@@ -63,434 +63,344 @@
       ]
     },
     {
-      "title": "配置",
-      "path": "configuration/configuration",
+      "title": "数据采集配置",
+      "path": "configuration/configuration"
+    },
+    {
+      "title": "连接南向设备",
+      "path": "configuration/south-devices/south-devices",
       "children": [
-        {
-          "title": "查看可用插件",
-          "path": "configuration/plugin-management/plugin-management"
-        },
-        {
-          "title": "创建一个南向驱动",
-          "path": "configuration/south-devices/south-devices",
-          "children": [
-            {
-              "title": "File",
-              "path": "configuration/south-devices/file/file"
-            },
-            {
-              "title": "Modbus RTU",
-              "path": "configuration/south-devices/modbus-rtu/modbus-rtu",
-              "children": [
-                {
-                  "title": "连接 DTU",
-                  "path": "configuration/south-devices/modbus-rtu/example/dtu/dtu-connection"
-                },
-                {
-                  "title": "连接 Modbus Slave 模拟器",
-                  "path": "configuration/south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/modbus-rtu/faq/faq"
-                }
-              ]
-            },
-            {
-              "title": "Modbus TCP",
-              "path": "configuration/south-devices/modbus-tcp/modbus-tcp",
-              "children": [
-                {
-                  "title": "连接 PeakHMI Slave 模拟器",
-                  "path": "configuration/south-devices/modbus-tcp/example/peakhmi/peakhmi"
-                },
-                {
-                  "title": "连接 Modbus Slave 模拟器",
-                  "path": "configuration/south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/modbus-tcp/faq/faq"
-                }
-              ]
-            },
-            {
-              "title": "OPC UA",
-              "path": "configuration/south-devices/opc-ua/overview",
-              "children": [
-                {
-                  "title": "连接策略",
-                  "path": "configuration/south-devices/opc-ua/policy"
-                },
-                {
-                  "title": "配置 UaExpert",
-                  "path": "configuration/south-devices/opc-ua/uaexpert"
-                },
-                {
-                  "title": "连接 Siemens S7-1200",
-                  "path": "configuration/south-devices/opc-ua/s71200"
-                },
-                {
-                  "title": "连接 KEPServerEX",
-                  "path": "configuration/south-devices/opc-ua/kepserverex"
-                },
-                {
-                  "title": "连接 Industrial Gateway OPC Server",
-                  "path": "configuration/south-devices/opc-ua/igs"
-                },
-                {
-                  "title": "连接 Ignition",
-                  "path": "configuration/south-devices/opc-ua/ignition"
-                },
-                {
-                  "title": "连接 Prosys Simulation Server",
-                  "path": "configuration/south-devices/opc-ua/prosys"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/opc-ua/faq"
-                }
-              ]
-            },
-            {
-              "title": "OPC DA",
-              "path": "configuration/south-devices/opc-da/overview",
-              "children": [
-                {
-                  "title": "NeuOPC 安装",
-                  "path": "configuration/south-devices/opc-da/install"
-                },
-                {
-                  "title": "NeuOPC 远程访问",
-                  "path": "configuration/south-devices/opc-da/remote"
-                },
-                {
-                  "title": "连接 NeuOPC",
-                  "path": "configuration/south-devices/opc-da/neuopc"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/opc-da/faq"
-                }
-              ]
-            },
-            {
-              "title": "EtherNet/IP(CIP)",
-              "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
-            },
-            {
-              "title": "Mitsubishi 3E",
-              "path": "configuration/south-devices/mitsubishi-3e/overview",
-              "children": [
-                {
-                  "title": "连接 FX5U",
-                  "path": "configuration/south-devices/mitsubishi-3e/fx5u"
-                },
-                {
-                  "title": "连接 Q03UDE",
-                  "path": "configuration/south-devices/mitsubishi-3e/q03ude"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/mitsubishi-3e/faq"
-                }
-              ]
-            },
-            {
-              "title": "Mitsubishi 1E",
-              "path": "configuration/south-devices/mitsubishi-1e/mitsubishi-1e"
-            },
-            {
-              "title": "Siemens S7 ISO TCP",
-              "path": "configuration/south-devices/siemens-s7/s7",
-              "children": [
-                {
-                  "title": "配置 Siemens S7-1200/1500",
-                  "path": "configuration/south-devices/siemens-s7/plc/siemens-s7-1200-1500"
-                },
-                {
-                  "title": "连接 S7-1200 PLC",
-                  "path": "configuration/south-devices/siemens-s7/example/s71200/s71200"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/siemens-s7/faq/faq"
-                }
-              ]
-            },
-            {
-              "title": "Siemens S5 FetchWrite",
-              "path": "configuration/south-devices/siemens-fetchwrite/fetchwrite"
-            },
-            {
-              "title": "Omron FINS TCP",
-              "path": "configuration/south-devices/omron-fins/omron-fins"
-            },
-            {
-              "title": "Omron FINS UDP",
-              "path": "configuration/south-devices/omron-fins/omron-fins-udp",
-              "children": [
-                {
-                  "title": "连接 NX1P",
-                  "path": "configuration/south-devices/omron-fins/example/nx1p/nx1p"
-                }
-              ]
-            },
-            {
-              "title": "Beckhoff ADS",
-              "path": "configuration/south-devices/ads/ads",
-              "children": [
-                {
-                  "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
-                  "path": "configuration/south-devices/ads/plc-ads/ads"
-                }
-              ]
-            },
-            {
-              "title": "IEC60870-5-104",
-              "path": "configuration/south-devices/iec-104/iec-104",
-              "children": [
-                {
-                  "title": "连接 IEC60870-5-104 Server 模拟器",
-                  "path": "configuration/south-devices/iec-104/example/server-simulator/simulator"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/iec-104/faq/faq"
-                }
-              ]
-            },
-            {
-              "title": "IEC61850",
-              "path": "configuration/south-devices/iec61850/overview",
-              "children": [
-                {
-                  "title": "连接 LibIEC61850 服务器",
-                  "path": "configuration/south-devices/iec61850/libiec61850"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/iec61850/faq"
-                }
-              ]
-            },
-            {
-              "title": "DL/T645-2007",
-              "path": "configuration/south-devices/dlt645-2007/dlt645-2007",
-              "children": [
-                {
-                  "title": "连接正泰单相导轨表",
-                  "path": "configuration/south-devices/dlt645-2007/example/connect"
-                }
-              ]
-            },
-            {
-              "title": "DL/T645-1997",
-              "path": "configuration/south-devices/dlt645-1997/dlt645-1997"
-            },
-            {
-              "title": "BACnet/IP",
-              "path": "configuration/south-devices/bacnet-ip/bacnet-ip",
-              "children": [
-                {
-                  "title": "连接 Yabe 示例",
-                  "path": "configuration/south-devices/bacnet-ip/example/yabe/yabe"
-                }
-              ]
-            },
-            {
-              "title": "KNXnet/IP",
-              "path": "configuration/south-devices/knxnet-ip/knxnet-ip"
-            },
-            {
-              "title": "HJ212-2017",
-              "path": "configuration/south-devices/hj212-2017/hj212-2017"
-            },
-            {
-              "title": "NON A11",
-              "path": "configuration/south-devices/nona11/nona11"
-            },
-            {
-              "title": "ABB COMLI",
-              "path": "configuration/south-devices/comli/comli"
-            },
-            {
-              "title": "Panasonic Mewtocol",
-              "path": "configuration/south-devices/panasonic-mewtocol/overview",
-              "children": [
-                {
-                  "title": "连接 FP-XH C30T",
-                  "path": "configuration/south-devices/panasonic-mewtocol/fp-xh-c30t"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/south-devices/panasonic-mewtocol/faq"
-                }
-              ]
-            },
-            {
-              "title": "Mitsubishi FX",
-              "path": "configuration/south-devices/mitsubishi-fx/overview"
-            },
-            {
-              "title": "Profinet IO",
-              "path": "configuration/south-devices/profinet/profinet"
-            }
-          ]
-        },
-        {
-          "title": "创建组和点位",
-          "path": "configuration/groups-tags/groups-tags",
-          "children": [
-            {
-              "title": "设置属性",
-              "path": "configuration/groups-tags/tag-attribute"
-            },
-            {
-              "title": "设置乘系数",
-              "path": "configuration/groups-tags/tag-decimal"
-            },
-            {
-              "title": "设置精度",
-              "path": "configuration/groups-tags/tag-precision"
-            }
-          ]
-        },
-        {
-          "title": "导入/导出组和点位",
-          "path": "configuration/import-export/import-export"
-        },
-        {
-          "title": "创建一个北向应用",
-          "path": "configuration/north-apps/north-apps",
-          "children": [
-            {
-              "title": "eKuiper 数据流处理引擎",
-              "path": "configuration/north-apps/ekuiper/overview",
-              "children": [
-                {
-                  "title": "常见问题",
-                  "path": "configuration/north-apps/ekuiper/faq"
-                }
-              ]
-            },
-            {
-              "title": "数据统计与监控",
-              "path": "configuration/north-apps/monitor/overview"
-            },
-            {
-              "title": "MQTT 客户端",
-              "path": "configuration/north-apps/mqtt/overview",
-              "children": [
-                {
-                  "title": "API",
-                  "path": "configuration/north-apps/mqtt/api"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/north-apps/mqtt/faq"
-                }
-              ]
-            },
-            {
-              "title": "MQTT SparkPlugB",
-              "path": "configuration/north-apps/sparkplugb/overview",
-              "children": [
-                {
-                  "title": "连接 Ignition",
-                  "path": "configuration/north-apps/sparkplugb/ignition"
-                },
-                {
-                  "title": "连接 Cogent",
-                  "path": "configuration/north-apps/sparkplugb/cogent"
-                },
-                {
-                  "title": "常见问题",
-                  "path": "configuration/north-apps/sparkplugb/faq"
-                }
-              ]
-            },
-            {
-              "title": "WebSocket 客户端",
-              "path": "configuration/north-apps/websocket/websocket"
-            }
-          ]
-        },
-        {
-          "title": "订阅组",
-          "path": "configuration/subscription/subscription"
-        },
-        {
-          "title": "更新节点名称",
-          "path": "configuration/node-update/update"
-        },
         {
           "title": "模板",
           "path": "configuration/templates/templates"
-        }
-      ]
-    },
-    {
-      "title": "使用",
-      "path": "usage/usage",
-      "children": [
+        },
         {
-          "title": "管理",
-          "path": "usage/admin/admin",
+          "title": "Modbus RTU",
+          "path": "configuration/south-devices/modbus-rtu/modbus-rtu",
           "children": [
             {
-              "title": "修改密码",
-              "path": "usage/admin/change-password"
+              "title": "连接 DTU",
+              "path": "configuration/south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
-              "title": "管理日志",
-              "path": "usage/admin/log-management"
+              "title": "连接 Modbus Slave 模拟器",
+              "path": "configuration/south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
             },
             {
-              "title": "数据统计",
-              "path": "usage/dashboard/data-statistics"
+              "title": "常见问题",
+              "path": "configuration/south-devices/modbus-rtu/faq/faq"
             }
           ]
         },
         {
-          "title": "监控数据",
-          "path": "usage/monitoring"
+          "title": "Modbus TCP",
+          "path": "configuration/south-devices/modbus-tcp/modbus-tcp",
+          "children": [
+            {
+              "title": "连接 PeakHMI Slave 模拟器",
+              "path": "configuration/south-devices/modbus-tcp/example/peakhmi/peakhmi"
+            },
+            {
+              "title": "连接 Modbus Slave 模拟器",
+              "path": "configuration/south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/modbus-tcp/faq/faq"
+            }
+          ]
         },
         {
-          "title": "控制设备",
-          "path": "usage/device-control"
+          "title": "OPC UA",
+          "path": "configuration/south-devices/opc-ua/overview",
+          "children": [
+            {
+              "title": "连接策略",
+              "path": "configuration/south-devices/opc-ua/policy"
+            },
+            {
+              "title": "配置 UaExpert",
+              "path": "configuration/south-devices/opc-ua/uaexpert"
+            },
+            {
+              "title": "连接 Siemens S7-1200",
+              "path": "configuration/south-devices/opc-ua/s71200"
+            },
+            {
+              "title": "连接 KEPServerEX",
+              "path": "configuration/south-devices/opc-ua/kepserverex"
+            },
+            {
+              "title": "连接 Industrial Gateway OPC Server",
+              "path": "configuration/south-devices/opc-ua/igs"
+            },
+            {
+              "title": "连接 Ignition",
+              "path": "configuration/south-devices/opc-ua/ignition"
+            },
+            {
+              "title": "连接 Prosys Simulation Server",
+              "path": "configuration/south-devices/opc-ua/prosys"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/opc-ua/faq"
+            }
+          ]
         },
         {
-          "title": "离线数据缓存",
-          "path": "usage/offline-data-cache"
+          "title": "OPC DA",
+          "path": "configuration/south-devices/opc-da/overview",
+          "children": [
+            {
+              "title": "NeuOPC 安装",
+              "path": "configuration/south-devices/opc-da/install"
+            },
+            {
+              "title": "NeuOPC 远程访问",
+              "path": "configuration/south-devices/opc-da/remote"
+            },
+            {
+              "title": "连接 NeuOPC",
+              "path": "configuration/south-devices/opc-da/neuopc"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/opc-da/faq"
+            }
+          ]
         },
         {
-          "title": "性能表现",
-          "path": "usage/performance/performance"
+          "title": "EtherNet/IP(CIP)",
+          "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
+        },
+        {
+          "title": "Mitsubishi 3E",
+          "path": "configuration/south-devices/mitsubishi-3e/overview",
+          "children": [
+            {
+              "title": "连接 FX5U",
+              "path": "configuration/south-devices/mitsubishi-3e/fx5u"
+            },
+            {
+              "title": "连接 Q03UDE",
+              "path": "configuration/south-devices/mitsubishi-3e/q03ude"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/mitsubishi-3e/faq"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi 1E",
+          "path": "configuration/south-devices/mitsubishi-1e/mitsubishi-1e"
+        },
+        {
+          "title": "Siemens S7 ISO TCP",
+          "path": "configuration/south-devices/siemens-s7/s7",
+          "children": [
+            {
+              "title": "配置 Siemens S7-1200/1500",
+              "path": "configuration/south-devices/siemens-s7/plc/siemens-s7-1200-1500"
+            },
+            {
+              "title": "连接 S7-1200 PLC",
+              "path": "configuration/south-devices/siemens-s7/example/s71200/s71200"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/siemens-s7/faq/faq"
+            }
+          ]
+        },
+        {
+          "title": "Siemens S5 FetchWrite",
+          "path": "configuration/south-devices/siemens-fetchwrite/fetchwrite"
+        },
+        {
+          "title": "Omron FINS TCP",
+          "path": "configuration/south-devices/omron-fins/omron-fins"
+        },
+        {
+          "title": "Omron FINS UDP",
+          "path": "configuration/south-devices/omron-fins/omron-fins-udp",
+          "children": [
+            {
+              "title": "连接 NX1P",
+              "path": "configuration/south-devices/omron-fins/example/nx1p/nx1p"
+            }
+          ]
+        },
+        {
+          "title": "Beckhoff ADS",
+          "path": "configuration/south-devices/ads/ads",
+          "children": [
+            {
+              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
+              "path": "configuration/south-devices/ads/plc-ads/ads"
+            }
+          ]
+        },
+        {
+          "title": "IEC60870-5-104",
+          "path": "configuration/south-devices/iec-104/iec-104",
+          "children": [
+            {
+              "title": "连接 IEC60870-5-104 Server 模拟器",
+              "path": "configuration/south-devices/iec-104/example/server-simulator/simulator"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/iec-104/faq/faq"
+            }
+          ]
+        },
+        {
+          "title": "IEC61850",
+          "path": "configuration/south-devices/iec61850/overview",
+          "children": [
+            {
+              "title": "连接 LibIEC61850 服务器",
+              "path": "configuration/south-devices/iec61850/libiec61850"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/iec61850/faq"
+            }
+          ]
+        },
+        {
+          "title": "DL/T645-2007",
+          "path": "configuration/south-devices/dlt645-2007/dlt645-2007",
+          "children": [
+            {
+              "title": "连接正泰单相导轨表",
+              "path": "configuration/south-devices/dlt645-2007/example/connect"
+            }
+          ]
+        },
+        {
+          "title": "DL/T645-1997",
+          "path": "configuration/south-devices/dlt645-1997/dlt645-1997"
+        },
+        {
+          "title": "BACnet/IP",
+          "path": "configuration/south-devices/bacnet-ip/bacnet-ip",
+          "children": [
+            {
+              "title": "连接 Yabe 示例",
+              "path": "configuration/south-devices/bacnet-ip/example/yabe/yabe"
+            }
+          ]
+        },
+        {
+          "title": "KNXnet/IP",
+          "path": "configuration/south-devices/knxnet-ip/knxnet-ip"
+        },
+        {
+          "title": "HJ212-2017",
+          "path": "configuration/south-devices/hj212-2017/hj212-2017"
+        },
+        {
+          "title": "NON A11",
+          "path": "configuration/south-devices/nona11/nona11"
+        },
+        {
+          "title": "ABB COMLI",
+          "path": "configuration/south-devices/comli/comli"
+        },
+        {
+          "title": "Panasonic Mewtocol",
+          "path": "configuration/south-devices/panasonic-mewtocol/overview",
+          "children": [
+            {
+              "title": "连接 FP-XH C30T",
+              "path": "configuration/south-devices/panasonic-mewtocol/fp-xh-c30t"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/panasonic-mewtocol/faq"
+            }
+          ]
+        },
+        {
+          "title": "Mitsubishi FX",
+          "path": "configuration/south-devices/mitsubishi-fx/overview"
+        },
+        {
+          "title": "Profinet IO",
+          "path": "configuration/south-devices/profinet/profinet"
         }
       ]
     },
     {
-      "title": "用户案例",
-      "path": "use-cases/use-cases",
+      "title": "创建北向应用",
+      "path": "configuration/north-apps/north-apps",
       "children": [
         {
-          "title": "工业设备连接",
-          "path": "use-cases/connectivity/connectivity"
+          "title": "eKuiper",
+          "path": "configuration/north-apps/ekuiper/overview",
+          "children": [
+            {
+              "title": "常见问题",
+              "path": "configuration/north-apps/ekuiper/faq"
+            }
+          ]
         },
         {
-          "title": "边缘处理",
-          "path": "use-cases/edge/edge"
+          "title": "Monitor",
+          "path": "configuration/north-apps/monitor/overview"
         },
         {
-          "title": "Sparkplug 解决方案",
-          "path": "use-cases/sparkplug/sparkplug"
+          "title": "MQTT",
+          "path": "configuration/north-apps/mqtt/overview",
+          "children": [
+            {
+              "title": "离线数据缓存",
+              "path": "usage/offline-data-cache"
+            },
+            {
+              "title": "API",
+              "path": "configuration/north-apps/mqtt/api"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/north-apps/mqtt/faq"
+            }
+          ]
         },
         {
-          "title": "统一命名空间",
-          "path": "use-cases/uns/uns"
+          "title": "SparkPlugB",
+          "path": "configuration/north-apps/sparkplugb/overview",
+          "children": [
+            {
+              "title": "连接 Ignition",
+              "path": "configuration/north-apps/sparkplugb/ignition"
+            },
+            {
+              "title": "连接 Cogent",
+              "path": "configuration/north-apps/sparkplugb/cogent"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/north-apps/sparkplugb/faq"
+            }
+          ]
+        },
+        {
+          "title": "WebSocket",
+          "path": "configuration/north-apps/websocket/websocket"
         }
       ]
+    },
+    {
+      "title": "订阅南向数据",
+      "path": "configuration/subscription/subscription"
+    },
+    {
+      "title": "数据监控",
+      "path": "usage/monitoring"
     },
     {
       "title": "HTTP API",
@@ -541,16 +451,20 @@
       ]
     },
     {
-      "title": "生态合作伙伴",
-      "path": "ecopartners/eco",
+      "title": "系统管理",
+      "path": "usage/admin/admin",
       "children": [
         {
-          "title": "三旺通信",
-          "path": "ecopartners/3onedata/3onedata"
+          "title": "修改密码",
+          "path": "usage/admin/change-password"
         },
         {
-          "title": "视美泰",
-          "path": "ecopartners/smdt/smdt"
+          "title": "管理日志",
+          "path": "usage/admin/log-management"
+        },
+        {
+          "title": "数据统计",
+          "path": "usage/dashboard/data-statistics"
         }
       ]
     },
@@ -573,6 +487,46 @@
           ]
         }
       ]
+    },
+    {
+      "title": "用户案例",
+      "path": "use-cases/use-cases",
+      "children": [
+        {
+          "title": "工业设备连接",
+          "path": "use-cases/connectivity/connectivity"
+        },
+        {
+          "title": "边缘处理",
+          "path": "use-cases/edge/edge"
+        },
+        {
+          "title": "Sparkplug 解决方案",
+          "path": "use-cases/sparkplug/sparkplug"
+        },
+        {
+          "title": "统一命名空间",
+          "path": "use-cases/uns/uns"
+        }
+      ]
+    },
+    {
+      "title": "生态合作伙伴",
+      "path": "ecopartners/eco",
+      "children": [
+        {
+          "title": "三旺通信",
+          "path": "ecopartners/3onedata/3onedata"
+        },
+        {
+          "title": "视美泰",
+          "path": "ecopartners/smdt/smdt"
+        }
+      ]
+    },
+    {
+      "title": "性能测试",
+      "path": "usage/performance/performance"
     },
     {
       "title": "附录",
