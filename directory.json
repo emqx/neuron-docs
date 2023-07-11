@@ -63,7 +63,7 @@
       ]
     },
     {
-      "title": "数据采集配置",
+      "title": "边缘数据服务",
       "path": "configuration/configuration"
     },
     {
@@ -71,8 +71,12 @@
       "path": "configuration/south-devices/south-devices",
       "children": [
         {
-          "title": "模板",
+          "title": "基于模板配置",
           "path": "configuration/templates/templates"
+        },
+        {
+          "title": "批量配置",
+          "path": "configuration/import-export/import-export"
         },
         {
           "title": "Modbus RTU",
@@ -97,11 +101,7 @@
           "path": "configuration/south-devices/modbus-tcp/modbus-tcp",
           "children": [
             {
-              "title": "连接 PeakHMI Slave 模拟器",
-              "path": "configuration/south-devices/modbus-tcp/example/peakhmi/peakhmi"
-            },
-            {
-              "title": "连接 Modbus Slave 模拟器",
+              "title": "Modbus Slave 连接示例",
               "path": "configuration/south-devices/modbus-tcp/example/modbus-slave/modbus-slave"
             },
             {

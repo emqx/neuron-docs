@@ -1,10 +1,10 @@
-# 概览
+# Modbus TCP
 
 Modbus TCP 是一种基于以太网的 Modbus 协议版本，它使用 TCP/IP 协议进行通信。与传统的 Modbus RTU 协议不同，Modbus TCP 允许设备直接通过以太网互联，不需要任何专用的硬件或通信接口。因此，Modbus TCP 具有更高的通信速率和更广泛的应用范围。
 
 Neuron 的 Modbus TCP 插件除了支持以 TCP 客户端的模式主动接入设备进行数据采集与空；还增加支持了 TCP 服务端模式，允许设备主动接入到 Neuron，主要用于如 4G DTU，因 4G 网络的 IP 是属于私网 IP，此时只能由 DTU 设备主动连接到 Neuron。
 
-## 插件
+## 添加插件
 
 在 **配置 -> 南向设备**，点击**添加设备**来创建设备节点，输入插件名称，插件类型选择 **Modbus TCP** 或 **Modbus TCP QH** 启用插件。
 
@@ -39,7 +39,7 @@ Neuron 的 Modbus TCP 插件除了支持以 TCP 客户端的模式主动接入�
 
 :::
 
-## 点位配置
+## 设置组和点位
 
 完成插件的添加和配置后，要建立设备与 Neuron 之间的通信，首先为南向驱动程序添加组和点位。
 
@@ -145,6 +145,12 @@ Neuron 的 Modbus TCP 插件除了支持以 TCP 客户端的模式主动接入�
 | 1!400001.10L | String  | 指站号为1，保持寄存器区域，地址为 400001，字符长度为 10，字节顺序为 L，即占用的地址为 400001 ～ 400005 |
 | 1!400001.10D | String  | 指站号为1，保持寄存器区域，地址为 400001，字符长度为 10，字节顺序为 D，即占用的地址为 400001 ～ 400010 |
 | 1!400001.10E | String  | 指站号为1，保持寄存器区域，地址为 400001，字符长度为 10，字节顺序为 E，即占用的地址为 400001 ～ 400010 |
+
+## 连接示例
+
+您可通过 PeakHMI Slave Simulators 模拟 Modbus 设备测试到 Neuron 的连接，具体步骤，见[快速入门](../../../quick-start/quick-start.md)。
+
+您也可通过 Modbus Slave 从机模拟器测试到 Neuron 的连接，具体步骤，见 [Modbus Salve 模拟器](./example/modbus-slave/modbus-slave.md)。
 
 ## 数据监控
 
