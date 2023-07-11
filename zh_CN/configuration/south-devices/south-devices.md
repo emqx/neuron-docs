@@ -147,40 +147,29 @@ Neuron 提供以 Excel 表格方式批量导入和导出标签配置信息的功
 
 不同设备所需的配置参数有所不同，您可点击以下链接快速了解不同南向设备的参数说明。
 
-| 全球标准         | [Modbus TCP 及 Modbus TCP QH](./modbus-tcp/modbus-tcp.md)   |      |
-| ---------------- | ----------------------------------------------------------- | ---- |
-|                  | [Modbus RTU](./modbus-rtu/modbus-rtu.md)                    |      |
-|                  | [OPC UA](./opc-ua/overview.md)                              |      |
-|                  | [EtherNet/IP(CIP)](./ethernet-ip/ethernet-ip.md)            |      |
-| PLC 驱动         | [Siemens S7 ISO TCP](./siemens-s7/s7.md)                    |      |
-|                  | [Siemens S5 FetchWrite](./siemens-fetchwrite/fetchwrite.md) |      |
-|                  | [ABB COMLI](./comli/comli.md)                               |      |
-|                  | <!--Allen-Bradley DF1 with doc to be added-->               |      |
-|                  | [Mitsubishi 3E](./mitsubishi-3e/overview.md)                |      |
-|                  | [Mitsubishi 1E](./mitsubishi-1e/mitsubishi-1e.md)           |      |
-|                  | [Mitsubishi FX](./mitsubishi-fx/overview.md)                |      |
-|                  | [Omron FINS TCP](./omron-fins/omron-fins.md)                |      |
-|                  | [Omron FINS UDP](./omron-fins/omron-fins-udp.md)            |      |
-|                  | [Beckhoff ADS](./ads/ads.md)                                |      |
-|                  | [Panasonic Mewtocol](./panasonic-mewtocol/overview.md)      |      |
-|                  |                                                             |      |
-| 电力             | [IEC60870-5-104](./iec-104/iec-104.md)                      |      |
-|                  | [IEC61850](./iec61850/overview.md)                          |      |
-|                  | [DL/T645-2007](./dlt645-2007/dlt645-2007.md)                |      |
-|                  | [DL/T645-1997](./dlt645-1997/dlt645-1997.md)                |      |
-|                  |                                                             |      |
-|                  |                                                             |      |
-| 楼宇自动化       | [BACnet/IP](./bacnet-ip/bacnet-ip.md)                       |      |
-|                  | [KNXnet/IP](./knxnet-ip/knxnet-ip.md)                       |      |
-|                  |                                                             |      |
-|                  |                                                             |      |
-| 数控机床和机器人 |                                                             |      |
-
-
-
-
-
-- [OPC DA](./opc-da/overview.md)  
-- [Profinet IO](./profinet/profinet.md)
-- [HJ212-2017](./hj212-2017/hj212-2017.md) 
-- [NON A11](./nona11/nona11.md)
+| 全球标准   | [Modbus TCP 及 Modbus TCP QH](./modbus-tcp/modbus-tcp.md)   |
+| ---------- | ----------------------------------------------------------- |
+|            | [Modbus RTU](./modbus-rtu/modbus-rtu.md)                    |
+|            | [OPC UA](./opc-ua/overview.md)                              |
+|            | [OPC DA](./opc-da/overview.md)                              |
+|            | [EtherNet/IP(CIP)](./ethernet-ip/ethernet-ip.md)            |
+| PLC 驱动   | [Siemens S7 ISO TCP](./siemens-s7/s7.md)                    |
+|            | [Siemens S5 FetchWrite](./siemens-fetchwrite/fetchwrite.md) |
+|            | [ABB COMLI](./comli/comli.md)                               |
+|            | <!--Allen-Bradley DF1 with doc to be added-->               |
+|            | [Mitsubishi 3E](./mitsubishi-3e/overview.md)                |
+|            | [Mitsubishi 1E](./mitsubishi-1e/mitsubishi-1e.md)           |
+|            | [Mitsubishi FX](./mitsubishi-fx/overview.md)                |
+|            | [Omron FINS TCP](./omron-fins/omron-fins.md)                |
+|            | [Omron FINS UDP](./omron-fins/omron-fins-udp.md)            |
+|            | [Beckhoff ADS](./ads/ads.md)                                |
+|            | [Panasonic Mewtocol](./panasonic-mewtocol/overview.md)      |
+|            | [Profinet IO](./profinet/profinet.md)                       |
+| 电力       | [IEC60870-5-104](./iec-104/iec-104.md)                      |
+|            | [IEC61850](./iec61850/overview.md)                          |
+|            | [DL/T645-2007](./dlt645-2007/dlt645-2007.md)                |
+|            | [DL/T645-1997](./dlt645-1997/dlt645-1997.md)                |
+| 楼宇自动化 | [BACnet/IP](./bacnet-ip/bacnet-ip.md)                       |
+|            | [KNXnet/IP](./knxnet-ip/knxnet-ip.md)                       |
+| 环境监测   | [HJ212-2017](./hj212-2017/hj212-2017.md)                    |
+| 石油行业   | [NON A11](./nona11/nona11.md)                               |

@@ -52,8 +52,8 @@ Neuron 提供了两种适配器：
 
 ### 数据采集
 
-1. [**查看可用插件**](../introduction/plugin-list/plugin-list.md)：各种工业插件可以帮助实现 Neuron 的数据采集和传递。只有安装并激活相应插件的许可证后，才能使用特定的驱动插件，具体可查看[许可证政策](../introduction/license/license-policy.md)。由于Neuron 是一个松散耦合的架构，每个插件都作为独立的进程线程运行，不会相互干扰。
-2. [**创建南向驱动**](./south-devices/south-devices.md)：根据工业协议为设备通信选择所有必需的南向插件。根据协议规范，每个南向插件只能与一个设备或关联多个设备的一条消息总线建立连接。
+1. [**查看可用插件**](../introduction/plugin-list/plugin-list.md)：各种工业插件可以帮助实现 Neuron 的数据采集和传递。只有安装并激活相应插件的许可证后，才能使用特定的驱动插件，具体可查看[许可证政策](../introduction/license/license-policy.md)。由于Neuron 是一个松散耦合的架构，每个插件都作为独立的进程线程运行，不会相互干扰。目前 Neuron 预安装的插件列表如下：
+2. [**创建南向驱动**](./south-devices/south-devices.md)：根据工业协议为设备通信选择所有必需的南向插件。根据协议规范，每个南向插件只能与一个设备或关联多个设备的一条消息总线建立连接。用户可选择通过插件或[模版](./templates/templates.md)的方式连接南向设备。
 3. [**连接南向设备**](../configuration/groups-tags/groups-tags.md)：通过创建组和点位连接南向设备，创建好组和点位后，即可从数据监控中获取点位的实时值。为方便用户操作，Neuron 支持通过离线 Excel 文件[批量导入](http://localhost:8080/zh/emqx-ecp/latest/config/import-export.html)相关配置信息。
 
 ::: tip
@@ -78,5 +78,4 @@ Neuron 提供了两种适配器：
 ### [配置相关 API](../http-api/http-api.md)
 
 Neuron 还提供一组配置 API，用于工业物联网平台、MES 或其他控制系统集成。
-
 
