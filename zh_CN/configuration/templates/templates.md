@@ -32,7 +32,7 @@ Neuron 2.5.0 版本模板功能只支持南向插件。
 
   ![Add template group](./assets/template_add_group.png)
 
-为模板添加数据组的操作流程基本与[配置采集数据组和点位](../groups-tags/groups-tags)中的相同。
+为模板添加数据组的操作流程基本与[配置采集数据组和点位](../south-devices/south-devices.md#设置组和点位)中的相同。
 此处我们添加一个名为 *grp* 的数据组，时间间隔为 *3000* 。
 
   ![Template group list](./assets/template_group_list.png)
@@ -41,19 +41,19 @@ Neuron 2.5.0 版本模板功能只支持南向插件。
 
 点击新建的 *grp* 数据组进入**点位列表**页面。
 
-  ![Add template tag](./assets/template_tag_list_1.png)
+ ![Add template tag](./assets/template_tag_list_1.png)
 
 点击**创建**按钮进入**添加点位**页面。
 
   ![Add template tag](./assets/template_add_tag.png)
 
 简单起见，这里我们只添加两个数据点。
-点击**创建**按钮提交点位数据，如**点为列表**页面所示。
+点击**创建**按钮提交点位数据，如**点位列表**页面所示。
 
   ![Template tag list](./assets/template_tag_list_2.png)
 
 
-## 实例化模板
+## 基于模版新增设备
 
 点击**配置 -> 南向设备 -> 添加设备**打开**新增设备**对话框。
 
@@ -74,8 +74,7 @@ Neuron 2.5.0 版本模板功能只支持南向插件。
 
   ![Template device group](./assets/template_device_group.png)
 
-点击 *grp* 数据组，进入**点位列表**页面。
-不出意外，列表中有两个点位，与模板一样。
+点击 *grp* 数据组，进入**点位列表**页面。可以看到列表中有两个点位，与模板一样。
 
   ![Template device tag](./assets/template_device_tag.png)
 

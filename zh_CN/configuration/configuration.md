@@ -16,20 +16,20 @@ Neuron 可以分为核心框架和多种可插拔模块。可插拔意味着这�
 
 Neuron 内置的插件列表如下。不同设备所需的配置参数有所不同，您可点击表格链接快速了解不同南向设备的参数说明。
 
-| 应用领域       | 插件名称                                                  | 应用领域     | 插件名称                                                    |
-| -------------- | --------------------------------------------------------- | ------------ | ----------------------------------------------------------- |
-| **全球标准**   | [Modbus TCP 及 Modbus TCP QH](./modbus-tcp/modbus-tcp.md) | **PLC 驱动** | [Siemens S7 ISO TCP](./siemens-s7/s7.md)                    |
-|                | [Modbus RTU](./modbus-rtu/modbus-rtu.md)                  |              | [Siemens S5 FetchWrite](./siemens-fetchwrite/fetchwrite.md) |
-|                | [OPC UA](./opc-ua/overview.md)                            |              | <!--Allen-Bradley DF1 with doc to be added-->               |
-|                | [OPC DA](./opc-da/overview.md)                            |              | [Mitsubishi 3E](./mitsubishi-3e/overview.md)                |
-|                | [EtherNet/IP(CIP)](./ethernet-ip/ethernet-ip.md)          |              | [Mitsubishi 1E](./mitsubishi-1e/mitsubishi-1e.md)           |
-| **电力**       | [IEC60870-5-104](./iec-104/iec-104.md)                    |              | [Mitsubishi FX](./mitsubishi-fx/overview.md)                |
-|                | [IEC61850](./iec61850/overview.md)                        |              | [Omron FINS TCP](./omron-fins/omron-fins.md)                |
-|                | [DL/T645-2007](./dlt645-2007/dlt645-2007.md)              |              | [Omron FINS UDP](./omron-fins/omron-fins-udp.md)            |
-|                | [DL/T645-1997](./dlt645-1997/dlt645-1997.md)              |              | [Beckhoff ADS](./ads/ads.md)                                |
-| **楼宇自动化** | [BACnet/IP](./bacnet-ip/bacnet-ip.md)                     |              | [Panasonic Mewtocol](./panasonic-mewtocol/overview.md)      |
-|                | [KNXnet/IP](./knxnet-ip/knxnet-ip.md)                     |              | [Profinet IO](./profinet/profinet.md)                       |
-| **环境监测**   | [HJ212-2017](./hj212-2017/hj212-2017.md)                  | **石油行业** | [NON A11](./nona11/nona11.md)                               |
+| 应用领域       | 插件名称                                                     | 应用领域     | 插件名称                                                     |
+| -------------- | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
+| **全球标准**   | [Modbus TCP 及 Modbus TCP QH](./south-devices/modbus-tcp/modbus-tcp.md) | **PLC 驱动** | [Siemens S7 ISO TCP](./south-devices/siemens-s7/s7.md)       |
+|                | [Modbus RTU](./south-devices/modbus-rtu/modbus-rtu.md)       |              | [Siemens S5 FetchWrite](./south-devices/siemens-fetchwrite/fetchwrite.md) |
+|                | [OPC UA](./south-devices/opc-ua/overview.md)                 |              | <!--Allen-Bradley DF1 with doc to be added-->                |
+|                | [OPC DA](./south-devices/opc-da/overview.md)                 |              | [Mitsubishi 3E](./south-devices/mitsubishi-3e/overview.md)   |
+|                | [EtherNet/IP(CIP)](./south-devices/ethernet-ip/ethernet-ip.md) |              | [Mitsubishi 1E](./south-devices/mitsubishi-1e/mitsubishi-1e.md) |
+| **电力**       | [IEC60870-5-104](./south-devices/iec-104/iec-104.md)         |              | [Mitsubishi FX](./south-devices/mitsubishi-fx/overview.md)   |
+|                | [IEC61850](./south-devices/iec61850/overview.md)             |              | [Omron FINS TCP](./south-devices/omron-fins/omron-fins.md)   |
+|                | [DL/T645-2007](./south-devices/dlt645-2007/dlt645-2007.md)   |              | [Omron FINS UDP](./south-devices/omron-fins/omron-fins-udp.md) |
+|                | [DL/T645-1997](./south-devices/dlt645-1997/dlt645-1997.md)   |              | [Beckhoff ADS](./south-devices/ads/ads.md)                   |
+| **楼宇自动化** | [BACnet/IP](./south-devices/bacnet-ip/bacnet-ip.md)          |              | [Panasonic Mewtocol](./south-devices/panasonic-mewtocol/overview.md) |
+|                | [KNXnet/IP](./south-devices/knxnet-ip/knxnet-ip.md)          |              | [Profinet IO](./south-devices/profinet/profinet.md)          |
+| **环境监测**   | [HJ212-2017](./south-devices/hj212-2017/hj212-2017.md)       | **石油行业** | [NON A11](./south-devices/nona11/nona11.md)                  |
 
 ### 适配器
 
