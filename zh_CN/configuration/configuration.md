@@ -18,7 +18,7 @@ Neuron 内置的插件列表如下。不同设备所需的配置参数有所不�
 
 | 应用领域       | 插件名称                                                     | 应用领域     | 插件名称                                                     |
 | -------------- | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
-| **全球标准**   | [Modbus TCP 及 Modbus TCP QH](./south-devices/modbus-tcp/modbus-tcp.md) | **PLC 驱动** | [Siemens S7 ISO TCP](./south-devices/siemens-s7/s7.md)       |
+| **全球标准**   | [Modbus TCP <br />Modbus TCP QH](./south-devices/modbus-tcp/modbus-tcp.md) | **PLC 驱动** | [Siemens S7 ISO TCP](./south-devices/siemens-s7/s7.md)       |
 |                | [Modbus RTU](./south-devices/modbus-rtu/modbus-rtu.md)       |              | [Siemens S5 FetchWrite](./south-devices/siemens-fetchwrite/fetchwrite.md) |
 |                | [OPC UA](./south-devices/opc-ua/overview.md)                 |              | <!--Allen-Bradley DF1 with doc to be added-->                |
 |                | [OPC DA](./south-devices/opc-da/overview.md)                 |              | [Mitsubishi 3E](./south-devices/mitsubishi-3e/overview.md)   |

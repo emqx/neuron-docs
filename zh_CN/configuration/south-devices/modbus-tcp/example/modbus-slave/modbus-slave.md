@@ -34,7 +34,7 @@ Neuron 作为 Client，主动向 Modbus Slave 发起连接请求，用户需要�
 
 ### 配置 Neuron （Client 模式）
 
-在 **配置 -> 南向设备**，点击**添加设备**来创建设备节点，输入插件名称，插件类型选择 **Modbus TCP QH**。
+在 **配置 -> 南向设备**，点击**添加设备**来创建设备节点，输入插件名称，插件类型选择 **Modbus TCP**。
 
 <img src="../assets/neuron-client-config.png" alt="image-20230711160257212" style="zoom:50%;" />
 

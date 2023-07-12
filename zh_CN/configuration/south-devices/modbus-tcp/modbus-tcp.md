@@ -30,7 +30,7 @@ Neuron 的 Modbus TCP 插件除了支持以 TCP 客户端的模式主动接入�
 
 ::: tip
 
-安装 Modbus TCP QH 插件时，仅需配置下表中提到的部分配置项，包括：
+安装 Modbus TCP QH 插件时，仅需配置上表中提到的部分项目：
 
 - IP 地址
 - 端口号

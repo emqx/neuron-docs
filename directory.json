@@ -83,11 +83,11 @@
           "path": "configuration/south-devices/modbus-rtu/modbus-rtu",
           "children": [
             {
-              "title": "连接 DTU",
+              "title": "DTU 连接示例",
               "path": "configuration/south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
-              "title": "连接 Modbus Slave 模拟器",
+              "title": "Modbus Slave 连接示例",
               "path": "configuration/south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
             },
             {
