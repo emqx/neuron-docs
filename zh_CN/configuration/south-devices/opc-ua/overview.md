@@ -92,7 +92,7 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 | 0!2258                 | UINT32   | 使用数字类型的 NODEID，获取 OPC UA 服务器的时间戳；NS 为0，NODEID 为2258 |
 | 2!Device1.Module1.Tag1 | INT8     | 使用字符串类型的 NODEID，获取类型为 SBYTE 的数据点；NS 为2，NODEID 为 Device1.Module1.Tag1 |
 
-## 连接示例
+## 应用场景
 本节还提供以下连接示例，方便您掌握如何通过 Neuron OPC UA 插件连接各类型 OPC UA 服务器：
 
 - [Siemens S7-1200](s71200.md)
