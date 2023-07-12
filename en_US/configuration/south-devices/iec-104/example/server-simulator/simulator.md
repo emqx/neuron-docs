@@ -4,7 +4,7 @@ This article will use the IEC60870-5-104 plugin of Neuron to connect to [IEC6087
 
 ## Download IEC 60870-5-104 Server Simulator
 
-You can download the IEC6087-5-104 Server Simulator from [here](https://sourceforge.net/projects/iec-104-client-simulator/), the trial version of the emulator will automatically shut down after 15 minutes of operation, save the configuration data in time. 
+You can download the IEC6087-5-104 Server Simulator from [here](https://sourceforge.net/u/freyrscada/profile/), the trial version of the emulator will automatically shut down after 15 minutes of operation, save the configuration data in time. 
 Download and unzip the IEC6087-5-104 Server Simulator executable file, click install.
 
 ### Simulator configuration

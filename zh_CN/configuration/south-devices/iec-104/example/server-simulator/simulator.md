@@ -4,7 +4,7 @@
 
 ## 下载 IEC 60870-5-104 Server Simulator
 
-此软件可在 [模拟器](https://sourceforge.net/projects/iec-104-client-simulator/) 处下载，试用版软件每 15 分钟将会自动关闭，及时保存相关配置数据。
+此软件可在 [模拟器](https://sourceforge.net/u/freyrscada/profile/) 处下载，试用版软件每 15 分钟将会自动关闭，及时保存相关配置数据。
 下载后解压找到 IEC60870-5-104 Server Simulator 可执行文件后直接点击安装。
 
 ### 模拟器点位配置
