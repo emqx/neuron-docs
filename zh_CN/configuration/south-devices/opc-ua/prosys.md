@@ -7,9 +7,9 @@ Prosys Simulation Server 是由 Prosys 公司开发的 OPC UA 服务器，用于
 ## 连接 OPC UA Server（匿名登录）
 
 1. Prosys OPC UA Simulation Server 界面中切换到 **Endpoints** -> **Security Modes** 取消选择 **Sign** 和 **Sign&Encrypt**，选择 **None**。
-  ![prosys-1](./assets/prosys-1.jpg)
+    ![prosys-1](./assets/prosys-1.jpg)
 2. Prosys OPC UA Simulation Server 界面中切换到 **Users** -> **User Authentication Methods** 取消选择 **Username&Password**、**Certificate** 和 **IssuedToken/External System**，选择 **Anonymous**。
-  ![prosys-2](./assets/prosys-2.jpg)
+    ![prosys-2](./assets/prosys-2.jpg)
 3. 保存设置并重新启动 Prosys OPC UA Simulation Server。
 
 ## 配置 Neuron
@@ -46,15 +46,15 @@ Prosys Simulation Server 是由 Prosys 公司开发的 OPC UA 服务器，用于
    - **用户名/密码**：无需填写
    - **证书/密钥**：添加证书和密钥
 3. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任。
-  ![prosys-3](./assets/prosys-3.jpg)
+    ![prosys-3](./assets/prosys-3.jpg)
 
 4. 根据测点信息添加 **Groups** 和 **Tags**。
 
-## 连接 OPC UA Server（用户名/密码登录）
+## 连接 OPC UA Server（用户名/密码）
 
 1. Prosys OPC UA Simulation Server 界面中切换到 **Endpoints** -> **Security Modes** 取消选择 **None**，选择 **Sign** 和 **Sign&Encrypt**。
 2. Prosys OPC UA Simulation Server 界面中切换到 **Users** -> **User Authentication Methods** 取消选择 **Anonymous**、**Certificate** 和 **IssuedToken/External System**，选择 **Username&Password**，添加自定义用户名/密码。
-  ![prosys-4](./assets/prosys-4.jpg)
+    ![prosys-4](./assets/prosys-4.jpg)
 3. 保存设置并重新启动 Prosys OPC UA Simulation Server。
 
 ## 配置 Neuron
@@ -73,12 +73,12 @@ Prosys Simulation Server 是由 Prosys 公司开发的 OPC UA 服务器，用于
 3. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任。
 4. 根据测点信息添加 **Groups** 和 **Tags**。
 
-## 连接 OPC UA Server（证书/密钥 + 用户名/密码登录）
+## 连接 OPC UA Server（证书/密钥 + 用户名/密码）
 
 用户名/密码以及证书/密钥设置参考 
 
 - [连接 OPC UA Server（证书/密钥 + 匿名登录）](#连接-opc-ua-server-证书-密钥-匿名登录)
-- [连接 OPC UA Server（用户名/密码登录）](#连接-opc-ua-server-用户名-密码登录)
+- [连接 OPC UA Server（用户名/密码登录）](#连接-opc-ua-server-用户名-密码)
 
 ## 配置 Neuron
 

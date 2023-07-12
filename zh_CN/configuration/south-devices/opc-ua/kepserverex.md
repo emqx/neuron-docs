@@ -4,7 +4,7 @@ KEPServerEX 是由 Kepware 公司开发的一款工业自动化设备与应用�
 
 本节将演示如何通过 Neuron OPC UA 插件连接 KEPServerEX。
 
-## 开启 OPC UA Server（用户名/密码登录）
+## 连接 OPC UA Server（用户名/密码）
 
 1. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **设置** -> **KEPServerEX 设置** -> **用户管理器**，在 **Administrators** 组下新建用户，设置用户名/密码。
 
@@ -35,7 +35,7 @@ KEPServerEX 是由 Kepware 公司开发的一款工业自动化设备与应用�
 
 3. 右键点击系统托盘中的 KEPServerEX 图标，在菜单中选择 **重新初始化**；
 
-## 开启 OPC UA Server（证书/密钥 + 用户名/密码登录）
+## 连接 OPC UA Server（证书/密钥 + 用户名/密码）
 
 1. 按照上文设置用户名/密码；
 

@@ -32,7 +32,7 @@
 
    ![install-auto](./assets/install-auto.png)
 
-## 检查组件是否正确安装
+## 检查组件安装
 
 1. 检查 `C:\Windows\System32` （ 32 位操作系统）或 `C:\Windows\SysWOW64` （64位操作系统） 目录下是否存在以下文件。如果文件不存在则联系销售人员进行支持。
 
@@ -42,13 +42,13 @@
 
    ![opcenum](./assets/opcenum.png)
 
-## 测试 NeuOPC 
+## 测试安装 
 
-本机安装 MatrikonOPCSimulation 或 KepServerEX 测试 NeuOPC 的安装。
+本机安装 MatrikonOPCSimulation 或 KepServerEX 测试 NeuOPC 的安装。 
 
 1. 运行 neuopc.exe 程序，设置号 OPCDA Host 和 OPCDA Server 后点击 Connection Test。
 
-5. 设置 UA 的各项参数后点击 `Start`，运行成功，如图：
+5. 设置 UA 的各项参数后点击 `Start`，运行成功，如图所示：
 
 ![local-neuopc](./assets/local-neuopc1.png)
 

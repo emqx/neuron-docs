@@ -343,6 +343,10 @@
           "path": "configuration/north-apps/ekuiper/overview",
           "children": [
             {
+              "title": "Neuron 与 eKuiper 集成",
+              "path": "integration/ekuiper/ekuiper"
+            },
+            {
               "title": "常见问题",
               "path": "configuration/north-apps/ekuiper/faq"
             }
@@ -375,6 +379,10 @@
           "path": "configuration/north-apps/sparkplugb/overview",
           "children": [
             {
+              "title": "Sparkplug 应用",
+              "path": "integration/sparkplug/sparkplug"
+            },
+            {
               "title": "连接 Ignition",
               "path": "configuration/north-apps/sparkplugb/ignition"
             },
@@ -393,10 +401,6 @@
           "path": "configuration/north-apps/websocket/websocket"
         }
       ]
-    },
-    {
-      "title": "订阅南向数据",
-      "path": "configuration/subscription/subscription"
     },
     {
       "title": "数据监控",
@@ -437,21 +441,7 @@
       ]
     },
     {
-      "title": "集成",
-      "path": "integration/integration",
-      "children": [
-        {
-          "title": "Neuron 与 eKuiper 集成",
-          "path": "integration/ekuiper/ekuiper"
-        },
-        {
-          "title": "Sparkplug 应用",
-          "path": "integration/sparkplug/sparkplug"
-        }
-      ]
-    },
-    {
-      "title": "系统管理",
+      "title": "运维指南",
       "path": "usage/admin/admin",
       "children": [
         {
@@ -489,7 +479,7 @@
       ]
     },
     {
-      "title": "用户案例",
+      "title": "使用案例",
       "path": "use-cases/use-cases",
       "children": [
         {
