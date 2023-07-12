@@ -1,6 +1,5 @@
 # Modbus Slave 连接示例
 
-## 下载安装 Modbus Slave 模拟器
 Modbus Slave 是一款 Modbus 从机模拟器，主要用于 Modbus 主设备开发者在获得物理设备之前，加快 PLC 程序开发与测试。
 
 Modbus Slave 支持以下方式读写设备数据：
@@ -10,9 +9,11 @@ Modbus Slave 支持以下方式读写设备数据：
 * Modbus UDP/IP。
 * Modbus Over UDP/IP。（Modbus RTU/ASCII 封装于 UDP 报文）
 
+## 安装 Modbus Slave 模拟器
+
 安装 Modbus Slave 软件，安装包可从 [modbus tool 下载](https://www.modbustools.com/download.html) 页面，根据运行环境选择对应的安装包下载。软件提供30天的免费使用时长。免费时长阶段，连接10分钟会断开一次，断开之后需要重启软件。
 
-## 如何连接作为 Client 的 Neuron？
+## 连接作为 Client 的 Neuron
 
 本节主要介绍 Neuron 作为 Client，Modbus Slave 作为 Server 时，Neuron 与 Modbus Slave 的相关配置。
 
@@ -30,13 +31,17 @@ Neuron 作为 Client，主动向 Modbus Slave 发起连接请求，用户需要�
 * 如果需要同时模拟多个从设备，运行 Modbus Slave 多个实例，重复上述步骤即可。
 
 
-### 配置 Neuron 南向驱动 Client
+### 配置 Neuron（Client 模式）
 
-在南向驱动中，使用 Modbus RTU 插件新建一个名为 modbus-rtu-client 的节点，并进行驱动配置，如下图所示。
+在**配置 -> 南向设备**，点击**添加设备**来创建设备节点，使用 Modbus RTU 插件新建一个名为 modbus-rtu-client 的节点。
 
-![neuron-rtu-client-config](./assets/neuron-rtu-client-config.png)
+![image-20230712105041126](./assets/neuron-rtu-client-config.png)
 
-* 物理链路选择 TCP；
-* 连接模式选择 client；
-* Host 填写 Modbus Slave 的 IP 地址；
-* Port 填写 Modbus Slave 配置的端口；
+* 物理链路选择 Ethernet；
+* 连接模式选择 Client；
+* IP 地址填写 Modbus Slave 的 IP 地址；
+* 端口号填写 Modbus Slave 配置的端口；
+
+## 数据监控
+
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../../../usage/monitoring.md)。
