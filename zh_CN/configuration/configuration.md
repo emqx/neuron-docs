@@ -42,7 +42,7 @@ Neuron 是一款开源且轻量级的工业协议网关软件，赋予工业设�
 - [WebSocket](./north-apps/websocket/websocket.md)
 - [Monitor](./north-apps/monitor/overview.md)
 
-[**订阅南向设备**](./subscription/subscription.md)
+[**订阅南向设备**](./north-apps/north-apps.md#订阅南向数据)
 
 创建北向设备后，还需订阅组。在此步骤中，不需要设置组和点位。北向节点可以订阅在南向节点中创建的任何组。建立订阅后，相应组的数据将按照组的频率持续发布到北向节点。
 

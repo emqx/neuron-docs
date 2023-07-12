@@ -22,7 +22,6 @@ Ignition 是由 Inductive Automation 公司开发的一种工业应用平台。�
 4. 打开 Ignition 的管理界面 **Config** -> **OPC UA** -> **Security** -> **Server**，将 **Quarantined Certificates** 列表中的 NeuronClient 证书设置为信任。
    ![ignition-2](./assets/ignition-2.jpg)
 
-## 
 
 ## 连接 OPC UA Server（证书/密钥 + 用户名/密码登录）
 
