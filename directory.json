@@ -115,31 +115,31 @@
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
             {
-              "title": "连接策略",
+              "title": "OPC UA 连接策略",
               "path": "configuration/south-devices/opc-ua/policy"
             },
             {
-              "title": "配置 UaExpert",
+              "title": "UaExpert",
               "path": "configuration/south-devices/opc-ua/uaexpert"
             },
             {
-              "title": "连接 Siemens S7-1200",
+              "title": "Siemens S7-1200 连接示例",
               "path": "configuration/south-devices/opc-ua/s71200"
             },
             {
-              "title": "连接 KEPServerEX",
+              "title": "KEPServerEX 连接示例",
               "path": "configuration/south-devices/opc-ua/kepserverex"
             },
             {
-              "title": "连接 Industrial Gateway OPC Server",
+              "title": "Industrial Gateway OPC Server 连接示例",
               "path": "configuration/south-devices/opc-ua/igs"
             },
             {
-              "title": "连接 Ignition",
+              "title": "Ignition 连接示例",
               "path": "configuration/south-devices/opc-ua/ignition"
             },
             {
-              "title": "连接 Prosys Simulation Server",
+              "title": "Prosys Simulation Server 连接示例",
               "path": "configuration/south-devices/opc-ua/prosys"
             },
             {
