@@ -139,7 +139,7 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 
 通过有人云 DTU 透传模块将连接到 Neuron 为例，将串口数据转换为网络数据，具体步骤，见[DTU 连接示例](./example/dtu/dtu-connection.md)。
 
-以太网连接示例：您也可通过 Modbus Slave 从机模拟器测试到 Neuron 的连接，具体步骤，见 [Modbus Salve 模拟器](./example/modbus-slave/modbus-slave.md)。
+您也可通过 Modbus Slave 从机模拟器测试到 Neuron 的连接，具体步骤，见 [Modbus Salve 模拟器](./example/modbus-slave/modbus-slave.md)。
 
 ## 数据监控
 

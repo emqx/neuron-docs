@@ -220,14 +220,24 @@
         },
         {
           "title": "Omron FINS TCP",
-          "path": "configuration/south-devices/omron-fins/omron-fins"
+          "path": "configuration/south-devices/omron-fins/omron-fins",
+          "children": [
+            {
+              "title": "CP2E 连接示例",
+              "path": "configuration/south-devices/omron-fins/example/nx1p/nx1p"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/omron-fins/faq"
+            }
+          ]
         },
         {
           "title": "Omron FINS UDP",
           "path": "configuration/south-devices/omron-fins/omron-fins-udp",
           "children": [
             {
-              "title": "连接 NX1P",
+              "title": "NX1P 连接示例",
               "path": "configuration/south-devices/omron-fins/example/nx1p/nx1p"
             }
           ]
