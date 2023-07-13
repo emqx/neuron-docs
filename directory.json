@@ -201,11 +201,11 @@
           "path": "configuration/south-devices/siemens-s7/s7",
           "children": [
             {
-              "title": "配置 Siemens S7-1200/1500",
+              "title": "配置 S7-1200/1500",
               "path": "configuration/south-devices/siemens-s7/plc/siemens-s7-1200-1500"
             },
             {
-              "title": "连接 S7-1200 PLC",
+              "title": "S7-1200 连接示例",
               "path": "configuration/south-devices/siemens-s7/example/s71200/s71200"
             },
             {
