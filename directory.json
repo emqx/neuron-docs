@@ -224,7 +224,7 @@
           "children": [
             {
               "title": "CP2E 连接示例",
-              "path": "configuration/south-devices/omron-fins/example/nx1p/nx1p"
+              "path": "configuration/south-devices/omron-fins/example/cp2e/cp2e"
             },
             {
               "title": "常见问题",
