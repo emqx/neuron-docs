@@ -299,8 +299,8 @@
           "path": "configuration/south-devices/bacnet-ip/bacnet-ip",
           "children": [
             {
-              "title": "连接 Yabe 示例",
-              "path": "configuration/south-devices/bacnet-ip/example/yabe/yabe"
+              "title": "Yabe 连接示例",
+              "path": "configuration/south-devices/bacnet-ip/example/yabe"
             }
           ]
         },
