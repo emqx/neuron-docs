@@ -7,7 +7,6 @@
 | connection mode | 驱动程序连接到设备的方式，默认为 client，即把 Neuron 作为客户端使用 |
 | host            | 当 Neuron 作为客户端使用时，host 指远程设备的 IP。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 IP，默认可填写 0.0.0.0 |
 | port            | 当 Neuron 作为客户端使用时，post 指远程设备的 TCP 端口。当 Neuron 作为服务端使用时，host 指 Neuron 在本地使用的 TCP 端口。 |
-| site            | 非 A11设备站点号。                                            |
 
 ## 支持的数据类型
 
@@ -22,12 +21,12 @@
 
 ### 地址格式
 
-> COMMAND ! OFFSET[.LEN]</span>
+> SITE ! COMMAND ! OFFSET[.LEN]</span>
 
 ### 地址示例
 
 | 地址    | 数据类型           | 说明                        |
 | ------- | ------------------ | --------------------------- |
-| 1!10.20 | string             | 指令1，偏移10，字符串长度20 |
-| 12!1    | uint16/int16       | 指令12，偏移1               |
-| 20!32   | uint32/int32/float | 指令20，偏移32              |
+| 1!1!10.20 | string             | 站点1，指令1，偏移10，字符串长度20 |
+| 1!12!1    | uint16/int16       | 站点1，指令12，偏移1               |
+| 1!20!32   | uint32/int32/float | 站点1，指令20，偏移32              |
