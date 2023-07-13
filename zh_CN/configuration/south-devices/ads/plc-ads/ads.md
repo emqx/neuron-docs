@@ -4,10 +4,12 @@
 
 ## 环境介绍
 
-本教程使用了在同一个局域网下的 2 台机器，机器 1 为 Linux 系统，安装了 Neuron 软件；机器 2 为 Windows 系统，安装了倍福 TwinCAT 3 软件。
-您可以查阅[安装指南]以获取详细的 Neuron 安装说明。同时，您可以前往 [Beckhoff TwinCAT 网站]下载和安装 TwinCAT 。
+本教程使用了在同一个局域网下的 2 台机器：
 
-|          | 机器1             | 机器2               |
+- 机器 1 为 Linux 系统，安装了 Neuron 软件；您可以查阅[安装指南]以获取详细的 Neuron 安装说明。
+- 机器 2 为 Windows 系统，安装了倍福 TwinCAT 3 软件；您可以前往 [Beckhoff TwinCAT 网站]下载和安装 TwinCAT 。
+
+|          | 机器 1            | 机器 2              |
 | -------- | ----------------- | ------------------- |
 | 操作系统 | Linux             | Windows             |
 | IP 地址   | 192.168.1.152     | 192.168.1.107       |
@@ -17,8 +19,7 @@
 
 ## 配置 TwinCAT
 
-让 Neuron 和倍福 PLC 建立通讯，需要添加路由、查找 AMS Net ID、AMS port、以及变量的 index group 和 index offset 。
-以下部分介绍详细配置。
+在 Neuron 和倍福 PLC 之间建立通讯，添加路由、查找 AMS Net ID、AMS port、以及变量的 index group 和 index offset。
 
 ### 在 TwinCAT 中添加路由
 
@@ -33,7 +34,7 @@
   </figcaption>
 </figure>
 
-点击添加。
+点击**添加**。
 
 <figure align="center">
   <img src="./assets/add-route-2.png"
@@ -133,7 +134,7 @@ TwinCAT PLC 默认端口号为 851。
 
 #### 通过 TPY 文件查找 index group/offset
 
-我们也可以通过 TPY 文件找到 index group 和 index offset。
+您也可通过 TPY 文件找到 index group 和 index offset。
 
 首先请确认 **TPY 文件** 已被启用。
 
