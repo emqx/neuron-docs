@@ -1,4 +1,4 @@
-# 使用 Beckhoff ADS 协议采集 PLC 数据
+# 采集 PLC 数据
 
 本教程介绍使用 Neuron 通过 ADS 协议采集倍福 PLC 上不同地址区域的数据。
 
@@ -15,12 +15,12 @@
 | 安装软件 | Neuron            | TwinCAT             |
 | 网络     | 连通              | 连通                |
 
-## TwinCAT 软件中的配置
+## 配置 TwinCAT
 
 让 Neuron 和倍福 PLC 建立通讯，需要添加路由、查找 AMS Net ID、AMS port、以及变量的 index group 和 index offset 。
 以下部分介绍详细配置。
 
-### 在 TwinCAT 软件中添加路由
+### 在 TwinCAT 中添加路由
 
 打开 **TwinCAT Static Routes** 对话框。
 
@@ -66,9 +66,9 @@
   </figcaption>
 </figure>
 
-### 查看 PLC 的 AMS Net ID 以及 AMS port
+### 查看 AMS Net ID 及 AMS port
 
-打开 **TwinCAT System** 对话框查看 AMS Net ID 。
+打开 **TwinCAT System** 对话框查看 AMS Net ID。
 
 <figure align="center">
   <img src="./assets/amsnetid.png"
@@ -79,7 +79,7 @@
   </figcaption>
 </figure>
 
-TwinCAT PLC 默认端口号为 851 。
+TwinCAT PLC 默认端口号为 851。
 
 <figure align="center">
   <img src="./assets/port.png"
@@ -90,7 +90,7 @@ TwinCAT PLC 默认端口号为 851 。
   </figcaption>
 </figure>
 
-### 查找变量 index group 和 index offset
+### 查看变量 index group 和 index offset
 
 在本教程中我们使用以下 TwinCAT PLC 程序，其定义了足够的变量进行演示。
 
@@ -105,9 +105,9 @@ TwinCAT PLC 默认端口号为 851 。
 
 #### 查看 index group
 
-[Beckhoff index group/offset 页面]列出了访问 PLC 内存范围所需的 index group 。
-对于 %MW 域，index group 为 0x4020 。对于 %MX 域，index group 为 0x4021 。
-对于主程序中定义的变量 *b、i8、u8、i16、u16、i32、u32、i64、u64、f32、f64、str*，index group 为 0x4040 。
+[Beckhoff index group/offset 页面]列出了访问 PLC 内存范围所需的 index group。
+对于 %MW 域，index group 为 0x4020 。对于 %MX 域，index group 为 0x4021。
+对于主程序中定义的变量 *b、i8、u8、i16、u16、i32、u32、i64、u64、f32、f64、str*，index group 为 0x4040。
 
 <figure align="center">
   <img src="./assets/indexgroup1.png"
@@ -118,9 +118,9 @@ TwinCAT PLC 默认端口号为 851 。
   </figcaption>
 </figure>
 
-#### 通过数据区页面查看 index offset
+#### 查看 index offset
 
-在 TwinCAT 中打开 PLC 的数据区 (data area) 页面可以查看变量的 index offset 。
+在 TwinCAT 中打开 PLC 的数据区 (data area) 页面可以查看变量的 index offset。
 
 <figure align="center">
   <img src="./assets/offset1.png"
@@ -133,7 +133,7 @@ TwinCAT PLC 默认端口号为 851 。
 
 #### 通过 TPY 文件查找 index group/offset
 
-我们也可以通过 TPY 文件找到 index group 和 index offset 。
+我们也可以通过 TPY 文件找到 index group 和 index offset。
 
 首先请确认 **TPY 文件** 已被启用。
 
@@ -168,7 +168,7 @@ TPY 文件中包含了 PLC 程序中所有变量的 index group 和 index offset
   </figcaption>
 </figure>
 
-## Neuron 中的配置
+## 配置 Neuron
 
 ### 添加 ADS 南向节点
 

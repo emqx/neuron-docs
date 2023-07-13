@@ -237,7 +237,7 @@
           "path": "configuration/south-devices/ads/ads",
           "children": [
             {
-              "title": "使用 Beckhoff ADS 协议采集 PLC 数据",
+              "title": "采集 PLC 数据（Beckhoff ADS 协议）",
               "path": "configuration/south-devices/ads/plc-ads/ads"
             }
           ]
