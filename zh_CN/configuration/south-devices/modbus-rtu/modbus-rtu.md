@@ -63,10 +63,10 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 
 | 区域                       | 地址范围          | 属性        | 寄存器大小     | 功能码        | 数据类型 |
 | ------------------------- | ---------------- | ---------- | ------------- | ------------ | ------- |
-| Coil（线圈）                | 000001 ~ 065536 | 读/写       | 1Bit          | 0x01,0x05,0x0f | BIT     |
+| Coil（线圈）                | 000001 ~ 065536 | 读/写       | 1Bit          | 0x01, 0x05, 0x0f | BIT     |
 | Input（离散量输入）          | 100001 ~ 165536 | 读          | 1Bit         | 0x02          | BIT     |
-| Input Register（输入寄存器） | 300001 ~ 365536 | 读          | 16Bit,2Byte         | 0x04          | BIT,INT16,UINT16,INT32,UINT32,INT64,UINT64,FLOAT,DOUBLE,STRING|
-| Hold Register（保持寄存器）  | 400001 ~ 465536 | 读/写       | 16Bit,2Byte         | 0x03,0x06,0x10 | BIT,INT16,UINT16,INT32,UINT32,INT64,UINT64,FLOAT,DOUBLE,STRING|
+| Input Register（输入寄存器） | 300001 ~ 365536 | 读          | 16Bit, 2Byte        | 0x04          | BIT, INT16, UINT16,<br />INT32, UINT32, INT64,<br />UINT64, FLOAT,<br />DOUBLE, STRING |
+| Hold Register（保持寄存器）  | 400001 ~ 465536 | 读/写       | 16Bit, 2Byte        | 0x03, 0x06, 0x10 | BIT, INT16, UINT16,<br />INT32, UINT32, INT64,<br />UINT64, FLOAT,<br /> DOUBLE, STRING |
 
 ::: tip
 一些设备文件会使用功能码和寄存器地址来描述指令，因为寄存器地址编号是从 0 开始的，所以每个区域的寄存器地址范围为 0 ～ 65535。Neuron 采用 PLC 组态地址规范，因此 Neuron 配置的地址从 1 开始。

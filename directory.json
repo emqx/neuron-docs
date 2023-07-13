@@ -271,7 +271,7 @@
           ]
         },
         {
-          "title": "DL/T645-2007",
+          "title": "DL/T 645-2007",
           "path": "configuration/south-devices/dlt645-2007/dlt645-2007",
           "children": [
             {
@@ -281,7 +281,7 @@
           ]
         },
         {
-          "title": "DL/T645-1997",
+          "title": "DL/T 645-1997",
           "path": "configuration/south-devices/dlt645-1997/dlt645-1997"
         },
         {
