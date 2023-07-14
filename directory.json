@@ -258,7 +258,7 @@
           "children": [
             {
               "title": "连接 IEC60870-5-104 Server 模拟器",
-              "path": "configuration/south-devices/iec-104/example/simulator"
+              "path": "configuration/south-devices/iec-104/example/server-simulator/simulator"
             },
             {
               "title": "常见问题",
