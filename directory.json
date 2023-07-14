@@ -353,10 +353,6 @@
           "path": "configuration/north-apps/mqtt/overview",
           "children": [
             {
-              "title": "离线数据缓存",
-              "path": "usage/offline-data-cache"
-            },
-            {
               "title": "API",
               "path": "configuration/north-apps/mqtt/api"
             },
