@@ -353,7 +353,7 @@
           "path": "configuration/north-apps/mqtt/overview",
           "children": [
             {
-              "title": "API",
+              "title": "数据上下行格式",
               "path": "configuration/north-apps/mqtt/api"
             },
             {
