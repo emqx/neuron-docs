@@ -349,24 +349,6 @@
       "path": "configuration/north-apps/north-apps",
       "children": [
         {
-          "title": "eKuiper",
-          "path": "configuration/north-apps/ekuiper/overview",
-          "children": [
-            {
-              "title": "Neuron 与 eKuiper 集成",
-              "path": "integration/ekuiper/ekuiper"
-            },
-            {
-              "title": "常见问题",
-              "path": "configuration/north-apps/ekuiper/faq"
-            }
-          ]
-        },
-        {
-          "title": "Monitor",
-          "path": "configuration/north-apps/monitor/overview"
-        },
-        {
           "title": "MQTT",
           "path": "configuration/north-apps/mqtt/overview",
           "children": [
@@ -381,6 +363,20 @@
             {
               "title": "常见问题",
               "path": "configuration/north-apps/mqtt/faq"
+            }
+          ]
+        },
+        {
+          "title": "eKuiper",
+          "path": "configuration/north-apps/ekuiper/overview",
+          "children": [
+            {
+              "title": "Neuron 与 eKuiper 集成",
+              "path": "integration/ekuiper/ekuiper"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/north-apps/ekuiper/faq"
             }
           ]
         },
@@ -409,6 +405,10 @@
         {
           "title": "WebSocket",
           "path": "configuration/north-apps/websocket/websocket"
+        },
+        {
+          "title": "Monitor",
+          "path": "configuration/north-apps/monitor/overview"
         }
       ]
     },
