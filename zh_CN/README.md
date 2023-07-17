@@ -14,7 +14,7 @@ Neuron 是一款现代的工业物联网连接服务器，可以连接多种使�
 
 **便携式部署**：Neuron 具有非常低的内存占用，启动时占用不到 7M，适合在低配置架构设备上运行，如 X86、ARM 和 RISC-V 等。Neuron 还支持类似 Docker 的容器化部署，在 K8s 环境中与其他共存容器一起运行。
 
-**更好的集成**：Neuron 与工业物联网应用、大数据和 AI/ML 分析软件的无缝集成，使得 Neuron 可以通过 API 和 MQTT 连接私有云、EMQX Cloud、AWS、Microsoft Azure 或本地服务器。
+**更好的集成**：Neuron 与工业物联网应用、大数据和 AI/ML 分析软件的无缝集成，使得 Neuron 可以通过 API 和 MQTT 连接私有云、EMQX Cloud、AWS、Microsoft Azure 或本地服务器，将实时工业数据直接无缝地流向工业应用，如 MES、ERP、大数据、分析软件等等，实现各类复杂的数据处理和存储场景。
 
 **统一的数据化操作**：Neuron 帮助传统工业设备以异步方式传递数据消息，作为 SparkplugB 标准中指定的边缘节点。SparkPlugB 是一种开放、统一、互操作的工业数据交换标准，通过 MQTT 代理在工业信息系统（如 ERP、MES、SCADA 和历史记录）之间进行数据交换。
 

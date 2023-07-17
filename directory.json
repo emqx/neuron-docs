@@ -367,7 +367,7 @@
           "path": "configuration/north-apps/ekuiper/overview",
           "children": [
             {
-              "title": "通过 Docker 集成 Neuron 与 eKuiper",
+              "title": "Neuron 与 eKuiper 集成最佳实践",
               "path": "configuration/north-apps/ekuiper/ekuiper"
             },
             {
@@ -381,15 +381,15 @@
           "path": "configuration/north-apps/sparkplugb/overview",
           "children": [
             {
-              "title": "Sparkplug 应用",
+              "title": "集成 EMQX",
               "path": "integration/sparkplug/sparkplug"
             },
             {
-              "title": "连接 Ignition",
+              "title": "Ignition 连接示例",
               "path": "configuration/north-apps/sparkplugb/ignition"
             },
             {
-              "title": "连接 Cogent",
+              "title": "Cogent 连接示例",
               "path": "configuration/north-apps/sparkplugb/cogent"
             },
             {

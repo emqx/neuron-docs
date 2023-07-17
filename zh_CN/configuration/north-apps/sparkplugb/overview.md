@@ -39,6 +39,14 @@ Sparkplug B 是运行在 MQTT 之上的应用型协议，所以在 Neuron 中的
 
 点击 SparkPlugB 节点卡片，进入**组列表**页，点击 **添加订阅** 选择要订阅的点位组，订阅南向设备的点位组。完成订阅后，我们的北向 SparkPlug B 应用将开始接受南向数据。
 
+## 应用场景
+
+您可通过 Neuron Sparkplug B 插件将数据上报到 EMQX，并通过 EMQX 的编解码功能得到正确完整的数据结果，具体结果，见 [集成 EMQX](./sparkplug.md)。
+
+您可通过 Neuron SparkPlugB 插件连接 Ignition 平台，具体步骤，见 [Ignition](./ignition.md)。
+
+您也可通过 Neuron SparkPlugB 插件连接 Cogent DataHub，具体步骤，见 [Cogent](./cogent.md)。
+
 ## 运行与维护
 
 在设备卡片或设备列，您可点击数据统计图表查看及应用运行情况、接受和发送的数据情况。关于统计字段的说明，见[创建北向应用](../north-apps.md)。

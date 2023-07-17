@@ -1,6 +1,6 @@
-# 通过 Docker 集成 Neuron 与 eKuiper
+# Neuron 与 eKuiper 集成最佳实践
 
-本篇文章详细介绍通过 Docker Compose 的部署方式，实现 Neuron2.4 和 eKuiper1.9 的 TCP 连接，以下为具体的配置过程。
+本篇文章详细介绍通过 Docker Compose 的部署方式，实现 Neuron2.4 和 eKuiper1.9 的 TCP 连接，并将 Neuron 收集到的数据打印到 eKuiper 的日志中，以下为具体的配置过程。
 
 ## 快速部署
 
@@ -64,19 +64,19 @@ Neuron 和 eKuiper 都支持二进制安装包以及 Docker 容器化部署方�
 
    ![image-20230416222743879](./assets/image-20230416222743879.png)
 
-## Neuron 配置
+## 配置 Neuron
 
-### 创建南向设备 
+### 添加南向设备 
 
 Neuron 启动之后，我们需要配置 Neuron 的南向设备和北向 eKuiper 应用通道，然后启动模拟器进行模拟数据采集。
 
 南向设备和模拟器配置，请参考 [Neuron 快速教程](../../../quick-start/quick-start.md) ，完成南向配置部分。
 
-### 添加北向 eKuiper 应用
+### 添加北向应用
 
 在配置菜单中选择**北向应用管理**，进入到北向应用管理界面，此时未添加任何应用，需要手动添加应用，在本例中，我们将创建一个 eKuiper 应用。
 
-#### 添加插件
+#### 添加应用
 
 1. 点击**添加设备**按键；
 2. 填写应用名称，例如，ekuiper-1；
