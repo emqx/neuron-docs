@@ -382,7 +382,7 @@
           "children": [
             {
               "title": "集成 EMQX",
-              "path": "integration/sparkplug/sparkplug"
+              "path": "configuration/north-apps/sparkplug/sparkplug"
             },
             {
               "title": "Ignition 连接示例",

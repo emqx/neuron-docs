@@ -40,7 +40,7 @@ http://x.x.x.x:7000
 
 进入**管理 -> 修改密码**页面，可修改登录密码，如下图所示。
 
-![change_password](/Users/lena/Documents/GitHub/neuron-docs/zh_CN/admin/assets/change_password.png)
+![change_password](./assets/change_password.png)
 
 ## 重置密码
 
@@ -54,7 +54,7 @@ http://x.x.x.x:7000
 
 登录 Neuron 后，点击页面顶部工具栏的 **系统信息** -> **关于**，可以查看系统版本、状态、运行时常、内容使用、硬件标志以及项目构建日期等信息，如下图所示。
 
-![image-20230717143315158](/Users/lena/Documents/GitHub/neuron-docs/zh_CN/admin/assets/about.png)
+![image-20230717143315158](./assets/about.png)
 
 ## 数据统计
 
