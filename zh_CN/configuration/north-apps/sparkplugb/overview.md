@@ -41,7 +41,7 @@ Sparkplug B 是运行在 MQTT 之上的应用型协议，所以在 Neuron 中的
 
 ## 应用场景
 
-您可通过 Neuron Sparkplug B 插件将数据上报到 EMQX，并通过 EMQX 的编解码功能得到正确完整的数据结果，具体结果，见 [集成 EMQX](./sparkplug.md)。
+您可通过 Neuron Sparkplug B 插件将数据上报到 EMQX，并通过 EMQX 的编解码功能得到正确完整的数据结果，具体结果，见 [集成 EMQX](sparkplug.md)。
 
 您可通过 Neuron SparkPlugB 插件连接 Ignition 平台，具体步骤，见 [Ignition](./ignition.md)。
 
