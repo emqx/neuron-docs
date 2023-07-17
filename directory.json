@@ -377,7 +377,7 @@
           ]
         },
         {
-          "title": "SparkPlugB",
+          "title": "SparkPlug B",
           "path": "configuration/north-apps/sparkplugb/overview",
           "children": [
             {
@@ -448,15 +448,15 @@
     },
     {
       "title": "运维指南",
-      "path": "usage/admin/admin",
+      "path": "admin/admin",
       "children": [
         {
           "title": "修改密码",
-          "path": "usage/admin/change-password"
+          "path": "admin/change-password"
         },
         {
           "title": "管理日志",
-          "path": "usage/admin/log-management"
+          "path": "admin/log-management"
         },
         {
           "title": "数据统计",
