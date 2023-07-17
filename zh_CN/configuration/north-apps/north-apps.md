@@ -63,3 +63,26 @@ Neuron 目前支持以下北向节点：
 
 * 南向设备：选择要订阅的南向设备，例如，modbus-tcp-1；
 * 组：选择南向设备下的某个组，例如，group-1。
+
+## 运行与维护
+
+### 数据统计
+
+在设备卡片或设备列，您可点击数据统计图表查看及应用运行情况、接受和发送的数据情况
+
+![north_statistics](./assets/north_statistics.png)
+
+其中关键字段说明如下：
+
+| 参数                  | 说明                                                         |
+| --------------------- | ------------------------------------------------------------ |
+| send_msgs_total       | 发送消息总条数                                               |
+| send_msg_errors_total | 消息发送失败的总条数                                         |
+| recv_msgs_total       | 接收消息的总条数                                             |
+| link_state            | 节点连接状态<br />DISCONNECTED = 0<br /> CONNECTED = 1       |
+| running_state         | 节点状态 <br />INIT = 1<br />READY = 2<br />RUNNING = 3<br />STOPPED = 4 |
+
+### 故障诊断
+
+如果设备运行出现任何问题，您可点击 DEBUG 日志图表，此时系统将自动打印该节点的 DEBUG 级别日志，十分钟后将切回系统默认级别日志。稍后，您可点击页面顶部功能栏的**系统信息** -> **日志**查看日志，并进行故障诊断。有关系统日志的详细解析，见[管理日志](../../admin/log-management.md)。
+

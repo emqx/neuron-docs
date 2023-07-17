@@ -116,3 +116,30 @@ telnet <运行 Modbus 模拟器 PC 端的 IP> 502
 ## 数据监控
 
 完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../usage/monitoring.md)。
+
+## 运行与维护
+
+### 数据统计
+
+在设备卡片或设备列，您可点击数据统计图表查看及应用运行情况、接受和发送的数据情况
+
+![south_statistics](./assets/south_statistics.png)
+
+其中关键字段说明如下：
+
+| 参数                  | 说明                                                         |
+| --------------------- | ------------------------------------------------------------ |
+| last_rtt_ms           | 收发一次指令的时间间隔，以毫秒为单位                         |
+| send_bytes            | 发送指令的总字节数                                           |
+| recv_bytes            | 接收指令的总字节数                                           |
+| tag_reads_total       | 读取点位的总指令数，包括读失败                               |
+| tag_read_errors_total | 读取点位失败的总指令数                                       |
+| group_tags_total      | 组的总点位数                                                 |
+| group_last_send_msgs  | 调用一次 group timer 发送的消息数                            |
+| group_last_timer_ms   | 调用一次 group timer 的时间，以毫秒为单位                    |
+| link_state            | 节点连接状态 <br />DISCONNECTED = 0<br />CONNECTED = 1       |
+| running_state         | 节点状态 <br />INIT = 1<br />READY = 2<br />RUNNING = 3<br />STOPPED = 4 |
+
+### 故障诊断
+
+如果设备运行出现任何问题，您可点击 DEBUG 日志图表，此时系统将自动打印该节点的 DEBUG 级别日志，十分钟后将切回系统默认级别日志。稍后，您可点击页面顶部功能栏的**系统信息** -> **日志**查看日志，并进行故障诊断。有关系统日志的详细解析，见[管理日志](../../admin/log-management.md)。

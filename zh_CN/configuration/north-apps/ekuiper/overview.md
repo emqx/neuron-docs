@@ -30,6 +30,12 @@ LF Edge [eKuiper] 是 Golang 实现的轻量级物联网边缘分析、流式处
 
 有关在 eKuiper 中的操作，见[使用 eKuiper 对 Neuron 采集的数据进行流式处理](https://ekuiper.org/docs/zh/latest/integrations/neuron/neuron_integration_tutorial.html#integration-of-neuron-and-ekuiper)。
 
+## 运行与维护
+
+在设备卡片或设备列，您可点击数据统计图表查看及应用运行情况、接受和发送的数据情况。关于统计字段的说明，见[创建北向应用](../north-apps.md)。
+
+如果设备运行出现任何问题，您可点击 DEBUG 日志图表，此时系统将自动打印该节点的 DEBUG 级别日志，十分钟后将切回系统默认级别日志。稍后，您可点击页面顶部功能栏的**系统信息** -> **日志**查看日志，并进行故障诊断。稍后，您可点击页面顶部功能栏的**系统信息** -> **日志**查看日志，并进行故障诊断。有关系统日志的详细解析，见[管理日志](../../../admin/log-management.md)。
+
 <!--这里感觉应该把ekuiper部分的操作也贴进来-->
 
 ## 版本兼容性
