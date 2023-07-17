@@ -367,8 +367,8 @@
           "path": "configuration/north-apps/ekuiper/overview",
           "children": [
             {
-              "title": "Neuron 与 eKuiper 集成",
-              "path": "integration/ekuiper/ekuiper"
+              "title": "通过 Docker 集成 Neuron 与 eKuiper",
+              "path": "configuration/north-apps/ekuiper/ekuiper"
             },
             {
               "title": "常见问题",
@@ -522,7 +522,7 @@
     },
     {
       "title": "性能测试",
-      "path": "usage/performance/performance"
+      "path": "performance/performance"
     },
     {
       "title": "附录",

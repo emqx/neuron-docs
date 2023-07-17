@@ -4,6 +4,13 @@ LF Edge [eKuiper] 是 Golang 实现的轻量级物联网边缘分析、流式处
 
 作为一款工业网关，Neuron 为众多使用不同协议的不同设备提供一站式访问，而 eKuiper 具有数据过滤、聚合、转换和路由的能力。Neuron eKuiper 插件使用户能够将收集到的数据发布到 eKuiper 以进一步处理。二者的组合将能极大降低边缘计算解决方案的资源要求，满足更加丰富的场景需求。
 
+## 方案优势
+
+- <b>扩展的数据分析能力</b>：Neuron可以提供先进的实时数据分析功能，例如异常检测、预测性维护和优化算法，为工业物联网部署提供更全面、更智能的解决方案。
+- <b>边缘计算能力</b>：Neuron可以在边缘处理数据，靠近工业设备，减少延迟，实现更快的响应时间。
+- <b>无缝的数据处理和转换</b>： Neuron支持数据提取、转换和加载（ETL），可以在数据用于分析之前高效地预处理和清洗数据，确保云端AI/ML分析功能的数据质量和一致性。
+- <b>基于数据驱动的边缘决策</b>：Neuron可以在本地分析和处理基于AI的洞察，而不仅仅依赖于基于云的决策系统。
+
 ## 添加插件
 
 在**配置 -> 北向应用**，点击 **添加应用** 添加 eKuiper 客户端节点。
@@ -30,6 +37,10 @@ LF Edge [eKuiper] 是 Golang 实现的轻量级物联网边缘分析、流式处
 
 有关在 eKuiper 中的操作，见[使用 eKuiper 对 Neuron 采集的数据进行流式处理](https://ekuiper.org/docs/zh/latest/integrations/neuron/neuron_integration_tutorial.html#integration-of-neuron-and-ekuiper)。
 
+## 应用场景
+
+通过 Neuron eKuiper 插件，您可在 Neuron 和 eKuiper 之间建立直接的数据通道，具体步骤，见 [通过 Docker 集成 Neuron 与 eKuiper](./ekuiper.md)。
+
 ## 运行与维护
 
 在设备卡片或设备列，您可点击数据统计图表查看及应用运行情况、接受和发送的数据情况。关于统计字段的说明，见[创建北向应用](../north-apps.md)。
@@ -48,6 +59,8 @@ Neuron 和 eKuiper 之间的交互是双向的，需要两边同时提供支持�
 | ----------------- | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Neuron 2.0        | eKuiper 1.5       | 1. Neuron 首次引入 eKuiper 插件<br />2. eKuiper 首次添加 Neuron 源和动作 <br />3. Neuron 和 eKuiper 基于 [IPC 传输层]的 [NNG pair0 协议]进行通信<br /> | 1. Neuron 和 eKuiper 应部署在同一个主机（或使用 MQTT 作为双方之间的中继）<br />2. 一对一通信 |
 | Neuron 2.4 及以上 | Neuron 1.9 及以上 | 1. Neuron 和 eKuiper 基于 [TCP 传输层] 进行通信 <br />2. 支持多对多连接 | -                                                            |
+
+ 传输协议的变化如下图所示：![connection_change](./assets/connection_change.png)
 
 ## 拓展阅读
 
