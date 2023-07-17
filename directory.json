@@ -451,16 +451,12 @@
       "path": "admin/admin",
       "children": [
         {
-          "title": "修改密码",
-          "path": "admin/change-password"
-        },
-        {
           "title": "管理日志",
           "path": "admin/log-management"
         },
         {
           "title": "数据统计",
-          "path": "usage/dashboard/data-statistics"
+          "path": "admin/data-statistics"
         }
       ]
     },

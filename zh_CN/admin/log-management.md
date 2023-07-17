@@ -1,25 +1,25 @@
 # 管理日志
 
-## 下载日志
-
-Neuron 在 2.3 版本中已支持在 web 页面一键下载所有日志文件的功能，如下图所示。
+Neuron 2.3 及以上版本支持在 Web 页面一键下载所有日志文件的功能，如下图所示。
 
 ![download_log](./assets/download_log.png)
 
-下载日志的功能将把 /neuron/build/logs 的文件夹打包成 neuron_logs.tar.gz 文件并下载到网页上。文件包含所有已创建的驱动及 neuron 的日志文件，文件目录级别示例，如下图所示。
+## 文件夹结构
 
-![neuron_logs](./assets/neuron_logs.png)
+下载日志的功能将把 /neuron/build/logs 的文件夹打包成 neuron_logs.tar.gz 文件并下载。文件包含所有已创建的驱动及 Neuron 的日志文件，文件目录级别示例，如下图所示。
 
-* data-stream-processing.log：数据处理配置；
-* dlt645.log：北向应用配置；
-* modbus-plus-tcp.log：南向设备配置；
+<img src="./assets/neuron_logs.png" alt="neuron_logs" style="zoom:50%;" />
+
+* data-stream-processing.log：数据处理配置
+* dlt645.log：北向应用配置
+* modbus-plus-tcp.log：南向设备配置
 * neuron.log：Neuron 日志
 
-## 设置打印节点 debug 日志
+## 节点 DEBUG 日志
 
-Neuron 支持设置打印某个节点的 debug 日志，并在大致十分钟后自动切回默认的日志等级。每个节点之间的设置相互独立。
+Neuron 支持设置打印某个节点的 debug 级别日志，并在大致十分钟后自动切回默认的日志等级。每个节点之间的设置相互独立。
 
-每个节点的 `更多` 操作按键中都有一个 `DEBUG 日志` 的操作按键，如下图所示。
+每个节点的 **更多** 操作按键中都有一个 **DEBUG 日志** 的操作按键，如下图所示。
 
 ![debug_log](./assets/debug_log.png)
 
@@ -33,9 +33,9 @@ Neuron 支持设置打印某个节点的 debug 日志，并在大致十分钟后
 打印节点 debug 日志的同时 neuron 日志也会打印，并在十分钟后自动切回默认的日志等级。
 :::
 
-## zlog.conf
+## 日志配置文件
 
-日志配置文件说明。另外还有 dev.conf，此配置文件用于开发调试，打印日志同时将日志输出到终端，启动 neuron 时添加 --log 参数则调用 dev.conf。
+Neuron 日志配置文件  `zlog.conf `的格式如下所示：
 
 ```bash
 [global]
@@ -55,7 +55,7 @@ simple = "%d [%V] %f:%L %m%n"
 
 ### 全局参数 Global
 
-file perms：指定创建文件的缺省访问权限。
+file perms：指定创建文件的缺省访问权限：
 * 600，只有拥有者有读写权限；
 * 644，只有拥有者有读写权限；而属组用户和其他用户只有读权限；
 * 700，只有拥有者有读、写、执行权限；
@@ -96,7 +96,7 @@ format_name = "your format"
 
 #### level
 
-zlog 有六个默认的等级：“DEBUG”,“INFO”，“NOTICE”，“WARN”，“ERROR”，“FATAL”。例如，*.DEBUG 任何大于等于 DEBUG 级别的日志都会被输出。
+zlog 有六个默认的等级：“DEBUG”，“INFO”，“NOTICE”，“WARN”，“ERROR”，“FATAL”。例如，*.DEBUG 任何大于等于 DEBUG 级别的日志都会被输出。
 
 | 表达式    | 含义               |
 | -------- | ----------------- |
@@ -137,3 +137,7 @@ simple = "%d [%V] %f:%L %m%n"
 #### (format name, optional)
 
 [格式名，可选]
+
+## 开发调试配置文件
+
+Neuron 还提供了 开发调试配置文件 `dev.conf`，打印日志同时将日志输出到终端，启动 neuron 时添加 `--log` 参数则调用 `dev.conf`。

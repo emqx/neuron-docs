@@ -19,3 +19,9 @@ Fanuc Focas Ethernet 和 Mitsubishi CNC 插件不在 30 点永久免费的范围
 :::tip
 官网申请试用许可证时，必须使用硬件标识进行设备的绑定。您可直接[联系我们](https://www.emqx.com/zh/contact?product=neuron)申请不需要硬件标识绑定设备的许可证，或申请正式许可证。
 :::
+
+## 管理许可证
+
+申请许可证后，您可在登录 Neuron 后，点击页面顶部工具栏的 系统信息 -> License 上传许可证，或管理许可证文件。
+
+![image-20230717142817902](./assets/license.png)

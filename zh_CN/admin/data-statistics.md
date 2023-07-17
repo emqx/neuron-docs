@@ -24,8 +24,8 @@ Neuron 支持基于 Prometheus 的数据模型的南北向节点数据统计功�
 | send_msgs_total         | 发送消息总条数       |
 | send_msg_errors_total   | 消息发送失败的总条数  |
 | recv_msgs_total         | 接收消息的总条数     |
-| link_state              | 节点连接状态</br>DISCONNECTED = 0</br> CONNECTED = 1       |
-| running_state           | 节点状态 </br> INIT = 1</br>READY = 2</br> RUNNING = 3</br>    STOPPED = 4            |
+| link_state              | 节点连接状态：<br />· DISCONNECTED = 0<br />· CONNECTED = 1 |
+| running_state           | 节点状态 ：<br />· INIT = 1<br />· READY = 2<br />· RUNNING = 3<br />· STOPPED = 4 |
 
 ## 南向节点统计
 
@@ -43,5 +43,5 @@ Neuron 支持基于 Prometheus 的数据模型的南北向节点数据统计功�
 | group_tags_total       | 组的总点位数                               |
 | group_last_send_msgs   | 调用一次 group timer 发送的消息数           |
 | group_last_timer_ms    | 调用一次 group timer 的时间，以毫秒为单位     |
-| link_state              | 节点连接状态 </br>DISCONNECTED = 0</br> CONNECTED = 1       |
-| running_state           | 节点状态 </br> INIT = 1</br>READY = 2</br> RUNNING = 3</br>    STOPPED = 4            |
+| link_state              | 节点连接状态 <br />DISCONNECTED = 0<br />CONNECTED = 1     |
+| running_state           | 节点状态 <br />INIT = 1<br />READY = 2<br />RUNNING = 3<br />STOPPED = 4        |
