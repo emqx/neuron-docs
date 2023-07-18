@@ -75,7 +75,7 @@
           "path": "configuration/templates/templates"
         },
         {
-          "title": "批量配置",
+          "title": "批量点位配置",
           "path": "configuration/import-export/import-export"
         },
         {
@@ -179,11 +179,11 @@
           "path": "configuration/south-devices/mitsubishi-3e/overview",
           "children": [
             {
-              "title": "连接 FX5U",
+              "title": "FX5U 连接示例",
               "path": "configuration/south-devices/mitsubishi-3e/fx5u"
             },
             {
-              "title": "连接 Q03UDE",
+              "title": "Q03UDE 连接示例",
               "path": "configuration/south-devices/mitsubishi-3e/q03ude"
             },
             {
@@ -257,7 +257,7 @@
           "path": "configuration/south-devices/iec-104/iec-104",
           "children": [
             {
-              "title": "连接 IEC60870-5-104 Server 模拟器",
+              "title": "IEC60870-5-104 Server 连接示例",
               "path": "configuration/south-devices/iec-104/example/server-simulator/simulator"
             },
             {
@@ -271,7 +271,7 @@
           "path": "configuration/south-devices/iec61850/overview",
           "children": [
             {
-              "title": "连接 LibIEC61850 服务器",
+              "title": "LibIEC61850 连接示例",
               "path": "configuration/south-devices/iec61850/libiec61850"
             },
             {
@@ -285,7 +285,7 @@
           "path": "configuration/south-devices/dlt645-2007/dlt645-2007",
           "children": [
             {
-              "title": "连接正泰单相导轨表",
+              "title": "正泰单相导轨表连接示例",
               "path": "configuration/south-devices/dlt645-2007/example/connect"
             }
           ]

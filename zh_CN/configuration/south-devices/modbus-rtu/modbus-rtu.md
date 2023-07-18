@@ -12,7 +12,7 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 
 点击插件卡片或插件列，进入**设备配置**页。配置 Neuron 与设备建立连接所需的参数，下表为插件相关配置项。
 
-| 参数                 | 说明                                                    |
+| <div style="width:100pt">参数</div>               | 说明                                                    |
 | -------------------- | ------------------------------------------------------- |
 | **物理链路** | 选择使用 Serial （串口）或者是 Ethernet（以太网）通信介质。 |
 | **连接超时时间** | 等待设备返回指令响应的时间。 |
@@ -137,7 +137,7 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 
 ## 应用场景
 
-通过有人云 DTU 透传模块将连接到 Neuron 为例，将串口数据转换为网络数据，具体步骤，见[DTU 连接示例](./example/dtu/dtu-connection.md)。
+通过有人云 DTU 透传模块将连接到 Neuron 为例，将串口数据转换为网络数据，具体步骤，见 [DTU 连接示例](./example/dtu/dtu-connection.md)。
 
 您也可通过 Modbus Slave 从机模拟器测试到 Neuron 的连接，具体步骤，见 [Modbus Salve 模拟器](./example/modbus-slave/modbus-slave.md)。
 

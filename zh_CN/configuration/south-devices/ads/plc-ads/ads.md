@@ -67,7 +67,7 @@
   </figcaption>
 </figure>
 
-### 查看 AMS Net ID 及 AMS port
+### 查看 AMS Net ID 及 AMS Port
 
 打开 **TwinCAT System** 对话框查看 AMS Net ID。
 

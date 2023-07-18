@@ -25,7 +25,7 @@ Neuron Beckhoff ADS 插件使用户可以通过 TCP/IP 连接到 Beckhoff TwinCA
 
 其中涉及的关键 ADS 概念如下：
 
-|                    |                                                              |
+| 概念               | 说明                                                         |
 | ------------------ | ------------------------------------------------------------ |
 | ADS 协议           | [ADS] (Automation Device Specification) 是 TwinCAT 的通讯协议。<br />它使得 TwinCAT 系统能够通过媒介独立的串行或网络连接，实现数据的交换和控制。<br />ADS 旨在为 TwinCAT 系统中控制器与用户界面之间的通信提供标准接口。 |
 | AMS Net ID         | [AMS Net ID] 是 TwinCAT 网络中本地计算机的地址。它由6个字节组成，用点分十进制表示（例如： “1.2.3.4.5.6”） 。<br />为避免通信冲突，AMS Net ID 在 TwinCAT 网络中必须是唯一的。<br />默认情况下，TwinCAT 通过在系统的 IP 地址后附加 “.1.1” 来生成 AMS Net ID 。<br />例如，在 IP 地址为 “172.17.213.60” 的系统中， 默认生成的 AMS Net ID 将为 “172.17.213.60.1.1” 。 |

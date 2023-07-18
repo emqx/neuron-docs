@@ -3,11 +3,11 @@
 Modbus Slave 是一款 Modbus 从机模拟器，主要用于 Modbus 主设备开发者在获得物理设备之前，加快 PLC 程序开发与测试。
 
 Modbus Slave 支持以下方式读写设备数据：
-* 在 RS232 或者 RS485 串口网络上使用 Modbus RTU, ASCII 通讯。（USB/RS232/485 转换器）
-* Modbus TCP/IP。
-* Modbus Over TCP/IP。（Modbus RTU/ASCII 封装于 TCP 报文）
-* Modbus UDP/IP。
-* Modbus Over UDP/IP。（Modbus RTU/ASCII 封装于 UDP 报文）
+* 在 RS232 或者 RS485 串口网络上使用 Modbus RTU, ASCII 通讯（USB/RS232/485 转换器）
+* Modbus TCP/IP
+* Modbus Over TCP/IP（Modbus RTU/ASCII 封装于 TCP 报文）
+* Modbus UDP/IP
+* Modbus Over UDP/IP（Modbus RTU/ASCII 封装于 UDP 报文）
 
 ## 安装 Modbus Slave 模拟器
 
@@ -40,7 +40,7 @@ Neuron 作为 Client，主动向 Modbus Slave 发起连接请求，用户需要�
 * 物理链路选择 Ethernet；
 * 连接模式选择 Client；
 * IP 地址填写 Modbus Slave 的 IP 地址；
-* 端口号填写 Modbus Slave 配置的端口；
+* 端口号填写 Modbus Slave 配置的端口。
 
 ## 数据监控
 
