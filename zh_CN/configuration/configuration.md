@@ -4,7 +4,7 @@ Neuron 是一款开源且轻量级的工业协议网关软件，赋予工业设�
 
 ## 数据采集
 
-1. [**查看可用插件**](../introduction/plugin-list/plugin-list.md)：Neuron 南向插件是实现特定协议以访问外部设备的通信驱动程序，安装并激活相应插件的许可证后，即可使用驱动插件，具体可查看[许可证政策](http://localhost:8080/docs/zh/latest/introduction/license/license-policy.html)。由于 Neuron 采取了松散耦合架构，每个插件作为独立的进程线程运行，不会相互干扰，因此您可根据选择选择符合业务需求的插件。
+1. [**查看可用插件**](../introduction/plugin-list/plugin-list.md)：Neuron 南向插件是实现特定协议以访问外部设备的通信驱动程序，安装并激活相应插件的许可证后，即可使用驱动插件，具体可查看[许可证政策](../introduction/license/license-policy.md)。由于 Neuron 采取了松散耦合架构，每个插件作为独立的进程线程运行，不会相互干扰，因此您可根据选择选择符合业务需求的插件。
 
    Neuron 支持的插件列表如下，不同设备所需的配置参数有所不同，您可点击表格链接快速了解不同南向设备的参数配置。
 
