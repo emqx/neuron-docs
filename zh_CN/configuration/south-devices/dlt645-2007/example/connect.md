@@ -10,7 +10,7 @@
 
 ![connect](./assets/connect.png)
 
-### 设备型号
+## 设备型号
 
 正泰单相导轨表（DDSU666），220V 5(60)A。
 
