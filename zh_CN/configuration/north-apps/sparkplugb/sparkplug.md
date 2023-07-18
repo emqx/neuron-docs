@@ -10,7 +10,7 @@
 
 ### 添加南向设备 
 
-通过南向驱动采集Modbus TCP模拟器点位值去模拟实际设备点位值，配置如下：
+通过南向驱动采集 Modbus TCP 模拟器点位值去模拟实际设备点位值，配置如下：
 
 **添加设备**
 
@@ -48,7 +48,7 @@
 
 ## 配置 EMQX
 
-我们可以通过安装 [MQTTX 桌面客户端](https://mqttx.app/zh)查看由 Neuron 转发到 EMQX 的数据。但如果直接订阅 Neuron 北向 SparkPlugB 上报到的 EMQX 数据，则会出现字符串乱码的情况，如图：
+我们可以通过安装 [MQTTX 桌面客户端](https://mqttx.app/zh)查看由 Neuron 转发到 EMQX 的数据。但如果直接订阅 Neuron 北向 SparkPlugB 上报到 EMQX 的数据，则会出现字符串乱码的情况，如图：
 
 ![image-20230419140026304](./assets/image-20230419140026304.png)
 
@@ -279,7 +279,7 @@ FROM
 
 这个动作将解码之后的 "Payload" 以 JSON 的格式发送到 `SparkPlugB/test` 这个主题。
 
-![image-20230419141513303](./assets/image-20230419141513303.png)
+<img src="./assets/image-20230419141513303.png" alt="image-20230419141513303" style="zoom:50%;" />
 
 ## 通过 MQTTX 验证
 

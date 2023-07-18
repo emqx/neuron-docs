@@ -4,8 +4,6 @@ Sparkplug B 是一种建立在 MQTT 3.1.1 基础上的工业物联网数据传�
 
 Neuron 从设备采集到的数据可以通过 Sparkplug B 协议从边缘端传输到 Sparkplug B 应用中，用户也可以从应用程序向 Neuron 发送数据修改指令。
 
-Sparkplug B 是运行在 MQTT 之上的应用型协议，所以在 Neuron 中的设置与 MQTT 驱动相似。
-
 ## 添加插件
 
 在**配置 -> 北向应用**，点击 **添加应用** 添加 SparkPlugB 客户端节点。

@@ -35,7 +35,7 @@ Neuron WebSocket 插件是一款商用的北向插件，使用户可以将采集
 Neuron WebSocket 插件作为客户端， 将从设备采集到的数据作以 JSON 形式推送到由**服务器 URL** 参数指定的 WebSocket 服务器上。
 
 上报数据的格式由**上报数据格式**参数控制。有两种格式，即 *tags-format* 和 *values-format* 。
-这两种格式与 [MQTT 插件]的相同，请参阅 [MQTT API tags 格式]。
+这两种格式与 [MQTT 插件]的相同，请参阅 [MQTT 数据上下行格式]。
 
 ## 运行与维护
 

@@ -12,10 +12,9 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
 
 ### 上报主题
 
-在 Neuron 2.4.0 版本之前，上报主题由 **upload-topic** 参数指定， 通过仪表板配置时默认为 **/neuron/{node_name}/upload** 。
+在 Neuron 2.4.0 版本之前，上报主题由 **upload-topic** 参数指定， 通过仪表板配置时默认为 **/neuron/{node_name}/upload**
 
-自 Neuron 2.4.0 版本起，**upload-topic** 参数被删除了。
-上报主题改为在群组订阅请求中指定，其默认值为 **/neuron/{node_name}/{driver_name}/{group_name}** 。
+自 Neuron 2.4.0 版本起，弃用 **upload-topic** 参数，上报主题改为在群组订阅请求中指定，其默认值为 **/neuron/{node_name}/{driver_name}/{group_name}** 
 
 ### Tags 格式
 
@@ -81,7 +80,7 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
 
 ### 请求
 
-通过发送 JSON 形式的请求到 MQTT 主题 **/neuron/{node_name}/read/req** ，您可以读取一组点位数据。
+通过发送 JSON 形式的请求到 MQTT 主题 **/neuron/{node_name}/read/req**，您可以读取一组点位数据。
 
 #### 请求体
 
@@ -108,7 +107,7 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
 
 读响应体由以下字段构成：
 * `uuid` : 对应请求中所设置的唯一标志。
-* `tags` : 点位数据数组，和 [tags 格式](#tags-格式)中的表示方法一样.
+* `tags` : 点位数据数组，和 [tags 格式](#tags-格式)中的表示方法一样。
 
 以下为一个读响应样例：
 

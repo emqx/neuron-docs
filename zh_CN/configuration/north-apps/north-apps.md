@@ -10,7 +10,7 @@ Neuron 目前支持以下北向节点：
 - **[WebSocket](./websocket/websocket.md)**：WebSocket 网络协议支持在单个 TCP 连接上提供双向通信通道。借助 Edge WebSocket 插件，用户可以将采集的数据推送到 WebSocket 服务器。
 - **[Monitor](./monitor/overview.md)**：Neuron 在启动时创建一个 Monitor 单例节点，用于监控运行的实例。您可以在仪表板的**北向应用**页签中看到 Monitor 节点。
 
-本节将以 MQTT 插件为例，演示完整的北向应用添加流程，以及添加北向应用后，如何订阅南向数据实现诗句的转发。
+本节将以 MQTT 插件为例，演示完整的北向应用添加流程以及如何订阅南向数据组。
 
 ## 添加北向应用
 

@@ -39,7 +39,7 @@ LF Edge [eKuiper] 是 Golang 实现的轻量级物联网边缘分析、流式处
 
 ## 应用场景
 
-通过 Neuron eKuiper 插件，您可在 Neuron 和 eKuiper 之间建立直接的数据通道，实现诸如将 Neuron 收集到的数据打印到 eKuiper 的日志中等操作，具体步骤，见 [Neuron 与 eKuiper 集成最佳实践](./ekuiper.md)。
+通过 Neuron eKuiper 插件，您可在 Neuron 和 eKuiper 之间建立直接的数据通道，实现诸如将 Neuron 收集到的数据打印到 eKuiper 的日志等操作，具体步骤，见 [Neuron 与 eKuiper 集成最佳实践](./ekuiper.md)。
 
 ## 运行与维护
 
@@ -47,7 +47,7 @@ LF Edge [eKuiper] 是 Golang 实现的轻量级物联网边缘分析、流式处
 
 如果设备运行出现任何问题，您可点击 DEBUG 日志图表，此时系统将自动打印该节点的 DEBUG 级别日志，十分钟后将切回系统默认级别日志。稍后，您可点击页面顶部功能栏的**系统信息** -> **日志**查看日志，并进行故障诊断。稍后，您可点击页面顶部功能栏的**系统信息** -> **日志**查看日志，并进行故障诊断。有关系统日志的详细解析，见[管理日志](../../../admin/log-management.md)。
 
-此外，你还可以利用 [云边协同的企业级 MQTT 物联网管理平台 EMQX ECP](https://www.emqx.com/zh/products/emqx-ecp) 集中管理 Neuron 与 EMQX/eKuiper 的集成，进一步降低运维成本。
+此外，您还可以利用 [云边协同的企业级 MQTT 物联网管理平台 EMQX ECP](https://www.emqx.com/zh/products/emqx-ecp) 集中管理 Neuron 与 EMQX/eKuiper 的集成，进一步降低运维成本。
 
 ## 版本兼容性
 
@@ -60,7 +60,7 @@ Neuron 和 eKuiper 之间的交互是双向的，需要两边同时提供支持�
 | Neuron 2.0        | eKuiper 1.5       | 1. Neuron 首次引入 eKuiper 插件<br />2. eKuiper 首次添加 Neuron 源和动作 <br />3. Neuron 和 eKuiper 基于 [IPC 传输层]的 [NNG pair0 协议]进行通信<br /> | 1. Neuron 和 eKuiper 应部署在同一个主机（或使用 MQTT 作为双方之间的中继）<br />2. 一对一通信 |
 | Neuron 2.4 及以上 | Neuron 1.9 及以上 | 1. Neuron 和 eKuiper 基于 [TCP 传输层] 进行通信 <br />2. 支持多对多连接 | -                                                            |
 
- 传输协议的变化如下图所示：![connection_change](./assets/connection_change.png)
+ 传输协议的变化如下图所示：<img src="./assets/connection_change.png" alt="connection_change" style="zoom:50%;" />
 
 ## 拓展阅读
 

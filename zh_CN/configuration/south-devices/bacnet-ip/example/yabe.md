@@ -48,9 +48,8 @@ Yabe（Yet Another Bacnet Explorer）是一款图形界面应用程序，可以�
 
 ![yabe-demoserver-tags-show](./assets/yabe-demoserver-tags-show.png)
 
-::: tip
+##  DemoServer 配置文件
 Yabe 默认的 DemoServer 配置文件包含节点较少，本示例对配置文件进行了修改，具体文件如下所示。新建 `DeviceStorage.Xml` 文件，拷贝配置内容，替换 Yabe 安装目录 `C:\Program Files\yabe\AddOn` 下同名文件，重启 DemoServer 即可。
-:::
 
 ```xml
 <?xml version="1.0"?>

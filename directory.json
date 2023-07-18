@@ -451,12 +451,12 @@
       "path": "admin/admin",
       "children": [
         {
-          "title": "管理日志",
-          "path": "admin/log-management"
-        },
-        {
           "title": "数据统计",
           "path": "admin/data-statistics"
+        },
+        {
+          "title": "管理日志",
+          "path": "admin/log-management"
         }
       ]
     },

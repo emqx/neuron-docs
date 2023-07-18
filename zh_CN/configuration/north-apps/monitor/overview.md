@@ -87,7 +87,7 @@ Neuron 仪板表的**关于**页面和**数据统计**页签使用 Monitor 插�
 心跳消息具有以下字段：
 * `timestamp`：消息生成时的 Unix 时间戳。
 * `version`：Neuron 的版本信息。
-* `states`：节点状态信息的数组，类似 [节点状态 HTTP API] 响应的数据.
+* `states`：节点状态信息的数组，类似 [节点状态 HTTP API] 响应的数据。
 
 以下是一个心跳消息样例：
 ```json:no-line-numbers
