@@ -128,7 +128,7 @@
 
 ::: tip
 
-[OMron FINS TCP](../../configuration/south-devices/omron-fins/omron-fins.md) 和 [Omron FINS UDP](../../configuration/south-devices/omron-fins/omron-fins-udp.md) 不在 30 个点免费的额度内。
+Fanuc Focas Ethernet 和 Mitsubishi CNC 不在 30 个点免费的额度内。
 
 :::
 
