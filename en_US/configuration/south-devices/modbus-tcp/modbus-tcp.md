@@ -71,7 +71,7 @@ Optional, specify a specific bit in a registe
 
 | Address         | Data Type | Description                                                |
 | ----------- | ------- | --------------------------------------------------- |
-| 1!300004.0  | bit     | Refers to station 1, input area, address 300004, bit 0 |
+| 1!300004.0  | bit     | Refers to station 1, input register area, address 300004, bit 0 |
 | 1!400010.4  | bit     | Refers to station 1, hold register area, address 400010, bit 4    |
 | 2!400001.15 | bit     | Refers to station 2, hold register area, address 400001, bit 15   |
 
@@ -101,25 +101,25 @@ When the data type is STRING, .LEN is a required field, indicating the number of
 
 | Address        | Data Type | Description |
 | ----------- | ------- | --------- |
-| 1!300004    | int16    | Refers to station 1, input area, address 300004, byte order #L |
-| 1!300004#B  | int16    | Refers to station 1, input area, address 300004, byte order #B |
-| 1!300004#L  | uint16   | Refers to station 1, input area, address 300004, byte order #L |
+| 1!300004    | int16    | Refers to station 1, input register area, address 300004, byte order #L |
+| 1!300004#B  | int16    | Refers to station 1, input register area, address 300004, byte order #B |
+| 1!300004#L  | uint16   | Refers to station 1, input register area, address 300004, byte order #L |
 | 1!400004    | int16    | Refers to station 1, hold register area, address 400004, byte order #L |
 | 1!400004#L  | int16    | Refers to station 1, hold register area, address 400004, byte order #L |
 | 1!400004#B  | uint16   | Refers to station 1, hold register area, address 400004, byte order #B |
-| 1!300004    | int32    | Refers to station 1, input area, address 300004, byte order #LL |
-| 1!300004#BB | uint32   | Refers to station 1, input area, address 300004, byte order #BB |
-| 1!300004#LB | uint32   | Refers to station 1, input area, address 300004, byte order #LB |
-| 1!300004#BL | float    | Refers to station 1, input area, address 300004, byte order #BL |
-| 1!300004#LL | int32    | Refers to station 1, input area, address 300004, byte order #LL |
+| 1!300004    | int32    | Refers to station 1, input register area, address 300004, byte order #LL |
+| 1!300004#BB | uint32   | Refers to station 1, input register area, address 300004, byte order #BB |
+| 1!300004#LB | uint32   | Refers to station 1, input register area, address 300004, byte order #LB |
+| 1!300004#BL | float    | Refers to station 1, input register area, address 300004, byte order #BL |
+| 1!300004#LL | int32    | Refers to station 1, input register area, address 300004, byte order #LL |
 | 1!400004    | int32    | Refers to station 1, hold register area, address 400004, byte order #LL|
 | 1!400004#LB | uint32   | Refers to station 1, hold register area, address 400004, byte order #LB|
 | 1!400004#BB | uint32   | Refers to station 1, hold register area, address 400004, byte order #BB|
 | 1!400004#LL | int32    | Refers to station 1, hold register area, address 400004, byte order #LL|
 | 1!400004#BL | float    | Refers to station 1, hold register area, address 400004, byte order #BL|
-| 1!300001.10  | String  | Refers to station 1, input area, address 300001, character length 10, byte order L, which occupies addresses 300001 to 300005|
-| 1!300001.10H | String  | Refers to station 1, input area, address 300001, character length 10, byte order H, which occupies addresses 300001 to 300005|
-| 1!300001.10L | String  | Refers to station 1, input area, address 300001, character length 10, byte order L, which occupies addresses 300001 to 300005|
+| 1!300001.10  | String  | Refers to station 1, input register area, address 300001, character length 10, byte order L, which occupies addresses 300001 to 300005|
+| 1!300001.10H | String  | Refers to station 1, input register area, address 300001, character length 10, byte order H, which occupies addresses 300001 to 300005|
+| 1!300001.10L | String  | Refers to station 1, input register area, address 300001, character length 10, byte order L, which occupies addresses 300001 to 300005|
 | 1!400001.10  | String  | Refers to station 1, hold register area, address 400001, character length 10, byte order L, which occupies addresses 400001 to 400005|
 | 1!400001.10H | String  | Refers to station 1, hold register area, address 400001, character length 10, byte order H, which occupies addresses 400001 to 400005|
 | 1!400001.10L | String  | Refers to station 1, hold register area, address 400001, character length 10, byte order L, which occupies addresses 400001 to 400005|
