@@ -2,7 +2,7 @@
 
 <!--这里后面增加一些文字描述 @LenaLenaPan-->
 
-本节将演示如何通过 Neuron 南向采集设备实际点位数据，通过北向 Sparkplug B 插件将数据上报到 EMQX 在通过编解码功能解码后得到正确完整的数据结果，流程如图：
+本节将演示如何通过 Neuron 南向采集设备实际点位数据，通过北向 Sparkplug B 插件将数据上报到 EMQX， 再通过EMQX编解码功能解码后得到正确完整的数据结果，流程如图：
 
 ![Sparkplug B](./assets/sparkplugcn.png)
 

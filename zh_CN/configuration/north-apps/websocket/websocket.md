@@ -49,4 +49,4 @@ Neuron WebSocket 插件作为客户端， 将从设备采集到的数据作以 J
 [WebSocket]: https://en.wikipedia.org/wiki/WebSocke://en.wikipedia.org/wiki/WebSocket
 [RFC 6455]: https://datatracker.ietf.org/doc/html/rfc6455
 [MQTT 插件]: ../mqtt/overview.md
-[MQTT API tags 格式]: ../mqtt/api.md#tags-format
+[MQTT 数据上下行格式]: ../mqtt/api.md#tags-format

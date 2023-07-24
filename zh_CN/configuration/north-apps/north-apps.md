@@ -1,14 +1,14 @@
 # 创建北向应用
 
-北向插件通常用于连接到云平台或像处理引擎这样的外部应用程序。为了实现协议格式转换，至少需要一个北向插件和一个南向插件分别用于数据传递和数据采集。
+南向插件用于连接南向设备实现数据采集，北向插件用于连接到IOT平台或边缘流处理引擎。北向插件和南向插件组合使用实现数据采集和数据传递。
 
 Neuron 目前支持以下北向节点：
 
 - **[MQTT](./mqtt/overview.md)**：MQTT 插件允许用户快速构建使用 MQTT 协议的物联网应用程序，可以在设备和云之间进行通讯。
-- [**eKuiper**](./ekuiper/overview.md)：LF Edge [eKuiper](https://ekuiper.org/) 是 Golang 实现的轻量级物联网边缘分析、流式处理开源软件，可以运行在各类资源受限的边缘设备上。eKuiper 插件使用户能够将收集到的数据发布到 eKuiper 以进一步处理。
-- **[SparkPlugB](./sparkplugb/overview.md)**：Sparkplug B 是一种建立在 MQTT 3.1.1 基础上的工业物联网数据传输规范。Sparkplug B 插件从设备采集到的数据可以通过 Sparkplug B 协议从边缘端传输到 Sparkplug B 应用中，用户也可以从应用程序向 Neuron 发送数据修改指令。
+- [**eKuiper**](./ekuiper/overview.md)：LF Edge [eKuiper](https://ekuiper.org/) 是轻量级物联网数据分析和流处理引擎，eKuiper 插件使用户能够将收集到的数据转发到 eKuiper 以进一步处理。
+- **[SparkPlugB](./sparkplugb/overview.md)**：Sparkplug B 是一种建立在 MQTT 3.1.1 基础上的工业物联网数据传输规范。Sparkplug B 插件从设备采集到的数据可以通过 Sparkplug B 协议从边缘端传输到 Sparkplug B 应用中，用户也可以从 Sparkplug B 应用程序向 Neuron 发送指令修改设备数据。
 - **[WebSocket](./websocket/websocket.md)**：WebSocket 网络协议支持在单个 TCP 连接上提供双向通信通道。借助 WebSocket 插件，用户可以将采集的数据推送到 WebSocket 服务器。
-- **[Monitor](./monitor/overview.md)**：Neuron 在启动时创建一个 Monitor 单例节点，用于监控运行的实例。您可以在仪表板的**北向应用**页签中看到 Monitor 节点。
+- **[Monitor](./monitor/overview.md)**：Neuron 在启动时创建一个 Monitor 单例节点，用于监控Neuron的运行状态。您可以在仪表板的**北向应用**页签中看到 Monitor 节点。
 
 本节将以 MQTT 插件为例，演示完整的北向应用添加流程以及如何订阅南向数据组。
 
