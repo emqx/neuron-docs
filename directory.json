@@ -409,10 +409,6 @@
       ]
     },
     {
-      "title": "数据监控",
-      "path": "usage/monitoring"
-    },
-    {
       "title": "HTTP API",
       "path": "http-api/http-api",
       "children": [
@@ -451,6 +447,10 @@
       "path": "admin/admin",
       "children": [
         {
+          "title": "数据监控",
+          "path": "usage/monitoring"
+        },
+        {
           "title": "数据统计",
           "path": "admin/data-statistics"
         },
@@ -481,7 +481,7 @@
       ]
     },
     {
-      "title": "应用案例",
+      "title": "应用场景",
       "path": "use-cases/use-cases",
       "children": [
         {
