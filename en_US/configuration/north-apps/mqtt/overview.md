@@ -146,13 +146,13 @@ Click the `Application Configuration` icon on the application card to enter the 
 
 ![Connect to MQTT](./assets/mqtt-config.png)
 
-* Client-id:Note that each ID should be independent of each other and cannot be repeated. Use the default value of mqtt;
-* Qos level:Quality of Service, divided into 0, 1, 2;
-* Host:Use the default public EMQX Broker (broker.emqx.io);
-* Port:Use MQTT broker port(1883);
-* Click `Submit` to complete the configuration of northbound application, and the application card will automatically enter the working state of **Running**.
+* Client-id: Note that each ID should be independent of each other and cannot be repeated. Use the default value of mqtt;
+* Qos level: Quality of Service, divided into 0, 1, 2;
+* Host: Use the default public EMQX Broker (broker.emqx.io);
+* Port: Use MQTT broker port(1883);
+* Click `Submit` to complete the configuration of the northbound application, and the application card will automatically enter the working state of **Running**.
 
-## Check The Data By MQTTX.
+## Check The Data By MQTTX
 
 After the subscription is completed, you can use the MQTT client (MQTTX is recommended and can be downloaded from [official website](https://www.EMQX.com/zh/products/MQTTX)) to connect to the public emqx proxy to view the reported data, as shown in the following figure.
 

@@ -1,10 +1,16 @@
-# MQTT Sparkplug
+# SparkPlugB
 
 Sparkplug B is an industrial IoT data transfer specification built on MQTT 3.1.1. Sparkplug B provides a unified way for device manufacturers and software providers to share data by making MQTT networks state-aware and interoperable while ensuring flexibility and efficiency.
 
-Data collected by Neuron from devices can be transferred from the edge to the Sparkplug B application via the Sparkplug B protocol, and users can send data modification commands to Neuron from the application. sparkplug B is an application-based protocol running on top of MQTT, so the setup in Neuron is similar to the MQTT driver.
+Data collected by Neuron from devices can be transferred from the edge to the Sparkplug B application via the Sparkplug B protocol, and users can send data modification commands to Neuron from the application. 
+
+
+
+
 
 ## Parameters
+
+Sparkplug B is an application-based protocol running on top of MQTT, so the setup in Neuron is similar to the MQTT driver.
 
 |  Parameter         |  Description                                                        |
 | ------------- | ------------------------------------------------------------ |
