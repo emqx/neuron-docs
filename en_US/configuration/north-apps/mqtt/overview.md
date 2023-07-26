@@ -4,7 +4,7 @@
 
 Neuron supports MQTT as one of its communication protocols. The Neuron MQTT plugin allows users to quickly build IoT applications that use MQTT communication between devices and the cloud. 
 
-Using the MQTT plugin, developers can also publish messages back to IoT devices, triggering device actions such as turning on or off lights, motors, and other equipment.
+Using the MQTT plugin, developers can also publish messages back to IoT devices, triggering actions such as turning lights, motors, and other equipment on or off.
 
 The plugin also supports secure communication with devices, using authentication and encrypted communication protocols to ensure data safety and privacy.
 
@@ -17,7 +17,7 @@ To create a northbound MQTT node and connect it to an MQTT Broker to upload data
 - Name: The name of this application node, for example, "mqtt".
 - Plugin: Select the MQTT plugin.
 
-## Application Configuration
+## Configure Application
 
 See the table below for the configuration parameters.
 
@@ -88,7 +88,7 @@ The Neuron MQTT plugin supports running MQTT over SSL. To enable SSL encryption,
 
 After plugin configuration, data forwarding can be enabled via southbound device subscriptions.
 
-On the **North Apps** page, click the device card or column, then **Add Subscription** on the **Group List** page. And set the following:
+Click the device card or row on the **North Apps** page, then **Add Subscription** on the **Group List** page. And set the following:
 
 - **South device**: Select the southbound device you want to subscribe to, for example, 'modbus-tcp-1'.
 - **Group**: Select a group from the southbound device, for example, 'group-1'.
@@ -117,17 +117,17 @@ The exact format of the data reported is controlled by the **Upload Format** par
 
 ## Test the MQTT Plugin
 
-This section will use the [public EMQX Broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) as an example to demonstrate how to use the MQTT plugin to forward the Sparkplug B data. 
+This section will use the [public EMQX Broker](https://www.emqx.com/en/mqtt/public-mqtt5-broker) as an example to demonstrate how to use the MQTT plugin to forward the Modbus TCP data. 
 
-### Create a Southbound Plugin
+### Southbound Plugin
 
 The southbound Modbus TCP plugin has been installed, the group and point configurations are complete, and communication with Neuron is functioning normally. For details on the installation and configuration of the Modbus TCP plugin, refer to the [Modbus TCP section](../../south-devices/modbus-tcp/modbus-tcp.md).
 
-### Create and Configure a Northbound Plugin
+### Northbound Plugin
 
 On **Configuration -> North Apps**, click **Add Application** to add an MQTT client node.
 
-Click the **Application Configuration** icon on the application card to enter the application configuration interface to set MQTT connection, and set as follows:
+Click the **Application Configuration** icon on the application card to enter the application configuration interface to set the MQTT connection, and set as follows:
 
 * **Client ID**: Note that each ID should be independent of each other and cannot be repeated. Here will use the default value of mqtt;
 * **Qos level**: Quality of Service, options: 0, 1, 2. Here will use 0.
@@ -174,7 +174,7 @@ At this point, we will be able to see the data forwarded by Neuron in MQTTX, as 
 
 ## Operation and Maintenance
 
-On the device card or device row, you can click on the **Data Statistics** icon to review the application's operation status and track the data received and sent. For explanations on statistical fields, refer to the [Creating Northbound Applications](../north-apps.md) section.
+On the device card or device row, you can click on the **Data Statistics** icon to review the application's operation status and track the data received and sent. For explanations on statistical fields, refer to the [Create a Northbound Application](../north-apps.md) section.
 
 If there are any issues with device operation, you can click on the DEBUG log chart. The system will automatically print DEBUG level logs for that node and switch back to the system default log level after ten minutes. Later, you can click on **System Information** -> **Logs** at the top of the page to view logs and perform troubleshooting. For a detailed interpretation of system logs, see [Managing Logs](../../../admin/log-management.md).
 
