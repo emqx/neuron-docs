@@ -1,4 +1,4 @@
-# Creating a Northbound Application
+# Create a Northbound Application
 
 Northbound plugins are used for connecting to IoT platforms or edge stream processing engines, while southbound plugins are designed for connecting to southbound devices to gather data. The combination of these two types of plugins facilitates data acquisition and delivery.
 
@@ -21,7 +21,7 @@ To create a northbound MQTT node and connect it to an MQTT Broker to upload data
 
 After clicking **Create**, you will be redirected to the **Application Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Application Configuration** interface.
 
-## Set Parameters
+## Application Configuration
 
 Configure the relevant parameters for the MQTT client. 
 
@@ -53,7 +53,7 @@ On the **North Apps** page, you can choose to display northbound applications in
   - **Running**: The application is in running status.
   - **Stop**: The application is stopped.
   
-- **Connection Status**: Displays the connection status of the device. After setting the group and tags, Neuron will connect to the device to collect data, and the status will automatically switch to **Connected**.
+- **Connection Status**: Displays the connection status of the device.
 
 - **Plugin**: Displays the name of the plugin module used by the device.
 
