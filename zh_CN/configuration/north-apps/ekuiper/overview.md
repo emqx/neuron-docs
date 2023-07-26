@@ -57,8 +57,6 @@ LF Edge [eKuiper] 是 Golang 实现的轻量级物联网数据分析和流处理
 
 如果设备运行出现任何问题，您可点击 DEBUG 日志图表，此时系统将自动打印该节点的 DEBUG 级别日志，十分钟后将切回系统默认级别日志。稍后，您可点击页面顶部功能栏的**系统信息** -> **日志**查看日志，并进行故障诊断。稍后，您可点击页面顶部功能栏的**系统信息** -> **日志**查看日志，并进行故障诊断。有关系统日志的详细解析，见[管理日志](../../../admin/log-management.md)。
 
-此外，您还可以利用 [云边协同的企业级 MQTT 物联网管理平台 EMQX ECP](https://www.emqx.com/zh/products/emqx-ecp) 集中管理 Neuron 与 EMQX/eKuiper 的集成，进一步降低运维成本。
-
 ## 版本兼容性
 
 Neuron 和 eKuiper 之间的交互是双向的，需要两边同时提供支持：
@@ -125,9 +123,7 @@ eKuiper 可以通过使用 Neuron 动作发送写命令来控制设备，Neuron 
 }
 ```
 
-## 更多资源
 
-eKuiper 也有一份教程[使用 eKuiper 对 Neuron 采集的数据进行流式处理]。
 
 [eKuiper]: https://ekuiper.org
 [NNG pair0 协议]: https://nng.nanomsg.org/man/v1.3.2/nng_pair.7.html

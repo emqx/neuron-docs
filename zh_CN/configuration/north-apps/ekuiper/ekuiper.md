@@ -99,8 +99,7 @@ Neuron 启动之后，我们需要配置 Neuron 的南向设备和北向 eKuiper
 1. 点击右上角的**添加订阅**按键添加订阅；
 2. 下拉框选择南向设备，这里我们选择之前建好的南向设备 Modbus1 ；
 3. 下拉框选择所要订阅的 Group，这里我们选择之前建好的南向设备 Modbus1 的group；
-4. 点击提交，完成订阅。
-5. 点击**北向应用管理**，点开应用卡片中的工作状态开关，使应用进入运行中的状态。
+4. 点击**提交**，完成订阅。
 
 至此，Neuron 已配置好数据采集，并将采集到的数据发送到北向的 eKuiper 通道中。
 
@@ -114,7 +113,7 @@ Neuron 启动之后，我们需要配置 Neuron 的南向设备和北向 eKuiper
 
 以下教程中，我们使用 eKuiper Manager对 eKuiper 进行配置管理，包括流和规则的创建。
 
-### 添加eKuiper节点
+### 添加 eKuiper 节点
 
 通过 http://[yourhost]:9082 登录 ekuiper Manager，用户名密码为：admin/public
 
