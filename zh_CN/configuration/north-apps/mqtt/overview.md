@@ -22,7 +22,7 @@ Neuron 支持 MQTT 插件作为其数据汇聚上报的方式之一，Neuron MQT
 | ------------------ | ------------------------------------------------------------ |
 | **客户端 ID**      | MQTT 通信的客户端 id，必填。                                 |
 | **QoS 等级**       | MQTT 通信的服务质量等级，可选，默认为 QoS 0 。               |
-| **上报数据格式**   | 上报数据的 JSON 格式：<br />· *values-format*：数据被分成 `values` 和 `errors` 的子对象。<br />· *tags-format*：数据被放在一个数组中。关于format格式，见 [数据上下行格式](./api.md#数据上报) |
+| **上报数据格式**   | 上报数据的 JSON 格式：<br />· *values-format*：数据被分成 `values` 和 `errors` 的子对象。<br />· *tags-format*：数据被放在一个数组中。关于通信数据格式，见 [数据上下行格式](./api.md#数据上报) |
 | **写请求主题**     | 接收点位写入请求的 MQTT 主题。关于通信数据格式，见 [数据上下行格式](./api.md#写-tag) |
 | **写响应主题**     | 发送点位写入响应的 MQTT 主题。                               |
 | **离线缓存**       | 离线缓存开关。连接断开时缓存 MQTT 消息，连接重建时同步缓存的消息到MQTT服务器。（2.4.3 版新增），关于离线缓存功能的详细介绍，见[离线数据缓存](#离线数据缓存) |
@@ -92,8 +92,11 @@ Neuron 的 MQTT 插件支持 MQTT over SSL。
 
 - **主题**：指定上报主题，例如 /neuron/mqtt/upload。
 
-  ::: tip Neuron 2.4.0 及以上版本删除了 **upload-topic** 参数， 因此您需要通过**主题**配置项指定上报主题。
+  ::: tip 
   
+  Neuron 2.4.0 及以上版本删除了 **upload-topic** 参数， 因此您需要通过**主题**配置项指定上报主题。
+  
+  :::
 
 <figure align="center">
   <img src="./assets/subscribe_topic.png"
@@ -108,7 +111,7 @@ Neuron 的 MQTT 插件支持 MQTT over SSL。
 
 ## 测试 MQTT 插件
 
-本节将通过[公共的 EMQX Broker（broker.emqx.io）](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)为例测试 MQTT 插件。
+本节将通过[公共的 EMQX Broker（broker.emqx.io）](https://www.emqx.com/zh/mqtt/public-mqtt5-broker)为例演示如何通过 MQTT 插件实现 Mobbus TCP 数据的转发。
 
 ### 创建南向插件
 
@@ -116,21 +119,17 @@ Neuron 的 MQTT 插件支持 MQTT over SSL。
 
 ### 创建北向插件
 
-点击应用卡片上的**应用配置**按键进入应用配置界面设置 MQTT 连接，并进行如下设置：
+在**配置 -> 北向应用**，点击 **添加应用** 添加 MQTT 客户端节点。点击应用卡片上的**应用配置**按键进入应用配置界面设置 MQTT 连接，并进行如下设置：
 
 * 客户端 ID：注意每个 ID 要相互独立，不可以重复，这里使用默认值 mqtt；
 * 消息服务质量：选择 0
 * 服务器地址：使用默认的公共的 EMQX Broker（broker.emqx.io）；
 * 服务器端口：使用 MQTT broker port（1883）；
-* 点击**提交**，完成北向应用的配置，应用卡片自动进入 **运行中** 的工作状态。
+* 其他保持默认配置，点击**提交**，完成北向应用的配置，应用卡片自动进入 **运行中** 的工作状态。
 
 ![mqtt-config](./assets/mqtt-config.png)
 
-* 客户端 ID：注意每个 ID 要相互独立，不可以重复，使用默认值 mqtt；
-* 服务质量等级：选择0，1，2。
-* 服务器地址：使用默认的公共的 EMQX Broker（broker.emqx.io）；
-* 服务器端口：使用 MQTT broker port（1883）；
-* 点击**提交**，完成北向应用的配置，应用卡片自动进入 **运行中** 的工作状态。
+
 
 ### 使用 MQTTX 查看数据
 
@@ -144,6 +143,7 @@ Neuron 的 MQTT 插件支持 MQTT over SSL。
 - **服务器地址**：保留默认 broker.emqx.io
 - **端口**：保留默认值 1883
 - 其他可保留默认设置
+- 点击**连接**
 
 **添加订阅**
 
