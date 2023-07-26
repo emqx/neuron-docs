@@ -138,7 +138,7 @@ For the other fields, keep the default setting and click **Submit** to complete 
 
 ![Connect to MQTT](./assets/mqtt-config.png)
 
-## Use MQTTX to View the Data
+## Use MQTTX to View Data
 
 After the subscription is completed, you can use the MQTT client (MQTTX is recommended and can be downloaded from [official website](https://www.EMQX.com/zh/products/MQTTX)) to connect to the public EMQX proxy to view the reported data.
 
