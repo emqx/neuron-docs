@@ -17,3 +17,9 @@ A trial EMQ license can be downloaded from our [official website](https://www.em
 Of course, you can also directly [contact us](https://www.emqx.com/en/contact?product=neuron) to obtain the official license.
 
 Each plugin module can be authorized independently in the EMQ license.
+
+## Manage License
+
+After applying for a trial or commercial license, you can manage or upload your license in Neuron. Simply log in and navigate to **System Information** -> **License**.
+
+![License](./assets/license-policy.png)
