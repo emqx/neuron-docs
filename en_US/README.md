@@ -1,28 +1,26 @@
 # Product Overview
 
-Neuron is a modern industrial IoT connectivity server that communicates with many diverse industrial devices through the standard or its dedicated protocols, realizing the multiple device connections to the Industrial IoT platform.
+Neuron is an open-source, lightweight IIoT connectivity server that empowers industrial devices with the key IoT connectivity capabilities in the Industry 4.0 era. It translates diverse protocol data from industrial devices into standardized IoT MQTT messages, ensuring seamless interconnection between devices and the IoT system for remote control and information gathering.
 
-<img src="./introduction/assets/neuron.png" alt="Neuron" style="zoom:50%;" />
+Supporting simultaneous access and MQTT conversion for varied communication protocols, Neuron is resource-efficient and deployable on various edge hardware like X86 and ARM. Its web-based console allows easy configuration management. With robust performance, Neuron can connect hundreds of industrial devices and manage over 10,000 data points.
 
-As a lightweight industrial software running all kinds of limited resource IoT edge hardware, neuron aims to solve the problem of difficult unified access to industrial device data for data-centric automation, providing foundational support for intelligent manufacturing.
+<img src="./introduction/assets/neuron.png" alt="Neuron" style="zoom:30%;" />
 
-## Key Benefits
+## Why Neuron
 
-**Edge Native**: Neuron is an advanced real-time asynchronous processing server designed to achieve response times as low as 100 milliseconds. Neuron ensures rapid and efficient data processing by leveraging the benefits of edge computing and low-latency network architectures.
+**Edge Native**: Neuron is an advanced real-time asynchronous processing server designed to achieve response times as low as 100 milliseconds. It ensures rapid and efficient data processing by leveraging the benefits of edge computing and low-latency network architectures.
 
-**Diverse Connectivity**: Neuron offers many diverse pluggable connectivity and processing modules such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi, and more. These modules would be classified into building automation, CNC machines, Robotics, Electricity, and various PLCs communication. For a complete list of supported plugin modules, please see [Plugin List](./introduction/plugin-list/plugin-list.md).
+**Diverse Connectivity:** Neuron offers many diverse pluggable connectivity and processing modules such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi, and more. These modules would be classified into building automation, CNC machines, Robotics, Electricity, and various PLCs communication. For a complete list of supported plugin modules, please see [Plugin List](./introduction/plugin-list/plugin-list.md).
 
-**Large-Scale Concurrency**: Neuron is capable of establishing unlimited connections with a wide range of industrial devices concurrently because it adopts the modern decoupled modular [Architecture](./introduction/architecture/architecture.md) design. 
-
-Note: The number of simultaneous connections depends on the processing resources allocated.
+**Large-Scale Concurrency**: Neuron is capable of establishing unlimited connections with a wide range of industrial devices concurrently because it adopts the modern decoupled modular [Architecture](./introduction/architecture/architecture.md) design. Note: The actual number of simultaneous connections is contingent upon the processing resources allocated.
 
 **Portable Deployment**: Neuron has very low memory footprints, less than 7M at startup, suitable for running on low-profile architecture devices like x86, ARM, RISC-V, and so on. It also supports docker-like containerized deployment, running with other co-located containers in K8s environments. For details on how to install, see [Installation](./installation/installation.md). 
 
-**Better Integration**: Neuron has seamless [Integration](./integration/integration.md) with other industrial IoT applications, big data, and AI/ML analytic software into the platforms like private cloud, EMQX Cloud, AWS, Microsoft Azure, or on-premises servers via API and MQTT connection.
+**Better Integration**: Neuron has seamless integration with other industrial IoT applications, big data, and AI/ML analytic software into the platforms like private cloud, EMQX Cloud, AWS, Microsoft Azure, or on-premises servers via API and MQTT connection.
 
 **Unified DataOps**: Neuron assists the legacy industrial devices to deliver data messages in an asynchronous way as the edge node specified in Sparkplug standard. [Sparkplug](./use-cases/sparkplug/sparkplug.md) is an open, unified, interoperable standard for industrial data exchange between industrial information systems like ERP, MES, SCADA, and historian via an MQTT broker.
 
-Authentication and Security: Neuron supports TLS and HTTPS encryption for API services to ensure data security in transmission and use the [JWT authentication](./http-api/jwt.md) mechanism to verify the data owner.
+**Authentication and Security**: Neuron supports TLS and HTTPS encryption for API services to ensure data security in transmission and use [JWT authentication](./http-api/jwt.md) mechanism to verify the data owner.
 
 ## Key Concepts
 
@@ -34,30 +32,37 @@ A Neuron core is a framework to provide a foundation to build and adopt various 
 
 ### Plugin
 
-Neuron can be divided into a core framework and a number of pluggable modules. Pluggable means that these modules can be added and removed dynamically, even supporting hot plugging in the running state. Plugins would be classified into northbound applications and southbound drivers. The northbound plugin is usually used for connecting to a cloud platform, or to an external application like a processing engine. The southbound plugin is a communication driver that implements specific protocols to access external devices. 
+Neuron can be conceptually separated into a core framework and a series of dynamic, or pluggable, modules. These modules, which can be added, removed, and even hot-swapped while in operation, fall into two categories: northbound applications and southbound drivers.
 
-All these modules are written in C language and SDK is provided for users who are interested in secondary development. A plugin is just a dynamic linked library (.so) file built by the SDK. At least one northbound plugin and one southbound plugin are required for data delivery and data acquisition respectively to implement the protocol format conversion.
+Northbound plugins typically serve as a connection point to a cloud platform or an external application like a processing engine. Conversely, southbound plugins act as communication drivers, implementing specific protocols to facilitate access to external devices.
+
+All these modules are coded in the C language. For users interested in customization, an SDK is provided for secondary development. Each plugin is essentially a dynamic linked library (.so) file constructed using the SDK. To accomplish data delivery and acquisition, and thus the protocol format conversion, at least one northbound plugin and one southbound plugin are necessary.
+
+For guidance on how to develop your own plugins, please refer to the [SDK Tutorial](./dev-guide/sdk-tutorial/sdk-tutorial.md).
 
 ### Adapter
 
-An adapter is a communication routine providing two interfaces for plugin data exchange. On one side, it has a communication interface for NNG high-speed bus that can exchange data messages with other adapters. On the other side, it provides a plugin interface for the integration of a plugin module. This makes two unrelated components, NNG high-speed bus and a plugin, can work together. 
+An adapter is a communication routine providing 2 interfaces for plugin data exchange:
 
-There are two kinds of adapters. A driver adapter is used for integration with a southbound driver plugin. An app adapter is used for integration with a northbound application plugin. An app adapter and a driver adapter are different as they have different logic in handling data message exchange.
+- NNG high-speed bus communication interface: to exchange data messages with other adapters. 
+- Plugin interface: to integrate with plugin modules. 
 
+Neuron also offers 2 types of adapters:
+
+- Driver adapter: to integrate with a southbound driver plugin. 
+- APP adapter: to integrate with a northbound application plugin. An app adapter and a driver adapter have different logic when handling data message exchange.
 ### Node
 
 When a plugin is inserted into the core framework, a connection node would be created to communicate with external devices or applications. Node here in Neuron is defined as merging framework interface with communication routines. There may be a lot of nodes created for communication with various parties in a single running instance. It is the core framework to manage the message routing between those nodes. 
 
-A node is simply a combination of an adapter and a plugin module. Message exchange between nodes is based on NNG high-speed bus.
+A node is simply a combination of an adapter and a plugin module. Message exchange between nodes is based on NNG high-speed bus. The diagram shows a loosely-decoupled designed architecture. All nodes work independently to exchange data with each other, and to communicate with external devices or clouds according to its implemented industrial protocol.
 
 ![Architecture](/Users/lena/Documents/GitHub/neuron-docs/en_US/configuration/assets/concepts.png)
 
-The diagram shows a loosely-decoupled designed architecture. All nodes work independently to exchange data with each other, and to communicate with external devices or clouds according to its implemented industrial protocol.
-
 ### Tag
 
-A tag is a non-hierarchical unique keyword assigned to a piece of information including data storing location in the device, and data operation properties, which helps describe an item and allows it to be found in the device or processed to be read/written automatically. Users would identify those interested tags in a device to read data from the device or to write data to the device.
+In Neuron, a "tag" represents a specific data point or variable within a device. This tag information encompasses the data type, its location or address within the device, and its read/write attributes. By configuring these tags, users can create a link between the device's internal data and the collection points within Neuron. This facilitates the extraction or injection of data from or into the device, respectively.
 
 ### Group
 
-The collection of user-interested tags in a device is divided into several groups to have better management. The routing mechanism is based on these groups as an information unit to be exchanged between nodes. A northbound node can subscribe to any groups in any southbound node. These subscriptions would be used for routing data messages between nodes. Moreover, there is a group polling frequency for controlling the time interval of the device polling.
+To improve management efficiency, the collection of user-interest tags within a device is divided into several groups. These groups serve as the primary units of information exchange between nodes in our routing mechanism. Northbound nodes can subscribe to any groups found in southbound nodes, enabling the routing of data messages between nodes. Additionally, each group features a polling frequency, which controls the time interval for device polling, ensuring regular data updates.
