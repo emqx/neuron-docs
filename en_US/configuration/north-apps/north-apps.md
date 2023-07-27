@@ -23,7 +23,7 @@ After clicking **Create**, you will be redirected to the **Application Configura
 
 ## Application Configuration
 
-Configure the relevant parameters for the MQTT client. 
+Configure the relevant parameters for the MQTT client.
 
 Click the **Application Configuration** button on the application card to set the MQTT connection. For configuration items of the MQTT plugin, check the [MQTT Page](./mqtt/overview.md).
 

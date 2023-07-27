@@ -999,10 +999,6 @@
       ]
     },
     {
-      "title": "Data Monitoring",
-      "path": "usage/monitoring"
-    },
-    {
       "title": "HTTP API",
       "path": "http-api/http-api",
       "children": [
@@ -1040,6 +1036,10 @@
       "title": "Administration Guide",
       "path": "usage/admin/admin",
       "children": [
+        {
+          "title": "Data Monitoring",
+          "path": "usage/monitoring"
+        },
         {
           "title": "Data Statistics",
           "path": "usage/dashboard/data-statistics"
