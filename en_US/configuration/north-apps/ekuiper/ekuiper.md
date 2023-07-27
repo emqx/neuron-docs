@@ -66,13 +66,11 @@ Both Neuron and eKuiper support binary installation packages and Docker containe
 
 ## Configure Neuron 
 
-### Southbound Plugin
+### Southbound Device
 
-After starting Neuron, we need to configure the southbound devices and northbound eKuiper application channel for Neuron, and then start the simulator for simulating data collection.
+Once Neuron is launched, the initial step involves configuring the southbound devices and employing a simulator for data collection simulation. For comprehensive guidance on setting up the southbound devices and the simulator, please refer to the [Neuron Quick Start Guide](../../../quick-start/quick-start.md) to successfully complete this crucial configuration phase.
 
-For the configuration of southbound devices and the simulator, please refer to the [Neuron Quick Start Guide](../../../quick-start/quick-start.md) to complete the southbound configuration part.
-
-### Northbound Plugin
+### Northbound Application
 
 **Create the Application**
 
