@@ -937,7 +937,7 @@
           "path": "configuration/north-apps/mqtt/overview",
           "children": [
             {
-              "title": "Up/Downsteam Data Format",
+              "title": "Upstream/Downstream Data Format",
               "path": "configuration/north-apps/mqtt/api"
             },
             {
