@@ -57,7 +57,7 @@ When a plugin is inserted into the core framework, a connection node would be cr
 
 A node is simply a combination of an adapter and a plugin module. Message exchange between nodes is based on NNG high-speed bus. The diagram shows a loosely-decoupled designed architecture. All nodes work independently to exchange data with each other, and to communicate with external devices or clouds according to its implemented industrial protocol.
 
-![Architecture](/Users/lena/Documents/GitHub/neuron-docs/en_US/configuration/assets/concepts.png)
+![Architecture](./assets/concepts-node.png)
 
 ### Tag
 

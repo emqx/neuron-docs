@@ -4,7 +4,7 @@
 
 The plugin management page displays all the pluggable modules available and detailed information, including the name of the plug-in, associated node type, plug-in category, driver library name and description, as shown in the following figure.
 
-![plugin-options](/Users/lena/Documents/GitHub/neuron-docs/en_US/configuration/plugin-management/assets/plugin-options.png)
+![plugin-options](./assets/plugin-options.png)
 
 Click the `Document` button in the upper right corner of the plugin card to jump to the documentation for the specific use and description of the driver.
 
@@ -22,7 +22,7 @@ Users can filter out the plugins for northbound applications or southbound devic
 
 Click on the `Add Plugin` button in the upper right corner as shown below
 
-![plugin-add](/Users/lena/Documents/GitHub/neuron-docs/en_US/configuration/plugin-management/assets/plugin-add.png)
+![plugin-add](./assets/plugin-add.png)
 
 To add a new Pluggable module,
 

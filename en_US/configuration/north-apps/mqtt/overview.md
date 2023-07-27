@@ -1,4 +1,4 @@
-# MQTT Client
+# MQTT
 
 [MQTT] is a messaging protocol designed for IoT devices and applications operating on a publish/subscribe model. It's lightweight, efficient, reliable, and allows for real-time communication. MQTT is well-suited for environments with limited resources, where efficient use of power and bandwidth is necessary.
 

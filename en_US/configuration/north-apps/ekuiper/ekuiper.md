@@ -1,4 +1,4 @@
-# Best Practices for Integrating Neuron and eKuiper
+# Neuron and eKuiper Integration Best Practices
 
 This article provides a detailed introduction to deploying Neuron 2.4 and eKuiper 1.9 with TCP connection using Docker Compose. Here is the specific configuration process:
 

@@ -952,7 +952,7 @@
           "children": [
             {
               "title": "Neuron and eKuiper Integration Best Practices",
-              "path": "integration/ekuiper/ekuiper"
+              "path": "configuration/north-apps/ekuiper/ekuiper"
             },
             {
               "title": "FAQ",
@@ -961,12 +961,12 @@
           ]
         },
         {
-          "title": "MQTT SparkPlugB",
+          "title": "SparkPlugB",
           "path": "configuration/north-apps/sparkplugb/overview",
           "children": [
             {
               "title": "Integrate with EMQX",
-              "path": "integration/sparkplug/sparkplug"
+              "path": "configuration/north-apps/sparkplugb/sparkplug"
             },
             {
               "title": "Connect to Ignition",
@@ -987,7 +987,7 @@
           "path": "configuration/north-apps/websocket/websocket",
           "children": [
             {
-              "title": "Data upload using the WebSocket plugin",
+              "title": "WebSocket Plugin Data Upload Walkthrough",
               "path": "configuration/north-apps/websocket/example"
             }
           ]

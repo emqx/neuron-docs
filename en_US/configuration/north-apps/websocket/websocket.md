@@ -30,12 +30,12 @@ Click the device card or row on the **North Apps** page, then **Add Subscription
 - **South device**: Select the southbound device you want to subscribe to.
 - **Group**: Select a group from the southbound device'.
 
-## Data upload
+## Data Upload
 
 The Neuron WebSocket plugin, acting as the WebSocket client, pushes data collected from devices as JSON to the WebSocket server at the address specified by the **Server URL** parameter.
 
 The exact format of the data reported is controlled by the **Upload Format** parameter. There are two formats, *tags-format* and *values-format*. Both
-formats are the same as that of the [MQTT plugin], see [MQTT API tags format].
+formats are the same as that of the [MQTT plugin], see [MQTT Upstream/downstream data format].
 
 
 [WebSocket]: https://en.wikipedia.org/wiki/WebSocke://en.wikipedia.org/wiki/WebSocket
@@ -48,3 +48,4 @@ formats are the same as that of the [MQTT plugin], see [MQTT API tags format].
 On the device card or device row, you can click on the **Data Statistics** icon to review the application's operation status and track the data received and sent. For explanations on statistical fields, refer to the [Create a Northbound Application](../north-apps.md) section.
 
 If there are any issues with device operation, you can click on the DEBUG log chart. The system will automatically print DEBUG level logs for that node and switch back to the system default log level after ten minutes. Later, you can click on **System Information** -> **Logs** at the top of the page to view logs and perform troubleshooting. For a detailed interpretation of system logs, see [Managing Logs](../../../admin/log-management.md).
+

@@ -1,4 +1,4 @@
-# Upload/Downstream Data Format
+# Upstream/Downstream Data Format
 
 The following contents describe how the Neuron MQTT plugin publishes collected data, and how to read or write data through MQTT using the plugin.
 

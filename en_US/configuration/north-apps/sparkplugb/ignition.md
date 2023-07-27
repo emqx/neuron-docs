@@ -35,7 +35,7 @@ This section assumes that the southbound OCP UA plugin has been installed, the g
 3. Add the **Southbound devices** and **Groups** to the **group** list that you want to subscribe to.
 ![ignition3](./assets/ignition3_en.jpg)
 
-## View the Data Forwarding
+## View Data Forwarding
 
 1. Open the Desiger Launcher desktop icon and click **Add Designer** to add the installed Ignition server URL.
 

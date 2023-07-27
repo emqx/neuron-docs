@@ -75,7 +75,7 @@ Click on the MQTT node card, enter the **Group List** page, click **Add Subscrip
 
 In the device card or device column, you can click on the data statistics chart to view the application running status, and the state of received and sent data.
 
-![north-statistics](/Users/lena/Documents/GitHub/neuron-docs/en_US/configuration/north-apps/assets/north-statistics.png)
+![north-statistics](./assets/north-statistics.png)
 
 Key field descriptions are as follows:
 
