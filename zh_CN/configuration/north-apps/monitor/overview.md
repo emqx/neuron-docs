@@ -15,6 +15,7 @@ Neuron 会在启动时创建一个 *monitor* 单例节点，用户不能直接�
     <sub><b>Fig.1 - Neuron *monitor* 节点</b></sub>
   </figcaption>
 </figure>
+
 ## 应用配置
 
 以下是配置 *monitor* 节点时可用的参数，这些参数主要用于建立 MQTT 连接，以及[心跳](#心跳消息)和[事件](#事件消息)上报功能。

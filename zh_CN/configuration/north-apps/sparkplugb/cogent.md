@@ -22,6 +22,12 @@ Cogent DataHub 是由 Skkynet 公司开发的一款实时数据集成和分发�
 
 ## 配置 Neuron
 
+### 南向设备
+
+本节以 OPC UA 南向设备为例进行配置。完成南向插件的安装，并已设置数据组和标签。具体步骤，见 [OPC UA](../../south-devices/opc-ua/overview.md)。
+
+### 北向应用
+
 1. 在 Neuron **北向应用** 中添加一个 Sparkplug B 应用。
 2. 在 **应用配置** 中填写 **客户端 ID**、**组 ID**、**节点 ID**、**服务器地址** 和 **服务器端口**，点击 **提交** 并启动连接。
 ![ignition2](./assets/ignition2.jpg)
