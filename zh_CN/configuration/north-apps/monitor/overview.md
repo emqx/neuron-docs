@@ -41,6 +41,7 @@ Neuron 会在启动时创建一个 *monitor* 单例节点，用户不能直接�
 Neuron 仪板表的**关于**页面和**数据统计**页签使用 Monitor 插件提供的 API 显示信息。
 
 可以通过点击**系统信息 -> 关于**打开**关于**页面。
+
 <figure align="center">
   <img src="./assets/about.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -51,6 +52,7 @@ Neuron 仪板表的**关于**页面和**数据统计**页签使用 Monitor 插�
 </figure>
 
 点击节点上的**数据统计**图标，可以显示**数据统计**页签。
+
 <figure align="center">
   <img src="./assets/data_statistics_icon.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -61,6 +63,7 @@ Neuron 仪板表的**关于**页面和**数据统计**页签使用 Monitor 插�
 </figure>
 
 如下，展示了一个样例 *file* 节点的数据统计。
+
 <figure align="center">
   <img src="./assets/file_statistics.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -86,11 +89,13 @@ Neuron 仪板表的**关于**页面和**数据统计**页签使用 Monitor 插�
 :::
 
 心跳消息具有以下字段：
+
 * `timestamp`：消息生成时的 Unix 时间戳。
 * `version`：Neuron 的版本信息。
 * `states`：节点状态信息的数组，类似 [节点状态 HTTP API] 响应的数据。
 
 以下是一个心跳消息样例：
+
 ```json:no-line-numbers
 {
   "timestamp": 1658134132237,
@@ -125,6 +130,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/node/add*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "name": "file",
@@ -137,6 +143,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/node/delete*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "name": "file"
@@ -148,6 +155,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/node/setting*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "node": "file",
@@ -162,6 +170,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/node/ctl*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "node": "file",
@@ -176,6 +185,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/group/add*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "node": "file",
@@ -189,6 +199,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/group/update*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "node": "file",
@@ -196,11 +207,13 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
   "interval": 2000
 }
 ```
+
 #### 组删除事件
 
 上报主题： *{event-topic-prefix}/group/delete*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "node": "file",
@@ -215,6 +228,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/tag/add*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "node": "file",
@@ -238,6 +252,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/tag/update*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "node": "file",
@@ -261,6 +276,7 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 上报主题： *{event-topic-prefix}/tag/delete*
 
 消息示例：
+
 ```json:no-line-numbers
 {
   "node": "file",
@@ -271,10 +287,6 @@ Monitor 插件可以向 MQTT 服务器发送事件消息，使用的主题由**�
 }
 ```
 
-
-[MQTT]: https://mqtt.org
-[MQTT 插件]: ../mqtt/overview.md
 [Prometheus]: https://prometheus.io/
 [数据统计 HTTP API]: ../../../http-api/metrics.md
 [节点状态 HTTP API]: ../../../http-api/configuration.md#获取-node-状态
-
