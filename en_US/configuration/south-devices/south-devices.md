@@ -63,7 +63,7 @@ On the **South Devices** page, you can choose to display southbound applications
 In Neuron, a "tag" represents a specific data point within a device, enabling data extraction or injection. "Group" is a collection of user-interest tags that facilitate data exchange between nodes. After adding the south devices, you can start to add tags and groups to start the data acquisation.
 
 ::: tip
-Neuron supports the batch configuration of groups and data tag points through Excel files. For details, see [Batch Tag Configuration](../import-export/import-export.md).
+Neuron supports the batch configuration of groups and data tag points through Excel files. For details, see [Batch Group/Tag Configuration](../import-export/import-export.md).
 :::
 
 ### Create A Group

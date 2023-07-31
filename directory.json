@@ -665,11 +665,11 @@
       "path": "configuration/south-devices/south-devices",
       "children": [
         {
-          "title": "Templates",
+          "title": "Configure with Templates",
           "path": "configuration/templates/templates"
         },
         {
-          "title": "Batch Groups/Tags Configuration",
+          "title": "Batch Data Tag Configuration",
           "path": "configuration/import-export/import-export"
         },
         {

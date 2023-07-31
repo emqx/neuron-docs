@@ -4,7 +4,16 @@ Modbus RTU is a version of the Modbus protocol that is based on serial communica
 
 The Modbus RTU protocol uses binary encoding and can transmit data over RS-232, RS-485, or other serial communication media. The Modbus RTU plugin for Neuron adds an implementation based on Ethernet TCP and enables remote device data acquisition and control through a DTU device.
 
-## Parameters
+## Add Device
+
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
+
+- Name: The name of this device node.
+- Plugin: Select the **Modbus RTU** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |

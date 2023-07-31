@@ -50,12 +50,8 @@ The diagram below provides a visual representation of the entire process.
 
 ![Configuration Steps](./assets/config.png)
 
-### Step 1. Checking over All Available Plugins
-
-Neuron data acquisition and delivery are enabled using various industrial plugins. A specific feature can be used only when corresponding plugin has installed and activated by the License. Since Neuron is a loosely-decoupled architecture, each plugin runs as an independent process thread without interfering each others. 
-
 
 ## Configuration APIs
 
-Alternatively, a set of configuraiton APIs is provided for integrating with industrial IoT platform, MES or other controlling systems.
+Alternatively, a set of configuration APIs is provided for integrating with industrial IoT platforms, MES, or other controlling systems.
 
