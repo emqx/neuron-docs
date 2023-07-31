@@ -677,7 +677,7 @@
           "path": "configuration/south-devices/modbus-rtu/modbus-rtu",
           "children": [
             {
-              "title": "Connection to DTU",
+              "title": "USR DTU",
               "path": "configuration/south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
