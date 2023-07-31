@@ -13,7 +13,7 @@ Go to **Configuration -> South Devices**, then click **Add Device** to add the d
 
 ## Device Configuration
 
-After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the device. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
@@ -105,7 +105,7 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 
 #### .LEN\[H]\[L]\[D]\[E]
 
-When the data type is STRING. LEN is a required field, indicating the number of bytes the string occupies. Each register contains four storage methods: H, L, D, and E, as shown in the table below.
+When the data type is STRING, `.LEN` is a required field, indicating the number of bytes the string occupies. Each register contains four storage methods: H, L, D, and E, as shown in the table below.
 | Symbol | Description                                 |
 | --- | ------------------------------------- |
 | H   | One register stores two bytes, with the high byte first |

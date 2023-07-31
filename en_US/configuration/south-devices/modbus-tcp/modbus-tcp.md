@@ -18,18 +18,29 @@ Go to **Configuration -> South Devices**, then click **Add Device** to add the d
 
 ## Device Configuration
 
-After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the device. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
-| **Connection Mode** | When selecting Ethernet TCP connection, you can choose Neuron as the TCP client or server.|
+| **Transport Mode** | TCP transfer or UDP transfer |
+| **Connection Mode** | Only for **TCP** mode, When selecting TCP, you can choose Neuron as the TCP client or server. |
+| **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command. |
+| **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command. |
 | **Send Interval** | The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
-| **IP Address** |  The IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0.|
+| **IP Address** | The IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0. <!--to be confirmed--> |
 | **Port** | The port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server.|
 | **Connection Timeout** |  The time the system waits for a device to respond to a command. |
-| **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command.|
-| **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command.|
-| **Transport Mode** | TCP transfer or UDP transfer|
+
+::: tip
+
+When operating with the Modbus TCP QH plugin, you're only required to adjust a selection of the aforementioned fields, namely:
+
+- **IP Address**
+- **Port**
+- **Connection Timeout**
+- **Connection Mode**
+
+:::
 
 ## Configure Data Groups and Tags
 
@@ -64,14 +75,14 @@ Required, Slave is the slave address or site number.
 
 #### **ADDRESS**
 
-Required, Address is the register address.The Modbus protocol has four areas, each area has a maximum of 65536 registers, and the address range of each area is shown in the table below. It should be noted that the storage area as large as 65536 is generally not required in practical applications. Generally, PLC manufacturers generally use an address range within 10000. Please pay attention to fill in the correct point address according to the area and function code of the device.
+Required, Address is the register address. The Modbus protocol has four areas, each area has a maximum of 65536 registers, and the address range of each area is shown in the table below. It should be noted that a storage area as large as 65536 is generally not required in practical applications. Generally, PLC manufacturers generally use an address range within 10000. Please pay attention to filling in the correct point address according to the area and function code of the device.
 
 | Area                       | Address Range          | Attribute        | Register Size     | Function Code | Data Type|
 | ------------------------- | ---------------- | ---------- | ------------- | ------------ | ------- |
-| Coil                | 000001 ~ 065536 | Read/Write       | 1Bit          | 0x01,0x05,0x0f | BIT     |
+| Coil                | 000001 ~ 065536 | Read/Write       | 1Bit          | 0x01, 0x05, 0x0f | BIT     |
 | Input          | 100001 ~ 165536 | Read/Write         | 1Bit         | 0x02          | BIT     |
-| Input Register| 300001 ~ 365536 | Read/Write         | 16Bit,2Byte         | 0x04          | BIT,INT16,UINT16,INT32,UINT32,INT64,UINT64,FLOAT,DOUBLE,STRING|
-| Hold Register  | 400001 ~ 465536 | Read/Write       | 16Bit,2Byte         | 0x03,0x06,0x10 | BIT,INT16,UINT16,INT32,UINT32,INT64,UINT64,FLOAT,DOUBLE,STRING|
+| Input Register| 300001 ~ 365536 | Read/Write         | 16Bit,2Byte         | 0x04          | BIT, INT16, UINT16,<br />INT32, UINT32, INT64,<br />UINT64, FLOAT,<br />DOUBLE, STRING |
+| Hold Register  | 400001 ~ 465536 | Read/Write       | 16Bit,2Byte         | 0x03, 0x06, 0x10 | BIT, INT16, UINT16,<br />INT32, UINT32, INT64,<br />UINT64, FLOAT,<br /> DOUBLE, STRING |
 
 ::: tip
 Some device specification documents may use function codes and register addresses to describe commands. Since register address numbers start at 0, the register address range for each area is 0 to 65535. Neuron uses a PLC configuration address specification, so the addresses configured in Neuron start from 1.
@@ -83,7 +94,7 @@ For example, if the function code is 0x03 and the register address is 0, the add
 
 #### **.BIT**
 
-Optional, specify a specific bit in a registe
+Optional, specify a specific bit in a register
 
 | Address         | Data Type | Description                                                |
 | ----------- | ------- | --------------------------------------------------- |
@@ -105,7 +116,7 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 
 #### .LEN\[H]\[L]\[D]\[E]
 
-When the data type is STRING, .LEN is a required field, indicating the number of bytes the string occupies. Each register contains four storage methods: H, L, D, and E, as shown in the table below.
+When the data type is STRING, `.LEN` is a required field, indicating the number of bytes the string occupies. Each register contains four storage methods: H, L, D, and E, as shown in the table below.
 | Symbol | Description                                 |
 | --- | ------------------------------------- |
 | H   | One register stores two bytes, with the high byte first |
