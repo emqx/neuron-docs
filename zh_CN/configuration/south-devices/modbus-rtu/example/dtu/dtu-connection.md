@@ -1,14 +1,16 @@
 # DTU 连接示例
 
-本文会通过有人云 DTU 透传模块将使用 Modbus RTU 协议的设备连接到 Neuron，介绍如何将串口数据转换为网络数据。连接示意图如下图所示。
+您可选择通过 Neuron Modbus RTU 插件的串口模式直接与 ModBus RTU 设备进行串口通信，也可首先通过有人云 DTU 实现硬件级的串口汇集，并将串口数据转换到网口，之后再连接 Neuron。
+
+DTU 支持数据的双向转换，支持将 RS232、RS485、RS422 等常见的串口数据与 TCP/IP 数据进行相互转换，并通过无线通信网络进行传输。DTU 一般采用的通信方式有 2/3/4G、NB-IoT、LoRaWAN、WIFI 等。
+
+在有人云 DTU 透传模式下，您可直接连接 Neuron 的 ModBus RTU 模块的 Ethernet 模式，；在有人云 DTU ModBus TCP 模式下，您需要连接 ModBus TCP 插件。
+
+本节将以有人云 DTU ModBus TCP 模式为例，演示如何通过 Neuron [Modbus TCP 插件](../../../modbus-tcp/modbus-tcp.md)建立连接。 
 
 <img src="./assets/neuron-dtu.png" alt="neuron-dtu" style="zoom:50%;" />
 
-:::tip
-Modbus RTU 虽转为网络传输，但仍然是 Modbus RTU 报文格式。若 DTU 将 Modbus RTU 转为 Modbus TCP，此时需要使用 [Modbus TCP 驱动模块](../../../modbus-tcp/modbus-tcp.md)。
-:::
 
-DTU 支持数据的双向转换，支持将 RS232、RS485、RS422 等常见的串口数据与 TCP/IP 数据进行相互转换，并通过无线通信网络进行传输。DTU 一般采用的通信方式有 2/3/4G、NB-IoT、LoRaWAN、WIFI 等。
 
 ## DTU 主要配置项
 
@@ -59,7 +61,7 @@ Neuron 作为 Client，主动向 DTU 发起连接请求，用户需要保证 Neu
 
 ### 配置 Neuron（Client 模式）
 
-在南向驱动管理中建立插件为 modbus-rtu 的节点，并进行驱动配置，如下图所示。
+在南向驱动管理中建立插件为 modbus-tcp 的节点，并进行驱动配置，如下图所示。
 
 ![image-20230712104126402](./assets/neuron-client-config.png)
 
@@ -97,7 +99,7 @@ $ netstat -anp |grep <port>
 
 ### 配置 Neuron（Server 模式）
 
-在南向驱动管理中建立插件为 modbus-rtu 的节点，并进行驱动配置，如下图所示。
+在南向驱动管理中建立插件为 modbus-tcp 的节点，并进行驱动配置，如下图所示。
 
 ![image-20230712095508962](./assets/neuron-server-config.png)
 
