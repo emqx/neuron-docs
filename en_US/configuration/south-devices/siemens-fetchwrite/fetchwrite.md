@@ -11,7 +11,17 @@ The s5fetch-write plug-in is used for accessing Siemens PLCs with network expans
 | **host**  | remote plc ip                |
 | **port**  | remote plc port, default 102 |
 
-## Support Data Type
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * INT8
 * UINT8
@@ -25,8 +35,6 @@ The s5fetch-write plug-in is used for accessing Siemens PLCs with network expans
 * DOUBLE
 * BIT
 * STRING
-
-## Usage of Address Format
 
 ### Address Format
 
@@ -52,7 +60,7 @@ Optional, refers to a certain digit of a certain address.
 
 When the data type is string type, it is a required item, indicating the length of the string.
 
-### Address Example
+### Example Addresses
 
 | Address      | Data Type | Description                                    |
 | ------------ | --------- | ---------------------------------------------- |

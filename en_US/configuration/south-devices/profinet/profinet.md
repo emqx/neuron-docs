@@ -8,7 +8,16 @@ The PROFINET IO system includes several parts: IO controller, IO device, and IO 
 Because the PROFINET IO real-time message uses the Ethernet protocol defined in PROFINET (real-time message is transmitted based on Ethernet frames), when using the PROFINET driver, you need to deploy Neuron directly with physical devices, and cannot use virtual deployment, such as Docker image or virtual machine.
 :::
 
-## Parameters
+## Add Device
+
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
+
+- Name: The name of this device node.
+- Plugin: Select the **Profinet IO** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 | Parameter | Description |
 | -------------------- | ------------------------------------------------------- |
@@ -25,7 +34,17 @@ Because the PROFINET IO real-time message uses the Ethernet protocol defined in 
 | **Input Data Length** | IO device module input data length |
 | **Output Data Length** | IO device module output data length |
 
-## Data Types
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * INT8
 * UINT8
@@ -39,23 +58,23 @@ Because the PROFINET IO real-time message uses the Ethernet protocol defined in 
 * DOUBLE
 * BIT
 
-## Address Format
+### Address Format
 
 > SLOT:SUB_SLOT:INDEX\[.BIT][#ENDIAN]</span>
 
-### **SLOT**
+#### **SLOT**
 
 Required, the slot number of the module inserted into the module.
 
-### **SUB_SLOT**
+#### **SUB_SLOT**
 
 Required, the sub slot number of the module inserted into the module.
 
-## **INDEX**
+#### **INDEX**
 
 Required, the data index in the module (which byte, starting from 0).
 
-## Examples
+### Example Addresses
 
 |Address         | Data Type | Description|
 | ----------- | ------- | --------- |

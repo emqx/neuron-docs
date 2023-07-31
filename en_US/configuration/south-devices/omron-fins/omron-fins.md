@@ -1,10 +1,19 @@
-# OMRON FINS on TCP
+# OMRON FINS (TCP)
 
 Omron Fins TCP is a protocol for communication between Omron PLCs and other devices. It is a TCP/IP based protocol. The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
 Neuron supports Fins TCP protocol, which can be used to communicate with Omron PLCs through Fins TCP protocol.
 
-## Parameters
+## Add Device
+
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
+
+- Name: The name of this device node.
+- Plugin: Select the **Omron FINS TCP** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 | Parameter         | Description                      |
 | ----------------- | -------------------------------- |
@@ -12,7 +21,17 @@ Neuron supports Fins TCP protocol, which can be used to communicate with Omron P
 | **PLC IP Address**          | Target PLC IPv4 address|
 | **PLC Port**          | Target PLC port, default 9600 |
 
-## Data types
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * UINT8
 * INT8
@@ -27,11 +46,11 @@ Neuron supports Fins TCP protocol, which can be used to communicate with Omron P
 * BIT
 * STRING
 
-## Address Format
+### Address Format
 
 > AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
 
-### AREA ADDRESS
+#### AREA ADDRESS
 
 | AREA | DATA TYPE                                                 | ATTRIBUTE  | REMARK           |
 | ---- | --------------------------------------------------------- | ---------- | ---------------- |
@@ -62,15 +81,15 @@ Neuron supports Fins TCP protocol, which can be used to communicate with Omron P
 | D20         | float  | D area, address is 20    |
 | EM10W100    | float  | EM10 area, address is 100 |
 
-### .BIT
+#### .BIT
 
 Optional, referring to a bit of an address.
 
-### .LEN\[H]\[L]
+#### .LEN\[H]\[L]
 
 When the data type is string type, it is a required, **.LEN** indicates the length of the string, including **H** and **L** two endianness, the default is **H** .
 
-## Address Examples
+### Example Addresses
 
 | Address   | Data Type  | Description                                             |
 | --------- | ------ | ----------------------------------------------------------- |

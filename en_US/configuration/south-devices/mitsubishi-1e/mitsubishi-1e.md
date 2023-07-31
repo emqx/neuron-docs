@@ -1,17 +1,36 @@
-# Mitsubishi MELSEC A1E
+# Mitsubishi 1E
 
 ## Module Description
 
 The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series PLCs via Ethernet, iQ-F requires a specific firmware version.
 
-## Parameter Configuration
+## Add Device
+
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
+
+- Name: The name of this device node.
+- Plugin: Select the **Mitsubishi 1E** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 | Parameter | Description                   |
 | --------- | ----------------------------- |
 | **host**  | remote plc ip                 |
 | **port**  | remote plc port, default 2000 |
 
-## Support Data Type
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * INT16
 * UINT16
@@ -21,8 +40,6 @@ The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series
 * DOUBLE
 * BIT
 * STRING
-
-## Usage of Address Format
 
 ### Address Format
 
@@ -77,7 +94,7 @@ It can only be used in **non-bit type area**, which means to read the specified 
 
 When the data type is string, **.LEN** indicates the length of the string;   **H** and **L** can be optional to indicate two byte orders, the default is **H** byte order.
 
-### Address Examples
+### Example Addresses
 
 | Address   | Data Type | Description                                                  |
 | --------- | --------- | ------------------------------------------------------------ |

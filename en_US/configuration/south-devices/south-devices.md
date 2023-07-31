@@ -1,6 +1,6 @@
 # Connect to Southbound Devices
 
-This chapter will introduce how to use Neuron for supporting the transformation of various industrial protocols, enabling data collection from different types of southbound devices. This section will use PeakHMI Slave Simulators to simulate Modbus TCP devices, demonstrating the complete process of adding and configuring southbound devices.
+This chapter will introduce how to use Neuron to support the transformation of various industrial protocols, enabling data collection from different types of southbound devices. This section will use PeakHMI Slave Simulators to simulate Modbus TCP devices, demonstrating the complete process of adding and configuring southbound devices.
 
 Modbus TCP is a version of the Modbus protocol based on Ethernet, which uses TCP/IP for communication.
 
@@ -54,13 +54,13 @@ On the **South Devices** page, you can choose to display southbound applications
   * **Running**: The application is in running status.
   * **Stop**: The application is stopped.
 
-* **Connection Status**: Displays the connection status of the device. After adding group and tag, Neuron will connect the device to collect data, and the connection status will show **Connected**.
+* **Connection Status**: Displays the connection status of the device. After adding the group and tag, Neuron will connect to the device to collect data, and the connection status will show **Connected**.
 
 * **Plugin**: Displays the name of the plugin module used by the device.
 
 ## Configure Data Groups and Tags
 
-In Neuron, a "tag" represents a specific data point within a device, enabling data extraction or injection. "Group" is a collection of user-interest tags that facilitate data exchange between nodes. After adding the south devices, you can start to add tags and groups to start the data acquisation.
+In Neuron, a "tag" represents a specific data point within a device, enabling data extraction or injection. "Group" is a collection of user-interest tags that facilitate data exchange between nodes. After adding the south devices, you can start to add tags and groups to start the data acquisition.
 
 ::: tip
 Neuron supports the batch configuration of groups and data tag points through Excel files. For details, see [Batch Group/Tag Configuration](../import-export/import-export.md).
@@ -76,7 +76,7 @@ Click the new device node to enter the group list management interface, and clic
 * Interval: Set the the frequency of collection and reporting of this group of tags, in milliseconds, 100 means that the whole group of points is collected every 100 ms, and the value of the whole group of points is reported once.
 
 :::tip
-Interval is a time interval which is used to collect data from equipment and report the data to MQTT. The minimum setting can be 100ms, but when there are a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, the value of interval can be appropriately increased.
+Interval is a time interval that is used to collect data from equipment and report the data to MQTT. The minimum setting can be 100ms, but when there are a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, the value of the interval can be appropriately increased.
 :::
 
 ### Add Tags to the Group

@@ -1,8 +1,17 @@
-# Panasonic mewtocol
+# Panasonic Mewtocol
 
 The Mewtocol plug-in is used to access Panasonic's FP-XH, FP0H series PLCs via Ethernet.
 
-## Parameters
+## Add Device
+
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
+
+- Name: The name of this device node.
+- Plugin: Select the **Neuron Mewtocol** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 |   Parameter     |  Description                      |
 | -------- | -------------------------- |
@@ -10,7 +19,17 @@ The Mewtocol plug-in is used to access Panasonic's FP-XH, FP0H series PLCs via E
 | **PLC Port** | Target PLC IPv4 address, Default 2000 |
 | **PLC Station** | Target PLC station, Default 1      |
 
-## Data Types
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * INT16
 * UINT16
@@ -23,17 +42,17 @@ The Mewtocol plug-in is used to access Panasonic's FP-XH, FP0H series PLCs via E
 * BIT
 * STRING
 
-## Address format
+### Address format
 
 > AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
 
-### .BIT
+#### .BIT
 Only available for **non-bit type area**, means read the specified binary bit of the specified address, the binary bit index interval is [0, 15].
 
-### .LEN\[H]\[L]
+#### .LEN\[H]\[L]
 When the data type is string type, **.LEN** indicates the length of the string; you can optionally fill in **H** and **L** to indicate two byte orders, and the default is the byte order of **H**.
 
-### PLC Area
+#### PLC Area
 
 | Area | DATA TYPE | ATTRIBUTE  |  REMARK                          |
 | ---- | --------- | ---------- | -------------------------------- |
@@ -53,7 +72,7 @@ When the data type is string type, **.LEN** indicates the length of the string; 
 | ID   | all   | read/write (bit type readonly) | Index register ID  |
 
 
-## Examples
+### Example Addresses
 
 | Address   | Data type | Description |
 | ----- | ------- | ----- |

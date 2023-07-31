@@ -19,20 +19,29 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | -------------------- | ------------------------------------------------------- |
 | **Physical Link** | Selects the communication medium, either serial or Ethernet. |
 | **Connection Timeout** |  The time the system waits for a device to respond to a command. |
+| **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command. |
+| **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command. |
 | **Send Interval** | The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
-| **Serial Device** | The path to the serial device when using a serial connection, e.g., /dev/ttyS0 in Linux systems. |
-| **Stop Bits** | Serial connection parameter. |
-| **Parity** | Serial connection parameter. |
-| **Baud Rate** | Serial connection parameter. |
-| **Data Bits** | Serial connection parameter. |
-| **Connection Mode** | When selecting Ethernet TCP connection, you can choose Neuron as the TCP client or server.|
-| **IP Address** |  The IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0.|
-| **Port** | The port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server.|
-| **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command.|
-| **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command.|
-| **Transport Mode** | TCP transfer or UDP transfer|
+| **Serial Device** | Only needed in **Serial** mode, the path to the serial device when using a serial connection, e.g., /dev/ttyS0 in Linux systems. |
+| **Stop Bits** | Only needed in **Serial** mode, the serial connection parameter. |
+| **Parity** | Only needed in **Serial** mode, the serial connection parameter. |
+| **Baud Rate** | Only needed in **Serial** mode, the serial connection parameter. |
+| **Data Bits** | Only needed in **Serial** mode, the serial connection parameter. |
+| **Connection Mode** | Only needed in **Ethernet** mode, you can choose Neuron as the TCP client or server. |
+| **IP Address** | Only needed in **Ethernet** mode,  the IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0. |
+| **Port** | Only needed in **Ethernet** mode, the port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server. |
 
-## Data types
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * INT16
 * UINT16
@@ -45,15 +54,15 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 * BIT
 * STRING
 
-## Address format
+### Address format
 
 > SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
 
-### **SLAVE**
+#### **SLAVE**
 
 Required, Slave is the slave address or site number.
 
-### **ADDRESS**
+#### **ADDRESS**
 
 Required, Address is the register address.The Modbus protocol has four areas, each area has a maximum of 65536 registers, and the address range of each area is shown in the table below. It should be noted that the storage area as large as 65536 is generally not required in practical applications. Generally, PLC manufacturers generally use an address range within 10000. Please pay attention to fill in the correct point address according to the area and function code of the device.
 
@@ -72,7 +81,7 @@ The conversion rule for the configuration address specification is as follows: d
 
 For example, if the function code is 0x03 and the register address is 0, the address used in Neuron is 400001. If the function code is 0x02 and the register address is 5, the address used in Neuron is 100006.
 
-### **.BIT**
+#### **.BIT**
 
 Optional, specify a specific bit in a registe
 
@@ -82,7 +91,7 @@ Optional, specify a specific bit in a registe
 | 1!400010.4  | bit     | Refers to station 1, hold register area, address 400010, bit 4    |
 | 2!400001.15 | bit     | Refers to station 2, hold register area, address 400001, bit 15   |
 
-### **#ENDIAN**
+#### **#ENDIAN**
 
 Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, see the table below for details.
 | Symbol | Byte Order | Supported Data Types | Note |
@@ -94,7 +103,7 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #BB | 3,4,1,2 | int32/uint32/float | |
 | #BL | 4,3,2,1 | int32/uint32/float | |
 
-### .LEN\[H]\[L]\[D]\[E]
+#### .LEN\[H]\[L]\[D]\[E]
 
 When the data type is STRING, .LEN is a required field, indicating the number of bytes the string occupies. Each register contains four storage methods: H, L, D, and E, as shown in the table below.
 | Symbol | Description                                 |
@@ -104,7 +113,7 @@ When the data type is STRING, .LEN is a required field, indicating the number of
 | D   | One register stores one byte, and it is stored in the low byte      |
 | E   | One register stores one byte, and it is stored in the high byte|
 
-## Examples
+### Example Addresses
 
 | Address        | Data Type | Description |
 | ----------- | ------- | --------- |

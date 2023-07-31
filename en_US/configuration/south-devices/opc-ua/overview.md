@@ -4,7 +4,16 @@ OPC UA is a machine-to-machine communication protocol for industrial automation 
 
 The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industrial Gateway OPC Server, Prosys Simulation Server, Ignition and other OPC UA servers. You can also directly access the built-in OPC UA Server of hardware equipment, such as: the built-in Server of Siemens S7-1200 PLC, the built-in Server of Omron NJ series PLC, etc.
 
-## Parameters
+## Add Device
+
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
+
+- Name: The name of this device node.
+- Plugin: Select the **OPC UA** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 |  Parameter              |  Description                       |
 | ----------------- | --------------------------- |
@@ -14,7 +23,17 @@ The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industr
 | **Cert**          | Client certificate in DER format          |
 | **Key**           | The client key in DER format   |
 
-## Data types
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data types
 
 * INT8（OPC UA SBYTE type）
 * INT16
@@ -29,7 +48,7 @@ The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industr
 * BOOL
 * STRING
 
-## Data Type Conversion
+### Data Type Conversion
 
 | OPC UA Data Type | Neuron Data Type |
 | --------------- | --------------- |
@@ -47,7 +66,7 @@ The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industr
 | String          | STRING          |
 | Datetime        | UINT32          |
 
-## Address format
+### Address Format
 
 > NS!NODEID</span>
 
@@ -55,7 +74,7 @@ The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industr
 
 **NODEID** Node ID. The value can be a number or a string.
 
-## Examples
+### Example Addresses
 
 |  Address               | Data type | Description                                                 |
 | ---------------------- | -------- | ------------------------------------------------------------ |
