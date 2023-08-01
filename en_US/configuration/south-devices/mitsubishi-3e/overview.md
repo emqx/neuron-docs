@@ -114,6 +114,13 @@ When the data type is string type, **`.LEN`** indicates the length of the string
 | D1002.16L | string  | D area, Address 1002, String length 16, Endian L |
 | D1003.16 | string  | D area, Address 1003, String length 16, Endian H |
 
+## Use Case
+
+You can continue to read the following sections for a quick start. 
+
+- [FX5U](./fx5u.md)
+- [Q03UDE](./q03ude.md)
+
 ## Data Monitoring
 
 After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

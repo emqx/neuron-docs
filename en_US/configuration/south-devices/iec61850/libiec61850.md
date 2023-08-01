@@ -1,4 +1,4 @@
-# Connect to LibIEC61850 server
+# Connect to LibIEC61850 Server
 
 ## LibIEC61850 server setting
 
