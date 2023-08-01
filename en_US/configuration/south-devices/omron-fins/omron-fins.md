@@ -48,7 +48,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -87,7 +87,7 @@ Optional, referring to a bit of an address.
 
 #### .LEN\[H]\[L]
 
-When the data type is string type, it is a required, **.LEN** indicates the length of the string, including **H** and **L** two endianness, the default is **H** .
+When the data type is string type, it is a required, **`.LEN`** indicates the length of the string, including **H** and **L** two endianness, the default is **H**.
 
 ### Example Addresses
 
@@ -115,3 +115,7 @@ When the data type is string type, it is a required, **.LEN** indicates the leng
 | D5.20H    | string | D area, address 5, the string length is 20 bytes and the endianness is H  |
 | D5.30     | string | D area, address 5, the string length is 30 bytes and the endianness is L  |
 | EM10.10   | string | EM area, address 10, the string length is 10 bytes and the endianness is L  |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
