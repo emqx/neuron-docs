@@ -1,15 +1,14 @@
-# Data acquisition using the Beckhoff ADS plugin
+# Data Acquisition with Beckhoff ADS Plugin
 
-In this tutorial, we introduce how to collect data from Beckhoff software PLCs
-using the Neuron ADS plugin.
+In this tutorial, we introduce how to collect data from Beckhoff software PLCs using the Neuron ADS plugin.
 
-## Setup
+## Environment Setup
 
-We use two PCs connected in a local area network in this tutorial. One is a
-Linux machine with Neuron installed, the other is a Windows machine with
-TwinCAT 3 installed.
-Consult the [the installation instruction] on how to install Neuron.
-Refer to the [Beckhoff TwinCAT website] to download and install TwinCAT.
+We use two PCs connected to a local area network in this tutorial. 
+
+- One is a Linux machine with Neuron installed. Consult the [the installation instruction] on how to install Neuron.
+- The other is a Windows machine with TwinCAT 3 installed. Refer to the [Beckhoff TwinCAT website] to download and install TwinCAT.
+
 
 |                  | PC 1              | PC 2                |
 | ---------------- | ----------------- | ------------------- |
@@ -19,15 +18,13 @@ Refer to the [Beckhoff TwinCAT website] to download and install TwinCAT.
 | Software         | Neuron            | TwinCAT 3           |
 | Network          | Connected         | Connected           |
 
-## Setup TwinCAT
+## Configure TwinCAT
 
-In order for Neuron and the TwinCAT PLC to communicate with each other, we first
-need to add a static route for Neuron in TwinCAT. We also need to find the AMS Net
-ID of the TwinCAT PLC and the index group and index offset of the variables.
+Before Neuron and the TwinCAT PLC can communicate with each other, we first need to add a static route for Neuron in TwinCAT. We also need to find the AMS Net ID of the TwinCAT PLC and the index group and index offset of the variables.
 
-### Add static route in TwinCAT
+### Add Static Route in TwinCAT
 
-Open the **TwinCAT Static Routes** dialog
+1. Open the **TwinCAT Static Routes** dialog box. 
 
 <figure align="center">
   <img src="./assets/add-route-1.png"
@@ -37,8 +34,7 @@ Open the **TwinCAT Static Routes** dialog
     <sub><b>Fig.1 - Open the TwinCAT static routes dialog</b></sub>
   </figcaption>
 </figure>
-
-Click **Add**
+2. Click **Add**.
 
 <figure align="center">
   <img src="./assets/add-route-2.png"
@@ -48,9 +44,8 @@ Click **Add**
     <sub><b>Fig.2 - TwinCAT static routes dialog</b></sub>
   </figcaption>
 </figure>
-
-Provide the information as hilighted in the following image. Note that the
-**AmsNetId** is the IP address of the Neuron PC appended with ".1.1".
+3. Provide the information as highlighted in the following image. Note that the
+   **AmsNetId** is the IP address of the Neuron PC appended with ".1.1".
 
 <figure align="center">
   <img src="./assets/add-route-3.png"
@@ -62,7 +57,7 @@ Provide the information as hilighted in the following image. Note that the
 </figure>
 
 
-A successfully added route is shown as follow.
+4. A successfully added route is shown as follows.
 
 <figure align="center">
   <img src="./assets/add-route-4.png"
@@ -74,9 +69,9 @@ A successfully added route is shown as follow.
 </figure>
 
 
-### Check the AMS Net ID and port number of the TwinCAT PLC
+### View AMS Net ID and Port Number
 
-Open the **TwinCAT System** dialog to show the AMS Net ID.
+1. Open the **TwinCAT System** dialog to show the AMS Net ID.
 
 <figure align="center">
   <img src="./assets/amsnetid.png"
@@ -86,8 +81,7 @@ Open the **TwinCAT System** dialog to show the AMS Net ID.
     <sub><b>Fig.5 - TwinCAT system dialog</b></sub>
   </figcaption>
 </figure>
-
-By default, TwinCAT PLC port number is 851.
+2. By default, TwinCAT PLC port number is 851.
 
 <figure align="center">
   <img src="./assets/port.png"
@@ -98,7 +92,7 @@ By default, TwinCAT PLC port number is 851.
   </figcaption>
 </figure>
 
-### Find the index group and index offset of variables
+### View Index Group and Index Offset of Variables
 
 We use the following TwinCAT PLC program, which defines enough variables for
 testing in this tutorial.
@@ -112,7 +106,7 @@ testing in this tutorial.
   </figcaption>
 </figure>
 
-#### Find the index group
+#### Find the Index Group
 
 The [Beckhoff index group/offset page] lists the index group to access the PLC
 memory range. For the %MW field, the index group is 0x4020. For the %MX field,
@@ -129,7 +123,7 @@ defined in the main program, the index group is 0x4040.
   </figcaption>
 </figure>
 
-#### Find the index offset through the data area tab
+#### Find the Index Offset
 
 Open the TwinCAT PLC data area tab to find the index offset of the variables.
 
@@ -143,11 +137,11 @@ Open the TwinCAT PLC data area tab to find the index offset of the variables.
 </figure>
 
 
-#### Find the index group/offset by TPY file
+#### Obtain the Index Group/Offset by TPY File
 
 We could also find the index group and index offset through the TPY file.
 
-First ensure **TPY File** is enabled.
+1. Ensure **TPY File** is enabled.
 
 <figure align="center">
   <img src="./assets/tpy1.png"
@@ -159,7 +153,7 @@ First ensure **TPY File** is enabled.
 </figure>
 
 
-Open the TPY file in the TwinCAT project directory.
+2. Open the TPY file in the TwinCAT project directory.
 
 <figure align="center">
   <img src="./assets/tpy2.png"
@@ -171,8 +165,8 @@ Open the TPY file in the TwinCAT project directory.
 </figure>
 
 
-The TPY file contains the index group and index offset of each variable defined
-in the PLC program.
+3. The TPY file contains the index group and index offset of each variable defined
+   in the PLC program.
 
 <figure align="center">
   <img src="./assets/tpy3.png"
@@ -184,11 +178,11 @@ in the PLC program.
 </figure>
 
 
-## Setup Neuron
+## Configure Neuron
 
-### Add ADS south node
+### Add ADS South Node
 
-In the Neuron dashboard, click **South Devices -> Add Device** to add an ADS node.
+1. In the Neuron dashboard, click **South Devices -> Add Device** to add an ADS node.
 
 <figure align="center">
   <img src="./assets/add-driver.png"
@@ -199,7 +193,7 @@ In the Neuron dashboard, click **South Devices -> Add Device** to add an ADS nod
   </figcaption>
 </figure>
 
-### Configure the ADS node
+### Configure ADS Node
 
 Click the node configuration icon to configure the newly created ADS node.
 
@@ -212,7 +206,7 @@ Click the node configuration icon to configure the newly created ADS node.
   </figcaption>
 </figure>
 
-### Add tags to the ADS node
+### Add Tags to the ADS Node
 
 For each variable in the aforementioned TwinCAT PLC program, we add a
 corresponding tag to the Neuron ADS node. The [Beckhoff data types] page lists
@@ -252,9 +246,9 @@ The following figure shows all added tags in the ADS node.
 </figure>
 
 
-## Data Monitor
+## Monitor Data
 
-### Read tags
+### Read Tags
 
 Once the TwinCAT PLC is in running mode, we could see the variable values in the interface.
 
@@ -267,7 +261,7 @@ Once the TwinCAT PLC is in running mode, we could see the variable values in the
   </figcaption>
 </figure>
 
-In the Neuron dashboard, click **Monitoring -> Data Monitoring**, see that tag values are read correctly.
+In the Neuron dashboard, click **Monitoring -> Data Monitoring**, check whether the tag values are read correctly.
 
 <figure align="center">
   <img src="./assets/monitor-2.png"
@@ -278,10 +272,9 @@ In the Neuron dashboard, click **Monitoring -> Data Monitoring**, see that tag v
   </figcaption>
 </figure>
 
-### Write tags
+### Write Tags
 
-In the Neuron **Data Monitoring** tab, click **Write** on the *main.MXtest1* tag
-to write a true value.
+In the Neuron **Data Monitoring** tab, click **Write** on the *main.MXtest1* tag to write a true value.
 
 <figure align="center">
   <img src="./assets/control-1.png"
@@ -303,7 +296,7 @@ Click **Write** on the *main.MWtest1* tag to write the value *6666*.
   </figcaption>
 </figure>
 
-After a successful write, we could check that variable values do update in TwinCAT.
+After a successful write, we could see that variable values do update in TwinCAT.
 
 <figure align="center">
   <img src="./assets/control-3.png"
