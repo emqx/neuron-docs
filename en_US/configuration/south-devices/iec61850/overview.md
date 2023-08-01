@@ -1,4 +1,4 @@
-# IEC60870-5-104
+# IEC61850
 
 IEC61850 is an international communication standard protocol that achieves station-wide communication uniformity through a series of standardization of devices. IEC61850 is widely used in the power industry.
 
@@ -11,7 +11,7 @@ The IEC61850 plug-in is used for read/write to the IEC61850 server and currently
 Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
 
 - Name: The name of this device node.
-- Plugin: Select the **IEC60870-5-104** plugin.
+- Plugin: Select the **IEC61850** plugin.
 
 ## Device Configuration
 
@@ -32,8 +32,8 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Remote S Selector** | Remote SSAP-Address (SSAP = Session Service Access Point, default = 1) |
 | **Remote T Selector** | Remote TSAP-Address (TSAP = Transport Service Access Point, default = 1) |
 | **Authentication Enabled** | Whether to enable Authentication |
-| **Authentication Method** | Authentication Method, Password/None |
-| **Authentication Password** | Authentication Password |
+| **Authentication Method** | Set authentication method if authentication is enabled, values: Password/None |
+| **Authentication Password** | Set authentication password if authentication is enabled |
 
 ## Configure Data Groups and Tags
 
@@ -62,11 +62,11 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> Logical Devices/Logical Nodes$FC$DO$DA</span>
+> Logical Devices/Logical Nodes$FC$DO$DA
 
 ### Example Addresses
 
-|  Address                                 | Data type | Description                                                 |
+|  Address                                 | Data Type | Description                                                 |
 | ------------------------------------- | -------- | ---------------------------------------------------- |
 | GenericIO/GGIO1$CF$Mod$ctlModel       | INT8     | LD-GenericIO,LN-GGIO1,FC-CF,DO-Mod,DA-ctlModel       |
 | GenericIO/GGIO1$CO$SPCSO1$Oper$ctlNum | UINT8    | LD-GenericIO,LN-GGIO1,FC-CO,DO-SPCSO1,DA-Oper$ctlNum |
@@ -80,3 +80,11 @@ For information on general configuration items, see [Connect to Southbound Devic
 | GenericIO/GGIO1$MX$AnIn3$mag$f        | DOUBLE   | LD-GenericIO,LN-GGIO1,FC-MX,DO-AnIn3,DA-mag$f        |
 | GenericIO/GGIO1$CO$SPCSO1$Oper$Test   | BOOL     | LD-GenericIO,LN-GGIO1,FC-CO,DO-SPCSO1,DA-Oper$Test   |
 | GenericIO/LLN0$DC$NamPlt$vendor       | STRING   | LD-GenericIO,LN-GGIO1,FC-DC,DO-NamPlt,DA-vendor      |
+
+## Use Case
+
+You can access the LibIEC61850 server through the Neuron IEC61850 plugin. For specific steps, refer to [libiec61850](../iec61850/libiec61850.md).
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
