@@ -89,3 +89,7 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 | ---------------------- | -------- | ------------------------------------------------------------ |
 | 0!2258                 | UINT32   | Get the timestamp of the OPC UA server using the digital NODEID. The NS value is 0, and the NODEID is 2258 |
 | 2!Device1.Module1.Tag1 | INT8     | Use the string NODEID to get the data point of type SBYTE. If NS is 2, NODEID is Device1.Module1.Tag1 |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

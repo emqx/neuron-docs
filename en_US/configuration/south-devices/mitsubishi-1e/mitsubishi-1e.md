@@ -1,8 +1,8 @@
 # Mitsubishi 1E
 
-## Module Description
+Mitsubishi 1E is a part of Mitsubishi Electric's PLC series that leverages the MELSEC Communication protocol for efficient and reliable data exchange in diverse industrial automation applications.
 
-The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series PLCs via Ethernet, iQ-F requires a specific firmware version.
+Neuron's a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series PLCs via Ethernet, iQ-F requires a specific firmware version.
 
 ## Add Device
 
@@ -15,10 +15,10 @@ Go to **Configuration -> South Devices**, then click **Add Device** to add the d
 
 After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| **host**  | remote plc ip                 |
-| **port**  | remote plc port, default 2000 |
+| Parameter          | Description                   |
+| ------------------ | ----------------------------- |
+| **PLC IP Address** | remote plc ip                 |
+| **PLC Port**       | remote plc port, default 2000 |
 
 ## Configure Data Groups and Tags
 
@@ -43,7 +43,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -109,3 +109,7 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 | D20     | double    | D area, address is 20   |
 | D1002.16L | string    | D area, address is 1002, string length is 16, endianness is L |
 | D1003.16  | string    | D area, address is 1003, string length is 16, endianness is H |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

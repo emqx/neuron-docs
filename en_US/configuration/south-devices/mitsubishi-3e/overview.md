@@ -43,15 +43,15 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### .BIT
 
-Only available for **non-bit type area**, means read the specified binary bit of the specified address, the binary bit index interval is [0, 15].
+Only available for **non-bit type area**, which means reading the specified binary bit of the specified address, the binary bit index interval is [0, 15].
 
 #### .LEN\[H]\[L]
 
-When the data type is string type, **.LEN** indicates the length of the string; you can optionally fill in **H** and **L** to indicate two byte orders, and the default is the byte order of **H**.
+When the data type is string type, **`.LEN`** indicates the length of the string; you can optionally fill in **H** and **L** to indicate two-byte orders, and the default is the byte order of **H**.
 
 #### PLC Area 
 
@@ -100,16 +100,20 @@ When the data type is string type, **.LEN** indicates the length of the string; 
 
 |  Address  | Data type | Description |
 | ----- | ------- | ----- |
-| X0    | bit     | X area，Address 0    |
-| X1    | bit     | X area，Address 1    |
-| Y0    | bit     | Y area，Address 0    |
-| Y1    | bit     | Y area，Address 1    |
-| D100  | int16   | D area，Address 100  |
-| D1000 | uint16  | D area，Address 1000 |
-| D200  | uint32  | D area，Address 200  |
-| D10   | float   | D area，Address 10   |
-| D20   | double  | D area，Address 20   |
-| D20.0 | bit | D area，Address 20，0 bit|
-| D20.2 | bit | D area，Address 20，2 bit|
-| D1002.16L | string  | D area，Address 1002，String length 16，Endian L |
-| D1003.16 | string  | D area，Address 1003，String length 16，Endian H |
+| X0    | bit     | X area, Address 0   |
+| X1    | bit     | X area, Address 1   |
+| Y0    | bit     | Y area, Address 0   |
+| Y1    | bit     | Y area, Address 1   |
+| D100  | int16   | D area, Address 100 |
+| D1000 | uint16  | D area, Address 1000 |
+| D200  | uint32  | D area, Address 200 |
+| D10   | float   | D area, Address 10  |
+| D20   | double  | D area, Address 20  |
+| D20.0 | bit | D area, Address 20, 0 bit |
+| D20.2 | bit | D area, Address 20, 2 bit |
+| D1002.16L | string  | D area, Address 1002, String length 16, Endian L |
+| D1003.16 | string  | D area, Address 1003, String length 16, Endian H |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
