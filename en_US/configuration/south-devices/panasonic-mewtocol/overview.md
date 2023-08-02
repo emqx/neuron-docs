@@ -1,13 +1,15 @@
 # Panasonic Mewtocol
 
-The Mewtocol plug-in is used to access Panasonic's FP-XH, FP0H series PLCs via Ethernet.
+Mewtocol is a Panasonic-developed protocol enabling data exchange between its PLC devices and various others, such as computers and HMI devices
+
+The Mewtocol plugin is used to access Panasonic's FP-XH, FP0H series PLCs via Ethernet.
 
 ## Add Device
 
 Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
 
 - Name: The name of this device node.
-- Plugin: Select the **Neuron Mewtocol** plugin.
+- Plugin: Select the **Panasonic Mewtocol** plugin.
 
 ## Device Configuration
 
@@ -18,6 +20,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **PLC IP Address** |  Target PLC IPv4 address         |
 | **PLC Port** | Target PLC IPv4 address, Default 2000 |
 | **PLC Station** | Target PLC station, Default 1      |
+| **Timeout (ms)** | Target PLC read timeout |
 
 ## Configure Data Groups and Tags
 
@@ -44,32 +47,32 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### .BIT
-Only available for **non-bit type area**, means read the specified binary bit of the specified address, the binary bit index interval is [0, 15].
+Only available for **non-bit type area**, which means reading the specified binary bit of the specified address, the binary bit index interval is [0, 15].
 
 #### .LEN\[H]\[L]
-When the data type is string type, **.LEN** indicates the length of the string; you can optionally fill in **H** and **L** to indicate two byte orders, and the default is the byte order of **H**.
+When the data type is string type, **`.LEN`** indicates the length of the string; you can optionally fill in **H** and **L** to indicate two-byte orders, and the default is the byte order of **H**.
 
 #### PLC Area
 
 | Area | DATA TYPE | ATTRIBUTE  |  REMARK                          |
 | ---- | --------- | ---------- | -------------------------------- |
-| X    | uint16、uint32、uint64、bit | read/write | External input        |
-| Y    | uint16、uint32、uint64、bit | read/write | External output        |
-| R    | uint16、uint32、uint64、bit | read/write | Internal relay      |
-| T    | uint16、uint32、uint64、bit | read/write | Timer       |
-| C    | uint16、uint32、uint64、bit | read/write | Counter           |
-| L    | uint16、uint32、uint64、bit | read/write | Link relay       |
-| DT   | all | read/write (bit type readonly) | Data register DT   |
-| LD   | all | read/write (bit type readonly) | Link data register LD    |
-| FL   | all | read/write (bit type readonly) | File register FL     |
+| X    | uint16, uint32, uint64, bit | read/write | External input        |
+| Y    | uint16, uint32, uint64, bit | read/write | External output        |
+| R    | uint16, uint32, uint64, bit | read/write | Internal relay      |
+| T    | uint16, uint32, uint64, bit | read/write | Timer       |
+| C    | uint16, uint32, uint64, bit | read/write | Counter           |
+| L    | uint16, uint32, uint64, bit | read/write | Link relay       |
+| DT   | all | read/write (bit type read-only) | Data register DT   |
+| LD   | all | read/write (bit type read-only) | Link data register LD    |
+| FL   | all | read/write (bit type read-only) | File register FL     |
 | S    | -- | -- | Timer/counter set value area SV     |
 | K    | -- | -- | Timer/counter elapsed value area EV     |
-| IX   | all   | read/write (bit type readonly) | Index register IX   |
-| IY   | all   | read/write (bit type readonly) | Index register IY  |
-| ID   | all   | read/write (bit type readonly) | Index register ID  |
+| IX   | all   | read/write (bit type read-only) | Index register IX   |
+| IY   | all   | read/write (bit type read-only) | Index register IY  |
+| ID   | all   | read/write (bit type read-only) | Index register ID  |
 
 
 ### Example Addresses
@@ -89,3 +92,11 @@ When the data type is string type, **.LEN** indicates the length of the string; 
 | DT20.2 | bit | D Area, Address 20, 2 bit |
 | DT1002.16L | string  | D Area, Address 1002, String length 16, Byte order L |
 | DT1003.16 | string  | D Area, Address 1003, String length 16, Byte order H |
+
+## Use Case
+
+You can use Neuron Panasonic Mewtocol plugin to connect FP-XH C30T, for details, see [Connect to FP-XH C30T](./fp-xh-c30t.md). 
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
