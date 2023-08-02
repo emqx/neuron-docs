@@ -15,13 +15,13 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 
 |  Parameter    |  Description              |
 | -------- | ------------------------------ |
-| **timeout**  | Connection timeout, default is 3000 milliseconds |
-| **interval** | Command transmission interval, default 20 ms     |
-| **device**   | Serial device path                               |
-| **stop**     | Stop bits, default is 1                          |
-| **parity**   | Parity, default is even                          |
-| **baud**     | Baud rate, default is 9600                       |
-| **data**     | Data Bits, default is 7                          |
+| **Connection Timeout** | Connection timeout, default is 3000 milliseconds |
+| **Send Interval** | Command transmission interval, default 20 ms     |
+| **Serial Device** | Serial device path                               |
+| **Stop Bits** | Stop bits, default is 1                          |
+| **Parity**  | Parity, default is even                          |
+| **Baud Rate** | Baud rate, default is 9600                       |
+| **Data Bits** | Data Bits, default is 7                          |
 
 ## Configure Data Groups and Tags
 
@@ -47,7 +47,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -69,8 +69,8 @@ Only available for **non-bit type area**, means read the specified binary bit of
 
 | Address  | Data Type |  Description                      |
 | ----- | -------- | -------------------------- |
-| D20.0 | bit      | D Area，address 20，bit 0 |
-| D20.2 | bit      | D Area，address 20，bit 2 |
+| D20.0 | bit      | D Area, address 20, bit 0 |
+| D20.2 | bit      | D Area, address 20, bit 2 |
 
 #### .LEN\[H]\[L]
 
@@ -80,14 +80,18 @@ When the data type is string type, **.LEN** indicates the length of the string; 
 
 | Address      | Data Type |  Description                                          |
 | --------- | -------- | -------------------------------------------- |
-| X0    | bit      | X Area，address is 0    |
-| X1    | bit      | X Area，address is 1    |
-| Y0    | bit      | Y Area，address is 0    |
-| Y1    | bit      | Y Area，address is 1    |
-| D100  | int16    | D Area，address is 100  |
-| D120  | uint16   | D Area，address is 120  |
-| D200  | uint32   | D Area，address is 200  |
-| D10   | float    | D Area，address is 10   |
-| D20   | double   | D Area，address is 20   |
-| D152.16L | string   | D Area，address is 152，string length is 16，endianness is L |
-| D183.16  | string   | D Area，address is 183，string length is 16，endianness H |
+| X0    | bit      | X Area, address is 0   |
+| X1    | bit      | X Area, address is 1   |
+| Y0    | bit      | Y Area, address is 0   |
+| Y1    | bit      | Y Area, address is 1   |
+| D100  | int16    | D Area, address is 100 |
+| D120  | uint16   | D Area, address is 120 |
+| D200  | uint32   | D Area, address is 200 |
+| D10   | float    | D Area, address is 10  |
+| D20   | double   | D Area, address is 20  |
+| D152.16L | string   | D Area, address is 152, string length is 16, endianness is L |
+| D183.16  | string   | D Area, address is 183, string length is 16, endianness H |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
