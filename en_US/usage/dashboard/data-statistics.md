@@ -27,7 +27,7 @@ The northbound application node already supports the statistics of some fields, 
 | link_state              | link state of the node</br>DISCONNECTED = 0</br> CONNECTED = 1       |
 | running_state           |  running state of the node</br> INIT = 1</br>READY = 2</br> RUNNING = 3</br>    STOPPED = 4            |
 
-## Southboud node statistics
+## Southbound Node Statistics
 
 The southbound node already supports the statistics of some fields, but there are some differences in the fields to be counted for each driver. Later versions have plans to update the statistical fields of each driver continuously. Some fields are described below.
 

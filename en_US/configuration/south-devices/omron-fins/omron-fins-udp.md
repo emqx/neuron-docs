@@ -116,6 +116,12 @@ When the data type is string type, it is a required, **.LEN** indicates the leng
 | D5.30     | string | D area, address 5, the string length is 30 bytes and the endianness is L  |
 | EM10.10   | string | EM area, address 10, the string length is 10 bytes and the endianness is L  |
 
+## Use Case
+
+This chapter also provides practical examples to facilitate a quick start.
+
+- [Omron NX1P PLC](./example/nx1p/nx1p.md)
+
 ## Data Monitoring
 
 After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

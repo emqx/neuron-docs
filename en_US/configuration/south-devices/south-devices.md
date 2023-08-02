@@ -27,9 +27,9 @@ To ensure communication between Neuron and southbound devices, please make sure 
 
 Click the **Application Configuration** button on the device card to configure. For configuration items of the Modbus TCP driver, see [Southbound Drivers - Modbus TCP](../south-devices/modbus-tcp/modbus-tcp.md).
 
-After clicking **Submit**, the configuration of the northbound application is completed, and the application card automatically enters the **Running** state.
+After clicking **Submit**, the configuration of the southbound device is completed, and the application card automatically enters the **Running** state.
 
-After the southbound device is successfully created, a newly created card will appear in the southbound/northbound management interface, as shown in the following figure.
+After the southbound device is successfully created, a newly created card will appear in the southbound management interface, as shown in the following figure.
 
 ![south-devices](./assets/south-devices.png)
 
@@ -37,7 +37,7 @@ After the southbound device is successfully created, a newly created card will a
 
 On the **South Devices** page, you can choose to display southbound applications in a list or card view. Here uses the device card as an example to explain the various options.
 
-* **Name**: The unique name provided by the user for the northbound application.
+* **Name**: The unique name provided by the user for the device.
 * **Application Configuration**: Click this button to enter the configuration interface for setting the parameters required for Neuron to connect to southbound devices.
 * **Edit**: Starting from version 2.5.0, Neuron supports updating node names. To change the name of the target node, click the **Edit** icon, and in the pop-up dialog box, modify the node name.
 * **Data Statistics**: Statistics for the node.
@@ -48,7 +48,7 @@ On the **South Devices** page, you can choose to display southbound applications
 
 * Status: Displays the current status of the device node. Currently, the node has five working statuses.
 
-  * **Initialize**: After adding a northbound application for the first time, it will enter the initialization state.
+  * **Initialize**: After adding a device for the first time, it will enter the initialization state.
   * **Configure**: Enter the device configuration and enter the configuration state.
   * **Ready**: After successful configuration, enter the ready state.
   * **Running**: The application is in running status.
@@ -73,7 +73,7 @@ Create a group of tags, in which collect and report the data of the same group a
 Click the new device node to enter the group list management interface, and click **Create** to create the group.
 
 * Name: Fill in the name of the Group, such as group-1.
-* Interval: Set the the frequency of collection and reporting of this group of tags, in milliseconds, 100 means that the whole group of points is collected every 100 ms, and the value of the whole group of points is reported once.
+* Interval: Set the frequency of collection and reporting of this group of tags, in milliseconds, 100 means that the whole group of points is collected every 100 ms and the value of the whole group of points is reported once.
 
 :::tip
 Interval is a time interval that is used to collect data from equipment and report the data to MQTT. The minimum setting can be 100ms, but when there are a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, the value of the interval can be appropriately increased.

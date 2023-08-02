@@ -1,26 +1,27 @@
-# USR DTU
-
-You can directly communicate with ModBus RTU devices using Neuron's Modbus RTU plugin in serial mode. Or you can use USR DTU to first gather and convert serial data to network data, then connect it to Neuron. 
+# Connect to USR DTU
 
 USR DTU supports two-way conversion of data, supports mutual conversion of common serial data such as RS232, RS485, RS422, and TCP/IP data, and transmits them through the wireless communication network. The communication methods generally used by DTU are 2/3/4G, NB-IoT, LoRaWAN, WIFI, etc.
 
-For USR DTU's pass-through working mode, connect directly to the Ethernet mode of Neuron's Modbus RTU module. If you're using YouRenYun DTU's Modbus TCP mode, you need to use the Modbus TCP plugin.
+You can directly communicate with Modbus RTU devices using Neuron's Modbus RTU plugin in serial mode. Or you can use USR DTU to first gather and convert serial data to network data, then connect it to Neuron. In this case:
 
-This section introduces how to connect USR DTU under Modbus TCP mode. For details about Neuron's Modbus TCP plugin, see  [Modbus TCP driver module](../../../modbus-tcp/modbus-tcp.md).
+- For USR DTU's pass-through working mode, connect directly to the Ethernet mode of Neuron's Modbus RTU module. 
+- If you're using YouRenYun DTU's Modbus TCP mode, you need to use the Modbus TCP plugin.
+
+This section introduces how to connect USR DTU under Modbus TCP mode. For details about Neuron's Modbus TCP plugin, see the  [Modbus TCP driver module](../../../modbus-tcp/modbus-tcp.md).
 
 ![neuron-dtu](./assets/neuron-dtu.png)
 
-## USR DTU Main Configuration
+## USR DTU Configuration
 <img src="./assets/dtu_en.png" alt="dtu" style="zoom:50%;" />
 
 | Parameter                 | Description              |
 | -------------------- | ------------------------------------------------------- |
-| **Work Mode** | Typically, USR DTU supports connecting via TCP or UDP in either client or server mode. It can transmit data using the Modbus TCP standard protocol, or it can transmit None (transparent) data. Here we set it to ModbusTCP. |
+| **Work Mode** | Typically, USR DTU supports connecting via TCP or UDP in either client or server mode. It can transmit data using the Modbus TCP standard protocol, or it can transmit **None** (transparent) data. Here we set it to **ModbusTCP**. |
 | **Remote Server Addr** | When DTU acts as a client, fill in the address bound to Neuron Modbus.|
 | **Local/Remote Port Number** | When DTU acts as a client, fill in the port bound to Neuron Modbus. When DTU acts as a server, use the port of DTU.|
 
 :::tip
-DTU usually supports serial port heartbeats, or enable network heartbeats and registration packets. These features cannot be used in the standard Modbus protocol, and Neuron currently is not compatible with these features. When using Neuron to connect to a DTU, be sure to turn off these options.
+DTU usually supports serial port heartbeats, or enables network heartbeats and registration packets. These features cannot be used in the standard Modbus protocol, and Neuron currently is not compatible with these features. When using Neuron to connect to a DTU, be sure to turn off these options.
 :::
 
 ## Client/Server Mode
@@ -49,26 +50,20 @@ First, you need to configure the parameters of the connection between the DTU an
 * Fill in the unused local port, no need to fill in the remote port;
 * The other parameters are optional.
 
-:::tip
-When the working mode of DTU is Modbus TCP, since DTU converts the modbus rtu serial port protocol to modbus tcp protocol, the modbus-plus-tcp driver in Neuron should be used.
-
-When the working mode of DTU is pass-through mode, the modbus-rtu driver in Neuron should be used at this time.
-:::
-
-### View DTU IP
+### Get DTU IP
 
 When configuring the Neuron southbound driver, it needs to be the IP of the DTU on the server side, as shown in the figure below.
 ![dtu-ip-config](./assets/dtu-ip-config.png)
 
 ### Connect Neuron (Client)
 
-In **South Device**, create a node using plugin is modbus-plus-tcp, and configure the driver, as shown in the figure below.
+In **South Device**, create a node using the plugin Modbus TCP, and configure the driver, as shown in the figure below.
 ![neuron-client-config](./assets/neuron-client-config.png)
 
-* Connection mode: client
-* Host: Fill in the IP address of USR DTU
-* Port: Fill in the port of USR DTU
-* Timeout: Keep the default setting
+* **Connection mode**: client
+* **Host**: Fill in the IP address of USR DTU
+* **Port**: Fill in the port of USR DTU
+* **Timeout**: Keep the default setting
 
 ## Connect Neuron (Server)
 
@@ -84,9 +79,9 @@ First, you need to configure the parameters of the connection between the DTU an
 
 ![tcp-client](./assets/tcp-client.png)
 
-* Remote server address: Fill in the IP address of Neuron (running as the server);
-* Local port: Not filled in by default;
-* Remote port: Since each TCP Server port will listen to the incoming TCP traffic on the port specified by the client, therefore, the user needs to customize an unoccupied port for handshake establishment between the client and the server connect.
+* **Remote server address**: Fill in the IP address of Neuron (running as the server);
+* **Local port**: Not filled in by default;
+* **Remote port**: Since each TCP Server port will listen to the incoming TCP traffic on the port specified by the client, therefore, the user needs to customize an unoccupied port for handshake establishment between the client and the server connect.
 
 :::tip
 You can execute the following command on the server terminal to determine whether the listening port is occupied.
@@ -99,11 +94,11 @@ $ netstat -anp |grep <port>
 
 ### Configure Neuron (Server)
 
-In **South Devices**, create a node with plugin is modbus-plus-tcp, and configure the driver, as shown in the figure below.
+In **South Devices**, create a node with plugin Modbus TCP, and configure the driver, as shown in the figure below.
 
 ![neuron-server-config](./assets/neuron-server-config.png)
 
 * Select server as the **Connection mode**;
 * **Host**: Fill in 0.0.0.0;
-* **Port**: Fill in the listening port;
+* **Port**: Fill in the listening port.
 

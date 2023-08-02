@@ -1,4 +1,4 @@
-# Modbus Slave
+# Connect to Modbus Slave
 
 Modbus Slave is a comprehensive simulator designed to accelerate PLC programming and testing. It allows users to begin programming and conducting tests before the arrival of the actual slave device from the supplier. 
 
@@ -22,9 +22,10 @@ As a Client, Neuron initiates connection requests to Modbus Slave actively. The 
 ### Configure Modbus Slave
 
 1. After installation, run Modbus Slave.
+
 2. Enter **Connection -> Connect**, choose a connection method based on actual circumstances(this example is Modbus RTU Over TCP/IP), and set up the connection parameters (listening port), clicking **OK** will complete the configuration, as shown in the figure below.
 
-![modbus-slave-rtu-connection-setup](./assets/modbus-slave-rtu-connection-setup.png)
+   ![modbus-slave-rtu-connection-setup](./assets/modbus-slave-rtu-connection-setup.png)
 
 3. Enter **Setup -> Slave Definition**, or click![Slave Definition](./assets/mbpoll-definition-button.png) on toolbar set slave definition. Setting up address parameters based on the read/write requirements, and clicking **ok** will complete configuration.
 

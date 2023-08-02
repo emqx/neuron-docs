@@ -19,7 +19,7 @@ To create a northbound MQTT node and connect it to an MQTT Broker to upload data
 - Name: The name of this application node, for example, "mqtt".
 - Plugin: Select the MQTT plugin.
 
-After clicking **Create**, you will be redirected to the **Application Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Application Configuration** interface.
+After clicking **Create**, you will be redirected to the **Application Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the northbound device card to enter the **Application Configuration** interface.
 
 ## Application Configuration
 

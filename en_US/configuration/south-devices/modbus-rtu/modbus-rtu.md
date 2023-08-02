@@ -142,6 +142,13 @@ When the data type is STRING, `.LEN` is a required field, indicating the number 
 | 1!400001.10D | String  | Refers to station 1, hold register area, address 300001, character length 10, byte order D, which occupies addresses 400001 to 400005|
 | 1!400001.10E | String  | Refers to station 1, hold register area, address 300001, character length 10, byte order E, which occupies addresses 400001 to 400005|
 
+## Use Case
+
+This chapter also provides practical examples to facilitate a quick start.
+
+- [Modbus Slave Simulator](./example/modbus-slave/modbus-slave.md)
+- [USR DTU](./example/dtu/dtu-connection.md)
+
 ## Data Monitoring
 
 After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
