@@ -24,7 +24,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Device Name** | IO device name|
 | **Local Interface** | Local interface name  |
 | **Device IP Address** | IO device IPv4 address|
-| **Device Port** | IO device port，default 34964|
+| **Device Port** | IO device port, default 34964 |
 | **API** | IO device module API |
 | **Slot** | IO device module slot |
 | **Sub Slot** | IO device module sub slot |
@@ -60,7 +60,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> SLOT:SUB_SLOT:INDEX\[.BIT][#ENDIAN]</span>
+> SLOT:SUB_SLOT:INDEX\[.BIT][#ENDIAN]
 
 #### **SLOT**
 
@@ -68,7 +68,7 @@ Required, the slot number of the module inserted into the module.
 
 #### **SUB_SLOT**
 
-Required, the sub slot number of the module inserted into the module.
+Required, the sub-slot number of the module inserted into the module.
 
 #### **INDEX**
 
@@ -78,9 +78,13 @@ Required, the data index in the module (which byte, starting from 0).
 
 |Address         | Data Type | Description|
 | ----------- | ------- | --------- |
-| 3:1:0   | int16    | slot 3， subslot 1  module 0,1 bytes|
-| 3:1:1   | uint16    | slot 3，subslot 1  module 1,2 bytes |
-| 3:2:3   | uint32    | slot 3，subslot 2  module 3,4,5,6 bytes|
-| 3:2:10   | float    | slot 3，subslot 2  module 10,11,12,13 bytes|
-| 3:2:2   | uint64    | slot 3，subslot 2  module 2,3,4,5,6,7,8,9 bytes|
-| 3:2:2   | double    | slot 3，subslot 2  module 2,3,4,5,6,7,8,9 bytes |
+| 3:1:0   | int16    | slot 3, subslot 1, module 0, 1 bytes |
+| 3:1:1   | uint16    | slot 3, subslot 1, module 1, 2 bytes |
+| 3:2:3   | uint32    | slot 3, subslot 2, module 3, 4, 5, 6 bytes |
+| 3:2:10   | float    | slot 3, subslot 2, module 10, 11, 12, 13 bytes |
+| 3:2:2   | uint64    | slot 3, subslot 2, module 2, 3, 4, 5, 6, 7, 8, 9 bytes |
+| 3:2:2   | double    | slot 3, subslot 2, module 2, 3, 4, 5, 6, 7, 8, 9 bytes |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
