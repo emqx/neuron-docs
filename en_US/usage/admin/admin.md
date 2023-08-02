@@ -26,7 +26,7 @@ $ systemctl status neuron
 
 Select the function of **Change Password** in **Administration** to change the login password, as shown in the figure below.
 
-![change_password](/Users/lena/Documents/GitHub/neuron-docs/en_US/usage/admin/assets/change_password.png)
+![change_password](./assets/change_password.png)
 
 If the user forgets the changed password, the user can reset the password by executing the command.
 
@@ -40,7 +40,7 @@ After logging into Neuron, click on **System Information** -> **About** in the t
 
 ![image-20230802172853368](./assets/usage.png)
 
-## [Data Monitoring](../monitoring.md)
+## [Data Monitoring and Device Control](../monitoring.md)
 
 This section discusses how to monitor data and control devices through Neuron. It details how to access and understand the data monitoring interface, as well as how to modify and validate changes in device values directly from the Neuron dashboard.
 

@@ -18,7 +18,7 @@ Select **Data Monitoring** under the **Monitoring** menu to enter the data monit
 
 When the tag is set with the write attribute, the Tag of the data monitoring interface will have a write operation. Click on **Write** button and input a value to control device. For example, modify the value of the 1!40001 point address with the write attribute, as shown below.
 
-![write](/Users/lena/Documents/GitHub/neuron-docs/en_US/usage/assets/write.png)
+![write](./assets/write.png)
 
 * Click on the **write** button at the end of the label to be changed;
 * Select whether to input in hexadecimal format, not select;
@@ -33,4 +33,4 @@ This point in the device must also have the writable attribute, otherwise it can
 
 Check over the Modbus simulator whether the point value has changed to the same input value as above.
 
-![monitor](/Users/lena/Documents/GitHub/neuron-docs/en_US/usage/assets/monitor.png)
+![monitor](./assets/monitor.png)
