@@ -10,7 +10,7 @@ The connection diagram is as follows:
 
 ![connect](./assets/connect.png)
 
-### Device Model
+## Device Model
 
 Chint Single-phase Rail Meter (DDSU666), 220V 5(60)A.
 

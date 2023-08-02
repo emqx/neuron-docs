@@ -28,7 +28,7 @@ At this point, the created template is empty without any data. Click the created
 
   ![Add template group](./assets/template_add_group.png)
 
-To add a group to the template, it is pretty much the same as that in [Configure Data Groups And Tags](../groups-tags/groups-tags). Here, we add a group named *grp* with an interval of *3000*.
+To add a group to the template, it is pretty much the same as that in [Configure Data Groups And Tags](../south-devices/south-devices.md#configure-data-groups-and-tags)). Here, we add a group named *grp* with an interval of *3000*.
 
   ![Template group list](./assets/template_group_list.png)
 
