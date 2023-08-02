@@ -17,8 +17,8 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 
 | Parameter      | Description                     |
 |--------- | ------------------------------------- |
-| **host** | BACnet device ip                   |
-| **port** | BACnet device port, default 47808  |
+| **Device IP Address** | BACnet device IP                 |
+| **Device Port** | BACnet device port, default 47808  |
 
 ## Configure Data Groups and Tags
 
@@ -38,7 +38,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> AREA[ADDRESS]</span>
+> AREA[ADDRESS]
 
 | AREA | ADDRESS RANGE | ATTRIBUTE  | DATA TYPE  | REMARK             |
 | ---- | ------------- | ---------- | ------------- | ------------------ |
@@ -67,3 +67,11 @@ For information on general configuration items, see [Connect to Southbound Devic
 | MSI10  | uint8     | MAI area, address is 10 |
 | MSI20  | uint8     | MSI area, address is 20 |
 | MSI30  | uint8     | MSI area, address is 30 |
+
+## Use Case
+
+YOu can use Neuron BACnet/IP plugin to connect the Yabe simulator, for details, see [Connect to Yabe](./example/yabe/yabe.md).
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
