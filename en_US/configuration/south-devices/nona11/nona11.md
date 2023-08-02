@@ -1,8 +1,6 @@
 # NON A11
 
-## Module Description
-
-The non a11 plugin is used for NON-A11 device.
+The non-A11 driver is applicable to non-A11 devices, with the plugin supporting both client and server modes for device interfacing. The plugin currently supports UINT16/INT16/UINT32/INT32/FLOAT/STRING data types and allows user-defined instructions for data reading.
 
 ## Add Device
 
@@ -15,11 +13,14 @@ Go to **Configuration -> South Devices**, then click **Add Device** to add the d
 
 After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
-| Parameter       | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| connection mode | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client |
-| host            | When neuron is used as a client, host means the ip of the remote device. When used as a server, it means the ip used by neuron locally, and 0.0.0.0 can be filled in by default |
-| port            | When neuron is used as client, port means the tcp port of the remote device. When used as a server, it means the tcp port used by neuron locally. |
+| Parameter              | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| **Connection Mode**    | The way the driver connects to the device, the default is client, which means that the neuron driver is used as the client |
+| **IP Address**         | Only for **TCP** mode. <br />When Neuron is used as a client, fill in the IP of the remote device. <br />When Neuron is used as a server, fill in the IP of Neuron locally, 0.0.0.0 can be filled in by default. |
+| **Port**               | Only for **TCP** mode. <br />When Neuron is used as a client, fill in the TCP port of the remote device. <br />When Neuron is used as a server, fill in the TCP port of Neuron. |
+| **Site Number**        | Site number                                                  |
+| **Connection Timeout** | Connection timeout, unit: ms                                 |
+| **Send Interval**      | Send reading instruction interval, unit: ms                  |
 
 ## Configure Data Groups and Tags
 
@@ -42,7 +43,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> SITE ! COMMAND ! OFFSET[.LEN]</span>
+> SITE ! COMMAND ! OFFSET[.LEN]
 
 ### Example Addresses
 
@@ -51,3 +52,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 | 1!1!10.20 | string             | site 1, command 1, offset 10, string length 20 |
 | 1!12!1    | uint16/int16       | site 1, command 12, offset 1                   |
 | 1!20!32   | uint32/int32/float | site 1, command 20, offset 32                  |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

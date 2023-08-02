@@ -1,13 +1,15 @@
 # ABB Comli
 
-This comli plugin is used to access ABB's COMLI compatible control system through serial port.
+COMLI is an ABB-specific protocol facilitating data exchange between ABB's PLCs and devices, supporting both point-to-point and multipoint communications over various mediums like RS-232, RS-485, or Ethernet, thereby enhancing IoT connectivity and interoperability.
+
+This ABB COMLI plugin is used to access ABB's COMLI-compatible control system through the serial port.
 
 ## Add Device
 
 Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
 
 - Name: The name of this device node.
-- Plugin: Select the **ABB COMLI*** plugin.
+- Plugin: Select the **ABB COMLI** plugin.
 
 ## Device Configuration
 
@@ -49,7 +51,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address format
 
-> SLAVE!AREA.ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!AREA.ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 #### **SLAVE**
 
@@ -68,9 +70,9 @@ Required, Slave is the slave address or site number.
 Optional, specify a specific bit in a register, as:
 | Address         | Data Type | Description                                                |
 | ----------- | ------- | --------------------------------------------------- |
-| 1!1.100.0  | bit     | Refers to station 1，Register area，address 100，bit 0.    |
-| 1!1.100.4  | bit     | Refers to station 1，Register area，address 100，bit 4.     |
-| 2!1.200.15 | bit     | Refers to station 2，Register area，address 200，bit 15. |
+| 1!1.100.0  | bit     | Refers to station 1, Register area, address 100, bit 0. |
+| 1!1.100.4  | bit     | Refers to station 1, Register area, address 100, bit 4.  |
+| 2!1.200.15 | bit     | Refers to station 2, Register area, address 200, bit 15. |
 
 #### **#ENDIAN**
 
@@ -98,39 +100,43 @@ When the data type is STRING, .LEN is a required field, indicating the number of
 
 | Address         | Data Type | Description |
 | ----------- | ------- | --------- |
-| 1!0.10      | bit      | Refers to station 1，I/O-bits area, address 10 |
-| 1!0.1000      | bit      | Refers to station 1，I/O-bits area, address 1000 |
-| 1!0.1100      | bit      | Refers to station 1，I/O-bits area, address 1100 |
-| 1!1.10.12   | bit      | Refers to station 1，Register area, address 10，bit 12 |
-| 1!1.10      | int16    | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10#L    | int16    | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10#B    | int16    | Refers to station 1，Register area, address 10，byte order #B |
-| 1!1.10      | uint16    | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10#L    | uint16    | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10#B    | uint16    | Refers to station 1，Register area, address 10，byte order #B |
-| 1!1.10    | int32    | Refers to station 1，Register area, address 10，byte order #LL |
-| 1!1.10#BB | int32   | Refers to station 1，Register area, address 10，byte order #BB |
-| 1!1.10#LB | int32   | Refers to station 1，Register area, address 10，byte order #LB |
-| 1!1.10#BL | int32   | Refers to station 1，Register area, address 10，byte order #BL |
-| 1!1.10    | uint32    | Refers to station 1，Register area, address 10，byte order #LL |
-| 1!1.10#BB | uint32   | Refers to station 1，Register area, address 10，byte order #BB |
-| 1!1.10#LB | uint32   | Refers to station 1，Register area, address 10，byte order #LB |
-| 1!1.10#BL | uint32   | Refers to station 1，Register area, address 10，byte order #BL |
-| 1!1.10 | float    | Refers to station 1，Register area, address 10，byte order #LL |
-| 1!1.10#BB | float    | Refers to station 1，Register area, address 10，byte order #BB |
-| 1!1.10#LB | float    | Refers to station 1，Register area, address 10，byte order #LB |
-| 1!1.10#BL | float    | Refers to station 1，Register area, address 10，byte order #BL |
-| 1!1.10    | uint64    | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10#B | uint64   | Refers to station 1，Register area, address 10，byte order #B |
-| 1!1.10#L | uint64   | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10 | int64    | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10#B    | int64    | Refers to station 1，Register area, address 10，byte order #B |
-| 1!1.10#L | int64   | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10 | double    | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10#B    | double    | Refers to station 1，Register area, address 10，byte order #B |
-| 1!1.10#L | double   | Refers to station 1，Register area, address 10，byte order #L |
-| 1!1.10.10  | String  | Refers to station1，Register area, address 10，character length 10，byte order L，which occupies addresses 10 to 15 |
-| 1!1.10.10H | String  | Refers to station1，Register area, address 10，character length 10，byte order H，which occupies addresses 10 to 15 |
-| 1!1.10.10L | String  | Refers to station1，Register area, address 10，character length 10，byte order L，which occupies addresses 10 to 15 |
-| 1!1.10.10D | String  | Refers to station1，Register area, address 10，character length 10，byte order D，which occupies addresses 10 to 20 |
-| 1!1.10.10E | String  | Refers to station1，Register area, address 10，character length 10，byte order E，which occupies addresses 10 to 20 |
+| 1!0.10      | bit      | Refers to station 1, I/O-bits area, address 10 |
+| 1!0.1000      | bit      | Refers to station 1, I/O-bits area, address 1000 |
+| 1!0.1100      | bit      | Refers to station 1, I/O-bits area, address 1100 |
+| 1!1.10.12   | bit      | Refers to station 1, Register area, address 10, bit 12 |
+| 1!1.10      | int16    | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10#L    | int16    | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10#B    | int16    | Refers to station 1, Register area, address 10, byte order #B |
+| 1!1.10      | uint16    | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10#L    | uint16    | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10#B    | uint16    | Refers to station 1, Register area, address 10, byte order #B |
+| 1!1.10    | int32    | Refers to station 1, Register area, address 10, byte order #LL |
+| 1!1.10#BB | int32   | Refers to station 1, Register area, address 10, byte order #BB |
+| 1!1.10#LB | int32   | Refers to station 1, Register area, address 10, byte order #LB |
+| 1!1.10#BL | int32   | Refers to station 1, Register area, address 10, byte order #BL |
+| 1!1.10    | uint32    | Refers to station 1, Register area, address 10, byte order #LL |
+| 1!1.10#BB | uint32   | Refers to station 1, Register area, address 10, byte order #BB |
+| 1!1.10#LB | uint32   | Refers to station 1, Register area, address 10, byte order #LB |
+| 1!1.10#BL | uint32   | Refers to station 1, Register area, address 10, byte order #BL |
+| 1!1.10 | float    | Refers to station 1, Register area, address 10, byte order #LL |
+| 1!1.10#BB | float    | Refers to station 1, Register area, address 10, byte order #BB |
+| 1!1.10#LB | float    | Refers to station 1, Register area, address 10, byte order #LB |
+| 1!1.10#BL | float    | Refers to station 1, Register area, address 10, byte order #BL |
+| 1!1.10    | uint64    | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10#B | uint64   | Refers to station 1, Register area, address 10, byte order #B |
+| 1!1.10#L | uint64   | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10 | int64    | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10#B    | int64    | Refers to station 1, Register area, address 10, byte order #B |
+| 1!1.10#L | int64   | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10 | double    | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10#B    | double    | Refers to station 1, Register area, address 10, byte order #B |
+| 1!1.10#L | double   | Refers to station 1, Register area, address 10, byte order #L |
+| 1!1.10.10  | String  | Refers to station1, Register area, address 10, character length 10, byte order L, which occupies addresses 10 to 15 |
+| 1!1.10.10H | String  | Refers to station1, Register area, address 10, character length 10, byte order H, which occupies addresses 10 to 15 |
+| 1!1.10.10L | String  | Refers to station1, Register area, address 10, character length 10, byte order L, which occupies addresses 10 to 15 |
+| 1!1.10.10D | String  | Refers to station1, Register area, address 10, character length 10, byte order D, which occupies addresses 10 to 20 |
+| 1!1.10.10E | String  | Refers to station1, Register area, address 10, character length 10, byte order E, which occupies addresses 10 to 20 |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
