@@ -48,13 +48,13 @@ Neuron 的 Siemens FetchWrite 插件用于带有网络扩展模块 CP443 的西�
 
 | 区域 | 数据类型                                                     | 属性  | 备注                    |
 | ---- | ------------------------------------------------------------ | ----- | ----------------------- |
-| DB   | int16/uint16/bit/int32/uint32/int64/uint64/float/double/string | 读    | 主存数据块，以 words 读写 |
-| M    | int8/uint8/int16/uint16/bit/int32/uint32/int64/uint64/float/double/string | 读/写 | 标志内存 M，以 bytes 读写  |
-| I    | int8/uint8/int16/uint16/bit/int32/uint32/int64/uint64/float/double/string | 读/写 | 输入，以 bytes 读写       |
-| Q    | int8/uint8/int16/uint16/bit/int32/uint32/int64/uint64/float/double/string | 读/写 | 输出，以 bytes 读写       |
-| PEPA | int8/uint8/int16/uint16/bit/int32/uint32/int64/uint64/float/double/string | 读/写 | IO modules，以 bytes 读写 |
-| Z    | int16/uint16/bit/int32/uint32/int64/uint64/float/double/string | 读/写 | 计数器，以 words 读写     |
-| T    | int16/uint16/bit/int32/uint32/int64/uint64/float/double/string | 读/写 | 计时器，以 words 读写     |
+| DB   | int16，uint16，bit，int32，uint32，int64，uint64，float，double，string | 读    | 主存数据块，以 words 读写 |
+| M    | int8，uint8，int16，uint16，bit，int32，uint32，int64，uint64，float，double，string | 读/写 | 标志内存 M，以 bytes 读写  |
+| I    | int8，uint8，int16，uint16，bit，int32，uint32，int64，uint64，float，double，string | 读/写 | 输入，以 bytes 读写       |
+| Q    | int8，uint8，int16，uint16，bit，int32，uint32，int64，uint64，float，double，string | 读/写 | 输出，以 bytes 读写       |
+| PEPA | int8，uint8，int16，uint16，bit，int32，uint32，int64，uint64，float，double，string | 读/写 | IO modules，以 bytes 读写 |
+| Z    | int16，uint16，bit，int32，uint32，int64，uint64，float，double，string | 读/写 | 计数器，以 words 读写     |
+| T    | int16，uint16，bit，int32，uint32，int64，uint64，float，double，string | 读/写 | 计时器，以 words 读写     |
 
 #### .BIT
 
