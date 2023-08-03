@@ -1,4 +1,4 @@
-## Profinet IO
+# Profinet IO
 
 PROFINET is an open industrial Ethernet communication protocol proposed by the PROFIBUS & PROFINET International Association. PROFINET applies TCP/IP related standards and is a real-time industrial Ethernet. PROFINET has a modular structure, and users can choose cascading skills according to their needs.
 
