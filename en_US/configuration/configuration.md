@@ -25,9 +25,9 @@ Neuron offers extensive support for a wide range of communication protocols and 
    |                | [KNXnet/IP](./south-devices/knxnet-ip/knxnet-ip.md)          |              | <!--Allen-Bradley DF1 with doc to be added-->                |
    | **Environmental Monitoring**   | [HJ212-2017](./south-devices/hj212-2017/hj212-2017.md)       | **Petroleum Industry** | [NON A11](./south-devices/nona11/nona11.md)                  |
 
-2. [Creating Southbound Drivers](./south-devices/south-devices.md): Choose required southbound plugins for device communication based on industrial protocols. Each plugin can connect to a single device or multiple devices associated with a message bus, adhering to protocol standards. Users can create southbound drivers with plugins or [templates](./templates/templates.md) as per their preferences.
+2. [Create Southbound Drivers](./south-devices/south-devices.md): Choose required southbound plugins for device communication based on industrial protocols. Each plugin can connect to a single device or multiple devices associated with a message bus, adhering to protocol standards. Users can create southbound drivers with plugins or [templates](./templates/templates.md) as per their preferences.
 
-3. [Connecting Southbound Devices](./south-devices/south-devices.md#configure-data-groups-and-tags): Connect southbound devices by creating groups and points. Once groups and points are set up, users can monitor the real-time values of the data points through data monitoring. For easy configuration, Neuron supports [offline Excel file batch imports](./import-export/import-export.md) of relevant configuration information.
+3. [Connect to Southbound Devices](./south-devices/south-devices.md#configure-data-groups-and-tags): Connect southbound devices by creating groups and points. Once groups and points are set up, users can monitor the real-time values of the data points through data monitoring. For easy configuration, Neuron supports [offline Excel file batch imports](./import-export/import-export.md) of relevant configuration information.
 
 ::: tip
 
@@ -36,9 +36,9 @@ Repeat steps 2 and 3 until all necessary drivers, groups, and points are created
 
 ## Data Forwarding
 
-1. [Creating Northbound Applications](./north-apps/north-apps.md): Choose the relevant northbound plugins to enable seamless data forwarding. Each northbound plugin can connect to a single destination, such as a proxy or application. Currently, Neuron supports the following northbound applications:
+1. [Create Northbound Applications](./north-apps/north-apps.md): Choose the relevant northbound plugins to enable seamless data forwarding. Each northbound plugin can connect to a single destination, such as a proxy or application. Currently, Neuron supports the following northbound applications:
    - [MQTT](./north-apps/mqtt/overview.md)
-   - [eKuiper](./north-apps/ekuiper/ekuiper.md)
+   - [eKuiper](./north-apps/ekuiper/overview.md)
    - [SparkPlugB](./north-apps/sparkplugb/overview.md)
    - [WebSocket](./north-apps/websocket/websocket.md)
    - [Monitor](./north-apps/monitor/overview.md)

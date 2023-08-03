@@ -2,7 +2,7 @@
 
 EtherNet/IP (Industrial Protocol), developed and maintained by the Open DeviceNet Vendor Association (ODVA), is a pivotal network protocol in industrial automation. It fosters seamless automated control and data exchange between devices, significantly benefiting sectors including manufacturing, energy, transportation logistics, and construction by enhancing operational efficiency and data transparency.
 
-With Neuron EtherNet/IP (CIP), you can use Neuron to connect EtherNet/IP devices.
+You can use Neuron EtherNet/IP (CIP) plugin to connect EtherNet/IP devices.
 
 ## Add Device
 

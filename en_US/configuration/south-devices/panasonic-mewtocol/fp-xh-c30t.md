@@ -31,10 +31,13 @@ Panasonic's FP-XH C30T is a versatile PLC from the FP-XH series, ideal for small
 
 3. Modify **PLC Port** to be the target device port in the device configuration.
 
-4. Change **Unit Number** to the target device unit number in the device configuration and submit the setup form.
+4. Change **Unit No.** to the target device unit number in the device configuration and submit the setup form.
 ![7](./assets/7.jpg)
 
+5. Create tags in the group. 
+
 ## Test Data List
+
 | Name |  Address    | Attribute | Data type   |
 | ---- | --------| ---- | ------ |
 | DATA1  | DT0    | Read Write | INT16  |

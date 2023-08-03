@@ -1,4 +1,6 @@
-# Connection policy
+# Connection Policy
+
+On this page, you'll learn about client certificate and key configuration for connecting with the Neuron OPC UA module. This includes different login modes, certificate requirements, conversion and generation of certificates, and how to work with the crucial localhost.cnf file. 
 
 ## Client Login Mode
 

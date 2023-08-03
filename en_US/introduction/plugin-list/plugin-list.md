@@ -137,6 +137,8 @@ Core framework, dashboard, and a few plugin modules such as Modbus TCP, MQT, and
 
 For these commercial modules, Neuron also provides a forever free quota (with 30 connections and 30 data tags) for your exploration. 
 
+Note: The Fanuc Focas Ethernet and Mitsubishi CNC plugins are not within the scope of the 30-point free-for-life offer. If you wish to try them out, you can directly [contact us](https://www.emqx.com/en/contact?product=neuron).
+
 :::
 
 ## Apply for License

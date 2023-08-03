@@ -54,13 +54,16 @@ In the Neuron UI interface, follow these steps:
    * Data bits: 8
 
 2. Click on the DL/T645-2007 device card and create a group.
+
 3. Create tags in the group, you may refer to the table below for reference. 
 
+   
+
    | Name            | Attribute  | Type   | Address                  | Decimal     |
-| --------------- | ---------- | ------ | ------------------------ | -------- |
-| Phase A voltage | Read       | UINT16 | 210220003011#02-01-01-00 | 0.1     |
-| Phase A current | Read       | UINT32 | 210220003011#02-02-01-00 | 0.001   |
-| Instantaneous active power of phase A  | Read      | UINT32 | 210220003011#02-03-01-00 |  0.0001  |
+   | --------------- | ---------- | ------ | ------------------------ | -------- |
+   | Phase A voltage | Read       | UINT16 | 210220003011#02-01-01-00 | 0.1     |
+   | Phase A current | Read       | UINT32 | 210220003011#02-02-01-00 | 0.001   |
+   | Instantaneous active power of phase A  | Read      | UINT32 | 210220003011#02-03-01-00 |  0.0001  |
 
 ## Further Reading
 

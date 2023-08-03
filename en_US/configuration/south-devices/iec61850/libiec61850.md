@@ -4,7 +4,7 @@ libiec61850 is an open-source (GPLv3) implementation of an IEC 61850 client and 
 
 ## Install LibIEC61850
 
-Go to https://github.com/mz-automation/libiec61850 to download the source code, follow the instructions on the project page to compile the source code, here is a demonstration of the compilation and installation on Ubuntu systems.
+Go to [libiec61850 GitHub page](https://github.com/mz-automation/libiec61850) to download the source code, follow the instructions on the project page to compile the source code, here is a demonstration of the compilation and installation on Ubuntu systems.
 
 ```sh
 $ cd libiec61850
@@ -16,7 +16,7 @@ $ cd sudo ./examples/server_example_61400_25/server_example_61400_25
 
 ## Install IEDExplorer
 
-1. Go to https://sourceforge.net/projects/iedexplorer/ to download IEDExplorer.
+1. Go to [IEDExplorer Download page](https://sourceforge.net/projects/iedexplorer/) to download IEDExplorer.
 
 2. Open IEDExplorer_0.79n.exe and set the IP address and port of the **server_example_61400_25** server to listen on and start the connection.
 ![libiec61850_1](./assets/libiec61850_1.jpg)

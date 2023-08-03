@@ -2,7 +2,7 @@
 
 OPC UA is a machine-to-machine communication protocol for industrial automation developed and maintained by the OPC Foundation. OPC UA provides a standardized way for different devices and systems to communicate with each other.
 
-The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industrial Gateway OPC Server, Prosys Simulation Server, Ignition, and other OPC UA servers. You can also directly access the built-in OPC UA Server of hardware equipment, such as: the built-in Server of Siemens S7-1200 PLC, the built-in Server of Omron NJ series PLC, etc.
+The Neuron OPC UA plugin can be used as a client to access KEPServerEX, Industrial Gateway OPC Server, Prosys Simulation Server, Ignition, and other OPC UA servers. You can also directly access the built-in OPC UA Server of hardware equipment, such as the built-in Server of Siemens S7-1200 PLC, the built-in Server of Omron NJ series PLC, etc.
 
 ## Add Device
 

@@ -1,18 +1,18 @@
-# Batch Data Tag Configuration
+# Batch Data Group/Tag Configuration
 
-Neuron provides the function of batch import and export of label configuration information in Excel form, which can speed up the configuration of data labels, and can easily export the created data label information to external storage.
+Neuron offers a feature that allows batch import and export of data label configuration information in Excel format. This function accelerates the data label configuration process and conveniently enables the export of created data label information to external storage.
 
 ## Import Data Tags
 
-### Step 1 Download Template
+### Download Template
 
 Select **South Devices -> Group List**. Hover the mouse over **Import** and the button **Download Template** will appear.
 
 Click the **Download Template** button to download the Excel sheet.
 
-### Step 2 Fill in the Excel Sheet
+### Configure the Template
 
-Fill in the relevant information according to the Excel sheet format as shown below.
+Fill in the relevant information according to the Excel sheet format, as shown below.
 
 ![excel](./assets/excel.png)
 
@@ -27,7 +27,7 @@ The following items must be filled out accordingly:
 * **precision**: Optional, used to set the multiplier of the read value, can be empty;
 * **decimal**: Optional, when the data type is float or double, it is used to set the precision.
 
-### Step 3 Import the Excel Sheet
+### Import the Configured Template
 
 Click on the **Import** button and select the Excel file to be imported.
 

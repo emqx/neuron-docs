@@ -5,7 +5,7 @@ USR DTU supports two-way conversion of data, supports mutual conversion of commo
 You can directly communicate with Modbus RTU devices using Neuron's Modbus RTU plugin in serial mode. Or you can use USR DTU to first gather and convert serial data to network data, then connect it to Neuron. In this case:
 
 - For USR DTU's pass-through working mode, connect directly to the Ethernet mode of Neuron's Modbus RTU module. 
-- If you're using YouRenYun DTU's Modbus TCP mode, you need to use the Modbus TCP plugin.
+- If you're using USR DTU's Modbus TCP mode, you need to use the Modbus TCP plugin.
 
 This section introduces how to connect USR DTU under Modbus TCP mode. For details about Neuron's Modbus TCP plugin, see the  [Modbus TCP driver module](../../../modbus-tcp/modbus-tcp.md).
 
@@ -34,7 +34,7 @@ The following figure shows the workflow for establishing a connection between th
 
 <img src="./assets/client_server.png" alt="client_server" style="zoom:50%;" />
 
-## Connect Neuron (Client)
+## Establish Client Connection with Neuron
 
 This section mainly describes the configuration of Neuron and DTU when Neuron serves as the Client and DTU serves as Server.
 
@@ -47,15 +47,15 @@ First, you need to configure the parameters of the connection between the DTU an
 <img src="./assets/tcp-server.png" alt="tcp-server" style="zoom:50%;" />
 
 * Working mode: TCP Server, Modbus TCP;
-* Fill in the unused local port, no need to fill in the remote port;
+* Fill in an unused local port, no need to fill in the remote port;
 * The other parameters are optional.
 
 ### Get DTU IP
 
-When configuring the Neuron southbound driver, it needs to be the IP of the DTU on the server side, as shown in the figure below.
+While configuring the Neuron's southbound driver, you'll need to input the IP address of the server-side DTU, as illustrated in the figure below.
 ![dtu-ip-config](./assets/dtu-ip-config.png)
 
-### Connect Neuron (Client)
+### Configure Neuron (Client)
 
 In **South Device**, create a node using the plugin Modbus TCP, and configure the driver, as shown in the figure below.
 ![neuron-client-config](./assets/neuron-client-config.png)
@@ -65,7 +65,7 @@ In **South Device**, create a node using the plugin Modbus TCP, and configure th
 * **Port**: Fill in the port of USR DTU
 * **Timeout**: Keep the default setting
 
-## Connect Neuron (Server)
+## Establish Server Connection with Neuron
 
 This section mainly describes the configuration of Neuron and DTU when Neuron serves as the Server and DTU serves as the Client.
 

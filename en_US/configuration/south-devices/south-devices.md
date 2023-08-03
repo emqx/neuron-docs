@@ -4,11 +4,11 @@ This chapter will introduce how to use Neuron to support the transformation of v
 
 Modbus TCP is a version of the Modbus protocol based on Ethernet, which uses TCP/IP for communication.
 
-## Add A Southbound Device
+## Add a Southbound Device
 
 Create a southbound device node to connect to a real device or simulator.
 
-In **Configuration** -> **South Devices**, click **Add Device** to add a device node. Or you can choose to add southbound devices in a plugin mode and install and [configure the plugin through a template](../templates/templates.md). This demonstration will use the plugin method as an example.  
+In **Configuration** -> **South Devices**, click **Add Device** to add a device node. Or you can choose to [configure the plugin through a template](../templates/templates.md). This demonstration will use the plugin method as an example.  
 
 * Name: Fill in the name of the device, such as modbus-tcp-1;
 * Plugin: Select the plugin of modbus-tcp from the drop-down box.
@@ -76,14 +76,14 @@ Click the new device node to enter the group list management interface, and clic
 * Interval: Set the frequency of collection and reporting of this group of tags, in milliseconds, 100 means that the whole group of points is collected every 100 ms and the value of the whole group of points is reported once.
 
 :::tip
-Interval is a time interval that is used to collect data from equipment and report the data to MQTT. The minimum setting can be 100ms, but when there are a lot of collected data, if the data monitoring interface reports an error that the point value is invalid, the value of the interval can be appropriately increased.
+An interval is a duration of time utilized for data collection from equipment and subsequent reporting to MQTT. The minimum setting available is 100ms. However, when there is a large volume of data being collected, the data monitoring interface may report an error indicating an invalid point value. In such cases, it would be appropriate to increase the interval value.
 :::
 
 ### Add Tags to the Group
 
 Add the device tags to be collected, including tag address, tag attribute, tag type, etc.
 
-Click the **Tag list** icon in the group to enter the tag list management interface.
+Click the **Tag List** icon in the group to enter the tag list management interface.
 
 Select the **Create** icon to enter the tag page.
 
@@ -102,7 +102,7 @@ Select the **Create** icon to enter the tag page.
 * **Description**: Default is not filled.
 
 ::: tip
-After the tag is created, the working status of the equipment card is **running**, and the connection status should be **Connected**. If the connection status is still **Disconnected**, please execute the following instructions at the terminal of the Neuron running environment to confirm whether the Neuron running environment can access the corresponding IP and port.
+Once the tag is created and the equipment card is operational, the connection status should display as **Connected**. If the status remains as **Disconnected**, please execute the following commands in the terminal of the Neuron runtime environment. This will help verify if the Neuron runtime environment can access the appropriate IP address and port.
 
 ```bash
 telnet <Running IP on PC side of Modbus simulator> 502

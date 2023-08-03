@@ -2,7 +2,7 @@
 
 Modbus RTU is a version of the Modbus protocol that is based on serial communication. Unlike the Modbus TCP protocol, Modbus RTU is typically used to connect sensors, actuators, and other control devices on a factory production line. It is a fast, reliable, and flexible serial communication protocol that provides reliable data transmission and control functions.
 
-The Modbus RTU protocol uses binary encoding and can transmit data over RS-232, RS-485, or other serial communication media. The Modbus RTU plugin for Neuron adds an implementation based on Ethernet TCP and enables remote device data acquisition and control through a DTU device.
+The Modbus RTU protocol uses binary encoding and can transmit data over RS-232, RS-485, or other serial communication media. Neuron Modbus RTU plugin adds an implementation based on Ethernet TCP and enables remote device data acquisition and control through a DTU device.
 
 ## Add Device
 
@@ -77,9 +77,12 @@ Required, Address is the register address. The Modbus protocol has four areas, e
 Some device specification documents may use function codes and register addresses to describe commands. Since register address number starts at 0, the register address range for each area is 0 to 65535. Neuron uses a PLC configuration address specification, so the addresses configured in Neuron start from 1.
 
 The conversion rule for the configuration address specification is as follows: determine the highest digit of the address based on the function code, and add 1 to the register address to obtain the address used in Neuron.
-:::
 
 For example, if the function code is 0x03 and the register address is 0, the address used in Neuron is 400001. If the function code is 0x02 and the register address is 5, the address used in Neuron is 100006.
+
+:::
+
+
 
 #### **.BIT**
 
@@ -117,7 +120,7 @@ When the data type is STRING, `.LEN` is a required field, indicating the number 
 
 | Address        | Data Type | Description |
 | ----------- | ------- | --------- |
-| 1!300004    | int16    | Refers to station 1, input area, address 300004, byte order #L |
+| 1!300004    | int16 | Refers to station 1, input area, address 300004, byte order #L |
 | 1!300004#B  | int16    | Refers to station 1, input area, address 300004, byte order #B |
 | 1!300004#L  | uint16   | Refers to station 1, input area, address 300004, byte order #L |
 | 1!400004    | int16    | Refers to station 1, hold register area, address 400004, byte order #L |

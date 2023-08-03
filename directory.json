@@ -677,12 +677,12 @@
           "path": "configuration/south-devices/modbus-rtu/modbus-rtu",
           "children": [
             {
-              "title": "Connect to USR DTU",
-              "path": "configuration/south-devices/modbus-rtu/example/dtu/dtu-connection"
-            },
-            {
               "title": "Connect to Modbus Slave",
               "path": "configuration/south-devices/modbus-rtu/example/modbus-slave/modbus-slave"
+            },
+            {
+              "title": "Connect to USR DTU",
+              "path": "configuration/south-devices/modbus-rtu/example/dtu/dtu-connection"
             },
             {
               "title": "FAQ",
@@ -709,7 +709,7 @@
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
             {
-              "title": "Connection policy",
+              "title": "Connection Policy",
               "path": "configuration/south-devices/opc-ua/policy"
             },
             {

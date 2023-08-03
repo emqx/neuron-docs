@@ -14,7 +14,7 @@ Neuron 2.5.0 template feature only supports southbound plugins.
 
 ### Add Template
 
-Click **Configuration -> Template -> Add Template** to open the **Add Template** dialog.
+Click **Configuration -> Template -> Add Template** to open the **Add Template** dialog box.
 
   ![Add template dialog](./assets/template_add_dialog.png)
 
@@ -28,7 +28,7 @@ At this point, the created template is empty without any data. Click the created
 
   ![Add template group](./assets/template_add_group.png)
 
-To add a group to the template, it is pretty much the same as that in [Configure Data Groups And Tags](../south-devices/south-devices.md#configure-data-groups-and-tags)). Here, we add a group named *grp* with an interval of *3000*.
+To add a group to the template, it is pretty much the same as that in [Configure Data Groups And Tags](../south-devices/south-devices.md#configure-data-groups-and-tags). Here, we add a group named *grp* with an interval of *3000*.
 
   ![Template group list](./assets/template_group_list.png)
 
@@ -47,7 +47,7 @@ To keep things simple, we just add two tags. Click the **Create** button to fina
   ![Template tag list](./assets/template_tag_list_2.png)
 
 
-## Configure with Template
+## Create Neoron Nodes with Template
 
 Click **Configuration -> South Devices -> Add Device** to open the **New Device** dialog.
 
@@ -78,13 +78,13 @@ To export a template, just click the **Export icon** on the desired template and
 
   ![Template export](./assets/template_export.png)
 
-### Import template
+### Import Template
 
 To import a template, click **Import Template** in the **Template** tab and provide the JSON file to import data from.
 
   ![Template import](./assets/template_import_1.png)
 
-In the **Import Template** dialog, users could alter the template name to avoid name conflicts. Click the **Create** button to finish the import.
+In the **Import Template** dialog box, users could alter the template name to avoid name conflicts. Click the **Create** button to finish the import.
 
   ![Template import](./assets/template_import_2.png)
 

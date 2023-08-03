@@ -1,8 +1,8 @@
 # Connect to Prosys Simulation Server
 
-Developed by Prosys, the Prosys Simulation Server is a sophisticated OPC UA server that serves to replicate the behaviors of OPC UA devices and systems. I
+Developed by Prosys, the Prosys Simulation Server is a sophisticated OPC UA server that serves to replicate the behaviors of OPC UA devices and systems. 
 
-You need to switch Prosys Simulation Server to **Expert Mode** first, click on the menu **Options** -> **Switch to Expert Mode**.
+To establish a seamless connection with the Prosys Simulation Server using Neuron's OPC UA plugin, it's essential first to switch the Prosys Simulation Server to Expert Mode. This can be done by selecting **Options** -> **Switch to Expert Mode** from the menu.
 
 ## Anonymous Login
 

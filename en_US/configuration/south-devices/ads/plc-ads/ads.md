@@ -69,7 +69,7 @@ Before Neuron and the TwinCAT PLC can communicate with each other, we first need
 </figure>
 
 
-### View AMS Net ID and Port Number
+### Get AMS Net ID and Port Number
 
 1. Open the **TwinCAT System** dialog to show the AMS Net ID.
 
@@ -92,7 +92,7 @@ Before Neuron and the TwinCAT PLC can communicate with each other, we first need
   </figcaption>
 </figure>
 
-### View Index Group and Index Offset of Variables
+### Get Index Group and Index Offset of Variables
 
 We use the following TwinCAT PLC program, which defines enough variables for
 testing in this tutorial.
@@ -137,7 +137,7 @@ Open the TwinCAT PLC data area tab to find the index offset of the variables.
 </figure>
 
 
-#### Obtain the Index Group/Offset by TPY File
+#### Get the Index Group/Offset by TPY File
 
 We could also find the index group and index offset through the TPY file.
 
@@ -182,7 +182,7 @@ We could also find the index group and index offset through the TPY file.
 
 ### Add ADS South Node
 
-1. In the Neuron dashboard, click **South Devices -> Add Device** to add an ADS node.
+In the Neuron dashboard, click **South Devices -> Add Device** to add an ADS node.
 
 <figure align="center">
   <img src="./assets/add-driver.png"

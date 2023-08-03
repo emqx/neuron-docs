@@ -7,7 +7,7 @@ This article will use the IEC60870-5-104 plugin of Neuron to connect to [IEC6087
 You can download the IEC6087-5-104 Server Simulator from [here](https://sourceforge.net/u/freyrscada/profile/), the trial version of the emulator will automatically shut down after 15 minutes of operation, save the configuration data in time. 
 Download and unzip the IEC6087-5-104 Server Simulator executable file, click install.
 
-### Configure Simulator
+## Configure Simulator
 
 1. Open **IEC 60870-5-104 Server Simulator**.
 2. Click **Add Server** to create a server.
@@ -19,7 +19,7 @@ Download and unzip the IEC6087-5-104 Server Simulator executable file, click ins
 
 6. Click **Load Configuration** and then click **Start Communication** to run server.
 
-### Configure Neuron
+## Configure Neuron
 
 1. Go to Neuron Dashboard, and create a south node with the **IEC60870-5-104 plugin**.
 2. Click **Device Configuration** and then **Device IP Address** fill in the simulator address, other parameters keep default value.

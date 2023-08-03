@@ -13,7 +13,7 @@ Modbus Slave read/write data from devices using:
 
 Install Modbus Slave software and the installation package can be downloaded from [Modbus tool download](https://www.modbustools.com/download.html), choose the appropriate version based on the operating environment. The software provides a free usage period of 30 days. For the free duration phase, the connection will be disconnected once every 10 minutes, and after disconnection, the software needs to be restarted.
 
-## Connect Neuron (Client)
+## Establish Client Connection with Neuron
 
 This section mainly describes the configuration of Neuron and Modbus Slave when Neuron serves as Client and Modbus Slave serves as Server.
 

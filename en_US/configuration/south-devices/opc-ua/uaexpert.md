@@ -4,11 +4,11 @@ UaExpert is a full-featured OPC UA client that enables users to connect to an OP
 
 ## Install UaExpert
 
-Go to `https://www.unified-automation.com/downloads.html` to register and download UaExpert and install it.
+Go to [Unified Automation Downloads](https://www.unified-automation.com/downloads.html) to register and download UaExpert and install it.
 
 ## Get Node Information
 
-1. Open UaExpert software, click the toolbar `+` button, double click **Custom Discovery** -> **< Double click to Add Server... >**, in the pop-up dialog box, fill in the access address of OPC UA Server, click `OK` and the address will be added to the end of the list.
+1. Open UaExpert software, click the toolbar `+` button, double click **Custom Discovery** -> **< Double click to Add Server... >**, in the pop-up dialog box, fill in the access address of OPC UA Server, click **OK** and the address will be added to the end of the list.
 
      ![uaexpert1](./assets/uaexpert1.jpg)
 
@@ -24,7 +24,7 @@ Go to `https://www.unified-automation.com/downloads.html` to register and downlo
 
      ![uaexpert3](./assets/uaexpert3.jpg)
 
-4. Expand the child nodes in the **Address Space** view on the left to see the address information of the corresponding node in **Attributes** on the right, where `NamespaceIndex` is the **Namespace Index** and `Identifier` is the **Node ID**.
+4. Expand the child nodes in the **Address Space** view on the left to see the address information of the corresponding node in **Attributes** on the right, where **NamespaceIndex** is the **Namespace Index** and **Identifier** is the **Node ID**.
      ![uaexpert4](./assets/uaexpert4.jpg)
 
 5. Drag the child node in the **Address Space** view to the **Data Access View** view to see the data type of the node.
