@@ -5,7 +5,7 @@
 Download the installation package according to different versions and architectures, E.g.
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.4.0/neuron-2.4.0-linux-amd64.rpm
+$ wget https://www.emqx.com/en/downloads/neuron/2.5.3/neuron-2.5.3-linux-amd64.rpm
 ```
 
 ## Install
@@ -13,7 +13,7 @@ $ wget https://www.emqx.com/en/downloads/neuron/2.4.0/neuron-2.4.0-linux-amd64.r
 Install according to different versions and architectures, E.g.
 
 ```bash
-$ sudo rpm -i neuron-2.4.0-linux-amd64.rpm
+$ sudo rpm -i neuron-2.5.3-linux-amd64.rpm
 ```
 
 ::: tip

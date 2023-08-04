@@ -13,7 +13,7 @@ $ docker pull emqx/neuron:latest
 
 ```bash
 ## pull Neuron
-$ docker pull emqx/neuron:2.3.0-alpine
+$ docker pull emqx/neuron:2.5.3-alpine
 ```
 
 ## 启动
