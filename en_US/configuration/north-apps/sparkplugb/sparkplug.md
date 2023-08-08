@@ -1,20 +1,3 @@
-# Sparkplug B
-
-## Overview
-
-Sparkplug B is an industrial IoT data transfer specification built on MQTT 3.1.1. Sparkplug B provides a unified way for device manufacturers and software providers to share data by making MQTT networks state-aware and interoperable while ensuring flexibility and efficiency.
-
-Data collected by Neuron from devices can be transferred from the edge to the Sparkplug B application via the Sparkplug B protocol, and users can send data modification commands to Neuron from the application. sparkplug B is an application-based protocol running on top of MQTT, so the setup in Neuron is similar to the MQTT driver.
-
-## Example
-
-Here, the actual point data of the device is collected through the Neuron southbound, and the data is reported to EMQX through the northbound Sparkplug B plug-in, and the correct and complete data results are obtained after decoding through the codec function. The process is shown in the figure:
-
-![Sparkplug B](./assets/sparkplug.png)
-
-## Neuron
-
-### Southbound device
 # Integrate with EMQX
 
 This page introduces how to use the Neuron southbound driver to collect data, then report the data to EMQX through the northbound Sparkplug B plug-in, and the correct and complete data results are obtained after decoding through the codec function. The process is shown in the figure:

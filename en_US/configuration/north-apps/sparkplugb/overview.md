@@ -44,7 +44,7 @@ Click the device card or row on the **North Apps** page, then **Add Subscription
 
 ## Use Case
 
-- You can use the Neuron Sparkplug B plugin to report data to EMQX, and decode the complete and accurate data results through the EMQX's encoding and decoding functions. For specific results, see [Integration with EMQX](sparkplug.md).
+- You can use the Neuron Sparkplug B plugin to report data to EMQX, and decode the complete and accurate data results through the EMQX's encoding and decoding functions. For specific steps, see [Integration with EMQX](sparkplug.md).
 - You can connect to the Ignition platform through the Neuron SparkPlugB plugin. For specific steps, refer to [Ignition](ignition.md).
 - You can also connect to Cogent DataHub through the Neuron SparkPlugB plugin. For specific steps, refer to [Cogent](cogent.md).
 
