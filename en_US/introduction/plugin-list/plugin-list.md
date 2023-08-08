@@ -1,5 +1,38 @@
 # Plugin List
 
+## View All Available Plugins
+
+The plugin management page displays all the pluggable modules available and detailed information, including the name of the plug-in, associated node type, plug-in category, driver library name and description, as shown in the following figure.
+
+![plugin-options](./assets/plugin-options.png)
+
+Click the `Document` button in the upper right corner of the plugin card to jump to the documentation for the specific use and description of the driver.
+
+The plug-in types include the following 3 modes:
+
+* Static: cannot be deleted
+* System: cannot be deleted, native
+* Custom: Deletable, user-developed or custom-developed
+
+:::tip
+Users can filter out the plugins for northbound applications or southbound devices from the dropdown box.
+:::
+
+## Add A New Pluggable Module
+
+Click on the `Add Plugin` button in the upper right corner as shown below
+
+![plugin-add](./assets/plugin-add.png)
+
+To add a new Pluggable module,
+
+* Fill in the path and file name of the .so file that needs to be added.
+* Click on the `Create` button to move .so file to the build directory.
+
+:::tip
+Please make sure that the plugin .so file you have written is placed under the neuron/build/plugins directory before adding it. For specific plugin development tutorials, please refer to [SDK Tutorial](../../dev-guide/sdk-tutorial/sdk-tutorial.md).
+:::
+
 ## Southbound Plugin Modules
 
 ### Global Standards
@@ -96,11 +129,20 @@
 | --------------------- | ----------- | --------- | ------- |
 | <div style="width:295pt">eKuiper Stream Processing</div>    | <div style="width:110pt">Open Source</div>  | <div style="width:50pt">Yes</div>        | <div style="width:110pt"> </div> |
 
-## EMQ License for commercial modules
+## EMQ License Policy for Commercial Modules
 
-* Core framework, dashboard and modbus, mqtt and eKuiper pluggable modules are open source under LGPLv3 license. Neuron could run with these modules without a license installed. A valid trial or official EMQ license must be installed if you need any one or more of the commercial modules as mentioned above.
+Core framework, dashboard, and a few plugin modules such as Modbus TCP, MQT, and eKuiper are open source under LGPLv3 license. Neuron may run with these open-source modules without an EMQ license. But all other commercial plugin modules require an official EMQ license to run without limitation. 
 
-* A trial EMQ license can be download from our official website [https://www.emqx.com/en/apply-licenses/neuron](https://www.emqx.com/en/apply-licenses/neuron). All available modules could be used with limitation on 100 connections and 1000 data tags for 15 days. If trial EMQ license is expired, you can re-apply the trial EMQ license via our official website again. However, a mailbox can only apply for a trial license up to two times.
+:::tip 30 Connections forever free
 
-* Each plugin module can be authorized independently in EMQ license.
+For these commercial modules, Neuron also provides a forever free quota (with 30 connections and 30 data tags) for your exploration. 
 
+Note: The Fanuc Focas Ethernet and Mitsubishi CNC plugins are not within the scope of the 30-point free-for-life offer. If you wish to try them out, you can directly [contact us](https://www.emqx.com/en/contact?product=neuron).
+
+:::
+
+## Apply for License
+
+A trial EMQ license can be downloaded from our official website [https://www.emqx.com/en/apply-licenses/neuron](https://www.emqx.com/en/apply-licenses/neuron). All available modules could be used with a limitation of 100 connections and 1000 data tags for 15 days. If the trial EMQ license is expired, you can re-apply for the trial EMQ license via our official website again. However, a mailbox can only apply for a trial license up to two times.
+
+* Each plugin module can be authorized independently in the EMQ license.

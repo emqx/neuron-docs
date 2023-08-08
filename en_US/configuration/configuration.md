@@ -1,93 +1,56 @@
-# Configuration
+# Data Acquisition and Forwarding Process
 
-## Configuration Key Concepts
+Neuron is an advanced industrial protocol gateway software designed to operate on various IoT edge gateway hardware. Its primary objective is to address the challenge of unifying device data access in the context of Industry 4.0. By efficiently converting diverse industrial device data with different protocols into standardized IoT MQTT messages, Neuron enables seamless interconnectivity between devices and industrial IoT systems. This, in turn, facilitates remote control and information retrieval for intelligent manufacturing and data-driven decision-making.
 
-The configuration key concepts are to help understand how to set up various industrial protocol conversions in Neuron.
+Neuron offers extensive support for a wide range of communication protocols and industrial standards, making it a one-stop solution for data acquisition and MQTT protocol conversion. Its resource-efficient design allows easy deployment on various architectures, including X86 and ARM. The platform's user-friendly web-based management console empowers users with convenient gateway configuration management. With remarkable performance capabilities, Neuron can effortlessly connect to hundreds of industrial devices and efficiently handle over 10,000 data points.
 
-### Core
+## Data Acquisition
 
-A Neuron core is a framework to provide a foundation to build and adopt various plugins in terms of diverse industrial communication protocols. This core framework includes NNG high-speed bus, a data manager to control data flow, and adapters for plugin integration. 
+1. [View Available Plugins](../introduction/plugin-list/plugin-list.md): Neuron's southbound plugins are communication drivers that enable specific protocols for accessing external devices. After installing and activating the corresponding plugin licenses (refer to the [license policy](../introduction/license/license-policy.md)), users can effectively utilize these driver plugins. Neuron's loosely coupled architecture ensures that each plugin operates independently as a separate thread, avoiding interference and enabling users to choose the plugins that best suit their business requirements.
+   
+   The comprehensive list of supported plugins for various southbound devices, along with their specific configuration parameters, can be quickly accessed via the provided table links.
 
-### Plugin
+   | Application Area       | Plugin                                                     | Application Area     | Plugin                                                     |
+   | -------------- | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
+   | **Global Standard**   | [Modbus TCP <br />Modbus TCP QH](./south-devices/modbus-tcp/modbus-tcp.md) | **PLC Driver** | [Siemens S7 ISO TCP](./south-devices/siemens-s7/s7.md)       |
+   |                | [Modbus RTU](./south-devices/modbus-rtu/modbus-rtu.md)       |              | [Siemens S5 FetchWrite](./south-devices/siemens-fetchwrite/fetchwrite.md) |
+   |                | [OPC UA](./south-devices/opc-ua/overview.md)                 |              | [Mitsubishi 3E](./south-devices/mitsubishi-3e/overview.md)   |
+   |                | [OPC DA](./south-devices/opc-da/overview.md)                 |              | [Mitsubishi 1E](./south-devices/mitsubishi-1e/mitsubishi-1e.md) |
+   |                | [EtherNet/IP(CIP)](./south-devices/ethernet-ip/ethernet-ip.md) |              | [Mitsubishi FX](./south-devices/mitsubishi-fx/overview.md)   |
+   | **Electricity**       | [IEC60870-5-104](./south-devices/iec-104/iec-104.md)         |              | [Omron FINS TCP](./south-devices/omron-fins/omron-fins.md)   |
+   |                | [IEC61850](./south-devices/iec61850/overview.md)             |              | [Omron FINS UDP](./south-devices/omron-fins/omron-fins-udp.md) |
+   |                | [DL/T645-2007](./south-devices/dlt645-2007/dlt645-2007.md)   |              | [Beckhoff ADS](./south-devices/ads/ads.md)                   |
+   |                | [DL/T645-1997](./south-devices/dlt645-1997/dlt645-1997.md)   |              | [Panasonic Mewtocol](./south-devices/panasonic-mewtocol/overview.md) |
+   | **Building Automation** | [BACnet/IP](./south-devices/bacnet-ip/bacnet-ip.md)          |              | [Profinet IO](./south-devices/profinet/profinet.md)          |
+   |                | [KNXnet/IP](./south-devices/knxnet-ip/knxnet-ip.md)          |              | <!--Allen-Bradley DF1 with doc to be added-->                |
+   | **Environmental Monitoring**   | [HJ212-2017](./south-devices/hj212-2017/hj212-2017.md)       | **Petroleum Industry** | [NON A11](./south-devices/nona11/nona11.md)                  |
 
-Neuron can be divided into a core framework and a number of pluggable modules. Pluggable means that these modules can be added and removed dynamically, even supporting hot plugging in the running state. Plugins would be classified into northbound applications and southbound drivers. The northbound plugin is usually used for connecting to a cloud platform, or to an external application like a processing engine. The southbound plugin is a communication driver that implements specific protocols to access external devices. 
+2. [Create Southbound Drivers](./south-devices/south-devices.md): Choose required southbound plugins for device communication based on industrial protocols. Each plugin can connect to a single device or multiple devices associated with a message bus, adhering to protocol standards. Users can create southbound drivers with plugins or [templates](./templates/templates.md) as per their preferences.
 
-All these modules are written in C language and SDK is provided for users who are interested in secondary development. A plugin is just a dynamic linked library (.so) file built by the SDK. At least one northbound plugin and one southbound plugin are required for data delivery and data acquisition respectively to implement the protocol format conversion.
+3. [Connect to Southbound Devices](./south-devices/south-devices.md#configure-data-groups-and-tags): Connect southbound devices by creating groups and points. Once groups and points are set up, users can monitor the real-time values of the data points through data monitoring. For easy configuration, Neuron supports [offline Excel file batch imports](./import-export/import-export.md) of relevant configuration information.
 
-### Adapter
+::: tip
 
-An adapter is a communication routine providing two interfaces for plugin data exchange. On one side, it has a communication interface for NNG high-speed bus that can exchange data messages with other adapters. On the other side, it provides a plugin interface for the integration of a plugin module. This makes two unrelated components, NNG high-speed bus and a plugin, can work together. 
+Repeat steps 2 and 3 until all necessary drivers, groups, and points are created.
+:::
 
-There are two kinds of adapters. A driver adapter is used for integration with a southbound driver plugin. An app adapter is used for integration with a northbound application plugin. An app adapter and a driver adapter are different as they have different logic in handling data message exchange.
+## Data Forwarding
 
-### Node
+1. [Create Northbound Applications](./north-apps/north-apps.md): Choose the relevant northbound plugins to enable seamless data forwarding. Each northbound plugin can connect to a single destination, such as a proxy or application. Currently, Neuron supports the following northbound applications:
+   - [MQTT](./north-apps/mqtt/overview.md)
+   - [eKuiper](./north-apps/ekuiper/overview.md)
+   - [SparkPlugB](./north-apps/sparkplugb/overview.md)
+   - [WebSocket](./north-apps/websocket/websocket.md)
+   - [Monitor](./north-apps/monitor/overview.md)
+   
+2. [Subscribe to Southbound Devices](./north-apps/north-apps.md#subscribe-to-southbound-data): After creating northbound devices, subscribe to groups from southbound nodes. No further group or point setup is needed. Subscribed northbound nodes will receive continuous data updates from the corresponding groups at the specified frequency.
 
-When a plugin is inserted into the core framework, a connection node would be created to communicate with external devices or applications. Node here in Neuron is defined as merging framework interface with communication routines. There may be a lot of nodes created for communication with various parties in a single running instance. It is the core framework to manage the message routing between those nodes. 
-
-A node is simply a combination of an adapter and a plugin module. Message exchange between nodes is based on NNG high-speed bus.
-
-![Architecture](./assets/concepts.png)
-
-The diagram shows a loosely-decoupled designed architecture. All nodes work independently to exchange data with each other, and to communicate with external devices or clouds according to its implemented industrial protocol.
-
-### Tag
-
-A tag is a non-hierarchical unique keyword assigned to a piece of information including data storing location in the device, and data operation properties, which helps describe an item and allows it to be found in the device or processed to be read/written automatically. Users would identify those interested tags in a device to read data from the device or to write data to the device.
-
-### Group
-
-The collection of user-interested tags in a device is divided into several groups to have better management. The routing mechanism is based on these groups as an information unit to be exchanged between nodes. A northbound node can subscribe to any groups in any southbound node. These subscriptions would be used for routing data messages between nodes. Moreover, there is a group polling frequency for controlling the time interval of the device polling.
-
-## Configuration Procedures
-
-This procedure is an idea of work flow how to set up he Neuron for various industrial protocol conversions.
+The diagram below provides a visual representation of the entire process.
 
 ![Configuration Steps](./assets/config.png)
 
-### Step 1. Checking over All Available Plugins
-
-Neuron data acquisition and delivery are enabled using various industrial plugins. A specific feature can be used only when corresponding plugin has installed and activated by the License. Since Neuron is a loosely-decoupled architecture, each plugin runs as an independent process thread without interfering each others. 
-
-[Check over the available plugins](./plugin-management/plugin-management.md)
-
-### Step 2. Creating a Southbound Driver
-
-After checking out the available plugins, select all necessary southbound plugins for device communications according to industrial protocols. Each southbound plugin has only one connection to a device or a bus of multiple devices, depending on the specification of protocols.
-
-[Create a southbound driver](./south-devices/south-devices.md)
-
-### Step 3. Adding Groups and Tags to a Driver
-
-In this step, add groups and tags to the southbound driver. Tag is a unique keyword to locate the data storage in the device. The tag also contains some meta-data information for the data such as scaling, precise, and read/write attributes. Those tags will be assigned into groups. Each group has an independent polling frequency to read data from the device. 
-
-[Add groups and tags to a driver](./groups-tags/groups-tags.md)
-
-Usually, there will be a very large number of tags to be handled in Neuron. Instead of adding groups and tags one by one in the dashboard, these groups and tags can be prepared in an offline Excel sheet and then imported into Neuron.
-
-[Import and Export the groups and tags](./import-export/import-export.md)
-
-Once the groups and tags have been created, the real-time values of the tags will be available from the monitoring menu.
-
-[Monitoring the groups and tags](../usage/monitoring.md)
-
-:::tip
-Step 2 and 3 would be repeated until all necessary drivers, groups and tags are created.
-:::
-
-### Step 4. Creating a Northbound Application
-
-Select the necessary northbound plugins for destination of data delivery. Each northbound plugin has only one connection to a destination such as a broker or an application.
-
-[Create a northbound application](./north-apps/north-apps.md)
-
-### Step 5. Subscribing a Group
-
-In this step, there is no longer to set up groups and tags. Instead, a northbound node can subscribe to any group created in the southbound nodes. Once the subscription has been set up, the corresponding group's data will be published to the northbound node continuously according to the frequency of the group.
-
-[Subscribe a group](./subscription/subscription.md)
 
 ## Configuration APIs
 
-Alternatively, a set of configuraiton APIs is provided for integrating with industrial IoT platform, MES or other controlling systems.
-
+Alternatively, a set of [configuration APIs](../http-api/http-api.md) is provided for integrating with industrial IoT platforms, MES, or other controlling systems.
 

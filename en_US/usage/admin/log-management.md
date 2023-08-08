@@ -1,25 +1,25 @@
 # Log Management
 
-## Downloading Logs
+## Download Logs
 
 Neuron supports one-click download of all log filed on web pages in version 2.3, as shown below.
 
 ![download_log](./assets/download_log.png)
 
-The log download function bundles the /neuron/build/logs folder into neuron_logs.tar.gz file and downloads it to a web page. The file contains all the created driver and neuron log files.Directory level examples of files are shown below.
+The log download function bundles the /neuron/build/logs folder into the neuron_logs.tar.gz file and downloads it to a web page. The file contains all the created driver and neuron log files. Directory-level examples of files are shown below.
 
-![neuron_logs](./assets/neuron_logs.png)
+<img src="./assets/neuron_logs.png" alt="neuron_logs" style="zoom:50%;" />
 
-* data-stream-processing.log:data processing configuration;
-* dlt645.log:northbound application configuration;
-* modbus-plus-tcp.log:sorthbound application configuration;
-* neuron.log:log of Neuron.
+* data-stream-processing.log: data processing configuration;
+* dlt645.log: northbound application configuration;
+* modbus-plus-tcp.log: southbound application configuration;
+* neuron.log: log of Neuron.
 
-## Set The Debug Log Of The Node
+## Output Debug Log of Certain Node
 
 Neuron supports the setting of printing debug logs of a node and automatically switching back to the default log level after approximately ten minutes. The Settings for each node are independent of each other.
 
-Each node's `more` operation button has a `DEBUG log` operation button, as shown below.
+Each node's **more** operation button has a **DEBUG log** operation button, as shown below.
 
 ![debug_log](./assets/debug_log.png)
 
@@ -35,7 +35,7 @@ When the node debug log is printed, the neuron log will also be printed, and the
 
 ## zlog.conf
 
-Explanation of the log configuration file. In addition, there is also dev.conf, which is used for development debugging, printing logs and outputting them to the terminal. When launching neuron, add `--log` parameter to call dev.conf.
+Explanation of the log configuration file. In addition, there is also dev.conf, which is used for development debugging, printing logs, and outputting them to the terminal. When launching Neuron, add **--log** parameter to call dev.conf
 
 ```bash
 [global]

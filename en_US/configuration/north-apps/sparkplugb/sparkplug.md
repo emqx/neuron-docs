@@ -15,6 +15,15 @@ Here, the actual point data of the device is collected through the Neuron southb
 ## Neuron
 
 ### Southbound device
+# Integrate with EMQX
+
+This page introduces how to use the Neuron southbound driver to collect data, then report the data to EMQX through the northbound Sparkplug B plug-in, and the correct and complete data results are obtained after decoding through the codec function. The process is shown in the figure:
+
+![Sparkplug B](./assets/sparkplug.png)
+
+## Configure Neuron
+
+### Southbound Device
 
 Collect the Modbus TCP simulator point value through the southbound drive to simulate the actual device point value, the configuration is as follows：
 
@@ -48,13 +57,13 @@ Collect the Modbus TCP simulator point value through the southbound drive to sim
 
 ![image-20230421142020855](./assets/image-20230421142020855.png)
 
-**add subscription**
+**Add subscription**
 
 ![image-20230421142109283](./assets/image-20230421142109283.png)
 
-## EMQX
+## Configure EMQX
 
-If you directly subscribe to the EMQX data reported by Neuron northbound to SparkPlugB, there will be garbled strings, as shown in the figure:
+You can use [MQTTX](https://mqttx.app/) to view the forwarded messages  to EMQX from Neuron. However, if you directly subscribe to the EMQX data reported by Neuron northbound to SparkPlugB, there will be garbled strings, as shown in the figure:
 
 ![image-20230421151918685](./assets/image-20230421151918685.png)
 
@@ -259,7 +268,7 @@ message Payload {
 }
 ```
 
-### Create rule
+### Create Rule
 
 **SQL statement**
 
@@ -280,14 +289,14 @@ The key point here is  `schema_decode('neuron', payload, 'Payload')`:
 
 **Then add the action with the following parameters:**
 
-- Action Type: Message Repost
+- Action Type: Message republish
 - Purpose topic: SparkPlugB/test
 
 This action sends the decoded "Payload" to the `SparkPlugB/test` topic in JSON format.
 
 ![image-20230421143453011](./assets/image-20230421143453011.png)
 
-## Verify
+## Verify with MQTTX
 
 Here, the MQTTX tool is used to subscribe to the data decoded by the codec function of the EMQX rule engine, as shown in the figure:
 
@@ -295,11 +304,10 @@ Here, the MQTTX tool is used to subscribe to the data decoded by the codec funct
 
 As shown in the figure above, it can be seen that the original data before decoding is garbled, and the complete and correct data result is obtained after decoding; so far, the point value of the device is collected in the south direction of Neuron, and reported to EMQX in the north direction of SparkPlugB, and the complete data is obtained by decoding through the codec function Data results are complete.
 
-## Appendix
+## Further Reading
 
 The topic that Neuron reports data to EMQX is `namespace/group_id/DDATA/edge_node_id/device_id` defined according to the Sparkplug B protocol specification, as shown in the figure:
 
 ![image-20230419143059088](./assets/image-20230419143059088.png)
 
-As for how to define more Neuron northbound Sparkplug B plug-in related standards, you can refer to the Sparkplug B protocol specification[🔗](https://www.eclipse.org/tahu/spec/Sparkplug%20Topic%20Namespace%20and%20State%20ManagementV2.2-with%20appendix%20B%20format%20-%20Eclipse.pdf)。
-
+As for how to define more Neuron northbound Sparkplug B plug-in related standards, you can refer to the Sparkplug B protocol specification[🔗](https://www.eclipse.org/tahu/spec/Sparkplug%20Topic%20Namespace%20and%20State%20ManagementV2.2-with%20appendix%20B%20format%20-%20Eclipse.pdf)

@@ -1,20 +1,15 @@
 # FAQ
 
-## My MQTT node cannot connect to the broker and keeps in disconnected state
+## Why does my MQTT node consistently fail to connect to the broker?
 
-Please ensure that you provide the correct arguments when setting up the node
-using the MQTT plugin, such as broker address, user name, and password. Add if
-you enable SSL, make sure using the right certificates. Also, make sure the
-broker is properly set up to accept connections from the node.
+Ensure you've provided the correct information when configuring the node with the MQTT plugin. This includes details like the broker address, username, and password. If SSL is enabled, confirm the appropriate certificates are in use. Additionally, ensure the broker is correctly set up to accept node connections.
 
-## My MQTT node keeps switching between connected and disconnected state
+## Why is my MQTT node intermittently shifting between connected and disconnected states?
 
-This is highly probably the broker is kicking the MQTT client. Please check
-that the configured [**Client ID**] parameter is unique, or that the broker
-is setup properly.
+This issue is likely due to the broker forcing the MQTT client to disconnect. Please ensure the configured [**Client ID**] parameter is unique, or that the broker is set up properly.
 
 [**Client ID**]: ./overview.md#parameters
 
-## My MQTT node reports no data
+## Why isn't my MQTT node reporting any data?
 
-Please make sure your node is started, and you subscribe to some south nodes.
+Confirm your node has been initiated and that it is subscribed to relevant south nodes.

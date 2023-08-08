@@ -1,5 +1,6 @@
 # FAQ
 
-## The device can ping through, but Neuron shows that the connection is broken
- 
-* PLC TCP mode only runs one port for one connection, so make sure that only one of Neuron's device connections is being accessed.
+## Even though the device is reachable via ping, Neuron reports a disconnected status.
+
+Under PLC TCP mode, remember that each network port supports only one TCP connection. Therefore, it's crucial to ascertain that a single, unique Neuron instance is the only entity accessing the PLC via this particular port. 
+
