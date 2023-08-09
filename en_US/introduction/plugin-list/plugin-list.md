@@ -18,7 +18,7 @@ The plug-in types include the following 3 modes:
 Users can filter out the plugins for northbound applications or southbound devices from the dropdown box.
 :::
 
-## Add A New Pluggable Module
+## Add a New Pluggable Module
 
 Click on the `Add Plugin` button in the upper right corner as shown below
 

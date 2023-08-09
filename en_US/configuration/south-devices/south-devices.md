@@ -66,9 +66,9 @@ In Neuron, a "tag" represents a specific data point within a device, enabling da
 Neuron supports the batch configuration of groups and data tag points through Excel files. For details, see [Batch Group/Tag Configuration](../import-export/import-export.md).
 :::
 
-### Create A Group
+### Create a Group
 
-Create a group of tags, in which collect and report the data of the same group at the same frequency
+Create a group of tags, which collect and report the data of the same group at the same frequency
 
 Click the new device node to enter the group list management interface, and click **Create** to create the group.
 
