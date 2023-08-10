@@ -118,7 +118,7 @@ Please make sure that the plugin .so file you have written is placed under the n
 
 | Protocol Name         | Type        | Available | Remark |
 | --------------------- | ----------- | --------- | ------- |
-| <div style="width:295pt">RESTful API</div>           | <div style="width:110pt">Open Soure</div>  | <div style="width:50pt">Yes</div>       |  |
+| <div style="width:295pt">RESTful API</div>           | <div style="width:110pt">Open Source</div>  | <div style="width:50pt">Yes</div>       |  |
 | <div style="width:295pt">MQTT</div>                   | <div style="width:110pt">Open Source</div>  | <div style="width:50pt">Yes</div>        | <div style="width:110pt"> </div> |
 | <div style="width:295pt">MQTT Sparkplug B</div>    | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>       |  |
 | <div style="width:295pt">Websocket</div>             | <div style="width:110pt">Commercial</div>  | <div style="width:50pt">Yes</div>        |  |
