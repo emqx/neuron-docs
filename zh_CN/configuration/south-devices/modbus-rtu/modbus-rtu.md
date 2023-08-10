@@ -27,6 +27,8 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 | **连接模式** | Ethernet 模式下，可以选择 Neuron 作为 TCP 的客户端或是服务端。 |
 | **IP 地址** | Ethernet 模式下，设备的 IP 地址（Neuron 作为客户端）；或是 Neuron 本机的 IP 地址（Neuron 作为服务端），默认可填 0.0.0.0。 |
 | **端口** | Ethernet 模式下，设备的端口号（Neuron 作为客户端）；或是 Neuron 本机的端口（Neuron 作为服务端）。 |
+| **最大重试次数** | 发送读取指令失败后最大重试次数。|
+| **指令重新发送间隔** | 发送读取指令失败后重新发送读指令时间间隔，单位为毫秒。|
 
 ## 设置组和点位
 
@@ -93,8 +95,12 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 | #L  | 1,2     | int16/uint16       | 不填，默认字节顺序 |
 | #LL | 1,2,3,4 | int32/uint32/float | 不填，默认字节顺序 |
 | #LB | 2,1,4,3 | int32/uint32/float | |
-| #BB | 3,4,1,2 | int32/uint32/float | |
-| #BL | 4,3,2,1 | int32/uint32/float | |
+| #BL | 3,4,1,2 | int32/uint32/float | |
+| #BB | 4,3,2,1 | int32/uint32/float | |
+
+::: tip
+字节顺序可能用 ABCD 表示，只需将 1234 对应 ABCD 即可。例如 ABCD 对应默认字节序 1234 (#LL)。
+:::
 
 #### .LEN\[H]\[L]\[D]\[E]
 

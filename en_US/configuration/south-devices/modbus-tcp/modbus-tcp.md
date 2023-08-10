@@ -111,8 +111,12 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #L  | 1,2     | int16/uint16       | Default byte order if not specified |
 | #LL | 1,2,3,4 | int32/uint32/float | Default byte order if not specified |
 | #LB | 2,1,4,3 | int32/uint32/float | |
-| #BB | 3,4,1,2 | int32/uint32/float | |
-| #BL | 4,3,2,1 | int32/uint32/float | |
+| #BL | 3,4,1,2 | int32/uint32/float | |
+| #BB | 4,3,2,1 | int32/uint32/float | |
+
+::: tip
+The byte order can be illustrated using the notation ABCD, which corresponds directly to the sequence 1234. As an example, the ABCD designation represents the standard or default Endianness 1234. (#LL).
+:::
 
 #### .LEN\[H]\[L]\[D]\[E]
 
