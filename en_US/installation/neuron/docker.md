@@ -13,7 +13,7 @@ To support the Alpine image with smaller occupation, please download it from the
 
 ```bash
 ## pull Neuron
-$ docker pull emqx/neuron:2.3.0-alpine
+$ docker pull emqx/neuron:2.5.3-alpine
 ```
 
 ## Start
