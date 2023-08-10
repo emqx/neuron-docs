@@ -1,14 +1,13 @@
-# Data upload using the WebSocket plugin
+# WebSocket Plugin Data Upload Walkthrough
 
-In this tutorial, we show how to upload data collected from south devices to
-a WebSocket server using the Neuron WebSocket plugin.
+In this tutorial, we show how to upload data collected from south devices to a WebSocket server using the Neuron WebSocket plugin.
 
-## Requirements
+## Tutorial Setup
 
-We use two PCs connected in a local area network in this tutorial. One is a
-Linux machine with Neuron installed, the other is a Linux machine with a
-WebSocket server. Consult the [the installation instruction] on how to install
-Neuron.
+We use two PCs connected to a local area network in this tutorial. 
+
+- One is a Linux machine with Neuron installed
+- One is a Linux machine with a WebSocket server. Consult the [the installation instruction] on how to install Neuron.
 
 |                  | PC 1              | PC 2                |
 | ---------------- | ----------------- | ------------------- |
@@ -17,10 +16,7 @@ Neuron.
 | Software         | Neuron            | Python 3.7          |
 | Network          | Connected         | Connected           |
 
-We need a WebSocket server for demonstration. You may use any server software
-you like as long as it speaks the WebSocket protocol. To make things simple, we
-will use a simple python program in this tutorial. Our python server program
-requires Python >= 3.7, and depends on the [websockets package].
+For this demonstration, you'll need a WebSocket server that communicates using the WebSocket protocol. You have the flexibility to choose any server software that supports WebSocket. To keep things straightforward, we'll use a simple Python program in this tutorial. The Python server program requires Python version 3.7 or higher and relies on the [websockets package] for implementation.
 
 Run the following command to install the dependencies.
 
@@ -28,9 +24,9 @@ Run the following command to install the dependencies.
 $ pip install websockets
 ```
 
-## WebSocket server
+## Configure WebSocket Server
 
-Following is our python server program, it listens at tcp port *8000*.
+Following is our python server program, it listens at TCP port *8000*.
 
 ``` python
 #!/usr/bin/env python
@@ -56,20 +52,15 @@ $ python websockets.py
 
 ```
 
-## Setup Neuron
+## Configure Neuron
 
 ### South devices
 
-We need some south devices to collect data from. Any Neuron south bound plugin
-will do for this tutorial, for example the [Modbus TCP plugin]. In this
-tutorial, we will use the [File plugin] to create south devices collecting data
-from local files. This make things simple since we don't need an actual device
-and we can fake tag data by just modifying file contents.
+We need some south devices to collect data from. Any Neuron southbound plugin will do for this tutorial, for example, the [Modbus TCP plugin]. In this tutorial, we will use the [File plugin] to create south devices collecting data from local files. This makes things simple since we don't need an actual device and we can fake tag data by just modifying file contents.
 
-#### Add the *file* node
+#### Add the *file* Node
 
-In the Neuron dashboard, click **Configuration -> South Devices -> Add Device**
-to add a node using the File plugin.
+In the Neuron dashboard, click **Configuration -> South Devices -> Add Device** to add a node using the File plugin.
 <figure align="center">
   <img src="./assets/file.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -89,7 +80,7 @@ Click the **Device configuration** icon to configure the *file* node.
   </figcaption>
 </figure>
 
-Using the default configuration is enough. Click **Submit**.
+Click **Submit** to keep the default settings. 
 <figure align="center">
   <img src="./assets/file_setting.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -99,11 +90,10 @@ Using the default configuration is enough. Click **Submit**.
   </figcaption>
 </figure>
 
-#### Create a group
+#### Create a Group
 
-The *file* node should be in **Connected** state once configured. Click the
-*file* node to enter the **Group List** tab, then click **Create** to create
-a group.
+The *file* node should be in **Connected** state once configured. Click the *file* node to enter the **Group List** tab, then click **Create** to create a group.
+
 <figure align="center">
   <img src="./assets/file_state.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -123,10 +113,9 @@ We set the group name to *grp* and the interval to *1000*.
   </figcaption>
 </figure>
 
-#### Add tag
+#### Add Tag
 
-Click the created *grp* group to enter the **Tag List** tab, then click
-**Create** to create a tag.
+Click the created *grp* group to enter the **Tag List** tab, then click **Create** to create a tag.
 <figure align="center">
   <img src="./assets/file_groups.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -136,8 +125,7 @@ Click the created *grp* group to enter the **Tag List** tab, then click
   </figcaption>
 </figure>
 
-We name the tag *tag0* with type *STRING*. The tag address is set to *hello.txt*
-which represents the file in the working directory of the Neuron process.
+We name the tag *tag0* with type *STRING*. The tag address is set to *hello.txt* which represents the file in the working directory of the Neuron process.
 <figure align="center">
   <img src="./assets/file_tag.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -149,10 +137,9 @@ which represents the file in the working directory of the Neuron process.
 
 ### North app
 
-#### Add the *websocket* node
+#### Add the *WebSocket* Node
 
-In the Neuron dashboard, click **Configuration -> North Apps -> Add Application**
-to add a node using the WebSocket plugin.
+In the Neuron dashboard, click **Configuration -> North Apps -> Add Application** to add a node using the WebSocket plugin.
 <figure align="center">
   <img src="./assets/ws.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -162,7 +149,7 @@ to add a node using the WebSocket plugin.
   </figcaption>
 </figure>
 
-Click the **Application Configuration** icon to configure the *websocket* node.
+Click the **Application Configuration** icon to configure the *WebSocket* node.
 <figure align="center">
   <img src="./assets/ws_conf.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -172,8 +159,7 @@ Click the **Application Configuration** icon to configure the *websocket* node.
   </figcaption>
 </figure>
 
-We set the **host** parameter to *192.168.1.107* and **port** to *8000*, which
-is the address of our WebSocket server.
+We set the **host** parameter to *192.168.1.107* and **port** to *8000*, which is the address of our WebSocket server.
 <figure align="center">
   <img src="./assets/ws_setting.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -183,8 +169,7 @@ is the address of our WebSocket server.
   </figcaption>
 </figure>
 
-Once the configuration is submitted, the *websocket* node connects to the
-WebSocket server successfully.
+Once the configuration is submitted, the *WebSocket* node connects to the WebSocket server successfully.
 <figure align="center">
   <img src="./assets/ws_state.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -194,10 +179,9 @@ WebSocket server successfully.
   </figcaption>
 </figure>
 
-#### Subscribe to the *file* node
+#### Subscribe to the *File* Node
 
-Click the *websocket* node to enter the **Subscription** tab. Then click
-**Add subscription**, select the *file* node and the *grp* group.
+Click the *WebSocket* node to enter the **Subscription** tab. Then click **Add subscription**, select the *file* node and the *grp* group.
 <figure align="center">
   <img src="./assets/ws_sub.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -208,13 +192,10 @@ Click the *websocket* node to enter the **Subscription** tab. Then click
 </figure>
 
 
-## Validate server output
+## Monitor Data
 
-After subscribing to the *grp* group of the *file* node, the *websocket* node
-will begin pushing data to the WebSocket server. In the Neuron dashboard, click
-**Monitoring -> Data monitoring**, then select the *file* node and the *grp*
-group. We see that Neuron reports an error code *1011* indicating the file
-*hello.txt* does not exist.
+After subscribing to the *grp* group of the *file* node, the *WebSocket* node will begin pushing data to the WebSocket server. In the Neuron dashboard, click **Monitoring -> Data monitoring**, then select the *file* node and the *grp* group. We see that Neuron reports an error code *1011* indicating the file *hello.txt* does not exist.
+
 <figure align="center">
   <img src="./assets/monitor1.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -224,8 +205,7 @@ group. We see that Neuron reports an error code *1011* indicating the file
   </figcaption>
 </figure>
 
-We can check the server output that it receives the data correctly. And sure,
-the received data says that *tag0* encounters the error code *1011*.
+We can check the server output that it receives the data correctly. And sure, the received data says that *tag0* encounters the error code *1011*.
 <figure align="center">
   <img src="./assets/output1.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -235,14 +215,12 @@ the received data says that *tag0* encounters the error code *1011*.
   </figcaption>
 </figure>
 
-In the Neuron process working directory, create the *hello.txt* file with
-the content *world*.
+In the Neuron process working directory, create the *hello.txt* file with the content *world*.
 ``` sh:no-line-numbers
 $ echo world > hello.tx
 ```
 
-Now we can see that Neuron updates *tag0* correctly in the **Data monitoring**
-tab.
+Now we can see that Neuron updates *tag0* correctly in the **Data monitoring** tab.
 <figure align="center">
   <img src="./assets/monitor2.png"
        style="border:thin solid #E0DCD9; width: 60%"

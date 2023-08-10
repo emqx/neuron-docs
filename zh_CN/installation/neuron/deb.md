@@ -5,7 +5,7 @@
 根据不同版本及架构下载安装包，例如：
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.4.0/neuron-2.4.0-linux-amd64.deb
+$ wget https://www.emqx.com/en/downloads/neuron/2.5.3/neuron-2.5.3-linux-amd64.deb
 ```
 
 ## 安装
@@ -13,7 +13,7 @@ $ wget https://www.emqx.com/en/downloads/neuron/2.4.0/neuron-2.4.0-linux-amd64.d
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo dpkg -i neuron-2.4.0-linux-amd64.deb
+$ sudo dpkg -i neuron-2.5.3-linux-amd64.deb
 ```
 
 为避免 ubuntu 系统自动更新时替换 neuron 包，还需要执行以下命令使 neuron 软件包在 apt 升级中保留。
