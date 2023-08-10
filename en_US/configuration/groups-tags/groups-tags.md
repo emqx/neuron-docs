@@ -1,6 +1,6 @@
-# Configure Data Groups And Tags
+# Configure Data Groups and Tags
 
-## Step 1, Create A Group
+## Create a Group
 
 Create a group of tags, in which collect and report the data of the same group at the same frequency
 
