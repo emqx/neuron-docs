@@ -2,7 +2,7 @@
 
 Neuron is an open-source, lightweight IIoT connectivity server that empowers industrial devices with the key IoT connectivity capabilities in the Industry 4.0 era. It translates diverse protocol data from industrial devices into standardized IoT MQTT messages, ensuring seamless interconnection between devices and the IoT system for remote control and information gathering.
 
-Supporting simultaneous access and MQTT conversion for varied communication protocols, Neuron is resource-efficient and deployable on various edge hardware like X86 and ARM. Its web-based console allows easy configuration management. With robust performance, Neuron can connect hundreds of industrial devices and manage over 10,000 data points.
+Supporting simultaneous access and MQTT conversion for varied communication protocols, Neuron is resource-efficient and deployable on physical machines with X86, ARM, RISC-V, and other architectures, either natively or through containers. Its web-based console allows easy configuration management. With robust performance, Neuron can connect hundreds of industrial devices and manage over 10,000 data points.
 
 <img src="./introduction/assets/neuron.png" alt="Neuron" style="zoom:30%;" />
 
