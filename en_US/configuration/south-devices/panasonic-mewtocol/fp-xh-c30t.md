@@ -1,37 +1,43 @@
 # Connect to FP-XH C30T
 
-## Configurator WD
+Panasonic's FP-XH C30T is a versatile PLC from the FP-XH series, ideal for small-to-medium automation tasks. This guide will illustrate its integration via the Neuron Mewtocol plugin.
+
+## Install Configurator WD
+
 1. Go to https://www3.panasonic.biz/ac/e/fasys/software_info/common/tol_configwd.jsp and download configurator_wd_v177.exe after registration and install it.
 
-2. Open the Configurator WD software, click on the menu `Option` -> `Select IP of PC` -> `Specify the IP address of PC`, select the local IP address and click on the `OK` button.
+2. Open the Configurator WD software, click on the menu **Option** -> **Select IP of PC** -> **Specify the IP address of PC**, select the local IP address and click on the **OK** button.
 ![1](./assets/1.jpg)
 
-3. Click on the menu `Search` -> `Search BroadCast`, the FP-X COM5 module will appear in the list.
+3. Click on the menu **Search** -> **Search BroadCast**, the FP-X COM5 module will appear in the list.
 ![2](./assets/2.jpg)
 
-4. Right click on the FP-X COM5 item in the list and select `Setting IP Address` in the pop-up menu to set a fixed IP address for the PLC device, then click `OK`.
+4. Right click on the FP-X COM5 item in the list and select **Setting IP Address** in the pop-up menu to set a fixed IP address for the PLC device, then click **OK**.
 ![3](./assets/3.jpg)
 
-5. Right click on the FP-X COM5 item in the list, select `Communication Setting` in the pop-up menu, set the `Baud rate of COM1` to `115200` and click `OK`.
+5. Right click on the FP-X COM5 item in the list, select **Communication Setting** in the pop-up menu, set the **Baud rate of COM1** to **115200** and click **OK**.
 ![4](./assets/4.jpg)
 
-6. Right-click on the FP-X COM5 item in the list, select `Communication Setting`-> `Option Setting` in the pop-up menu, set `Respons timeout` to `1000` and click `OK`.
+6. Right-click on the FP-X COM5 item in the list, select **Communication Setting**-> **Option Setting** in the pop-up menu, set **Respons timeout** to **1000** and click **OK**.
 ![5](./assets/5.jpg)
 
-7. Open Control FPWIN Pro 7 and confirm that the `Communication Speed` of the PLC serial port `COM1` is `115200`.
+7. Open Control FPWIN Pro 7 and confirm that the **Communication Speed** of the PLC serial port **COM1** is **115200**.
 ![6](./assets/6.jpg)
 
-## Neuron Setting
-1. Add a Panasonic Mewtocol device to the Neuron Southbound Device Manager. 2.
+## Configure Neuron
+1. Add a Panasonic Mewtocol device to the Neuron Southbound Device Manager.
 
-2. Change `PLC IP Address` to the target device IP address in the device configuration. 3.
+2. Change **PLC IP Address** to the target device IP address in the device configuration.
 
-3. Modify `PLC Port` to be the target device port in the device configuration. 4.
+3. Modify **PLC Port** to be the target device port in the device configuration.
 
-4. Change `Unit Number` to the target device unit number in the device configuration and submit the setup form.
+4. Change **Unit No.** to the target device unit number in the device configuration and submit the setup form.
 ![7](./assets/7.jpg)
 
+5. Create tags in the group. 
+
 ## Test Data List
+
 | Name |  Address    | Attribute | Data type   |
 | ---- | --------| ---- | ------ |
 | DATA1  | DT0    | Read Write | INT16  |
@@ -44,3 +50,7 @@
 | DATA8  | Y0    | Read Write | BIT    |
 | DATA9  | DT20.0 | Read       | BIT    |
 | DATA10  | DT17.20  | Read Write | STRING |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

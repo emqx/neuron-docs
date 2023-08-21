@@ -1,17 +1,36 @@
-# Mitsubishi MELSEC A1E
+# Mitsubishi 1E
 
-## Module Description
+Mitsubishi 1E is a part of Mitsubishi Electric's PLC series that leverages the MELSEC Communication protocol for efficient and reliable data exchange in diverse industrial automation applications.
 
-The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series PLCs via Ethernet, iQ-F requires a specific firmware version.
+Neuron's a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series PLCs via Ethernet, iQ-F requires a specific firmware version.
 
-## Parameter Configuration
+## Add Device
 
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| **host**  | remote plc ip                 |
-| **port**  | remote plc port, default 2000 |
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
 
-## Support Data Type
+- Name: The name of this device node.
+- Plugin: Select the **Mitsubishi 1E** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
+
+| Parameter          | Description                   |
+| ------------------ | ----------------------------- |
+| **PLC IP Address** | remote plc ip                 |
+| **PLC Port**       | remote plc port, default 2000 |
+
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * INT16
 * UINT16
@@ -22,11 +41,9 @@ The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series
 * BIT
 * STRING
 
-## Usage of Address Format
-
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -77,7 +94,7 @@ It can only be used in **non-bit type area**, which means to read the specified 
 
 When the data type is string, **.LEN** indicates the length of the string;   **H** and **L** can be optional to indicate two byte orders, the default is **H** byte order.
 
-### Address Examples
+### Example Addresses
 
 | Address   | Data Type | Description                                                  |
 | --------- | --------- | ------------------------------------------------------------ |
@@ -92,3 +109,7 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 | D20     | double    | D area, address is 20   |
 | D1002.16L | string    | D area, address is 1002, string length is 16, endianness is L |
 | D1003.16  | string    | D area, address is 1003, string length is 16, endianness is H |
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

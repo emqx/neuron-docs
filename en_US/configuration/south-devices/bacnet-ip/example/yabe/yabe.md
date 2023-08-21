@@ -1,48 +1,61 @@
-# Yabe Example
+# Connect to Yabe
 
-This article will use the BACnet/IP plugin to connect to Yabe simulator, and achieve reading and writing point values of BACnet simulator devices. Ensure that the BACnet/IP plugin is connected to the Yabe simulator network.
+This article will use the BACnet/IP plugin to connect to the Yabe simulator, and achieve reading and writing point values of BACnet simulator devices. Ensure that the BACnet/IP plugin is connected to the Yabe simulator network.
 
-## Download And Install Yabe Simulator
+Yabe (Yet Another Bacnet Explorer) is a graphical explorer program written in C#, for browsing BACnet devices (run on Windows & Linux). Currently supports BACnet IPv4, IPv6 + BACnet MSTP + BACnet PTP + BACnet Ethernet + BACnet SecureConnect. Basic functions for read, write, read multiple, write multiple, iam, whois, subscribeCOV, notify, WriteFile, ReadFile, etc. Includes three demo server applications:
 
-Yabe (Yet Another Bacnet Explorer) is a graphical explorer program written in C#, for browsing BACnet devices (run on Windows & Linux). Currently supports BACnet IPv4, IPv6 + BACnet MSTP + BACnet PTP + BACnet Ethernet + BACnet SecureConnect. Basic functions for read, write, read multiple, write multiple, iam, whois, subscribeCOV, notify, WriteFile, ReadFile etc. Includes three demo server applications : a generic server, a wall mounted room controller simulator, a weather server (gets data from an Internet webservice).
+- A generic server
+- A wall-mounted room controller simulator
+- A weather server
 
-Install Yabe software, and the installation package can be download form [Yabe](https://sourceforge.net/projects/yetanotherbacnetexplorer/), 
+## Install Yabe Simulator
 
-## Using BACnet/IP in Yabe
+Install Yabe software, and the installation package can be downloaded from [Yabe](https://sourceforge.net/projects/yetanotherbacnetexplorer/), 
+
+## Enable BACnet/IP in Yabe
 
 * After installation, run Yabe.
+
 * Enter **Functions -> Add device**.
+
 * In the **BACnet/IP V4 & V6 over Udp** region of the pop-up window, select the network card IP address that can communicate with BACnet devices. The port should be filled in according to the actual situation. This example can be left as default and then click the **Start** button.
+
 * Open the DemoServer program. Yabe will discover the DemoServer and display the device ID, IP and PORT, as shown in the following figure.
 
-![yabe-demoserver-show](./assets/yabe-demoserver-show.png)
+  ![yabe-demoserver-show](./assets/yabe-demoserver-show.png)
 
-* In the Devices area of the window, click on the discovered DemoServer. The Address Space area of the window will display node information. Click on the Structured View:2 to see specific object nodes supported by the DemoServer simulator device, as shown in the following figure.
+* In the **Devices** area of the window, click on the discovered **DemoServer**. The **Address Space** area of the window will display node information. Click on the **Structured View:2** to see specific object nodes supported by the DemoServer simulator device, as shown in the following figure.
 
-![yabe-demoserver-objects-show](./assets/yabe-demoserver-objects-show.png)
+  ![yabe-demoserver-objects-show](./assets/yabe-demoserver-objects-show.png)
 
-* Click on the specific Object node in the Address Space area. You can view the node's properties in the Properties section. Change the Present Value value and press Enter to modify the node's parameter values, as shown in the following figure.
+* Click on the specific **Object** node in the **Address Space** area. You can view the node's properties in the **Properties** section. Change the **Present Value** value and press **Enter** to modify the node's parameter values, as shown in the following figure.
 
-![yabe-demoserver-object-properties-show](./assets/yabe-demoserver-object-properties-show.png)
+  ![yabe-demoserver-object-properties-show](./assets/yabe-demoserver-object-properties-show.png)
 
 * To monitor live value, right click on listed parameter node and click on **Subscribe**.
 
-![yabe-demoserver-sub-show](./assets/yabe-demoserver-sub-show.png)
+  ![yabe-demoserver-sub-show](./assets/yabe-demoserver-sub-show.png)
 
-## Configure the Neuron node to connect to the DemoServer
+## Configure Neuron
 
-* Click on `Add Device` in the **South Devices** and select the BACnet/IP plugin to create a node to connect to the Yabe DemoServer.
-* After creating the node, click on `Device Configuration` to enter the device configuration page. Configure the node information according to the actual situation,
-	* `Device IP Address` : Target device IP address
-	* `Device Port` : Target device port, the default is 47808
+* Click on **Add Device** in the **South Devices** and select the BACnet/IP plugin to create a node to connect to the Yabe DemoServer.
+
+* After creating the node, click on **Device Configuration** to enter the device configuration page. Configure the node information according to the actual situation,
+	* **Device IP Address** : Target device IP address
+	* **Device Port** : Target device port, the default is 47808
+	
 * In the created south-device node, create a group and create some point position under the group.
-* Enter the Neuron **Data Monitoring** page and select the corresponding device and group to view the collected data points, as shown in the following figure.
+
+  
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../../../usage/monitoring.md).
 
 ![yabe-demoserver-tags-show-en](./assets/yabe-demoserver-tags-show-en.png)
 
-::: tip
-The default configuration file for Yabe's DemoServer includes fewer nodes. This example has modified the configuration file, and the specific file is as follows. Create a new `DeviceStorage.Xml` file and copy the configuration content. Replace the same file in the Yabe installation directory `C:\Program Files\yabe\AddOn` with the file, and restart the DemoServer.
-:::
+## DemoServer Configuration File
+
+The default configuration file for Yabe's DemoServer includes fewer nodes. This example has modified the configuration file, and the specific file is as follows. Create a new **DeviceStorage.Xml** file and copy the configuration content. Replace the same file in the Yabe installation directory **C:\Program Files\yabe\AddOn** with the file, and restart the DemoServer.
 
 ```xml
 <?xml version="1.0"?>

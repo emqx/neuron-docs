@@ -2,7 +2,13 @@
 
 ## The device status is "Disconnected" for a long time or Error code - ERROR(3002): Plug-in is not connected
 
-* Test whether the OPC UA server port is available by Telnet tool, command `telnet target-ip target-port`, if it fails to connect, you need to check whether the OPC UA server is listening to the right network, and check whether the network firewall setting is open the relevant port.
+* Test whether the OPC UA server port is available by Telnet tool, command
+
+  ```
+  telnet target-ip target-port
+  ```
+
+  If the connection fails, it's crucial to verify that the OPC UA server is correctly configured to listen to the appropriate network, and to ensure that the relevant port is open within the network firewall settings.
 
 * You can use other OPC UA testing software, such as UaExpert, to test if the OPC UA server cannot be connected.
 

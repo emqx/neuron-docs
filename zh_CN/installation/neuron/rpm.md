@@ -5,7 +5,7 @@
 根据不同版本及架构下载安装包，例如：
 
 ```bash
-$ wget https://www.emqx.com/en/downloads/neuron/2.4.0/neuron-2.4.0-linux-amd64.rpm
+$ wget https://www.emqx.com/en/downloads/neuron/2.5.3/neuron-2.5.3-linux-amd64.rpm
 ```
 
 ## 安装
@@ -13,7 +13,7 @@ $ wget https://www.emqx.com/en/downloads/neuron/2.4.0/neuron-2.4.0-linux-amd64.r
 根据不同版本及架构安装，例如：
 
 ```bash
-$ sudo rpm -i neuron-2.4.0-linux-amd64.rpm
+$ sudo rpm -i neuron-2.5.3-linux-amd64.rpm
 ```
 
 ::: tip

@@ -1,10 +1,10 @@
-# IEC60870-5-104 FAQ
+# FAQ
 
 ## Unable to Read Tag Value, Error Code 3002
 * Check Common Address.
 * Check IOA.
 * See if there are any errors in the log.
-* It takes some time to establish connection with devices.
+* It takes some time to establish a connection with devices.
 * Receive a message of an unsupported type id.
 
 ## Data Type Mismatch, Error Code 3007

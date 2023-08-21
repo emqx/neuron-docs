@@ -1,10 +1,19 @@
-# Overview
+# Omron Fins (UDP)
 
 Omron Fins UDP is a protocol for communication between Omron PLCs and other devices. It is a TCP/IP based protocol. The fins plugin is used for Omron PLCs with network port, such as NX1P.
 
 Neuron supports Fins UDP protocol, which can be used to communicate with Omron PLCs through Fins UDP protocol.
 
-## Parameters
+## Add Device
+
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
+
+- Name: The name of this device node.
+- Plugin: Select the **Omron FINS UDP** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 | Parameter         | Description                      |
 | ----------------- | -------------------------------- |
@@ -12,7 +21,17 @@ Neuron supports Fins UDP protocol, which can be used to communicate with Omron P
 | **PLC IP Address** | Target PLC IPv4 address|
 | **PLC Port**       | Target PLC port, default 9600 |
 
-## Data types
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * UINT8
 * INT8
@@ -27,11 +46,11 @@ Neuron supports Fins UDP protocol, which can be used to communicate with Omron P
 * BIT
 * STRING
 
-## Address Format
+### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
-### AREA ADDRESS
+#### AREA ADDRESS
 
 | AREA | DATA TYPE                                                 | ATTRIBUTE  | REMARK           |
 | ---- | --------------------------------------------------------- | ---------- | ---------------- |
@@ -62,15 +81,15 @@ Neuron supports Fins UDP protocol, which can be used to communicate with Omron P
 | D20         | float  | D area, address is 20    |
 | EM10W100    | float  | EM10 area, address is 100 |
 
-### .BIT
+#### .BIT
 
 Optional, referring to a bit of an address.
 
-### .LEN\[H]\[L]
+#### .LEN\[H]\[L]
 
 When the data type is string type, it is a required, **.LEN** indicates the length of the string, including **H** and **L** two endianness, the default is **H** .
 
-## Address Examples
+### Example Addresses
 
 | Address   | Data Type  | Description                                             |
 | --------- | ------ | ----------------------------------------------------------- |
@@ -96,3 +115,13 @@ When the data type is string type, it is a required, **.LEN** indicates the leng
 | D5.20H    | string | D area, address 5, the string length is 20 bytes and the endianness is H  |
 | D5.30     | string | D area, address 5, the string length is 30 bytes and the endianness is L  |
 | EM10.10   | string | EM area, address 10, the string length is 10 bytes and the endianness is L  |
+
+## Use Case
+
+This chapter also provides practical examples to facilitate a quick start.
+
+- [Omron NX1P PLC](./example/nx1p/nx1p.md)
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

@@ -9,13 +9,13 @@ Neuron provides a variety of installation methods, and users can view the detail
 Get Docker image
 
 ```bash
-$ docker pull emqx/neuron:2.3.4
+$ docker pull emqx/neuron:latest
 ```
 
 Run the Docker container
 
 ```bash
-$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:2.3.4
+$ docker run -d --name neuron -p 7000:7000 --privileged=true --restart=always emqx/neuron:latest
 ```
 
 ## Install Modbus Simulator
