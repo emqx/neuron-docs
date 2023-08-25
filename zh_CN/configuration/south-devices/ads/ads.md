@@ -28,7 +28,7 @@ Neuron Beckhoff ADS 插件使用户可以通过 TCP/IP 连接到 Beckhoff TwinCA
 | 概念               | 说明                                                         |
 | ------------------ | ------------------------------------------------------------ |
 | ADS 协议           | [ADS] (Automation Device Specification) 是 TwinCAT 的通讯协议。<br />它使得 TwinCAT 系统能够通过媒介独立的串行或网络连接，实现数据的交换和控制。<br />ADS 旨在为 TwinCAT 系统中控制器与用户界面之间的通信提供标准接口。 |
-| AMS Net ID         | [AMS Net ID] 是 TwinCAT 网络中本地计算机的地址。它由6个字节组成，用点分十进制表示（例如： “1.2.3.4.5.6”） 。<br />为避免通信冲突，AMS Net ID 在 TwinCAT 网络中必须是唯一的。<br />默认情况下，TwinCAT 通过在系统的 IP 地址后附加 “.1.1” 来生成 AMS Net ID 。<br />例如，在 IP 地址为 “172.17.213.60” 的系统中， 默认生成的 AMS Net ID 将为 “172.17.213.60.1.1” 。 实际场景不一定会使用默认生成的方式，这时请在 TwinCAT 软件中查看 AMS Net ID。 |
+| AMS Net ID         | [AMS Net ID] 是 TwinCAT 网络中本地计算机的地址。它由6个字节组成，用点分十进制表示（例如： “1.2.3.4.5.6”） 。<br />为避免通信冲突，AMS Net ID 在 TwinCAT 网络中必须是唯一的。<br />默认情况下，TwinCAT 通过在系统的 IP 地址后附加 “.1.1” 来生成 AMS Net ID 。<br />例如，在 IP 地址为 “172.17.213.60” 的系统中， 默认生成的 AMS Net ID 将为 “172.17.213.60.1.1” 。**注意**：实际场景不一定会使用默认生成的方式，这时请在 TwinCAT 软件中查看 AMS Net ID。 |
 | AMS port           | TwinCAT 网络中的 ADS 设备由 AMS Net ID 和 [AMS port] 标识。<br />每个 TwinCAT 系统通常为特定的目的使用特定的 AMS Port 。<br />例如，Port 801 用于系统通信，Port 851 用于事件通知。 |
 | Index group/offset | ADS [index group 和 index offset] 是 TwinCAT ADS 系统服务中用于设备或程序之间进行数据交换的规范。<br />所有的读取和写入操作都通过 index group 和 index offset 在 PLC 上进行。<br />Index offset 是16位的，index offset 是32位的。<br />Index group 用于指定正在访问的数据的类别或类型，而 index offset 指定该类别或类型中的特定数据元素。 |
 
