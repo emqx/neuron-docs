@@ -345,6 +345,10 @@
                   "path": "configuration/south-devices/secs-gem/example/ignition"
                 }
               ]
+            },
+            {
+              "title": "KUKA Ethernet KRL TCP",
+              "path": "configuration/south-devices/kuka/kuka"
             }
           ]
         },
@@ -949,6 +953,10 @@
                   "path": "configuration/south-devices/secs-gem/example/ignition"
                 }
               ]
+            },
+            {
+              "title": "KUKA Ethernet KRL TCP",
+              "path": "configuration/south-devices/kuka/kuka"
             }
           ]
         },
