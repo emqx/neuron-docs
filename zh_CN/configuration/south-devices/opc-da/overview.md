@@ -8,21 +8,21 @@ NeuOPC 的组件包可以前往 NeuOPC 的[项目页面](https://github.com/neug
 
 ### NeuOPC 参数
 
-| 参数           | 说明                                                         |
-| -------------- | ------------------------------------------------------------ |
-| OPCDA Host     | 需要连接目标主机标识，可以是目标 IP 或者 Hostname，本机可以不设置 |
-| OPCDA Server   | DA 服务器的名称，如"Matrikon.OPC.Simulation.1"，填写 DA Host 之后可以点击下拉按钮尝试获取 Server 列表 |
-| OPCUA Port     | UA 服务器的监听端口设置，默认 `48401`                        |
-| OPCUA User     | UA 服务器的授权访问用户名，默认 `admin`                      |
-| OPCUA Password | UA 服务器的访问密码，默认 `123456`                           |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| OPC DA Host     | 需要连接目标主机标识，可以是目标 IP 或者 Hostname，本机可以不设置 |
+| OPC DA Server   | DA 服务器的名称，如 `opcda://192.168.10.133/Matrikon.OPC.Simulation`，填写 DA Host 之后可以点击下拉按钮尝试获取 Server 列表 |
+| OPC UA Endpoint | UA 服务器的监听地址，默认 `opc.tcp://localhost:48401`        |
+| OPC UA User     | UA 服务器的授权访问用户名，默认 `admin`                      |
+| OPC UA Password | UA 服务器的访问密码，默认 `123456`                           |
 
 ### Neuron opcua 参数
 
-|  参数        | 说明                                                  |
-| ------------ | ----------------------------------------------------- |
-| 端点 URL     | NeuOPC 的访问地址，默认是`opc.tcp://127.0.0.1:48401/` |
-| 用户名       | NeuOPC 的授权用户名                                   |
-| 密码         | NeuOPC 的访问密码                                     |
+| 参数     | 说明                                                 |
+| -------- | ---------------------------------------------------- |
+| 端点 URL | NeuOPC 的访问地址，默认是`opc.tcp://127.0.0.1:4840/` |
+| 用户名   | NeuOPC 的授权用户名                                  |
+| 密码     | NeuOPC 的访问密码                                    |
 
 ## 数据类型
 
