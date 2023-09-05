@@ -6,10 +6,6 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 *POST*  **/api/v2/ping**
 
-### Request Headers
-
-**Authorization** Bearer \<token\>
-
 ### Response Status
 
 * 200 OK
