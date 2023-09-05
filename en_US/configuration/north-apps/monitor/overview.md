@@ -1,11 +1,6 @@
-# Overview
+# Monitor
 
-The Neuron Monitor plugin is an open source north bound plugin, which, as its
-name implies, is used for monitoring the Neuron instance. The Monitor plugin is
-special in that users are not allow to create or delete nodes using the plugin
-directly, but a singleton *monitor* node is created for you at startup of the
-Neuron process. You could see the *monitor* node in the **North Apps** tab
-through the dashboard.
+The Neuron Monitor plugin is an open-source northbound plugin, which, as its name implies, is used for monitoring the Neuron instance. The Monitor plugin is special in that users are not allowed to create or delete nodes using the plugin directly, but a singleton *monitor* node is created for you at the startup of the Neuron process. You could see the *monitor* node in the **North Apps** tab through the dashboard.
 <figure align="center">
   <img src="./assets/monitor_node.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -14,44 +9,37 @@ through the dashboard.
     <sub><b>Fig.1 - Neuron *monitor* node</b></sub>
   </figcaption>
 </figure>
-
-## Parameters
+## Application Configuration
 
 These are the available parameters when configuring the *monitor* node.
+
+:::tip
+
+These parameters are used only for [heartbeats](#heartbeats) and [events](#events) reporting, you don't need to configure the *monitor* node if you do not use these features.
+
+:::
 
 | Parameter                       | Description                                                  |
 | ------------------------------- | ------------------------------------------------------------ |
 | **Client ID**                   | MQTT client id for communication, required.                  |
 | **Event Topic Prefix**          | Prefix of the MQTT topics for event reporting, required.     |
 | **Heartbeat Topic**             | MQTT topic to which heartbeat messages will be published, required. |
-| **Heartbeat Interval**          | Interval in seconds between each heartbeat messages. Set to 0 to disable heartbeat messages. |
+| **Heartbeat Interval**          | Interval in seconds between heartbeat messages. Set to 0 to disable heartbeat messages. |
 | **Broker Host**                 | MQTT broker host, required.                                  |
 | **Broker Port**                 | MQTT broker port number, required.                           |
 | **Username**                    | MQTT user name, optional.                                    |
 | **Password**                    | MQTT user password, optional.                                |
 | **SSL**                         | Whether to enable MQTT SSL, default false.                   |
-| **CA**                          | CA certificate which signs the server certificate, required when SSL enabled. |
-| **Client Cert**                 | Client certificate, required when using SSL two way authentication. |
-| **Client Private Key**          | Client private key, required when using SSL two way authentication. |
+| **CA**                          | CA certificate which signs the server certificate, required when SSL is enabled and using self-signed certificates. |
+| **Client Cert**                 | Client certificate, required when using SSL two-way authentication. |
+| **Client Private Key**          | Client private key, required when using SSL two-way authentication. |
 | **Client Private Key Password** | Client private key password, required only when **Client Private Key**, if provided, is encrypted. |
 
-::: tip
-These parameters are used only for [heartbeats](#heartbeats) and [events](#events)
-reporting, you don't need to configure the *monitor* node if you do not use
-these features.
-:::
+The **Broker Host**, **Broker Port**, **Username**, **Password**, **SSL**, **CA**, **Client Cert**, **Client Private Key** and **Client Private Key Password** parameters are used to make [MQTT] connections, which are similar to that of the [MQTT plugin]. We refer to these 9 parameters as the MQTT connection parameters in the following text.
 
-The **Broker Host**, **Broker Port**, **Username**, **Password**, **SSL**,
-**CA**, **Client Cert**, **Client Private Key** and **Client Private Key Password**
-parameters are used to make [MQTT] connections, which are similar to that of the
-[MQTT plugin]. We refer to these 9 parameters as the MQTT connection parameters
-in the following text.
+## Data Metrics
 
-## Metrics
-
-The Neuron Monitor plugin exposes a [Prometheus] compatible [metrics HTTP API].
-The Neuron dashboard **About** page and **Data statistics** tab depends on this
-API to display certain information.
+The Neuron Monitor plugin exposes a [Prometheus] compatible [metrics HTTP API]. The Neuron dashboard **About** page and **Data statistics** tab depends on this API to display certain information.
 
 You may click **System Information -> About** to show the **About** page.
 <figure align="center">
@@ -63,8 +51,7 @@ You may click **System Information -> About** to show the **About** page.
   </figcaption>
 </figure>
 
-Click the **Data statistics** icon on your node to show the **Data statistics**
-tab.
+Click the **Data statistics** icon on your node to show the **Data statistics** tab.
 <figure align="center">
   <img src="./assets/data_statistics_icon.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -74,8 +61,7 @@ tab.
   </figcaption>
 </figure>
 
-Below is the **Data statistics** tab, showing the metrics of an example *file*
-node.
+Below is the **Data statistics** tab, showing the metrics of an example *file* node.
 <figure align="center">
   <img src="./assets/file_statistics.png"
        style="border:thin solid #E0DCD9; width: 60%"
@@ -84,22 +70,13 @@ node.
     <sub><b>Fig.4 - Neuron dashboard *Data statistics* tab</b></sub>
   </figcaption>
 </figure>
-
 ::: warning NOTE
-The metrics API is enabled through the life time of the Neuron process.
-Starting or stopping the *monitor* node will only start or stop the
-[heartbeats](#heartbeats) and [events](#events) functionality.
+The metrics API is enabled through the lifetime of the Neuron process. Starting or stopping the *monitor* node will only start or stop the [heartbeats](#heartbeats) and [events](#events) functionality.
 :::
 
 ## Heartbeats
 
-The Monitor plugin allows users to publish heartbeat messages to MQTT brokers,
-which can be used to check the liveness of the Neuron process or node states.
-Together with the MQTT connection parameters, this feature is controlled by two
-additional parameters, **Heartbeat Topic** and **Heartbeat Interval**. The
-**Heartbeat Topic** parameter designates the MQTT topic that the plugin will
-publish heartbeat messages to. The **Heartbeat Interval** parameter specifies
-the interval in seconds between each heartbeat message.
+The Monitor plugin allows users to publish heartbeat messages to MQTT brokers, which can be used to check the liveness of the Neuron process or node states. Together with the MQTT connection parameters, this feature is controlled by two additional parameters, **Heartbeat Topic** and **Heartbeat Interval**. The **Heartbeat Topic** parameter designates the MQTT topic that the plugin will publish heartbeat messages to. The **Heartbeat Interval** parameter specifies the interval in seconds between each heartbeat message.
 
 ::: tip
 Setting the **Heartbeat Interval** to **0** will disable heartbeat messages.
@@ -110,7 +87,7 @@ Heartbeat messages have the following fields:
 * `version` : the Neuron version number.
 * `states` : array of node states which are similar to that in [node state HTTP API].
 
-Bellow is an example heartbeat message.
+Below is an example heartbeat message.
 ```json:no-line-numbers
 {
   "timestamp": 1658134132237,
@@ -132,17 +109,13 @@ Bellow is an example heartbeat message.
 
 ## Events
 
-Events represent internal state changes of the Neuron process that system
-administrators or operational engineers may be interested in, such as the
-creation, removal, or setting of nodes.
+Events represent internal state changes in the Neuron process that system administrators or operational engineers may be interested in, such as the creation, removal, or setting of nodes.
 
-The Monitor plugin can publish event messages to MQTT topics determined by the
-**Event Topic Prefix** parameter. We use *{event-topic-prefix}* to denote the
-actual value provided for the **Event Topic Prefix** parameter.
+The Monitor plugin can publish event messages to MQTT topics determined by the **Event Topic Prefix** parameter. We use *{event-topic-prefix}* to denote the actual value provided for the **Event Topic Prefix** parameter.
 
-### Node events
+### Node Events
 
-#### Node creation events
+#### Node Creation Events
 
 Topic: *{event-topic-prefix}/node/add*
 
@@ -154,7 +127,7 @@ Example:
 }
 ```
 
-#### Node removal events
+#### Node Removal Events
 
 Topic: *{event-topic-prefix}/node/delete*
 
@@ -165,7 +138,7 @@ Example:
 }
 ```
 
-#### Node setting events
+#### Node Setting Events
 
 Topic: *{event-topic-prefix}/node/setting*
 
@@ -179,7 +152,7 @@ Example:
 }
 ```
 
-#### Node control events
+#### Node Control Events
 
 Topic: *{event-topic-prefix}/node/ctl*
 
@@ -191,9 +164,9 @@ Example:
 }
 ```
 
-### Group events
+### Group Events
 
-#### Group creation events
+#### Group Creation Events
 
 Topic: *{event-topic-prefix}/group/add*
 
@@ -206,7 +179,7 @@ Example:
 }
 ```
 
-#### Group update events
+#### Group Update Events
 
 Topic: *{event-topic-prefix}/group/update*
 
@@ -218,7 +191,7 @@ Example:
   "interval": 2000
 }
 ```
-#### Group removal events
+#### Group Removal Events
 
 Topic: *{event-topic-prefix}/group/delete*
 
@@ -230,9 +203,9 @@ Example:
 }
 ```
 
-### Tag events
+### Tag Events
 
-#### Tag creation events
+#### Tag Creation Events
 
 Topic: *{event-topic-prefix}/tag/add*
 
@@ -255,7 +228,7 @@ Example:
 }
 ```
 
-#### Tag update events
+#### Tag Update Events
 
 Topic: *{event-topic-prefix}/tag/update*
 
@@ -278,7 +251,7 @@ Example:
 }
 ```
 
-#### Tag removal events
+#### Tag Removal Events
 
 Topic: *{event-topic-prefix}/tag/delete*
 

@@ -72,6 +72,7 @@ Windows 中尽量关闭防火墙，否则可能会导致 Neuron 连接不上模�
 :::tip
 每个设备所需的配置参数有所不同，详细南向设备参数说明可参考 [模块配置](../configuration/south-devices/south-devices.md)。
 :::
+
 ### 第四步，在设备卡片中创建组
 
 创建组可用于设备采集点位的归类。

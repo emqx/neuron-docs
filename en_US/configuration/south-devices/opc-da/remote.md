@@ -68,3 +68,5 @@ So far, the local host test environment of OPC DA has been set up.
 
 ![client-worked](./assets/client-worked.png)
 
+![client-worked](./assets/client-worked1.png)
+

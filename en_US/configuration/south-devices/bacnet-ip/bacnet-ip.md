@@ -1,17 +1,36 @@
-# Overview
+# BACnet/IP
 
 BACnet (Building Automation and Control Networks) is a communication protocol used in smart buildings. It is defined by the International Organization for Standardization (ISO), the American National Standards Institute (ANSI) and the American Society of Heating, Venting, and Air-conditioning Engineers (ASHRAE). BACnet is designed specifically for smart buildings and control systems, and can be used for heating, ventilation, and air conditioning (HVAC), lighting control, access control, fire detection systems, and related equipment. Its advantages include reducing the cost of maintenance systems and making installation simpler than general industrial communication protocols. In addition, BACnet also provides five standard protocols commonly used in the industry, which can prevent equipment and system suppliers from monopolizing the market and increase the scalability and compatibility of future systems. BACnet supports multiple communication methods, including serial ports, IP, Ethernet, and ZigBee.
 
 Neuron supports BACnet IP protocol and can communicate with BACnet devices through UDP protocol.
 
-## Parameter Configuration
+## Add Device
 
-| Parameter | Description                       |
-| --------- | --------------------------------- |
-| **host**  | BACnet device ip                  |
-| **port**  | BACnet device port, default 47808 |
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
 
-## Support Data Type
+- Name: The name of this device node.
+- Plugin: Select the **BACnet/IP** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
+
+| Parameter      | Description                     |
+|--------- | ------------------------------------- |
+| **Device IP Address** | BACnet device IP                 |
+| **Device Port** | BACnet device port, default 47808  |
+
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data Types
 
 * float
 * bit
@@ -21,12 +40,9 @@ Neuron supports BACnet IP protocol and can communicate with BACnet devices throu
 * bool
 * string
 
-## Usage of Address Fromat
-
 ### Address Format
 
 > AREA ADDRESS(.PROPERTY_ID)</span>
-
 
 support Area
 
@@ -109,7 +125,7 @@ PROPERTY_ID consists of two parts: a custom flag and the value (integer) of the 
 
 Support Present Value zeroing operation, currently supporting AO and BO regions. The address format is "(AO|BO)xxx.NULL", and only write operations are supported. Depending on the type of region, write the zero value of the corresponding type.
 
-### Address Examples
+### Example Addresses
 
 | Address               | Data Type | Description                                          |
 | --------------------- | --------- | ---------------------------------------------------- |

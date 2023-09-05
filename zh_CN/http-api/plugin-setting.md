@@ -111,7 +111,7 @@
 }
 ```
 
-#### TCP/UDP 连接设置
+#### TCP 连接设置
 
 ```json
 {
@@ -129,8 +129,6 @@
         "connection_mode": 0,
         // required, send reading instruction interval(ms)
         "interval": 20,
-        // required, TCP transfer(0) or UDP transfer(1)
-        "transport_mode": 0,
         // required, the maximum number of retries after a failed attempt to send a read command
         "max_retries": 0,
         // required, resend reading instruction interval(ms) after a failed attempt to send a read command
