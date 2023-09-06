@@ -1668,6 +1668,57 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 多节点实例化 Template
+
+*POST* /api/v2/template/instances
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 400
+    * 2304    库打开失败
+    * 2502    模板名字太长
+* 404
+    * 2301    库未找到
+    * 2501    模板不存在
+* 409
+    * 2002    node 已存在
+    * 2307    插件不允许实例化
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "nodes": [
+      {
+        "name": "rtu template",
+        "node": "node1"
+      },
+      {
+        "name": "tcp template",
+        "node" "node2"
+      }
+    ]
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
 ## 添加 Template Group
 
 *POST*  /api/v2/template/group

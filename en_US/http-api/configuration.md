@@ -1625,7 +1625,7 @@ of the given name.
 }
 ```
 
-## Instantiate Template
+## Template Instantiation
 
 *POST* /api/v2/template/inst
 
@@ -1657,6 +1657,57 @@ of the given name.
 {
     "name": "rtu template",
     "node": "modbus-rtu",
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Template Multi Node Instantiation
+
+*POST* /api/v2/template/instances
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 400
+    * 2304    library failed to open
+    * 2502    template name too long
+* 404
+    * 2301    library not found
+    * 2501    template not found
+* 409
+    * 2002    node exist
+    * 2307    library not allow create instance
+* 500
+    * 1001    internal error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "nodes": [
+      {
+        "name": "rtu template",
+        "node": "node1"
+      },
+      {
+        "name": "tcp template",
+        "node" "node2"
+      }
+    ]
 }
 ```
 
