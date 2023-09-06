@@ -490,7 +490,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 404
+  * 2003 node not exist
   * 2106 group not exist
+* 409
+  * 2104 group exist
 
 ### 请求体
 
@@ -502,6 +505,44 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "group": "group",
     //read/upload interval(ms)
     "interval": 20000
+}
+```
+
+更新 group name:
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1"
+}
+```
+
+更新 group interval:
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //read/upload interval(ms)
+    "interval": 10000
+}
+```
+
+同时更新 group name 和 interval:
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1",
+    //read/upload interval(ms)
+    "interval": 10000
 }
 ```
 
