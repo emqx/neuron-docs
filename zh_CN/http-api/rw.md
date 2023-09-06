@@ -54,19 +54,21 @@
 
 ## 写 Tag
 
+### 写一个 Tag
+
 *POST*  /api/v2/write
 
-### 请求头部
+#### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### 响应状态
+#### 响应状态
 
 * 200 OK
 
-### 请求体
+#### 请求体
 
 ```json
 {
@@ -77,7 +79,61 @@
 }
 ```
 
-### 响应
+#### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+### 写多个 Tag
+
+*POST*  /api/v2/write/tags
+
+#### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+#### 响应状态
+
+* 200 OK
+
+#### 请求体
+
+```json
+{
+    "node": "modbus-tcp-1",
+    "group": "group1",
+    "tags": [
+
+        {
+            "tag": "tag1",
+            "value": 123
+        },
+        {
+            "tag": "tag2",
+            "value": 1233
+        },
+        {
+            "tag": "tag3",
+            "value": 7788
+        },
+        {
+            "tag": "tag4",
+            "value": 1
+        },
+        {
+            "tag": "tag5",
+            "value": "asdfda"
+        }
+    ]
+}
+```
+
+#### 响应
 
 ```json
 {
