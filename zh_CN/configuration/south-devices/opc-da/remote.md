@@ -1,7 +1,5 @@
 # NeuOPC 远程访问
 
-本例使用上文设置好的主机作为客户机连接局域网内的另一台主机，实现跨主机的 OPC DA 数据读取与转换，远程主机使用 Windows 10 x64 操作系统演示。
-
 ## 远程主机 DCOM 设置
 
 在远程主机上安装 MatrikonOPC Server for Simulation，并将电脑的防火墙关闭。演示使用的是 Administrator 账户。
