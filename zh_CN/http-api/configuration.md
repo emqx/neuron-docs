@@ -1829,11 +1829,41 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求体
 
+更新 group name:
 ```json
 {
+    //template name
     "template": "modbus-template",
-    "group": "group1",
-    "interval": 20000
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1"
+}
+```
+
+更新 group interval:
+```json
+{
+    //template name
+    "template": "modbus-template",
+    //group name
+    "group": "gconfig1",
+    //interval(ms)
+    "interval": 10000
+}
+```
+
+同时更新 group name 和 interval:
+```json
+{
+    //template name
+    "template": "modbus-template",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1",
+    //interval(ms)
+    "interval": 10000
 }
 ```
 

@@ -1829,11 +1829,41 @@ of the given name.
 
 ### Body
 
+To update group name:
 ```json
 {
+    //template name
     "template": "modbus-template",
-    "group": "group1",
-    "interval": 20000
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1"
+}
+```
+
+To update group interval:
+```json
+{
+    //template name
+    "template": "modbus-template",
+    //group name
+    "group": "gconfig1",
+    //interval(ms)
+    "interval": 10000
+}
+```
+
+To update both group name and interval:
+```json
+{
+    //template name
+    "template": "modbus-template",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1",
+    //interval(ms)
+    "interval": 10000
 }
 ```
 
