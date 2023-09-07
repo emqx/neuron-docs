@@ -1145,6 +1145,59 @@ To update both group name and interval:
 }
 ```
 
+## Subscribe Multiple Groups
+
+*POST*  /api/v2/subscribes
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+  * 2106 group not exist
+
+### Body
+
+```json
+{
+  //app name
+  "app": "mqtt",
+  "groups": [
+    {
+      //driver name
+      "driver": "modbus1",
+      //group name
+      "group": "group1",
+      //optional, depends on plugins
+      "params": {
+        //when using the MQTT plugin, the topic key is the upload topoic
+        "topic": "/neuron/mqtt/modbus1/group1"
+      }
+    },
+    {
+      "driver": "modbus2",
+      "group": "group2",
+      "params": {
+        "topic": "/neuron/mqtt/modbus2/group2"
+      }
+    }
+  ]
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
 ## UnSubscribe
 
 *DELETE*  /api/v2/subscribe
