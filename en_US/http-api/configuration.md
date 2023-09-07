@@ -1198,6 +1198,47 @@ To update both group name and interval:
 }
 ```
 
+## Update Subscribe Parameters
+
+*PUT*  /api/v2/subscribe
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+  * 2106 group not exist
+
+### Body
+
+```json
+{
+    //app name
+    "app": "mqtt",
+    //driver name
+    "driver": "modbus-tcp",
+    //driver node group name
+    "group": "group-1",
+    "params": {
+        //when using the MQTT plugin, the topic key is the upload topic
+        "topic": "/neuron/mqtt/group-1"
+    }
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
 ## UnSubscribe
 
 *DELETE*  /api/v2/subscribe

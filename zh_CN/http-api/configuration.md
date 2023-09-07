@@ -1209,6 +1209,47 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 更新订阅参数
+
+*PUT*  /api/v2/subscribe
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+  * 2106 group 不存在
+
+### 请求体
+
+```json
+{
+    //app name
+    "app": "mqtt",
+    //driver name
+    "driver": "modbus-tcp",
+    //driver node group name
+    "group": "group-1",
+    "params": {
+        //when using the MQTT plugin, the topic key is the upload topic
+        "topic": "/neuron/mqtt/group-1"
+    }
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
 ## 取消订阅
 
 *DELETE*  /api/v2/subscribe
