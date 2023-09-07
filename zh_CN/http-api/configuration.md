@@ -486,7 +486,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 * 200 OK
 * 404
+  * 2003 node not exist
   * 2106 group not exist
+* 409
+  * 2104 group exist
 
 ### 请求体
 
@@ -498,6 +501,44 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "group": "group",
     //read/upload interval(ms)
     "interval": 20000
+}
+```
+
+更新 group name:
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1"
+}
+```
+
+更新 group interval:
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //read/upload interval(ms)
+    "interval": 10000
+}
+```
+
+同时更新 group name 和 interval:
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1",
+    //read/upload interval(ms)
+    "interval": 10000
 }
 ```
 
@@ -1111,6 +1152,100 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 订阅多个组
+
+*POST*  /api/v2/subscribes
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+  * 2106 group 不存在
+
+### 请求体
+
+```json
+{
+  //app name
+  "app": "mqtt",
+  "groups": [
+    {
+      //driver name
+      "driver": "modbus1",
+      //group name
+      "group": "group1",
+      //optional, depends on plugins
+      "params": {
+        //when using the MQTT plugin, the topic key is the upload topoic
+        "topic": "/neuron/mqtt/modbus1/group1"
+      }
+    },
+    {
+      "driver": "modbus2",
+      "group": "group2",
+      "params": {
+        "topic": "/neuron/mqtt/modbus2/group2"
+      }
+    }
+  ]
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+## 更新订阅参数
+
+*PUT*  /api/v2/subscribe
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 404
+  * 2106 group 不存在
+
+### 请求体
+
+```json
+{
+    //app name
+    "app": "mqtt",
+    //driver name
+    "driver": "modbus-tcp",
+    //driver node group name
+    "group": "group-1",
+    "params": {
+        //when using the MQTT plugin, the topic key is the upload topic
+        "topic": "/neuron/mqtt/group-1"
+    }
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
 ## 取消订阅
 
 *DELETE*  /api/v2/subscribe
@@ -1664,6 +1799,57 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 多节点实例化 Template
+
+*POST* /api/v2/template/instances
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 400
+    * 2304    库打开失败
+    * 2502    模板名字太长
+* 404
+    * 2301    库未找到
+    * 2501    模板不存在
+* 409
+    * 2002    node 已存在
+    * 2307    插件不允许实例化
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "nodes": [
+      {
+        "name": "rtu template",
+        "node": "node1"
+      },
+      {
+        "name": "tcp template",
+        "node" "node2"
+      }
+    ]
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
 ## 添加 Template Group
 
 *POST*  /api/v2/template/group
@@ -1774,11 +1960,41 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 ### 请求体
 
+更新 group name:
 ```json
 {
+    //template name
     "template": "modbus-template",
-    "group": "group1",
-    "interval": 20000
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1"
+}
+```
+
+更新 group interval:
+```json
+{
+    //template name
+    "template": "modbus-template",
+    //group name
+    "group": "gconfig1",
+    //interval(ms)
+    "interval": 10000
+}
+```
+
+同时更新 group name 和 interval:
+```json
+{
+    //template name
+    "template": "modbus-template",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1",
+    //interval(ms)
+    "interval": 10000
 }
 ```
 

@@ -486,16 +486,46 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 
 * 200 OK
 * 404
+  * 2003 node not exist
   * 2106 group not exist
+* 409
+  * 2104 group exist
 
 ### Body
 
+To update group name:
 ```json
 {
-    //group name
-    "group": "gconfig1",
     //node name
     "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1"
+}
+```
+
+To update group interval:
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //read/upload interval(ms)
+    "interval": 10000
+}
+```
+
+To update both group name and interval:
+```json
+{
+    //node name
+    "node": "modbus-node",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1",
     //read/upload interval(ms)
     "interval": 10000
 }
@@ -1111,6 +1141,100 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
+## Subscribe Multiple Groups
+
+*POST*  /api/v2/subscribes
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+  * 2106 group not exist
+
+### Body
+
+```json
+{
+  //app name
+  "app": "mqtt",
+  "groups": [
+    {
+      //driver name
+      "driver": "modbus1",
+      //group name
+      "group": "group1",
+      //optional, depends on plugins
+      "params": {
+        //when using the MQTT plugin, the topic key is the upload topoic
+        "topic": "/neuron/mqtt/modbus1/group1"
+      }
+    },
+    {
+      "driver": "modbus2",
+      "group": "group2",
+      "params": {
+        "topic": "/neuron/mqtt/modbus2/group2"
+      }
+    }
+  ]
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Update Subscribe Parameters
+
+*PUT*  /api/v2/subscribe
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 404
+  * 2106 group not exist
+
+### Body
+
+```json
+{
+    //app name
+    "app": "mqtt",
+    //driver name
+    "driver": "modbus-tcp",
+    //driver node group name
+    "group": "group-1",
+    "params": {
+        //when using the MQTT plugin, the topic key is the upload topic
+        "topic": "/neuron/mqtt/group-1"
+    }
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
 ## UnSubscribe
 
 *DELETE*  /api/v2/subscribe
@@ -1621,7 +1745,7 @@ of the given name.
 }
 ```
 
-## Instantiate Template
+## Template Instantiation
 
 *POST* /api/v2/template/inst
 
@@ -1653,6 +1777,57 @@ of the given name.
 {
     "name": "rtu template",
     "node": "modbus-rtu",
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Template Multi Node Instantiation
+
+*POST* /api/v2/template/instances
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 400
+    * 2304    library failed to open
+    * 2502    template name too long
+* 404
+    * 2301    library not found
+    * 2501    template not found
+* 409
+    * 2002    node exist
+    * 2307    library not allow create instance
+* 500
+    * 1001    internal error
+    * 1010    server is busy
+
+### Body
+
+```json
+{
+    "nodes": [
+      {
+        "name": "rtu template",
+        "node": "node1"
+      },
+      {
+        "name": "tcp template",
+        "node" "node2"
+      }
+    ]
 }
 ```
 
@@ -1774,11 +1949,41 @@ of the given name.
 
 ### Body
 
+To update group name:
 ```json
 {
+    //template name
     "template": "modbus-template",
-    "group": "group1",
-    "interval": 20000
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1"
+}
+```
+
+To update group interval:
+```json
+{
+    //template name
+    "template": "modbus-template",
+    //group name
+    "group": "gconfig1",
+    //interval(ms)
+    "interval": 10000
+}
+```
+
+To update both group name and interval:
+```json
+{
+    //template name
+    "template": "modbus-template",
+    //group name
+    "group": "gconfig1",
+    //group new name
+    "new_name": "group1",
+    //interval(ms)
+    "interval": 10000
 }
 ```
 
