@@ -17,8 +17,10 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 
 |  Parameter      |  Description                      |
 | -------- | -------------------------- |
+| **Transport Mode** |  Use TCP mode or UDP mode      |
 | **PLC IP Address** |  Target PLC IPv4 address         |
 | **PLC Port** | Target PLC IPv4 address, Default 2000 |
+| **UDP Source Port** | Target device port number, available when UDP mode is enabled, default is 52001 |
 
 ## Configure Data Groups and Tags
 

@@ -18,7 +18,9 @@ This section introduces how to connect Q03UDE using the Neuron Mitsubishi 3E plu
 4. Click **Navigation** -> **Parameter** -> **PLC Parameter** -> **Open Setting**, **Protocol** select **TCP**, **Open System** select **MC Protocol**, Set **Host Station Port No.**, Click **End**.
 ![q03ude4](./assets/q03ude_en4.jpg)
 
-5. Click on the menu **Online** -> **Write to PLC** -> **Execute**.
+5. Tick **Enable online change (FTP, MC protocols)** as required.
+
+6. Click on the menu **Online** -> **Write to PLC** -> **Execute**.
 
 ## Configure Neuron
 
@@ -30,6 +32,13 @@ This section introduces how to connect Q03UDE using the Neuron Mitsubishi 3E plu
 ![q03ude5](./assets/q03ude_en5.jpg)
 
 4. Add **Group**, add test **tag**.
+
+## Connecting to the Q03UDE using UDP mode
+1. Set the UDP protocol in plc, **Protocol** select udp, **Port No.** fill in the plc listening port.
+![fx5u7](./assets/q03ude_en6.jpg)
+
+2. Configure the neuron udp transport mode, **Transport Mode** select udp, and use the default port number 52001 for the udp source port.
+![fx5u8](./assets/q03ude_en7.jpg)
 
 ## Test Data List
 
