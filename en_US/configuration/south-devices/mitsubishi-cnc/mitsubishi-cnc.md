@@ -4,11 +4,10 @@ The Mitsubishi CNC driver can access Mitsubishi M70 and M80 series machine tools
 
 ## Parameter Configuration
 
-| Parameter | Description                        |
-| --------- | ---------------------------------- |
-| host      | device ip address                  |
-| port      | device port, default 683           |
-| timeout   | connection timeout, default 3000ms |
+| Parameter | Description              |
+| --------- | ------------------------ |
+| host      | device ip address        |
+| port      | device port, default 683 |
 
 ## Support Data Type
 

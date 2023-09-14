@@ -29,7 +29,6 @@ The created simulator in this article is named "test", with a Passive IP address
 	* `Device IP Address`: Target device IP address
 	* `Device Port`: Target device port, default 5000
  	* `Deivce ID`：Target device ID，default 0
-    * `Connect Timeout`：Connect timeout, default 3000 ms
 * In the created south-device node, create a group and create some point position under the group.
 * Enter the Neuron **Data Monitoring** page and select the corresponding device and group to view the collected data points, as shown in the following figure.
   
