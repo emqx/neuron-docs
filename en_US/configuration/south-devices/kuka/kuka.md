@@ -4,12 +4,10 @@ Neuron KUKA Ethernet KRL TCP plugin accesses KUKA robot devices with the KUKA Et
 
 ## Parameter Configuration
 
-| Parameter | Description                         |
-| --------- | ----------------------------------- |
-| host      | Target Device IP address            |
-| port      | Target Device port, default 5000    |
-| timeout   | Connection Timeout, default 3000 ms |
-
+| Parameter | Description                      |
+| --------- | -------------------------------- |
+| host      | Target Device IP address         |
+| port      | Target Device port, default 5000 |
 ## Support Data Type
 
 * uint8

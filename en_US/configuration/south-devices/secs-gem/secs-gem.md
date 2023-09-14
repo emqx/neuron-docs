@@ -4,12 +4,11 @@ The SECS GEM HSMS driver supports accessing devices that comply with the SEMI E3
 
 ## Parameter Configuration
 
-| Parameter | Description                         |
-| --------- | ----------------------------------- |
-| host      | Target Device IP address            |
-| port      | Target Device port, default 5000    |
-| deviceid  | Target Device ID, default 0         |
-| timeout   | Connection Timeout, default 3000 ms |
+| Parameter | Description                      |
+| --------- | -------------------------------- |
+| host      | Target Device IP address         |
+| port      | Target Device port, default 5000 |
+| deviceid  | Target Device ID, default 0      |
 
 ## Support Data Type
 
