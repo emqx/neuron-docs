@@ -34,6 +34,14 @@ This section introduces how to connect the FX5U using the Neuron Mitsubishi 3E p
 
 4. Add **Group**, add test **tag**.
 
+## Connecting the FX5U in UDP Mode
+1. Set the UDP protocol in the PLC, **Protocol** select UDP, **Port No.** fill in the PLC listening port, and **IP Address** fill in the IP address of the host where the Neuron is running.
+![fx5u7](./assets/fx5u_en7.jpg)
+
+2. Configure the Neuron UDP transport mode, **Transport Mode** select UDP, and use the default port number 52001 for the UDP source port.
+![fx5u8](./assets/fx5u_en8.jpg)
+
+
 ## Test Data List
 
 | Name | Address    | Attribute | Data Type   |
