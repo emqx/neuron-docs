@@ -15,10 +15,13 @@ Go to **Configuration -> South Devices**, then click **Add Device** to add the d
 
 After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
-| Parameter          | Description                   |
-| ------------------ | ----------------------------- |
-| **PLC IP Address** | remote plc ip                 |
-| **PLC Port**       | remote plc port, default 2000 |
+|  Parameter      |  Description                      |
+| -------- | -------------------------- |
+| **Transport Mode** |  Use TCP mode or UDP mode      |
+| **PLC IP Address** |  Target PLC IPv4 address         |
+| **PLC Port** | Target PLC IPv4 address, Default 2000 |
+| **UDP Source Port** | Target device port number, available when UDP mode is enabled, default is 52001 |
+
 
 ## Configure Data Groups and Tags
 
