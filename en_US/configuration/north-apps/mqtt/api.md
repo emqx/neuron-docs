@@ -140,6 +140,8 @@ Before Neuron version 2.4.5, the write request topic was hard-coded to **/neuron
 
 #### Body
 
+#### Write one tag
+
 The write request body should have the following fields:
 * `uuid`: a unique identifier, which will be echoed back in the response to help identify the corresponding request
 * `node`: the name of a southbound node
@@ -158,6 +160,37 @@ Below is an example of write request:
     "value": 1234
 }
 ```
+
+#### Write multiple tags
+
+Since Neuron version 2.6.0, write requests also support writing multiple tags at
+a time. To write multiple tags at a time, the request body should have the
+following fields:
+* `uuid` : a unique identifier, which will be echoed back in the response to help identify the corresponding request.
+* `node` : the name of a southbound node.
+* `group` : the name of a group.
+* `tags` : tags data array where each element corresponds to one tag in the group.
+
+Below is an example write request:
+
+```json
+{
+    "uuid": "cd32be1b-c8b1-3257-94af-77f847b1ed3e",
+    "node": "modbus",
+    "group": "grp",
+    "tags": [
+      {
+        "tag": "tag0",
+        "value": 1234
+      },
+      {
+        "tag": "tag1",
+        "value": 5678
+      }
+    ]
+}
+```
+
 
 ### Response
 

@@ -341,6 +341,20 @@
         {
           "title": "Profinet IO",
           "path": "configuration/south-devices/profinet/profinet"
+        },
+        {
+          "title": "SECS GEM HSMS",
+          "path": "configuration/south-devices/secs-gem/secs-gem",
+          "children": [
+            {
+              "title": "连接 Ignition SECS GEM 模拟器",
+              "path": "configuration/south-devices/secs-gem/example/ignition"
+            }
+          ]
+        },
+        {
+          "title": "KUKA Ethernet KRL TCP",
+          "path": "configuration/south-devices/kuka/kuka"
         }
       ]
     },
@@ -871,6 +885,20 @@
         {
           "title": "Profinet IO",
           "path": "configuration/south-devices/profinet/profinet"
+        },
+        {
+          "title": "SECS GEM HSMS",
+          "path": "configuration/south-devices/secs-gem/secs-gem",
+          "children": [
+            {
+              "title": "Ignition SECS GEM Example",
+              "path": "configuration/south-devices/secs-gem/example/ignition"
+            }
+          ]
+        },
+        {
+          "title": "KUKA Ethernet KRL TCP",
+          "path": "configuration/south-devices/kuka/kuka"
         }
       ]
     },
