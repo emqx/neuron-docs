@@ -4,14 +4,35 @@ The Mitsubishi 3E plug-in is used to access Mitsubishi's QnA-compatible PLCs, in
 
 The Mitsubishi 3E is fully compatible with the Mitsubishi SLMP protocol.
 
-## Parameters
+## Add Device
+
+Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
+
+- Name: The name of this device node.
+- Plugin: Select the **Mitsubishi 3E** plugin.
+
+## Device Configuration
+
+After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
 |  Parameter      |  Description                      |
 | -------- | -------------------------- |
+| **Transport Mode** |  Use TCP mode or UDP mode      |
 | **PLC IP Address** |  Target PLC IPv4 address         |
 | **PLC Port** | Target PLC IPv4 address, Default 2000 |
+| **UDP Source Port** | Target device port number, available when UDP mode is enabled, default is 52001 |
 
-## Data types
+## Configure Data Groups and Tags
+
+After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+
+Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
+
+Upon successfully creating a group, click on its name to proceed to the **Tag List** page. This page allows you to add device tags for data collection. You'll need to provide information such as the tag address, attributes, and data type.
+
+For information on general configuration items, see [Connect to Southbound Devices](../south-devices.md). The subsequent section will concentrate on configurations specific to the driver.
+
+### Data types
 
 * INT16
 * UINT16
@@ -22,19 +43,19 @@ The Mitsubishi 3E is fully compatible with the Mitsubishi SLMP protocol.
 * BIT
 * STRING
 
-## Address format
+### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
-### .BIT
+#### .BIT
 
-Only available for **non-bit type area**, means read the specified binary bit of the specified address, the binary bit index interval is [0, 15].
+Only available for **non-bit type area**, which means reading the specified binary bit of the specified address, the binary bit index interval is [0, 15].
 
-### .LEN\[H]\[L]
+#### .LEN\[H]\[L]
 
-When the data type is string type, **.LEN** indicates the length of the string; you can optionally fill in **H** and **L** to indicate two byte orders, and the default is the byte order of **H**.
+When the data type is string type, **`.LEN`** indicates the length of the string; you can optionally fill in **H** and **L** to indicate two-byte orders, and the default is the byte order of **H**.
 
-### PLC Area 
+#### PLC Area 
 
 | AREA | DATA TYPE | ATTRIBUTE  | REMARK                           |
 | ---- | --------- | ---------- | -------------------------------- |
@@ -77,20 +98,31 @@ When the data type is string type, **.LEN** indicates the length of the string; 
 | ZRSL | --        |            |                                  |
 | Z    | all       | read/write | Index register (Q/iQ-F)          |
 
-## Examples
+### Example Addresses
 
 |  Address  | Data type | Description |
 | ----- | ------- | ----- |
-| X0    | bit     | X area，Address 0    |
-| X1    | bit     | X area，Address 1    |
-| Y0    | bit     | Y area，Address 0    |
-| Y1    | bit     | Y area，Address 1    |
-| D100  | int16   | D area，Address 100  |
-| D1000 | uint16  | D area，Address 1000 |
-| D200  | uint32  | D area，Address 200  |
-| D10   | float   | D area，Address 10   |
-| D20   | double  | D area，Address 20   |
-| D20.0 | bit | D area，Address 20，0 bit|
-| D20.2 | bit | D area，Address 20，2 bit|
-| D1002.16L | string  | D area，Address 1002，String length 16，Endian L |
-| D1003.16 | string  | D area，Address 1003，String length 16，Endian H |
+| X0    | bit     | X area, Address 0   |
+| X1    | bit     | X area, Address 1   |
+| Y0    | bit     | Y area, Address 0   |
+| Y1    | bit     | Y area, Address 1   |
+| D100  | int16   | D area, Address 100 |
+| D1000 | uint16  | D area, Address 1000 |
+| D200  | uint32  | D area, Address 200 |
+| D10   | float   | D area, Address 10  |
+| D20   | double  | D area, Address 20  |
+| D20.0 | bit | D area, Address 20, 0 bit |
+| D20.2 | bit | D area, Address 20, 2 bit |
+| D1002.16L | string  | D area, Address 1002, String length 16, Endian L |
+| D1003.16 | string  | D area, Address 1003, String length 16, Endian H |
+
+## Use Case
+
+You can continue to read the following sections for a quick start. 
+
+- [FX5U](./fx5u.md)
+- [Q03UDE](./q03ude.md)
+
+## Data Monitoring
+
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).

@@ -96,30 +96,30 @@ When the data type is string type, **.LEN** is a required, indicating the length
 
 | Address     | Data Type | Description                                                 |
 | ----------- | --------- | --------------------------------------------------- |
-| 1!300004.0  | bit     | Refers to station number 1, input area, address 300004, bit 0    |
+| 1!300004.0  | bit     | Refers to station number 1, input register area, address 300004, bit 0    |
 | 1!400010.4  | bit     | Refers to station number 1, hold register area, address 400010, bit 4    |
 | 2!400001.15 | bit     | Refers to station number 2, hold register area, address 400001, bit 15   |
-| 1!300004    | int16    | Refers to station number 1, input area, address 300004, endianness is #L |
-| 1!300004#B  | int16    | Refers to station number 1, input area, address 300004, endianness is #B |
-| 1!300004#L  | uint16   | Refers to station number 1, input area, address 300004, endianness is #L |
+| 1!300004    | int16    | Refers to station number 1, input register area, address 300004, endianness is #L |
+| 1!300004#B  | int16    | Refers to station number 1, input register area, address 300004, endianness is #B |
+| 1!300004#L  | uint16   | Refers to station number 1, input register area, address 300004, endianness is #L |
 | 1!400004    | int16    | Refers to station number 1, hold register area, address 400004, endianness is #L |
 | 1!400004#L  | int16    | Refers to station number 1, hold register area, address 400004, endianness is #L  |
 | 1!400004#B  | uint16   | Refers to station number 1, hold register area, address 400004, endianness is #B |
-| 1!300004    | int32    | Refers to station number 1, input area, address 300004, endianness is #LL |
-| 1!300004#BB | uint32   | Refers to station number 1, input area, address 300004, endianness is #BB |
-| 1!300004#LB | uint32   | Refers to station number 1, input area, address 300004, endianness is #LB |
-| 1!300004#BL | float    | Refers to station number 1, input area, address 300004, endianness is #BL |
-| 1!300004#LL | int32    | Refers to station number 1, input area, address 300004, endianness is #LL |
+| 1!300004    | int32    | Refers to station number 1, input register area, address 300004, endianness is #LL |
+| 1!300004#BB | uint32   | Refers to station number 1, input register area, address 300004, endianness is #BB |
+| 1!300004#LB | uint32   | Refers to station number 1, input register area, address 300004, endianness is #LB |
+| 1!300004#BL | float    | Refers to station number 1, input register area, address 300004, endianness is #BL |
+| 1!300004#LL | int32    | Refers to station number 1, input register area, address 300004, endianness is #LL |
 | 1!400004    | int32    | Refers to station number 1, hold register area, address 400004, endianness is #LL |
 | 1!400004#LB | uint32   | Refers to station number 1, hold register area, address 400004, endianness is #LB |
 | 1!400004#BB | uint32   | Refers to station number 1, hold register area, address 400004, endianness is #BB |
 | 1!400004#LL | int32    | Refers to station number 1, hold register area, address 400004, endianness is #LL |
 | 1!400004#BL | float    | Refers to station number 1, hold register area, address 400004, endianness is #BL |
-| 1!300001.10  | String  | Refers to station number is 1, input area, the address is 300001, the string length is 10, and endianness is L, the occupied address is 300001-300005 |
-| 1!300001.10H | String  | Refers to station number is 1, input area, the address is 300001, the string length is 10, and endianness is H, the occupied address is 300001-300005 |
-| 1!300001.10L | String  |  Refers to station number is 1, input area, the address is 300001, the string length is 10, and endianness is L, the occupied address is 300001-300005 |
-| 1!400001.10  | String  | Refers to station number is 1, input area, the address is 400001, the string length is 10, and endianness is L, the occupied address is 400001-400005 |
-| 1!400001.10H | String  | Refers to station number is 1, input area, the address is 400001, the string length is 10, and endianness is H, the occupied address is400001 ～ 400005 |
-| 1!400001.10L | String  | Refers to station number is 1, input area, the address is 400001, the string length is 10, and endianness is L, the occupied address is 400001-400005  |
-| 1!400001.10D | String  | Refers to station number is 1, input area, the address is 400001, the string length is 10, and endianness is D, the occupied address is 400001-400010 |
-| 1!400001.10E | String  | Refers to station number is 1, input area, the address is 400001, the string length is 10, and endianness is E, the occupied address is 400001-400010 |
+| 1!300001.10  | String  | Refers to station number is 1, input register area, the address is 300001, the string length is 10, and endianness is L, the occupied address is 300001-300005 |
+| 1!300001.10H | String  | Refers to station number is 1, input register area, the address is 300001, the string length is 10, and endianness is H, the occupied address is 300001-300005 |
+| 1!300001.10L | String  |  Refers to station number is 1, input register area, the address is 300001, the string length is 10, and endianness is L, the occupied address is 300001-300005 |
+| 1!400001.10  | String  | Refers to station number is 1, hold register area, the address is 400001, the string length is 10, and endianness is L, the occupied address is 400001-400005 |
+| 1!400001.10H | String  | Refers to station number is 1, hold register area, the address is 400001, the string length is 10, and endianness is H, the occupied address is400001 ～ 400005 |
+| 1!400001.10L | String  | Refers to station number is 1, hold register area, the address is 400001, the string length is 10, and endianness is L, the occupied address is 400001-400005  |
+| 1!400001.10D | String  | Refers to station number is 1, hold register area, the address is 400001, the string length is 10, and endianness is D, the occupied address is 400001-400010 |
+| 1!400001.10E | String  | Refers to station number is 1, hold register area, the address is 400001, the string length is 10, and endianness is E, the occupied address is 400001-400010 |

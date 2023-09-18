@@ -1,34 +1,46 @@
 # Connect to FX5U
 
-## PLC Setting
+Mitsubishi Electric's FX5U stands out as a high-performance, compact Programmable Logic Controller (PLC), constituting an integral part of the Mitsubishi FX series PLCs. It caters efficiently to a wide range of small to medium-scale automation applications, making it a versatile asset in diverse industrial sectors.
 
-1. Open the GX Works3 PLC programming software and create a new project. `Series` Select `FX5CPU`,`Type` Select `FX5U`, Click `OK`.
+This section introduces how to connect the FX5U using the Neuron Mitsubishi 3E plugin.
+
+## Configure FX5U
+
+1. Open the GX Works3 PLC programming software and create a new project. **Series** Select **FX5CPU**, **Type** Select **FX5U**, Click **OK**.
 ![fx5u1](./assets/fx5u_en1.jpg)
 
-2. Click `Connection Destination` -> `Connection`, Set `Adapter` and `IP Address of Adapter`, Click `OK`.
+2. Click **Connection Destination** -> **Connection**, Set **Adapter** and **IP Address of Adapter**, Click **OK**.
 ![fx5u2](./assets/fx5u_en2.jpg)
 
-3. Click on the menu `Online` -> `Read frome PLC` -> `Select All` -> `Execute`.
+3. Click on the menu **Online** -> **Read frome PLC** -> **Select All** -> **Execute**.
 ![fx5u3](./assets/fx5u_en3.jpg)
 
-4. Click `Navigation` -> `Parameter` -> `FX5UCPU` -> `Module Parameter` -> `Ethernet Port`, Check and confirm `IP Address`, Click `External Device Configuration`.
+4. Click **Navigation** -> **Parameter** -> **FX5UCPU** -> **Module Parameter** -> **Ethernet Port**, Check and confirm **IP Address**, Click **External Device Configuration**.
 ![fx5u4](./assets/fx5u_en4.jpg)
 
-5. Drag `Ethernet Device(General)` -> `SLMP Connection Module` to list, `Protocol` select `TCP` and set `Port No.`, Click `Close with Reflecting the Setting`.
+5. Drag **Ethernet Device(General)** -> **SLMP Connection Module** to list, **Protocol** select **TCP** and set **Port No.**, Click **Close with Reflecting the Setting**.
 ![fx5u5](./assets/fx5u_en5.jpg)
 
-6. Click on the menu `Online` -> `Write to PLC` -> `Execute`.
+6. Click on the menu **Online** -> **Write to PLC** -> **Execute**.
 
-## Neuron Setting
+## Configure Neuron
 
-1. Add a Mitsubishi 3E device to Neuron Southbound Device Management.
+1. In Neuron, add a Mitsubishi 3E device under **Configuration** -> **South Devices**. 
 
-2. Change the `PLC IP Address` to the target device IP address in the device configuration.
+2. Change the **PLC IP Address** to the target device IP address in the device configuration.
 
-3. Modify `PLC Port` as the target device port in the device configuration and submit the setup form.
+3. Modify **PLC Port** as the target device port in the device configuration and submit the setup form.
 ![fx5u6](./assets/fx5u_en6.jpg)
 
-4. Add `Group`，Add test `tag`.
+4. Add **Group**, add test **tag**.
+
+## Connecting the FX5U in UDP Mode
+1. Set the UDP protocol in the PLC, **Protocol** select UDP, **Port No.** fill in the PLC listening port, and **IP Address** fill in the IP address of the host where the Neuron is running.
+![fx5u7](./assets/fx5u_en7.jpg)
+
+2. Configure the Neuron UDP transport mode, **Transport Mode** select UDP, and use the default port number 52001 for the UDP source port.
+![fx5u8](./assets/fx5u_en8.jpg)
+
 
 ## Test Data List
 

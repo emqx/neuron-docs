@@ -1,53 +1,29 @@
-# NeuOPC 安装
+# 安装 NeuOPC
 
-本例使用 windows 7 SP1 32位系统演示
+本例使用 windows 7 SP1 32位系统演示。
 
-::: tip
-NeuOPC 只能运行于 Windows 7 SP1 以上操作系统，并且需安装 [KB3063858](https://www.microsoft.com/zh-CN/download/details.aspx?id=47409) 和 [KB2999226](https://www.microsoft.com/zh-cn/download/details.aspx?id=49077) 两个更新程序。
-:::
+## 前置准备
 
-## NeuOPC 运行环境安装
+- Windows 7 SP1 以上操作系统
+- 安装 [KB3063858](https://www.microsoft.com/zh-CN/download/details.aspx?id=47409) 以及 [KB2999226](https://www.microsoft.com/zh-cn/download/details.aspx?id=49077) 更新程序。
 
-1. 进入 NeuOPC [项目 releases 页面](https://github.com/neugates/neuopc/releases)下载最新的组件包"neuopc-package.zip"，解压后可见如下文件：
+## 安装 NeuOPC
 
-![package](./assets/package.png)
+1. 从 Neuron 技术支持人员处获取程序包，或者进入 NeuOPC [项目页面](https://github.com/neugates/neuopc)下载源码后使用Visual Studio 2022编译。
 
-* `neuopc.exe`——运行 OPC DA 转换 OPC UA 的主程序。
-* `dotnetfx-1.1`——.Net framework 1.1，安装 OPC DAAuto 需要先正确此程序。
-* `OPC DA Auto 2.02 Source Code 5.30.msi` ——OPC 基金会官方组件，使用"Windows 任务管理器"安装。
-* `OPC Core Components Redistributable (x64) 3.00.108.msi` ——OPC 基金会官方组件，可不用安装。
-* `OPC Core Components Redistributable (x86) 3.00.108.msi` ——OPC 基金会官方组件，可不用安装。
+   ![package](./assets/package.png)
 
-2. 检查是否已经安装过 .Net framework 1.1 ，如果没有则安装 `dotnetfx-1.1`。
+   其中：
 
-3. 使用任务管理器安装 `OPC DA Auto 2.02 Source Code 5.30.msi`，打开 **Windows 任务管理器** -> **文件** -> **运行新任务**，输入 MSI 文件路径，勾选 `以系统管理权限创建此任务`。
+   * `neuopc.exe`——运行 OPC DA 转换 OPC UA 的主程序。
+   * `OPC Core Components Redistributable (x64) 3.00.108.msi` ——OPC 基金会官方组件，64 位操作系统安装。
+   * `OPC Core Components Redistributable (x86) 3.00.108.msi` ——OPC 基金会官方组件，32 位操作系统安装。
 
-![install-auto](./assets/install-auto.png)
+2. 安装对应版本的 OPC Core Components Redistributable (x86) 3.00.108 组件。
 
-4. 检查组件是否已安装。
+3. 双击 neuopc.exe 启动 NeuOPC 主程序。![local-neuopc](./assets/local-neuopc1.png) ![local-neuopc](./assets/local-neuopc2.png) 
 
-* 如果是32位操作系统，则进入到 `C:\Windows\System32` 目录下，如果是64位操作系统，则进入到 `C:\Windows\SysWOW64` 目录下，检查是否有如下文件存在：
+4. 参考 **NeuOPC 远程访问** 第二节 **本地主机 DCOM 设置**，可实现对本地模拟器的访问。
 
-![core-components](./assets/core-components.png)
 
-::: tip
-如果文件不存在则联系销售人员进行支持。
-:::
 
-* 打开 **Windows 任务管理器** 检查 `OpcEnum` 系统服务是否在运行，如图：
-
-![opcenum](./assets/opcenum.png)
-
-::: tip
-如果正常运行，说明 `OPC DA Auto 2.02` 已经正常安装。
-:::
-
-5. 本机安装 MatrikonOPCSimulation 模拟器程序，如果安装失败可安装 KepServerEX 测试。
-
-6. 运行 neuopc.exe 程序，选择 `OPCDA Host` 和 `OPCDA Server` 后点击 `Connection Test`
-
-7. ，设置 UA 的各项参数后点击 `Start`，运行成功，如图：
-
-![local-neuopc](./assets/local-neuopc1.png)
-
-![local-neuopc](./assets/local-neuopc2.png)
