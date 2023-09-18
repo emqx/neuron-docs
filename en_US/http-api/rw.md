@@ -54,19 +54,21 @@ The value is displayed only when the value is read correctly, when the value is 
 
 ## Write Tag
 
+### Write One Tag
+
 *POST*  /api/v2/write
 
-### Request Headers
+#### Request Headers
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+#### Response Status
 
 * 200 OK
 
-### Body
+#### Body
 
 ```json
 {
@@ -77,7 +79,61 @@ The value is displayed only when the value is read correctly, when the value is 
 }
 ```
 
-### Response
+#### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+### Write Multiple Tags
+
+*POST*  /api/v2/write/tags
+
+#### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+#### Response Status
+
+* 200 OK
+
+#### Body
+
+```json
+{
+    "node": "modbus-tcp-1",
+    "group": "group1",
+    "tags": [
+
+        {
+            "tag": "tag1",
+            "value": 123
+        },
+        {
+            "tag": "tag2",
+            "value": 1233
+        },
+        {
+            "tag": "tag3",
+            "value": 7788
+        },
+        {
+            "tag": "tag4",
+            "value": 1
+        },
+        {
+            "tag": "tag5",
+            "value": "asdfda"
+        }
+    ]
+}
+```
+
+#### Response
 
 ```json
 {

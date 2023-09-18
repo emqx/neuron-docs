@@ -31,6 +31,7 @@ See the table below for the configuration parameters.
 | **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. (Since 2.4.3) |
 | **Cache Memory Size**           | In-memory cache limit (MB) in case of communication failure, a required field. Range in [0, 1024]. Should not be larger than *Cache Disk Size*. For details about the cache feature, see [Offline Data Caching](#offline-data-caching) |
 | **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, a required field. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
+| **Cache Sync Interval**         | Time interval (MS) between each message to sync when communication restores. Range in [10, 120000]. (since 2.6.0) |
 | **Broker Host**                 | MQTT Broker host, a required field.                          |
 | **Broker Port**                 | MQTT Broker port number, a required field.                   |
 | **Username**                    | Username when connecting to the broker, optional.            |
@@ -39,7 +40,6 @@ See the table below for the configuration parameters.
 | **CA**                          | CA certificate, required when SSL is enabled and using self-signed certificates. |
 | **Client Cert**                 | Client certificate, required when using SSL two-way authentication. |
 | **Client Private Key**          | Client key, required when using SSL two-way authentication.  |
-| **Client Private Key Password** | Client key password, optional when using SSL two-way authentication. |
 
 ### Offline Data Caching
 
@@ -53,6 +53,7 @@ Offline data caching is controlled by the **Offline Data Caching**, **Cache Memo
 2. Set the **Cache Memory Size** parameter to specify the memory cache size in megabytes, and the max allowed memory cache size is 1GB. 
 3. Set the **Cache Disk Size** parameter to specify the disk cache size in megabytes, and the max allowed disk cache
    size is 10GB.
+4. Set the **Cache Sync Interval** parameter to specify the cache message synchronizing interval in milliseconds, and the max allowed cache sync interval is 120s.
 
 ::: tip
 The **Offline Data Caching** parameter is added since Neuron version 2.4.3. For older versions, you may disable offline data caching by setting both **Cache Memory Size** and **Cache Disk Size** to zero.
@@ -82,7 +83,7 @@ are encrypted and secure.
 The Neuron MQTT plugin supports running MQTT over SSL. To enable SSL encryption, turn on the **SSL** parameter when configuring the node. 
 
 - If using self-signed certificates, the **CA** parameter should be provided with the server-side CA certificate. The certificate of the broker you are connecting to should be issued by the provided CA. 
-- If using two-way authentication, you should also provide the client certificate, key file, and key file password through the **Client Cert**, **Client Private key**, and **Client Private Key Password** parameters respectively.
+- If using two-way authentication, you should also provide the client certificate and key file through the **Client Cert** and **Client Private key** parameters respectively.
 
 ## Add Subscription
 

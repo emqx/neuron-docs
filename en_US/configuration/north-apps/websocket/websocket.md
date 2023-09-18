@@ -19,7 +19,6 @@ These are the available parameters when configuring a node using the WebSocket p
 | **CA**                          | CA certificate which signs the server certificate, required when using `wss` scheme and self-signed certificates. |
 | **Client Cert**                 | Client certificate, required only when using `wss` scheme and two way authentication. |
 | **Client Private Key**          | Client private key, required only when using `wss` scheme and two way authentication. |
-| **Client Private Key Password** | Client private key password, required only when **Client Private Key**, if provided, is encrypted. |
 
 ## Add Subscription
 
