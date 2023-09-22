@@ -53,7 +53,7 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 
 ### 地址格式
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]</span>
 
 #### **SLAVE**
 
@@ -111,6 +111,14 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 | L   | 一个寄存器存储两个字节，低字节在前高字节在后。 |
 | D   | 一个寄存器存储一个字节，且存储在低字节。      |
 | E   | 一个寄存器存储一个字节，且存储在高字节。      |
+
+#### **.BYTES**
+
+选填，读写bytes类型数据的长度，适用于 bytes 数据类型。
+
+::: tip
+Modbus驱动一个寄存器包含2个bytes，在以bytes数据类型读取和写入Modbus寄存器数据时，请保证bytes参数设置为偶数。
+:::
 
 ### 地址示例
 
