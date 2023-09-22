@@ -67,7 +67,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address format
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]</span>
 
 #### **SLAVE**
 
@@ -127,6 +127,14 @@ When the data type is STRING, `.LEN` is a required field, indicating the number 
 | L   | One register stores two bytes, with the low byte first |
 | D   | One register stores one byte, and it is stored in the low byte      |
 | E   | One register stores one byte, and it is stored in the high byte|
+
+#### **.BYTES**
+
+Optional, read and write the length of bytes type data, applicable to bytes data type.
+
+::: tip
+A register of the Modbus driver contains 2 bytes. When reading and writing Modbus register data in the bytes data type, please ensure that the bytes parameter is set to an even number.
+:::
 
 ### Example Addresses
 
