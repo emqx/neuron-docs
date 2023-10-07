@@ -383,13 +383,16 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //link state
             "link": 1,
             //average round trip time communicating with devices
-            "rtt": 100
+            "rtt": 100,
+            //log level
+            "log_level": "notice"
         },
         {
             "node": "modbus-node2",
             "running": 1,
             "link": 0,
-            "rtt": 9999
+            "rtt": 9999,
+            "log_level": "notice"
         }
     ]
 }
@@ -1472,6 +1475,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
   * 2003 node 不存在
 * 500
   * 1001 内部错误
+  * 1003 请求 param 无效
   * 1010 程序繁忙
 
 ### 请求体
@@ -1479,7 +1483,9 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 {
     // node name
-    "node": "modbus-tcp"
+    "node": "modbus-tcp",
+    // log level: debug, info, notice, warn, error, fatal
+    "level": "debug"
 }
 ```
 
@@ -1490,10 +1496,6 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "error": 0
 }
 ```
-
-:::tip
-调用接口修改节点的日志等级为 debug，十分钟左右自动切回默认等级。
-:::
 
 ## 下载文件
 

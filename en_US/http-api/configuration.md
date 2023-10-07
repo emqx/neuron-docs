@@ -383,13 +383,16 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
             //link state
             "link": 1,
             //average round trip time communicating with devices
-            "rtt": 100
+            "rtt": 100,
+            //log level
+            "log_level": "notice"
         },
         {
             "node": "modbus-node2",
             "running": 1,
             "link": 0,
-            "rtt": 9999
+            "rtt": 9999,
+            "log_level": "notice"
         }
     ]
 }
@@ -1461,13 +1464,16 @@ Response if there is an error returned:
   * 2003 node not exist
 * 500
   * 1001 internal error
+  * 1003 request param invalid
   * 1010 is busy
 
 ### Body
 
 ```json
 {
-    "node_name": "modbus-tcp"
+    "node": "modbus-tcp",
+    // log level: debug, info, notice, warn, error, fatal
+    "level": "debug"
 }
 ```
 
@@ -1478,10 +1484,6 @@ Response if there is an error returned:
     "error": 0
 }
 ```
-
-:::tip
-Call the api to modify the log level of the node to debug, and automatically switch to the default level in about ten minutes.
-:::
 
 ## Download File
 
