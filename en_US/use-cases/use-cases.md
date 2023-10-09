@@ -5,5 +5,5 @@ Neuron's versatile use cases empower manufacturers to unlock their full potentia
 Use cases for Neuron:
 * [Industrial Connectivity](./connectivity/connectivity.md)
 * [Edge Stream Processing](./edge/edge.md)
-* [Sparkplug Usage](./sparkplug/sparkplug.md)
+* [Sparkplug Solution](./sparkplug/sparkplug.md)
 * [Unified Namespace](./uns/uns.md)
