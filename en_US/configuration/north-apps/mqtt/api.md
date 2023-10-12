@@ -85,6 +85,7 @@ The read request body should have the following fields:
 * `uuid`: a unique identifier, which will be echoed back in the response to help identify the corresponding request
 * `node`: the name of a southbound node
 * `group`: the name of a group to read
+* `sync`: boolean flag indicating whether to read in synchronous mode (optional, default false)
 
 Below is an example read request:
 
