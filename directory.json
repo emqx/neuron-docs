@@ -355,6 +355,10 @@
         {
           "title": "KUKA Ethernet KRL TCP",
           "path": "configuration/south-devices/kuka/kuka"
+        },
+        {
+          "title": "GE SRTP",
+          "path": "configuration/south-devices/srtp/srtp"
         }
       ]
     },
@@ -899,6 +903,10 @@
         {
           "title": "KUKA Ethernet KRL TCP",
           "path": "configuration/south-devices/kuka/kuka"
+        },
+        {
+          "title": "GE SRTP",
+          "path": "configuration/south-devices/srtp/srtp"
         }
       ]
     },
