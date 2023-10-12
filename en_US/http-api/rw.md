@@ -21,7 +21,9 @@
     //node name
     "node": "modbus-tcp-1",
     //group name
-    "group": "config_modbus_tcp_sample_2"
+    "group": "config_modbus_tcp_sample_2",
+    //synchronous read (optional, default false)
+    "sync": false
 }
 ```
 
