@@ -1,13 +1,14 @@
 # Overview
 
-Neuron KUKA Ethernet KRL TCP plugin accesses KUKA robot devices with the KUKA Ethernet KRL module installed through TCP protocol. Currently, the Neuron KUKA plugin supports the robot device server mode, and the plugin actively connects as a client.
+Neuron KUKA Ethernet KRL TCP plugin accesses KUKA robot devices with the KUKA Ethernet KRL module installed through TCP protocol. Currently, the Neuron KUKA plugin supports the robot device server mode and client mode.
 
 ## Parameter Configuration
 
-| Parameter | Description                      |
-| --------- | -------------------------------- |
-| host      | Target Device IP address         |
-| port      | Target Device port, default 5000 |
+| Parameter       | Description                                       |
+| --------------- | ------------------------------------------------- |
+| host            | Target Device IP address or binding IP address    |
+| port            | Target Device port or binding port, default 54601 |
+| connection_mode | Connection Mode, default 1                        |
 ## Support Data Type
 
 * uint8
@@ -25,7 +26,7 @@ Neuron KUKA Ethernet KRL TCP plugin accesses KUKA robot devices with the KUKA Et
 
 ## KUKA Ethernet KRL script setting
 
-On-site robot devices need to have the KUKA Ethernet KRL module installed in advance. Neuron provides sample TCP Server scripts demo and configuration documents. You can directly [contact us](https://www.emqx.com/en/contact?product=neuron) to obtain the scripts and configuration documents.
+On-site robot devices need to have the KUKA Ethernet KRL module installed in advance. Neuron provides robotic equipment-side TCP Server script and TCP Client script examples. You can directly [contact us](https://www.emqx.com/en/contact?product=neuron) to obtain the scripts and configuration documents.
 
 ## ADDRESS
 
