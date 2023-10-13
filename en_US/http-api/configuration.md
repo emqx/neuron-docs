@@ -866,13 +866,25 @@ To update both group name and interval:
 * 400
   
   * 2302 library info invalid
+  * 2303 library name conflict
+  * 2304 library open fail
+  * 2305 library module invalid
+  * 2307 library instance fail
+  * 2308 library arch no support
+  * 2310 library add fail
+  * 2311 library module exist
+  * 2313 library module kind no support
 
 ### Body
 
 ```json
 {
     //plugin library name
-    "library": "plugin_name.so"
+    "library": "plugin_name.so",
+    // base64 content of schema json file
+    "schema_file":"...",
+    // base64 content of library file
+    "so_file":"..."
 }
 ```
 
@@ -883,6 +895,54 @@ To update both group name and interval:
     "error": 0
 }
 ```
+
+
+## Update Plugin
+
+*PUT*  /api/v2/plugin
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+
+* 400
+  
+  * 2302 library no found
+  * 2302 library info invalid
+  * 2304 library open fail
+  * 2305 library module invalid
+  * 2307 library instance fail
+  * 2308 library arch no support
+  * 2312 library module no exist
+  * 2313 library module kind no support
+
+### Body
+
+```json
+{
+    //plugin library name
+    "library": "plugin_name.so",
+    // base64 content of schema json file
+    "schema_file":"...",
+    // base64 content of library file
+    "so_file":"..."
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
 
 ## Del Plugin
 
@@ -897,6 +957,12 @@ To update both group name and interval:
 ### Response Status
 
 * 200 OK
+
+* 400
+* 
+  * 2306 library of system no allow delete
+  * 2309 library in using
+
 
 ### Body
 

@@ -877,13 +877,25 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 400
   
   * 2302 库信息无效
+  * 2303 库名称冲突
+  * 2304 库文件打开失败
+  * 2305 库文件插件无效
+  * 2307 库文件插件实例化失败
+  * 2308 库文件架构不支持
+  * 2310 库文件添加失败
+  * 2311 库文件插件已存在
+  * 2313 库文件插件类型不支持
 
 ### 请求体
 
 ```json
 {
     //plugin library name
-    "library": "plugin_name.so"
+    "library": "plugin_name.so",
+    // base64 content of schema json file
+    "schema_file":"...",
+    // base64 content of library file
+    "so_file":"..."
 }
 ```
 
@@ -894,6 +906,55 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "error": 0
 }
 ```
+
+## 更新插件
+
+*PUT*  /api/v2/plugin
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+
+* 400
+  
+  * 2302 库文件不存在
+  * 2302 库信息无效
+  * 2304 库文件打开失败
+  * 2305 库文件插件无效
+  * 2307 库文件插件实例化失败
+  * 2308 库文件架构不支持
+  * 2310 库文件添加失败
+  * 2312 库文件插件不存在
+  * 2313 库文件插件类型不支持
+
+### 请求体
+
+```json
+{
+    //plugin library name
+    "library": "plugin_name.so",
+    // base64 content of schema json file
+    "schema_file":"...",
+    // base64 content of library file
+    "so_file":"..."
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+
 
 ## 删除插件
 
@@ -908,6 +969,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ### 响应状态
 
 * 200 OK
+
+* 400
+* 
+  * 2306 系统插件不允许删除
+  * 2309 插件使用中
 
 ### 请求体
 
