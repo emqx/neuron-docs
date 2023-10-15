@@ -471,6 +471,10 @@
         {
           "title": "管理日志",
           "path": "admin/log-management"
+        },
+        {
+          "title": "配置管理",
+          "path": "admin/conf-management"
         }
       ]
     },
@@ -1021,6 +1025,10 @@
         {
           "title": "Log Management",
           "path": "usage/admin/log-management"
+        },
+        {
+          "title": "Configuration Management",
+          "path": "usage/admin/conf-management"
         }
       ]
     },
