@@ -175,6 +175,14 @@
           "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
         },
         {
+          "title": "Allen-Bradley ControlLogix 5500",
+          "path": "configuration/south-devices/ab-5500/ab-5500"
+        },
+        {
+          "title": "Allen-Bradley MicroLogix 1400",
+          "path": "configuration/south-devices/ab-1400/ab-1400"
+        },
+        {
           "title": "Mitsubishi 3E",
           "path": "configuration/south-devices/mitsubishi-3e/overview",
           "children": [
@@ -731,6 +739,14 @@
         {
           "title": "EtherNet/IP(CIP)",
           "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
+        },
+        {
+          "title": "Allen-Bradley ControlLogix 5500",
+          "path": "configuration/south-devices/ab-5500/ab-5500"
+        },
+        {
+          "title": "Allen-Bradley MicroLogix 1400",
+          "path": "configuration/south-devices/ab-1400/ab-1400"
         },
         {
           "title": "Mitsubishi 3E",
