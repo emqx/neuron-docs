@@ -57,7 +57,7 @@ IEC61850 插件用于对 IEC61850 服务器的读/写，目前支持 MMS 协议�
 
 ### 地址格式
 
-> Logical Devices/Logical Nodes$FC$DO$DA</span>
+> Logical Devices/Logical Nodes$FC$DO$DA
 
 IEC61850 数据分层模型通常有以下几种：
 

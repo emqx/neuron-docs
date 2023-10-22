@@ -3,6 +3,7 @@
     {
       "title": "介绍",
       "path": "./",
+      "collapsed": true, 
       "children": [
         {
           "title": "架构",
@@ -25,6 +26,7 @@
     {
       "title": "安装",
       "path": "installation/installation",
+      "collapsed": true, 
       "children": [
         {
           "title": "安装 Neuron",
@@ -69,6 +71,7 @@
     {
       "title": "连接南向设备",
       "path": "configuration/south-devices/south-devices",
+      "collapsed": true, 
       "children": [
         {
           "title": "基于模板配置",
@@ -369,6 +372,7 @@
     {
       "title": "创建北向应用",
       "path": "configuration/north-apps/north-apps",
+      "collapsed": true, 
       "children": [
         {
           "title": "MQTT",
@@ -432,41 +436,43 @@
     },
     {
       "title": "HTTP API",
-      "path": "http-api/http-api",
+      "path": "api/http-api",
+      "collapsed": true, 
       "children": [
         {
           "title": "自定义 JWT",
-          "path": "http-api/jwt"
+          "path": "api/jwt"
         },
         {
           "title": "数据类型",
-          "path": "http-api/data-type"
+          "path": "api/data-type"
         },
         {
           "title": "配置",
-          "path": "http-api/configuration"
+          "path": "api/configuration"
         },
         {
           "title": "数据统计",
-          "path": "http-api/metrics"
+          "path": "api/metrics"
         },
         {
           "title": "读写",
-          "path": "http-api/rw"
+          "path": "api/rw"
         },
         {
           "title": "插件设置",
-          "path": "http-api/plugin-setting"
+          "path": "api/plugin-setting"
         },
         {
           "title": "错误代码",
-          "path": "http-api/error-code"
+          "path": "api/error-code"
         }
       ]
     },
     {
       "title": "运维指南",
       "path": "admin/admin",
+      "collapsed": true, 
       "children": [
         {
           "title": "数据监控",
@@ -489,6 +495,7 @@
     {
       "title": "开发指南",
       "path": "dev-guide/dev-guide",
+      "collapsed": true, 
       "children": [
         {
           "title": "SDK 教程",
@@ -509,6 +516,7 @@
     {
       "title": "应用场景",
       "path": "use-cases/use-cases",
+      "collapsed": true, 
       "children": [
         {
           "title": "工业设备连接",
@@ -531,6 +539,7 @@
     {
       "title": "生态合作伙伴",
       "path": "ecopartners/eco",
+      "collapsed": true, 
       "children": [
         {
           "title": "三旺通信",
@@ -548,6 +557,7 @@
     },
     {
       "title": "附录",
+      "collapsed": true, 
       "children": [
         {
           "title": "数据类型说明",
@@ -569,6 +579,7 @@
     {
       "title": "Introduction",
       "path": "./",
+      "collapsed": true, 
       "children": [
         {
           "title": "Architecture",
@@ -591,6 +602,7 @@
     {
       "title": "Installation",
       "path": "installation/installation",
+      "collapsed": true, 
       "children": [
         {
           "title": "Installing Neuron",
@@ -635,6 +647,7 @@
     {
       "title": "Create a Southbound Driver",
       "path": "configuration/south-devices/south-devices",
+      "collapsed": true, 
       "children": [
         {
           "title": "Configure with Templates",
@@ -925,6 +938,7 @@
     {
       "title": "Create a Northbound Application",
       "path": "configuration/north-apps/north-apps",
+      "collapsed": true, 
       "children": [
         {
           "title": "MQTT",
@@ -994,41 +1008,43 @@
     },
     {
       "title": "HTTP API",
-      "path": "http-api/http-api",
+      "path": "api/http-api",
+      "collapsed": true, 
       "children": [
         {
           "title": "Customize JWT",
-          "path": "http-api/jwt"
+          "path": "api/jwt"
         },
         {
           "title": "Data Type",
-          "path": "http-api/data-type"
+          "path": "api/data-type"
         },
         {
           "title": "Configuration",
-          "path": "http-api/configuration"
+          "path": "api/configuration"
         },
         {
           "title": "Metrics",
-          "path": "http-api/metrics"
+          "path": "api/metrics"
         },
         {
           "title": "Read & Write",
-          "path": "http-api/rw"
+          "path": "api/rw"
         },
         {
           "title": "Plugin Setting",
-          "path": "http-api/plugin-setting"
+          "path": "api/plugin-setting"
         },
         {
           "title": "Error Codes",
-          "path": "http-api/error-code"
+          "path": "api/error-code"
         }
       ]
     },
     {
       "title": "Operations Guide",
       "path": "usage/admin/admin",
+      "collapsed": true, 
       "children": [
         {
           "title": "Data Monitoring and Device Control",
@@ -1051,6 +1067,7 @@
     {
       "title": "Development Guide",
       "path": "dev-guide/dev-guide",
+      "collapsed": true, 
       "children": [
         {
           "title": "SDK Tutorial",
@@ -1071,6 +1088,7 @@
     {
       "title": "Use Cases",
       "path": "use-cases/use-cases",
+      "collapsed": true, 
       "children": [
         {
           "title": "Industrial Connectivity",
@@ -1093,6 +1111,7 @@
     {
       "title": "Eco Partners",
       "path": "ecopartners/eco",
+      "collapsed": true, 
       "children": [
         {
           "title": "3 One Data",
@@ -1110,6 +1129,7 @@
     },
     {
       "title": "Appendix",
+      "collapsed": true, 
       "children": [
         {
           "title": "Data Type Description",

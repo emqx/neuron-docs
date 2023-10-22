@@ -67,7 +67,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address format
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]
 
 #### **SLAVE**
 

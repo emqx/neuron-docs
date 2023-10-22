@@ -16,7 +16,7 @@ $ cmake .. && make
 :::tip
 There are three optional parameters in CMakeLists:
 * CMAKE_ BUILD_ Type "Debug", which compiles the debug version by default.
-* DISABLE_WERROR, which treats all warnings as errors.</br>Usage example:```cmake -DISABLE_WERROR=1 ..```
+* DISABLE_WERROR, which treats all warnings as errors.<br>Usage example:```cmake -DISABLE_WERROR=1 ..```
 * DISABLE_ ASAN, select whether to enable libasan memory detection.
 :::
 

@@ -83,7 +83,7 @@ format_name = "your format"
 Rules describe how logs are filtered, formatted, and outputted.
 Grammar:
 
-> (category).(level)    (output),(options, optional); (format name, optional)</span>
+> (category).(level)    (output),(options, optional); (format name, optional)
 
 #### category
 
