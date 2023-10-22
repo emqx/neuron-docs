@@ -52,6 +52,6 @@ Neuron 支持同时为多个不同通讯协议设备、数十种工业协议进�
 
 ![配置步骤](./assets/config.png)
 
-### [API](../http-api/http-api.md)
+### [API](../api/http-api.md)
 
 Neuron 还提供一组配置 API，用于工业物联网平台、MES 或其他控制系统集成。
