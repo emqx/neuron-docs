@@ -64,13 +64,13 @@ $ python3 -m robot --maxerroelines=600 -P ft/ -d ft/reports ft
 * 一个 PR 只做一件事，如果有多个 bug 的修复，请对每一个 bug 提交一个 PR；
 * PR 流程如下：
 
-    * 先 Fork 本项目，创建自己的 github.com/your/neuron 仓库；</br>
+    * 先 Fork 本项目，创建自己的 github.com/your/neuron 仓库；<br>
     * 克隆自己的 neuron 仓库到本地：
     ```bash
     $ git clone https://github.com/your/neuron.git
     ```
-    * 例如基于 ```main``` 分支创建新的分支；</br>
-    * 在新创建的分支上作修改并提交修改；</br>
+    * 例如基于 ```main``` 分支创建新的分支；<br>
+    * 在新创建的分支上作修改并提交修改；<br>
     * 在推送修改完成的分支到自己的仓库前，先切换到 ```main``` 分支，运行如下指令拉取最新的远端代码：
     ```bash
     $ git pull https://github.com/emqx/neuron.git
@@ -79,7 +79,7 @@ $ python3 -m robot --maxerroelines=600 -P ft/ -d ft/reports ft
     ```bash
     $ git rebase main
     ```
-    如遇到文件冲突，则需要解决冲突；</br>
+    如遇到文件冲突，则需要解决冲突；<br>
     * 上一步处理完毕后，就可以把自己创建的分支推送到自己的仓库：
     ```bash
     $ git push origin main

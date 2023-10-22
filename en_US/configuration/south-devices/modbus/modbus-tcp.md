@@ -43,7 +43,7 @@ The difference between the two modules is that the modbus-tcp module is open sou
 
 ### Address Format
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 #### **SLAVE**
 

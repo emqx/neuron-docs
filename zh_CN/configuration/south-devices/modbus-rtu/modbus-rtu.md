@@ -53,7 +53,7 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 
 ### 地址格式
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]
 
 #### **SLAVE**
 

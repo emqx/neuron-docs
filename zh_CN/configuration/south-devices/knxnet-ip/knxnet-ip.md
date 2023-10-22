@@ -47,7 +47,7 @@ Neuron KNXnet/IP 插件支持与 KNXnet/IP 设备建立连接。
 
 ### 地址格式 1
 
-* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS
 
 表示一个 KNX 设备地址及其所属的组地址。
 
@@ -60,7 +60,7 @@ Neuron KNXnet/IP 插件支持与 KNXnet/IP 设备建立连接。
 
 ### 地址格式 2
 
-* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS,BIT</span>
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS,BIT
 
 针对读取比特位数少于8的 `uint8` 类型数据，可使用该地址格式，如 KNX data point 类型 `B2` 和 `B1U3` 等。
 其中 *BIT* 表示数据比特位数。
