@@ -91,6 +91,12 @@ The value is displayed only when the value is read correctly, when the value is 
 
 *POST*  /api/v2/write/tags
 
+:::tip 
+
+Multiple tags writing currently only supports Mitsubishi 3E, Beckhoff ADS, Modbus TCP, Modbus RTU, Siemens S7 ISOTCP, Omron FINS TCP, OPC UA, BACnet/IP drivers.
+
+:::
+
 #### Request Headers
 
 **Content-Type**  application/json
