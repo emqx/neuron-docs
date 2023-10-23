@@ -16,7 +16,7 @@ Fanuc Focas Ethernet 和 Mitsubishi CNC 插件不在 30 点永久免费的范围
 
 试用的 EMQ 许可证可从[ EMQ 官方网站](https://www.emqx.com/zh/apply-licenses/neuron)上下载 。所有可用的模块都可以在 100 个连接和 1000 个数据标签的限制下试用 15 天。 如果试用 EMQ 许可证过期，您可以通过我们的官网重新申请试用 EMQ 许可证。 但是，一个邮箱最多只能申请两次试用许可证。
 
-:::tip
+:::tip 注意
 官网申请试用许可证时，必须使用硬件标识进行设备的绑定。您可直接[联系我们](https://www.emqx.com/zh/contact?product=neuron)申请不需要硬件标识绑定设备的许可证，或申请正式许可证。
 :::
 
