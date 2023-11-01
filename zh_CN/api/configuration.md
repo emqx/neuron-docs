@@ -376,22 +376,27 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 {
     "states": [
         {
-            // node name
+            //node name
             "node": "modbus-node1",
             //running state
             "running": 2,
             //link state
             "link": 1,
             //average round trip time communicating with devices
-            "rtt": 100
+            "rtt": 100,
+            //log level
+            "log_level": "notice"
         },
         {
             "node": "modbus-node2",
             "running": 1,
             "link": 0,
-            "rtt": 9999
+            "rtt": 9999,
+            "log_level": "notice"
         }
-    ]
+    ],
+    //log level of neuron.log
+    "neuron_core": "notice"
 }
 ```
 
@@ -1479,99 +1484,25 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 ```json
 {
     // node name
-    "node": "modbus-tcp"
+    "node": "modbus-tcp",
+    // log level: debug, info, notice, warn, error, fatal
+    "level": "debug",
+    // whether to switch the core log level
+    "core": true
 }
 ```
+
+::: tip
+core 字段选填，默认为 true。
+
+node 字段选填，不填此字段时 core 不可以为 false，此时仅切换核心日志等级。
+:::
 
 ### 响应
 
 ```json
 {
     "error": 0
-}
-```
-
-:::tip
-调用接口修改节点的日志等级为 debug，十分钟左右自动切回默认等级。
-:::
-
-## 下载文件
-
-*GET* /api/v2/file
-
-### 请求头部
-
-**Authorization** Bearer \<token\>
-
-### 请求参数
-
-**file_path** 必需，文件的绝对路径
-
-### 响应状态
-
-* 404
-    * 1011 文件不存在
-    * 4101 文件打开失败
-    * 4102 文件读失败
-
-### 响应
-
-当正常响应时，返回文件内容并下载文件。
-
-当错误响应时，返回对应的错误码。
-
-```json
-{
-    "error": 1011
-}
-```
-
-## 获取文件列表
-
-*GET* /api/v2/file/info
-
-### 请求头部
-
-**Authorization** Bearer \<token\>
-
-### 请求参数
-
-**dir_path** 必需，目录的绝对路径
-
-### 响应状态
-
-* 404
-    * 1011 文件不存在
-    * 4101 文件打开失败
-
-### 响应
-
-当正确响应时，响应文件名称、文件大小、文件创建时间和文件更新时间。
-
-```json
-{
-    "files": [
-        {
-            "name": "neuron",
-            "size": 4096,
-            "ctime": "Wed Jan  4 02:38:12 2023",
-            "mtime": "Mon Dec 26 09:48:42 2022"
-        },
-        {
-            "name": "test.txt",
-            "size": 13,
-            "ctime": "Wed Jan  4 02:38:12 2023",
-            "mtime": "Mon Dec 26 09:48:42 2022"
-        }
-    ]
-}
-```
-
-当错误响应时，响应对应的错误码。
-
-```json
-{
-    "error": 1011
 }
 ```
 
