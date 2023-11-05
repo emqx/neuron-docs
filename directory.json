@@ -243,6 +243,10 @@
           ]
         },
         {
+          "title": "Hostlink Cmode",
+          "path": "configuration/south-devices/hostlink/hostlink-cmode"
+        },
+        {
           "title": "Beckhoff ADS",
           "path": "configuration/south-devices/ads/ads",
           "children": [
@@ -789,6 +793,10 @@
               "path": "configuration/south-devices/omron-fins/example/nx1p/nx1p"
             }
           ]
+        },
+        {
+          "title": "Hostlink Cmode",
+          "path": "configuration/south-devices/hostlink/hostlink-cmode"
         },
         {
           "title": "Beckhoff ADS",
