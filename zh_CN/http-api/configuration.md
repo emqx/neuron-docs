@@ -671,6 +671,104 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 }
 ```
 
+## 添加多组 Tag
+
+*POST*  /api/v2/gtags
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 206
+  * 2202 tag name conflict
+  * 2203 tag attribute not support
+  * 2204 tag type not support
+  * 2205 tag address format invalid
+* 404
+  * 2003 node not exist
+  * 2106 group not exist
+
+### 请求体
+
+```json
+{
+    //node name
+    "node": "modbus-node",
+    "groups": [
+        {
+            //group name
+            "group": "group_1",
+            //group interval
+            "interval": 3000,
+            "tags": [
+                {
+                    //tag name
+                    "name": "tag1",
+                    //tag address
+                    "address": "1!400001",
+                    //tag attribute
+                    "attribute": 3,
+                    //tag type
+                    "type": 3,
+                    //optional, float/double precision, optional(0-17)
+                    "precision": 0,
+                    //optional, decimal
+                    "decimal": 0,
+                    //optional, description
+                    "description": "",
+                    //optional, when the attribute is static,the value field needs to be added.
+                    "value": 12
+                },
+                {
+                    "name": "tag2",
+                    "address": "1!400002",
+                    "attribute": 3,
+                    "type": 9,
+                    "precision": 3
+                }
+            ]
+        },
+        {
+            "group": "group_2",
+            "interval": 3000,
+            "tags": [
+                {
+                    "name": "tag1",
+                    "address": "1!400003",
+                    "attribute": 3,
+                    "type": 9,
+                    "precision": 3
+                },
+                {
+                    "name": "tag2",
+                    "address": "1!400004",
+                    "attribute": 3,
+                    "type": 9,
+                    "precision": 3
+                }
+            ]
+        }
+    ]
+}
+
+```
+
+
+### 响应
+
+```json
+{
+    //tags count
+    "index": 4,
+    "error": 0
+}
+```
+
 ## 获取 Tag
 
 *GET*  /api/v2/tags
