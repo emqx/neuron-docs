@@ -376,22 +376,27 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 {
     "states": [
         {
-            // node name
+            //node name
             "node": "modbus-node1",
             //running state
             "running": 2,
             //link state
             "link": 1,
             //average round trip time communicating with devices
-            "rtt": 100
+            "rtt": 100,
+            //log level
+            "log_level": "notice"
         },
         {
             "node": "modbus-node2",
             "running": 1,
             "link": 0,
-            "rtt": 9999
+            "rtt": 9999,
+            "log_level": "notice"
         }
-    ]
+    ],
+    //log level of neuron.log
+    "neuron_core": "notice"
 }
 ```
 
@@ -1467,50 +1472,26 @@ Response if there is an error returned:
 
 ```json
 {
-    "node_name": "modbus-tcp"
+    // node name
+    "node": "modbus-tcp",
+    // log level: debug, info, notice, warn, error, fatal
+    "level": "debug",
+    // whether to switch the core log level
+    "core": true
 }
 ```
+
+::: tip
+The core field is optional and defaults to true.
+
+The node field is optional. If this field is not filled in, the core cannot be false, and only the core log level will be switched.
+:::
 
 ### Response
 
 ```json
 {
     "error": 0
-}
-```
-
-:::tip
-Call the api to modify the log level of the node to debug, and automatically switch to the default level in about ten minutes.
-:::
-
-## Download File
-
-*GET* /api/v2/file
-
-### Request Headers
-
-**Authorization** Bearer \<token\>
-
-### Request Params
-
-**file_path** Required, absolute path of the file
-
-### Response Status
-
-* 404
-    * 1011 file not exist
-    * 4101 file open failure
-    * 4102 file read failure
-
-### Response
-
-Return the contents of the file and download the file, when responding correctly.
-
-Return the error code, when an error response occurs.
-
-```json
-{
-    "error": 1011
 }
 ```
 
