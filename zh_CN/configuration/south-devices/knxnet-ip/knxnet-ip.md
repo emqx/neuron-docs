@@ -8,7 +8,7 @@ Neuron KNXnet/IP 插件支持与 KNXnet/IP 设备建立连接。
 
 由于 KNXnet/IP 协议的工作原理，如果使用虚拟化技术如虚拟机或 Docker 部署 Neuron，KNX 插件可能
 无法正常工作。如果是在 Linux 主机中使用 docker 镜像部署 Neuron，那么需要使用 docker 选项`--net=host`。
-在其他情况下，推荐您使用[二进制安装包部署 Neuron](../../../installation/compile.md)。
+在其他情况下，推荐您使用[二进制安装包部署 Neuron](../../../installation/tar.gz.md)。
 
 :::
 
