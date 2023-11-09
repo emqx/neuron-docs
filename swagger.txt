@@ -1,0 +1,2 @@
+install redoc-cli
+redoc-cli bundle -o index.html  swagger.json
