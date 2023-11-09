@@ -94,4 +94,4 @@ When the data type is string type, **.LEN** indicates the length of the string; 
 
 ## Data Monitoring
 
-After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../admin/monitoring.md).

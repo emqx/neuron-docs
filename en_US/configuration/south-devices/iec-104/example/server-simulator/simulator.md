@@ -29,4 +29,4 @@ Download and unzip the IEC6087-5-104 Server Simulator executable file, click ins
 
 ## Data Monitoring
 
-After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../../../usage/monitoring.md).
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../../../admin/monitoring.md).
