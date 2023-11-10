@@ -106,9 +106,7 @@ Before Neuron version 2.4.0, the Neuron MQTT plugin will publish collected data 
 
 
 <figure align="center">
-  <img src="./assets/subscribe_topic.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron version 2.4.0 MQTT subscribe interface">
+  <img src="./assets/subscribe_topic.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron version 2.4.0 MQTT subscribe interface">
   <figcaption align = "center">
     <sub><b>Fig.2 - Setting upload topic in Neuron version 2.4.0</b></sub>
   </figcaption>

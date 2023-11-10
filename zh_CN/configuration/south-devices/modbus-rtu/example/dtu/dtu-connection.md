@@ -10,8 +10,6 @@ DTU 支持数据的双向转换，支持将 RS232、RS485、RS422 等常见的�
 
 <img src="./assets/neuron-dtu.png" alt="neuron-dtu" style="zoom:50%;" />
 
-
-
 ## DTU 主要配置项
 
 <img src="./assets/DTU.png" alt="dtu-config" style="zoom:50%;" />
