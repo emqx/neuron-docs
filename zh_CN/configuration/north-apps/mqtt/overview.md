@@ -100,9 +100,7 @@ Neuron 的 MQTT 插件支持 MQTT over SSL。
   :::
 
 <figure align="center">
-  <img src="./assets/subscribe_topic.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron version 2.4.0 MQTT subscribe interface">
+  <img src="./assets/subscribe_topic.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron version 2.4.0 MQTT subscribe interface">
   <figcaption align = "center">
     <sub><b>Fig.2 - 在 Neuron 2.4.0 版本中指定上报主题</b></sub>
   </figcaption>
