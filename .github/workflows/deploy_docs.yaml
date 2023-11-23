@@ -85,7 +85,7 @@ jobs:
         pnpm install
         pnpm build
 
-    - name: upload dist
+    - name: upload dist to cos
       run: |
         pip3 install coscmd
         coscmd config -a ${{ secrets.TENCENT_COS_ID }} -s ${{ secrets.TENCENT_COS_KEY }} -b neugates-io-1302406139 -r ap-hongkong
@@ -106,8 +106,8 @@ jobs:
     - name: update search index
       uses: Swilder-M/docsearch-scraper-simple@next
       env:
-        APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
-        API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+        APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID_NEXT }}
+        API_KEY: ${{ secrets.ALGOLIA_API_KEY_NEXT }}
       with:
         docs_type: ${{ env.DOCS_TYPE }}
         docs_version: ${{ env.VERSION }}
