@@ -8,9 +8,7 @@ Neuron 会在启动时创建一个 *monitor* 单例节点，用户不能直接�
 您可以在仪表板的**北向应用**页签中看到 *monitor* 节点。
 
 <figure align="center">
-  <img src="./assets/monitor_node.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron monitor 节点">
+  <img src="./assets/monitor_node.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron monitor 节点">
   <figcaption align = "center">
     <sub><b>Fig.1 - Neuron *monitor* 节点</b></sub>
   </figcaption>
@@ -43,9 +41,7 @@ Neuron 仪板表的**关于**页面和**数据统计**页签使用 Monitor 插�
 可以通过点击**系统信息 -> 关于**打开**关于**页面。
 
 <figure align="center">
-  <img src="./assets/about.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron dashboard 关于页面">
+  <img src="./assets/about.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron dashboard 关于页面">
   <figcaption align = "center">
     <sub><b>Fig.2 - Neuron 仪板表*关于*页面</b></sub>
   </figcaption>
@@ -54,9 +50,7 @@ Neuron 仪板表的**关于**页面和**数据统计**页签使用 Monitor 插�
 点击节点上的**数据统计**图标，可以显示**数据统计**页签。
 
 <figure align="center">
-  <img src="./assets/data_statistics_icon.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron 仪板表数据统计图标">
+  <img src="./assets/data_statistics_icon.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron 仪板表数据统计图标">
   <figcaption align = "center">
     <sub><b>Fig.3 - Neuron 仪板表*数据统计*图标</b></sub>
   </figcaption>
@@ -65,9 +59,7 @@ Neuron 仪板表的**关于**页面和**数据统计**页签使用 Monitor 插�
 如下，展示了一个样例 *file* 节点的数据统计。
 
 <figure align="center">
-  <img src="./assets/file_statistics.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron dashboard Data Statistics tab example">
+  <img src="./assets/file_statistics.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron dashboard Data Statistics tab example">
   <figcaption align = "center">
     <sub><b>Fig.4 - Neuron 仪板表*数据统计*页签</b></sub>
   </figcaption>

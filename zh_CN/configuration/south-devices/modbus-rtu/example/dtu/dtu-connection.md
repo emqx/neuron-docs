@@ -10,8 +10,6 @@ DTU 支持数据的双向转换，支持将 RS232、RS485、RS422 等常见的�
 
 <img src="./assets/neuron-dtu.png" alt="neuron-dtu" style="zoom:50%;" />
 
-
-
 ## DTU 主要配置项
 
 <img src="./assets/DTU.png" alt="dtu-config" style="zoom:50%;" />
@@ -109,4 +107,4 @@ $ netstat -anp |grep <port>
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../../../admin/monitoring.md)。

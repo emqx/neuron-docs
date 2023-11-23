@@ -40,11 +40,11 @@ After logging into Neuron, click on **System Information** -> **About** in the t
 
 ![image-20230802172853368](./assets/usage.png)
 
-## [Data Monitoring and Device Control](../monitoring.md)
+## [Data Monitoring and Device Control](../admin/monitoring.md)
 
 This section discusses how to monitor data and control devices through Neuron. It details how to access and understand the data monitoring interface, as well as how to modify and validate changes in device values directly from the Neuron dashboard.
 
-## [Data Statistics](../dashboard/data-statistics.md)
+## [Data Statistics](../admin/data-statistics.md)
 
 Neuron supports south-north node data statistics based on the Prometheus data model, which is used to monitor node running status. 
 

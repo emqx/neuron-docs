@@ -9,7 +9,7 @@ This section introduces how to use Neuron KNXnet/IP plugin to communicate with K
 Due to the way how KNXnet/IP protocol works, the KNX plugin may not be able to work correctly
 if Neuron is installed using some virtualization technology such as virtual machines or docker.
 In a Linux host with docker, using the docker option `--net=host` is required. In other cases,
-we recommend that you install Neuron using binary packages.
+we recommend that you install Neuron using [binary packages](../../../installation/tar.gz.md).
 
 :::
 
@@ -76,4 +76,4 @@ Same as above, but for `uint8` values with fewer than 8 bits, such as KNX data p
 
 ## Data Monitoring
 
-After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../usage/monitoring.md).
+After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../admin/monitoring.md).

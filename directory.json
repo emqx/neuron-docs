@@ -30,27 +30,27 @@
       "children": [
         {
           "title": "安装 Neuron",
-          "path": "installation/neuron/neuron",
+          "path": "installation/neuron",
           "children": [
             {
               "title": "Ubuntu/Debian",
-              "path": "installation/neuron/deb"
+              "path": "installation/deb"
             },
             {
               "title": "CentOS",
-              "path": "installation/neuron/rpm"
+              "path": "installation/rpm"
             },
             {
               "title": "其他 Linux",
-              "path": "installation/neuron/tar.gz"
+              "path": "installation/tar.gz"
             },
             {
               "title": "Docker",
-              "path": "installation/neuron/docker"
+              "path": "installation/docker"
             },
             {
               "title": "源代码",
-              "path": "installation/neuron/compile"
+              "path": "installation/compile"
             }
           ]
         },
@@ -476,7 +476,7 @@
       "children": [
         {
           "title": "数据监控",
-          "path": "usage/monitoring"
+          "path": "admin/monitoring"
         },
         {
           "title": "数据统计",
@@ -606,27 +606,27 @@
       "children": [
         {
           "title": "Installing Neuron",
-          "path": "installation/neuron/neuron",
+          "path": "installation/neuron",
           "children": [
             {
               "title": "Ubuntu/Debian",
-              "path": "installation/neuron/deb"
+              "path": "installation/deb"
             },
             {
               "title": "CentOS",
-              "path": "installation/neuron/rpm"
+              "path": "installation/rpm"
             },
             {
               "title": "Other Linux",
-              "path": "installation/neuron/tar.gz"
+              "path": "installation/tar.gz"
             },
             {
               "title": "Docker",
-              "path": "installation/neuron/docker"
+              "path": "installation/docker"
             },
             {
               "title": "Source",
-              "path": "installation/neuron/compile"
+              "path": "installation/compile"
             }
           ]
         },
@@ -1043,24 +1043,24 @@
     },
     {
       "title": "Operations Guide",
-      "path": "usage/admin/admin",
+      "path": "admin/admin",
       "collapsed": true, 
       "children": [
         {
           "title": "Data Monitoring and Device Control",
-          "path": "usage/monitoring"
+          "path": "admin/monitoring"
         },
         {
           "title": "Data Statistics",
-          "path": "usage/dashboard/data-statistics"
+          "path": "admin/data-statistics"
         },
         {
           "title": "Log Management",
-          "path": "usage/admin/log-management"
+          "path": "admin/log-management"
         },
         {
           "title": "Configuration Management",
-          "path": "usage/admin/conf-management"
+          "path": "admin/conf-management"
         }
       ]
     },

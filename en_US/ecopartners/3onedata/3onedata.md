@@ -16,8 +16,6 @@ Headquartered in Shenzhen, founded in 2001, 3onedata has been dedicated to IIoT 
 
 ## RCU-100
 
-
-
 <img src="./assets/3one-rcu100.png" alt="Model Diagram" style="zoom:30%;" />
 
 **Specification**
