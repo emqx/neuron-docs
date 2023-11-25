@@ -1583,33 +1583,6 @@ To update both group name and interval:
 }
 ```
 
-## Download log files
-
-*GET*  /api/v2/logs
-
-### Request Headers
-
-**Authorization** Bearer \<token\>
-
-### Response Status
-
-* 200 OK
-* 404
-  * 1011 file not exist
-  * 1014 command execution failed
-* 500
-  * 1001 internal error
-
-### Response
-
-Response if there is an error returned:
-
-```json
-{
-    "error": 1014
-}
-```
-
 ## Update node log level
 
 *PUT*  /api/v2/log/level
