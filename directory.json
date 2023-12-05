@@ -111,6 +111,20 @@
           ]
         },
         {
+          "title": "Inovance Modbus TCP",
+          "path": "configuration/south-devices/modbus-hc-tcp/modbus-hc-tcp",
+          "children": [
+            {
+              "title": "Easy521 连接示例",
+              "path": "configuration/south-devices/modbus-hc-tcp/example/autoshop/autoshop-modbus"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/modbus-hc-tcp/faq/faq"
+            }
+          ]
+        },
+        {
           "title": "OPC UA",
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
@@ -669,6 +683,20 @@
             {
               "title": "FAQ",
               "path": "configuration/south-devices/modbus-tcp/faq/faq"
+            }
+          ]
+        },
+        {
+          "title": "Inovance Modbus TCP",
+          "path": "configuration/south-devices/modbus-hc-tcp/modbus-hc-tcp",
+          "children": [
+            {
+              "title": "Connect to Easy521",
+              "path": "configuration/south-devices/modbus-hc-tcp/example/autoshop/autoshop-modbus"
+            },
+            {
+              "title": "FAQ",
+              "path": "configuration/south-devices/modbus-hc-tcp/faq/faq"
             }
           ]
         },
