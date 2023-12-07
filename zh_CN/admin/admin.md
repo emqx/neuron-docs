@@ -62,4 +62,4 @@ Neuron 支持基于 Prometheus 的数据模型的南北向节点数据统计功�
 
 ## 管理日志
 
-从 Neuron 2.3 版本开始，我们引入了一键下载所有日志文件的功能，用户可在 Neuron Web 页面一键下载 Neuron 相关日志，关于日志文件的文件夹层级、日志配置文件，请阅读 [管理日志](./log-management.md)。
+用户可在 Neuron Web 页面一键下载 Neuron 相关日志，关于日志文件的文件夹层级、日志配置文件，请阅读 [管理日志](./log-management.md)。
