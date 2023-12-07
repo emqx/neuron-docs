@@ -1,6 +1,6 @@
 # 管理日志
 
-Neuron 2.3 及以上版本支持在 Web 页面一键下载所有日志文件的功能，如下图所示。
+在 Web 页面一键下载所有日志文件的功能，如下图所示。
 
 ![download_log](./assets/download_log.png)
 
