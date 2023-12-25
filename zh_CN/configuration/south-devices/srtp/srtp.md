@@ -29,7 +29,7 @@ Neuron GE SRTP 插件通过 TCP 协议访问支持 SRTP 协议的 GE PLC 设备�
 
 ## 地址格式
 
-> AREA ADDRESS\[.BIT][.LEN]</span>
+> AREA ADDRESS\[.BIT][.LEN]
 
 ### .BIT
 

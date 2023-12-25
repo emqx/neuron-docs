@@ -52,7 +52,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address format
 
-> AREA ADDRESS.ID\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS.ID\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 

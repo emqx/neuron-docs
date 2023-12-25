@@ -49,7 +49,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address format
 
-> ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]</span>
+> ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]
 
 ::: tip
 Since communication is done via TCP/IP, the device is searched through the IP address and port number, making it unnecessary to specify the station number in the message. Neuron defaults the station number to 1.

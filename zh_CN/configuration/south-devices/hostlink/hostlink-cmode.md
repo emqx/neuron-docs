@@ -47,7 +47,7 @@ Neuron HostLink Cmode 插件用于通过串口网络与欧姆龙 PLC 进行通�
 
 ### 地址格式
 
-> AREA ADDRESS.ID\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS.ID\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 

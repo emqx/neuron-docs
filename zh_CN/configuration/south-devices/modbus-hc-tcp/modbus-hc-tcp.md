@@ -47,7 +47,7 @@ Neuron 的 Inovance Modbus TCP 插件适配汇川 PLC 点位。
 
 ### 地址格式
 
-> ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]</span>
+> ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]
 
 ::: tip
 由于使用 TCP/IP 协议进行通信，通过 IP 地址及端口号搜索设备，报文无需特别指定站点号，Neuron 默认站点号为 1 。

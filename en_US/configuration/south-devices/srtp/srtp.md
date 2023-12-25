@@ -29,7 +29,7 @@ Neuron GE SRTP plugin accesses GE PLC devices that support SRTP over TCP.
 
 ## ADDRESS 
 
-> AREA ADDRESS\[.BIT][.LEN]</span>
+> AREA ADDRESS\[.BIT][.LEN]
 
 ### .BIT
 
