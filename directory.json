@@ -114,6 +114,20 @@
           ]
         },
         {
+          "title": "Inovance Modbus TCP",
+          "path": "configuration/south-devices/modbus-hc-tcp/modbus-hc-tcp",
+          "children": [
+            {
+              "title": "Easy521 连接示例",
+              "path": "configuration/south-devices/modbus-hc-tcp/example/autoshop/autoshop-modbus"
+            },
+            {
+              "title": "常见问题",
+              "path": "configuration/south-devices/modbus-hc-tcp/faq/faq"
+            }
+          ]
+        },
+        {
           "title": "OPC UA",
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
@@ -254,6 +268,10 @@
           ]
         },
         {
+          "title": "Hostlink Cmode",
+          "path": "configuration/south-devices/hostlink/hostlink-cmode"
+        },
+        {
           "title": "Beckhoff ADS",
           "path": "configuration/south-devices/ads/ads",
           "children": [
@@ -366,6 +384,10 @@
         {
           "title": "KUKA Ethernet KRL TCP",
           "path": "configuration/south-devices/kuka/kuka"
+        },
+        {
+          "title": "GE SRTP",
+          "path": "configuration/south-devices/srtp/srtp"
         }
       ]
     },
@@ -690,6 +712,20 @@
           ]
         },
         {
+          "title": "Inovance Modbus TCP",
+          "path": "configuration/south-devices/modbus-hc-tcp/modbus-hc-tcp",
+          "children": [
+            {
+              "title": "Connect to Easy521",
+              "path": "configuration/south-devices/modbus-hc-tcp/example/autoshop/autoshop-modbus"
+            },
+            {
+              "title": "FAQ",
+              "path": "configuration/south-devices/modbus-hc-tcp/faq/faq"
+            }
+          ]
+        },
+        {
           "title": "OPC UA",
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
@@ -820,6 +856,10 @@
           ]
         },
         {
+          "title": "Hostlink Cmode",
+          "path": "configuration/south-devices/hostlink/hostlink-cmode"
+        },
+        {
           "title": "Beckhoff ADS",
           "path": "configuration/south-devices/ads/ads",
           "children": [
@@ -932,6 +972,10 @@
         {
           "title": "KUKA Ethernet KRL TCP",
           "path": "configuration/south-devices/kuka/kuka"
+        },
+        {
+          "title": "GE SRTP",
+          "path": "configuration/south-devices/srtp/srtp"
         }
       ]
     },
