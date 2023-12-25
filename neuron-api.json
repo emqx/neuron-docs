@@ -2342,13 +2342,25 @@
                   "library": {
                     "type": "string",
                     "description": "plugin library name"
+                  },
+                  "schema_file": {
+                    "type": "string",
+                    "description": "base64 encode string of schema file content"
+                  },
+                  "so_file": {
+                    "type": "string",
+                    "description": "base64 encode string of so file content"
                   }
                 },
                 "required": [
-                  "library"
+                  "library",
+                  "schema_file",
+                  "so_file"
                 ],
                 "x-apifox-orders": [
-                  "library"
+                  "library",
+                  "schema_file",
+                  "so_file"
                 ],
                 "x-apifox-ignore-properties": []
               },
@@ -2395,6 +2407,91 @@
           }
         },
         "x-run-in-apifox": "https://apifox.com/web/project/3516282/apis/api-123060873-run"
+      },
+      "put": {
+        "summary": "Update Plugin",
+        "x-apifox-folder": "Neuron/configuration",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Neuron/configuration"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "library": {
+                    "type": "string",
+                    "description": "plugin library name"
+                  },
+                  "schema_file": {
+                    "type": "string",
+                    "description": "base64 encode string of schema file content"
+                  },
+                  "so_file": {
+                    "type": "string",
+                    "description": "base64 encode string of so file content"
+                  }
+                },
+                "required": [
+                  "library",
+                  "schema_file",
+                  "so_file"
+                ],
+                "x-apifox-orders": [
+                  "library",
+                  "schema_file",
+                  "so_file"
+                ],
+                "x-apifox-ignore-properties": []
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/neuron-0"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "success",
+                    "value": {
+                      "error": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "library info invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/neuron-error"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "library info invalid",
+                    "value": {
+                      "error": 2302
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3516282/apis/api-123060873-1-run"
       },
       "delete": {
         "summary": "Del Plugin",
@@ -2492,6 +2589,10 @@
                           "node_type": {
                             "type": "integer"
                           },
+                          "version": {
+                            "type": "string",
+                            "description": "plugin version"
+                          },
                           "name": {
                             "type": "string",
                             "description": "plugin name"
@@ -2513,6 +2614,7 @@
                         "required": [
                           "kind",
                           "node_type",
+                          "version",
                           "name",
                           "library",
                           "description",
@@ -2522,6 +2624,7 @@
                         "x-apifox-orders": [
                           "kind",
                           "node_type",
+                          "version",
                           "name",
                           "library",
                           "description",
