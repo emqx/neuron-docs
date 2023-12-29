@@ -36,6 +36,8 @@ For information on general configuration items, see [Connect to Southbound Devic
 ### Data types
 
 * BIT
+* INT8
+* UINT8
 * INT16
 * UINT16
 * INT32
@@ -59,6 +61,10 @@ Since communication is done via TCP/IP, the device is searched through the IP ad
 
 Required, refers to the register address. HuiChuan PLC supports coil and register access for MODBUS protocol. Different from the standard Modbus protocol, each area's address range is as follows:
 
+The address areas are divided into two types according to the PLC model.
+
+Small PLCs: EASY series, H5U, etc.
+
 | Area                       | Address Range          | Quantity        | Attribute        | Register Size     | Function Code | Data Type|
 | ------------------------- | ---------------- | ---------- | ---------- | ------------- | ------------ | ------- |
 | M0-M7999(Coils)            | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 1Bit          | 0x01,0x05,0x0f | BIT    |
@@ -71,6 +77,20 @@ Required, refers to the register address. HuiChuan PLC supports coil and registe
 
 ::: tip
 The X and Y areas' addresses are represented in octal.
+:::
+
+Medium PLCs: AM series, AC series, etc.
+
+| Area                       | Address Range          | Quantity        | Attribute        | Register Size     | Function Code | Data Type|
+| -------------------------- | ------------------------------ | ----------  | ----------- | ------------- | -------------  | ------- |
+| QX0.0-QX8191.7（Coils）            | 0x0000-0xFFFF  (0-65536)       | 65536       |Read/Write        | 1Bit          | 0x01,0x05,0x0f | BIT     |
+| MW0-MW65535（Holding Registers）   | 0x0000-0xFFFF  (0-65536)       | 65536       |Read/Write         | 16Bit,2Byte   | 0x03,0x06,0x10 | Various    |
+| SM0-SM7999                         | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 16Bit,2Byte   | 0x01,0x05,0x0f  | BIT    |
+| SD0-SD7999                         | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 16Bit,2Byte   | 0x03,0x06,0x10  | Various    |
+
+::: tip
+The M area supports multiple addressing methods, including MX, MB, MW, MD, which correspond to addressing by bit, Byte, Word, and Dword, respectively.
+When using MX and MB addressing methods, the tags only support read attributes.
 :::
 
 #### **.BIT**
@@ -136,6 +156,10 @@ A register of the Modbus driver contains 2 bytes. When reading and writing Modbu
 | D1.10E | String  | D area, address 1, character length 10, byte order E, which occupies addresses D1 to D5|
 | M8     | bit     | M area, address 8 |
 | X10    | bit     | M area, address 8 |
+| MX1.1  | bit      | M area, address is the tenth bit of the first register  |
+| MB1    | int8     | X area, address is the low byte of the first register  |
+| MW1    | int16    | X area, address is the second register   |
+| MD1    | int32    | X area, address is the third register   |
 
 ## Use Case
 
