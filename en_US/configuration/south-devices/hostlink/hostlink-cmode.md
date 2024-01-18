@@ -52,7 +52,11 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address format
 
-> AREA ADDRESS.ID\[.BIT]\[.LEN\[H]\[L]]
+> ID!AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
+
+#### ID
+
+Required, unit ID. For example, unit id is 10, area is CIO, address is 0, then fill in 10!CIO0000
 
 #### AREA ADDRESS
 
@@ -65,10 +69,6 @@ For information on general configuration items, see [Connect to Southbound Devic
 | A    | uint16/int16/uint32/int32/uint64/int64/FLOAT/DOUBLE/STRING  | read          | AR area        |
 | TD   | uint16/int16/uint32/int32/uint64/int64/FLOAT/DOUBLE/STRING  | read/write    | TC value       |
 | TS   | BOOL                                                        | read/write    | TC status      |
-
-#### .ID
-
-Required, unit ID. For example, unit id is 10, area is CIO, address is 0, then fill in CIO0000.10
 
 #### .LEN\[H]\[L]\[D]\[E]
 
@@ -84,22 +84,22 @@ When the data type is STRING, .LEN is a required field, indicating the number of
 
 | Address         | Data Type | Description |
 | ----------- | ------- | --------- |
-| CIO0001.10        | int16   | CIO Area, address is 1, unit id is 10      |
-| CIO0002.10        | uint16  | CIO Area, address is 2, unit id is 10      |
-| LR0020.10         | double  | LR Area, address is 20, unit id is 10      |
-| LR0030.10         | uint32  | LR Area, address is 30, unit id is 10      |
-| HR0010.10         | int32   | HR Area, address is 10, unit id is 10      |
-| HR0020.10         | float   | HR Area, address is 20, unit id is 10      |
-| D0010.10          | int32   | DM Area, address is 10, unit id is 10      |
-| D0020.10          | float   | DM Area, address is 20, unit id is 10      |
-| A0002.10          | int32   | AR Area, address is 2, unit id is 10       |
-| A0004.10          | uint32  | AR Area, address is 4, unit id is 10       |
-| TD0002.10         | uint16  | TC value, address is 2, unit id is 10      |
-| TD0004.10         | uint32  | TC value, address is 4, unit id is 10      |
-| TS0002.10         | BOOL    | TC status, address is 2, unit id is 10     |
-| TS0004.10         | BOOL    | TC status, address is 4, unit id is 10     |
-| CIO0000.20.20      | string   | CIO Area, address is 0, unit id is 10, the string length is 20 bytes, and the endianness is L      |
-| CIO0001.20H        | string   | CIO Area, address is 1, unit id is 10, the string length is 20 bytes, and the endianness is H      |
+| 10!CIO0001        | int16   | CIO Area, address is 1, unit id is 10      |
+| 10!CIO0002        | uint16  | CIO Area, address is 2, unit id is 10      |
+| 10!LR0020         | double  | LR Area, address is 20, unit id is 10      |
+| 10!LR0030         | uint32  | LR Area, address is 30, unit id is 10      |
+| 10!HR0010         | int32   | HR Area, address is 10, unit id is 10      |
+| 10!HR0020         | float   | HR Area, address is 20, unit id is 10      |
+| 10!D0010          | int32   | DM Area, address is 10, unit id is 10      |
+| 10!D0020          | float   | DM Area, address is 20, unit id is 10      |
+| 10!A0002          | int32   | AR Area, address is 2, unit id is 10       |
+| 10!A0004          | uint32  | AR Area, address is 4, unit id is 10       |
+| 10!TD0002         | uint16  | TC value, address is 2, unit id is 10      |
+| 10!TD0004         | uint32  | TC value, address is 4, unit id is 10      |
+| 10!TS0002         | BOOL    | TC status, address is 2, unit id is 10     |
+| 10!TS0004         | BOOL    | TC status, address is 4, unit id is 10     |
+| 10!CIO0000.20L    | string  | CIO Area, address is 0, unit id is 10, the string length is 20 bytes, and the endianness is L      |
+| 10!CIO0001.20H    | string  | CIO Area, address is 1, unit id is 10, the string length is 20 bytes, and the endianness is H      |
 
 ## Data Monitoring
 
