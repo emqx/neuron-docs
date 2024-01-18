@@ -102,6 +102,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 * 200 OK
 * 400
   * 2001 node 类型无效
+  * 2004 node 配置无效
 * 404
   * 2301 未找到插件库
 * 409
@@ -115,6 +116,13 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "name": "modbus-tcp-node",
     //plugin name
     "plugin": "Modbus TCP"
+    //setting (optional)
+    "params": {
+        "param1": 1,
+        "param2": "1.1.1.1",
+        "param3": true,
+        "param4": 11.22
+    }
 }
 ```
 

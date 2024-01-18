@@ -102,6 +102,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 * 200 OK
 * 400
   * 2001 node type invalid
+  * 2004 node setting invalid
 * 404
   * 2301 library not found
 * 409
@@ -115,6 +116,13 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     "name": "modbus-tcp-node",
     //plugin name
     "plugin": "Modbus TCP"
+    //setting (optional)
+    "params": {
+        "param1": 1,
+        "param2": "1.1.1.1",
+        "param3": true,
+        "param4": 11.22
+    }
 }
 ```
 
