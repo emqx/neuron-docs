@@ -49,6 +49,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2105    group parameter invalid
 * 2106    group not exist
 * 2107    group name too long
+* 2108    group exceeds the maximum number under the same node
 * 2201    tag not exist
 * 2202    tag name conflict
 * 2203    tag attribute not support
@@ -75,6 +76,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2314    library module version no match
 * 2315    library name no conform
 * 2316    library c lib no match
+* 2317    library update failed
 * 2400    license not found
 * 2401    license invalid
 * 2402    license expired
@@ -84,6 +86,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2406    license hardware token not match
 * 2407    license detect bad clock
 * 2408    license module invalid
+* 2409    license hardware token not found
 * 2500    template already exists
 * 2501    template not found
 * 2502    template name too long
@@ -106,6 +109,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 3015    plugin device not response
 * 3016    plugin does not support template
 * 3017    plugin does not support write tags
+* 3018    plugin does not support asynchronous reading
 
 ## FILE error codes
 
