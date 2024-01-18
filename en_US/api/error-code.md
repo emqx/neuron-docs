@@ -109,7 +109,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 3015    plugin device not response
 * 3016    plugin does not support template
 * 3017    plugin does not support write tags
-* 3018    plugin does not support asynchronous reading
+* 3018    plugin does not support synchronous reading
 
 ## FILE error codes
 
