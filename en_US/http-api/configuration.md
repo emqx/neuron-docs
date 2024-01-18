@@ -1447,6 +1447,8 @@ To update both group name and interval:
 ### Request Params
 
 **app**  required
+**driver**  optional, substring match against driver name
+**group**  optional, substring match against group name
 
 ### Request Headers
 
