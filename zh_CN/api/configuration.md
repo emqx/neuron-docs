@@ -1652,3 +1652,171 @@ node 字段选填，不填此字段时 core 不可以为 false，此时仅切换
     "error": 0
 }
 ```
+
+## 批量添加 Drivers
+
+*PUT* /api/v2/global/drivers
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200 OK
+* 206
+    * 2203    tag 属性不支持
+    * 2204    tag 类型不支持
+    * 2205    tag 地址格式无效
+    * 2206    tag 名字太长
+    * 2207    tag 地址太长
+    * 2208    tag 描述太长
+    * 2209    tag 精度无效
+* 400
+    * 1002    请求 body 无效
+    * 2010    node 名称太长
+    * 2011    node 不允许删除
+    * 2105    group 参数无效
+    * 2107    group 名称太长
+    * 2304    库打开失败
+    * 3013    插件名字太长
+    * 3019    插件不支持请求的操作
+* 404
+    * 2301    库未找到
+    * 3014    插件不存在
+* 409
+    * 2104    group 已存在
+    * 2202    tag 名称冲突
+    * 2307    插件不允许实例化
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 请求体
+
+```json
+{
+    "nodes": [
+        {
+            "name": "rtu template",
+            "plugin": "Modbus RTU",
+            "params": {
+                "param1": 1,
+                "param2": "1.1.1.1",
+                "param3": true,
+                "param4": 11.22
+            },
+            "groups": [
+                {
+                    "name": "group1",
+                    "interval": 2000,
+                    "tags": [
+                        {
+                            "name": "tag1",
+                            "type": 4,
+                            "address": "1!400001",
+                            "attribute": 1,
+                            "precison": 1,
+                            "decimal": 0
+                        },
+                        {
+                            "name": "tag2",
+                            "type": 11,
+                            "address": "1!400009",
+                            "attribute": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+
+### 响应
+
+```json
+{
+    "error": 0
+}
+```
+
+
+## 获取 Drivers
+
+*GET* /api/v2/global/drivers
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 请求参数
+
+**name** Optional, list of names to filter out driver nodes (separated by ',')
+**name** 可选，指定要过滤的南下节点名字列表（以 ',' 分隔）。 未指定 **name** 参数时，则返回所有模板的列表。
+
+### 响应状态
+
+* 200 OK
+  * 2005      node 设置未找到
+* 400
+    * 1003    请求 param 无效
+* 404
+  * 2003      node 不存在
+* 500
+    * 1001    内部错误
+    * 1010    程序繁忙
+
+### 响应
+
+如果成功，返回所有南向节点。
+
+```json
+{
+    "nodes": [
+        {
+            "name": "rtu template",
+            "plugin": "Modbus RTU",
+            "params": {
+                "param1": 1,
+                "param2": "1.1.1.1",
+                "param3": true,
+                "param4": 11.22
+            },
+            "groups": [
+                {
+                    "name": "group1",
+                    "interval": 2000,
+                    "tags": [
+                        {
+                            "name": "tag1",
+                            "type": 4,
+                            "address": "1!400001",
+                            "attribute": 1,
+                            "precison": 1,
+                            "decimal": 0
+                        },
+                        {
+                            "name": "tag2",
+                            "type": 11,
+                            "address": "1!400009",
+                            "attribute": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+否则返回错误玛。
+
+```json
+{
+    "error": 0
+}
+```

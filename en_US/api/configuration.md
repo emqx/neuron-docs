@@ -1690,3 +1690,170 @@ Response to the error code, when an error response occurs.
     "error": 1011
 }
 ```
+
+## Put Drivers
+
+*PUT* /api/v2/global/drivers
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200 OK
+* 206
+    * 2203    tag attribute not support
+    * 2204    tag type not support
+    * 2205    tag address format invalid
+    * 2206    tag name too long
+    * 2207    tag address too long
+    * 2208    tag description too long
+    * 2209    tag precision invalid
+* 400
+    * 1002    request body invalid
+    * 2010    node name too long
+    * 2011    node not allow delete
+    * 2105    group parameter invalid
+    * 2107    group name too long
+    * 2108    reach max number of groups
+    * 2304    library failed to open
+    * 3013    plugin name too long
+    * 3019    plugin does not support requested operation
+* 404
+    * 2301    library not found
+    * 3014    plugin not found
+* 409
+    * 2104    group exist
+    * 2202    tag name conflict
+    * 2307    library not allow create instance
+* 500
+    * 1010    server is busy
+    * 1001    internal error
+
+### Body
+
+```json
+{
+    "nodes": [
+        {
+            "name": "rtu template",
+            "plugin": "Modbus RTU",
+            "params": {
+                "param1": 1,
+                "param2": "1.1.1.1",
+                "param3": true,
+                "param4": 11.22
+            },
+            "groups": [
+                {
+                    "name": "group1",
+                    "interval": 2000,
+                    "tags": [
+                        {
+                            "name": "tag1",
+                            "type": 4,
+                            "address": "1!400001",
+                            "attribute": 1,
+                            "precison": 1,
+                            "decimal": 0
+                        },
+                        {
+                            "name": "tag2",
+                            "type": 11,
+                            "address": "1!400009",
+                            "attribute": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+
+### Response
+
+```json
+{
+    "error": 0
+}
+```
+
+## Get Drivers
+
+*GET* /api/v2/global/drivers
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Request Params
+
+**name** Optional, list of names to filter out driver nodes (separated by ',')
+
+### Response Status
+
+* 200 OK
+  * 2005      node setting not found
+* 400
+    * 1003    request param invalid
+* 404
+  * 2003      node not exist
+* 500
+    * 1010    server is busy
+    * 1001    internal error
+
+### Response
+
+If success, returns the list of drivers.
+
+```json
+{
+    "nodes": [
+        {
+            "name": "rtu template",
+            "plugin": "Modbus RTU",
+            "params": {
+                "param1": 1,
+                "param2": "1.1.1.1",
+                "param3": true,
+                "param4": 11.22
+            },
+            "groups": [
+                {
+                    "name": "group1",
+                    "interval": 2000,
+                    "tags": [
+                        {
+                            "name": "tag1",
+                            "type": 4,
+                            "address": "1!400001",
+                            "attribute": 1,
+                            "precison": 1,
+                            "decimal": 0
+                        },
+                        {
+                            "name": "tag2",
+                            "type": 11,
+                            "address": "1!400009",
+                            "attribute": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+otherwise returns the error code.
+
+```json
+{
+    "error": 0
+}
+```

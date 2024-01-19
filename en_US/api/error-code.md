@@ -49,6 +49,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2105    group parameter invalid
 * 2106    group not exist
 * 2107    group name too long
+* 2108    reach max number of groups
 * 2201    tag not exist
 * 2202    tag name conflict
 * 2203    tag attribute not support
@@ -107,6 +108,7 @@ This document describes the errors that neuron will reply to sender when calling
 * ~~3016    plugin does not support template (deprecated)~~
 * 3017    plugin does not support write tags
 * 3018    plugin does not support sync read
+* 3019    plugin does not support requested operation
 
 ## FILE error codes
 
