@@ -388,6 +388,10 @@
         {
           "title": "GE SRTP",
           "path": "configuration/south-devices/srtp/srtp"
+        },
+        {
+          "title": "HEIDENHAIN CNC",
+          "path": "configuration/south-devices/heidenhain-cnc/heidenhain-cnc"
         }
       ]
     },
@@ -976,6 +980,10 @@
         {
           "title": "GE SRTP",
           "path": "configuration/south-devices/srtp/srtp"
+        },
+        {
+          "title": "HEIDENHAIN CNC",
+          "path": "configuration/south-devices/heidenhain-cnc/heidenhain-cnc"
         }
       ]
     },
