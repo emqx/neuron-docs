@@ -65,18 +65,18 @@ This document describes the errors that neuron will reply to sender when calling
 * 2303    library name conflict
 * 2304    library failed to open
 * 2305    libraray module invalid
-* 2306    library system not allow del
-* 2307    library not allow create instance
-* 2308    library arch not support
-* 2309    library in using
-* 2310    library add faily
-* 2311    library module already exit
-* 2312    library module not exist
-* 2313    library module kind no support
-* 2314    library module version no match
-* 2315    library name no conform
-* 2316    library c lib no match
-* 2317    library update failed
+* 2306    plugin system not allow del
+* 2307    plugin not allow create instance
+* 2308    plugin arch not support
+* 2309    plugin in using
+* 2310    plugin add faily
+* 2311    plugin module already exit
+* 2312    plugin module not exist
+* 2313    plugin module kind no support
+* 2314    plugin module version no match
+* 2315    plugin name no conform
+* 2316    plugin c lib no match
+* 2317    plugin update failed
 * 2400    license not found
 * 2401    license invalid
 * 2402    license expired
