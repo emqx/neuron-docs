@@ -65,7 +65,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 2303    library name conflict
 * 2304    library failed to open
 * 2305    libraray module invalid
-* 2306    plugin system not allow del
+* 2306    system plugin cannot be deleted
 * 2307    plugin not allow create instance
 * 2308    plugin arch not support
 * 2309    plugin in using
