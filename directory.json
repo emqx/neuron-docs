@@ -244,6 +244,16 @@
           "path": "configuration/south-devices/siemens-fetchwrite/fetchwrite"
         },
         {
+          "title": "Siemens MPI",
+          "path": "configuration/south-devices/siemens-mpi/mpi",
+          "children": [
+            {
+              "title": "Siemens S7300 PLC 连接示例",
+              "path": "configuration/south-devices/siemens-mpi/s7300"
+            }
+          ]
+        },
+        {
           "title": "Omron FINS TCP",
           "path": "configuration/south-devices/omron-fins/omron-fins",
           "children": [
