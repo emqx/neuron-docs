@@ -77,11 +77,13 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 
 ### Address Format
 
-> NS!NODEID
+> NS[x,y,z]!NODEID
 
 **NS** Namespace index.
 
-**NODEID** Node ID. The value can be a number or a string.
+**[x,y,z]** Array index, when the data type is array, you can use the index to get to the value of a specific location, the dimension counts from 0, the dimension is not more than 2. x means one-dimensional index, y means two-dimensional index, z means three-dimensional index.
+
+**NODEID** The node ID, which can be set as a number, a string, or a GUID.
 
 ### Example Addresses
 
@@ -89,6 +91,10 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 | ---------------------- | -------- | ------------------------------------------------------------ |
 | 0!2258                 | UINT32   | Get the timestamp of the OPC UA server using the digital NODEID. The NS value is 0, and the NODEID is 2258 |
 | 2!Device1.Module1.Tag1 | INT8     | Use the string NODEID to get the data point of type SBYTE. If NS is 2, NODEID is Device1.Module1.Tag1 |
+| 0!c496578a-0dfe-4b8f-870a-745238c6ae00 | BOOL | Get a data point of type BOOL using a NODEID of type GUID; NS is 0 and NODEID is c496578a-0dfe-4b8f-870a-745238c6ae00 |
+| 1[2]!array1d[string]     | STRING  | Accesses the 3rd element of the STRING array; NS is 1, NODEID is array1d[string], one-dimensional index is 2 |
+| 1[2,3]!array2d[int]      | INT32   | Access the elements of row 3 and column 4 of the INT32 array; NS is 1, NODEID is array2d[int], one-dimensional index is 2, and two-dimensional index is 3. |
+| 1[2,3,4]!array3d[float]  | FLOAT   | Accesses row 3, column 4, and element 5 of the FLOAT array; NS is 1, NODEID is array3d[float], one-dimensional index is 2, two-dimensional index is 3, three-dimensional index is 4 |
 
 ## Use Case
 
