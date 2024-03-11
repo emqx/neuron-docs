@@ -79,11 +79,13 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 
 ### 地址格式
 
-> NS!NODEID</span>
+> NS[x,y,z]!NODEID</span>
 
 **NS** 名字空间索引。
 
-**NODEID** 节点 ID，可以设置为数字形式或者字符串形式。
+**[x,y,z]** 数组索引，当数据类型为数组时，可以使用索引获取到特定位置的数值，维度从 0 开始计数，维度不超过 2。 x 表示一维索引，y 表示二维索引，z 表示三维索引。
+
+**NODEID** 节点 ID，可以设置为数字形式、字符串形式和 GUID 形式。
 
 ### 地址示例
 
@@ -91,6 +93,10 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 | ---------------------- | -------- | ------------------------------------------------------------ |
 | 0!2258                 | UINT32   | 使用数字类型的 NODEID，获取 OPC UA 服务器的时间戳；NS 为0，NODEID 为2258 |
 | 2!Device1.Module1.Tag1 | INT8     | 使用字符串类型的 NODEID，获取类型为 SBYTE 的数据点；NS 为2，NODEID 为 Device1.Module1.Tag1 |
+| 0!c496578a-0dfe-4b8f-870a-745238c6ae00 | BOOL | 使用 GUID 类型的 NODEID，获取类型为 BOOL 的数据点；NS 为0，NODEID 为c496578a-0dfe-4b8f-870a-745238c6ae00 |
+| 1[2]!array1d[string]     | STRING  | 访问 STRING 数组的第 3 个元素；NS 为1，NODEID 为 array1d[string], 一维索引为 2 |
+| 1[2,3]!array2d[int]      | INT32   | 访问 INT32 数组的第 3 行，第 4 列的元素；NS 为1，NODEID 为 array2d[int], 一维索引为 2，二维索引为 3 |
+| 1[2,3,4]!array3d[float]  | FLOAT   | 访问 FLOAT 数组的第 3 行，第 4 列，第 5 个元素；NS 为1，NODEID 为 array3d[float], 一维索引为 2，二维索引为 3，三维索引为 4 |
 
 ## 应用场景
 本节还提供以下应用场景示例，方便您快速上手：
