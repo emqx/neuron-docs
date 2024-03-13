@@ -36,6 +36,8 @@ For information on general configuration items, see [Connect to Southbound Devic
 ### Data types
 
 * BIT
+* INT8
+* UINT8
 * INT16
 * UINT16
 * INT32
@@ -59,6 +61,10 @@ Since communication is done via TCP/IP, the device is searched through the IP ad
 
 Required, refers to the register address. HuiChuan PLC supports coil and register access for MODBUS protocol. Different from the standard Modbus protocol, each area's address range is as follows:
 
+The address areas are divided into two types according to the PLC model.
+
+Small PLCs: EASY series, H5U, etc.
+
 | Area                       | Address Range          | Quantity        | Attribute        | Register Size     | Function Code | Data Type|
 | ------------------------- | ---------------- | ---------- | ---------- | ------------- | ------------ | ------- |
 | M0-M7999(Coils)            | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 1Bit          | 0x01,0x05,0x0f | BIT    |
@@ -71,6 +77,20 @@ Required, refers to the register address. HuiChuan PLC supports coil and registe
 
 ::: tip
 The X and Y areas' addresses are represented in octal.
+:::
+
+Medium PLCs: AM series, AC series, etc.
+
+| Area                       | Address Range          | Quantity        | Attribute        | Register Size     | Function Code | Data Type|
+| -------------------------- | ------------------------------ | ----------  | ----------- | ------------- | -------------  | ------- |
+| QX0.0-QX8191.7（Coils）            | 0x0000-0xFFFF  (0-65536)       | 65536       |Read/Write        | 1Bit          | 0x01,0x05,0x0f | BIT     |
+| MW0-MW65535（Holding Registers）   | 0x0000-0xFFFF  (0-65536)       | 65536       |Read/Write         | 16Bit,2Byte   | 0x03,0x06,0x10 | Various    |
+| SM0-SM7999                         | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 16Bit,2Byte   | 0x01,0x05,0x0f  | BIT    |
+| SD0-SD7999                         | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 16Bit,2Byte   | 0x03,0x06,0x10  | Various    |
+
+::: tip
+The M area supports multiple addressing methods, including MX, MB, MW, MD, which correspond to addressing by bit, Byte, Word, and Dword, respectively.
+When using MX and MB addressing methods, the tags only support read attributes.
 :::
 
 #### **.BIT**
@@ -90,24 +110,26 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | --- | ------- | ------------------ | ----- |
 | #B  | 2,1     | int16/uint16       |       |
 | #L  | 1,2     | int16/uint16       | Default byte order if not specified |
-| #LL | 1,2,3,4 | int32/uint32/float | Default byte order if not specified |
-| #LB | 2,1,4,3 | int32/uint32/float | |
-| #BL | 3,4,1,2 | int32/uint32/float | |
-| #BB | 4,3,2,1 | int32/uint32/float | |
+| #LL | 3,4,1,2 | int32/uint32/float | Default byte order if not specified |
+| #LB | 4,3,2,1 | int32/uint32/float | |
+| #BL | 1,2,3,4 | int32/uint32/float | |
+| #BB | 2,1,4,3 | int32/uint32/float | |
 
 ::: tip
-The byte order can be illustrated using the notation ABCD, which corresponds directly to the sequence 1234. As an example, the ABCD designation represents the standard or default Endianness 1234. (#LL).
+Please note, the default byte order for the Inovance plugin is 3,4,1,2. Therefore, the order represented by the byte order symbol does not conform to the common definition.
 :::
 
-#### .LEN\[H]\[L]\[D]\[E]
+#### .LEN\[H]\[L]
 
-When the data type is STRING, `.LEN` is a required field, indicating the number of bytes the string occupies. Each register contains four storage methods: H, L, D, and E, as shown in the table below.
+When the data type is STRING, `.LEN` is a required field, indicating the number of bytes the string occupies. Each register contains two storage methods: H, L, as shown in the table below.
 | Symbol | Description                                 |
 | --- | ------------------------------------- |
 | H   | One register stores two bytes, with the high byte first |
 | L   | One register stores two bytes, with the low byte first |
-| D   | One register stores one byte, and it is stored in the low byte      |
-| E   | One register stores one byte, and it is stored in the high byte|
+
+::: tip
+Please note, the default byte order for Inovance plugin strings is L.
+:::
 
 #### **.BYTES**
 
@@ -132,10 +154,12 @@ A register of the Modbus driver contains 2 bytes. When reading and writing Modbu
 | D1.10  | String  | D area, address 1, character length 10, byte order L, which occupies addresses D1 to D5|
 | D1.10H | String  | D area, address 1, character length 10, byte order H, which occupies addresses D1 to D5|
 | D1.10L | String  | D area, address 1, character length 10, byte order L, which occupies addresses D1 to D5|
-| D1.10D | String  | D area, address 1, character length 10, byte order D, which occupies addresses D1 to D5|
-| D1.10E | String  | D area, address 1, character length 10, byte order E, which occupies addresses D1 to D5|
 | M8     | bit     | M area, address 8 |
 | X10    | bit     | M area, address 8 |
+| MX1.1  | bit      | M area, address is the tenth bit of the first register  |
+| MB1    | int8     | X area, address is the low byte of the first register  |
+| MW1    | int16    | X area, address is the second register   |
+| MD1    | int32    | X area, address is the third register   |
 
 ## Use Case
 

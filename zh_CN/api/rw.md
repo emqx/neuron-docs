@@ -18,10 +18,16 @@
 
 ```json
 {
-    //node name
+    //node name (required)
     "node": "modbus-tcp-1",
-    //group name
+    //group name (required)
     "group": "config_modbus_tcp_sample_2"
+    //tag name substring match (optional)
+    "name": "hold_bit",
+    //tag description substring match (optional)
+    "desc": "switch",
+    //synchronous read (optional, default false)
+    "sync": false
 }
 ```
 
