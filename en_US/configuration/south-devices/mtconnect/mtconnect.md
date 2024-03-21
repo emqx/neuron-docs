@@ -1,4 +1,4 @@
-# Overview
+# MTConnect
 
 The Neuron MTConnect plugin accesses devices installed with MTConnect Agent through the HTTP protocol.
 

@@ -1,4 +1,4 @@
-# Overview
+# HEIDENHAIN CNC
 
 The Heidenhain CNC drive accesses Heidenhain TNC640, iTNC530 and other series of machine tools and machining centers through the LSV2 protocol, and can collect real-time operating data from multiple devices, including program names, spindle override , runing status, spindle tools, PLC points, and more.
 

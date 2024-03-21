@@ -1,4 +1,4 @@
-# Overview
+# SECS GEM
 
 The SECS GEM HSMS driver supports accessing devices that comply with the SEMI E37 HSMS standard through the TCP/IP protocol. Currently, it supports passive mode for devices and acts as the active host connection.
 
