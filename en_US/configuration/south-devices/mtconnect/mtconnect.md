@@ -4,12 +4,12 @@ The Neuron MTConnect plugin accesses devices installed with MTConnect Agent thro
 
 ## Parameter Configuration
 
-| Parameter | Description                                      |
-| --------- | ------------------------------------------------ |
-| host      | Target Device IP address or binding IP address   |
-| port      | Target Device port or binding port, default 5000 |
-| ns_prefix | namespace prefix                                 |
-| ns_uri    | namespace uri                                    |
+| Parameter | Description                      |
+| --------- | -------------------------------- |
+| host      | Target Device IP address         |
+| port      | Target Device port, default 5000 |
+| ns_prefix | namespace prefix                 |
+| ns_uri    | namespace uri                    |
 
 
 
