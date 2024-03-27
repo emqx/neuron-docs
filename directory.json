@@ -100,6 +100,10 @@
           ]
         },
         {
+          "title": "XINJE Modbus RTU",
+          "path": "configuration/south-devices/modbus-xinje-rtu/modbus-xinje-rtu"
+        },
+        {
           "title": "Modbus TCP",
           "path": "configuration/south-devices/modbus-tcp/modbus-tcp",
           "children": [
@@ -714,6 +718,10 @@
               "path": "configuration/south-devices/modbus-rtu/faq/faq"
             }
           ]
+        },
+        {
+          "title": "XINJE Modbus RTU",
+          "path": "configuration/south-devices/modbus-xinje-rtu/modbus-xinje-rtu"
         },
         {
           "title": "Modbus TCP",
