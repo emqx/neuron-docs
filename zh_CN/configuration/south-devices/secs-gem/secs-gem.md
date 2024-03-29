@@ -24,6 +24,12 @@ SECS GEM HSMS 驱动通过 TCP/IP 协议访问支持 SEMI E37 HSMS 标准的设�
 * double
 * bool
 * string
+* bytes
+
+
+## 地址格式
+
+> SxFy([_1][_2][_3][_4])
 
 ## Streams 和 Functions
 
@@ -81,15 +87,17 @@ SECS-II 消息定义了 LIST 类型，插件也通过 string 支持该类型，�
 | 32FLOAT      | `<F4 x> `       |                                                           |
 | 64FLOAT      | `<F8 x> `       |                                                           |
 
+LIST 类型支持使用下标访问具体的元素，目前支持嵌套四层 LIST。
+
 ## 常见问题
 * 设备 ID 如何填写？
 设备 ID 一般在设备的 SECS GEM HSMS 协议配置页面可以查看。
 
 * LIST 中 ASCII 类型如何序列化？
-本插件 LIST 中 ASCII 序列化为 `<A[n] xxx>`，内容不带引号。例如 "ABC" 序列化为 `<A[3] ABC>`，而不是 `<[3] "ABC">`。
+本插件 LIST 中 ASCII 序列化为 `<A[n] xxx>`，内容不带引号。例如 "ABC" 序列化为 `<A[3] ABC>`，而不是 `<A[3] "ABC">`。
 
 * LIST 中 Binary 类型如何序列化？
-本插件 LIST 中 Binary 序列化为 `<B[n] xx>`，内容不带引号。例如 0xFF 序列化为 `<A[1] FF>`，而不是 `<[2] "FF">`。
+本插件 LIST 中 Binary 序列化为 `<B[n] xx>`，内容不带引号。例如 0xFF 序列化为 `<B[1] FF>`，而不是 `<B[2] "FF">`。
 
 * LIST 类型数据新建点位的时候应该选择什么类型？
 设备数据类型为 **LIST** 的点位，在新建的时候选择 **string** 类型。
