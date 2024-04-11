@@ -310,6 +310,10 @@
           "path": "configuration/south-devices/iec-102/iec-102"
         },
         {
+          "title": "IEC60870-5-103",
+          "path": "configuration/south-devices/iec-103/iec-103"
+        },
+        {
           "title": "IEC61850",
           "path": "configuration/south-devices/iec61850/overview",
           "children": [
@@ -918,6 +922,10 @@
         {
           "title": "IEC60870-5-102",
           "path": "configuration/south-devices/iec-102/iec-102"
+        },
+        {
+          "title": "IEC60870-5-103",
+          "path": "configuration/south-devices/iec-103/iec-103"
         },
         {
           "title": "IEC61850",
