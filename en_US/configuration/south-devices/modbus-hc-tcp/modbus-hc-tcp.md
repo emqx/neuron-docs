@@ -18,6 +18,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
+| **Endianness** | Byte order of tags with 32 bits, ABCD corresponds to 1234. |
 | **Send Interval** | The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
 | **PLC IP Address** | The IP address of the device. |
 | **PLC Port** | The port number of the device.|
@@ -25,7 +26,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 
 ## Configure Data Groups and Tags
 
-After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+After the plugin is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
 
 Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
 
@@ -84,12 +85,13 @@ Medium PLCs: AM series, AC series, etc.
 | Area                       | Address Range          | Quantity        | Attribute        | Register Size     | Function Code | Data Type|
 | -------------------------- | ------------------------------ | ----------  | ----------- | ------------- | -------------  | ------- |
 | QX0.0-QX8191.7（Coils）            | 0x0000-0xFFFF  (0-65536)       | 65536       |Read/Write        | 1Bit          | 0x01,0x05,0x0f | BIT     |
+| IX0.0-IX8191.7（Input）            | 0x0000-0xFFFF  (0-65536)       | 65536       |Read              | 1Bit          | 0x01,0x05,0x0f | BIT     |
 | MW0-MW65535（Holding Registers）   | 0x0000-0xFFFF  (0-65536)       | 65536       |Read/Write         | 16Bit,2Byte   | 0x03,0x06,0x10 | Various    |
 | SM0-SM7999                         | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 16Bit,2Byte   | 0x01,0x05,0x0f  | BIT    |
 | SD0-SD7999                         | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 16Bit,2Byte   | 0x03,0x06,0x10  | Various    |
 
 ::: tip
-The M area supports multiple addressing methods, including MX, MB, MW, MD, which correspond to addressing by bit, Byte, Word, and Dword, respectively.
+The M,I,Q area supports multiple addressing methods, including (M|I|Q)X, (M|I|Q)B, (M|I|Q)W, (M|I|Q)D, which correspond to addressing by bit, Byte, Word, and Dword, respectively.
 When using MX and MB addressing methods, the tags only support read attributes.
 :::
 
@@ -116,7 +118,7 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #BB | 2,1,4,3 | int32/uint32/float | |
 
 ::: tip
-Please note, the default byte order for the Inovance plugin is 3,4,1,2. Therefore, the order represented by the byte order symbol does not conform to the common definition.
+The byte order of a tag has a higher priority than the byte order configuration of a node. That is to say, once the byte order is configured for a tag, it follows the configuration of that tag and ignores the node configuration.
 :::
 
 #### .LEN\[H]\[L]

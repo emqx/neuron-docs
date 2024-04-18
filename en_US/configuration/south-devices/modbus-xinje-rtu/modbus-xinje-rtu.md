@@ -24,6 +24,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Maximum Retry Times**    | The maximum number of retries after a failed attempt to send a read command.           |
 | **Retry Interval**         | Resend reading instruction interval(ms) after a failed attempt to send a read command. |
 | **Send Interval**          | The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
+| **Endianness**             | Byte order of tags with 32 bits, ABCD corresponds to 1234. |
 | **Serial Device**          | Only needed in **Serial** mode, the path to the serial device when using a serial connection, e.g., /dev/ttyS0 in Linux systems. |
 | **Stop Bits**              | Only for the **Serial** mode, the serial connection parameter.                         |
 | **Parity**                 | Only for the **Serial** mode, the serial connection parameter.                         |
@@ -274,6 +275,7 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #BB    | 4,3,2,1    | int32/uint32/float   |                                     |
 
 ::: tip
+The byte order of a tag has a higher priority than the byte order configuration of a node. That is to say, once the byte order is configured for a tag, it follows the configuration of that tag and ignores the node configuration.
 The byte order can be illustrated using the notation ABCD, which corresponds directly to the sequence 1234. As an example, the ABCD designation represents the standard or default Endianness 1234. (#LL).
 :::
 
