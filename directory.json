@@ -132,6 +132,10 @@
           ]
         },
         {
+          "title": "Modbus ASCII",
+          "path": "configuration/south-devices/modbus-ascii/modbus-ascii"
+        },
+        {
           "title": "OPC UA",
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
@@ -750,6 +754,10 @@
               "path": "configuration/south-devices/modbus-hc-tcp/faq/faq"
             }
           ]
+        },
+        {
+          "title": "Modbus ASCII",
+          "path": "configuration/south-devices/modbus-ascii/modbus-ascii"
         },
         {
           "title": "OPC UA",
