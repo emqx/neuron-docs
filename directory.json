@@ -433,6 +433,16 @@
           ]
         },
         {
+          "title": "AWS IoT",
+          "path": "configuration/north-apps/aws-iot/overview",
+          "children": [
+            {
+              "title": "使用 Neuron 将数据桥接到 AWS IoT",
+              "path": "configuration/north-apps/aws-iot/example"
+            }
+          ]
+        },
+        {
           "title": "eKuiper",
           "path": "configuration/north-apps/ekuiper/overview",
           "children": [
