@@ -41,7 +41,7 @@ Mitsubishi FX 插件用于通过 FX 编程口访问三菱的 FX0、FX2、FX3 等
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -89,4 +89,4 @@ Mitsubishi FX 插件用于通过 FX 编程口访问三菱的 FX0、FX2、FX3 等
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

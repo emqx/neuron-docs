@@ -1,8 +1,8 @@
 # Easy521 连接示例
 
-本文将使用 HuiChuan Specialized Modbus TCP 插件连接汇川 Easy521 PLC，实现读写 PLC 中的点位值。
+本文将使用 Inovance Modbus TCP 插件连接汇川 Easy521 PLC，实现读写 PLC 中的点位值。
 
-Inovance Modbus TCP 插件可以通过本地局域网或者 Intenet 连接到汇川 PLC，但是需要注意的是，如果 PLC 与 Neuron 服务器不在同一局域网，需要在 PLC 上配置端口转发。
+Inovance Modbus TCP 插件可以通过本地局域网或者 Internet 连接到汇川 PLC，但是需要注意的是，如果 PLC 与 Neuron 服务器不在同一局域网，需要在 PLC 上配置端口转发。
 
 ## 前置准备
 
@@ -24,4 +24,4 @@ Inovance Modbus TCP 插件可以通过本地局域网或者 Intenet 连接到汇
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../../../admin/monitoring.md)。

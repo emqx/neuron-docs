@@ -8,7 +8,7 @@ Neuron KNXnet/IP 插件支持与 KNXnet/IP 设备建立连接。
 
 由于 KNXnet/IP 协议的工作原理，如果使用虚拟化技术如虚拟机或 Docker 部署 Neuron，KNX 插件可能
 无法正常工作。如果是在 Linux 主机中使用 docker 镜像部署 Neuron，那么需要使用 docker 选项`--net=host`。
-在其他情况下，推荐您使用[二进制安装包部署 Neuron](../../../installation/neuron/compile.md)。
+在其他情况下，推荐您使用二进制安装包部署 Neuron。
 
 :::
 
@@ -47,7 +47,7 @@ Neuron KNXnet/IP 插件支持与 KNXnet/IP 设备建立连接。
 
 ### 地址格式 1
 
-* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS
 
 表示一个 KNX 设备地址及其所属的组地址。
 
@@ -60,7 +60,7 @@ Neuron KNXnet/IP 插件支持与 KNXnet/IP 设备建立连接。
 
 ### 地址格式 2
 
-* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS,BIT</span>
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS,BIT
 
 针对读取比特位数少于8的 `uint8` 类型数据，可使用该地址格式，如 KNX data point 类型 `B2` 和 `B1U3` 等。
 其中 *BIT* 表示数据比特位数。
@@ -71,4 +71,4 @@ Neuron KNXnet/IP 插件支持与 KNXnet/IP 设备建立连接。
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

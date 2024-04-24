@@ -106,9 +106,7 @@ Before Neuron version 2.4.0, the Neuron MQTT plugin will publish collected data 
 
 
 <figure align="center">
-  <img src="./assets/subscribe_topic.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron version 2.4.0 MQTT subscribe interface">
+  <img src="./assets/subscribe_topic.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron version 2.4.0 MQTT subscribe interface">
   <figcaption align = "center">
     <sub><b>Fig.2 - Setting upload topic in Neuron version 2.4.0</b></sub>
   </figcaption>
@@ -183,5 +181,5 @@ At this point, we will be able to see the data forwarded by Neuron in MQTTX, as 
 
 On the device card or device row, you can click on the **Data Statistics** icon to review the application's operation status and track the data received and sent. For explanations on statistical fields, refer to the [Create a Northbound Application](../north-apps.md) section.
 
-If there are any issues with device operation, you can click on the DEBUG log chart. The system will automatically print DEBUG level logs for that node and switch back to the system default log level after ten minutes. Later, you can click on **System Information** -> **Logs** at the top of the page to view logs and perform troubleshooting. For a detailed interpretation of system logs, see [Managing Logs](../../../usage/admin/log-management.md).
+If there are any issues with device operation, you can click on the DEBUG log chart. The system will automatically print DEBUG level logs for that node and switch back to the system default log level after ten minutes. Later, you can click on **System Information** -> **Logs** at the top of the page to view logs and perform troubleshooting. For a detailed interpretation of system logs, see [Managing Logs](../../../admin/log-management.md).
 

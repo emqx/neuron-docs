@@ -46,7 +46,7 @@ Neuron ABB COMLI 插件用于通过串口网络访问 ABB 的 COMLI 协议兼容
 
 ### 地址格式
 
-> SLAVE!AREA.ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!AREA.ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 #### **SLAVE**
 
@@ -134,4 +134,4 @@ Neuron ABB COMLI 插件用于通过串口网络访问 ABB 的 COMLI 协议兼容
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

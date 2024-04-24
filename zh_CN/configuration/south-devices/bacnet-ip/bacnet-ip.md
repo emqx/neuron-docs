@@ -37,7 +37,7 @@ Neuron 支持 BACnet IP 协议，可以通过 UDP 协议与 BACnet 设备进行�
 
 ### 地址格式
 
-> AREA ADDRESS(.PROPERTY_ID)</span>
+> AREA ADDRESS(.PROPERTY_ID)
 
 
 支持区域

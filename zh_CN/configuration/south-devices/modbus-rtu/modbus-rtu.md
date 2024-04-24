@@ -53,7 +53,7 @@ Modbus RTU 协议采用二进制编码，可以在 RS-232、RS-485 或其他串�
 
 ### 地址格式
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]
 
 #### **SLAVE**
 
@@ -151,4 +151,4 @@ Modbus 驱动的一个寄存器包含 2 个 bytes，在以 bytes 数据类型读
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

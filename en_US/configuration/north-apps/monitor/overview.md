@@ -2,13 +2,12 @@
 
 The Neuron Monitor plugin is an open-source northbound plugin, which, as its name implies, is used for monitoring the Neuron instance. The Monitor plugin is special in that users are not allowed to create or delete nodes using the plugin directly, but a singleton *monitor* node is created for you at the startup of the Neuron process. You could see the *monitor* node in the **North Apps** tab through the dashboard.
 <figure align="center">
-  <img src="./assets/monitor_node.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron monitor node">
+  <img src="./assets/monitor_node.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron monitor node">
   <figcaption align = "center">
     <sub><b>Fig.1 - Neuron *monitor* node</b></sub>
   </figcaption>
 </figure>
+
 ## Application Configuration
 
 These are the available parameters when configuring the *monitor* node.
@@ -43,9 +42,7 @@ The Neuron Monitor plugin exposes a [Prometheus] compatible [metrics HTTP API]. 
 
 You may click **System Information -> About** to show the **About** page.
 <figure align="center">
-  <img src="./assets/about.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron dashboard About page">
+  <img src="./assets/about.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron dashboard About page">
   <figcaption align = "center">
     <sub><b>Fig.2 - Neuron dashboard About page</b></sub>
   </figcaption>
@@ -53,9 +50,7 @@ You may click **System Information -> About** to show the **About** page.
 
 Click the **Data statistics** icon on your node to show the **Data statistics** tab.
 <figure align="center">
-  <img src="./assets/data_statistics_icon.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron dashboard Data Statistics icon">
+  <img src="./assets/data_statistics_icon.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron dashboard Data Statistics icon">
   <figcaption align = "center">
     <sub><b>Fig.3 - Neuron dashboard *Data statistics* icon</b></sub>
   </figcaption>
@@ -63,9 +58,7 @@ Click the **Data statistics** icon on your node to show the **Data statistics** 
 
 Below is the **Data statistics** tab, showing the metrics of an example *file* node.
 <figure align="center">
-  <img src="./assets/file_statistics.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron dashboard Data Statistics tab example">
+  <img src="./assets/file_statistics.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron dashboard Data Statistics tab example">
   <figcaption align = "center">
     <sub><b>Fig.4 - Neuron dashboard *Data statistics* tab</b></sub>
   </figcaption>

@@ -42,7 +42,7 @@ Neuron 的 Siemens FetchWrite 插件用于带有网络扩展模块 CP443 的西�
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT][.LEN]</span>
+> AREA ADDRESS\[.BIT][.LEN]
 
 #### AREA ADDRESS
 
@@ -98,4 +98,4 @@ Neuron 的 Siemens FetchWrite 插件用于带有网络扩展模块 CP443 的西�
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

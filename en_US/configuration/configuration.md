@@ -52,5 +52,5 @@ The diagram below provides a visual representation of the entire process.
 
 ## Configuration APIs
 
-Alternatively, a set of [configuration APIs](../http-api/http-api.md) is provided for integrating with industrial IoT platforms, MES, or other controlling systems.
+Alternatively, a set of [configuration APIs](../api/http-api.md) is provided for integrating with industrial IoT platforms, MES, or other controlling systems.
 

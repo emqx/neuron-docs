@@ -18,10 +18,19 @@
 
 ```json
 {
-    //node name
+    //node name (required)
     "node": "modbus-tcp-1",
-    //group name
+    //group name (required)
     "group": "config_modbus_tcp_sample_2"
+    //synchronous read (optional, default false)
+    "sync": false,
+    //filter (optional)
+    "query": {
+        //tag name substring match (optional)
+        "name": "data",
+        //tag description substring match (optional)
+        "description": "switch"
+    }
 }
 ```
 
@@ -90,6 +99,12 @@ The value is displayed only when the value is read correctly, when the value is 
 ### Write Multiple Tags
 
 *POST*  /api/v2/write/tags
+
+:::tip 
+
+Multiple tags writing currently only supports Mitsubishi 3E, Beckhoff ADS, Modbus TCP, Modbus RTU, Siemens S7 ISOTCP, Omron FINS TCP, OPC UA, BACnet/IP drivers.
+
+:::
 
 #### Request Headers
 

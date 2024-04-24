@@ -10,8 +10,8 @@ Neuron 在基于 Linux 的操作系统上支持 32位/64位 ARM 和 64位 X86 �
 
 | Linux 发行版                                    | 所需包        |
 | ------------------------------------------------------------ | ------------------ |
-| Ubuntu 20.04 </br>Ubuntu 18.04 </br>Ubuntu16.04</br>Debian 11</br>Debian 10</br>Debian 9</br>Debian 8               | **Debian Software Package** (.deb)         |
-| CentOS Stream 9</br>CentOS Stream 8</br>CentOS 7    | **Redhat Package Manager** (.rpm)         |
+| Ubuntu 20.04<br> Ubuntu 18.04<br> Ubuntu16.04<br> Debian 11<br> Debian 10<br> Debian 9<br> Debian 8               | **Debian Software Package** (.deb)         |
+| CentOS Stream 9<br> CentOS Stream 8<br> CentOS 7    | **Redhat Package Manager** (.rpm)         |
 | Other Linux | **Tape Archiver** (tar.gz) |
 
 :::tip
@@ -25,7 +25,7 @@ Neuron 完全使用 C 语言开发，支持运行在 X86，ARM，MIPS，RISC-V �
 下表列出了 Neuron 在不同点位数量下的最低硬件要求。
 
 | 点位数                 | 建议最小内存   | 硬件架构                              | 备注          |
-| :-------------------- | :----------- | :---------------------------------- | :----------------------------------- |
+| -------------------- | ----------- | ---------------------------------- | ----------------------------------- |
 | 100 tags               | 128M memory | 32-bit/64-bit ARM 和 64-bit x86 架构 | Raspberry Pi 3 |
 | 1,000 tags             | 256M memory | 32-bit/64-bit ARM 和 64-bit x86 架构  | Raspberry Pi 4 |
 | 10,000 tags            | 512M memory | 64-bit ARM 和 64-bit x86 架构         | Industrial PC 等 |
@@ -34,15 +34,15 @@ Neuron 完全使用 C 语言开发，支持运行在 X86，ARM，MIPS，RISC-V �
 :::tip
 Neuron 没有点位数量上限。取决于分配的 CPU 和内存资源。Neuron 非常容易移植，可以运行在类似单板机等有限的资源的硬件上，也可以运行在功能强大的服务器上。以下提供一些 Neuron 的性能测试结果供用户参考，这些测试数据仍然不是上限。更强大的服务器支持配置更多的数据点位。
 
-Platform                         : Intel(R) Xeon(R) Gold 6266C@3.00GHz</br>
-Memory                           : 4G</br>
-Architecture                     : x86</br>
-OS Support                       : Ubuntu 20.04</br>
-No. of connections               : 1000 connections</br>
-No. of tags for each connection  : 300 tags</br>
-Total tags                       : 300,000 tags</br>
-Memory Usage                     : 300M</br>
-CPU Usage                        : 90%</br>
+Platform                         : Intel(R) Xeon(R) Gold 6266C@3.00GHz<br>
+Memory                           : 4G<br>
+Architecture                     : x86<br>
+OS Support                       : Ubuntu 20.04<br>
+No. of connections               : 1000 connections<br>
+No. of tags for each connection  : 300 tags<br>
+Total tags                       : 300,000 tags<br>
+Memory Usage                     : 300M<br>
+CPU Usage                        : 90%<br>
 
 :::
 

@@ -47,10 +47,10 @@ Neuron EtherNet/IP (CIP) 插件主要用于支持 EtherNet/IP 协议的设备。
 
 ### PLC 数据地址
 
->  TAG NAME </span>
+>  TAG NAME
 
 使用 PLC 软件连接到 PLC，PLC 上点位的名称即为 Neuron 中点位地址。
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

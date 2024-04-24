@@ -41,7 +41,7 @@ NeuOPC 的组件包可以前往 NeuOPC 的[项目页面](https://github.com/neug
 
 ## 地址格式
 
-> IX!NODEID</span>
+> IX!NODEID
 
 **IX** 名字空间索引，访问 NeuOPC 时，IX 只能为2。
 

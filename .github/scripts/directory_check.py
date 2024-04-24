@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import re
+from urllib.parse import urlparse
 
 directory_file = sys.argv[1]
 docs_path = sys.argv[2]
@@ -17,12 +18,20 @@ def check_md_content(md_file):
         return
 
     md_content = re.sub(r'<!--([\s\S]*?)-->', '', open(md_file, 'r').read())
+
+    if 'ee' in directory_file:
+        md_content = re.sub(r'{% emqxce %}([\s\S]*?){% endemqxce %}', '', md_content)
+    else:
+        md_content = re.sub(r'{% emqxee %}([\s\S]*?){% endemqxee %}', '', md_content)
+
     image_list = re.findall('(.*?)!\[(.*?)\]\((.*?)\)', md_content)
     url_list = re.findall('(.*?)\[(.*?)\]\((.*?)\)', md_content)
     for url in url_list:
         if url[0].endswith('!'):
             continue
         if url[2].startswith(('http://', 'https://', '<', '#', 'mailto:', 'tel:')):
+            continue
+        if urlparse(url[2]).path.endswith('.html'):
             continue
         url_path = url[2].split('.md')[0]
         ref_md_path = os.path.join(f'{"/".join(md_file.split("/")[:-1])}/', f'{url_path}.md')
@@ -56,7 +65,7 @@ def get_md_files(dir_config, path):
             if md_name.startswith(('http://', 'https://')):
                 continue
             elif md_name == './':
-                md_list.append(f'{docs_path}/{path}/README.md')
+                md_list.append(f'{docs_path}/{path}/index.md')
             else:
                 md_list.append(f'{docs_path}/{path}/{md_name}.md')
 
@@ -83,8 +92,6 @@ if __name__ == '__main__':
 
         for file in md_file_list:
             check_md_content(file)
-    else:
-        sys.exit(f'No {directory_file} file!')
 
     if not success:
         sys.exit('No pass!')

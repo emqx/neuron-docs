@@ -57,7 +57,7 @@ IEC61850 插件用于对 IEC61850 服务器的读/写，目前支持 MMS 协议�
 
 ### 地址格式
 
-> Logical Devices/Logical Nodes$FC$DO$DA</span>
+> Logical Devices/Logical Nodes$FC$DO$DA
 
 IEC61850 数据分层模型通常有以下几种：
 
@@ -115,4 +115,4 @@ IEC61850 数据分层模型通常有以下几种：
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

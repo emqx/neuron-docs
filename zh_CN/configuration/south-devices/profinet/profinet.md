@@ -55,7 +55,7 @@ PROFINET IO 系统包括几个部分：IO 控制器，IO 设备，IO 监控器�
 
 ### 地址格式
 
-> SLOT:SUB_SLOT:INDEX\[.BIT][#ENDIAN]</span>
+> SLOT:SUB_SLOT:INDEX\[.BIT][#ENDIAN]
 
 #### **SLOT**
 
@@ -82,4 +82,4 @@ PROFINET IO 系统包括几个部分：IO 控制器，IO 设备，IO 监控器�
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

@@ -52,8 +52,7 @@ Neuron 的 Modbus TCP 插件除了支持以 TCP 客户端的模式主动接入�
 
 ### 地址格式
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]</span>
-
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]\[.BYTES]
 #### **SLAVE**
 
 必填，指从机地址或者是站点号。
@@ -150,4 +149,4 @@ Modbus 驱动的一个寄存器包含 2 个 bytes，在以 bytes 数据类型读
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

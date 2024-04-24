@@ -1,6 +1,6 @@
 # 管理日志
 
-Neuron 2.3 及以上版本支持在 Web 页面一键下载所有日志文件的功能，如下图所示。
+在 Web 页面一键下载所有日志文件的功能，如下图所示。
 
 ![download_log](./assets/download_log.png)
 
@@ -81,7 +81,7 @@ format_name = "your format"
 规则描述了日志是怎么被过滤、格式化以及被输出的。
 语法：
 
-> (category).(level)    (output),(options, optional); (format name, optional)</span>
+> (category).(level)    (output),(options, optional); (format name, optional)
 
 #### category
 

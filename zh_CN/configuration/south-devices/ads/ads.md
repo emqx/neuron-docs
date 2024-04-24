@@ -59,7 +59,7 @@ Neuron Beckhoff ADS 插件使用户可以通过 TCP/IP 连接到 Beckhoff TwinCA
 
 对 ADS 插件来说，一个点位地址由 INDEX_GROUP 和 INDEX_OFFSET 两个部分组成，分别表示 index group 和 index offset 。
 
-> INDEX_GROUP,INDEX_OFFSET</span>
+> INDEX_GROUP,INDEX_OFFSET
 
 `INDEX_GROUP` 和 `INDEX_OFFSET` 可以分别使用十进制或十六进制指定。
 
@@ -77,7 +77,7 @@ Neuron Beckhoff ADS 插件使用户可以通过 TCP/IP 连接到 Beckhoff TwinCA
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。
 
 
 [TwinCAT]: https://www.beckhoff.com/en-us/products/automation/twincat/

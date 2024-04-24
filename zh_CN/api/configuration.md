@@ -1,24 +1,24 @@
-# Configuration
+# 配置
 
-Neuron provide a series of API services for IIoT platform, to query the basic information, to control gateway behaviors or to setup the polling configuration. IIoT platform can initiate the communication by sending request message to Neuron. By return, Neuron would send back the required information or execute the deserved action. If there is error, a error code would be returned to tell the reason of failure.
+Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息、控制网关行为或设置轮询配置。 IIoT 平台必须通过向 Neuron 发送请求消息来启动通信。 通过返回，Neuron 将返回所需的信息或执行相应的操作。 如果有错误，将返回一个错误代码来说明失败的原因。
 
 ## Ping
 
 *POST*  **/api/v2/ping**
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-## Login
+## 登录
 
 *POST*   **/api/v2/login**
 
-### Request Headers
+### 请求头部
 
 **Content-Type**          application/json
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 401
@@ -29,7 +29,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
   * 1007, 验证令牌错误
   * 1008, 无效令牌
 
-### Body
+### 请求体
 
 ```json
 {
@@ -38,7 +38,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -46,30 +46,30 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Password
+## 更改密码
 
 *POST*   **/api/v2/password**
 
-### Request Headers
+### 请求头部
 
 **Content-Type** application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 401
-  * 1004 missing token
-  * 1005 decoding token error
-  * 1012 password length too short or too long
-  * 1013 duplicate password
+  * 1004, 缺少令牌
+  * 1005, 解码令牌错误
+  * 1012, 密码长度太短或太长
+  * 1013, 密码重复
 * 403
-  * 1006 expired token
-  * 1007 validate token error
-  * 1008 invalid token
+  * 1006, 令牌过期
+  * 1007, 验证令牌错误
+  * 1008, 无效令牌
 
-### Body
+### 请求体
 
 ```json
 {
@@ -79,7 +79,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -87,27 +87,27 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Add Node
+## 添加 Node
 
 *POST*  **/api/v2/node**
 
-### Request Headers
+### 请求头部
 
 **Content-Type** application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-  * 2001 node type invalid
+  * 2001 node 类型无效
 * 404
-  * 2301 library not found
+  * 2301 未找到插件库
 * 409
-  * 2002 node exist
+  * 2002 node 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -118,7 +118,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -126,23 +126,23 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Del Node
+## 删除 Node
 
 *Delete* /api/v2/node
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
   * 2003 node not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -151,7 +151,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -159,40 +159,40 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Update Node
+## 更新 Node
 
 *PUT* **/api/v2/node**
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-  * 2013 node not allow update
-  * 2015 node name is empty
+  * 2013 node 不允许更新
+  * 2015 node 名称不允许为空
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 * 409
-  * 2002 node exist
+  * 2002 node 已存在
 * 500
-  * 1001 internal server error
-  * 1010 server is busy
+  * 1001 内部错误
+  * 1010 程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
-    "name": "modbus-node",
+    "name": "modbus-node"
     "new_name": "modbus-tcp-node"
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -200,27 +200,27 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Get Node
+## 获取 Node
 
 *GET*  /api/v2/node
 
-### Request Params
+### 请求参数
 
-**type**  required
+**type**  必需
 
-**plugin** optional
+**plugin** 可选
 
-**node** optional
+**node** 可选
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -239,24 +239,24 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 }
 ```
 
-## Node Setting
+## 配置 Node
 
 *POST*  /api/v2/node/setting
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-  * 2003 node not exist
-  * 2004 node setting invalid
+  * 2003 node 不存在
+  * 2004 node 配置无效
 
-### Body
+### 请求体
 
 ```json
 //The parameter fields in json fill in different fields according to different plugins
@@ -273,10 +273,10 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 ```
 
 :::tip
-Please refer to [Plugin Setting](./plugin-setting.md) for the configuration parameters of each plugin.
+每个插件的配置参数具体可参考 [插件设置](./plugin-setting.md)。
 :::
 
-### Response
+### 响应
 
 ```json
 {
@@ -284,26 +284,26 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Get Node Setting
+## 获取 Node 配置
 
 *GET*  /api/v2/node/setting
 
-### Request Params
+### 请求参数
 
-**node**  required
+**node**  必需
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
-  * 2005 node setting not found
+  * 2005 node 配置未发现
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
-### Response
+### 响应
 
 ```json
 //The parameter fields in json fill in different fields according to different plugins
@@ -316,17 +316,17 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Node CTL
+## 控制 Node
 
 *POST*  /api/v2/node/ctl
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Request Status
+### 请求状态
 
 * 200 OK
 * 409
@@ -335,7 +335,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
   * 2008 node not running
   * 2009 node is stopped
 
-### Body
+### 请求体
 
 ```json
 {
@@ -346,7 +346,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -354,58 +354,63 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Get Node State
+## 获取 Node 状态
 
 *GET*  /api/v2/node/state
 
-### Request Params
+### 请求参数
 
 **node**  optional
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
     "states": [
         {
-            // node name
+            //node name
             "node": "modbus-node1",
             //running state
             "running": 2,
             //link state
             "link": 1,
             //average round trip time communicating with devices
-            "rtt": 100
+            "rtt": 100,
+            //log level
+            "log_level": "notice"
         },
         {
             "node": "modbus-node2",
             "running": 1,
             "link": 0,
-            "rtt": 9999
+            "rtt": 9999,
+            "log_level": "notice"
         }
-    ]
+    ],
+    //log level of neuron.log
+    "neuron_core": "notice"
 }
 ```
 
-## Add Group
+## 添加 Group
 
 *POST*  /api/v2/group
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
@@ -413,12 +418,12 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 * 409
   * 2103 group not allow
 
-### Body
+### 请求体
 
 ```json
 {
     //group name
-    "name": "gconfig1",
+    "group": "gconfig1",
     //node name
     "node": "modbus-node",
     //read/upload interval(ms)
@@ -426,7 +431,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -434,26 +439,26 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Del Group
+## 删除 Group
 
 *DELETE*  /api/v2/group
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 412
   * 2101 group already subscribed
 * 404
   * 2003 node not exist
-  * 2106 group not exist
+  * 2101 group not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -464,7 +469,7 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -472,17 +477,17 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 }
 ```
 
-## Update Group
+## 更新 Group
 
 *PUT*  /api/v2/group
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
@@ -491,9 +496,20 @@ Please refer to [Plugin Setting](./plugin-setting.md) for the configuration para
 * 409
   * 2104 group exist
 
-### Body
+### 请求体
 
-To update group name:
+```json
+{
+    //node name
+    "node": "node1",
+    //group name
+    "group": "group",
+    //read/upload interval(ms)
+    "interval": 20000
+}
+```
+
+更新 group name:
 ```json
 {
     //node name
@@ -505,7 +521,7 @@ To update group name:
 }
 ```
 
-To update group interval:
+更新 group interval:
 ```json
 {
     //node name
@@ -517,7 +533,7 @@ To update group interval:
 }
 ```
 
-To update both group name and interval:
+同时更新 group name 和 interval:
 ```json
 {
     //node name
@@ -531,7 +547,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -539,23 +555,23 @@ To update both group name and interval:
 }
 ```
 
-## Get Group
+## 获取 Group
 
 *GET*  /api/v2/group
 
-### Request Params
+### 请求参数
 
-**node**  optional
+**node**  可选
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ````json
 {
@@ -577,17 +593,17 @@ To update both group name and interval:
 }
 ````
 
-## Add Tag
+## 添加 Tag
 
 *POST*  /api/v2/tags
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 206
@@ -598,7 +614,7 @@ To update both group name and interval:
 * 404
   * 2003 node not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -651,7 +667,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -660,17 +676,17 @@ To update both group name and interval:
 }
 ```
 
-## Add Tag across multiple groups
+## 添加多组 Tag
 
 *POST*  /api/v2/gtags
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 206
@@ -682,7 +698,7 @@ To update both group name and interval:
   * 2003 node not exist
   * 2106 group not exist
 
-### Body
+### 请求体
 
 ```json
 {
@@ -748,7 +764,7 @@ To update both group name and interval:
 ```
 
 
-### Response
+### 响应
 
 ```json
 {
@@ -758,29 +774,29 @@ To update both group name and interval:
 }
 ```
 
-## Get Tag
+## 获取 Tag
 
 *GET*  /api/v2/tags
 
-### Request Params
+### 请求参数
 
-**node**  required
+**node**  必需
 
-**group**  required
+**group**  必需
 
-**name** optional
+**name** 可选
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
-### Response
+### 响应
 
 ```json
 {
@@ -797,7 +813,7 @@ To update both group name and interval:
             //description
             "description": "",
             //float/double precision
-            "precision": 0,
+            "precison": 0,
             //decimal
             "decimal": 0,
             //optional, when the attribute is static
@@ -825,30 +841,30 @@ To update both group name and interval:
 }
 ```
 
-## Update Tag
+## 更新 Tag
 
 *PUT*  /api/v2/tags
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response status
+### 响应状态
 
 * 200 OK
 * 206
-  * 2201 tag not exist
-  * 2202 tag name conflict
-  * 2203 tag attribute not support
-  * 2204 tag type not support
-  * 2205 tag address format invalid
+  * 2201 tag 不存在
+  * 2202 tag 名字冲突
+  * 2203 tag 属性不支持
+  * 2204 tag 类型不支持
+  * 2205 tag 地址格式无效
 * 404
-  * 2003 node not exist
-  * 2106 group not exist
+  * 2003 node 不存在
+  * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -868,11 +884,11 @@ To update both group name and interval:
             "address": "1!400001",
             //description
             "description":"",
-            //float/double precison
-            "precision": 0,
+            //float/double precision
+            "precison": 0,
             //decimal
             "decimal": 0,
-            //optional, when the attribute is static,the value field needs to be added.
+            //when the attribute is static,the value field needs to be added.
             "value": 12
         },
         {
@@ -888,7 +904,7 @@ To update both group name and interval:
             "name": "static_tag",
             "address": "",
             "attribute": 10,
-            "type": 8,
+            "type": 1,
             "description":"",
             "precison": 0,
             "decimal": 0,
@@ -898,7 +914,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -907,23 +923,23 @@ To update both group name and interval:
 }
 ```
 
-## Del Tag
+## 删除 Tag
 
 *DELETE*  /api/v2/tags
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -931,7 +947,7 @@ To update both group name and interval:
     "group": "config_modbus_tcp_sample_2",
     //node name
     "node": "modbus-node",
-    //tag name
+    //tag names
     "tags": [
         "tag1",
         "tag2"
@@ -939,7 +955,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -947,33 +963,33 @@ To update both group name and interval:
 }
 ```
 
-## Add Plugin
+## 添加插件
 
 *POST*  /api/v2/plugin
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
 * 400
   
-  * 2302 library info invalid
-  * 2303 library name conflict
-  * 2304 library open fail
-  * 2305 library module invalid
-  * 2307 library instance fail
-  * 2308 library arch no support
-  * 2310 library add fail
-  * 2311 library module exist
-  * 2313 library module kind no support
+  * 2302 库信息无效
+  * 2303 库名称冲突
+  * 2304 库文件打开失败
+  * 2305 库文件插件无效
+  * 2307 库文件插件实例化失败
+  * 2308 库文件架构不支持
+  * 2310 库文件添加失败
+  * 2311 库文件插件已存在
+  * 2313 库文件插件类型不支持
 
-### Body
+### 请求体
 
 ```json
 {
@@ -986,7 +1002,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -994,33 +1010,33 @@ To update both group name and interval:
 }
 ```
 
-
-## Update Plugin
+## 更新插件
 
 *PUT*  /api/v2/plugin
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
 * 400
   
-  * 2302 library no found
-  * 2302 library info invalid
-  * 2304 library open fail
-  * 2305 library module invalid
-  * 2307 library instance fail
-  * 2308 library arch no support
-  * 2312 library module no exist
-  * 2313 library module kind no support
+  * 2302 库文件不存在
+  * 2302 库信息无效
+  * 2304 库文件打开失败
+  * 2305 库文件插件无效
+  * 2307 库文件插件实例化失败
+  * 2308 库文件架构不支持
+  * 2310 库文件添加失败
+  * 2312 库文件插件不存在
+  * 2313 库文件插件类型不支持
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1033,7 +1049,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1042,36 +1058,36 @@ To update both group name and interval:
 ```
 
 
-## Del Plugin
+
+## 删除插件
 
 *DELETE*  /api/v2/plugin
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
 * 400
 * 
-  * 2306 library of system no allow delete
-  * 2309 library in using
+  * 2306 系统插件不允许删除
+  * 2309 插件使用中
 
-
-### Body
+### 请求体
 
 ```json
 {
     //plugin name
-   "plugin": "modbus-tcp"
+    "plugin": "modbus-tcp"
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1079,23 +1095,23 @@ To update both group name and interval:
 }
 ```
 
-## Get Plugin
+## 获取插件
 
 *GET*  /api/v2/plugin
 
-### Request Params
+### 请求参数
 
 **plugin**  optional
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -1126,23 +1142,23 @@ To update both group name and interval:
 }
 ```
 
-## Get Plugin Schema
+## 获取插件 Schema
 
 *GET*  /api/v2/schema
 
-### Request Params
+### 请求参数
 
-**schema_name**  required
+**schema_name**  必需
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 
-### Response
+### 响应
 
 ```json
 {
@@ -1264,23 +1280,23 @@ To update both group name and interval:
 }
 ```
 
-## Subscribe
+## 订阅
 
 *POST*  /api/v2/subscribe
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1290,14 +1306,14 @@ To update both group name and interval:
     "driver": "modbus-tcp",
     //driver node group name
     "group": "group-1",
-    //optional, when using the MQTT plugin, the topic field needs to be added
+    //when using the MQTT plugin, the topic field needs to be added
     "params": {
         "topic": "/neuron/mqtt/group-1"
     }
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1305,23 +1321,23 @@ To update both group name and interval:
 }
 ```
 
-## Subscribe Multiple Groups
+## 订阅多个组
 
 *POST*  /api/v2/subscribes
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1350,7 +1366,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1358,23 +1374,23 @@ To update both group name and interval:
 }
 ```
 
-## Update Subscribe Parameters
+## 更新订阅参数
 
 *PUT*  /api/v2/subscribe
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1391,7 +1407,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1399,23 +1415,23 @@ To update both group name and interval:
 }
 ```
 
-## UnSubscribe
+## 取消订阅
 
 *DELETE*  /api/v2/subscribe
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2106 group not exist
+  * 2106 group 不存在
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1432,7 +1448,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1440,24 +1456,28 @@ To update both group name and interval:
 }
 ```
 
-## Get Subscribe Group
+## 获取订阅的 Group
 
 *GET*  /api/v2/subscribe
 
-### Request Params
+### 请求参数
 
-**app**  required
+**app**  必需
 
-### Request Headers
+**driver**  可选，对南向节点名字进行子字符串匹配过滤。
+
+**group**  可选，对组名字进行子字符串匹配过滤。
+
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
 * 400
 
-### Response
+### 响应
 
 ```json
 {
@@ -1467,7 +1487,7 @@ To update both group name and interval:
             "driver": "modbus-tcp",
             //group name
             "group": "group-1",
-            //when using the MQTT plugin, the topic field needs to be added
+            //optional, when using the MQTT plugin, the topic field needs to be added
             "params": {
                 "topic": "/neuron/mqtt/group-1"
             }
@@ -1486,49 +1506,49 @@ To update both group name and interval:
 }
 ```
 
-## Get Version
+## 获取版本信息
 
 *GET*  /api/v2/version
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Response
+### 响应
 
 ```json
 {
     "build_date": "2022-06-01",
-    "revision": "99e2184+dirty", // dirty indicates uncommit changes
+    "revision": "99e2184+dirty", // dirty 表示有未提交的更改
     "version": "2.4.0"
 }
 ```
 
-## Upload License
+## 上传 License
 
 *POST*  /api/v2/license
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200
   * 0    OK
-  * 2402 license expired
+  * 2402 license 过期
 * 400
-  * 2401 license invalid
+  * 2401 license 无效
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1536,7 +1556,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1544,23 +1564,23 @@ To update both group name and interval:
 }
 ```
 
-## Get License Info
+## 获取 License 信息
 
 *GET*  /api/v2/license
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2400 license not found
+  * 2400 license 未找到
 * 500
-  * 1001 internal error
+  * 1001 服务器内部错误
 
-### Response
+### 响应
 
 ```json
 {
@@ -1583,32 +1603,43 @@ To update both group name and interval:
 }
 ```
 
-## Update node log level
+## 修改节点日志等级
 
 *PUT*  /api/v2/log/level
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-  * 2003 node not exist
+  * 2003 node 不存在
 * 500
-  * 1001 internal error
-  * 1010 is busy
+  * 1001 内部错误
+  * 1010 程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
-    "node_name": "modbus-tcp"
+    // node name
+    "node": "modbus-tcp",
+    // log level: debug, info, notice, warn, error, fatal
+    "level": "debug",
+    // whether to switch the core log level
+    "core": true
 }
 ```
 
-### Response
+::: tip
+core 字段选填，默认为 true。
+
+node 字段选填，不填此字段时 core 不可以为 false，此时仅切换核心日志等级。
+:::
+
+### 响应
 
 ```json
 {
@@ -1616,128 +1647,44 @@ To update both group name and interval:
 }
 ```
 
-:::tip
-Call the api to modify the log level of the node to debug, and automatically switch to the default level in about ten minutes.
-:::
-
-## Download File
-
-*GET* /api/v2/file
-
-### Request Headers
-
-**Authorization** Bearer \<token\>
-
-### Request Params
-
-**file_path** Required, absolute path of the file
-
-### Response Status
-
-* 404
-    * 1011 file not exist
-    * 4101 file open failure
-    * 4102 file read failure
-
-### Response
-
-Return the contents of the file and download the file, when responding correctly.
-
-Return the error code, when an error response occurs.
-
-```json
-{
-    "error": 1011
-}
-```
-
-## Get file list information
-
-*GET* /api/v2/file/info
-
-### Request Headers
-
-**Authorization** Bearer \<token\>
-
-### Request Params
-
-**dir_path** Required, absolute path of the directory.
-
-### Response Status
-
-* 404
-    * 1011 file not exist
-    * 4101 file open failure
-
-### Response
-
-Response to the file name, size, creation time and update time, when responding correctly.
-
-```json
-{
-    "files": [
-        {
-            "name": "neuron",
-            "size": 4096,
-            "ctime": "Wed Jan  4 02:38:12 2023",
-            "mtime": "Mon Dec 26 09:48:42 2022"
-        },
-        {
-            "name": "test.txt",
-            "size": 13,
-            "ctime": "Wed Jan  4 02:38:12 2023",
-            "mtime": "Mon Dec 26 09:48:42 2022"
-        }
-    ]
-}
-```
-
-Response to the error code, when an error response occurs.
-
-```json
-{
-    "error": 1011
-}
-```
-
-## Add Template
+## 添加 Template
 
 *POST* /api/v2/template
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 206
-    * 2203    tag attribute not support
-    * 2204    tag type not support
-    * 2205    tag address format invalid
-    * 2206    tag name too long
-    * 2207    tag address too long
-    * 2208    tag description too long
-    * 2209    tag precision invalid
+    * 2203    tag 属性不支持
+    * 2204    tag 类型不支持
+    * 2205    tag 地址格式无效
+    * 2206    tag 名字太长
+    * 2207    tag 地址太长
+    * 2208    tag 描述太长
+    * 2209    tag 精度无效
 * 400
-    * 2105    group parameter invalid
-    * 2107    group name too long
-    * 2502    template name too long
-    * 3013    plugin name too long
-    * 3016    plugin does not support template
+    * 2105    group 参数无效
+    * 2107    group 名称太长
+    * 2502    模板名字太长
+    * 3013    插件名字太长
+    * 3016    插件不支持模板
 * 404
-    * 3014    plugin not found
+    * 3014    插件不存在
 * 409
-    * 2104    group exist
-    * 2202    tag name conflict
-    * 2500    template already exists
+    * 2104    group 已存在
+    * 2202    tag 名称冲突
+    * 2500    模板已存在
 * 500
-    * 1010    server is busy
-    * 1001    internal error
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1768,7 +1715,7 @@ Response to the error code, when an error response occurs.
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1776,29 +1723,29 @@ Response to the error code, when an error response occurs.
 }
 ```
 
-## Delete Template
+## 删除 Template
 
 *DELETE*  /api/v2/template
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Request Params
+### 请求参数
 
-**name** optional, name of the template to delete. If not specified, then delete all templates.
+**name** 可选，要删除的模板的名字。若未提供该参数，则删除所有模板。
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 404
-    * 2501    template not found
+    * 2501    模板不存在
 * 500
-    * 1010    server is busy
+    * 1010    程序繁忙
 
-### Response
+### 响应
 
 ```json
 {
@@ -1806,34 +1753,34 @@ Response to the error code, when an error response occurs.
 }
 ```
 
-## Get Template
+## 获取 Template
 
 *GET*  /api/v2/template
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Request Params
+### 请求参数
 
-**name** optional, name of a particular template.
+**name** 可选，要获取的 template 的名字。
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-    * 1003    request param invalid
+    * 1003    请求 param 无效
 * 404
-    * 2501    template not found
+    * 2501    模板不存在
 * 500
-    * 1001    internal error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Response
+### 响应
 
-Without the **name** request parameter, return all templates.
+未指定 **name** 参数时，则返回所有模板的列表。
 
 ```json
 {
@@ -1850,8 +1797,7 @@ Without the **name** request parameter, return all templates.
 }
 ```
 
-When the **name** request parameter is specified, return detail information of the template
-of the given name.
+如果请求指定了 **name** 参数，则返回相应模板的详细信息。
 
 ```json
 {
@@ -1882,33 +1828,33 @@ of the given name.
 }
 ```
 
-## Template Instantiation
+## 实例化 Template
 
 *POST* /api/v2/template/inst
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-    * 2304    library failed to open
-    * 2502    template name too long
+    * 2304    库打开失败
+    * 2502    模板名字太长
 * 404
-    * 2301    library not found
-    * 2501    template not found
+    * 2301    库未找到
+    * 2501    模板不存在
 * 409
-    * 2002    node exist
-    * 2307    library not allow create instance
+    * 2002    node 已存在
+    * 2307    插件不允许实例化
 * 500
-    * 1001    internal error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1917,7 +1863,7 @@ of the given name.
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1925,33 +1871,33 @@ of the given name.
 }
 ```
 
-## Template Multi Node Instantiation
+## 多节点实例化 Template
 
 *POST* /api/v2/template/instances
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-    * 2304    library failed to open
-    * 2502    template name too long
+    * 2304    库打开失败
+    * 2502    模板名字太长
 * 404
-    * 2301    library not found
-    * 2501    template not found
+    * 2301    库未找到
+    * 2501    模板不存在
 * 409
-    * 2002    node exist
-    * 2307    library not allow create instance
+    * 2002    node 已存在
+    * 2307    插件不允许实例化
 * 500
-    * 1001    internal error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
@@ -1968,7 +1914,7 @@ of the given name.
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -1976,32 +1922,32 @@ of the given name.
 }
 ```
 
-## Add Template Group
+## 添加 Template Group
 
 *POST*  /api/v2/template/group
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-    * 2105    group parameter invalid
-    * 2107    group name too long
-    * 2502    template name too long
+    * 2105    group 参数无效
+    * 2107    group 名称太长
+    * 2502    模板名字太长
 * 404
-    * 2501    template not found
+    * 2501    模板不存在
 * 409
-    * 2104    group exist
+    * 2104    group 已存在
 * 500
-    * 1001    internal server error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
@@ -2011,7 +1957,7 @@ of the given name.
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -2019,30 +1965,30 @@ of the given name.
 }
 ```
 
-## Del Template Group
+## 删除 Template Group
 
 *DELETE*  /api/v2/template/group
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-    * 2107    group name too long
-    * 2502    template name too long
+    * 2107    group 名称太长
+    * 2502    模板名字太长
 * 404
-    * 2106    group not exist
-    * 2501    template not found
+    * 2106    group 不存在
+    * 2501    模板不存在
 * 500
-    * 1001    internal server error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
@@ -2051,7 +1997,7 @@ of the given name.
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -2059,34 +2005,34 @@ of the given name.
 }
 ```
 
-## Update Group
+## 更新 Template Group
 
 *PUT*  /api/v2/template/group
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 
 * 200 OK
 * 400
-    * 2105    group parameter invalid
-    * 2107    group name too long
-    * 2502    template name too long
+    * 2105    group 参数无效
+    * 2107    group 名称太长
+    * 2502    模板名字太长
 * 404
-    * 2106    group not exist
-    * 2501    template not found
+    * 2106    group 不存在
+    * 2501    模板不存在
 * 500
-    * 1001    internal server error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
-To update group name:
+更新 group name:
 ```json
 {
     //template name
@@ -2098,7 +2044,7 @@ To update group name:
 }
 ```
 
-To update group interval:
+更新 group interval:
 ```json
 {
     //template name
@@ -2110,7 +2056,7 @@ To update group interval:
 }
 ```
 
-To update both group name and interval:
+同时更新 group name 和 interval:
 ```json
 {
     //template name
@@ -2124,7 +2070,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -2132,30 +2078,30 @@ To update both group name and interval:
 }
 ```
 
-## Get Template Group
+## 获取 Template Group
 
 *GET*  /api/v2/template/group
 
-### Request Params
+### 请求参数
 
-**name**  required, name of the template.
+**name**  必需，template 的名字。
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-    * 1003    request param invalid
+    * 1003    请求 param 无效
 * 404
-    * 2501    template not found
+    * 2501    模板不存在
 * 500
-    * 1001    internal server error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Response
+### 响应
 
 ````json
 {
@@ -2169,40 +2115,40 @@ To update both group name and interval:
 }
 ````
 
-## Add Template Tag
+## 添加 Template Tag
 
 *POST*  /api/v2/template/tag
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 206
-    * 2203    tag attribute not support
-    * 2204    tag type not support
-    * 2205    tag address format invalid
-    * 2206    tag name too long
-    * 2207    tag address too long
-    * 2208    tag description too long
-    * 2209    tag precision invalid
+    * 2203    tag 属性不支持
+    * 2204    tag 类型不支持
+    * 2205    tag 地址格式无效
+    * 2206    tag 名字太长
+    * 2207    tag 地址太长
+    * 2208    tag 描述太长
+    * 2209    tag 精度无效
 * 400
-    * 2107    group name too long
-    * 2502    template name too long
+    * 2107    group 名称太长
+    * 2502    模板名字太长
 * 404
-    * 2106    group not exist
-    * 2501    template not found
+    * 2106    group 不存在
+    * 2501    模板不存在
 * 409
-    * 2202    tag name conflict
+    * 2202    tag 名称冲突
 * 500
-    * 1001    internal server error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
@@ -2230,7 +2176,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -2239,39 +2185,39 @@ To update both group name and interval:
 }
 ```
 
-## Update Template Tag
+## 更新 Template Tag
 
 *PUT*  /api/v2/template/tag
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response status
+### 响应状态
 
 * 200 OK
 * 206
-    * 2201    tag not exist
-    * 2203    tag attribute not support
-    * 2204    tag type not support
-    * 2205    tag address format invalid
-    * 2206    tag name too long
-    * 2207    tag address too long
-    * 2208    tag description too long
-    * 2209    tag precision invalid
+    * 2201    tag 不存在
+    * 2203    tag 属性不支持
+    * 2204    tag 类型不支持
+    * 2205    tag 地址格式无效
+    * 2206    tag 名字太长
+    * 2207    tag 地址太长
+    * 2208    tag 描述太长
+    * 2209    tag 精度无效
 * 400
-    * 2107    group name too long
-    * 2502    template name too long
+    * 2107    group 名称太长
+    * 2502    模板名字太长
 * 404
-    * 2106    group not exist
-    * 2501    template not found
+    * 2106    group 不存在
+    * 2501    模板不存在
 * 500
-    * 1001    internal server error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
@@ -2299,7 +2245,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -2308,32 +2254,32 @@ To update both group name and interval:
 }
 ```
 
-## Del Template Tag
+## 删除 Template Tag
 
 *DELETE*  /api/v2/template/tag
 
-### Request Headers
+### 请求头部
 
 **Content-Type**  application/json
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 206
-    * 2206    tag name too long
+    * 2206    tag 名字太长
 * 400
-    * 2107    group name too long
-    * 2502    template name too long
+    * 2107    group 名称太长
+    * 2502    模板名字太长
 * 404
-    * 2106    group not exist
-    * 2501    template not found
+    * 2106    group 不存在
+    * 2501    模板不存在
 * 500
-    * 1001    internal server error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Body
+### 请求体
 
 ```json
 {
@@ -2346,7 +2292,7 @@ To update both group name and interval:
 }
 ```
 
-### Response
+### 响应
 
 ```json
 {
@@ -2354,35 +2300,36 @@ To update both group name and interval:
 }
 ```
 
-## Get Template Tag
+## 获取 Template Tag
 
 *GET*  /api/v2/template/tag
 
-### Request Params
+### 请求参数
 
-**template**  required, name of the template.
+**template**  必需，template 的名字。
 
-**group**  required, name of the group.
+**group**  必需，group 的名字。
 
-**name** optional, to filter by tag name.
+**name** 可选，用于过滤 tag 名字。
 
-### Request Headers
+### 请求头部
 
 **Authorization** Bearer \<token\>
 
-### Response Status
+### 响应状态
 
 * 200 OK
 * 400
-    * 1003    request param invalid
+    * 1003    请求 param 无效
 * 404
-    * 2106    group not exist
-    * 2501    template not found
+    * 2106    group 不存在
+    * 2501    模板不存在
 * 500
-    * 1001    internal server error
-    * 1010    server is busy
+    * 1001    内部错误
+    * 1010    程序繁忙
 
-### Response
+
+### 响应
 
 ```json
 {

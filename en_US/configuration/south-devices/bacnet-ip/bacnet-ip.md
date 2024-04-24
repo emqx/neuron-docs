@@ -42,7 +42,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 
 ### Address Format
 
-> AREA ADDRESS(.PROPERTY_ID)</span>
+> AREA ADDRESS(.PROPERTY_ID)
 
 support Area
 

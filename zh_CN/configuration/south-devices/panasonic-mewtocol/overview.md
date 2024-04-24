@@ -42,7 +42,7 @@ Neuron Mewtocol 插件用于通过以太网访问松下的 FP-XH、FP0H 系列 P
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### .BIT
 
@@ -96,4 +96,4 @@ Neuron Mewtocol 插件用于通过以太网访问松下的 FP-XH、FP0H 系列 P
 
 ## 数据监控
 
-完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../usage/monitoring.md)。
+完成点位的配置后，您可点击 **监控** -> **数据监控**查看设备信息以及反控设备，具体可参考[数据监控](../../../admin/monitoring.md)。

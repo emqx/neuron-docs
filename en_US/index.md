@@ -20,7 +20,7 @@ Supporting simultaneous access and MQTT conversion for varied communication prot
 
 **Unified DataOps**: Neuron assists the legacy industrial devices to deliver data messages in an asynchronous way as the edge node specified in Sparkplug standard. [Sparkplug](./use-cases/sparkplug/sparkplug.md) is an open, unified, interoperable standard for industrial data exchange between industrial information systems like ERP, MES, SCADA, and historian via an MQTT broker.
 
-**Authentication and Security**: Neuron supports TLS and HTTPS encryption for API services to ensure data security in transmission and use [JWT authentication](./http-api/jwt.md) mechanism to verify the data owner.
+**Authentication and Security**: Neuron supports TLS and HTTPS encryption for API services to ensure data security in transmission and use [JWT authentication](./api/jwt.md) mechanism to verify the data owner.
 
 ## Key Concepts
 

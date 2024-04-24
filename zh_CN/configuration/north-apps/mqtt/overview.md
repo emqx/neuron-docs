@@ -49,12 +49,6 @@ Neuron 支持 MQTT 插件作为其数据汇聚上报的方式之一，Neuron MQT
 3. 通过**缓存磁盘大小**参数指定磁盘缓存大小（单位为兆字节），最大允许缓存大小为 10GB 。
 3. 通过**缓存消息重传间隔**参数指定缓存消息重传间隔（单位为毫秒），最大允许缓存消息重传间隔为 120 秒 。
 
-::: tip
-
-对于 Neuron 2.4.3 以下版本，可通过将**缓存内存大小**和**缓存磁盘大小**设为 0 来禁用离线数据缓存。
-
-:::
-
 下表给出了（使用[ Modbus TCP 插件](../../south-devices/modbus-tcp/modbus-tcp)时）离线缓存磁盘空间使用情况的一些统计数据。
 
 - 第一列是每条 MQTT 消息中数据点的数量
@@ -93,20 +87,8 @@ Neuron 的 MQTT 插件支持 MQTT over SSL。
 
 - **主题**：指定上报主题，例如 /neuron/mqtt/upload。
 
-  ::: tip 
-  
-  Neuron 2.4.0 及以上版本删除了 **upload-topic** 参数， 因此您需要通过**主题**配置项指定上报主题。
-  
-  :::
+<img src="./assets/subscribe_topic.png" style="border:thin solid #E0DCD9; width: 60%" alt="Neuron version 2.4.0 MQTT subscribe interface">
 
-<figure align="center">
-  <img src="./assets/subscribe_topic.png"
-       style="border:thin solid #E0DCD9; width: 60%"
-       alt="Neuron version 2.4.0 MQTT subscribe interface">
-  <figcaption align = "center">
-    <sub><b>Fig.2 - 在 Neuron 2.4.0 版本中指定上报主题</b></sub>
-  </figcaption>
-</figure>
 
 上报数据的确切格式由**上报数据格式**参数控制，有 **tags-format** 和 **values-format** 两种格式。更多详细信息，请参阅 [数据上下行格式](./api.md#data-upload)。
 

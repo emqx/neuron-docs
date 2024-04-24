@@ -19,7 +19,7 @@ LF Edge [eKuiper] 是 Golang 实现的轻量级物联网数据分析和流处理
 
 ## 应用配置
 
-从 Neuron 2.4.0 版本开始，使用 eKuiper 插件时可使用如下参数：
+使用 eKuiper 插件时可使用如下参数：
 
 | 字段             | 说明                             |
 | ---------------- | -------------------------------- |
@@ -30,7 +30,7 @@ LF Edge [eKuiper] 是 Golang 实现的轻量级物联网数据分析和流处理
 
 ::: tip
 
-如果您使用docker方式部署Neuron，需要在docker命令中增加字段`-p 7081:7081`，将7081端口映射到主机上。docker具体命令可参考 [docker运行](../../../installation/neuron/docker.md)。
+如果您使用docker方式部署Neuron，需要在docker命令中增加字段`-p 7081:7081`，将7081端口映射到主机上。docker具体命令可参考 [docker运行](../../../installation/docker.md)。
 
 :::
 

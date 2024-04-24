@@ -3,6 +3,7 @@
     {
       "title": "介绍",
       "path": "./",
+      "collapsed": true, 
       "children": [
         {
           "title": "架构",
@@ -25,30 +26,31 @@
     {
       "title": "安装",
       "path": "installation/installation",
+      "collapsed": true, 
       "children": [
         {
           "title": "安装 Neuron",
-          "path": "installation/neuron/neuron",
+          "path": "installation/neuron",
           "children": [
             {
               "title": "Ubuntu/Debian",
-              "path": "installation/neuron/deb"
+              "path": "installation/deb"
             },
             {
               "title": "CentOS",
-              "path": "installation/neuron/rpm"
+              "path": "installation/rpm"
             },
             {
               "title": "其他 Linux",
-              "path": "installation/neuron/tar.gz"
+              "path": "installation/tar.gz"
             },
             {
               "title": "Docker",
-              "path": "installation/neuron/docker"
+              "path": "installation/docker"
             },
             {
               "title": "源代码",
-              "path": "installation/neuron/compile"
+              "path": "installation/compile"
             }
           ]
         },
@@ -69,6 +71,7 @@
     {
       "title": "连接南向设备",
       "path": "configuration/south-devices/south-devices",
+      "collapsed": true, 
       "children": [
         {
           "title": "基于模板配置",
@@ -189,6 +192,14 @@
           "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
         },
         {
+          "title": "Allen-Bradley ControlLogix 5500",
+          "path": "configuration/south-devices/ab-5500/ab-5500"
+        },
+        {
+          "title": "Allen-Bradley MicroLogix 1400",
+          "path": "configuration/south-devices/ab-1400/ab-1400"
+        },
+        {
           "title": "Mitsubishi 3E",
           "path": "configuration/south-devices/mitsubishi-3e/overview",
           "children": [
@@ -231,6 +242,16 @@
         {
           "title": "Siemens S5 FetchWrite",
           "path": "configuration/south-devices/siemens-fetchwrite/fetchwrite"
+        },
+        {
+          "title": "Siemens MPI",
+          "path": "configuration/south-devices/siemens-mpi/mpi",
+          "children": [
+            {
+              "title": "Siemens S7300 PLC 连接示例",
+              "path": "configuration/south-devices/siemens-mpi/s7300"
+            }
+          ]
         },
         {
           "title": "Omron FINS TCP",
@@ -377,12 +398,17 @@
         {
           "title": "GE SRTP",
           "path": "configuration/south-devices/srtp/srtp"
+        },
+        {
+          "title": "HEIDENHAIN CNC",
+          "path": "configuration/south-devices/heidenhain-cnc/heidenhain-cnc"
         }
       ]
     },
     {
       "title": "创建北向应用",
       "path": "configuration/north-apps/north-apps",
+      "collapsed": true, 
       "children": [
         {
           "title": "MQTT",
@@ -446,45 +472,47 @@
     },
     {
       "title": "HTTP API",
-      "path": "http-api/http-api",
+      "path": "api/http-api",
+      "collapsed": true, 
       "children": [
         {
           "title": "自定义 JWT",
-          "path": "http-api/jwt"
+          "path": "api/jwt"
         },
         {
           "title": "数据类型",
-          "path": "http-api/data-type"
+          "path": "api/data-type"
         },
         {
           "title": "配置",
-          "path": "http-api/configuration"
+          "path": "api/configuration"
         },
         {
           "title": "数据统计",
-          "path": "http-api/metrics"
+          "path": "api/metrics"
         },
         {
           "title": "读写",
-          "path": "http-api/rw"
+          "path": "api/rw"
         },
         {
           "title": "插件设置",
-          "path": "http-api/plugin-setting"
+          "path": "api/plugin-setting"
         },
         {
           "title": "错误代码",
-          "path": "http-api/error-code"
+          "path": "api/error-code"
         }
       ]
     },
     {
       "title": "运维指南",
       "path": "admin/admin",
+      "collapsed": true, 
       "children": [
         {
           "title": "数据监控",
-          "path": "usage/monitoring"
+          "path": "admin/monitoring"
         },
         {
           "title": "数据统计",
@@ -493,12 +521,17 @@
         {
           "title": "管理日志",
           "path": "admin/log-management"
+        },
+        {
+          "title": "配置管理",
+          "path": "admin/conf-management"
         }
       ]
     },
     {
       "title": "开发指南",
       "path": "dev-guide/dev-guide",
+      "collapsed": true, 
       "children": [
         {
           "title": "SDK 教程",
@@ -519,6 +552,7 @@
     {
       "title": "应用场景",
       "path": "use-cases/use-cases",
+      "collapsed": true, 
       "children": [
         {
           "title": "工业设备连接",
@@ -541,6 +575,7 @@
     {
       "title": "生态合作伙伴",
       "path": "ecopartners/eco",
+      "collapsed": true, 
       "children": [
         {
           "title": "三旺通信",
@@ -558,6 +593,7 @@
     },
     {
       "title": "附录",
+      "collapsed": true, 
       "children": [
         {
           "title": "数据类型说明",
@@ -579,6 +615,7 @@
     {
       "title": "Introduction",
       "path": "./",
+      "collapsed": true, 
       "children": [
         {
           "title": "Architecture",
@@ -601,30 +638,31 @@
     {
       "title": "Installation",
       "path": "installation/installation",
+      "collapsed": true, 
       "children": [
         {
           "title": "Installing Neuron",
-          "path": "installation/neuron/neuron",
+          "path": "installation/neuron",
           "children": [
             {
               "title": "Ubuntu/Debian",
-              "path": "installation/neuron/deb"
+              "path": "installation/deb"
             },
             {
               "title": "CentOS",
-              "path": "installation/neuron/rpm"
+              "path": "installation/rpm"
             },
             {
               "title": "Other Linux",
-              "path": "installation/neuron/tar.gz"
+              "path": "installation/tar.gz"
             },
             {
               "title": "Docker",
-              "path": "installation/neuron/docker"
+              "path": "installation/docker"
             },
             {
               "title": "Source",
-              "path": "installation/neuron/compile"
+              "path": "installation/compile"
             }
           ]
         },
@@ -645,6 +683,7 @@
     {
       "title": "Create a Southbound Driver",
       "path": "configuration/south-devices/south-devices",
+      "collapsed": true, 
       "children": [
         {
           "title": "Configure with Templates",
@@ -763,6 +802,14 @@
         {
           "title": "EtherNet/IP(CIP)",
           "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
+        },
+        {
+          "title": "Allen-Bradley ControlLogix 5500",
+          "path": "configuration/south-devices/ab-5500/ab-5500"
+        },
+        {
+          "title": "Allen-Bradley MicroLogix 1400",
+          "path": "configuration/south-devices/ab-1400/ab-1400"
         },
         {
           "title": "Mitsubishi 3E",
@@ -943,12 +990,17 @@
         {
           "title": "GE SRTP",
           "path": "configuration/south-devices/srtp/srtp"
+        },
+        {
+          "title": "HEIDENHAIN CNC",
+          "path": "configuration/south-devices/heidenhain-cnc/heidenhain-cnc"
         }
       ]
     },
     {
       "title": "Create a Northbound Application",
       "path": "configuration/north-apps/north-apps",
+      "collapsed": true, 
       "children": [
         {
           "title": "MQTT",
@@ -1018,59 +1070,66 @@
     },
     {
       "title": "HTTP API",
-      "path": "http-api/http-api",
+      "path": "api/http-api",
+      "collapsed": true, 
       "children": [
         {
           "title": "Customize JWT",
-          "path": "http-api/jwt"
+          "path": "api/jwt"
         },
         {
           "title": "Data Type",
-          "path": "http-api/data-type"
+          "path": "api/data-type"
         },
         {
           "title": "Configuration",
-          "path": "http-api/configuration"
+          "path": "api/configuration"
         },
         {
           "title": "Metrics",
-          "path": "http-api/metrics"
+          "path": "api/metrics"
         },
         {
           "title": "Read & Write",
-          "path": "http-api/rw"
+          "path": "api/rw"
         },
         {
           "title": "Plugin Setting",
-          "path": "http-api/plugin-setting"
+          "path": "api/plugin-setting"
         },
         {
           "title": "Error Codes",
-          "path": "http-api/error-code"
+          "path": "api/error-code"
         }
       ]
     },
     {
       "title": "Operations Guide",
-      "path": "usage/admin/admin",
+      "path": "admin/admin",
+      "collapsed": true, 
       "children": [
         {
           "title": "Data Monitoring and Device Control",
-          "path": "usage/monitoring"
+          "path": "admin/monitoring"
         },
         {
           "title": "Data Statistics",
-          "path": "usage/dashboard/data-statistics"
+          "path": "admin/data-statistics"
         },
         {
           "title": "Log Management",
-          "path": "usage/admin/log-management"
+          "path": "admin/log-management"
+        },
+        {
+          "title": "Configuration Management",
+          "path": "admin/conf-management"
         }
       ]
     },
     {
       "title": "Development Guide",
       "path": "dev-guide/dev-guide",
+      "collapsed": true, 
       "children": [
         {
           "title": "SDK Tutorial",
@@ -1091,6 +1150,7 @@
     {
       "title": "Use Cases",
       "path": "use-cases/use-cases",
+      "collapsed": true, 
       "children": [
         {
           "title": "Industrial Connectivity",
@@ -1113,6 +1173,7 @@
     {
       "title": "Eco Partners",
       "path": "ecopartners/eco",
+      "collapsed": true, 
       "children": [
         {
           "title": "3 One Data",
@@ -1130,6 +1191,7 @@
     },
     {
       "title": "Appendix",
+      "collapsed": true, 
       "children": [
         {
           "title": "Data Type Description",
