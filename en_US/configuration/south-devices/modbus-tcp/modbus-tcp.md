@@ -22,29 +22,19 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
-| **Transport Mode** | TCP transfer or UDP transfer |
-| **Connection Mode** | Only for **TCP** mode, When selecting TCP, you can choose Neuron as the TCP client or server. |
+| **Connection Mode** | Choose Neuron as the TCP client or server. |
 | **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command. |
 | **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command. |
+| **Endianness**    | Byte order of tags with 32 bits, ABCD corresponds to 1234. |
+| **Start Address** | Address starts from 1 or 0. |
 | **Send Interval** | The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
 | **IP Address** | The IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0. <!--to be confirmed--> |
 | **Port** | The port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server.|
 | **Connection Timeout** |  The time the system waits for a device to respond to a command. |
 
-::: tip
-
-When operating with the Modbus TCP QH plugin, you're only required to adjust a selection of the aforementioned fields, namely:
-
-- **IP Address**
-- **Port**
-- **Connection Timeout**
-- **Connection Mode**
-
-:::
-
 ## Configure Data Groups and Tags
 
-After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+After the plugin is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
 
 Once device configuration is completed, navigate to the **South Devices** page. Click on the device card or device row to access the **Group List** page. Here, you can create a new group by clicking on **Create**, then specifying the group name and data collection interval.
 
@@ -84,14 +74,6 @@ Required, Address is the register address. The Modbus protocol has four areas, e
 | Input Register| 300001 ~ 365536 | Read/Write         | 16Bit,2Byte         | 0x04          | BIT, INT16, UINT16,<br />INT32, UINT32, INT64,<br />UINT64, FLOAT,<br />DOUBLE, STRING |
 | Hold Register  | 400001 ~ 465536 | Read/Write       | 16Bit,2Byte         | 0x03, 0x06, 0x10 | BIT, INT16, UINT16,<br />INT32, UINT32, INT64,<br />UINT64, FLOAT,<br /> DOUBLE, STRING |
 
-::: tip
-Some device specification documents may use function codes and register addresses to describe commands. Since register address numbers start at 0, the register address range for each area is 0 to 65535. Neuron uses a PLC configuration address specification, so the addresses configured in Neuron start from 1.
-
-The conversion rule for the configuration address specification is as follows: determine the highest digit of the address based on the function code, and add 1 to the register address to obtain the address used in Neuron.
-:::
-
-For example, if the function code is 0x03 and the register address is 0, the address used in Neuron is 400001. If the function code is 0x02 and the register address is 5, the address used in Neuron is 100006.
-
 #### **.BIT**
 
 Optional, specify a specific bit in a register
@@ -115,6 +97,7 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #BB | 4,3,2,1 | int32/uint32/float | |
 
 ::: tip
+The byte order of a tag has a higher priority than the byte order configuration of a node. That is to say, once the byte order is configured for a tag, it follows the configuration of that tag and ignores the node configuration.
 The byte order can be illustrated using the notation ABCD, which corresponds directly to the sequence 1234. As an example, the ABCD designation represents the standard or default Endianness 1234. (#LL).
 :::
 
