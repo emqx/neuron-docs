@@ -1063,6 +1063,16 @@
           ]
         },
         {
+          "title": "Azure IoT",
+          "path": "configuration/north-apps/azure-iot/overview",
+          "children": [
+            {
+              "title": "Bridging Data to Microsoft Azure IoT Hub using Neuron",
+              "path": "configuration/north-apps/azure-iot/example"
+            }
+          ]
+        },
+        {
           "title": "eKuiper",
           "path": "configuration/north-apps/ekuiper/overview",
           "children": [
