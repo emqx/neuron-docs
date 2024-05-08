@@ -443,6 +443,16 @@
           ]
         },
         {
+          "title": "Azure IoT",
+          "path": "configuration/north-apps/azure-iot/overview",
+          "children": [
+            {
+              "title": "使用 Neuron 将数据桥接到 Azure IoT Hub",
+              "path": "configuration/north-apps/azure-iot/example"
+            }
+          ]
+        },
+        {
           "title": "eKuiper",
           "path": "configuration/north-apps/ekuiper/overview",
           "children": [
