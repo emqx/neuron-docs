@@ -1,4 +1,4 @@
-# MQTT
+# AWS IoT Core
 
 [AWS IoT Core] 为互联设备（如传感器、执行器、嵌入式设备、无线设备和智能设备）通过 MQTT 连接到 AWS 云提供了安全的双向通信。
 
