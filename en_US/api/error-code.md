@@ -110,6 +110,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 3017    plugin does not support write tags
 * 3018    plugin does not support sync reading
 * 3019    plugin does not support requested operation
+* 3020    plugin tag value out of range or invalid
 
 ## FILE error codes
 
