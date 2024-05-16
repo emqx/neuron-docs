@@ -414,6 +414,16 @@
         {
           "title": "MTConnect",
           "path": "configuration/south-devices/mtconnect/mtconnect"
+        },
+        {
+          "title": "CODESYS V3",
+          "path": "configuration/south-devices/codesys3/codesys3",
+          "children": [
+            {
+              "title": "连接 CODESYS V3 PLC 模拟器",
+              "path": "configuration/south-devices/codesys3/demo"
+            }
+          ]
         }
       ]
     },
@@ -1048,6 +1058,16 @@
         {
           "title": "MTConnect",
           "path": "configuration/south-devices/mtconnect/mtconnect"
+        },
+        {
+          "title": "CODESYS V3",
+          "path": "configuration/south-devices/codesys3/codesys3",
+          "children": [
+            {
+              "title": "Connecting to the CODESYS V3 PLC Simulator",
+              "path": "configuration/south-devices/codesys3/demo"
+            }
+          ]
         }
       ]
     },
