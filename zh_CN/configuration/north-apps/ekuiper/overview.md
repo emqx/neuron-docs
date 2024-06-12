@@ -123,6 +123,24 @@ eKuiper 可以通过使用 Neuron 动作发送写命令来控制设备，Neuron 
 }
 ```
 
+eKuiper 插件也支持如下格式的写请求，用以一次写入多个点位。
+
+```
+{
+    "node_name": "modbus",
+    "group_name": "grp",
+    "tags": [
+        {
+            "tag_name": "tag0",
+            "value": 1234
+        },
+        {
+            "tag_name": "tag1",
+            "value": 4567
+        }
+    ]
+}
+```
 
 
 [eKuiper]: https://ekuiper.org

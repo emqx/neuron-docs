@@ -116,6 +116,25 @@ The following is an example of a write command:
 }
 ```
 
+In order to write multiple tags in a single command, the eKuiper plugin also supports write command of the following form.
+
+```
+{
+    "node_name": "modbus",
+    "group_name": "grp",
+    "tags": [
+        {
+            "tag_name": "tag0",
+            "value": 1234
+        },
+        {
+            "tag_name": "tag1",
+            "value": 4567
+        }
+    ]
+}
+```
+
 [eKuiper]: https://ekuiper.org
 [NNG pair0 protocol]: https://nng.nanomsg.org/man/v1.3.2/nng_pair.7.html
 [IPC transport]: https://nng.nanomsg.org/man/v1.3.2/nng_ipc.7.html
