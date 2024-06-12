@@ -21,13 +21,16 @@
     //node name (required)
     "node": "modbus-tcp-1",
     //group name (required)
-    "group": "config_modbus_tcp_sample_2"
-    //tag name substring match (optional)
-    "name": "hold_bit",
-    //tag description substring match (optional)
-    "desc": "switch",
+    "group": "config_modbus_tcp_sample_2",
     //synchronous read (optional, default false)
-    "sync": false
+    "sync": false,
+    //filter (optional)
+    "query": {
+        //tag name substring match (optional)
+        "name": "data",
+        //tag description substring match (optional)
+        "description": "switch"
+    }
 }
 ```
 
@@ -56,6 +59,69 @@
 
 ::: tip
 The value is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed, not the value.
+:::
+
+## Read Tag(pagination)
+
+*POST*  /api/v2/read/paginate
+
+### Request Headers
+
+**Content--Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200
+
+### Body
+
+```json
+{
+    //node name (required)
+    "node": "modbus-tcp-1",
+    //group name (required)
+    "group": "config_modbus_tcp_sample_2",
+    //synchronous read (optional, default false)
+    "sync": false,
+    //filter (optional)
+    "query": {
+        //tag name substring match (optional)
+        "name": "data",
+        //tag description substring match (optional)
+        "description": "switch",
+        //current page (optional)
+        "currentPage": 1,
+        //number of tags per page (optional)
+        "pageSize": 10,
+        //response error tags only (optional)
+        "isError": true
+    }
+}
+```
+
+### Response
+
+```json
+{
+   "meta": {"currentPage": 1, "pageSize": 10, "total": 1},
+   "items": [ {
+            "name": "tag1",
+            "type": 4,
+            "address": "1!400001",
+            "attribute": 8,
+            "description": "",
+            "precison": 0,
+            "decimal": 0,
+            "bias": 0,
+            "error": 3002 // "value": 123
+        } ]
+}
+```
+
+::: tip
+The **value** is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed with **error**.
 :::
 
 ## Write Tag

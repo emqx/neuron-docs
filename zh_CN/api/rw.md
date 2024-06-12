@@ -21,13 +21,16 @@
     //node name (required)
     "node": "modbus-tcp-1",
     //group name (required)
-    "group": "config_modbus_tcp_sample_2"
-    //tag name substring match (optional)
-    "name": "hold_bit",
-    //tag description substring match (optional)
-    "desc": "switch",
+    "group": "config_modbus_tcp_sample_2",
     //synchronous read (optional, default false)
-    "sync": false
+    "sync": false,
+    //filter (optional)
+    "query": {
+        //tag name substring match (optional)
+        "name": "data",
+        //tag description substring match (optional)
+        "description": "switch"
+    }
 }
 ```
 
@@ -56,6 +59,69 @@
 
 ::: tip 注意
 当某个点位读数值出错时，将显示 **error** 字段，不再显示 **value** 字段。
+:::
+
+## 读 Tag(分页)
+
+*POST*  /api/v2/read/paginate
+
+### 请求头部
+
+**Content--Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200
+
+### 请求体
+
+```json
+{
+    //node name (required)
+    "node": "modbus-tcp-1",
+    //group name (required)
+    "group": "config_modbus_tcp_sample_2",
+    //synchronous read (optional, default false)
+    "sync": false,
+    //filter (optional)
+    "query": {
+        //tag name substring match (optional)
+        "name": "data",
+        //tag description substring match (optional)
+        "description": "switch",
+        //current page (optional)
+        "currentPage": 1,
+        //number of tags per page (optional)
+        "pageSize": 10,
+        //response error tags only (optional)
+        "isError": true
+    }
+}
+```
+
+### 响应
+
+```json
+{
+   "meta": {"currentPage": 1, "pageSize": 10, "total": 1},
+   "items": [ {
+            "name": "tag1",
+            "type": 4,
+            "address": "1!400001",
+            "attribute": 8,
+            "description": "",
+            "precison": 0,
+            "decimal": 0,
+            "bias": 0,
+            "error": 3002 // "value": 123
+        } ]
+}
+```
+
+::: tip 注意
+当某个点位读数值出错时，显示 **error** 字段；读取正常时显示 **value** 字段。
 :::
 
 ## 写 Tag
