@@ -124,6 +124,55 @@ The value is displayed only when the value is read correctly, when the value is 
 The **value** is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed with **error**.
 :::
 
+## TEST Reading Tag
+
+*POST*  /api/v2/read/test
+
+### Request Headers
+
+**Content--Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200
+
+### Body
+
+```json
+{
+    "driver": "1",
+    "group": "1",
+    "tag": "tag1",
+    "address": "1!400002",
+    "attribute": 8,
+    "type": 3,
+    "precision": 0,
+    "decimal": 0,
+    "bias": 0.0
+}
+```
+
+### Response
+
+```json
+{
+    "value": 29540
+}
+```
+
+```json
+{
+    "error": 3022
+}
+```
+
+::: tip
+Only perform reading tests, no need to actually add the tag.
+Not compatible with tag and node byte order, does not calculate decimal and offset.
+:::
+
 ## Write Tag
 
 ### Write One Tag
