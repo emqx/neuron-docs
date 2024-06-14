@@ -132,6 +132,10 @@
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
             {
+              "title": "浏览 OPC UA 地址空间",
+              "path": "configuration/south-devices/opc-ua/browse"
+            },
+            {
               "title": "OPC UA 连接策略",
               "path": "configuration/south-devices/opc-ua/policy"
             },
@@ -747,6 +751,10 @@
           "title": "OPC UA",
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
+            {
+              "title": "Browse OPC UA Address Space",
+              "path": "configuration/south-devices/opc-ua/browse"
+            },
             {
               "title": "Connection Policy",
               "path": "configuration/south-devices/opc-ua/policy"
