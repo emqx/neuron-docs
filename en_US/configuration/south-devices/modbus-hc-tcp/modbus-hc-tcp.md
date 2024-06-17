@@ -92,6 +92,9 @@ Medium PLCs: AM series, AC series, etc.
 
 ::: tip
 The M,I,Q area supports multiple addressing methods, including (M|I|Q)X, (M|I|Q)B, (M|I|Q)W, (M|I|Q)D, which correspond to addressing by bit, Byte, Word, and Dword, respectively.
+
+When using MX and MB addressing methods, the tags only support read attributes.
+
 :::
 
 #### **.BIT**

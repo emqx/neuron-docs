@@ -19,8 +19,8 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | -------------------- | ------------------------------------------------------- |
 | **Physical Link** | Selects the communication medium, either serial or Ethernet. |
 | **Connection Timeout** |  The time the system waits for a device to respond to a command. |
-| **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command. |
-| **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command. |
+| **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command.|
+| **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command.|
 | **Send Interval** | The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
 | **Endianness**    | Byte order of tags with 32 bits, ABCD corresponds to 1234. |
 | **Start Address** | Address starts from 1 or 0. |

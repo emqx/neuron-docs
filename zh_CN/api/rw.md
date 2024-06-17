@@ -124,6 +124,57 @@
 当某个点位读数值出错时，显示 **error** 字段；读取正常时显示 **value** 字段。
 :::
 
+
+## 测试读 Tag
+
+*POST*  /api/v2/read/test
+
+### 请求头部
+
+**Content--Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应状态
+
+* 200
+
+### 请求体
+
+```json
+{
+    "driver": "1",
+    "group": "1",
+    "tag": "tag1",
+    "address": "1!400002",
+    "attribute": 8,
+    "type": 3,
+    "precision": 0,
+    "decimal": 0,
+    "bias": 0.0
+}
+```
+
+### 响应
+
+```json
+{
+    "value": 29540
+}
+```
+
+```json
+{
+    "error": 3022
+}
+```
+
+::: tip 注意
+仅做读取测试，无需实际添加点位。
+不适配点位和节点字节序，不计算乘系数，偏移量。
+:::
+
+
 ## 写 Tag
 
 ### 写一个 Tag

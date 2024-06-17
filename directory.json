@@ -100,6 +100,10 @@
           ]
         },
         {
+          "title": "XINJE Modbus RTU",
+          "path": "configuration/south-devices/modbus-xinje-rtu/modbus-xinje-rtu"
+        },
+        {
           "title": "Modbus TCP",
           "path": "configuration/south-devices/modbus-tcp/modbus-tcp",
           "children": [
@@ -128,9 +132,17 @@
           ]
         },
         {
+          "title": "Modbus ASCII",
+          "path": "configuration/south-devices/modbus-ascii/modbus-ascii"
+        },
+        {
           "title": "OPC UA",
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
+            {
+              "title": "浏览 OPC UA 地址空间",
+              "path": "configuration/south-devices/opc-ua/browse"
+            },
             {
               "title": "OPC UA 连接策略",
               "path": "configuration/south-devices/opc-ua/policy"
@@ -418,6 +430,16 @@
         {
           "title": "MTConnect",
           "path": "configuration/south-devices/mtconnect/mtconnect"
+        },
+        {
+          "title": "CODESYS V3",
+          "path": "configuration/south-devices/codesys3/codesys3",
+          "children": [
+            {
+              "title": "连接 CODESYS V3 PLC 模拟器",
+              "path": "configuration/south-devices/codesys3/demo"
+            }
+          ]
         }
       ]
     },
@@ -437,6 +459,26 @@
             {
               "title": "常见问题",
               "path": "configuration/north-apps/mqtt/faq"
+            }
+          ]
+        },
+        {
+          "title": "AWS IoT",
+          "path": "configuration/north-apps/aws-iot/overview",
+          "children": [
+            {
+              "title": "使用 Neuron 将数据桥接到 AWS IoT",
+              "path": "configuration/north-apps/aws-iot/example"
+            }
+          ]
+        },
+        {
+          "title": "Azure IoT",
+          "path": "configuration/north-apps/azure-iot/overview",
+          "children": [
+            {
+              "title": "使用 Neuron 将数据桥接到 Azure IoT Hub",
+              "path": "configuration/north-apps/azure-iot/example"
             }
           ]
         },
@@ -728,6 +770,10 @@
           ]
         },
         {
+          "title": "XINJE Modbus RTU",
+          "path": "configuration/south-devices/modbus-xinje-rtu/modbus-xinje-rtu"
+        },
+        {
           "title": "Modbus TCP",
           "path": "configuration/south-devices/modbus-tcp/modbus-tcp",
           "children": [
@@ -756,9 +802,17 @@
           ]
         },
         {
+          "title": "Modbus ASCII",
+          "path": "configuration/south-devices/modbus-ascii/modbus-ascii"
+        },
+        {
           "title": "OPC UA",
           "path": "configuration/south-devices/opc-ua/overview",
           "children": [
+            {
+              "title": "Browse OPC UA Address Space",
+              "path": "configuration/south-devices/opc-ua/browse"
+            },
             {
               "title": "Connection Policy",
               "path": "configuration/south-devices/opc-ua/policy"
@@ -1036,6 +1090,16 @@
         {
           "title": "MTConnect",
           "path": "configuration/south-devices/mtconnect/mtconnect"
+        },
+        {
+          "title": "CODESYS V3",
+          "path": "configuration/south-devices/codesys3/codesys3",
+          "children": [
+            {
+              "title": "Connecting to the CODESYS V3 PLC Simulator",
+              "path": "configuration/south-devices/codesys3/demo"
+            }
+          ]
         }
       ]
     },
@@ -1055,6 +1119,26 @@
             {
               "title": "FAQ",
               "path": "configuration/north-apps/mqtt/faq"
+            }
+          ]
+        },
+        {
+          "title": "AWS IoT",
+          "path": "configuration/north-apps/aws-iot/overview",
+          "children": [
+            {
+              "title": "Bridging Data to AWS IoT using Neuron",
+              "path": "configuration/north-apps/aws-iot/example"
+            }
+          ]
+        },
+        {
+          "title": "Azure IoT",
+          "path": "configuration/north-apps/azure-iot/overview",
+          "children": [
+            {
+              "title": "Bridging Data to Microsoft Azure IoT Hub using Neuron",
+              "path": "configuration/north-apps/azure-iot/example"
             }
           ]
         },
