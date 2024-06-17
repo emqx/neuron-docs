@@ -22,7 +22,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
-| **Connection Mode** | Choose Neuron as the TCP client or server. |
+| **Connection Mode** | Only for **TCP** mode, When selecting TCP, you can choose Neuron as the TCP client or server. |
 | **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command. |
 | **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command. |
 | **Endianness**    | Byte order of tags with 32 bits, ABCD corresponds to 1234. |

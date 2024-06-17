@@ -85,14 +85,16 @@ Medium PLCs: AM series, AC series, etc.
 | Area                       | Address Range          | Quantity        | Attribute        | Register Size     | Function Code | Data Type|
 | -------------------------- | ------------------------------ | ----------  | ----------- | ------------- | -------------  | ------- |
 | QX0.0-QX8191.7（Coils）            | 0x0000-0xFFFF  (0-65536)       | 65536       |Read/Write        | 1Bit          | 0x01,0x05,0x0f | BIT     |
-| IX0.0-IX8191.7（Input）            | 0x0000-0xFFFF  (0-65536)       | 65536       |Read              | 1Bit          | 0x01,0x05,0x0f | BIT     |
+| IX0.0-IX8191.7（Input）            | 0x0000-0xFFFF (0-65536)        | 65536       |Read               | 1Bit          | 0x01,0x05,0x0f | BIT    |
 | MW0-MW65535（Holding Registers）   | 0x0000-0xFFFF  (0-65536)       | 65536       |Read/Write         | 16Bit,2Byte   | 0x03,0x06,0x10 | Various    |
 | SM0-SM7999                         | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 16Bit,2Byte   | 0x01,0x05,0x0f  | BIT    |
 | SD0-SD7999                         | 0x0000-0x1F3F  (0-7999)        | 8000       |Read/Write        | 16Bit,2Byte   | 0x03,0x06,0x10  | Various    |
 
 ::: tip
 The M,I,Q area supports multiple addressing methods, including (M|I|Q)X, (M|I|Q)B, (M|I|Q)W, (M|I|Q)D, which correspond to addressing by bit, Byte, Word, and Dword, respectively.
+
 When using MX and MB addressing methods, the tags only support read attributes.
+
 :::
 
 #### **.BIT**

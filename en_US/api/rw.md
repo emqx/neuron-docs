@@ -124,6 +124,7 @@ The value is displayed only when the value is read correctly, when the value is 
 The **value** is displayed only when the value is read correctly, when the value is read incorrectly, the error code is displayed with **error**.
 :::
 
+
 ## TEST Reading Tag
 
 *POST*  /api/v2/read/test
