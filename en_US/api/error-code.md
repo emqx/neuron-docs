@@ -175,6 +175,10 @@ This document describes the errors that neuron will reply to sender when calling
 ## FOCAS error codes
 
 * 10600 focas error
+* 10601 focas program file not found
+* 10602 focas program file transferring
+* 10603 focas program file type not support
+* 10604 focas program file name format error
 
 ## EtherNet/IP error codes
 
