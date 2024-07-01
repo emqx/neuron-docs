@@ -180,6 +180,10 @@
 ## FOCAS 错误码
 
 * 10600  focas 错误
+* 10601  focas 文件未找到
+* 10602  focas 文件传输中
+* 10603  focas 文件类型不支持
+* 10604  focas 文件名格式错误
 
 ## EtherNet/IP 错误码
 
