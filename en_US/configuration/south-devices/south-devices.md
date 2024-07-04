@@ -90,7 +90,7 @@ Select the **Create** icon to enter the tag page.
 ![tags-add](./assets/tags-add.png)
 
 * **Name**: This is a unique identifier that you provide for the tag, such as tag1.
-* **Attribute**: Dropdown to select the tag attribute, for example, read, write, subscribe, supporting the configuration of multiple point types.
+* **Attribute**: Dropdown to select the tag attribute, for example, read, write, subscribe, supporting the configuration of multiple tag types.
   * Read: Used to read data
   * Write: Used to write data
   * Subscribe: Only sends messages when data changes. For example, the default data is 0, when the data changes to 2, a message will be sent
