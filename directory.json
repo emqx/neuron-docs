@@ -122,6 +122,10 @@
           ]
         },
         {
+          "title": "HollySys Modbus TCP",
+          "path": "configuration/south-devices/modbus-hollysys-tcp/modbus-hollysys-tcp"
+        },
+        {
           "title": "Inovance Modbus TCP",
           "path": "configuration/south-devices/modbus-hc-tcp/modbus-hc-tcp",
           "children": [
@@ -794,6 +798,10 @@
               "path": "configuration/south-devices/modbus-tcp/faq/faq"
             }
           ]
+        },
+        {
+          "title": "HollySys Modbus TCP",
+          "path": "configuration/south-devices/modbus-hollysys-tcp/modbus-hollysys-tcp"
         },
         {
           "title": "Inovance Modbus TCP",
