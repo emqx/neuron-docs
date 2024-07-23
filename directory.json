@@ -100,6 +100,10 @@
           ]
         },
         {
+          "title": "HollySys Modbus RTU",
+          "path": "configuration/south-devices/modbus-hollysys-rtu/modbus-hollysys-rtu"
+        },
+        {
           "title": "XINJE Modbus RTU",
           "path": "configuration/south-devices/modbus-xinje-rtu/modbus-xinje-rtu"
         },
@@ -116,6 +120,10 @@
               "path": "configuration/south-devices/modbus-tcp/faq/faq"
             }
           ]
+        },
+        {
+          "title": "HollySys Modbus TCP",
+          "path": "configuration/south-devices/modbus-hollysys-tcp/modbus-hollysys-tcp"
         },
         {
           "title": "Inovance Modbus TCP",
@@ -770,6 +778,10 @@
           ]
         },
         {
+          "title": "HollySys Modbus RTU",
+          "path": "configuration/south-devices/modbus-hollysys-rtu/modbus-hollysys-rtu"
+        },
+        {
           "title": "XINJE Modbus RTU",
           "path": "configuration/south-devices/modbus-xinje-rtu/modbus-xinje-rtu"
         },
@@ -786,6 +798,10 @@
               "path": "configuration/south-devices/modbus-tcp/faq/faq"
             }
           ]
+        },
+        {
+          "title": "HollySys Modbus TCP",
+          "path": "configuration/south-devices/modbus-hollysys-tcp/modbus-hollysys-tcp"
         },
         {
           "title": "Inovance Modbus TCP",
