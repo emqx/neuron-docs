@@ -26,6 +26,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **IP Address** | The IP address of the device when using TCP connection with Neuron as the client. |
 | **Port** | The port number of the device when using TCP connection with Neuron as the client. |
 | **Connection Timeout** |  The time the system waits for a device to respond to a command. |
+| **Check Header** | Choose whether to verify the message header. After selecting True, when encountering packet header errors, the neuron and device will reconnect. |
 
 ## Configure Data Groups and Tags
 
