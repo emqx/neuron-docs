@@ -452,6 +452,10 @@
         {
           "title": "DNP 3.0",
           "path": "configuration/south-devices/dnp3/dnp3"
+        },
+        {
+          "title": "DF1",
+          "path": "configuration/south-devices/df1/df1"
         }
       ]
     },
@@ -1124,6 +1128,10 @@
         {
           "title": "DNP 3.0",
           "path": "configuration/south-devices/dnp3/dnp3"
+        },
+        {
+          "title": "DF1",
+          "path": "configuration/south-devices/df1/df1"
         }
       ]
     },
