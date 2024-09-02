@@ -63,7 +63,7 @@ Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TC
 
 ### 地址格式
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 #### **SLAVE**
 
@@ -178,7 +178,7 @@ Modbus 协议包括三种协议：Modbus TCP、Modbus RTU 和 Modbus RTU over TC
 
 ### 地址格式
 
-> IX!NODEID</span>
+> IX!NODEID
 
 **IX** 命名空间索引。
 
@@ -225,7 +225,7 @@ s7comm 插件用于带有网络端口的西门子PLC，如，s7-200/300/400/1200
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT][.LEN]</span>
+> AREA ADDRESS\[.BIT][.LEN]
 
 #### AREA ADDRESS
 
@@ -313,7 +313,7 @@ fins插件用于带有网口的欧姆龙 PLC，如 CP2E。
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -409,7 +409,7 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -507,7 +507,7 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 ### 地址格式
 
-> IOA</span>
+> IOA
 
 | IEC 60870-5-104  类型 ID         | 数据类型  |
 | :------------------------------ | :------------ |
@@ -532,7 +532,7 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 两种地址格式：
 
-* > GROUP_ADDRESS</span>
+* > GROUP_ADDRESS
 
 代表 KNX 组地址，只能在 Neuron 中写入，属于该组的 KNX 设备将对发送到该组的消息做出响应。
 
@@ -540,7 +540,7 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 `0/0/1` 是一个 KNX 组地址，只在 Neuron 中写入，属于 `0/0/1` 组的 KNX 设备将对发送到 `0/0/1` 组的消息做出响应。
 
-* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS
 
 代表 KNX 组下的设备地址，只能在 Neuron 中读取。
 
@@ -564,7 +564,7 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 ### 地址格式
 
-> AREA ADDRESS</span>
+> AREA ADDRESS
 
 | 区域  | 地址范围      | 属性    | 数据类型 |  备注        |
 | ---- | ------------ | ------ | ------- | ----------- |
