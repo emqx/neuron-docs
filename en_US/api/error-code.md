@@ -23,8 +23,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 1014    command execution failed
 * 1015    invalid ip address
 * 1016    ip address in use
-* 1017    invalid user
-* 1018    invalid password
+* 1017    request body too large
 
 ## add/del/update node/tag/plugin/group error codes
 
@@ -110,6 +109,9 @@ This document describes the errors that neuron will reply to sender when calling
 * 3017    plugin does not support write tags
 * 3018    plugin does not support sync reading
 * 3019    plugin does not support requested operation
+* 3020    plugin tag value out of range or invalid
+* 3021    plugin does not support scan tags
+* 3022    plugin does not support test reading
 
 ## FILE error codes
 
@@ -172,6 +174,10 @@ This document describes the errors that neuron will reply to sender when calling
 ## FOCAS error codes
 
 * 10600 focas error
+* 10601 focas program file not found
+* 10602 focas program file transferring
+* 10603 focas program file type not support
+* 10604 focas program file name format error
 
 ## EtherNet/IP error codes
 

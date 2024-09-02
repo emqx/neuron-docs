@@ -74,6 +74,7 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 | Boolean         | BOOL            |
 | String          | STRING          |
 | Datetime        | UINT32          |
+| LocalizedText(Read Only)  | STRING |
 
 ### Address Format
 

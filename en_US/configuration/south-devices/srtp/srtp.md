@@ -1,4 +1,4 @@
-# Overview
+# GE SRTP
 
 Neuron GE SRTP plugin accesses GE PLC devices that support SRTP over TCP.
 

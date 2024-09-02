@@ -89,17 +89,17 @@ Select the **Create** icon to enter the tag page.
 
 ![tags-add](./assets/tags-add.png)
 
-* **Name**: This is a unique identifier that you provide for the point, such as point-1.
-* **Attribute**: Dropdown to select the point attribute, for example, read, write, subscribe, static, supporting the configuration of multiple point types.
+* **Name**: This is a unique identifier that you provide for the tag, such as tag1.
+* **Attribute**: Dropdown to select the tag attribute, for example, read, write, subscribe, supporting the configuration of multiple tag types.
   * Read: Used to read data
   * Write: Used to write data
   * Subscribe: Only sends messages when data changes. For example, the default data is 0, when the data changes to 2, a message will be sent
-  * Static: Requires a value to be assigned at configuration, and the assigned value can also be seen on the monitoring page after configuration
 * **Type**: The type of data stored at this tag. This could be integer, float, string, or boolean. Choose the type according to your device data.
-* **Address**: Fill in the driver address, for example, 1!40001. 1 represents the point site number set in the Modbus simulator, and 40001 represents the point register address. For detailed instructions on how to use the driver address, please refer to [South Device - Modbus TCP](./modbus-tcp/modbus-tcp.md#examples).
-* **Decimal**: Default is not filled; when the tag attribute includes write, you can set the Decimal. In this case, device value * decimal = display value. If the point Decimal is 0.1, and the value written into the device is 234, the display value is 23.4.
+* **Address**: Fill in the tag address, for example, 1!40001. 1 represents the tag site number set in the Modbus simulator, and 40001 represents the tag register address. For detailed instructions on how to use the driver address, please refer to [South Device - Modbus TCP](./modbus-tcp/modbus-tcp.md#examples).
+* **Decimal**: not filled in by default; when the tag attribute includes read, you can set the Decimal. In this case, device value * decimal = display value.
+* **Bias**: not filled in by default; when the tag attribute is read, it supports setting Bias. At this time, device value + Bias = display value.
 * **Precision**: Configure the precision when the point type is float or double. The precision range is 0 to 17.
-* **Description**: Default is not filled.
+* **Description**: not filled in by default.
 
 ::: tip
 Once the tag is created and the equipment card is operational, the connection status should display as **Connected**. If the status remains as **Disconnected**, please execute the following commands in the terminal of the Neuron runtime environment. This will help verify if the Neuron runtime environment can access the appropriate IP address and port.

@@ -1,4 +1,4 @@
-# Overview
+# SECS GEM
 
 The SECS GEM HSMS driver supports accessing devices that comply with the SEMI E37 HSMS standard through the TCP/IP protocol. Currently, it supports passive mode for devices and acts as the active host connection.
 
@@ -24,6 +24,11 @@ The SECS GEM HSMS driver supports accessing devices that comply with the SEMI E3
 * double
 * bool
 * string
+* bytes
+
+## ADDRESS
+
+> SxFy([_1][_2][_3][_4])
 
 ## Streams and Functions
 
@@ -83,18 +88,19 @@ The SECS-II message definition defines the LIST type, which is also supported by
 | INT32        | `<I4 x>`        |                                                                                                                |
 | INT64        | `<I8 x>`        |                                                                                                                |
 | 32FLOAT      | `<F4 x>`        |                                                                                                                |
-| 64FLOAT      | `<F8 x>`        |
+| 64FLOAT      | `<F8 x>`        |                                                                                                                |
 
+The LIST type supports accessing specific elements using indices, and currently supports nesting of up to four layers of LISTs.
 
 ## Q&A
 * How to fill in the Device ID?
 The Device ID can usually be viewed on the SECS GEM HSMS protocol configuration page of the device.
 
 * How to serialize ASCII type in LIST?
-This plugin serializes ASCII in LIST as `<A[n] xxx>`, without quotes for the content. For example, "ABC" is serialized as `<A[3] ABC>`, not `<[3] "ABC">`.
+This plugin serializes ASCII in LIST as `<A[n] xxx>`, without quotes for the content. For example, "ABC" is serialized as `<A[3] ABC>`, not `<A[3] "ABC">`.
 
 * How to serialize Binary type in LIST?
-This plugin serializes Binary in LIST as `<B[n] xx>`, without quotes for the content. For example, 0xFF is serialized as `<B[1] FF>`, not `<[2] "FF">`.
+This plugin serializes Binary in LIST as `<B[n] xx>`, without quotes for the content. For example, 0xFF is serialized as `<B[1] FF>`, not `<B[2] "FF">`.
 
 * What type should be selected when creating a new point for data of LIST type?
 For points with device data type **LIST**, select **string** type when creating a new point.

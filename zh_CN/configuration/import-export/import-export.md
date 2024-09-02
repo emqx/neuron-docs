@@ -20,8 +20,8 @@ Neuron 提供以 Excel 表格方式批量导入和导出标签配置信息的功
 * attribute: 下拉框选择属性；
 * type: 下拉框选择数据类型；
 * description: 填写描述，可为空；
-* precision: 选填，用于设置读到数值的乘数，可为空；
-* decimal: 选填，当数据类型为 float 或 double 时，用于设置精度。
+* precision: 选填，当点位类型为 float 或 double 时，用于设置精度，精度范围为 0 ～17；
+* decimal: 选填，用于设置读到数值的乘数，可为空。
 
 ### 第三步，导入 Excel 表格
 

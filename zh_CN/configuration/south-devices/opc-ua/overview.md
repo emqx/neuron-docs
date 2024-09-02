@@ -76,6 +76,7 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 | Boolean         | BOOL            |
 | String          | STRING          |
 | Datetime        | UINT32          |
+| LocalizedText（只读）  | STRING    |
 
 ### 地址格式
 
