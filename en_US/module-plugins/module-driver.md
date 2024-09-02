@@ -64,7 +64,7 @@ The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus R
 
 ### Address Format
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 #### **SLAVE**
 
@@ -243,7 +243,7 @@ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
 
 ### Addresses Format
 
-> IX!NODEID</span>
+> IX!NODEID
 
 **IX** is the namespace index.
 
@@ -296,7 +296,7 @@ When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Si
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT][.LEN]</span>
+> AREA ADDRESS\[.BIT][.LEN]
 
 #### AREA ADDRESS
 
@@ -385,7 +385,7 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -482,7 +482,7 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -581,7 +581,7 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 
 ### Address Format
 
-> IOA</span>
+> IOA
 
 | IEC 60870-5-104  TYPEID         | NEURON TYPE  |
 | ------------------------------- | ------------ |
@@ -606,7 +606,7 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 
 Two address formats
 
-* > GROUP_ADDRESS</span>
+* > GROUP_ADDRESS
 
 Represents the KNX group address, which can only be written in Neuron, and KNX devices belonging to this group will react to messages sent to this group.
 
@@ -614,7 +614,7 @@ Represents the KNX group address, which can only be written in Neuron, and KNX d
 
 `0/0/1` is a KNX group address and is write only in Neuron, KNX devices belonging to this group will react to messages sent to this group.
 
-* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS
 
 Represents a KNX individual address that is a member of the group address, and is read only in Neuron.
 
@@ -639,7 +639,7 @@ Represents a KNX individual address that is a member of the group address, and i
 
 ### Address Format
 
-> AREA[ADDRESS]</span>
+> AREA[ADDRESS]
 
 | AREA | ADDRESS RANGE | ATTRIBUTE  | DATA TYPE  | REMARK             |
 | ---- | ------------- | ---------- | ------------- | ------------------ |
@@ -708,7 +708,7 @@ The dlt645 protocol supports serial and tcp connection.
 
 ### Address format
 
-> DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> </span>
+> DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> 
 
 DI<sub>3</sub>-DI<sub>2</sub>-DI<sub>1</sub>-DI<sub>0</sub> represents the data identification, and all points only support read attributes, and expressed in hexadecimal.
 
@@ -724,13 +724,13 @@ Please refer to the DL/T645-2007 industry standard data coding table for the spe
 
 | DI<sub>3</sub> | DI<sub>2</sub>    | DI<sub>1</sub>   | DI<sub>0</sub>   | Description                             | Type of data | Decimal value | Example                                                         |
 | -------------- | ----------------- | ---------------- | --------------- | -------------------------------- | ------- | --------- | ------------------------------------------------------------ |
-| 00    | 00 ~ 0A  | 00 ~ 3F | 00 ~ 0C      | DI<sub>3</sub>= 00, representing the electrical energy</br>DI<sub>0</sub>, representing the settlement date               | UINT64  | 0.01 | 00-00-00-00 Representative (current) combined active total energy</br>00-00-00-01 Representative (last settlement date) combined active total energy |
-| 00    | 80~86</br>15~1E</br>94~9A</br>29~32</br>A8~AE</br>3D~46</br>BC~C2 | 00      | 00 ~ 0C   | DI<sub>3</sub>= 00, representing the electrical energy</br>DI<sub>0</sub>, representing the settlement date             | UINT64  | 0.01  | 00-80-00-00 Representative (current) total associated power</br>00-80-00-01 Representative (last 1 settlement date) associated total power</br>00-15-00-01 Representative (last 1 settlement date) A-phase positive Active energy</br>00-15-00-01 represents (last 2 settlement days) A-phase forward active energy</br> 00-29-00-02 represents (last 2 settlement days) B-phase forward active energy |
-| 02    | 01 ~ 09   | 01 ~ 03  | 00                   | DI<sub>3</sub>= 02, representing the variable                                 | UINT16</br>UINT32 | 0.1</br>0.01</br>0.001</br>0.0001 | 02-01-01-00 Represents A-phase voltage</br>02-02-01-00 Represents A-phase current |
-| 02    | 0A ~ 0B   | 01 ~ 03  | 01 ~15               | DI<sub>2</sub>= 0A, representing the voltage harmonic content</br>DI<sub>2</sub> = 0B, representing the current harmonic content</br>DI<sub>1</sub>, representing A, B, C phase</br> DI~0~, representing the th order of harmonic content | UINT16 |  0.01   | 02-0A-01-01 Represents the 1st harmonic content of A-phase voltage</br>02-0A-02-02 represents the 2nd harmonic content of B-phase voltage</br>02-0B-01-01 represents the 1st harmonic content of A-phase current</br>02-0B-02-02 represents the second harmonic content of phase B current |
-| 02    | 80        | 00       | 01 ~ 0A              | DI<sub>3</sub>= 02, representing the variable     | UINT16    | 0.01 | 02-80-00-01 Represents zero line current</br>02-80-00-02 Represents grid frequency     |
-| 04    | 00        | 01 ~ 0E  | 01 ~ 0C              | DI<sub>3</sub>= 04, representing the parameter  | UINT8</br>UINT16</br>UINT32</br>UINT64  | 0</br>0.1</br>0.001</br>0.0001 | 04-00-01-01 Represents date and time</br>04-00-01-03 represents maximum demand period</br>04-00-04-01 represents communication address</br>04-00-05-01 represents meter running status word 1 |
-| 06    | 00 ~ 06   | 00       | 00 ~ 02              | DI<sub>3</sub>= 06, representing the load record  | UINT8</br>UINT64  | 0    | 06-00-00-00 Represents the oldest recorded block</br>06-06-00-00 represents the earliest recorded block of class 6 loads |
+| 00    | 00 ~ 0A  | 00 ~ 3F | 00 ~ 0C      | DI<sub>3</sub>= 00, representing the electrical energy<br />DI<sub>0</sub>, representing the settlement date               | UINT64  | 0.01 | 00-00-00-00 Representative (current) combined active total energy<br />00-00-00-01 Representative (last settlement date) combined active total energy |
+| 00    | 80~86<br />15~1E<br />94~9A<br />29~32<br />A8~AE<br />3D~46<br />BC~C2 | 00      | 00 ~ 0C   | DI<sub>3</sub>= 00, representing the electrical energy<br />DI<sub>0</sub>, representing the settlement date             | UINT64  | 0.01  | 00-80-00-00 Representative (current) total associated power<br />00-80-00-01 Representative (last 1 settlement date) associated total power<br />00-15-00-01 Representative (last 1 settlement date) A-phase positive Active energy<br />00-15-00-01 represents (last 2 settlement days) A-phase forward active energy<br /> 00-29-00-02 represents (last 2 settlement days) B-phase forward active energy |
+| 02    | 01 ~ 09   | 01 ~ 03  | 00                   | DI<sub>3</sub>= 02, representing the variable                                 | UINT16<br />UINT32 | 0.1<br />0.01<br />0.001<br />0.0001 | 02-01-01-00 Represents A-phase voltage<br />02-02-01-00 Represents A-phase current |
+| 02    | 0A ~ 0B   | 01 ~ 03  | 01 ~15               | DI<sub>2</sub>= 0A, representing the voltage harmonic content<br />DI<sub>2</sub> = 0B, representing the current harmonic content<br />DI<sub>1</sub>, representing A, B, C phase<br /> DI~0~, representing the th order of harmonic content | UINT16 |  0.01   | 02-0A-01-01 Represents the 1st harmonic content of A-phase voltage<br />02-0A-02-02 represents the 2nd harmonic content of B-phase voltage<br />02-0B-01-01 represents the 1st harmonic content of A-phase current<br />02-0B-02-02 represents the second harmonic content of phase B current |
+| 02    | 80        | 00       | 01 ~ 0A              | DI<sub>3</sub>= 02, representing the variable     | UINT16    | 0.01 | 02-80-00-01 Represents zero line current<br />02-80-00-02 Represents grid frequency     |
+| 04    | 00        | 01 ~ 0E  | 01 ~ 0C              | DI<sub>3</sub>= 04, representing the parameter  | UINT8<br />UINT16<br />UINT32<br />UINT64  | 0<br />0.1<br />0.001<br />0.0001 | 04-00-01-01 Represents date and time<br />04-00-01-03 represents maximum demand period<br />04-00-04-01 represents communication address<br />04-00-05-01 represents meter running status word 1 |
+| 06    | 00 ~ 06   | 00       | 00 ~ 02              | DI<sub>3</sub>= 06, representing the load record  | UINT8<br />UINT64  | 0    | 06-00-00-00 Represents the oldest recorded block<br />06-06-00-00 represents the earliest recorded block of class 6 loads |
 
 ## Sparkplug_B
 
@@ -776,7 +776,7 @@ The non a11 plugin is used for NON-A11 device.
 
 ### Address Format
 
-> COMMAND ! OFFSET[.LEN]</span>
+> COMMAND ! OFFSET[.LEN]
 
 *Example:*
 
@@ -821,7 +821,7 @@ target TC runtime (PLC), so that neuron could correctly communicate with the PLC
 
 ### Address Format
 
-> INDEX_GROUP,INDEX_OFFSET</span>
+> INDEX_GROUP,INDEX_OFFSET
 
 Both `INDEX_GROUP` and `INDEX_OFFSET` could be in decimal or hexadecimal format independently.
 
@@ -865,7 +865,7 @@ Install opcshift and the OPCDA access dependency package opc-core-components-red
 
 ### Address Format
 
-> IX!NODEID</span>
+> IX!NODEID
 
 **IX** Namespace index, IX can only be 1 when accessing opcshift.
 

@@ -22,8 +22,8 @@ Version number x.y.z Description:
 
 | Linux distribution/device                                    | Required packages  |
 | ------------------------------------------------------------ | ------------------ |
-| **Debian package system**</br>Ubuntu 20 </br>Ubuntu 18               | deb/tar.gz         |
-| **Redhat package system**</br>Contos stream 8</br>Centos stream 9    | rpm/tar.gz         |
+| **Debian package system**<br />Ubuntu 20 <br />Ubuntu 18               | deb/tar.gz         |
+| **Redhat package system**<br />Contos stream 8<br />Centos stream 9    | rpm/tar.gz         |
 
 :::tip
 The rpm/deb package uses systemd to manage the neuron process and it is recommended that the rpm/deb package is used in preference.
