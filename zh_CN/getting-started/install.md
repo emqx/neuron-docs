@@ -20,15 +20,15 @@ Neuron 软件包可从 EMQ 网站 [https://www.emqx.com/zh](https://www.emqx.com
 
 | Linux 发行版或设备                                                                   | 所需的 Neuron 包                  |
 | ------------------------------------------------------------------------------------ | --------------------------------- |
-| **Debian package system for x86_64** </br>Ubuntu 20.xx</br>Ubuntu 18.xx Desktop</br>Ubuntu 16.xx Desktop (install openssl1.1)</br>Ubuntu 14.xx Desktop (install openssl1.1)  | neuron-x.y.z-linux-x86_64.tar.gz |
-| **Redhat package system for x86_64** </br>Centos 8</br>Centos 7.x (install openssl1.1) | neuron-x.y.z-linux-x86_64.tar.gz  |
-| **Raspberry Pi 2** </br>Pi 4b+</br>Pi 3b+</br>Pi 2b+ (install openssl1.1)               | neuron-x.y.z-linux-armv7l.tar.gz  |
+| **Debian package system for x86_64** <br />Ubuntu 20.xx<br />Ubuntu 18.xx Desktop<br />Ubuntu 16.xx Desktop (install openssl1.1)<br />Ubuntu 14.xx Desktop (install openssl1.1)  | neuron-x.y.z-linux-x86_64.tar.gz |
+| **Redhat package system for x86_64** <br />Centos 8<br />Centos 7.x (install openssl1.1) | neuron-x.y.z-linux-x86_64.tar.gz  |
+| **Raspberry Pi 2** <br />Pi 4b+<br />Pi 3b+<br />Pi 2b+ (install openssl1.1)               | neuron-x.y.z-linux-armv7l.tar.gz  |
 | armv7l Ubuntu Linux System                                                           | neuron-x.y.z-linux-armv7l.tar.gz  |
 | aarch64 Ubuntu Linux System                                                          | neuron-x.y.z-linux-aarch64.tar.gz |
 
-注意: 一些Linux发行版要求安装 **openssl1.1**.</br>
-Debian 包, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)</br>
-Redhat 包, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)</br>
+注意: 一些Linux发行版要求安装 **openssl1.1**.<br />
+Debian 包, wget [http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb)<br />
+Redhat 包, [https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0](https://linuxscriptshub.com/update-openssl-1-1-0-centos-6-9-7-0/)<br />
 确保openssl升级到1.1版本之后，若执行rpm -ivh neuron-1.3.0-linux-amd64.rpm提示依赖缺失，执行rpm -ivh neuron-1.3.0-linux-amd64.rpm --nodeps --force
 
 ### 安装步骤

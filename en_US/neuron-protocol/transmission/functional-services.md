@@ -130,8 +130,8 @@ Response body syntax
 | **defl** | Default level                                     |
 | **nalw** | No of allowed levels                              |
 | **alwl** | Allowed level                                     |
-| **atxt** | Allowed text </br>ALL -1 </br> VIEW </br> OPERATOR </br> FOREMAN </br> MAINTENANCE </br> SUPERVISOR </br> ENGINEER </br> DESIGNER </br> MANAGER 7                                         |
-| **anum** | Allowed number </br>-1 </br> 0</br> 1</br> 2</br> 3</br> 4</br> 5</br> 6</br> 7 |
+| **atxt** | Allowed text <br />ALL -1 <br /> VIEW <br /> OPERATOR <br /> FOREMAN <br /> MAINTENANCE <br /> SUPERVISOR <br /> ENGINEER <br /> DESIGNER <br /> MANAGER 7                                         |
+| **anum** | Allowed number <br />-1 <br /> 0<br /> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7 |
 
 | Functions                     | Allowed Level   |
 | ----------------------------- | --------------- |
@@ -392,8 +392,8 @@ Response body syntax
 | **defl** | Default level                                     |
 | **nalw** | No of allowed levels                              |
 | **alwl** | Allowed level                                     |
-| **atxt** | Allowed text ALL                                   </br> VIEW                                               </br> OPERATOR                                           </br> FOREMAN                                            </br> MAINTENANCE                                        </br> SUPERVISOR                                         </br> ENGINEER                                           </br> DESIGNER                                           </br> MANAGER                                           |
-| **anum** | Allowed number -1</br> 0</br> 1</br> 2</br> 3</br> 4</br> 5</br> 6</br> 7                                                 |
+| **atxt** | Allowed text ALL                                   <br /> VIEW                                               <br /> OPERATOR                                           <br /> FOREMAN                                            <br /> MAINTENANCE                                        <br /> SUPERVISOR                                         <br /> ENGINEER                                           <br /> DESIGNER                                           <br /> MANAGER                                           |
+| **anum** | Allowed number -1<br /> 0<br /> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7                                                 |
 
 ## Function 15 Save User Information
 
@@ -724,10 +724,10 @@ Response body syntax
 | **tcph** | Hostname or IP address of PLC/hardware device                |
 | **tcpp** | Port number of a device                                      |
 | **ttyc** | Linux device file name (ttyS0, ttyS1)                        |
-| **ttyb** | Baud rate </br>4800 </br>9600 </br>19200 </br>38400 </br>57600 </br>115200 |
-| **ttyd** | Data bit</br> 5</br> 6</br> 7</br> 8                             |
-| **ttys** | Stop bit (string)</br> 1</br> 1.5</br> 2                        |
-| **ttyp** | Parity bit (char)</br> E - Even</br> O - Odd</br> N - None      |
+| **ttyb** | Baud rate <br />4800 <br />9600 <br />19200 <br />38400 <br />57600 <br />115200 |
+| **ttyd** | Data bit<br /> 5<br /> 6<br /> 7<br /> 8                             |
+| **ttys** | Stop bit (string)<br /> 1<br /> 1.5<br /> 2                        |
+| **ttyp** | Parity bit (char)<br /> E - Even<br /> O - Odd<br /> N - None      |
 | **parm** | Parameter array Details                                      |
 | **vars** | Variables name                                               |
 | **pars** | Parameters                                                   |
@@ -736,29 +736,29 @@ Response body syntax
 | **obsz** | Number of same objects                                       |
 | **updt** | Time interval for data transfer to platform cloud            |
 | **logt** | Time interval for data to be logged on file                  |
-| **tstd** | Timestamp display</br>0 (no display)</br>1 (display)           |
-| **disp** | All object attributes need to be displayed</br> 0 (no display)</br> 1 (display) |
-| **logs** | Need logging once connection drop</br> 0 (no need)</br> 1 (need) |
+| **tstd** | Timestamp display<br />0 (no display)<br />1 (display)           |
+| **disp** | All object attributes need to be displayed<br /> 0 (no display)<br /> 1 (display) |
+| **logs** | Need logging once connection drop<br /> 0 (no need)<br /> 1 (need) |
 | **oatt** | Object Attribute Details                                     |
 | **attn** | Attribute name                                               |
-| **attt** | Attribute value type:</br> word</br> uword</br> dword</br> udword</br> float</br> double</br> bit</br> datetime |
+| **attt** | Attribute value type:<br /> word<br /> uword<br /> dword<br /> udword<br /> float<br /> double<br /> bit<br /> datetime |
 | **deci** | No of decimal place                                          |
-| **adis** | Attribute transferred to platform</br> 0 (no need)</br> 1 (need) |
-| **achg** | Attribute can be changed</br> 0 (not allow)</br> 1 (allow)     |
-| **attr** | Attribute Read/Write indicator</br> R</br> W</br> R/W</br>S</br>SW |
+| **adis** | Attribute transferred to platform<br /> 0 (no need)<br /> 1 (need) |
+| **achg** | Attribute can be changed<br /> 0 (not allow)<br /> 1 (allow)     |
+| **attr** | Attribute Read/Write indicator<br /> R<br /> W<br /> R/W<br />S<br />SW |
 | **rtim** | Read time (for only attr: R)                                 |
 | **aadd** | Attribute Address Details                                    |
 | **obix** | Start from 0 index number                                    |
 | **pref** | Object name prefix                                           |
 | **suff** | Object name suffix                                           |
-| **addr** | Tag address (device address) </br> Note: For internal register, both tagaddr and tagattr use "-" |
+| **addr** | Tag address (device address) <br /> Note: For internal register, both tagaddr and tagattr use "-" |
 | **msgd** | Message Details                                              |
-| **msgt** | Message type</br> <</br> <=</br> ></br> >=</br> ==</br> !=</br> &</br> \^</br> \| |
+| **msgt** | Message type<br /> <<br /> <=<br /> ><br /> >=<br /> ==<br /> !=<br /> &<br /> \^<br /> \| |
 | **sobj** | Source object name                                           |
 | **satt** | Source attribute name                                        |
 | **cobj** | Compared object name                                         |
 | **catt** | Compared attribute name                                      |
-| **acat** | Alarm Category</br> critical</br> alarm</br> warning</br> event</br> view |
+| **acat** | Alarm Category<br /> critical<br /> alarm<br /> warning<br /> event<br /> view |
 | **subr** | Subroutine number (1-999)                                    |
 
 | Response |                                                   |
@@ -895,7 +895,7 @@ Response body syntax
 | -------- | ------------------------------------------------ |
 | **func** | Function code 23                                 |
 | **wtrm** | A water mark that copied to the response message |
-| **type** | 1:  Driver Channel</br>2:  Server Channel         |
+| **type** | 1:  Driver Channel<br />2:  Server Channel         |
 
 | Response |                                                             |
 | -------- | ----------------------------------------------------------- |
@@ -905,8 +905,8 @@ Response body syntax
 | **nrow** | Number of rows                                              |
 | **name** | Short name of driver                                        |
 | **desc** | Full description of driver                                  |
-| **type** | Type of driver</br> tty Serial driver</br> tcp Network driver |
-| **attr** | Attribute Read/Write indicator</br>R</br>W</br>RW</br>S</br>SW   |
+| **type** | Type of driver<br /> tty Serial driver<br /> tcp Network driver |
+| **attr** | Attribute Read/Write indicator<br />R<br />W<br />RW<br />S<br />SW   |
 
 ## Function 24 Read Driver Parameters
 
@@ -1048,10 +1048,10 @@ Response body syntax
 | **func** | Function code 25                                              |
 | **wtrm** | A water mark that copied from the request message             |
 | **chdv** | Channel driver name                                           |
-| **attt** | Attribute value type, allow text:</br> word</br> uword</br> dword</br> udword</br> float</br> double</br> bit</br> datetime                                                      |
+| **attt** | Attribute value type, allow text:<br /> word<br /> uword<br /> dword<br /> udword<br /> float<br /> double<br /> bit<br /> datetime                                                      |
 | **deci** | No of decimal place                                           |
-| **attr** | Attribute Read/Write indicator, allow text:</br> R</br> W</br> R/W                                                           |
-| **addr** | Tag address (device address) </br>Note: For internal register, both tagaddr and tagattr use "-" |
+| **attr** | Attribute Read/Write indicator, allow text:<br /> R<br /> W<br /> R/W                                                           |
+| **addr** | Tag address (device address) <br />Note: For internal register, both tagaddr and tagattr use "-" |
 
 | Response |                                                   |
 | -------- | ------------------------------------------------- |
@@ -1121,7 +1121,7 @@ Response body syntax
 | wtrm | A water mark that copied from the request message            |
 | rows | Device list                                                  |
 | name | Device name                                                  |
-| fdrw | File descriptor read and write permission, </br>0: Got permission,</br>-1: No permission |
+| fdrw | File descriptor read and write permission, <br />0: Got permission,<br />-1: No permission |
 | errc | Compiler error code                                          |
 
 ## Function 30 Read Global Variable
@@ -1450,7 +1450,7 @@ Response body syntax
 | **func** | Function code 33                                  |
 | **wtrm** | A water mark that copied from the request message |
 | **errc** | Compiler error code                               |
-| **subr** | Subroutine number</br> MAIN is -10</br> MANUAL is -20</br> AUTO is -22                                       |
+| **subr** | Subroutine number<br /> MAIN is -10<br /> MANUAL is -20<br /> AUTO is -22                                       |
 | **name** | Subroutine name                                   |
 | **nrow** | Number of rows                                    |
 | **stmt** | Statement                                         |
@@ -1525,7 +1525,7 @@ Response body syntax
 | **func** | Function code 34                                        |
 | **wtrm** | A string that copied to the response message            |
 | **csub** | Check Subroutine Exist before save (0 -- don't check, 1 -- check) |
-| **subr** | Routine Number</br> MAIN is -10</br> MANUAL is -20</br> AUTO is -22</br> Or any number (1-999) for subroutine                    |
+| **subr** | Routine Number<br /> MAIN is -10<br /> MANUAL is -20<br /> AUTO is -22<br /> Or any number (1-999) for subroutine                    |
 | **name** | Subroutine Name                                         |
 | **nrow** | No of Lines                                             |
 | **stmt** | Statement                                               |
@@ -1730,7 +1730,7 @@ Response body syntax
 | -------- | ------------------------------------------------ |
 | **func** | Function code 37                                 |
 | **wtrm** | A water mark that copied to the response message |
-| **srhm** | Search mode globalvar</br> main</br> man</br> auto</br> subroutine                                       |
+| **srhm** | Search mode globalvar<br /> main<br /> man<br /> auto<br /> subroutine                                       |
 | **upca** | Match upper lower case (1 match, 0 no need)      |
 | **wwrd** | Match whole word (1 match whole, 0 match part)   |
 | **srhs** | Search string                                    |
@@ -1741,7 +1741,7 @@ Response body syntax
 | **wtrm** | A water mark that copied from the request message |
 | **errc** | Compiler error code                               |
 | **rows** | Row number index                                  |
-| **modu** | Module globalvar</br> main</br> man</br> auto</br> subroutine                                        |
+| **modu** | Module globalvar<br /> main<br /> man<br /> auto<br /> subroutine                                        |
 | **subr** | Subroutine number                                 |
 | **line** | Line number                                       |
 | **chnu** | Start at character position                       |
@@ -2102,7 +2102,7 @@ Response body syntax
 | -------- | ------------------------------------------------ |
 | **func** | Function code 61                                 |
 | **wtrm** | A water mark that copied to the response message |
-| **actn** | Action can be anyone of following</br> act_en Active enabled alarms</br> act_unack Active Unack alarms</br> act_all Active all alarms</br> all_alm All alarms</br> all_en All enabled alarms</br> all_dis All disabled alarms                      |
+| **actn** | Action can be anyone of following<br /> act_en Active enabled alarms<br /> act_unack Active Unack alarms<br /> act_all Active all alarms<br /> all_alm All alarms<br /> all_en All enabled alarms<br /> all_dis All disabled alarms                      |
 
 | Response |                                                          |
 | -------- | -------------------------------------------------------- |
@@ -2110,23 +2110,23 @@ Response body syntax
 | **wtrm** | A water mark that copied from the request message        |
 | **errc** | Error code                                               |
 | **tstp** | TimeStamp                                                |
-| **comm** | PLC or hardware communication status</br> UP</br> DOWN                                                     |
-| **mach** | Machine Mode</br> AUTO</br> MANU</br> SERV |
-| **mode** | Please refer to Status Mode section.</br> Inactive Mode</br> Standby Mode / Semi-Standby Mode</br> Active Mode / Semi-Active Mode                           |
-| **mqcn** | MQ broker connection status</br> MQCONNECT</br> MQDISCONNECT                                             |
-| **dalm** | Device Alarm which specify which device has </br> communication problem.                                   |
+| **comm** | PLC or hardware communication status<br /> UP<br /> DOWN                                                     |
+| **mach** | Machine Mode<br /> AUTO<br /> MANU<br /> SERV |
+| **mode** | Please refer to Status Mode section.<br /> Inactive Mode<br /> Standby Mode / Semi-Standby Mode<br /> Active Mode / Semi-Active Mode                           |
+| **mqcn** | MQ broker connection status<br /> MQCONNECT<br /> MQDISCONNECT                                             |
+| **dalm** | Device Alarm which specify which device has <br /> communication problem.                                   |
 | **ndal** | Number of device alarms                                  |
 | **drow** | Device alarm rows                                        |
 | **chnl** | Channel number of devices                                |
 | **addr** | Address of devices                                       |
-| **galm** | General Alarm which user define their own alarms and </br> triggers                                                 |
+| **galm** | General Alarm which user define their own alarms and <br /> triggers                                                 |
 | **ngal** | Number of general alarms                                 |
 | **grow** | General alarm rows                                       |
-| **acat** | Alarm Category</br> critical</br> alarm</br> warning</br> event</br> view                                                     |
-| **astt** | Alarm Status</br> ON</br> OFF                                                      |
-| **amod** | Alarm Mode</br> UNACKALARM</br> DISABLE                                                  |
+| **acat** | Alarm Category<br /> critical<br /> alarm<br /> warning<br /> event<br /> view                                                     |
+| **astt** | Alarm Status<br /> ON<br /> OFF                                                      |
+| **amod** | Alarm Mode<br /> UNACKALARM<br /> DISABLE                                                  |
 | **atim** | Alarm TimeStamp                                          |
-| **alid** | Alarm ID</br> must be copied this ID when user acknowledge function 80 |
+| **alid** | Alarm ID<br /> must be copied this ID when user acknowledge function 80 |
 | **comt** | Alarm Comments                                           |
 
 ## Function 62 Ping
@@ -2184,7 +2184,7 @@ Response body syntax
 | -------- | --------------------------------------------------- |
 | **func** | Function code 70                                    |
 | **wtrm** | A water mark that copied to the response message    |
-| **acts** | Request action</br> restart - restart gateway</br> restartnew - restart gateway with new configuration</br> shutdown - shutdown gateway                         |
+| **acts** | Request action<br /> restart - restart gateway<br /> restartnew - restart gateway with new configuration<br /> shutdown - shutdown gateway                         |
 
 | Response |                                                   |
 | -------- | ------------------------------------------------- |
@@ -2235,7 +2235,7 @@ Response body syntax
 | -------- | ------------------------------------------------ |
 | **func** | Function code 71                                 |
 | **wtrm** | A water mark that copied to the response message |
-| **stat** | Request action</br> standby - standby mode (telemetry will stop)</br> active - active mode                             |
+| **stat** | Request action<br /> standby - standby mode (telemetry will stop)<br /> active - active mode                             |
 
 | Response |                                                   |
 | -------- | ------------------------------------------------- |
@@ -2394,7 +2394,7 @@ Response body syntax
   "wtrm": "DEMO-Neuron-1001_1532419775357_240",
   "errc": 0,
   "sysn": "NEURON SYSTEM v1.1.1",
-  "cpyr": "Copyright (C) 2020, EMQ Technologies Co., Ltd. All rights</br>reserved.",
+  "cpyr": "Copyright (C) 2020, EMQ Technologies Co., Ltd. All rights<br />reserved.",
   "modl": "ENT-x86_64-1-0101",
   "srno": "SN010101200227",
   "bver": " 1.1.1",
@@ -2485,7 +2485,7 @@ Response body syntax
 | -------- | ------------------------------------------------ |
 | **func** | Function code 79                                 |
 | **wtrm** | A water mark that copied to the response message |
-| **actn** | Action can be anyone of following</br> act_en Active enabled alarms</br> act_unack Active Unack alarms</br> act_all Active all alarms</br> all_alm All alarms</br> all_en All enabled alarms</br> all_dis All disabled alarms                      |
+| **actn** | Action can be anyone of following<br /> act_en Active enabled alarms<br /> act_unack Active Unack alarms<br /> act_all Active all alarms<br /> all_alm All alarms<br /> all_en All enabled alarms<br /> all_dis All disabled alarms                      |
 
 | Response |                                                   |
 | -------- | ------------------------------------------------- |
@@ -2538,7 +2538,7 @@ Response body syntax
 | **func** | Function code 80                                                                                       |
 | **wtrm** | A water mark that copied to the response message                                                       |
 | **alid** | This ID is given out by the gateway in the heartbeat message. Copy the one which is being acknowledge. |
-| **actn** | Action can be anyone of following</br> acknowledge</br> enable</br> disable                                                                                                |
+| **actn** | Action can be anyone of following<br /> acknowledge<br /> enable<br /> disable                                                                                                |
 
 | Response |                                                   |
 | -------- | ------------------------------------------------- |
@@ -2688,13 +2688,13 @@ Response body syntax
 |          | FromLast -- means backwards                            |
 |          | UseID -- use for consecutive search                    |
 |          | Blank -- means use FromYear                            |
-| **sett** | Today</br> Yesterday</br> ThisWeek</br> LastWeek</br> ThisMonth</br> LastMonth</br> Blank if using FromYear or ToYear below, can only be</br> combined with UseID or blank for first in SearchMethod</br> above                                                  |
-| **tokn** | ID string from previous request for next search. (only</br> together with UseID above)                             |
-| **ofst** | Offset for next search. positive or negative, only</br> together with UseID above, still using the search</br> pattern below                                          |
+| **sett** | Today<br /> Yesterday<br /> ThisWeek<br /> LastWeek<br /> ThisMonth<br /> LastMonth<br /> Blank if using FromYear or ToYear below, can only be<br /> combined with UseID or blank for first in SearchMethod<br /> above                                                  |
+| **tokn** | ID string from previous request for next search. (only<br /> together with UseID above)                             |
+| **ofst** | Offset for next search. positive or negative, only<br /> together with UseID above, still using the search<br /> pattern below                                          |
 | **frti** | From Datetime (timestamp)  |
 | **toti** | To Datetime (timestamp)    |
 | **cate** | Alarm Category                                         |
-| **patn** | Search Pattern - check matching string anywhere in the</br> alarm text.|
+| **patn** | Search Pattern - check matching string anywhere in the<br /> alarm text.|
 
 | Response |                                               |
 | -------- | --------------------------------------------- |
@@ -2704,12 +2704,12 @@ Response body syntax
 | **frti** | From Datetime (timestamp)                     |
 | **toti** | To Datetime (timestamp)                       |
 | **nalm** | Total number of alarms found                  |
-| **ordr** | Order </br> ascending </br> descending                                    |
+| **ordr** | Order <br /> ascending <br /> descending                                    |
 | **anum** | Alarm index number                            |
 | **tstp** | Alarm happening time                          |
 | **uack** | User who acknowledge this alarm               |
 | **cate** | Alarm Category                                |
-| **stat** | Status</br> on -- alarm on time</br> off -- alarm off time</br> ack -- alarm ack time                         |
+| **stat** | Status<br /> on -- alarm on time<br /> off -- alarm off time<br /> ack -- alarm ack time                         |
 | **comt** | Alarm message                                 |
 | **tokn** | ID string for next search                     |
 
@@ -2786,7 +2786,7 @@ Response body syntax
 | **wtrm** | A water mark that copied to the response message |
 | **srcn** | Object name with prefix and suffix               |
 | **attn** | Attribute name (empty means all attributes)      |
-| **fend** | Include the last point</br> 1 -- include</br> 0 -- not include                                 |
+| **fend** | Include the last point<br /> 1 -- include<br /> 0 -- not include                                 |
 | **tokn** | File index number for next search                |
 | **frti** |From Datetime (timestamp)|
 | **toti** |To Datetime (timestamp)|
@@ -2875,10 +2875,10 @@ Response body syntax
 | -------- | ------------------------------------------------------- |
 | **func** | Function code 83                                        |
 | **wtrm** | A water mark that copied to the response message        |
-| **logl** | Log level,</br> allow text :</br> all,</br> debug,</br> info,</br> warning,</br> err                                                     |
+| **logl** | Log level,<br /> allow text :<br /> all,<br /> debug,<br /> info,<br /> warning,<br /> err                                                     |
 | **srtt** | Sart timestamp(s), default none                         |
-| **stpt** | End timestamp(s), default none, must with a nonempty </br> "srtt" if set value for "stpt"                          |
-| **srtl** | Start line number of the log file, also can be got from </br> "last" of response message,default 0                    |
+| **stpt** | End timestamp(s), default none, must with a nonempty <br /> "srtt" if set value for "stpt"                          |
+| **srtl** | Start line number of the log file, also can be got from <br /> "last" of response message,default 0                    |
 | **proc** | Process name                                      |
 
 | Response |                                                   |
@@ -2923,7 +2923,7 @@ Response body syntax
 | -------------- | ------------------------------------------------- |
 | **func** | Function code 84                                  |
 | **wtrm** | A water mark that copied to the response message  |
-| **logn** | Log name:</br>SCRIPTLOG</br>DRIVERLOG</br>SERVICELOG             |
+| **logn** | Log name:<br />SCRIPTLOG<br />DRIVERLOG<br />SERVICELOG             |
 | **vars** | Variable for maximum of log lines can be reported |
 
 | Response       |                                                   |
@@ -3036,4 +3036,4 @@ gateway will return the following error message to the response topic.
 | **func**                | Function code                                                 |
 | **wtrm**                | A string that copied from the request message                 |
 | **errc**                | Compiler error code                                           |
-| **emsg**                | Error code Error text </br>0 , "No Error"</br>2 , "Function no has not found!"</br>3 , "Missing JSON item"</br>4 , "Invalid JSON structure"</br>10 , "Object locked"</br>11 , "Object not found"</br>12 , "Attribute locked"</br>13 , "Attribute not found"</br>14 , "Object number invalid"</br>15 , "Modification not allowed"</br>16 , "Attribute type invalid"</br>20 , "Operation not allowed"</br>21 , "Wrong password"</br>22 , "Wrong user name"</br>23 , "Not super user account"</br>24 , "System function error"</br>25 , "User not found"</br>26 , "Time out"</br>27 , "Default level"</br>28 , "Wrong number of levels"</br>29 , "User already exist"</br>30 , "Too many users"</br>40 , "Alarm not found"</br>41 , "Report empty"</br>42 , "Data format error"</br>43 , "Wrong revision"</br>44 , "Need rebuild file"</br>50 , "Too many global variables"</br>51 , "Global variable name length exceed"</br>52 , "Duplicated Global variables found"</br>53 , "Subroutine number not found"</br>54 , "Subroutine already exist"</br>55 , "No disk space for subroutine"</br>56 , "Search program number error"</br>57 , "No search string"</br>70 , "Wrong status change request"</br>71 , "Wrong gateway control request"</br>72 , "Wrong key"</br>73 , "Function not allowed in SEMI mode"</br>80 , "Attribute read only"</br>81 , "Object name error"</br>82 , "Data range error"</br>502 , "Too many channels"</br>503 , "Channel driver length size exceed maximum"</br>504 , "Channel driver invalid"</br>505 , "Channel driver type invalid"</br>506 , "Too many dummy variables"</br>507 , "Hostname length exceed maximum"</br>508 , "Port number is invalid"</br>509 , "Device file length too long"</br>510 , "Baud rate number is invalid"</br>511 , "Data bit invalid"</br>512 , "Stop bit invalid"</br>513 , "Parity bit invalid"</br>514 , "Too many objects"</br>515 , "Object ID length exceed maximum"</br>516 , "Object name length exceed maximum"</br>517 , "Duplicated object ID found"</br>518 , "Duplicated object name found"</br>519 , "Object size incorrect"</br>520 , "Update time incorrect"</br>521 , "Logging time incorrect"</br>522 , "Object status invalid"</br>523 , "Too many attributes"</br>524 , "Attribute status invalid"</br>525 , "Attribute type incorrect"</br>526 , "Attribute ID length exceed maximum"</br>527 , "Attribute name length exceed maximum"</br>528 , "Duplicated attribute ID found"</br>529 , "Duplicated attribute name found"</br>530 , "Decimal value invalid"</br>531 , "Attribute R/W length exceed maximum"</br>532 , "Attribute object number is not  match"</br>533 , "Attribute object index is not  match"</br>534 , "Prefix length exceed maximum"</br>535 , "Suffix length exceed maximum"</br>536 , "Prefix and Suffix string empty"</br>537 , "Tag address length exceed maximum"</br>538 , "Tag address invalid"</br>539 , "Tag address delimiter invalid"</br>540 , "Dummy sign invalid"</br>541 , "Tag address overlap"</br>542 , "Tag RW direction invalid"</br>543 , "Tag attribute is not match"</br>544 , "Tag bit type is not match"</br>545 , "Tag bit type error"</br>546 , "Tag ix exceed limit"</br>547 , "Tag array member invalid"</br>548 , "Alarm object name length exceed"</br>549 , "Alarm attribute name length  exceed"</br>550 , "Alarm subroutine number not  found"</br>551 , "Alarm category not found"</br>552 , "Alarm attribute not match"</br>553 , "Alarm ID not found"</br>554 , "Alarm type not found"</br>555 , "Alarm object name not found"</br>556 , "Tag name length exceed maximum"</br>557 , "Tag name invalid"</br>558 , "Duplicated tag name found"</br>559 , "Attribute tag length exceed"</br>560 , "Attribute tag not found"</br>561 , "Attribute tag index invalid"</br>562 , "Tag array invalid"</br>563 , "Tag type invalid"</br>564 , "Tag R/W direction invalid"</br>1001, "Statement expected for this row"</br>1002, "Statement does not exist"</br>1003, "INIT follows a normal statement (except REM, INIT)"</br>1004, "THEN expected after test statement"</br>1005, "Unexpected THEN, not a test above"</br>1006, "Unexpected ELIF/ELSE, not a THEN above"</br>1007, "Unknown statement"</br>1008, "GOTO undefined position (POSxxx)"</br>1009, "Error in POSxxx statement"</br>1010, "FATAL! Cannot solve all jump instruction"</br>2001, "Too many local variables in one file"</br>2002, "Syntax error in INIT (only assign local vars)"</br>2003, "INIT: assign (=) expected"</br>2004, "INIT: assign value expected"</br>2005, "INIT: expression delimiter (;) expected"</br>2006, "Syntax error in token"</br>2007, "Too long local variable name"</br>2008, "Syntax error in local variable"</br>2009, "Syntax error in constant"</br>2010, "Too long DB variable name"</br>2011, "Syntax error in [..] construction"</br>2012, "Syntax error in DB variable"</br>2013, "Syntax error in object variable"</br>2014, "Illegal label number"</br>2015, "Illegal subroutine number"</br>2016, "Too long global variable name"</br>2017, "Syntax error in global variable"</br>2018, "Syntax error in [index] construction"</br>2019, "Too long [index] name"</br>2020, "Syntax error in GOTO POSxxx instruction"</br>2021, "Syntax error in CALL SRxxx instruction"</br>2023, "Declaring a control variable"</br>2024, "Declaring too many local variables"</br>2025, "Local variable not declared/not a control variable"</br>2029, "Too long object name"</br>2030, "Too long field name"</br>2101, "Not an executable instruction/variable"</br>2102, "; expected after instruction"</br>2103, "No statement should follow RETURN/GOTO"</br>2104, "= expected after variable for assign"</br>2105, "; not allowed in test or inside parenthesis"</br>2106, "Instruction not allowed in test or inside parenthesis"</br>2107, "Operand expected"</br>2108, "Instruction should be first token in expression"</br>2109, "Operand/expression not expected"</br>2110, "Assign not allowed after test"</br>2111, "Assign variable is read-only"</br>2112, ") unexpected"</br>2113, "Object variable does not exist"</br>2114, "Index of Object variable not inside array"</br>2115, "Tag variable does not exist"</br>2116, "Index of Tag variable not inside array"</br>2117, "Unary used twice on same operand"</br>2118, "Unrecognized operator"</br>2119, "Application part for station does not exist"</br>2120, "Global variable does not exist"</br>2121, "Index of global variable not inside array"</br>2122, ", expected after variable declaration"</br>2123, "Index must be used on variable array"</br>2124, "Index cannot be used on single variable"</br>2125, "Operator is not allowed in double calculation"</br>2132, "Local variable as index is not used before"</br>2201, "Expression not completed"</br>2202, "Expression ended before resolving last parenthesis"</br>2300, "Global variable name too long"</br>2301, "Global variable name have capital letter"</br>2302, "Global variable length too large < 1000"</br>2303, "Global variable comment too long"|
+| **emsg**                | Error code Error text <br />0 , "No Error"<br />2 , "Function no has not found!"<br />3 , "Missing JSON item"<br />4 , "Invalid JSON structure"<br />10 , "Object locked"<br />11 , "Object not found"<br />12 , "Attribute locked"<br />13 , "Attribute not found"<br />14 , "Object number invalid"<br />15 , "Modification not allowed"<br />16 , "Attribute type invalid"<br />20 , "Operation not allowed"<br />21 , "Wrong password"<br />22 , "Wrong user name"<br />23 , "Not super user account"<br />24 , "System function error"<br />25 , "User not found"<br />26 , "Time out"<br />27 , "Default level"<br />28 , "Wrong number of levels"<br />29 , "User already exist"<br />30 , "Too many users"<br />40 , "Alarm not found"<br />41 , "Report empty"<br />42 , "Data format error"<br />43 , "Wrong revision"<br />44 , "Need rebuild file"<br />50 , "Too many global variables"<br />51 , "Global variable name length exceed"<br />52 , "Duplicated Global variables found"<br />53 , "Subroutine number not found"<br />54 , "Subroutine already exist"<br />55 , "No disk space for subroutine"<br />56 , "Search program number error"<br />57 , "No search string"<br />70 , "Wrong status change request"<br />71 , "Wrong gateway control request"<br />72 , "Wrong key"<br />73 , "Function not allowed in SEMI mode"<br />80 , "Attribute read only"<br />81 , "Object name error"<br />82 , "Data range error"<br />502 , "Too many channels"<br />503 , "Channel driver length size exceed maximum"<br />504 , "Channel driver invalid"<br />505 , "Channel driver type invalid"<br />506 , "Too many dummy variables"<br />507 , "Hostname length exceed maximum"<br />508 , "Port number is invalid"<br />509 , "Device file length too long"<br />510 , "Baud rate number is invalid"<br />511 , "Data bit invalid"<br />512 , "Stop bit invalid"<br />513 , "Parity bit invalid"<br />514 , "Too many objects"<br />515 , "Object ID length exceed maximum"<br />516 , "Object name length exceed maximum"<br />517 , "Duplicated object ID found"<br />518 , "Duplicated object name found"<br />519 , "Object size incorrect"<br />520 , "Update time incorrect"<br />521 , "Logging time incorrect"<br />522 , "Object status invalid"<br />523 , "Too many attributes"<br />524 , "Attribute status invalid"<br />525 , "Attribute type incorrect"<br />526 , "Attribute ID length exceed maximum"<br />527 , "Attribute name length exceed maximum"<br />528 , "Duplicated attribute ID found"<br />529 , "Duplicated attribute name found"<br />530 , "Decimal value invalid"<br />531 , "Attribute R/W length exceed maximum"<br />532 , "Attribute object number is not  match"<br />533 , "Attribute object index is not  match"<br />534 , "Prefix length exceed maximum"<br />535 , "Suffix length exceed maximum"<br />536 , "Prefix and Suffix string empty"<br />537 , "Tag address length exceed maximum"<br />538 , "Tag address invalid"<br />539 , "Tag address delimiter invalid"<br />540 , "Dummy sign invalid"<br />541 , "Tag address overlap"<br />542 , "Tag RW direction invalid"<br />543 , "Tag attribute is not match"<br />544 , "Tag bit type is not match"<br />545 , "Tag bit type error"<br />546 , "Tag ix exceed limit"<br />547 , "Tag array member invalid"<br />548 , "Alarm object name length exceed"<br />549 , "Alarm attribute name length  exceed"<br />550 , "Alarm subroutine number not  found"<br />551 , "Alarm category not found"<br />552 , "Alarm attribute not match"<br />553 , "Alarm ID not found"<br />554 , "Alarm type not found"<br />555 , "Alarm object name not found"<br />556 , "Tag name length exceed maximum"<br />557 , "Tag name invalid"<br />558 , "Duplicated tag name found"<br />559 , "Attribute tag length exceed"<br />560 , "Attribute tag not found"<br />561 , "Attribute tag index invalid"<br />562 , "Tag array invalid"<br />563 , "Tag type invalid"<br />564 , "Tag R/W direction invalid"<br />1001, "Statement expected for this row"<br />1002, "Statement does not exist"<br />1003, "INIT follows a normal statement (except REM, INIT)"<br />1004, "THEN expected after test statement"<br />1005, "Unexpected THEN, not a test above"<br />1006, "Unexpected ELIF/ELSE, not a THEN above"<br />1007, "Unknown statement"<br />1008, "GOTO undefined position (POSxxx)"<br />1009, "Error in POSxxx statement"<br />1010, "FATAL! Cannot solve all jump instruction"<br />2001, "Too many local variables in one file"<br />2002, "Syntax error in INIT (only assign local vars)"<br />2003, "INIT: assign (=) expected"<br />2004, "INIT: assign value expected"<br />2005, "INIT: expression delimiter (;) expected"<br />2006, "Syntax error in token"<br />2007, "Too long local variable name"<br />2008, "Syntax error in local variable"<br />2009, "Syntax error in constant"<br />2010, "Too long DB variable name"<br />2011, "Syntax error in [..] construction"<br />2012, "Syntax error in DB variable"<br />2013, "Syntax error in object variable"<br />2014, "Illegal label number"<br />2015, "Illegal subroutine number"<br />2016, "Too long global variable name"<br />2017, "Syntax error in global variable"<br />2018, "Syntax error in [index] construction"<br />2019, "Too long [index] name"<br />2020, "Syntax error in GOTO POSxxx instruction"<br />2021, "Syntax error in CALL SRxxx instruction"<br />2023, "Declaring a control variable"<br />2024, "Declaring too many local variables"<br />2025, "Local variable not declared/not a control variable"<br />2029, "Too long object name"<br />2030, "Too long field name"<br />2101, "Not an executable instruction/variable"<br />2102, "; expected after instruction"<br />2103, "No statement should follow RETURN/GOTO"<br />2104, "= expected after variable for assign"<br />2105, "; not allowed in test or inside parenthesis"<br />2106, "Instruction not allowed in test or inside parenthesis"<br />2107, "Operand expected"<br />2108, "Instruction should be first token in expression"<br />2109, "Operand/expression not expected"<br />2110, "Assign not allowed after test"<br />2111, "Assign variable is read-only"<br />2112, ") unexpected"<br />2113, "Object variable does not exist"<br />2114, "Index of Object variable not inside array"<br />2115, "Tag variable does not exist"<br />2116, "Index of Tag variable not inside array"<br />2117, "Unary used twice on same operand"<br />2118, "Unrecognized operator"<br />2119, "Application part for station does not exist"<br />2120, "Global variable does not exist"<br />2121, "Index of global variable not inside array"<br />2122, ", expected after variable declaration"<br />2123, "Index must be used on variable array"<br />2124, "Index cannot be used on single variable"<br />2125, "Operator is not allowed in double calculation"<br />2132, "Local variable as index is not used before"<br />2201, "Expression not completed"<br />2202, "Expression ended before resolving last parenthesis"<br />2300, "Global variable name too long"<br />2301, "Global variable name have capital letter"<br />2302, "Global variable length too large < 1000"<br />2303, "Global variable comment too long"|
