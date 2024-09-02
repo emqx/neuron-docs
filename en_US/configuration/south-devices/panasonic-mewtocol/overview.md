@@ -25,7 +25,7 @@ The Mewtocol plug-in is used to access Panasonic's FP-XH, FP0H series PLCs via E
 
 ## Address format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 ### .BIT
 Only available for **non-bit type area**, means read the specified binary bit of the specified address, the binary bit index interval is [0, 15].

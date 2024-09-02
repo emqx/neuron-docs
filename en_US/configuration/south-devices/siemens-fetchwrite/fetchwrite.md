@@ -30,7 +30,7 @@ The s5fetch-write plug-in is used for accessing Siemens PLCs with network expans
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT][.LEN]</span>
+> AREA ADDRESS\[.BIT][.LEN]
 
 #### AREA ADDRESS
 

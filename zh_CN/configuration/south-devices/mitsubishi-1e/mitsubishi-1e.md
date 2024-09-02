@@ -24,7 +24,7 @@ a1e 插件用于通过以太网访问三菱的 A 系列、FX3U、FX3G、iQ-F 系
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 

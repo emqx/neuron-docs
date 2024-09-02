@@ -26,7 +26,7 @@ The a1e plug-in is used to access Mitsubishi's A series, FX3U, FX3G, iQ-F series
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
