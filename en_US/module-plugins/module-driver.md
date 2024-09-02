@@ -64,7 +64,7 @@ The modbus protocol includes three drivers: modbus RTU, modbus tcp, and modbus R
 
 ### Address Format
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 #### **SLAVE**
 
@@ -243,7 +243,7 @@ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
 
 ### Addresses Format
 
-> IX!NODEID</span>
+> IX!NODEID
 
 **IX** is the namespace index.
 
@@ -296,7 +296,7 @@ When using the S7COMM plugin to access the S7 1200/1500 PLC,  you need to use Si
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT][.LEN]</span>
+> AREA ADDRESS\[.BIT][.LEN]
 
 #### AREA ADDRESS
 
@@ -385,7 +385,7 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -482,7 +482,7 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
@@ -581,7 +581,7 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 
 ### Address Format
 
-> IOA</span>
+> IOA
 
 | IEC 60870-5-104  TYPEID         | NEURON TYPE  |
 | ------------------------------- | ------------ |
@@ -606,7 +606,7 @@ When the data type is string, **.LEN** indicates the length of the string;   **H
 
 Two address formats
 
-* > GROUP_ADDRESS</span>
+* > GROUP_ADDRESS
 
 Represents the KNX group address, which can only be written in Neuron, and KNX devices belonging to this group will react to messages sent to this group.
 
@@ -614,7 +614,7 @@ Represents the KNX group address, which can only be written in Neuron, and KNX d
 
 `0/0/1` is a KNX group address and is write only in Neuron, KNX devices belonging to this group will react to messages sent to this group.
 
-* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS</span>
+* > GROUP_ADDRESS,INDIVIDUAL_ADDRESS
 
 Represents a KNX individual address that is a member of the group address, and is read only in Neuron.
 
@@ -639,7 +639,7 @@ Represents a KNX individual address that is a member of the group address, and i
 
 ### Address Format
 
-> AREA[ADDRESS]</span>
+> AREA[ADDRESS]
 
 | AREA | ADDRESS RANGE | ATTRIBUTE  | DATA TYPE  | REMARK             |
 | ---- | ------------- | ---------- | ------------- | ------------------ |
@@ -701,7 +701,7 @@ The dlt645 protocol supports serial and tcp connection.
 
 ### Address Format
 
-> DATA </span>
+> DATA 
 
 #### DATA
 
@@ -757,7 +757,7 @@ The non a11 plugin is used for NON-A11 device.
 
 ### Address Format
 
-> COMMAND ! OFFSET[.LEN]</span>
+> COMMAND ! OFFSET[.LEN]
 
 *Example:*
 
