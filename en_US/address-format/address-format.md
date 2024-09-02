@@ -18,7 +18,7 @@ This document describes the tag address formats for Neuron to setup with various
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!DST!ADDR</span>
+`STN!DST!ADDR`
 
 **STN** is the slave station device number
 
@@ -52,7 +52,7 @@ Set 8 (10 octal) for 1771-KG and set 0 for 1785-KE and 1770-KF2 in KG mode
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!DST!ADDR</span>
+`STN!DST!ADDR`
 
 **STN** is the slave station device number (KE/KF2 module address)
 
@@ -84,7 +84,7 @@ Set 8 (10 octal) for 1771-KG and set 0 for 1785-KE and 1770-KF2 in KG mode
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
+`STN!ADDR`
 
 **STN** is the slave station number (CPU) (1 – 247)
 
@@ -110,7 +110,7 @@ Example: **10!W100** means word 100 in slave station 10.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the register address as following:
 
@@ -134,7 +134,7 @@ Example:**W4000** means word address 4000.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
+`STN!ADDR`
 
 **STN** is the slave station number (Ad0 in CPU) (1 – 31)
 
@@ -160,7 +160,7 @@ Example: **1!W100** means word 100 in slave number 1.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
+`STN!ADDR`
 
 **STN** is the slave station number (CPU) (1 – 247)
 
@@ -186,7 +186,7 @@ Example: **1!R100** means word 100 in slave number 1.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the register address as following:
 
@@ -215,7 +215,7 @@ Example: **DM100** means word 100 in DM data memory area.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR</span>
+`STN!ADDR`
 
 **STN** is station number/module number (0 – 31)
 
@@ -246,7 +246,7 @@ Example: **10!DM100** means word 100 in data memory in slave 10.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR[.BIT]</span>
+`ADDR[.BIT]`
 
 **ADDR**  is the data memory word address starting with “DM”
 
@@ -279,7 +279,7 @@ Example: DM100 means word 100 in data memory.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the address as following
 
@@ -313,7 +313,7 @@ Example: DB100 (data block 100)
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the address as following
 
@@ -349,7 +349,7 @@ Example: DB100 (data block 100)
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the address as following
 
@@ -385,7 +385,7 @@ Example: **DB200.DBW20** (DBddd.DBWddddd) means data word 20 in data block 200.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the address as following
 
@@ -441,7 +441,7 @@ Particularly to access a DB in S71500 some additional setting plc-side are neede
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the register address
 
@@ -476,7 +476,7 @@ Example: **D100** means word 100 in D data memory area.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the register address as following:
 
@@ -516,7 +516,7 @@ Multiple connection requests cannot be handled by a single port in Q series PLCs
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">ADDR</span>
+`ADDR`
 
 **ADDR** is the register address as following:
 
@@ -564,7 +564,7 @@ Example: **D100** means word 100 in D data memory area.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
+`STN!ADDR[.BIT][#ENDIAN]`
 
 **STN** is slave number or device ID (0-247)
 
@@ -595,7 +595,7 @@ Example: **D100** means word 100 in D data memory area.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
+`STN!ADDR[.BIT][#ENDIAN]`
 
 **STN** is slave number or device ID (0-247)
 
@@ -628,7 +628,7 @@ Example:**2!404001** means word address 4000 with in slave number 2.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN!ADDR[.BIT][#ENDIAN]</span>
+`STN!ADDR[.BIT][#ENDIAN]`
 
 **STN** is slave number or device ID (0-247)
 
@@ -661,7 +661,7 @@ Example:**2!404001** means word address 4000 with in slave number 2.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">FC!ADDR</span>
+`FC!ADDR`
 
 **FC** is functional constraints value as following:
 
@@ -770,7 +770,7 @@ $ openssl rsa -inform PEM -in 1.key -outform DER -out key.der
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">IX!NODEID</span>
+`IX!NODEID`
 
 **IX** is the namespace index. (1-32767)
 
@@ -807,7 +807,7 @@ Please refer to OPC UA standard for the explanation of namespace index and node 
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">CA!IOA</span>
+`CA!IOA`
 
 **CA** Station Address
 
@@ -842,7 +842,7 @@ The calibration method of general electricity meter is even calibration.
 
 ### Address String
 
-> <span style="font-family:sans-serif; font-size:2em;">STN1!STN2!ADDR</span>
+`STN1!STN2!ADDR`
 
 **STN1** is the first three bytes of the communication address of the meter.
 
