@@ -43,7 +43,7 @@ The IEC61850 plug-in is used for read/write to the IEC61850 server and currently
 
 ## Address forma
 
-> Logical Devices/Logical Nodes$FC$DO$DA</span>
+> Logical Devices/Logical Nodes$FC$DO$DA
 
 ## Examples
 

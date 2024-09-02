@@ -11,8 +11,8 @@ Neuron and NeuronEX support 32-bit/64-bit ARM and 64-bit x86 architectures on Li
 
 | Linux Distribution                                    | Required Package  |
 | ------------------------------------------------------------ | ------------------ |
-| Ubuntu 20.04 </br>Ubuntu 18.04 </br>Ubuntu16.04</br>Debian 11</br>Debian 10</br>Debian 9</br>Debian 8               | **Debian Software Package** (.deb)         |
-| CentOS Stream 9</br>CentOS Stream 8</br>CentOS 7    | **Redhat Package Manager** (.rpm)         |
+| Ubuntu 20.04 <br />Ubuntu 18.04 <br />Ubuntu16.04<br />Debian 11<br />Debian 10<br />Debian 9<br />Debian 8               | **Debian Software Package** (.deb)         |
+| CentOS Stream 9<br />CentOS Stream 8<br />CentOS 7    | **Redhat Package Manager** (.rpm)         |
 | Other Linux | **Tape Archiver** (tar.gz) |
 
 :::tip
@@ -36,15 +36,15 @@ The following table lists the hardware conditions required for the minimum deman
 :::tip
 Neuron or NeuronEX has no upper limitation on the number of tags. It depends on the allocated CPU and memory resources. Neuron is very portable to run on limited resource like single board hardware, or on powerful servers. The following figures are the results of Neuron performance test for your reference and these benchmark results are still not the upper limits. A more powerful server can be used for more tags.
 
-Platform                         : Intel(R) Xeon(R) Gold 6266C@3.00GHz</br>
-Memory                           : 4G</br>
-Architecture                     : x86</br>
-OS Support                       : Ubuntu 20.04</br>
-No. of connections               : 1000 connections</br>
-No. of tags for each connection  : 300 tags</br>
-Total tags                       : 300,000 tags</br>
-Memory Usage                     : 300M</br>
-CPU Usage                        : 90%</br>
+Platform                         : Intel(R) Xeon(R) Gold 6266C@3.00GHz<br />
+Memory                           : 4G<br />
+Architecture                     : x86<br />
+OS Support                       : Ubuntu 20.04<br />
+No. of connections               : 1000 connections<br />
+No. of tags for each connection  : 300 tags<br />
+Total tags                       : 300,000 tags<br />
+Memory Usage                     : 300M<br />
+CPU Usage                        : 90%<br />
 
 :::
 

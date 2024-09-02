@@ -18,7 +18,7 @@ File plugin is used to read or write files.
 
 ### Address Format
 
-> FILE PATH</span>
+> FILE PATH
 
 ### Address Example
 

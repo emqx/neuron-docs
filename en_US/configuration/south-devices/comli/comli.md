@@ -31,7 +31,7 @@ This comli plugin is used to access ABB's COMLI compatible control system throug
 
 ## Address format
 
-> SLAVE!AREA.ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!AREA.ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 ### **SLAVE**
 
