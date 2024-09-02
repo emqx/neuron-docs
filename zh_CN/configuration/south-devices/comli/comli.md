@@ -46,7 +46,7 @@ Neuron ABB COMLI 插件用于通过串口网络访问 ABB 的 COMLI 协议兼容
 
 ### 地址格式
 
-> SLAVE!AREA.ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!AREA.ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 #### **SLAVE**
 

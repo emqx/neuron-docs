@@ -16,7 +16,7 @@ $ cmake .. && make
 :::tip
 CMakeLists 中有三个可选参数：
 * CMAKE_BUILD_TYPE "Debug"，默认编译 debug 版本。
-* DISABLE_WERROR，将所有的警告当作错误进行处理。</br>使用示例：```cmake -DISABLE_WERROR=1 ..```
+* DISABLE_WERROR，将所有的警告当作错误进行处理。<br />使用示例：```cmake -DISABLE_WERROR=1 ..```
 * DISABLE_ASAN，选择是否开启 libasan 内存检测。
 :::
 

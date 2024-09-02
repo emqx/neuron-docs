@@ -4,7 +4,7 @@
 
 Modbus is a communication protocol commonly used to connect industrial automation equipment and control systems, and it can be implemented on various physical and transport layers, including serial and Ethernet. Modbus TCP and Modbus RTU are two commonly used implementation methods.
 
-Modbus TCP uses Ethernet communication and is a protocol based on the TCP/IP protocol stack. In Neuron, the modbus-tcp and modbus-plus-tcp modules use the Modbus TCP protocol. When some devices that support Modbus RTU and other protocols need to be converted to Modbus TCP protocol for passthrough or similar functions, these two modules are also required.</br>
+Modbus TCP uses Ethernet communication and is a protocol based on the TCP/IP protocol stack. In Neuron, the modbus-tcp and modbus-plus-tcp modules use the Modbus TCP protocol. When some devices that support Modbus RTU and other protocols need to be converted to Modbus TCP protocol for passthrough or similar functions, these two modules are also required.<br />
 The difference between the two modules is that the modbus-tcp module is open source and does not require License authentication, while the modbus-plus-tcp module requires License authentication. The modbus-plus-tcp module supports configuring the Client/Server mode, as well as more data types, and also optimizes the read/write performance. Therefore, the functionality of the modbus-plus-tcp module is stronger than that of the modbus-tcp module. The modbus-tcp module is suitable for users who are familiar with the use of Neuron.
 
 ## Parameter Configuration
@@ -43,7 +43,7 @@ The difference between the two modules is that the modbus-tcp module is open sou
 
 ### Address Format
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 #### **SLAVE**
 

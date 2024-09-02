@@ -37,7 +37,7 @@
 
 ### 地址格式
 
-> SITE ! COMMAND ! OFFSET[.LEN]</span>
+> SITE ! COMMAND ! OFFSET[.LEN]
 
 ### 地址示例
 

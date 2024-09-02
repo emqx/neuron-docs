@@ -55,7 +55,7 @@ PROFINET IO 系统包括几个部分：IO 控制器，IO 设备，IO 监控器�
 
 ### 地址格式
 
-> SLOT:SUB_SLOT:INDEX\[.BIT][#ENDIAN]</span>
+> SLOT:SUB_SLOT:INDEX\[.BIT][#ENDIAN]
 
 #### **SLOT**
 
