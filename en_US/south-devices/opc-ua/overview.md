@@ -32,7 +32,7 @@ The Neuron OPC UA plug-in can be used as a client to access KEPServerEX, Industr
 
 ## Address format
 
-> NS!NODEID</span>
+> NS!NODEID
 
 **NS** Namespace index.
 

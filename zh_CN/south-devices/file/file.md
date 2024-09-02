@@ -18,7 +18,7 @@ File 插件用于读写文件。
 
 ### 地址格式
 
-> FILE PATH</span>
+> FILE PATH
 
 ### 地址示例
 

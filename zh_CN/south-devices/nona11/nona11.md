@@ -22,7 +22,7 @@
 
 ### 地址格式
 
-> COMMAND ! OFFSET[.LEN]</span>
+> COMMAND ! OFFSET[.LEN]
 
 ### 地址示例
 

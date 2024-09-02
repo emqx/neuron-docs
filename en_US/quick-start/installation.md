@@ -21,8 +21,8 @@ Users can choose according to their own needs.
 
 | Linux distribution                                    | Required packages  |
 | ------------------------------------------------------------ | ------------------ |
-| **Debian package system**</br>Ubuntu 20.04 </br>Ubuntu 18.04 </br>Ubuntu16.04</br>Debian 11</br>Debian 10</br>Debian 9</br>Debian 8               | deb         |
-| **Redhat package system**</br>CentOS Stream 9</br>CentOS Stream 8</br>CentOS 7    | rpm         |
+| **Debian package system**<br />Ubuntu 20.04 <br />Ubuntu 18.04 <br />Ubuntu16.04<br />Debian 11<br />Debian 10<br />Debian 9<br />Debian 8               | deb         |
+| **Redhat package system**<br />CentOS Stream 9<br />CentOS Stream 8<br />CentOS 7    | rpm         |
 
 :::tip
 The rpm/deb package uses systemd to manage the neuron process and it is recommended that the rpm/deb package is used in preference.

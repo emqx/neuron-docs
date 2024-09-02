@@ -12,9 +12,9 @@ NeuronEX 是 Neuron 集成数据流处理引擎 eKuiper 的版本。在 NeuronEX
 
 ### 多样化连接
 
-Neuron 为包括楼宇自动化、CNC 机器、机器人、电力、各种 PLC 甚至智能传感器在内的各个行业提供多样的驱动协议支持，例如 Modbus、OPCUA、Ethernet/IP、IEC104、BACnet、Siemens、Mitsubishi 等。</br>
-Neuron 支持连接各种云或者是 IIoT 平台的应用，例如 MQTT、WebSocket、SparkPlug B 和其他自定义的应用。</br>
-通过 MQTT，可将 IIoT 平台、大数据和 AI/ML 分析软件更好地集成到私有云、EMQX Cloud、AWS、Google Cloud、Azure 或本地服务器中。</br>
+Neuron 为包括楼宇自动化、CNC 机器、机器人、电力、各种 PLC 甚至智能传感器在内的各个行业提供多样的驱动协议支持，例如 Modbus、OPCUA、Ethernet/IP、IEC104、BACnet、Siemens、Mitsubishi 等。<br />
+Neuron 支持连接各种云或者是 IIoT 平台的应用，例如 MQTT、WebSocket、SparkPlug B 和其他自定义的应用。<br />
+通过 MQTT，可将 IIoT 平台、大数据和 AI/ML 分析软件更好地集成到私有云、EMQX Cloud、AWS、Google Cloud、Azure 或本地服务器中。<br />
 通过 SparkPlug B，将为工业应用提供统一的数据操作，消除 ERP、MES、SCADA 和 historian 访问设备数据的复杂性。
 
 ### 轻量化

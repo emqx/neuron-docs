@@ -18,7 +18,7 @@ $ cmake .. && make
 :::tip
 There are three optional parameters in CMakeLists:
 * CMAKE_ BUILD_ Type "Debug", which compiles the debug version by default.
-* DISABLE_WERROR, which treats all warnings as errors.</br>Usage example:```cmake -DISABLE_WERROR=1 ..```
+* DISABLE_WERROR, which treats all warnings as errors.<br />Usage example:```cmake -DISABLE_WERROR=1 ..```
 * DISABLE_ ASAN, select whether to enable libasan memory detection.
 :::
 
@@ -40,7 +40,7 @@ $ ./ neuron
 3. Combining libasan runtime memory analysis, most memory issues can be resolved.
 
 :::tip
-Libasan refers to the Address Sanitizer (ASan) library, which is a memory error detection tool used to help detect memory errors during program execution, such as buffer overflows, using freed memory, and using uninitialized memory.</br>
-ASan detects memory errors by injecting additional code while the program is running. It uses a red and black tree data structure to track the allocation of memory blocks, and uses shadow memory to detect read and write access to unallocated memory. When a memory error is detected, ASan prints relevant information, such as the location and type of the error.</br>
+Libasan refers to the Address Sanitizer (ASan) library, which is a memory error detection tool used to help detect memory errors during program execution, such as buffer overflows, using freed memory, and using uninitialized memory.<br />
+ASan detects memory errors by injecting additional code while the program is running. It uses a red and black tree data structure to track the allocation of memory blocks, and uses shadow memory to detect read and write access to unallocated memory. When a memory error is detected, ASan prints relevant information, such as the location and type of the error.<br />
 Libasan is a runtime library for ASan that can be used with compilers, such as Clang, GCC, and so on. It provides the necessary functions and data structures to detect and report memory errors during program execution.
 :::

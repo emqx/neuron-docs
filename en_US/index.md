@@ -14,9 +14,9 @@ NeuronEX is a version of the Neuron integrated data stream processing engine eKu
 
 ### Diversified Connectivity
 
-Neuron provides diversified driver protocol support for various industries, including building automation, CNC machines, Robotics, Electricity, various PLCs, and even intelligent sensors, such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi, and more.</br>
-Neuron supports applications that connect to various cloud or IIoT platforms, such as MQTT, WebSocket, SparkPlug B, and other custom applications.</br>
-With MQTT, IIoT platforms, big data, and AI/ML analysis software can be better integrated into private clouds, EMQX Cloud, AWS, Google Cloud, Azure, or local servers.</br>
+Neuron provides diversified driver protocol support for various industries, including building automation, CNC machines, Robotics, Electricity, various PLCs, and even intelligent sensors, such as Modbus, OPCUA, Ethernet/IP, IEC104, BACnet, Siemens, Mitsubishi, and more.<br />
+Neuron supports applications that connect to various cloud or IIoT platforms, such as MQTT, WebSocket, SparkPlug B, and other custom applications.<br />
+With MQTT, IIoT platforms, big data, and AI/ML analysis software can be better integrated into private clouds, EMQX Cloud, AWS, Google Cloud, Azure, or local servers.<br />
 Through SparkPlug B, unified data operations will be provided for industrial applications, eliminating the complexity of ERP, MES, SCADA, and historian accessing device data.
 
 ### Lightweight

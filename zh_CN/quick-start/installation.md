@@ -10,8 +10,8 @@ Neuron 分成两个安装包：
 
 | Linux 发行版                                                   | 所需包          |
 | :----------------------------------------------------------------- | :--------- |
-| **Debian package system**</br>Ubuntu 20.04 </br>Ubuntu 18.04 </br>Ubuntu 16.04 </br>Debian 11</br>Debian 10</br>Debian 9</br>Debian 8             | deb |
-| **Redhat package system**</br>CentOS Stream 9</br>CentOS Stream 8</br>CentOS 7  | rpm |
+| **Debian package system**<br />Ubuntu 20.04 <br />Ubuntu 18.04 <br />Ubuntu 16.04 <br />Debian 11<br />Debian 10<br />Debian 9<br />Debian 8             | deb |
+| **Redhat package system**<br />CentOS Stream 9<br />CentOS Stream 8<br />CentOS 7  | rpm |
 
 :::tip
 rpm/deb package 中使用了 systemd 管理 neuron 进程，建议优先使用 rpm/deb package。

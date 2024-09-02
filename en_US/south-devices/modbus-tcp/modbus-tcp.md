@@ -38,7 +38,7 @@ In addition to supporting data acquisition and processing via TCP client mode, t
 
 ## Address format
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 ### **SLAVE**
 

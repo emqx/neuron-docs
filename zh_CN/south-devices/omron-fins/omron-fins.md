@@ -28,7 +28,7 @@ fins 插件用于带有网口的欧姆龙 PLC，如 CP2E。
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 

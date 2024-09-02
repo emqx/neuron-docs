@@ -26,7 +26,7 @@ qna3e 插件用于通过以太网访问三菱的QnA兼容PLC，包括Q系列（M
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
