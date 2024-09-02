@@ -22,8 +22,8 @@ Neuron 软件包可从 Neuron 官网 [https://neugates.io/zh/downloads](https://
 
 | Linux 发行版或设备                                                   | 所需包          |
 | :----------------------------------------------------------------- | :--------- |
-| **Debian package system**</br>Ubuntu 20 </br>Ubuntu 18             | deb/tar.gz |
-| **Redhat package system**</br>Contos stream 8</br>Centos stream 9  | rpm/tar.gz |
+| **Debian package system**<br />Ubuntu 20 <br />Ubuntu 18             | deb/tar.gz |
+| **Redhat package system**<br />Contos stream 8<br />Centos stream 9  | rpm/tar.gz |
 
 :::tip
 rpm/deb package 中使用了 systemd 管理 neuron 进程，建议优先使用 rpm/deb package。
