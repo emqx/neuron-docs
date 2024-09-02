@@ -21,7 +21,7 @@ Neuron supports BACnet IP protocol and can communicate with BACnet devices throu
 
 ### Address Format
 
-> AREA[ADDRESS]</span>
+> AREA[ADDRESS]
 
 | AREA | ADDRESS RANGE | ATTRIBUTE  | DATA TYPE  | REMARK             |
 | ---- | ------------- | ---------- | ------------- | ------------------ |

@@ -30,7 +30,7 @@ s5fetch-write 插件用于带有网络扩展模块 CP443 的西门子 PLC 的访
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT][.LEN]</span>
+> AREA ADDRESS\[.BIT][.LEN]
 
 #### AREA ADDRESS
 

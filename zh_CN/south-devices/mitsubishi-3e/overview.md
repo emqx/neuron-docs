@@ -24,7 +24,7 @@ Mitsubishi 3E 完全兼容 Mitsubishi SLMP 协议。
 
 ## 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 ### .BIT
 

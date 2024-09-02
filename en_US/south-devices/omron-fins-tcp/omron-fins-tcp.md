@@ -30,7 +30,7 @@ Neuron supports Fins TCP protocol, which can be used to communicate with Omron P
 
 ## Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 ### AREA ADDRESS
 

@@ -76,7 +76,7 @@ file perms：指定创建文件的缺省访问权限。
 规则描述了日志是怎么被过滤、格式化以及被输出的。
 语法：
 
-> (category).(level)    (output),(options, optional); (format name, optional)</span>
+> (category).(level)    (output),(options, optional); (format name, optional)
 
 #### category
 

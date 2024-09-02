@@ -35,7 +35,7 @@ The Modbus RTU protocol uses binary encoding and can transmit data over RS-232, 
 
 ## Address format
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 ### **SLAVE**
 

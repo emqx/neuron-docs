@@ -79,7 +79,7 @@ Conversion format string: Conversion format string is similar to C's printf func
 Rules describe how logs are filtered, formatted, and outputted.
 Grammar:
 
-> (category).(level)    (output),(options, optional); (format name, optional)</span>
+> (category).(level)    (output),(options, optional); (format name, optional)
 
 #### category
 
