@@ -6968,6 +6968,130 @@
         "x-run-in-apifox": "https://apifox.com/web/project/3516282/apis/api-123060901-run"
       }
     },
+    "/api/neuron/scan/tags": {
+      "get": {
+        "summary": "Scan Server Tags",
+        "x-apifox-folder": "Neuron/configuration",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Neuron/configuration"
+        ],
+        "parameters": [
+          {
+            "name": "node",
+            "in": "query",
+            "description": "Node name",
+            "required": true,
+            "example": "ua01",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Node address",
+            "required": false,
+            "example": "0!86",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "integer",
+                      "description": "error code"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "total tags"
+                    },
+                    "type":{
+                      "type": "integer",
+                      "description": "tag type"
+                    },
+                    "is_array": {
+                      "type": "integer",
+                      "description": "is array"
+                    },
+                    "tags": {
+                      "type": "array", 
+                      "description" : "tags",
+                      "items": {
+                       "type": "object",
+                       "properties": {
+                        "name": {
+                          "type": "string",
+                          "description": "tag name"
+                        },
+                        "id": {
+                          "type": "string",
+                          "description": "tag id"
+                        },
+                        "tag": {
+                          "type": "integer",
+                          "description": "tag address"
+                        }
+                       } 
+                      }
+                    }
+                  },
+                  "required": [
+                    "error",
+                    "total",
+                    "type",
+                    "is_array",
+                    "tags"
+                  ],
+                  "x-apifox-orders": [
+                    "error"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "success",
+                    "value": {
+                      "error": 0,
+                      "total": 3,
+                      "type": 15,
+                      "is_array": false,
+                      "tags": [
+                        {
+                          "name": "Objects",
+                          "id": "0!85",
+                          "tag": 1
+                        },
+                        {
+                          "name": "Types",
+                          "id": "0!86",
+                          "tag": 1
+                        },
+                        {
+                          "name": "Views",
+                          "id": "0!87",
+                          "tag": 1
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/neuron/metrics": {
       "get": {
         "summary": "Get Metrics",
