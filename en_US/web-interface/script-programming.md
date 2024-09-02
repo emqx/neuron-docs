@@ -26,7 +26,7 @@ All useless created subroutine in the dropdown box can be deleted by pressing th
 
 Note: When assigning a value to a variable with the address format Dummy, the script statement is programmed in the following format.
 
-> <span style="font-family:sans-serif; font-size:2em;">object[ix].attribute</span>
+`object[ix].attribute`
 
 | Name        | Description                                            |
 | :-----------| :------------------------------------------------------|

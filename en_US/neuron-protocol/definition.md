@@ -172,7 +172,7 @@ function onMessage(evt)
 {
 
 writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data
-+'</span>');
++'`');
 
 if (temp < 5) {
 
@@ -218,7 +218,7 @@ function onError(evt)
 
 {
 
-writeToScreen('<span style="color: red;">ERROR:</span> ' +
+writeToScreen('<span style="color: red;">ERROR:` ' +
 evt.data);
 
 }
