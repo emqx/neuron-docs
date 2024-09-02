@@ -78,7 +78,7 @@ In the context of the ADS plugin, a tag address consists of two components,
 `INDEX_GROUP` and `INDEX_OFFSET`, which represents the index group and the
 index offset respectively.
 
-> INDEX_GROUP,INDEX_OFFSET</span>
+> INDEX_GROUP,INDEX_OFFSET
 
 Both `INDEX_GROUP` and `INDEX_OFFSET` could be in decimal or hexadecimal format.
 

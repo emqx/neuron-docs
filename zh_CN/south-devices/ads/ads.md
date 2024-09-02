@@ -64,7 +64,7 @@ Index group 用于指定正在访问的数据的类别或类型，而 index offs
 
 对 ADS 插件来说，一个点位地址由 INDEX_GROUP 和 INDEX_OFFSET 两个部分组成，分别表示 index group 和 index offset 。
 
-> INDEX_GROUP,INDEX_OFFSET</span>
+> INDEX_GROUP,INDEX_OFFSET
 
 `INDEX_GROUP` 和 `INDEX_OFFSET` 可以分别使用十进制或十六进制指定。
 

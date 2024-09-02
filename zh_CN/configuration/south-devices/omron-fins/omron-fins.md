@@ -29,7 +29,7 @@ Neuron 支持 FINS TCP 协议，可以通过 FINS TCP 协议与欧姆龙 PLC 进
 
 ## 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 ### AREA ADDRESS
 

@@ -24,7 +24,7 @@ The Mitsubishi 3E is fully compatible with the Mitsubishi SLMP protocol.
 
 ## Address format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 ### .BIT
 

@@ -46,9 +46,9 @@ The certificate file can be imported into the target server in advance and set a
 
 You can use the following steps and commands to convert the PEM certificate and private key to DER format:
 
-1. Save all contents including `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` as 1.crt; </br>
+1. Save all contents including `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` as 1.crt; <br />
 
-2. Save all contents including `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` as 1.key; </br>
+2. Save all contents including `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` as 1.key; <br />
 
 3. Run the following command:
 
