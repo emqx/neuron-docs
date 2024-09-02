@@ -86,7 +86,7 @@ Press the &quot;Create&quot; button and an input dialog box for property setting
 | Column   | Description                                                                           |
 | :-------- | ------------------------------------------------------------------------------------- |
 | Name     | This is the name of the attributes.                                                    |
-| Type     | This is data type of the attributes. It includes</br>word – 2 bytes integer</br>uword – 2 bytes unsigned integer</br>dword – 4 bytes integer</br>udword – 4 bytes unsigned integer</br>bit – Boolean (Y/N)</br>datetime – Unix timestamp value</br>float – IEEE floating value</br>double – IEEE double floating value   |
+| Type     | This is data type of the attributes. It includes<br />word – 2 bytes integer<br />uword – 2 bytes unsigned integer<br />dword – 4 bytes integer<br />udword – 4 bytes unsigned integer<br />bit – Boolean (Y/N)<br />datetime – Unix timestamp value<br />float – IEEE floating value<br />double – IEEE double floating value   |
 | Decimal  | This is a decimal point for data type for word, uword, dword, udword only. Other data type will display &#39;-&#39;.            |
 | RW       | Read/Write direction for PLC, this represents the direction of read or write, or both read/write for PLC                             |
 | Rtime    | This is read polling time interval for PLC when RW is read or                           |

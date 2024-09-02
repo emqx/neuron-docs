@@ -85,7 +85,7 @@
 | 栏目     | 说明                                                |
 | :-------------------- | :-------------------------------------|
 | 名称     | 属性名称                                             |
-| 类型     | 属性的数据类型。包括：</br>word - 2 个字节的整数</br>uword - 2 个字节的无符号整数</br>dword - 4 个字节的整数</br>udword - 4 个字节的无符号整数</br>bit - 布尔型（Y/N） datetime - Unix 时间戳值</br>float - IEEE 浮动值</br>double - IEEE 双浮动值 |
+| 类型     | 属性的数据类型。包括：<br />word - 2 个字节的整数<br />uword - 2 个字节的无符号整数<br />dword - 4 个字节的整数<br />udword - 4 个字节的无符号整数<br />bit - 布尔型（Y/N） datetime - Unix 时间戳值<br />float - IEEE 浮动值<br />double - IEEE 双浮动值 |
 | 小数点     | 这是数据类型的小数点，只适用于 word、uword、dword、udword。其他数据类型将显示 '-'                                  |
 | R/W方向   | PLC 的读/写方向，这代表了 PLC 的读或写方向，或同时读/写的方向       |
 | Rtime    | 这是 PLC 在读取 RW 时的读取轮询时间间隔，也是 RW 的读取时间间隔     |

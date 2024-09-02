@@ -40,8 +40,8 @@ There are five kinds of system status in Neuron.
 
 | Status                                | Description                           |
 | ------------------------------------- | ------------------------------------------------- |
-| COMM UP</br>COMM DOWN                  | device communication up</br> device communication down                                                                                |
-| MANU</br>AUTO</br>SERV                  | machine in manual mode</br>machine in auto mode</br>machine in service mode                                                            |
-| ACTIVE</br>INACTIVE</br>STANDBY</br>SEMI | Neuron system in active mode</br>Neuron system in inactive mode</br>Neuron system in standby mode</br>Neuron system in semi-active mode |
-| MQCONNECT</br>MQDISCONNECT             | MQ broker connected</br>MQ broker disconnected                                                                                        |
-| NO ALARM</br>ALARM</br>UNACK ALARM      | No alarm found</br>Alarms</br>Unacknowlegde alarms                                                                                     |
+| COMM UP<br />COMM DOWN                  | device communication up<br /> device communication down                                                                                |
+| MANU<br />AUTO<br />SERV                  | machine in manual mode<br />machine in auto mode<br />machine in service mode                                                            |
+| ACTIVE<br />INACTIVE<br />STANDBY<br />SEMI | Neuron system in active mode<br />Neuron system in inactive mode<br />Neuron system in standby mode<br />Neuron system in semi-active mode |
+| MQCONNECT<br />MQDISCONNECT             | MQ broker connected<br />MQ broker disconnected                                                                                        |
+| NO ALARM<br />ALARM<br />UNACK ALARM      | No alarm found<br />Alarms<br />Unacknowlegde alarms                                                                                     |

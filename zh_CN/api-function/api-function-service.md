@@ -130,8 +130,8 @@ Content-Type: application/json
 | **defl** | 默认登录级别                 |
 | **nalw** | 允许的级别数                 |
 | **alwl** | 允许的等级                   |
-| **atxt** | 允许的文本 </br>ALL(-1) </br>VIEW(0) </br>OPERATOR(1) </br>FOREMAN(2) </br>MAINTENANCE(3) </br>SUPERVISOR(4) </br>ENGINEER(5) </br>DESIGNER(6) </br>MANAGER(7)                                 |
-| **anum** | 允许序号 </br>-1 </br> 0</br> 1</br> 2</br> 3</br> 4</br> 5</br> 6</br> 7 |
+| **atxt** | 允许的文本 <br />ALL(-1) <br />VIEW(0) <br />OPERATOR(1) <br />FOREMAN(2) <br />MAINTENANCE(3) <br />SUPERVISOR(4) <br />ENGINEER(5) <br />DESIGNER(6) <br />MANAGER(7)                                 |
+| **anum** | 允许序号 <br />-1 <br /> 0<br /> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7 |
 
 | 功能                     | 允许的等级                |
 | :---------------------- | :---------------------- |
@@ -392,8 +392,8 @@ Authorization: Bearer \<token\>
 | **defl** | 默认登录级别                    |
 | **nalw** | 允许的级别数                    |
 | **alwl** | 允许的等级                      |
-| **atxt** | 允许的文本 </br>ALL(-1)</br>VIEW(0)</br>OPERATOR(1)</br>FOREMAN(2)</br>MAINTENANCE(3)</br>SUPERVISOR(4)</br>ENGINEER(5)</br>DESIGNER(6)</br>MANAGER(7)               |
-| **anum** | 允许序号 </br>-1</br> 0</br> 1</br> 2</br> 3</br> 4</br> 5</br> 6</br> 7                                                 |
+| **atxt** | 允许的文本 <br />ALL(-1)<br />VIEW(0)<br />OPERATOR(1)<br />FOREMAN(2)<br />MAINTENANCE(3)<br />SUPERVISOR(4)<br />ENGINEER(5)<br />DESIGNER(6)<br />MANAGER(7)               |
+| **anum** | 允许序号 <br />-1<br /> 0<br /> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7                                                 |
 
 ## Function 15 保存用户信息
 
@@ -724,10 +724,10 @@ Authorization: Bearer \<token\>
 | **tcph** | PLC/硬件设备的主机名或IP地址                                    |
 | **tcpp** | 设备端口号                                                    |
 | **ttyc** | Linux设备文件名(ttyS0, ttyS1)                                 |
-| **ttyb** | 波特率 </br>4800 </br>9600 </br>19200 </br>38400 </br>57600 </br>115200  |
-| **ttyd** | 数据位 </br> 5</br> 6</br> 7</br> 8                           |
-| **ttys** | 停止位(string) </br> 1</br> 1.5</br> 2                        |
-| **ttyp** | 奇偶校验位(char)</br> E - Even</br> O - Odd</br> N - None      |
+| **ttyb** | 波特率 <br />4800 <br />9600 <br />19200 <br />38400 <br />57600 <br />115200  |
+| **ttyd** | 数据位 <br /> 5<br /> 6<br /> 7<br /> 8                           |
+| **ttys** | 停止位(string) <br /> 1<br /> 1.5<br /> 2                        |
+| **ttyp** | 奇偶校验位(char)<br /> E - Even<br /> O - Odd<br /> N - None      |
 | **parm** | 参数列表详细信息                                                |
 | **vars** | 变量名称                                                       |
 | **pars** | 参数值                                                        |
@@ -736,30 +736,30 @@ Authorization: Bearer \<token\>
 | **obsz** | 相同对象的数量                                                 |
 | **updt** | 数据传输到云平台的时间间隔                                       |
 | **logt** | 数据被记录到文件的时间                                          |
-| **disp** | 是否需要显示所有对象属性 </br> 0 (不显示)</br> 1 (显示)           |
-| **logs** | 是否需要记录一次连续下降的情况 </br> 0 (不需要)</br> 1 (需要)      |
-| **tstd** | 是否需要显示时间戳 </br>0 (不显示)</br>1 (显示))                 |
+| **disp** | 是否需要显示所有对象属性 <br /> 0 (不显示)<br /> 1 (显示)           |
+| **logs** | 是否需要记录一次连续下降的情况 <br /> 0 (不需要)<br /> 1 (需要)      |
+| **tstd** | 是否需要显示时间戳 <br />0 (不显示)<br />1 (显示))                 |
 | **oatt** | 对象属性列表详情                                               |
 | **attn** | 属性名称                                                      |
-| **attt** | 属性值的类型：</br> word</br> uword</br> dword</br> udword</br> float</br> double</br> bit                                                           |
+| **attt** | 属性值的类型：<br /> word<br /> uword<br /> dword<br /> udword<br /> float<br /> double<br /> bit                                                           |
 | **deci** | 小数点位数                                                     |
-| **attr** | 属性读/写标志 </br> R</br> W</br> R/W</br>S</br>SW             |
+| **attr** | 属性读/写标志 <br /> R<br /> W<br /> R/W<br />S<br />SW             |
 | **rtim** | 读的时间间隔 （只针对读属性）                                     |
-| **achg** | 属性是否可以被改变 </br> 0 (不允许)</br> 1 (允许)                 |
-| **adis** | 属性是否需要被传到平台 </br> 0 (不需要)</br> 1 (需要)              |
+| **achg** | 属性是否可以被改变 <br /> 0 (不允许)<br /> 1 (允许)                 |
+| **adis** | 属性是否需要被传到平台 <br /> 0 (不需要)<br /> 1 (需要)              |
 | **aadd** | 属性地址详情                                                    |
 | **obix** | 从0开始的索引号                                                 |
 | **pref** | 对象名称前缀                                                    |
 | **suff** | 对象名称后缀                                                    |
-| **addr** | 标签地址 （设备地址）</br> 注意：对于内部寄存器tagaddr和tagattr都用"-" |
+| **addr** | 标签地址 （设备地址）<br /> 注意：对于内部寄存器tagaddr和tagattr都用"-" |
 | **msgd** | 报警信息详情                                                    |
 | **subr** | 子程序编号 (1-999)                                              |
 | **sobj** | 源对象名称                                                      |
 | **satt** | 源属性名称                                                      |
-| **msgt** | 信息比较类型 </br> < </br> <= </br> > </br> >= </br> == </br> != </br> & </br> \^ </br> \| |
+| **msgt** | 信息比较类型 <br /> < <br /> <= <br /> > <br /> >= <br /> == <br /> != <br /> & <br /> \^ <br /> \| |
 | **cobj** | 被比较对象的名称                                                 |
 | **catt** | 被比较属性名称                                                   |
-| **acat** | 报警类型 </br> critical</br> alarm</br> warning</br> event</br> view |
+| **acat** | 报警类型 <br /> critical<br /> alarm<br /> warning<br /> event<br /> view |
 
 | 响应      | 字段说明                       |
 | -------- | ----------------------------- |
@@ -895,7 +895,7 @@ Authorization: Bearer \<token\>
 | -------- | ------------------------------------------------------- |
 | **func** | 功能代码 23                                               |
 | **wtrm** | 复制到响应信息的水印信息                                        |
-| **type** | 1:  驱动程序通道 </br> 2:  服务器通道                       |
+| **type** | 1:  驱动程序通道 <br /> 2:  服务器通道                       |
 
 | 响应      | 字段说明                                                 |
 | -------- | ------------------------------------------------------- |
@@ -905,8 +905,8 @@ Authorization: Bearer \<token\>
 | **nrow** | 行数                                                    |
 | **name** | 驱动程序的缩写                                            |
 | **desc** | 驱动程序的完整描述                                         |
-| **type** | 驱动程序的类型 </br> tty表示串行驱动 </br> tcp表示网络驱动    |
-| **attr** | 属性读/写指示器 </br> R </br> W </br> RW </br> S </br>SW   |
+| **type** | 驱动程序的类型 <br /> tty表示串行驱动 <br /> tcp表示网络驱动    |
+| **attr** | 属性读/写指示器 <br /> R <br /> W <br /> RW <br /> S <br />SW   |
 
 ## Function 24 读驱动程序参数
 
@@ -1050,10 +1050,10 @@ Authorization: Bearer \<token\>
 | **func** | 功能代码 25                                              |
 | **wtrm** | 从请求信息中复制的水印             |
 | **chdv** | 通道驱动器名称 Channel driver name                                           |
-| **attt** | 属性值的数据类型，允许的数据类型：</br> word </br> uword </br> dword </br> udword </br> float </br> double </br> bit </br>                                   |
+| **attt** | 属性值的数据类型，允许的数据类型：<br /> word <br /> uword <br /> dword <br /> udword <br /> float <br /> double <br /> bit <br />                                   |
 | **deci** | 小数位数                                           |
-| **attr** | 属性读/写指示器，允许的标志：</br> R</br> W</br> R/W                  |
-| **addr** | 标签地址（设备地址） </br>注：对于内部寄存器，tagaddr和tagattr都用"-"    |
+| **attr** | 属性读/写指示器，允许的标志：<br /> R<br /> W<br /> R/W                  |
+| **addr** | 标签地址（设备地址） <br />注：对于内部寄存器，tagaddr和tagattr都用"-"    |
 
 | 响应      | 字段说明                                           |
 | :------- | :------------------------------------------------- |
@@ -1123,7 +1123,7 @@ Authorization: Bearer \<token\>
 | **wtrm** | 从请求信息中复制的水印                                      |
 | **rows** | 设备列表                                                  |
 | **name** | 设备名称                                                  |
-| **fdrw** | 文件描述符的读写权限  </br>0: 获得许可,</br>-1: 没有许可       |
+| **fdrw** | 文件描述符的读写权限  <br />0: 获得许可,<br />-1: 没有许可       |
 | **errc** | 编译器错误代码                                             |
 
 ## Function 30 读全局变量
@@ -1453,7 +1453,7 @@ Authorization: Bearer \<token\>
 | **func** | 功能代码 33                                 |
 | **wtrm** | 从请求信息中复制的水印                        |
 | **errc** | 编译器错误代码                               |
-| **subr** | 子程序编号 </br> MAIN是-10</br> MANUAL是-20</br> AUTO是-22   |
+| **subr** | 子程序编号 <br /> MAIN是-10<br /> MANUAL是-20<br /> AUTO是-22   |
 | **name** | 子程序名称                                  |
 | **nrow** | 行数                                       |
 | **stmt** | 语句                                       |
@@ -1528,7 +1528,7 @@ Authorization: Bearer \<token\>
 | **func** | 功能代码 34                                        |
 | **wtrm** | 复制到响应信息的水印信息                                 |
 | **csub** | 保存前检查子程序是否存在 (0：不检查，1：检查)           |
-| **subr** | 子程序编号</br> MAIN是-10</br> MANUAL是-20</br> AUTO是-22</br> 或者是任何数字(1-999)的子程序编号                   |
+| **subr** | 子程序编号<br /> MAIN是-10<br /> MANUAL是-20<br /> AUTO是-22<br /> 或者是任何数字(1-999)的子程序编号                   |
 | **name** | 子程序名称                                        |
 | **nrow** | 行数                                             |
 | **stmt** | 语句                                             |
@@ -1732,7 +1732,7 @@ Authorization: Bearer \<token\>
 | :------- | :------------------------------------------------ |
 | **func** | 功能代码 37                                       |
 | **wtrm** | 复制到响应信息的水印信息                                |
-| **srhm** | 以全局变量模式搜索子程序 </br> main</br> man</br> auto</br>    |
+| **srhm** | 以全局变量模式搜索子程序 <br /> main<br /> man<br /> auto<br />    |
 | **upca** | 是否需要匹配大小写 (1：匹配， 0：不匹配)               |
 | **wwrd** | 是否需要匹配整个单词(1：匹配整体， 0：匹配部分）         |
 | **srhs** | 搜索字符串                                         |
@@ -1743,7 +1743,7 @@ Authorization: Bearer \<token\>
 | **wtrm** | 从请求信息中复制的水印                                |
 | **errc** | 编译器错误代码                                       |
 | **rows** | 行号索引                                            |
-| **modu** | 全局变量子程序模块 </br> main</br> man</br> auto</br> |
+| **modu** | 全局变量子程序模块 <br /> main<br /> man<br /> auto<br /> |
 | **subr** | 子程序编号                                           |
 | **line** | 行号                                                |
 | **chnu** | 字符开始位置                                          |
@@ -2104,12 +2104,12 @@ Authorization: Bearer \<token\>
 | :------- | :----------------------------------------- |
 | **func** | 功能代码 61                                 |
 | **wtrm** | 复制到响应信息的水印信息                          |
-| **actn** | 可以执行一下任何一种操作: </br>
-act_en：主动启用的警报 </br>
-act_unack：主动撤消警报  </br>
-act_all：激活所有警报 </br>
-all_alm：所有警报  </br>
-all_en：所有启用的警报器 </br>
+| **actn** | 可以执行一下任何一种操作: <br />
+act_en：主动启用的警报 <br />
+act_unack：主动撤消警报  <br />
+act_all：激活所有警报 <br />
+all_alm：所有警报  <br />
+all_en：所有启用的警报器 <br />
 all_dis：所有禁用的警报                                    |
 
 | 响应      | 字段说明                                    |
@@ -2118,17 +2118,17 @@ all_dis：所有禁用的警报                                    |
 | **wtrm** | 从请求信息中复制的水印                         |
 | **errc** | 错误编码                                     |
 | **tstp** | 时间戳                                       |
-| **comm** | PLC或者硬件设备通信状态</br> UP</br> DOWN      |
-| **mach** | 机器模式 </br> AUTO</br> MANU</br> SERV   |
-| **mode** | 请参考部分状态模式：</br>Inactive Mode（不活动模式）</br>Standby Mode / Semi-Standby Mode（待机/半待机模式）</br>Active Mode / Semi-Active Mode（活动/半活动模式）         |
-| **mqcn** | MQTT代理连接状态</br> MQCONNECT（已连接）</br> MQDISCONNECT（未连接）   |
+| **comm** | PLC或者硬件设备通信状态<br /> UP<br /> DOWN      |
+| **mach** | 机器模式 <br /> AUTO<br /> MANU<br /> SERV   |
+| **mode** | 请参考部分状态模式：<br />Inactive Mode（不活动模式）<br />Standby Mode / Semi-Standby Mode（待机/半待机模式）<br />Active Mode / Semi-Active Mode（活动/半活动模式）         |
+| **mqcn** | MQTT代理连接状态<br /> MQCONNECT（已连接）<br /> MQDISCONNECT（未连接）   |
 | **dalm** | 设备报警，指定哪个设备有通信问题                                        |
 | **galm** | 用户可以定义自己的一般报警和触发器                                      |
 | **ngal** | 一般报警的数量                                  |
 | **grow** | 一般报警的行数                                       |
-| **acat** | 报警类别 </br> critical</br> alarm</br> warning</br> event</br> view                                                     |
-| **astt** | 报警状态 </br> ON</br> OFF                                                      |
-| **amod** | 报警模式</br> UNACKALARM（撤消报警）</br> DISABLE（禁用报警）    |
+| **acat** | 报警类别 <br /> critical<br /> alarm<br /> warning<br /> event<br /> view                                                     |
+| **astt** | 报警状态 <br /> ON<br /> OFF                                                      |
+| **amod** | 报警模式<br /> UNACKALARM（撤消报警）<br /> DISABLE（禁用报警）    |
 | **atim** | 报警时间戳                                         |
 | **alid** | 当用户使用80接口功能确认报警时，报警ID必须被复制下来                      |
 | **comt** | 报警条件描述                                           |
@@ -2192,7 +2192,7 @@ Authorization: Bearer \<token\>
 | :------- | :--------------------------------------------------- |
 | **func** | 功能代码 70                                    |
 | **wtrm** | 复制到响应信息的水印信息    |
-| **acts** | 请求的行为：</br> restart：重新启动网关y</br> restartnew：用新的配置重新启动网关</br> shutdown：关闭网关                       |
+| **acts** | 请求的行为：<br /> restart：重新启动网关y<br /> restartnew：用新的配置重新启动网关<br /> shutdown：关闭网关                       |
 
 | 响应      | 字段说明                                                   |
 | :------- | :------------------------------------------------- |
@@ -2243,7 +2243,7 @@ Authorization: Bearer \<token\>
 | :------- | :------------------------------------------------ |
 | **func** | 功能代码 71                                 |
 | **wtrm** | 复制到响应信息的水印信息 |
-| **stat** | 请求的行为：</br> standby：待机模式（遥测将停止）</br> active：主动模式                             |
+| **stat** | 请求的行为：<br /> standby：待机模式（遥测将停止）<br /> active：主动模式                             |
 
 | 响应      | 字段说明                                            |
 | :------- | :------------------------------------------------- |
@@ -2403,7 +2403,7 @@ Authorization: Bearer \<token\>
   "wtrm": "DEMO-Neuron-1001_1532419775357_240",
   "errc": 0,
   "sysn": "NEURON SYSTEM v1.1.1",
-  "cpyr": "Copyright (C) 2020, EMQ Technologies Co., Ltd. All rights</br>reserved.",
+  "cpyr": "Copyright (C) 2020, EMQ Technologies Co., Ltd. All rights<br />reserved.",
   "modl": "ENT-x86_64-1-0101",
   "srno": "SN010101200227",
   "bver": " 1.1.1",
@@ -2494,7 +2494,7 @@ Authorization: Bearer \<token\>
 | :------- | :------------------------------------------------ |
 | **func** | 功能代码 79                                 |
 | **wtrm** | 复制到响应信息的水印信息 |
-| **actn** | 可以是以下任意一种操作：</br> act_en：主动启用警报 </br> act_unack：主动解除警报 </br> act_all：激活所有警报 </br> all_alm：所有警报 </br> all_en：所有启用的警报 </br> all_dis：    |
+| **actn** | 可以是以下任意一种操作：<br /> act_en：主动启用警报 <br /> act_unack：主动解除警报 <br /> act_all：激活所有警报 <br /> all_alm：所有警报 <br /> all_en：所有启用的警报 <br /> all_dis：    |
 
 | 响应      | 字段说明                                            |
 | :------- | :------------------------------------------------- |
@@ -2547,7 +2547,7 @@ Authorization: Bearer \<token\>
 | **func** | 功能代码 80                                    |
 | **wtrm** | 复制到响应信息的水印信息                             |
 | **alid** | 这个ID是由网关在心跳信息中给出的。复制正在确认的报警的ID。 |
-| **actn** | 可以是以下任意一种操作：</br> acknowledge（确认）</br> enable（启用）</br> disable（禁用）   |
+| **actn** | 可以是以下任意一种操作：<br /> acknowledge（确认）<br /> enable（启用）<br /> disable（禁用）   |
 
 | 响应      | 字段说明                                            |
 | :------- | :------------------------------------------------- |
@@ -2697,7 +2697,7 @@ Authorization: Bearer \<token\>
 |          | FromLast -- 表示向后搜索                                     |
 |          | UseID -- 用于连续搜索                                     |
 |          | Blank -- 表示使用FromYear                                 |
-| **sett** | Today</br> Yesterday</br> ThisWeek</br> LastWeek</br> ThisMonth</br> LastMonth</br> 如果使用下面的FromYear或者是ToYear，则为空，且只能与UseID的搜索方法一起使用，或在上面的搜索方法中的第一个为空                                                  |
+| **sett** | Today<br /> Yesterday<br /> ThisWeek<br /> LastWeek<br /> ThisMonth<br /> LastMonth<br /> 如果使用下面的FromYear或者是ToYear，则为空，且只能与UseID的搜索方法一起使用，或在上面的搜索方法中的第一个为空                                                  |
 | **tokn** | 前一次请求的ID字符串，用于下次搜索。（仅与UseID的搜索方法一起使用）      |
 | **ofst** | 下次搜索的偏移量。正向或者负向，仅与UseID的搜索方法一起使用，仍使用下面的搜索模式     |
 | **frti** | 开始日期（时间戳）                           |
@@ -2713,12 +2713,12 @@ Authorization: Bearer \<token\>
 | **frti** | 开始日期 (时间戳)                     |
 | **toti** | 结束日期 (时间戳)                       |
 | **nalm** | Total number of alarms found                  |
-| **ordr** | Order </br> ascending </br> descending                                    |
+| **ordr** | Order <br /> ascending <br /> descending                                    |
 | **anum** | Alarm index number                            |
 | **tstp** | Alarm happening time                          |
 | **uack** | User who acknowledge this alarm               |
 | **cate** | Alarm Category                                |
-| **stat** | Status</br> on -- alarm on time</br> off -- alarm off time</br> ack -- alarm ack time                         |
+| **stat** | Status<br /> on -- alarm on time<br /> off -- alarm off time<br /> ack -- alarm ack time                         |
 | **comt** | Alarm message                                 |
 | **tokn** | ID string for next search                     |
 
@@ -2795,7 +2795,7 @@ Authorization: Bearer \<token\>
 | **wtrm** | 复制到响应信息的水印信息                                  |
 | **srcn** | 带前缀和后缀的对象名称                                |
 | **attn** | 属性名称（空着表示所有属性）                           |
-| **fend** | 是否包含最后一个点 </br> 1 -- 包含</br> 0 -- 不包含    |
+| **fend** | 是否包含最后一个点 <br /> 1 -- 包含<br /> 0 -- 不包含    |
 | **tokn** | 用于下次搜索的文件索引号                              |
 | **frti** | 开始时间（时间戳）                                   |
 | **toti** | 结束时间（时间戳）                                   |
@@ -2884,7 +2884,7 @@ Authorization: Bearer \<token\>
 | :------- | :------------------------------------------------------ |
 | **func** | 功能代码 83                                              |
 | **wtrm** | 复制到响应信息的水印信息                                       |
-| **logl** | 日志等级,</br> 允许等级 :</br> all,</br> debug,</br> info,</br> warning,</br> err                                                                  |
+| **logl** | 日志等级,<br /> 允许等级 :<br /> all,<br /> debug,<br /> info,<br /> warning,<br /> err                                                                  |
 | **srtt** | 开始的时间戳，默认为无。 Sart timestamp(s), default none                   |
 | **stpt** | 结束的时间戳，默认为无。如果"stpt"设置了值，则必须有一个非空的"srtt"。           |
 | **srtl** | 日志文件的起始行号，也可以从响应信息的 "last "中获取，默认为0。                 |
@@ -2932,7 +2932,7 @@ Authorization: Bearer \<token\>
 | :------------- | :------------------------------------------------ |
 | **func** | 功能代码 84                                              |
 | **wtrm** | 复制到响应信息的水印信息                                       |
-| **logn** | 日志名称:</br>SCRIPTLOG</br>DRIVERLOG</br>SERVICELOG     |
+| **logn** | 日志名称:<br />SCRIPTLOG<br />DRIVERLOG<br />SERVICELOG     |
 | **vars** | 可报告的最大日志行数的变量                                  |
 
 | 响应            | 字段说明                                           |
@@ -3046,4 +3046,4 @@ gateway will return the following error message to the response topic.
 | **func**                | 功能代码                                                 |
 | **wtrm**                | 从请求信息复制的字符串                                     |
 | **errc**                | 编译器错误代码                                           |
-| **emsg**                | 错误代码 Error text </br>0 , "No Error"</br>2 , "Function no has not found!"</br>3 , "Missing JSON item"</br>4 , "Invalid JSON structure"</br>10 , "Object locked"</br>11 , "Object not found"</br>12 , "Attribute locked"</br>13 , "Attribute not found"</br>14 , "Object number invalid"</br>15 , "Modification not allowed"</br>16 , "Attribute type invalid"</br>20 , "Operation not allowed"</br>21 , "Wrong password"</br>22 , "Wrong user name"</br>23 , "Not super user account"</br>24 , "System function error"</br>25 , "User not found"</br>26 , "Time out"</br>27 , "Default level"</br>28 , "Wrong number of levels"</br>29 , "User already exist"</br>30 , "Too many users"</br>40 , "Alarm not found"</br>41 , "Report empty"</br>42 , "Data format error"</br>43 , "Wrong revision"</br>44 , "Need rebuild file"</br>50 , "Too many global variables"</br>51 , "Global variable name length exceed"</br>52 , "Duplicated Global variables found"</br>53 , "Subroutine number not found"</br>54 , "Subroutine already exist"</br>55 , "No disk space for subroutine"</br>56 , "Search program number error"</br>57 , "No search string"</br>70 , "Wrong status change request"</br>71 , "Wrong gateway control request"</br>72 , "Wrong key"</br>73 , "Function not allowed in SEMI mode"</br>80 , "Attribute read only"</br>81 , "Object name error"</br>82 , "Data range error"</br>502 , "Too many channels"</br>503 , "Channel driver length size exceed maximum"</br>504 , "Channel driver invalid"</br>505 , "Channel driver type invalid"</br>506 , "Too many dummy variables"</br>507 , "Hostname length exceed maximum"</br>508 , "Port number is invalid"</br>509 , "Device file length too long"</br>510 , "Baud rate number is invalid"</br>511 , "Data bit invalid"</br>512 , "Stop bit invalid"</br>513 , "Parity bit invalid"</br>514 , "Too many objects"</br>515 , "Object ID length exceed maximum"</br>516 , "Object name length exceed maximum"</br>517 , "Duplicated object ID found"</br>518 , "Duplicated object name found"</br>519 , "Object size incorrect"</br>520 , "Update time incorrect"</br>521 , "Logging time incorrect"</br>522 , "Object status invalid"</br>523 , "Too many attributes"</br>524 , "Attribute status invalid"</br>525 , "Attribute type incorrect"</br>526 , "Attribute ID length exceed maximum"</br>527 , "Attribute name length exceed maximum"</br>528 , "Duplicated attribute ID found"</br>529 , "Duplicated attribute name found"</br>530 , "Decimal value invalid"</br>531 , "Attribute R/W length exceed maximum"</br>532 , "Attribute object number is not  match"</br>533 , "Attribute object index is not  match"</br>534 , "Prefix length exceed maximum"</br>535 , "Suffix length exceed maximum"</br>536 , "Prefix and Suffix string empty"</br>537 , "Tag address length exceed maximum"</br>538 , "Tag address invalid"</br>539 , "Tag address delimiter invalid"</br>540 , "Dummy sign invalid"</br>541 , "Tag address overlap"</br>542 , "Tag RW direction invalid"</br>543 , "Tag attribute is not match"</br>544 , "Tag bit type is not match"</br>545 , "Tag bit type error"</br>546 , "Tag ix exceed limit"</br>547 , "Tag array member invalid"</br>548 , "Alarm object name length exceed"</br>549 , "Alarm attribute name length  exceed"</br>550 , "Alarm subroutine number not  found"</br>551 , "Alarm category not found"</br>552 , "Alarm attribute not match"</br>553 , "Alarm ID not found"</br>554 , "Alarm type not found"</br>555 , "Alarm object name not found"</br>556 , "Tag name length exceed maximum"</br>557 , "Tag name invalid"</br>558 , "Duplicated tag name found"</br>559 , "Attribute tag length exceed"</br>560 , "Attribute tag not found"</br>561 , "Attribute tag index invalid"</br>562 , "Tag array invalid"</br>563 , "Tag type invalid"</br>564 , "Tag R/W direction invalid"</br>1001, "Statement expected for this row"</br>1002, "Statement does not exist"</br>1003, "INIT follows a normal statement (except REM, INIT)"</br>1004, "THEN expected after test statement"</br>1005, "Unexpected THEN, not a test above"</br>1006, "Unexpected ELIF/ELSE, not a THEN above"</br>1007, "Unknown statement"</br>1008, "GOTO undefined position (POSxxx)"</br>1009, "Error in POSxxx statement"</br>1010, "FATAL! Cannot solve all jump instruction"</br>2001, "Too many local variables in one file"</br>2002, "Syntax error in INIT (only assign local vars)"</br>2003, "INIT: assign (=) expected"</br>2004, "INIT: assign value expected"</br>2005, "INIT: expression delimiter (;) expected"</br>2006, "Syntax error in token"</br>2007, "Too long local variable name"</br>2008, "Syntax error in local variable"</br>2009, "Syntax error in constant"</br>2010, "Too long DB variable name"</br>2011, "Syntax error in [..] construction"</br>2012, "Syntax error in DB variable"</br>2013, "Syntax error in object variable"</br>2014, "Illegal label number"</br>2015, "Illegal subroutine number"</br>2016, "Too long global variable name"</br>2017, "Syntax error in global variable"</br>2018, "Syntax error in [index] construction"</br>2019, "Too long [index] name"</br>2020, "Syntax error in GOTO POSxxx instruction"</br>2021, "Syntax error in CALL SRxxx instruction"</br>2023, "Declaring a control variable"</br>2024, "Declaring too many local variables"</br>2025, "Local variable not declared/not a control variable"</br>2029, "Too long object name"</br>2030, "Too long field name"</br>2101, "Not an executable instruction/variable"</br>2102, "; expected after instruction"</br>2103, "No statement should follow RETURN/GOTO"</br>2104, "= expected after variable for assign"</br>2105, "; not allowed in test or inside parenthesis"</br>2106, "Instruction not allowed in test or inside parenthesis"</br>2107, "Operand expected"</br>2108, "Instruction should be first token in expression"</br>2109, "Operand/expression not expected"</br>2110, "Assign not allowed after test"</br>2111, "Assign variable is read-only"</br>2112, ") unexpected"</br>2113, "Object variable does not exist"</br>2114, "Index of Object variable not inside array"</br>2115, "Tag variable does not exist"</br>2116, "Index of Tag variable not inside array"</br>2117, "Unary used twice on same operand"</br>2118, "Unrecognized operator"</br>2119, "Application part for station does not exist"</br>2120, "Global variable does not exist"</br>2121, "Index of global variable not inside array"</br>2122, ", expected after variable declaration"</br>2123, "Index must be used on variable array"</br>2124, "Index cannot be used on single variable"</br>2125, "Operator is not allowed in double calculation"</br>2132, "Local variable as index is not used before"</br>2201, "Expression not completed"</br>2202, "Expression ended before resolving last parenthesis"</br>2300, "Global variable name too long"</br>2301, "Global variable name have capital letter"</br>2302, "Global variable length too large < 1000"</br>2303, "Global variable comment too long"|
+| **emsg**                | 错误代码 Error text <br />0 , "No Error"<br />2 , "Function no has not found!"<br />3 , "Missing JSON item"<br />4 , "Invalid JSON structure"<br />10 , "Object locked"<br />11 , "Object not found"<br />12 , "Attribute locked"<br />13 , "Attribute not found"<br />14 , "Object number invalid"<br />15 , "Modification not allowed"<br />16 , "Attribute type invalid"<br />20 , "Operation not allowed"<br />21 , "Wrong password"<br />22 , "Wrong user name"<br />23 , "Not super user account"<br />24 , "System function error"<br />25 , "User not found"<br />26 , "Time out"<br />27 , "Default level"<br />28 , "Wrong number of levels"<br />29 , "User already exist"<br />30 , "Too many users"<br />40 , "Alarm not found"<br />41 , "Report empty"<br />42 , "Data format error"<br />43 , "Wrong revision"<br />44 , "Need rebuild file"<br />50 , "Too many global variables"<br />51 , "Global variable name length exceed"<br />52 , "Duplicated Global variables found"<br />53 , "Subroutine number not found"<br />54 , "Subroutine already exist"<br />55 , "No disk space for subroutine"<br />56 , "Search program number error"<br />57 , "No search string"<br />70 , "Wrong status change request"<br />71 , "Wrong gateway control request"<br />72 , "Wrong key"<br />73 , "Function not allowed in SEMI mode"<br />80 , "Attribute read only"<br />81 , "Object name error"<br />82 , "Data range error"<br />502 , "Too many channels"<br />503 , "Channel driver length size exceed maximum"<br />504 , "Channel driver invalid"<br />505 , "Channel driver type invalid"<br />506 , "Too many dummy variables"<br />507 , "Hostname length exceed maximum"<br />508 , "Port number is invalid"<br />509 , "Device file length too long"<br />510 , "Baud rate number is invalid"<br />511 , "Data bit invalid"<br />512 , "Stop bit invalid"<br />513 , "Parity bit invalid"<br />514 , "Too many objects"<br />515 , "Object ID length exceed maximum"<br />516 , "Object name length exceed maximum"<br />517 , "Duplicated object ID found"<br />518 , "Duplicated object name found"<br />519 , "Object size incorrect"<br />520 , "Update time incorrect"<br />521 , "Logging time incorrect"<br />522 , "Object status invalid"<br />523 , "Too many attributes"<br />524 , "Attribute status invalid"<br />525 , "Attribute type incorrect"<br />526 , "Attribute ID length exceed maximum"<br />527 , "Attribute name length exceed maximum"<br />528 , "Duplicated attribute ID found"<br />529 , "Duplicated attribute name found"<br />530 , "Decimal value invalid"<br />531 , "Attribute R/W length exceed maximum"<br />532 , "Attribute object number is not  match"<br />533 , "Attribute object index is not  match"<br />534 , "Prefix length exceed maximum"<br />535 , "Suffix length exceed maximum"<br />536 , "Prefix and Suffix string empty"<br />537 , "Tag address length exceed maximum"<br />538 , "Tag address invalid"<br />539 , "Tag address delimiter invalid"<br />540 , "Dummy sign invalid"<br />541 , "Tag address overlap"<br />542 , "Tag RW direction invalid"<br />543 , "Tag attribute is not match"<br />544 , "Tag bit type is not match"<br />545 , "Tag bit type error"<br />546 , "Tag ix exceed limit"<br />547 , "Tag array member invalid"<br />548 , "Alarm object name length exceed"<br />549 , "Alarm attribute name length  exceed"<br />550 , "Alarm subroutine number not  found"<br />551 , "Alarm category not found"<br />552 , "Alarm attribute not match"<br />553 , "Alarm ID not found"<br />554 , "Alarm type not found"<br />555 , "Alarm object name not found"<br />556 , "Tag name length exceed maximum"<br />557 , "Tag name invalid"<br />558 , "Duplicated tag name found"<br />559 , "Attribute tag length exceed"<br />560 , "Attribute tag not found"<br />561 , "Attribute tag index invalid"<br />562 , "Tag array invalid"<br />563 , "Tag type invalid"<br />564 , "Tag R/W direction invalid"<br />1001, "Statement expected for this row"<br />1002, "Statement does not exist"<br />1003, "INIT follows a normal statement (except REM, INIT)"<br />1004, "THEN expected after test statement"<br />1005, "Unexpected THEN, not a test above"<br />1006, "Unexpected ELIF/ELSE, not a THEN above"<br />1007, "Unknown statement"<br />1008, "GOTO undefined position (POSxxx)"<br />1009, "Error in POSxxx statement"<br />1010, "FATAL! Cannot solve all jump instruction"<br />2001, "Too many local variables in one file"<br />2002, "Syntax error in INIT (only assign local vars)"<br />2003, "INIT: assign (=) expected"<br />2004, "INIT: assign value expected"<br />2005, "INIT: expression delimiter (;) expected"<br />2006, "Syntax error in token"<br />2007, "Too long local variable name"<br />2008, "Syntax error in local variable"<br />2009, "Syntax error in constant"<br />2010, "Too long DB variable name"<br />2011, "Syntax error in [..] construction"<br />2012, "Syntax error in DB variable"<br />2013, "Syntax error in object variable"<br />2014, "Illegal label number"<br />2015, "Illegal subroutine number"<br />2016, "Too long global variable name"<br />2017, "Syntax error in global variable"<br />2018, "Syntax error in [index] construction"<br />2019, "Too long [index] name"<br />2020, "Syntax error in GOTO POSxxx instruction"<br />2021, "Syntax error in CALL SRxxx instruction"<br />2023, "Declaring a control variable"<br />2024, "Declaring too many local variables"<br />2025, "Local variable not declared/not a control variable"<br />2029, "Too long object name"<br />2030, "Too long field name"<br />2101, "Not an executable instruction/variable"<br />2102, "; expected after instruction"<br />2103, "No statement should follow RETURN/GOTO"<br />2104, "= expected after variable for assign"<br />2105, "; not allowed in test or inside parenthesis"<br />2106, "Instruction not allowed in test or inside parenthesis"<br />2107, "Operand expected"<br />2108, "Instruction should be first token in expression"<br />2109, "Operand/expression not expected"<br />2110, "Assign not allowed after test"<br />2111, "Assign variable is read-only"<br />2112, ") unexpected"<br />2113, "Object variable does not exist"<br />2114, "Index of Object variable not inside array"<br />2115, "Tag variable does not exist"<br />2116, "Index of Tag variable not inside array"<br />2117, "Unary used twice on same operand"<br />2118, "Unrecognized operator"<br />2119, "Application part for station does not exist"<br />2120, "Global variable does not exist"<br />2121, "Index of global variable not inside array"<br />2122, ", expected after variable declaration"<br />2123, "Index must be used on variable array"<br />2124, "Index cannot be used on single variable"<br />2125, "Operator is not allowed in double calculation"<br />2132, "Local variable as index is not used before"<br />2201, "Expression not completed"<br />2202, "Expression ended before resolving last parenthesis"<br />2300, "Global variable name too long"<br />2301, "Global variable name have capital letter"<br />2302, "Global variable length too large < 1000"<br />2303, "Global variable comment too long"|
