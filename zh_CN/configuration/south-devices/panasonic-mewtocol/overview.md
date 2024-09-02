@@ -42,7 +42,7 @@ Neuron Mewtocol 插件用于通过以太网访问松下的 FP-XH、FP0H 系列 P
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### .BIT
 

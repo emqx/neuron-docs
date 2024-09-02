@@ -41,7 +41,7 @@ Mitsubishi FX 插件用于通过 FX 编程口访问三菱的 FX0、FX2、FX3 等
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 

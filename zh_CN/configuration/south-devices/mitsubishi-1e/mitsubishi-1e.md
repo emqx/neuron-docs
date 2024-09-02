@@ -39,7 +39,7 @@ Neuron Mitsubishi 1E 插件用于通过以太网访问三菱的 A 系列、FX3U�
 
 ### 地址格式
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 
