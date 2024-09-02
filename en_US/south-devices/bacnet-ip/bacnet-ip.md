@@ -16,7 +16,7 @@
 
 ### Address Format
 
-> AREA[ADDRESS]</span>
+> AREA[ADDRESS]
 
 | AREA | ADDRESS RANGE | ATTRIBUTE  | DATA TYPE  | REMARK             |
 | ---- | ------------- | ---------- | ------------- | ------------------ |

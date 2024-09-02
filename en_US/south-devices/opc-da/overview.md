@@ -42,7 +42,7 @@ The NeuOPC component packages can be downloaded from the [Project page](https://
 
 ## Address Format
 
-> IX!NODEID</span>
+> IX!NODEID
 
 **IX** Namespace index, IX can only be 2 when accessing NeuOPC.
 

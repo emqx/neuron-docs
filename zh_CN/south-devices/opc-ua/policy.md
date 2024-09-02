@@ -46,9 +46,9 @@ OPC UA 可通过用户自签名证书登录到 OPC UA 服务器，Certificate �
 
 可以通过以下步骤和命令将 PEM 证书以及私钥转换为 DER 格式。
 
-1. 将包括`-----BEGIN CERTIFICATE-----`和`-----END CERTIFICATE-----`的所有内容保存为 1.crt；</br>
+1. 将包括`-----BEGIN CERTIFICATE-----`和`-----END CERTIFICATE-----`的所有内容保存为 1.crt；<br />
 
-2. 将包括`-----BEGIN PRIVATE KEY-----`和`-----END PRIVATE KEY-----`的所有内容保存为 1.key；</br>
+2. 将包括`-----BEGIN PRIVATE KEY-----`和`-----END PRIVATE KEY-----`的所有内容保存为 1.key；<br />
 
 3. 执行如下命令:
 

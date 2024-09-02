@@ -26,7 +26,7 @@ The qna3e plugin is used to access Mitsubishi's QnA compatible PLCs via Ethernet
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 

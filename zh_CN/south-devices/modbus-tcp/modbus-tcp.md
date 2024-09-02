@@ -37,7 +37,7 @@ Neuron 的 Modbus TCP 插件除了支持以 TCP 客户端的模式主动接入�
 
 ## 地址格式
 
-> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]</span>
+> SLAVE!ADDRESS\[.BIT][#ENDIAN]\[.LEN\[H]\[L]\[D]\[E]]
 
 ### **SLAVE**
 

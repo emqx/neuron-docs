@@ -31,7 +31,7 @@ Neuron OPC UA 插件可作为客户端访问 KEPServerEX、Industrial Gateway OP
 
 ## 地址格式
 
-> NS!NODEID</span>
+> NS!NODEID
 
 **NS** 名字空间索引。
 

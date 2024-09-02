@@ -28,7 +28,7 @@ The fins plugin is used for Omron PLCs with network port, such as CP2E.
 
 ### Address Format
 
-> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]</span>
+> AREA ADDRESS\[.BIT]\[.LEN\[H]\[L]]
 
 #### AREA ADDRESS
 

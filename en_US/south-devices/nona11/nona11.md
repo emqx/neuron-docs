@@ -26,7 +26,7 @@ The non a11 plugin is used for NON-A11 device.
 
 ### Address Format
 
-> COMMAND ! OFFSET[.LEN]</span>
+> COMMAND ! OFFSET[.LEN]
 
 ### Address Examples
 

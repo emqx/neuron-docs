@@ -24,8 +24,8 @@ The northbound application node already supports the statistics of some fields, 
 | send_msgs_total        | Total number of sent the messages          |
 | send_msg_errors_total  | Total number of failed messages sent       |
 | recv_msgs_total        | Total number of received the messages      |
-| link_state              | link state of the node</br>DISCONNECTED = 0</br> CONNECTED = 1       |
-| running_state           |  running state of the node</br> INIT = 1</br>READY = 2</br> RUNNING = 3</br>    STOPPED = 4            |
+| link_state              | link state of the node<br />DISCONNECTED = 0<br /> CONNECTED = 1       |
+| running_state           |  running state of the node<br /> INIT = 1<br />READY = 2<br /> RUNNING = 3<br />    STOPPED = 4            |
 
 ## Southboud node statistics
 
@@ -43,5 +43,5 @@ The southbound node already supports the statistics of some fields, but there ar
 | group_tags_total         | Total number of tags in the group                       |
 | group_last_send_msgs     | Number of messages sent by calling group timer once     |
 | group_last_timer_ms      | The time when the group timer is called once, in milliseconds |
-| link_state              | link state of the node</br>DISCONNECTED = 0</br> CONNECTED = 1       |
-| running_state           |  running state of the node</br> INIT = 1</br>READY = 2</br> RUNNING = 3</br>    STOPPED = 4            |
+| link_state              | link state of the node<br />DISCONNECTED = 0<br /> CONNECTED = 1       |
+| running_state           |  running state of the node<br /> INIT = 1<br />READY = 2<br /> RUNNING = 3<br />    STOPPED = 4            |
