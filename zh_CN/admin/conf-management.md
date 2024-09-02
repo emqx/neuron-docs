@@ -20,15 +20,19 @@ Neuron 支持在启动过程中读取环境变量来配置启动参数，目前�
 | NEURON_DISABLE_AUTH    | 设置为1，Neuron 关闭Token鉴权认证；设置为0，Neuron 开启Token鉴权认证                |
 | NNEURON_CONFIG_DIR     | Neuron配置文件目录                                                             |
 | NEURON_PLUGIN_DIR      | Neuron插件文件目录                                                             |
+| NEURON_SUB_FILTER_ERROR | 设置为 1，subscribe 属性的点位仅检测上次读取正常的值，北向不上报任何错误代码 |
 
 
 ## 配置文件
 
-Neuron提供 json 格式配置文件配置Neuron相关个性化参数，目前支持 ip，port 和 disable_auth 三个配置项目，配置文件路径为neuron安装目录config/neuron.json。默认配置内容如下:
+Neuron 提供 json 格式配置文件配置 Neuron 相关个性化参数，配置文件路径为 neuron 安装目录 config/neuron.json。默认配置内容如下:
 ```json
 {
-    "ip": "0.0.0.0",
-    "port": 7000,
-    "disable_auth": 0
+	"ip": "0.0.0.0",
+	"port": 7000,
+	"disable_auth": 0,
+	"syslog_host": "",
+	"syslog_port": 541,
+	"sub_filter_error": 0
 }
 ```
