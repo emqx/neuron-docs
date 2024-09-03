@@ -1,4 +1,4 @@
-name: Check markdown
+name: Check Docs
 
 on: [push, pull_request]
 
@@ -8,8 +8,12 @@ jobs:
     steps:
     - name: check out code
       uses: actions/checkout@main
+  
     - name: install markdownlint
       run: sudo npm install -g markdownlint-cli
+
+    - name: sync neuron docs
+      run: python3 .github/scripts/sync_neuron.py $(pwd)
 
     - name: check markdown
       run: markdownlint -c .github/workflows/markdown_config.json ./
@@ -19,6 +23,9 @@ jobs:
     steps:
     - name: check out code
       uses: actions/checkout@main
+
+    - name: sync neuron docs
+      run: python3 .github/scripts/sync_neuron.py $(pwd)
 
     - name: check directory config
       run: python3 .github/scripts/directory_check.py directory.json $(pwd)

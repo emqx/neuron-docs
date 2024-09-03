@@ -48,7 +48,7 @@ CPU Usage                        : 90%<br>
 
 ## 下载
 
-Neuron 软件包可由 Neuron 官网 [https://neugates.io/downloads](https://neugates.io/downloads)下载。也可以到 [Github](https://github.com/emqx/neuron/releases) 仓库下载。
+Neuron 软件包可由 [EMQ 官网](https://www.emqx.com/zh/downloads-and-install/neuron)下载。也可以到 [Github](https://github.com/emqx/neuron/releases) 仓库下载。
 
 ## Debian 软件包
 
