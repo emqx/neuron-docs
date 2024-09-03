@@ -52,7 +52,7 @@ CPU Usage                        : 90%<br>
 
 ## Download
 
-Neuron software packages can be downloaded from the Neuron website [https://neugates.io/downloads](https://neugates.io/downloads). You can also download Neuron from [Github](https://github.com/emqx/neuron/releases).
+Neuron software packages can be downloaded from the [EMQ website](https://www.emqx.com/en/downloads-and-install/neuron). You can also download Neuron from [Github](https://github.com/emqx/neuron/releases).
 
 ## Debian Software Package
 

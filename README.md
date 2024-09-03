@@ -10,7 +10,9 @@ Neuron is an Industrial IoT (IIoT) connectivity server for modern big data and A
 
 This repository contains documents for Neuron module development and operations in terms of architecture, use cases, quick started guide, SQL streaming scripts, user guide, SDK tutorial and technical details.
 
-For more information about Neuron, please access [Neuron website](https://neugates.io).
+If you need more driver protocol support and edge computing services, you can choose Neuron's commercial version NeuronEX. NeuronEX comes with a built-in license for 30 data tags that can be applied to all southbound drivers. And NeuronEX also supports edge intelligent analysis of industrial data to enable you to quickly gain business insights. 
+
+For more information about NeuronEX, please access [NeuronEX website](https://www.emqx.com/en/products/neuronex).To download NeuronEX, please click [here](https://www.emqx.com/en/downloads-and-install/neuronex).
 
 ## Preview Docs
 
@@ -34,7 +36,7 @@ The following are all the github repos related to Neuron development.
 
 ## Community
 
-Please visit our [offical website](https://neugates.io) to have a good inspiration of how to apply Neuron in your big data and IIoT project.
+Please visit our [offical website](https://www.emqx.com/en/products/neuronex) to have a good inspiration of how to apply Neuron in your big data and IIoT project.
 
 If you found any bugs or issues, please drop it in [Github Issues](https://github.com/emqx/neuron/issues). Your help is much appriceiated. 
 
