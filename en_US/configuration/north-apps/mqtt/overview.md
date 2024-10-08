@@ -23,11 +23,15 @@ See the table below for the configuration parameters.
 
 | Parameter                       | Description                                                  |
 | ------------------------------- | ------------------------------------------------------------ |
+| **MQTT Version**                | The version of MQTT protocol. The default is v3.1.1.          |
 | **Client ID**                   | MQTT client id for communication, a required field.          |
 | **QoS Level**                   | MQTT QoS level for message delivery, optional, default QoS 0. (since 2.4.0) |
 | **Upload Format**               | JSON format of reported data, a required field: <br /><br /> - *values-format*, data are split into `values` and `errors` sub-objects. <br />- *tags-format*, tag data are put in a single array. <br /><br />For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) |
-| **Write Request Topic**         | MQTT topic to which the plugin subscribes for write requests. For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) (since 2.4.5) |
+| **Write Request Topic**         | MQTT topic to which the plugin subscribes for write requests. For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) (since 2.4.5). If tracing is enabled, configure the user properties `traceparent` and `tracestate` according to the W3C standard. |
 | **Write Response Topic**        | MQTT topic to which the plugin sends write responses. (since 2.4.5) |
+| **Driver Status Report**         | Reports status of all the southbound nodes to the specified topic. |
+| **Status Report Topic**      | The topic for status reporting. |
+| **Status Report Interval**   | The time interval for reporting the status of the southbound node, in seconds. The range is 1-3600, with a default of 1. |
 | **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. (Since 2.4.3) |
 | **Cache Memory Size**           | In-memory cache limit (MB) in case of communication failure, a required field. Range in [0, 1024]. Should not be larger than *Cache Disk Size*. For details about the cache feature, see [Offline Data Caching](#offline-data-caching) |
 | **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, a required field. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
