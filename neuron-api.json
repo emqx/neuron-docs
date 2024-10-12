@@ -7457,6 +7457,123 @@
         },
         "x-run-in-apifox": "https://apifox.com/web/project/3516282/apis/api-123060905-run"
       }
+    },
+    "/api/neuron/otel": {
+      "get": {
+        "summary": "Get OTEL Trace Configuration",
+        "x-apifox-folder": "Neuron/trace",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "Get OTEL Trace Configuration.",
+        "tags": [
+          "Neuron/trace"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "action": {
+                      "type": "string"
+                    },
+                    "collector_url": {
+                      "type": "string"
+                    },
+                    "control": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "boolean"
+                    },
+                    "data_sample_rate": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "service_name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3516282/apis/api-123060905-run"
+      },
+      "post": {
+        "summary": "Set OTEL Trace Configuration",
+        "x-apifox-folder": "Neuron/trace",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "Set OTEL Trace Configuration.",
+        "tags": [
+          "Neuron/trace"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string"
+                  },
+                  "collector_url": {
+                    "type": "string"
+                  },
+                  "control": {
+                    "type": "boolean"
+                  },
+                  "data": {
+                    "type": "boolean"
+                  },
+                  "data_sample_rate": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "service_name": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "action": "start",
+                  "collector_url": "127.0.0.1:4318",
+                  "control": true,
+                  "data": true,
+                  "data_sample_rate": 0.01,
+                  "service_name": "neuronex-001"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/neuron-0"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "success",
+                    "value": {
+                      "error": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3516282/apis/api-123060905-run"
+      }
     }
   },
   "components": {
