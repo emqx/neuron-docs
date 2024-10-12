@@ -135,7 +135,7 @@ Tag value is returned only when the tag is read successfully. If something goes 
 You could write a tag by sending requests in JSON to the MQTT topic designated by the **Write Request Topic** parameter.
 
 ::: tip
-Before Neuron version 2.4.5, the write request topic was hard-coded to **/neuron/{node_name}/write/req**.
+Before Neuron version 2.4.5, the write request topic was hard-coded to **/neuron/{random_str}/write/req**.
 :::
 
 #### Body
@@ -197,7 +197,7 @@ Below is an example write request:
 Write response will be published to the MQTT topic designated by the **Write Response Topic** parameter.
 
 ::: tip
-Before Neuron version 2.4.5, the write response topic was hard-coded to **/neuron/{node_name}/write/resp**.
+Before Neuron version 2.4.5, the write response topic was hard-coded to **/neuron/{random_str}//write/resp**.
 :::
 
 #### Body
@@ -212,5 +212,43 @@ Below is an example of write response:
 {
   "uuid": "cd32be1b-c8b1-3257-94af-77f847b1ed3e",
   "error": 0
+}
+```
+
+## Driver Status Report
+
+Reports status of all the southbound nodes to the specified topic.
+
+### Status Report Topic
+
+The status report topic is specified in the northbound node configuration. Its default value is **/neuron/{random_str}/state/update**.
+
+### Status Report Interval
+
+The status report interval is specified in the northbound node configuration, indicating the number of seconds between each message. The default value is 1, with an allowed range of 1-3600.
+
+### Reporting Message Format
+
+The reported data consists of the following fields:
+* `timestamp`: The UNIX timestamp when the data was collected.
+* `states`: An array of node status information.
+
+Below is an example of a driver status reporting message.
+
+```json
+{
+  "timestamp": 1658134132237,
+  "states": [
+    {
+      "node": "modbus-tcp",
+      "link": 2,
+      "running": 3
+    },
+    {
+      "node": "modbus-rtu",
+      "link": 2,
+      "running": 3
+    }
+  ]
 }
 ```
