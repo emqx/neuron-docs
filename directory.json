@@ -204,6 +204,10 @@
           "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
         },
         {
+          "title": "Allen-Bradley 5000 Serial",
+          "path": "configuration/south-devices/ab-5000/ab-5000"
+        },
+        {
           "title": "Allen-Bradley ControlLogix 5500",
           "path": "configuration/south-devices/ab-5500/ab-5500"
         },
@@ -872,6 +876,10 @@
         {
           "title": "EtherNet/IP(CIP)",
           "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
+        },
+        {
+          "title": "Allen-Bradley 5000 Serial",
+          "path": "configuration/south-devices/ab-5000/ab-5000"
         },
         {
           "title": "Allen-Bradley ControlLogix 5500",
