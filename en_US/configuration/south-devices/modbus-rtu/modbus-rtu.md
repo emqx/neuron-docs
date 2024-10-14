@@ -32,6 +32,17 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Connection Mode** | Only for the **Ethernet** mode, you can choose Neuron as the TCP client or server. |
 | **IP Address** | Only for the **Ethernet** mode,  the IP address of the device when using TCP connection with Neuron as the client, or the IP address of Neuron when using TCP connection with Neuron as the server. The default value is 0.0.0.0. |
 | **Port** | Only for the **Ethernet** mode, the port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server. |
+| **Device Degradation** | Enable or disable device degradation mechanism. |
+| **Failure Threshold for Degradation** | The number of consecutive failure cycles required to trigger device degradation. |
+| **Recovery Time After Degradation** | The time in seconds after which the device recovers from degradation. |
+
+::: tip  
+The above configuration can meet the individualized needs of the device:<br>  
+
+1. Retry requests are considered as the same request, i.e., a successful retry is regarded as a successful request.<br>  
+2. In the same read cycle, if a certain tag under a slave id does not receive a response, requests for other tags under the same slave id in that cycle will be skipped.<br>  
+3. The device degradation is triggered when a certain tag under a slave id fails to respond for multiple consecutive cycles (or can be configured to trigger after just one failed cycle). Once triggered, all requests for that slave will be stopped for the configured period.  
+:::
 
 ## Configure Data Groups and Tags
 
