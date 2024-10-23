@@ -32,6 +32,17 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Port** | The port number of the device when using TCP connection with Neuron as the client, or the port number of Neuron when using TCP connection with Neuron as the server.|
 | **Connection Timeout** |  The time the system waits for a device to respond to a command. |
 | **Check Header** | Choose whether to verify the message header. After selecting True, when encountering packet header errors, the neuron and device will reconnect. |
+| **Device Degradation** | Enable or disable device degradation mechanism. |
+| **Failure Threshold for Degradation** | The number of consecutive failure cycles required to trigger device degradation. |
+| **Recovery Time After Degradation** | The time in seconds after which the device recovers from degradation. |
+
+::: tip  
+The above configuration can meet the individualized needs of the device:<br>  
+
+1. Retry requests are considered as the same request, i.e., a successful retry is regarded as a successful request.<br>  
+2. In the same read cycle, if a certain tag under a slave id does not receive a response, requests for other tags under the same slave id in that cycle will be skipped.<br>  
+3. The device degradation is triggered when a certain tag under a slave id fails to respond for multiple consecutive cycles (or can be configured to trigger after just one failed cycle). Once triggered, all requests for that slave will be stopped for the configured period.  
+:::
 
 ## Configure Data Groups and Tags
 

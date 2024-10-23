@@ -100,6 +100,10 @@
           ]
         },
         {
+          "title": "HollySys Modbus RTU",
+          "path": "configuration/south-devices/modbus-hollysys-rtu/modbus-hollysys-rtu"
+        },
+        {
           "title": "XINJE Modbus RTU",
           "path": "configuration/south-devices/modbus-xinje-rtu/modbus-xinje-rtu"
         },
@@ -116,6 +120,10 @@
               "path": "configuration/south-devices/modbus-tcp/faq/faq"
             }
           ]
+        },
+        {
+          "title": "HollySys Modbus TCP",
+          "path": "configuration/south-devices/modbus-hollysys-tcp/modbus-hollysys-tcp"
         },
         {
           "title": "Inovance Modbus TCP",
@@ -202,6 +210,10 @@
         {
           "title": "EtherNet/IP(CIP)",
           "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
+        },
+        {
+          "title": "Allen-Bradley 5000 Serial",
+          "path": "configuration/south-devices/ab-5000/ab-5000"
         },
         {
           "title": "Allen-Bradley ControlLogix 5500",
@@ -440,6 +452,14 @@
               "path": "configuration/south-devices/codesys3/demo"
             }
           ]
+        },
+        {
+          "title": "DNP 3.0",
+          "path": "configuration/south-devices/dnp3/dnp3"
+        },
+        {
+          "title": "DF1",
+          "path": "configuration/south-devices/df1/df1"
         }
       ]
     },
@@ -770,6 +790,10 @@
           ]
         },
         {
+          "title": "HollySys Modbus RTU",
+          "path": "configuration/south-devices/modbus-hollysys-rtu/modbus-hollysys-rtu"
+        },
+        {
           "title": "XINJE Modbus RTU",
           "path": "configuration/south-devices/modbus-xinje-rtu/modbus-xinje-rtu"
         },
@@ -786,6 +810,10 @@
               "path": "configuration/south-devices/modbus-tcp/faq/faq"
             }
           ]
+        },
+        {
+          "title": "HollySys Modbus TCP",
+          "path": "configuration/south-devices/modbus-hollysys-tcp/modbus-hollysys-tcp"
         },
         {
           "title": "Inovance Modbus TCP",
@@ -872,6 +900,10 @@
         {
           "title": "EtherNet/IP(CIP)",
           "path": "configuration/south-devices/ethernet-ip/ethernet-ip"
+        },
+        {
+          "title": "Allen-Bradley 5000 Serial",
+          "path": "configuration/south-devices/ab-5000/ab-5000"
         },
         {
           "title": "Allen-Bradley ControlLogix 5500",
@@ -1100,6 +1132,14 @@
               "path": "configuration/south-devices/codesys3/demo"
             }
           ]
+        },
+        {
+          "title": "DNP 3.0",
+          "path": "configuration/south-devices/dnp3/dnp3"
+        },
+        {
+          "title": "DF1",
+          "path": "configuration/south-devices/df1/df1"
         }
       ]
     },
