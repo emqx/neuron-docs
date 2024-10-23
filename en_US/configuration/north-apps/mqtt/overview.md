@@ -79,6 +79,37 @@ The following table gives some statistics on disk space usage for offline cachin
 | 1000             | 12993                     | 100               | 1401                  |
 | 1000             | 12993                     | 1000              | 13427                 |
 
+### Driver Status Report
+
+The driver status reporting feature allows users to report the status of southbound drivers to a specified MQTT topic. To report driver status, set the **Driver Status Report** parameter to `True` and specify the **Status Report Topic** and **Status Report Interval** parameters. The reported data format is as follows:
+
+```json
+{
+	"timestamp": 1725583528917,
+	"states": [{
+		"node": "modbus1",
+		"link": 1,
+		"running": 3
+	}, {
+		"node": "s7-1200",
+		"link": 0,
+		"running": 3
+	}, {
+		"node": "opcua1",
+		"link": 1,
+		"running": 3
+	}]
+}
+```
+
+Where:
+
+- `timestamp`：Report timestamp, in milliseconds.
+- `states`：Driver status list, each element contains the following fields:
+  - `node`：Southbound driver name.
+  - `link`：Driver connection status, 0 for disconnected, 1 for connected.
+  - `running`：Driver running status, 3 for running, 4 for stopped.
+
 ### MQTT over SSL
 
 SSL/TLS (Secure Sockets Layer/Transport Layer Security) is a security protocol used to encrypt communication channels between networked devices. It enables secure communication over an insecure network, such as the Internet. MQTT over SSL/TLS is a secure method for transmitting MQTT messages between the client and the MQTT broker by encrypting the data being transmitted with SSL/TLS encryption. This ensures that all data passed between the clients and the broker
