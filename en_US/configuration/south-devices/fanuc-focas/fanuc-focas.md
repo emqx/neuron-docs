@@ -111,6 +111,7 @@ The address can support up to 3 parameters, with the `@` symbol specifying the c
 The number of axes starts from 1 and increases according to the actual number of axes.
 To use the tool life management function, the corresponding parameters on the device must be enabled. 
 If the parameter address does not set `@p`, it defaults to path 1.
+:::
 
 
 *CNC address example*
