@@ -85,10 +85,11 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 | UInt64                | UINT64                  |
 | Float                 | FLOAT                   |
 | Double                | DOUBLE                  |
-| Boolean               | BOOL                    |
+| Boolean               | BOOL (采集值为true或false) |
+| Boolean               | BIT (采集值为0或1)        |
 | String                | STRING                  |
 | Datetime              | UINT32                  |
-| LocalizedText（只读） | STRING                  |
+| LocalizedText（只读）  | STRING                  |
 | SByte Array           | ARRAY_INT8              |
 | Int16 Array           | ARRAY_INT16             |
 | Int32 Array           | ARRAY_INT32             |
