@@ -83,7 +83,8 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 | UInt64                   | UINT64                  |
 | Float                    | FLOAT                   |
 | Double                   | DOUBLE                  |
-| Boolean                  | BOOL                    |
+| Boolean                  | BOOL (The value is true or false)       |
+| Boolean               | BIT (The value is 0 or 1)  |
 | String                   | STRING                  |
 | Datetime                 | UINT32                  |
 | LocalizedText(Read Only) | STRING                  |
