@@ -18,96 +18,13 @@ IEC61850 插件用于对 IEC61850 服务器的读/写，目前支持 MMS 协议�
 | -------- | -------------------------- |
 | **设备 IP 地址** | 目标设备 IP              |
 | **设备端口** | 目标设备端口号，默认为 102 |
-| **本地 AP 标题** | 当前客户端的 ACSE AP-Title 字符串 (缺省 = '1,1,1,999') |
-| **本地 AE 限定符** | 当前客户端的 ACSE AP-Title 字符串 (缺省 = '12') |
-| **本地 P 选择器** | 当前客户端的 PSAP-Address (缺省 = 1) |
-| **本地 S 选择器** | 当前客户端的 SSAP-Address (缺省 = 1) |
-| **本地 T 选择器** | 当前客户端的 TSAP-Address (缺省 = 1) |
-| **远程 AP 标题** | 远程设备的 ACSE AP-Title 字符串 (缺省 = '1,1,1,999.1') |
-| **远程 AE 限定符** | 远程设备的 ACSE AE-Qualifier (缺省 = 12) |
-| **远程 P 选择器** | 远程设备的 PSAP-Address (缺省 = 1) |
-| **远程 S 选择器** | 远程设备的 SSAP-Address (缺省 = 1) |
-| **远程 T 选择器** | 远程设备的 TSAP-Address (缺省 = 1) |
-| **开启连接认证** | 是否开启连接认证 |
-| **连接认证方式** | 如选择开启连接认证，连接认证方式，密码或无 |
-| **认证密码** | 如选择开启连接认证，且连接认证方式为密码，输入认证密码 |
+| **总召唤间隔** | 设备发送总召唤的间隔，为 0 时关闭总招，单位秒 |
 
 ## 设置组和点位
 
 完成插件的添加和配置后，要建立设备与 Neuron 之间的通信，首先为南向驱动程序添加组和点位。
 
-完成设备配置后，在**南向设备**页，点击设备卡片/设备列进入**组列表**页。点击**创建**来创建组，设定组名称以及采集间隔。完成组的创建后，点击组名称进入**点位列表**页，添加需要采集的设备点位，包括点位地址，点位属性，数据类型等。
-
-公共配置项部分可参考[连接南向设备](../south-devices.md)，本页将介绍支持的数据类型和地址格式部分。
-
-### 数据类型
-
-* INT8
-* UINT8
-* INT16
-* UINT16
-* INT32
-* UINT32
-* INT64
-* UINT64
-* FLOAT
-* DOUBLE
-* BOOL
-* STRING
-
-### 地址格式
-
-> Logical Devices/Logical Nodes$FC$DO$DA
-
-IEC61850 数据分层模型通常有以下几种：
-
-| 模型层名称                           | 描述         |
-| ------------------------------------ | ------------ |
-| IED（Intelligent Electronic Device） | 智能电子设备 |
-| LD（Logical Devices）                | 逻辑设备     |
-| LN（Logical Nodes）                  | 逻辑节点     |
-| DO（Data Objects）                   | 数据对象     |
-| DA （Data Attributes）               | 数据属性     |
-
-**FC** 是功能的约束值（即功能码），如下表所示：
-
-|   功能约束   | 描述         |
-| -----  | ------------ |
-| ST | 状态信息          |
-| MX | 测量值 - 模拟值   |
-| SP | 设定点            |
-| SV | 替换              |
-| CF | 配置              |
-| DC | 说明              |
-| SG | 设置组            |
-| SE | 设置组别可编辑    |
-| SR | 服务响应/服务跟踪 |
-| OR | 操作收到          |
-| BL | 屏蔽              |
-| EX | 扩展定义          |
-| CO | 控制              |
-| US | 单播 SV           |
-| MS | 多播 SV           |
-| RP | 无缓冲报告        |
-| BR | 缓冲报告          |
-| LG | 日志控制块        |
-
-### 地址示例
-
-| 地址                                  | 数据类型 | 说明                                                 |
-| ------------------------------------- | -------- | ---------------------------------------------------- |
-| GenericIO/GGIO1$CF$Mod$ctlModel       | INT8     | LD-GenericIO,LN-GGIO1,FC-CF,DO-Mod,DA-ctlModel       |
-| GenericIO/GGIO1$CO$SPCSO1$Oper$ctlNum | UINT8    | LD-GenericIO,LN-GGIO1,FC-CO,DO-SPCSO1,DA-Oper$ctlNum |
-| GenericIO/GGIO1$CF$SPCSO1$ctlModel    | INT16    | LD-GenericIO,LN-GGIO1,FC-CF,DO-SPCSO1,DA-ctlModel    |
-| GenericIO/GGIO1$CO$SPCSO2$Oper$ctlNum | UINT16   | LD-GenericIO,LN-GGIO1,FC-CO,DO-SPCSO2,DA-Oper$ctlNum |
-| GenericIO/GGIO1$CF$SPCSO2$ctlModel    | INT32    | LD-GenericIO,LN-GGIO1,FC-CF,DO-SPCSO2,DA-ctlModel    |
-| GenericIO/GGIO1$ST$SPCSO4$Oper$ctlNum | UINT32   | LD-GenericIO,LN-GGIO1,FC-ST,DO-SPCSO4,DA-Oper$ctlNum |
-| GenericIO/GGIO1$CF$SPCSO3$ctlModel    | INT64    | LD-GenericIO,LN-GGIO1,FC-CF,DO-SPCSO3,DA-ctlModel    |
-| GenericIO/GGIO1$ST$SPCSO1$ctlNum      | UINT64   | LD-GenericIO,LN-GGIO1,FC-ST,DO-SPCSO1,DA-ctlNum      |
-| GenericIO/GGIO1$MX$AnIn1$mag$f        | FLOAT    | LD-GenericIO,LN-GGIO1,FC-MX,DO-AnIn1,DA-mag$f        |
-| GenericIO/GGIO1$MX$AnIn3$mag$f        | DOUBLE   | LD-GenericIO,LN-GGIO1,FC-MX,DO-AnIn3,DA-mag$f        |
-| GenericIO/GGIO1$CO$SPCSO1$Oper$Test   | BOOL     | LD-GenericIO,LN-GGIO1,FC-CO,DO-SPCSO1,DA-Oper$Test   |
-| GenericIO/LLN0$DC$NamPlt$vendor       | STRING   | LD-GenericIO,LN-GGIO1,FC-DC,DO-NamPlt,DA-vendor      |
+IEC61850 插件只支持通过导入 SCL 文件自动添加组与点位，SCL 文件中的 Report 块生成可读性数据组，根据引用的 DataSet 生成点位；根据 FC 为 CO、SP、SG 的数据生成可写点位，可写点位单独在一个 Control 组中。
 
 ## 应用场景
 
