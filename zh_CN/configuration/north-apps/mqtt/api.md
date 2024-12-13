@@ -233,12 +233,12 @@ Neuron 提供了对多点位写入的支持。要在一次请求中可以写入�
   "states": [
     {
       "node": "modbus-tcp",
-      "link": 2,
+      "link": 1,
       "running": 3
     },
     {
       "node": "modbus-rtu",
-      "link": 2,
+      "link": 1,
       "running": 3
     }
   ]
