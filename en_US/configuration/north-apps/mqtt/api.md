@@ -241,12 +241,12 @@ Below is an example of a driver status reporting message.
   "states": [
     {
       "node": "modbus-tcp",
-      "link": 2,
+      "link": 1,
       "running": 3
     },
     {
       "node": "modbus-rtu",
-      "link": 2,
+      "link": 1,
       "running": 3
     }
   ]
