@@ -76,6 +76,51 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
 当点位采集成功时，返回采集到的数据。当点位采集发生错误时，返回错误码，不再返回数值。
 :::
 
+### ECP 格式
+
+在 *ECP-format* 格式中， 上报的数据由以下字段构成：
+* `timestamp` : 数据采集时的 UNIX 时间戳。
+* `node` : 被采集的南向节点的名字。
+* `group` : 被采集的南向节点的点位组的名字。
+* `tags` : 点位数据数组，每个元素对应一个点位。
+
+以下为使用 *ECP-format* 格式的数据样例，其中所有点位数据存放在一个数组中，每个数组元素包含点位的名字，点位的数据类型和采集成功时的数据值，不包含采集失败的点位。
+数据类分为布尔、整型、浮点型、字符串四种。
+* type = 1 布尔
+* type = 2 整型
+* type = 3 浮点型
+* type = 4 字符串
+
+```json
+{
+  "timestamp": 1647497389075,
+  "node": "modbus",
+  "group": "grp",
+  "tags": [
+    {
+      "name": "tag_boolean",
+      "value": true,
+      "type": 1,
+    },
+    {
+      "name": "tag_int32_",
+      "value": 123,
+      "type": 2,
+    },
+    {
+      "name": "tag_float",
+      "value": 1.23,
+      "type": 3,
+    },
+    {
+      "name": "tag_string",
+      "value": "abcd",
+      "type": 4,
+    }
+  ]
+}
+```
+
 ## 读 Tags
 
 ### 请求
