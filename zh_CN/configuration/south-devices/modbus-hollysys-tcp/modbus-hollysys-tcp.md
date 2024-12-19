@@ -41,6 +41,7 @@ Modbus TCP 是一种基于以太网的 Modbus 协议版本，它使用 TCP/IP �
 * BOOL
 * INT16
 * UINT16
+* WORD
 
 
 ### 地址格式
