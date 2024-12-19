@@ -73,6 +73,52 @@ The following example data is in *values-format*, where tag values collected suc
 Tag value is returned only when the tag is read successfully. If something goes wrong when reading a tag, the error code is returned.
 :::
 
+### ECP Format
+
+In *ECP-format*, the upload data has the following fields:
+* `timestamp`: the Unix timestamp when the data was collected
+* `node`: name of the south node from which data was collected
+* `group`: name of the south node group that the tags belong to
+* `tags`: tags data array where each element corresponds to one tag in the group
+
+The following example data is in *ECP-format*, where tag data are stored in an array. Each element has the name of the tag, the tag type and the tag value, excluding tags where collection failed.
+
+Data classes are divided into four types: Boolean, Integer, Float, and String.
+* type = 1 Boolean
+* type = 2 Integer
+* type = 3 Float
+* type = 4 String
+
+```json
+{
+  "timestamp": 1647497389075,
+  "node": "modbus",
+  "group": "grp",
+  "tags": [
+    {
+      "name": "tag_boolean",
+      "value": true,
+      "type": 1,
+    },
+    {
+      "name": "tag_int32_",
+      "value": 123,
+      "type": 2,
+    },
+    {
+      "name": "tag_float",
+      "value": 1.23,
+      "type": 3,
+    },
+    {
+      "name": "tag_string",
+      "value": "abcd",
+      "type": 4,
+    }
+  ]
+}
+```
+
 ## Read Tag
 
 ### Request
