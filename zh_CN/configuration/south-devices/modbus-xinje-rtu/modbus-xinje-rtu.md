@@ -52,6 +52,7 @@ XINJE Modbus RTU 插件的配置与 [Modbus RTU驱动模块](../modbus-rtu/modbu
 * DOUBLE
 * BIT
 * STRING
+* BYTES
 
 ### 地址格式
 
