@@ -44,6 +44,7 @@ HollySys Modbus RTU 插件的配置与 [Modbus RTU驱动模块](../modbus-rtu/mo
 * BOOL
 * INT16
 * UINT16
+* WORD
 
 ### 地址格式
 
