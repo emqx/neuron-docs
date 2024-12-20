@@ -460,6 +460,10 @@
         {
           "title": "DF1",
           "path": "configuration/south-devices/df1/df1"
+        },
+        {
+          "title": "KND CNC",
+          "path": "configuration/south-devices/knd/knd"
         }
       ]
     },
@@ -1140,6 +1144,10 @@
         {
           "title": "DF1",
           "path": "configuration/south-devices/df1/df1"
+        },
+        {
+          "title": "KND CNC",
+          "path": "configuration/south-devices/knd/knd"
         }
       ]
     },
