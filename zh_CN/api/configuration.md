@@ -1317,6 +1317,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     //when using the MQTT plugin, the topic field needs to be added
     "params": {
         "topic": "/neuron/mqtt/group-1"
+    },
+    //optional, static tags
+    "static_tags": {
+        "static_tag1": "aabb", "static_tag2": 1.401, "static_tag3": false, "static_tag4": [1,2,4]
     }
 }
 ```
@@ -1361,7 +1365,11 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
       "params": {
         //when using the MQTT plugin, the topic key is the upload topoic
         "topic": "/neuron/mqtt/modbus1/group1"
-      }
+      },
+      //optional, static tags
+      "static_tags": {
+        "static_tag1": "aabb", "static_tag2": 1.401, "static_tag3": false, "static_tag4": [1,2,4]
+     }
     },
     {
       "driver": "modbus2",
@@ -1411,6 +1419,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     "params": {
         //when using the MQTT plugin, the topic key is the upload topic
         "topic": "/neuron/mqtt/group-1"
+    },
+    //optional, static tags
+    "static_tags": {
+        "static_tag1": "aabb", "static_tag2": 1.401, "static_tag3": false, "static_tag4": [1,2,4]
     }
 }
 ```
@@ -1498,6 +1510,10 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //optional, when using the MQTT plugin, the topic field needs to be added
             "params": {
                 "topic": "/neuron/mqtt/group-1"
+            }
+            //optional, static tags
+            "static_tags": {
+                "static_tag1": "aabb", "static_tag2": 1.401, "static_tag3": false, "static_tag4": [1,2,4]
             }
         },
         {
