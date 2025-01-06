@@ -8,7 +8,7 @@
 ## 数据上报
 
 Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题。
-上报数据的具体格式由**上报数据格式**参数指定，有 *tags-format* 和 *values-format* 两种格式。
+上报数据的具体格式由**上报数据格式**参数指定，有多种格式可选。
 
 ### 上报主题
 
@@ -69,6 +69,59 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
         "tag1": 2014
     },
     "metas":{}
+}
+```
+
+### 自定义格式
+
+在自定义格式中，可以使用内置支持的变量自定义数据上报格式。
+
+#### 内置变量
+
+| *变量名称* | *说明* |
+| ------------------ | ---------------------- | 
+| `${timestamp}` | 数据采集时的 UNIX 时间戳。 |
+| `${node}` | 被采集的南向节点的名字。 |
+| `${group}` | 被采集的南向节点的点位组的名字。 |
+| `${tag_values}` | 南向采集点位有效值的数组。 |
+| `${tag_errors}` | 南向采集点位报错的数组。 |
+| `${static_tags}` | 订阅时自定义配置的静态点位。 |
+
+#### 示例
+
+自定义数据格式配置为：
+```json
+{
+    "timestamp": "${timestamp}",
+    "node": "${node}",
+    "group": "${group}",
+    "values": "${tag_values}",
+    "static": "${static_tags}"
+}
+```
+
+数据上报的格式为：
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus",
+    "group": "group",
+    "values": [
+        {
+            "name": "tag0",
+            "value": 123
+        },
+        {
+            "name": "tag1",
+            "value": false 
+        }
+    ],
+    "static": [
+        {
+            "name": "static_tag1",
+            "value": 456
+        }
+    ]
 }
 ```
 

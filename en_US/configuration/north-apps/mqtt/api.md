@@ -69,6 +69,59 @@ The following example data is in *values-format*, where tag values collected suc
 }
 ```
 
+### Custom Format
+
+In the custom format, use built-in variables to define the data upload format.
+
+#### Variables
+
+| *variable* | *description* |
+| ------------------ | ---------------------- | 
+| `${timestamp}` | The UNIX timestamp when the data was read. |
+| `${node}` | The name of the southbound node. |
+| `${group}` | The name of the group. |
+| `${tag_values}` | The array of valid tag values. |
+| `${tag_errors}` | The array of error codes. |
+| `${static_tags}` | The array of static tags. |
+
+#### Example
+
+The custom format is defined using built-in variables.
+```json
+{
+    "timestamp": "${timestamp}",
+    "node": "${node}",
+    "group": "${group}",
+    "values": "${tag_values}",
+    "static": "${static_tags}"
+}
+```
+
+The following is an example of the custom format data.
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus",
+    "group": "group",
+    "values": [
+        {
+            "name": "tag0",
+            "value": 123
+        },
+        {
+            "name": "tag1",
+            "value": false 
+        }
+    ],
+    "static": [
+        {
+            "name": "static_tag1",
+            "value": 456
+        }
+    ]
+}
+```
+
 ::: tip
 Tag value is returned only when the tag is read successfully. If something goes wrong when reading a tag, the error code is returned.
 :::
