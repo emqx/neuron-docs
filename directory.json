@@ -246,6 +246,10 @@
           "path": "configuration/south-devices/mitsubishi-1e/mitsubishi-1e"
         },
         {
+          "title": "Mitsubishi 4E",
+          "path": "configuration/south-devices/mitsubishi-4e/overview"
+        },
+        {
           "title": "Siemens S7 ISO TCP",
           "path": "configuration/south-devices/siemens-s7/s7",
           "children": [
@@ -934,6 +938,10 @@
               "path": "configuration/south-devices/mitsubishi-3e/faq"
             }
           ]
+        },
+        {
+          "title": "Mitsubishi 4E",
+          "path": "configuration/south-devices/mitsubishi-4e/overview"
         },
         {
           "title": "Mitsubishi 1E",
