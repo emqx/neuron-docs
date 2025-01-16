@@ -242,6 +242,10 @@
           ]
         },
         {
+          "title": "Mitsubishi 4E",
+          "path": "configuration/south-devices/mitsubishi-4e/overview"
+        },
+        {
           "title": "Mitsubishi 1E",
           "path": "configuration/south-devices/mitsubishi-1e/mitsubishi-1e"
         },
@@ -930,6 +934,10 @@
               "path": "configuration/south-devices/mitsubishi-3e/faq"
             }
           ]
+        },
+        {
+          "title": "Mitsubishi 4E",
+          "path": "configuration/south-devices/mitsubishi-4e/overview"
         },
         {
           "title": "Mitsubishi 1E",
