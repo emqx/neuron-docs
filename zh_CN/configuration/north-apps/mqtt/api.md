@@ -83,9 +83,12 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
 | `${timestamp}` | 数据采集时的 UNIX 时间戳。 |
 | `${node}` | 被采集的南向节点的名字。 |
 | `${group}` | 被采集的南向节点的点位组的名字。 |
-| `${tag_values}` | 南向采集点位有效值的数组。 |
+| `${tags}` | 南向采集点位有效值的数组。 |
+| `${tag_values}` | 南向采集点位有效值的数组，Value 格式。 |
 | `${tag_errors}` | 南向采集点位报错的数组。 |
+| `${tag_error_values}` | 南向采集点位报错的数组，Value 格式。 |
 | `${static_tags}` | 订阅时自定义配置的静态点位。 |
+| `${static_tag_values}` | 订阅时自定义配置的静态点位，Value 格式。 |
 
 #### 示例
 
@@ -95,8 +98,12 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
     "timestamp": "${timestamp}",
     "node": "${node}",
     "group": "${group}",
+    "tags": "${tags}",
     "values": "${tag_values}",
-    "static": "${static_tags}"
+    "static_tags": "${static_tags}",
+    "static_tag_values": "${static_tag_values}",
+    "errors": "${tag_errors}",
+    "error_values": "${tag_error_values}"
 }
 ```
 
@@ -106,7 +113,7 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
     "timestamp": 1650006388943,
     "node": "modbus",
     "group": "group",
-    "values": [
+    "tags": [
         {
             "name": "tag0",
             "value": 123
@@ -116,12 +123,21 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
             "value": false 
         }
     ],
-    "static": [
+    "values": {"tag0": 123, "tag1": false},
+    "static_tags": [
         {
             "name": "static_tag1",
             "value": 456
         }
-    ]
+    ],
+    "static_tag_values": {"static_tag1": 456},
+    "errors": [
+        {
+            "name": "tag2",
+            "error": 2014
+        }
+    ],
+    "error_values": {"tag2": 2014}
 }
 ```
 
