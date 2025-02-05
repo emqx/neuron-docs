@@ -80,9 +80,12 @@ In the custom format, use built-in variables to define the data upload format.
 | `${timestamp}` | The UNIX timestamp when the data was read. |
 | `${node}` | The name of the southbound node. |
 | `${group}` | The name of the group. |
-| `${tag_values}` | The array of valid tag values. |
+| `${tags}` | The array of valid tag values. |
+| `${tag_values}` | The array of valid tag values, Value Format |
 | `${tag_errors}` | The array of error codes. |
+| `${tag_error_values}` | The array of error codes, Value Format |
 | `${static_tags}` | The array of static tags. |
+| `${static_tag_values}` | The array of static tags, Value Format |
 
 #### Example
 
@@ -92,8 +95,12 @@ The custom format is defined using built-in variables.
     "timestamp": "${timestamp}",
     "node": "${node}",
     "group": "${group}",
+    "tags": "${tags}",
     "values": "${tag_values}",
-    "static": "${static_tags}"
+    "static_tags": "${static_tags}",
+    "static_tag_values": "${static_tag_values}",
+    "errors": "${tag_errors}",
+    "error_values": "${tag_error_values}"
 }
 ```
 
@@ -103,7 +110,7 @@ The following is an example of the custom format data.
     "timestamp": 1650006388943,
     "node": "modbus",
     "group": "group",
-    "values": [
+    "tags": [
         {
             "name": "tag0",
             "value": 123
@@ -113,12 +120,21 @@ The following is an example of the custom format data.
             "value": false 
         }
     ],
-    "static": [
+    "values": {"tag0": 123, "tag1": false},
+    "static_tags": [
         {
             "name": "static_tag1",
             "value": 456
         }
-    ]
+    ],
+    "static_tag_values": {"static_tag1": 456},
+    "errors": [
+        {
+            "name": "tag2",
+            "error": 2014
+        }
+    ],
+    "error_values": {"tag2": 2014}
 }
 ```
 
