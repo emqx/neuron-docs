@@ -1306,6 +1306,10 @@ To update both group name and interval:
     //optional, when using the MQTT plugin, the topic field needs to be added
     "params": {
         "topic": "/neuron/mqtt/group-1"
+    },
+    //optional, static tags
+    "static_tags": {
+        "static_tag1": "aabb", "static_tag2": 1.401, "static_tag3": false, "static_tag4": [1,2,4]
     }
 }
 ```
@@ -1350,6 +1354,10 @@ To update both group name and interval:
       "params": {
         //when using the MQTT plugin, the topic key is the upload topoic
         "topic": "/neuron/mqtt/modbus1/group1"
+      },
+      //optional, static tags
+      "static_tags": {
+        "static_tag1": "aabb", "static_tag2": 1.401, "static_tag3": false, "static_tag4": [1,2,4]
       }
     },
     {
@@ -1400,6 +1408,10 @@ To update both group name and interval:
     "params": {
         //when using the MQTT plugin, the topic key is the upload topic
         "topic": "/neuron/mqtt/group-1"
+    },
+    //optional, static tags
+    "static_tags": {
+        "static_tag1": "aabb", "static_tag2": 1.401, "static_tag3": false, "static_tag4": [1,2,4]
     }
 }
 ```
@@ -1487,6 +1499,10 @@ To update both group name and interval:
             //when using the MQTT plugin, the topic field needs to be added
             "params": {
                 "topic": "/neuron/mqtt/group-1"
+            },
+            //optional, static tags
+            "static_tags": {
+                "static_tag1": "aabb", "static_tag2": 1.401, "static_tag3": false, "static_tag4": [1,2,4]
             }
         },
         {
