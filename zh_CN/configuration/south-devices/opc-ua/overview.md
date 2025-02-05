@@ -70,39 +70,42 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 * ARRAY_FLOAT
 * ARRAY_DOUBLE
 * ARRAY_BOOL
+* JSON
 
 #### 数据类型转换
 
-| OPC UA 数据类型       | Neuron 数据类型         |
-| --------------------- | ----------------------- |
-| SByte                 | INT8                    |
-| Int16                 | INT16                   |
-| Int32                 | INT32                   |
-| Int64                 | INT64                   |
-| Byte                  | UINT8                   |
-| UInt16                | UINT16                  |
-| UInt32                | UINT32                  |
-| UInt64                | UINT64                  |
-| Float                 | FLOAT                   |
-| Double                | DOUBLE                  |
-| Boolean               | BOOL (采集值为true或false) |
-| Boolean               | BIT (采集值为0或1)        |
-| String                | STRING                  |
-| Datetime              | UINT32                  |
-| LocalizedText（只读）  | STRING                  |
-| SByte Array           | ARRAY_INT8              |
-| Int16 Array           | ARRAY_INT16             |
-| Int32 Array           | ARRAY_INT32             |
-| Int64 Array           | ARRAY_INT64             |
-| Byte  Array           | ARRAY_UINT8, ARRAY_CHAR |
-| UInt16 Array          | ARRAY_UINT16            |
-| UInt32 Array          | ARRAY_UINT32            |
-| UInt64 Array          | ARRAY_UINT64            |
-| Float  Array          | ARRAY_FLOAT             |
-| Double Array          | ARRAY_DOUBLE            |
-| Boolean Array         | ARRAY_BOOL              |
+| OPC UA 数据类型         | Neuron 数据类型            |
+| ----------------------- | -------------------------- |
+| SByte                   | INT8                       |
+| Int16                   | INT16                      |
+| Int32                   | INT32                      |
+| Int64                   | INT64                      |
+| Byte                    | UINT8                      |
+| UInt16                  | UINT16                     |
+| UInt32                  | UINT32                     |
+| UInt64                  | UINT64                     |
+| Float                   | FLOAT                      |
+| Double                  | DOUBLE                     |
+| Boolean                 | BOOL (采集值为true或false) |
+| Boolean                 | BIT (采集值为0或1)         |
+| String                  | STRING                     |
+| Datetime                | UINT32                     |
+| LocalizedText（只读）   | STRING                     |
+| SByte Array             | ARRAY_INT8                 |
+| Int16 Array             | ARRAY_INT16                |
+| Int32 Array             | ARRAY_INT32                |
+| Int64 Array             | ARRAY_INT64                |
+| Byte  Array             | ARRAY_UINT8, ARRAY_CHAR    |
+| UInt16 Array            | ARRAY_UINT16               |
+| UInt32 Array            | ARRAY_UINT32               |
+| UInt64 Array            | ARRAY_UINT64               |
+| Float  Array            | ARRAY_FLOAT                |
+| Double Array            | ARRAY_DOUBLE               |
+| Boolean Array           | ARRAY_BOOL                 |
+| opcua exentision object | JSON                       |
 
 ARRAY_CHAR 展示和写入形式为字符串。
+JSON 展示和写入形式为 JSON 字符串。
 
 ### 地址格式
 
@@ -124,6 +127,7 @@ ARRAY_CHAR 展示和写入形式为字符串。
 | 1[2]!array1d[string]                   | STRING   | 访问 STRING 数组的第 3 个元素；NS 为1，NODEID 为 array1d[string], 一维索引为 2                                             |
 | 1[2,3]!array2d[int]                    | INT32    | 访问 INT32 数组的第 3 行，第 4 列的元素；NS 为1，NODEID 为 array2d[int], 一维索引为 2，二维索引为 3                        |
 | 1[2,3,4]!array3d[float]                | FLOAT    | 访问 FLOAT 数组的第 3 行，第 4 列，第 5 个元素；NS 为1，NODEID 为 array3d[float], 一维索引为 2，二维索引为 3，三维索引为 4 |
+| 0!3D.Point                             | JSON     | 获取一个关于 3D 位置的扩展对象，对象包含 x，y，z 三个成员元素                                                              |
 
 ## 应用场景
 本节还提供以下应用场景示例，方便您快速上手：
