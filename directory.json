@@ -242,6 +242,10 @@
           ]
         },
         {
+          "title": "Mitsubishi 4E",
+          "path": "configuration/south-devices/mitsubishi-4e/overview"
+        },
+        {
           "title": "Mitsubishi 1E",
           "path": "configuration/south-devices/mitsubishi-1e/mitsubishi-1e"
         },
@@ -460,6 +464,10 @@
         {
           "title": "DF1",
           "path": "configuration/south-devices/df1/df1"
+        },
+        {
+          "title": "KND CNC",
+          "path": "configuration/south-devices/knd/knd"
         }
       ]
     },
@@ -932,6 +940,10 @@
           ]
         },
         {
+          "title": "Mitsubishi 4E",
+          "path": "configuration/south-devices/mitsubishi-4e/overview"
+        },
+        {
           "title": "Mitsubishi 1E",
           "path": "configuration/south-devices/mitsubishi-1e/mitsubishi-1e"
         },
@@ -1140,6 +1152,10 @@
         {
           "title": "DF1",
           "path": "configuration/south-devices/df1/df1"
+        },
+        {
+          "title": "KND CNC",
+          "path": "configuration/south-devices/knd/knd"
         }
       ]
     },

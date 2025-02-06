@@ -51,6 +51,7 @@ Modbus ASCII 适合在不需要高速数据传输、调试和诊断重要性大�
 * DOUBLE
 * BIT
 * STRING
+* BYTES
 
 ### 地址格式
 

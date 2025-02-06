@@ -35,6 +35,8 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Device Degradation** | Enable or disable device degradation mechanism. |
 | **Failure Threshold for Degradation** | The number of consecutive failure cycles required to trigger device degradation. |
 | **Recovery Time After Degradation** | The time in seconds after which the device recovers from degradation. |
+| **Backup IP Address** | Optional, when the connection is abnormal, it will automatically connect to the backup address. If the backup address connection is abnormal, it will automatically connect to the original address. |
+| **Backup Port** | Optional, when the connection is abnormal, it will automatically connect to the backup address. If the backup address connection is abnormal, it will automatically connect to the original address. |
 
 ::: tip  
 The above configuration can meet the individualized needs of the device:<br>  
@@ -66,6 +68,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 * DOUBLE
 * BIT
 * STRING
+* BYTES
 
 ### Address format
 

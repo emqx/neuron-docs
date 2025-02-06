@@ -128,6 +128,27 @@ This document describes the errors that neuron will reply to sender when calling
 * 10004 opcua tag is not readable
 * 10005 opcua tag is not writable
 * 10006 opcua tag is not supported
+* 10007 opcua Error
+* 10008 The value is bad but no specific reason is known
+* 10009 There was nothing to do because the client passed a list of operations with no elements
+* 10010 The request could not be processed because it specified too many operations
+* 10011 User does not have permission to perform the requested operation
+* 10012 The timestamps to return parameter is invalid
+* 10013 Communication with the data source is defined, but not established, and there is no last known value available
+* 10014 The syntax of the node id is not valid
+* 10015 The node id refers to a node that does not exist in the server address space
+* 10016 The attribute is not supported for the specified Node
+* 10017 The syntax of the index range parameter is invalid
+* 10018 No data exists within the range of indexes specified
+* 10019 The data encoding is invalid
+* 10020 The server does not support the requested data encoding for the node
+* 10021 The access level does not allow reading or subscribing to the Node
+* 10022 The access level does not allow writing to the Node
+* 10023 The value was out of range
+* 10024 The max age parameter is invalid
+* 10025 The server does not support writing the combination of value, status and timestamps provided
+* 10026 The value supplied for the attribute is not of the same type as the attribute's value
+* 10027 The operation is not permitted over the current secure channel
 
 ## S7COMM error codes
 

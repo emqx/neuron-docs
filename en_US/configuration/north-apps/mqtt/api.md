@@ -69,9 +69,124 @@ The following example data is in *values-format*, where tag values collected suc
 }
 ```
 
+### Custom Format
+
+In the custom format, use built-in variables to define the data upload format.
+
+#### Variables
+
+| *variable* | *description* |
+| ------------------ | ---------------------- | 
+| `${timestamp}` | The UNIX timestamp when the data was read. |
+| `${node}` | The name of the southbound node. |
+| `${group}` | The name of the group. |
+| `${tags}` | The array of valid tag values. |
+| `${tag_values}` | The array of valid tag values, Value Format |
+| `${tag_errors}` | The array of error codes. |
+| `${tag_error_values}` | The array of error codes, Value Format |
+| `${static_tags}` | The array of static tags. |
+| `${static_tag_values}` | The array of static tags, Value Format |
+
+#### Example
+
+The custom format is defined using built-in variables.
+```json
+{
+    "timestamp": "${timestamp}",
+    "node": "${node}",
+    "group": "${group}",
+    "tags": "${tags}",
+    "values": "${tag_values}",
+    "static_tags": "${static_tags}",
+    "static_tag_values": "${static_tag_values}",
+    "errors": "${tag_errors}",
+    "error_values": "${tag_error_values}"
+}
+```
+
+The following is an example of the custom format data.
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus",
+    "group": "group",
+    "tags": [
+        {
+            "name": "tag0",
+            "value": 123
+        },
+        {
+            "name": "tag1",
+            "value": false 
+        }
+    ],
+    "values": {"tag0": 123, "tag1": false},
+    "static_tags": [
+        {
+            "name": "static_tag1",
+            "value": 456
+        }
+    ],
+    "static_tag_values": {"static_tag1": 456},
+    "errors": [
+        {
+            "name": "tag2",
+            "error": 2014
+        }
+    ],
+    "error_values": {"tag2": 2014}
+}
+```
+
 ::: tip
 Tag value is returned only when the tag is read successfully. If something goes wrong when reading a tag, the error code is returned.
 :::
+
+### ECP Format
+
+In *ECP-format*, the upload data has the following fields:
+* `timestamp`: the Unix timestamp when the data was collected
+* `node`: name of the south node from which data was collected
+* `group`: name of the south node group that the tags belong to
+* `tags`: tags data array where each element corresponds to one tag in the group
+
+The following example data is in *ECP-format*, where tag data are stored in an array. Each element has the name of the tag, the tag type and the tag value, excluding tags where collection failed.
+
+Data classes are divided into four types: Boolean, Integer, Float, and String.
+* type = 1 Boolean
+* type = 2 Integer
+* type = 3 Float
+* type = 4 String
+
+```json
+{
+  "timestamp": 1647497389075,
+  "node": "modbus",
+  "group": "grp",
+  "tags": [
+    {
+      "name": "tag_boolean",
+      "value": true,
+      "type": 1,
+    },
+    {
+      "name": "tag_int32_",
+      "value": 123,
+      "type": 2,
+    },
+    {
+      "name": "tag_float",
+      "value": 1.23,
+      "type": 3,
+    },
+    {
+      "name": "tag_string",
+      "value": "abcd",
+      "type": 4,
+    }
+  ]
+}
+```
 
 ## Read Tag
 
@@ -241,12 +356,12 @@ Below is an example of a driver status reporting message.
   "states": [
     {
       "node": "modbus-tcp",
-      "link": 2,
+      "link": 1,
       "running": 3
     },
     {
       "node": "modbus-rtu",
-      "link": 2,
+      "link": 1,
       "running": 3
     }
   ]

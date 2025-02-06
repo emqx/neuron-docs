@@ -66,6 +66,7 @@ For information on general configuration items, see [Connect to Southbound Devic
 * DOUBLE
 * BIT
 * STRING
+* BYTES
 
 ### Address Format
 
