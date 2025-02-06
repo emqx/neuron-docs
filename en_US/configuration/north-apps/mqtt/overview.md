@@ -26,7 +26,8 @@ See the table below for the configuration parameters.
 | **MQTT Version**                | The version of MQTT protocol. The default is v3.1.1.          |
 | **Client ID**                   | MQTT client id for communication, a required field.          |
 | **QoS Level**                   | MQTT QoS level for message delivery, optional, default QoS 0. (since 2.4.0) |
-| **Upload Format**               | JSON format of reported data, a required field: <br /><br /> - *values-format*, data are split into `values` and `errors` sub-objects. <br />- *tags-format*, tag data are put in a single array. <br /><br />For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) |
+| **Upload Format**               | JSON format of reported data, a required field: <br /><br /> - *values-format*, data are split into `values` and `errors` sub-objects. <br />- *tags-format*, tag data are put in a single array. <br /><br />For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) <br />· *ECP-format*：Add tag types on the basis of *tags-format*.|
+| **Upload Tag Error Code**     | When data tag collection reports an error, report the tag error code. Default enabled.           |
 | **Write Request Topic**         | MQTT topic to which the plugin subscribes for write requests. For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) (since 2.4.5). If tracing is enabled, configure the user properties `traceparent` and `tracestate` according to the W3C standard. |
 | **Write Response Topic**        | MQTT topic to which the plugin sends write responses. (since 2.4.5) |
 | **Driver Status Report**         | Reports status of all the southbound nodes to the specified topic. |
