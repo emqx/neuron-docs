@@ -57,6 +57,7 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 * FLOAT
 * DOUBLE
 * BOOL
+* BIT
 * STRING
 * ARRAY_CHAR
 * ARRAY_INT8
@@ -102,7 +103,7 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 | Float  Array            | ARRAY_FLOAT                |
 | Double Array            | ARRAY_DOUBLE               |
 | Boolean Array           | ARRAY_BOOL                 |
-| opcua exentision object | JSON                       |
+| OPCUA Exentision Object | JSON                       |
 
 ARRAY_CHAR 展示和写入形式为字符串。
 JSON 展示和写入形式为 JSON 字符串。

@@ -6,7 +6,7 @@
 ## 数据上报
 
 MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题。
-上报数据的具体格式由**上报数据格式**参数指定，有多种格式可选。
+上报数据的具体格式由**上报数据格式**参数指定，有[**Values-format 格式**](#values-format-格式)、[**Tags-format 格式**](#tags-format-格式)、[**ECP-format 格式**](#ecp-format-格式)、[**Custom 自定义格式**](#custom-自定义格式)多种格式可选。
 
 ### 上报主题
 
