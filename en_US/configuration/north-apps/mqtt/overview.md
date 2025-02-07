@@ -23,20 +23,20 @@ See the table below for the configuration parameters.
 
 | Parameter                       | Description                                                  |
 | ------------------------------- | ------------------------------------------------------------ |
-| **MQTT Version**                | The version of MQTT protocol. The default is v3.1.1.          |
+| **MQTT Version**                | The version of MQTT protocol, default v3.1.1.          |
 | **Client ID**                   | MQTT client id for communication, a required field.          |
-| **QoS Level**                   | MQTT QoS level for message delivery, optional, default QoS 0. (since 2.4.0) |
-| **Upload Format**               | JSON format of reported data, a required field: <br /><br /> - *values-format*, data are split into `values` and `errors` sub-objects. <br />- *tags-format*, tag data are put in a single array. <br /><br />For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) <br />· *ECP-format*：Add tag types on the basis of *tags-format*.|
-| **Upload Tag Error Code**     | When data tag collection reports an error, report the tag error code. Default enabled.           |
-| **Write Request Topic**         | MQTT topic to which the plugin subscribes for write requests. For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) (since 2.4.5). If tracing is enabled, configure the user properties `traceparent` and `tracestate` according to the W3C standard. |
-| **Write Response Topic**        | MQTT topic to which the plugin sends write responses. (since 2.4.5) |
+| **QoS Level**                   | MQTT QoS level for message delivery, optional, default QoS 0.  |
+| **Upload Format**               | JSON format of reported data, a required field: <br /><br /> - *values-format*, data are split into `values` and `errors` sub-objects. <br />- *tags-format*, tag data are put in a single array. <br />- *ECP-format*：Add tag types on the basis of *tags-format*.<br />- *Custom*：Customize the reported data format. <br /><br />For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) |
+| **Upload Tag Error Code**     | When data tag collection reports an error, report the tag error code, default enabled.           |
+| **Write Request Topic**         | MQTT topic to which the plugin subscribes for write requests. For data communication format, see [Upstream/Downstream Data Format](./api.md#write-tag) . If tracing is enabled, configure the user properties `traceparent` and `tracestate` according to the W3C standard. |
+| **Write Response Topic**        | MQTT topic to which the plugin sends write responses.  |
 | **Driver Status Report**         | Reports status of all the southbound nodes to the specified topic. |
 | **Status Report Topic**      | The topic for status reporting. |
-| **Status Report Interval**   | The time interval for reporting the status of the southbound node, in seconds. The range is 1-3600, with a default of 1. |
-| **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. (Since 2.4.3) |
+| **Status Report Interval**   | The time interval for reporting the status of the southbound node, in seconds. The range is 1-3600, default 1. |
+| **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. |
 | **Cache Memory Size**           | In-memory cache limit (MB) in case of communication failure, a required field. Range in [0, 1024]. Should not be larger than *Cache Disk Size*. For details about the cache feature, see [Offline Data Caching](#offline-data-caching) |
 | **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, a required field. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
-| **Cache Sync Interval**         | Time interval (MS) between each message to sync when communication restores. Range in [10, 120000]. (since 2.6.0) |
+| **Cache Sync Interval**         | Time interval (MS) between each message to sync when communication restores. Range in [10, 120000].  |
 | **Broker Host**                 | MQTT Broker host, a required field.                          |
 | **Broker Port**                 | MQTT Broker port number, a required field.                   |
 | **Username**                    | Username when connecting to the broker, optional.            |
