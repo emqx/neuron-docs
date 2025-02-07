@@ -1,28 +1,62 @@
 # Upstream/Downstream Data Format
 
-The following contents describe how the Neuron MQTT plugin publishes collected data, and how to read or write data through MQTT using the plugin.
-
-Note that **{node_name}** in all the following MQTT topics refers to the actual MQTT northbound application name, **{driver_name}** refers to some southbound node name, and **{group_name}** refers to some south node group name.
+The following contents describe how MQTT plugin publishes collected data, and how to read or write data through MQTT plugin.
 
 ## Data Upload
 
-The Neuron MQTT plugin publishes collected data in JSON to some user-designated topics. The exact format of the data reported is controlled by the **Upload Format** parameter. There are two formats, *tags-format* and *values-format*.
+The MQTT plugin publishes collected data in JSON format to some user-defined topics. The exact format of the data reported is controlled by the **Upload Format** parameter. There are four formats, [**Values-format**](#values-format), [**Tags-format**](#tags-format),  [**ECP-format**](#ecp-format), and [**Custom**](#custom-format).
 
 ### Upload Topic
 
-Before Neuron version 2.4.0, the upload topic is specified by the **upload-topic** parameter, and the default one set through the dashboard is **/neuron/{node_name}/upload**.
+The upload topic is specified by the **upload-topic** parameter, and the default one set through the dashboard is **/neuron/{MQTT driver name}**.
 
-Since Neuron version 2.4.0, the **upload-topic** parameter is removed. And the upload topic is specified in the group subscription request instead with default as **/neuron/{node_name}/{driver_name}/{group_name}**.
+### Values Format
+
+In **Values-format**, the upload data has the following fields:
+* `timestamp`: the Unix timestamp when the data was collected
+* `node`: name of the south node from which data was collected
+* `group`: name of the south node group that the tags belong to
+* `values`: dictionary storing tags with successfully collected values
+* `errors`: dictionary storing tags with encountered error codes
+* `metas`: driver related metadata information
+
+The following example is in **Values-format**, where tag values collected successfully are stored in a dictionary, while error codes in another.
+
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus",
+    "group": "grp",
+    "values":
+    {
+        "tag0": 123
+    },
+    "errors":
+    {
+        "tag1": 2014
+    },
+    "metas":{}
+}
+```
+
+::: tip
+When a tag is collected successfully, the collected data is returned. When a tag collection fails, the error code is returned instead of the value.
+
+When the **Upload Tag Error Code** parameter is set to **False**, the error code is not reported.
+:::
 
 ### Tags Format
 
-In *tags-format*, the upload data has the following fields:
+In **Tags-format**, the upload data has the following fields:
 * `timestamp`: the Unix timestamp when the data was collected
 * `node`: name of the south node from which data was collected
 * `group`: name of the south node group that the tags belong to
 * `tags`: tags data array where each element corresponds to one tag in the group
+* `name`: the name of the tag
+* `value`: the value of the tag
+* `error`: the error code of the tag
 
-The following example data is in *tags-format*, where tag data are stored in an array. Each element has the name of the tag, and the tag value or error code if something went wrong.
+The following example is in **Tags-format**, where tag data are stored in an array. Each element has the name of the tag, and the tag value or error code if something went wrong.
 
 ```json
 {
@@ -42,115 +76,24 @@ The following example data is in *tags-format*, where tag data are stored in an 
 }
 ```
 
-### Values Format
-
-In *values-format*, the upload data has the following fields:
-* `timestamp`: the Unix timestamp when the data was collected
-* `node`: name of the south node from which data was collected
-* `group`: name of the south node group that the tags belong to
-* `values`: dictionary storing tags with successfully collected values
-* `errors`: dictionary storing tags with encountered error codes
-
-The following example data is in *values-format*, where tag values collected successfully are stored in a dictionary, while error codes in another.
-
-```json
-{
-    "timestamp": 1650006388943,
-    "node": "modbus",
-    "group": "grp",
-    "values":
-    {
-        "tag0": 123
-    },
-    "errors":
-    {
-        "tag1": 2014
-    }
-}
-```
-
-### Custom Format
-
-In the custom format, use built-in variables to define the data upload format.
-
-#### Variables
-
-| *variable* | *description* |
-| ------------------ | ---------------------- | 
-| `${timestamp}` | The UNIX timestamp when the data was read. |
-| `${node}` | The name of the southbound node. |
-| `${group}` | The name of the group. |
-| `${tags}` | The array of valid tag values. |
-| `${tag_values}` | The array of valid tag values, Value Format |
-| `${tag_errors}` | The array of error codes. |
-| `${tag_error_values}` | The array of error codes, Value Format |
-| `${static_tags}` | The array of static tags. |
-| `${static_tag_values}` | The array of static tags, Value Format |
-
-#### Example
-
-The custom format is defined using built-in variables.
-```json
-{
-    "timestamp": "${timestamp}",
-    "node": "${node}",
-    "group": "${group}",
-    "tags": "${tags}",
-    "values": "${tag_values}",
-    "static_tags": "${static_tags}",
-    "static_tag_values": "${static_tag_values}",
-    "errors": "${tag_errors}",
-    "error_values": "${tag_error_values}"
-}
-```
-
-The following is an example of the custom format data.
-```json
-{
-    "timestamp": 1650006388943,
-    "node": "modbus",
-    "group": "group",
-    "tags": [
-        {
-            "name": "tag0",
-            "value": 123
-        },
-        {
-            "name": "tag1",
-            "value": false 
-        }
-    ],
-    "values": {"tag0": 123, "tag1": false},
-    "static_tags": [
-        {
-            "name": "static_tag1",
-            "value": 456
-        }
-    ],
-    "static_tag_values": {"static_tag1": 456},
-    "errors": [
-        {
-            "name": "tag2",
-            "error": 2014
-        }
-    ],
-    "error_values": {"tag2": 2014}
-}
-```
-
 ::: tip
 Tag value is returned only when the tag is read successfully. If something goes wrong when reading a tag, the error code is returned.
+
+When the **Upload Tag Error Code** parameter is set to **False**, the error code is not reported.
 :::
 
 ### ECP Format
 
-In *ECP-format*, the upload data has the following fields:
+In **ECP-format**, the upload data has the following fields:
 * `timestamp`: the Unix timestamp when the data was collected
 * `node`: name of the south node from which data was collected
 * `group`: name of the south node group that the tags belong to
 * `tags`: tags data array where each element corresponds to one tag in the group
+* `name`: the name of the tag
+* `value`: the value of the tag
+* `type`: the type of the tag, which can be Boolean, Integer, Float, or String
 
-The following example data is in *ECP-format*, where tag data are stored in an array. Each element has the name of the tag, the tag type and the tag value, excluding tags where collection failed.
+The following example data is in **ECP-format**, where tag data are stored in an array. Each element has the name of the tag, the tag type and the tag value, excluding tags where collection failed.
 
 Data classes are divided into four types: Boolean, Integer, Float, and String.
 * type = 1 Boolean
@@ -187,6 +130,177 @@ Data classes are divided into four types: Boolean, Integer, Float, and String.
   ]
 }
 ```
+
+::: tip
+ECP-format does not support reporting tag error codes.
+
+Regardless of whether the **Upload Tag Error Code** parameter is set to **False** or **True**, tag error codes are not reported.
+:::
+
+### Custom Format
+
+In the custom format, use built-in variables to define the data upload format.
+
+#### Variables
+
+| *variable* | *description* |
+| ------------------ | ---------------------- | 
+| `${timestamp}` | The UNIX timestamp when the data was read. |
+| `${node}` | The name of the southbound node. <br> Example: `modbus` |
+| `${group}` | The name of the group. <br> Example: `group` |
+| `${tags}` | The array of valid tag values. <br> Example: `[{"name": "tag1", "value": 123}, {"name": "tag2", "value": 456}]` |
+| `${tag_values}` | The array of valid tag values, Value Format <br> Example: `{"tag1": 123, "tag2": 456}` |
+| `${tag_errors}` | The array of error codes. <br> Example: `[{"name": "tag3", "error": 2014}, {"name": "tag4", "error": 2015}]` |
+| `${tag_error_values}` | The array of error codes, Value Format <br> Example: `{"tag3": 2014, "tag4": 2015}`   |
+| `${static_tags}` | The array of static tags. <br> Example: `[{"name": "static_tag1", "value": "abc"}, {"name": "static_tag2", "value": "def"}]` <br> See [Static Tags](#static-tags) |
+| `${static_tag_values}` | The array of static tags, Value Format <br> Example: `{"static_tag1": "abc", "static_tag2": "def"}` <br> See [Static Tags](#static-tags) |
+
+::: tip
+`${tags}` and `${tag_values}` are two different formats for tag values. `${tags}` is an Array format, and `${tag_values}` is a JSON format. In most cases, use one of them.
+
+`${static_tags}` and `${static_tag_values}`, `${tag_errors}` and `${tag_error_values}` are similar. Use one of them.
+
+When the **Upload Tag Error Code** parameter is set to **False**, even if `${tag_errors}` and `${tag_error_values}` are configured, tag error codes are not reported.
+:::
+
+The example above is based on the original southbound driver `modbus1` and group `group1`, which contains 4 tags. `tag1` and `tag2` are collected successfully, while `tag3` and `tag4` are collected with errors. When subscribing to the northbound node, the static tags are configured as `static_tag1` and `static_tag2`, with values of `abc` and `def` respectively.
+
+The above configuration, when reported in **Values-format** data format, is as follows:
+
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus1",
+    "group": "group1",
+    "values": {"tag1": 123, "tag2": 456, "static_tag1": "abc", "static_tag2": "def"},
+    "errors": {"tag3": 2014, "tag4": 2015},
+    "metas":{}
+}
+```
+
+The following example shows how to output the above JSON message in different data reporting formats by setting different **Custom** configurations.
+
+
+#### Example One
+
+Convert tag data to array format and customize the Json key name.
+
+```json
+{
+    "timestamp": "${timestamp}",
+    "node": "${node}",
+    "group": "${group}",
+    "custom_tag_name": "${tags}",
+    "custom_tag_errors": "${tag_errors}",
+}
+```
+
+The actual output result is as follows:
+
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus1",
+    "group": "group1",
+    "custom_tag_name": [{"name": "tag1", "value": 123}, {"name": "tag2", "value": 456}],
+    "custom_tag_errors": [{"name": "tag3", "error": 2014}, {"name": "tag4", "error": 2015}]
+}
+```
+
+#### Example Two
+
+Add global static tags through custom data format. These static tags will be carried in all driver group data reporting. For example, if NeuronEX is deployed on a gateway hardware, you can add the gateway's SN number, IP address, and location information to all driver groups.
+
+```json
+{
+    "timestamp": "${timestamp}",
+    "node": "${node}",
+    "group": "${group}",
+    "values": "${tag_values}",
+    "gateway_info": {
+      "ip": "192.168.1.100",
+      "sn": "SN123456789",
+      "location": "shanghai"
+    }
+}
+```
+The actual output result is as follows:
+
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus1",
+    "group": "group1",
+    "values": {"tag1": 123, "tag2": 456},
+    "gateway_info": {
+      "ip": "192.168.1.100",
+      "sn": "SN123456789",
+      "location": "shanghai"
+    }
+}
+```
+
+#### Example Three
+
+Put tag data, static tags, driver, and group information into a Json sub-node, and customize the Json node name. Currently, the custom data structure supports up to three sub-levels.
+
+```json
+{
+    "timestamp": "${timestamp}",
+    "data": {
+      "child_node": {
+        "node": "${node}",
+        "group": "${group}",
+        "tag_values": "${tag_values}",
+        "static_tag_values": "${static_tag_values}",
+        "tag_error_values": "${tag_error_values}"
+      }
+    }
+}
+```
+
+The data reporting format is as follows:
+```json
+{
+    "timestamp": 1650006388943,
+    "data": {
+      "child_node": {
+        "node": "modbus",
+        "group": "group",
+        "tag_values": {"tag1": 123, "tag2": 456},
+        "static_tag_values": {"static_tag1": "abc", "static_tag2": "def"},
+        "tag_error_values": {"tag3": 2014, "tag4": 2015}
+      }
+    }
+}
+```
+
+
+## Static Tags
+
+The static tag feature supports configuring static tags manually in the **North Application Group List** page, and reporting static tag data together with the collected data.
+
+Static tag configuration requires inputting standard JSON format content, where each static tag is a key-value pair in the JSON object. Static tags will be reported together with the collected data according to the configured data reporting format (Values-format, Tags-format, ECP-format).
+
+```json
+  {
+      "location": "sh",
+      "sn_number": "123456"
+  }
+
+```
+
+Each southbound collection group can configure different static tags. This represents the physical device represented by the collection group, with which static attribute information.
+
+Static tag feature supports **Boolean**, **Integer**, **Float**, and **String** data types. Complex data types, such as arrays and structures, will be reported as **String**.
+
+If the static tags added are shared by all collection groups in the NeuronEX instance, you can select **All Collection Groups** to add static tags, or add static tags in the **Custom** custom format, as shown in [Custom Format: Example Two](#example-two).
+
+::: tip
+Static tag naming cannot be the same as the tag name of the southbound driver collection. If the same, the static tag data will overwrite the tag of the southbound driver.
+:::
+
+
 
 ## Read Tag
 

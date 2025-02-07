@@ -55,6 +55,7 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 * FLOAT
 * DOUBLE
 * BOOL
+* BIT
 * STRING
 * ARRAY_CHAR
 * ARRAY_INT8
@@ -100,7 +101,7 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 | Float  Array             | ARRAY_FLOAT                       |
 | Double Array             | ARRAY_DOUBLE                      |
 | Boolean Array            | ARRAY_BOOL                        |
-| opcua exentision object  | JSON                              |
+| OPCUA Exentision Object  | JSON                              |
 
 ARRAY_CHAR displays and writes in the form of a string.
 JSON displays and writes in the form of a JSON string.
