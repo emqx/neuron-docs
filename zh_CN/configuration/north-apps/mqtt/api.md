@@ -1,29 +1,64 @@
 # 数据上下行格式
 
-以下内容描述 Neuron MQTT 插件如何上报采集的数据，以及如何通过 MQTT 插件实现读写点位数据。
-
-注意下文中涉及的 MQTT 主题中出现的 **{node_name}** 指代的是实际的 MQTT 北向节点名字， **{driver_name}** 指代南向驱动节点名字，**{group_name}** 指代南向节点下的组的名字。
+以下内容描述 MQTT 插件如何上报采集的数据，以及如何通过 MQTT 插件实现读写点位数据。
 
 
 ## 数据上报
 
-Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题。
+MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题。
 上报数据的具体格式由**上报数据格式**参数指定，有多种格式可选。
 
 ### 上报主题
 
-上报主题在北向节点订阅中指定，其默认值为 **/neuron/{node_name}/{driver_name}/{group_name}** 
+上报主题在北向节点订阅中指定，其默认值为 **/neuron/{MQTT driver name}** ，见下图
 
-### Tags 格式
+### Values-format 格式
 
-在 *tags-format* 格式中， 上报的数据由以下字段构成：
+在 **Values-format** 格式中， 上报的数据由以下字段构成：
+* `timestamp` : 数据采集时的 UNIX 时间戳。
+* `node` : 被采集的南向节点的名字。
+* `group` : 被采集的南向节点的点位组的名字。
+* `values` : 存储采集成功的点位值的字典。
+* `errors` : 存储采集失败的错误码的字典。
+* `metas` : 驱动相关的元数据信息。
+
+以下为使用 **values-format** 格式的数据样例，采集成功的点位数据值存放在`values`键中，采集失败的点位错误码存放在`errors`键中。
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus",
+    "group": "grp",
+    "values":
+    {
+        "tag0": 123
+    },
+    "errors":
+    {
+        "tag1": 2014
+    },
+    "metas":{}
+}
+```
+
+::: tip 注意
+
+当点位采集成功时，返回采集到的数据。当点位采集发生错误时，返回错误码，不再返回数值。
+
+当 MQTT 插件配置项 **上报点位错误码** 为 **False** 时，不上报点位错误码。
+:::
+
+### Tags-format 格式
+
+在 **Tags-format** 格式中， 上报的数据由以下字段构成：
 * `timestamp` : 数据采集时的 UNIX 时间戳。
 * `node` : 被采集的南向节点的名字。
 * `group` : 被采集的南向节点的点位组的名字。
 * `tags` : 点位数据数组，每个元素对应一个点位。
+* `name` : 具体的点位名称字段。
+* `value` : 具体点位对应的值。
+* `error` : 具体点位对应的错误码。
 
-
-以下为使用 *tags-format* 格式的数据样例，其中所有点位数据存放在一个数组中，每个数组元素包含点位的名字，采集成功时的数据值或者采集失败时的错误码。
+以下为使用 **Tags-format** 格式的数据样例，其中所有点位数据存放在一个数组中，每个数组元素包含点位的名字，采集成功时的数据值或者采集失败时的错误码。
 
 ```json
 {
@@ -43,115 +78,24 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
 }
 ```
 
-### Values 格式
+::: tip 注意
 
-在 *values-format* 格式中， 上报的数据由以下字段构成：
-* `timestamp` : 数据采集时的 UNIX 时间戳。
-* `node` : 被采集的南向节点的名字。
-* `group` : 被采集的南向节点的点位组的名字。
-* `values` : 存储采集成功的点位值的字典。
-* `errors` : 存储采集失败的错误码的字典。
-* `metas` : 驱动相关的元数据信息。
-
-以下为使用 **values-format** 格式的数据样例，采集成功的点位数据值存放在一个字典中，采集失败的点位错误码存放在另一个字典中。
-
-```json
-{
-    "timestamp": 1650006388943,
-    "node": "modbus",
-    "group": "grp",
-    "values":
-    {
-        "tag0": 123
-    },
-    "errors":
-    {
-        "tag1": 2014
-    },
-    "metas":{}
-}
-```
-
-### 自定义格式
-
-在自定义格式中，可以使用内置支持的变量自定义数据上报格式。
-
-#### 内置变量
-
-| *变量名称* | *说明* |
-| ------------------ | ---------------------- | 
-| `${timestamp}` | 数据采集时的 UNIX 时间戳。 |
-| `${node}` | 被采集的南向节点的名字。 |
-| `${group}` | 被采集的南向节点的点位组的名字。 |
-| `${tags}` | 南向采集点位有效值的数组。 |
-| `${tag_values}` | 南向采集点位有效值的数组，Value 格式。 |
-| `${tag_errors}` | 南向采集点位报错的数组。 |
-| `${tag_error_values}` | 南向采集点位报错的数组，Value 格式。 |
-| `${static_tags}` | 订阅时自定义配置的静态点位。 |
-| `${static_tag_values}` | 订阅时自定义配置的静态点位，Value 格式。 |
-
-#### 示例
-
-自定义数据格式配置为：
-```json
-{
-    "timestamp": "${timestamp}",
-    "node": "${node}",
-    "group": "${group}",
-    "tags": "${tags}",
-    "values": "${tag_values}",
-    "static_tags": "${static_tags}",
-    "static_tag_values": "${static_tag_values}",
-    "errors": "${tag_errors}",
-    "error_values": "${tag_error_values}"
-}
-```
-
-数据上报的格式为：
-```json
-{
-    "timestamp": 1650006388943,
-    "node": "modbus",
-    "group": "group",
-    "tags": [
-        {
-            "name": "tag0",
-            "value": 123
-        },
-        {
-            "name": "tag1",
-            "value": false 
-        }
-    ],
-    "values": {"tag0": 123, "tag1": false},
-    "static_tags": [
-        {
-            "name": "static_tag1",
-            "value": 456
-        }
-    ],
-    "static_tag_values": {"static_tag1": 456},
-    "errors": [
-        {
-            "name": "tag2",
-            "error": 2014
-        }
-    ],
-    "error_values": {"tag2": 2014}
-}
-```
-
-::: tip
 当点位采集成功时，返回采集到的数据。当点位采集发生错误时，返回错误码，不再返回数值。
+
+当 MQTT 插件配置项 **上报点位错误码** 为 **False** 时，不上报点位错误码。
 :::
 
-### ECP 格式
+### ECP-format 格式
 
-在 *ECP-format* 格式中， 上报的数据由以下字段构成：
+在 **ECP-format** 格式中， 上报的数据由以下字段构成：
 * `timestamp` : 数据采集时的 UNIX 时间戳。
 * `node` : 被采集的南向节点的名字。
 * `group` : 被采集的南向节点的点位组的名字。
 * `tags` : 点位数据数组，每个元素对应一个点位。
+* `name` : 具体的点位名称字段。
+* `value` : 具体点位对应的值。
+* `type` : 具体点位对应的数据类型，共包含布尔、整型、浮点型、字符串四种数据类型。
+
 
 以下为使用 *ECP-format* 格式的数据样例，其中所有点位数据存放在一个数组中，每个数组元素包含点位的名字，点位的数据类型和采集成功时的数据值，不包含采集失败的点位。
 数据类分为布尔、整型、浮点型、字符串四种。
@@ -189,6 +133,176 @@ Neuron MQTT 插件将采集到的数据以 JSON 形式发布到指定的主题�
   ]
 }
 ```
+
+::: tip 注意
+ECP-format 格式不支持上报点位错误码。
+不管 MQTT 插件配置项 **上报点位错误码** 为 **False** 或为 **True** ，都不上报点位错误码。
+:::
+
+### Custom 自定义格式
+
+在自定义格式中，可以使用内置支持的变量自定义数据上报格式。
+
+#### 内置变量
+
+| **变量名称** | **说明** |
+| ------------------ | ---------------------- | 
+| `${timestamp}` | 数据采集时的 UNIX 时间戳。 |
+| `${node}` | 南向采集点位所属的南向驱动名称。<br> 示例：`modbus` |
+| `${group}` | 南向采集点位所属的南向驱动的采集组的名称。<br> 示例：`group` |
+| `${tags}` | 南向采集点位有效值的数组集合。<br> 示例：`[{"name": "tag1", "value": 123}, {"name": "tag2", "value": 456}]` |
+| `${tag_values}` | 南向采集点位有效值的Json集合。<br> 示例：`{"tag1": 123, "tag2": 456}` |
+| `${tag_errors}` | 南向采集点位报错值的数组集合。<br> 示例：`[{"name": "tag3", "error": 2014}, {"name": "tag4", "error": 2015}]` |
+| `${tag_error_values}` | 南向采集点位报错值的Json集合。<br> 示例：`{"tag3": 2014, "tag4": 2015}` |
+| `${static_tags}` | 订阅采集组时，自定义配置的静态点位的数组集合。<br> 示例： `[{"name": "static_tag1", "value": "abc"}, {"name": "static_tag2", "value": "def"}]` <br> 详见 [静态点位](#静态点位)|
+| `${static_tag_values}` | 订阅采集组时，自定义配置的静态点位的Json集合。<br> 示例： `{"static_tag1": "abc", "static_tag2": "def"}`<br> 详见 [静态点位](#静态点位) |
+
+::: tip 注意
+`${tags}` 和 `${tag_values}` 是采集数据点的2种不同格式，`${tags}` 是数组格式，`${tag_values}` 是Json格式。一般在构建自定义数据上报格式时，使用 `${tags}` 或 `${tag_values}` 中的一种即可。
+
+`${static_tags}` 和 `${static_tag_values}`、`${tag_errors}`和`${tag_error_values}` 同理，使用其中一种即可。
+
+ MQTT 插件配置项 **上报点位错误码** 为 **False** 时，即使配置了`${tag_errors}` 和或 `${tag_error_values}`，也不上报点位错误码信息。
+
+:::
+
+
+
+上表中示例部分，原始南向驱动`modbus1`采集组`group1`下，包含4个点位，其中`tag1`和`tag2`的点位采集数据正常，`tag3`和`tag4`的点位采集数据异常。在北向节点订阅时，自定义配置的静态点位为`static_tag1`和`static_tag2`，其值分别为`abc`和`def`。
+
+以上配置，以 Values-format 数据格式上报时，内容如下：
+
+
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus1",
+    "group": "group1",
+    "values": {"tag1": 123, "tag2": 456, "static_tag1": "abc", "static_tag2": "def"},
+    "errors": {"tag3": 2014, "tag4": 2015},
+    "metas":{}
+}
+```
+
+以下示例通过设定不同的 Custom 配置，将上面 Json 报文输出为不同的数据上报格式。
+#### 示例一
+
+将数据点位转换为数组格式，并自定义Json 键名。
+
+```json
+{
+    "timestamp": "${timestamp}",
+    "node": "${node}",
+    "group": "${group}",
+    "custom_tag_name": "${tags}",
+    "custom_tag_errors": "${tag_errors}",
+}
+```
+
+实际输出结果如下：
+
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus1",
+    "group": "group1",
+    "custom_tag_name": [{"name": "tag1", "value": 123}, {"name": "tag2", "value": 456}],
+    "custom_tag_errors": [{"name": "tag3", "error": 2014}, {"name": "tag4", "error": 2015}]
+}
+```
+
+#### 示例二
+
+通过自定义数据格式，添加全局静态点位。该静态点位在所有驱动采集组上报数据时，均会携带。如 NeuronEX 部署在一个物理网关上，可将网关的SN号、IP地址、位置信息等信息，添加到所有驱动采集组中。
+
+```json
+{
+    "timestamp": "${timestamp}",
+    "node": "${node}",
+    "group": "${group}",
+    "values": "${tag_values}",
+    "gateway_info": {
+      "ip": "192.168.1.100",
+      "sn": "SN123456789",
+      "location": "shanghai"
+    }
+}
+```
+实际输出结果如下：
+
+```json
+{
+    "timestamp": 1650006388943,
+    "node": "modbus1",
+    "group": "group1",
+    "values": {"tag1": 123, "tag2": 456},
+    "gateway_info": {
+      "ip": "192.168.1.100",
+      "sn": "SN123456789",
+      "location": "shanghai"
+    }
+}
+```
+
+#### 示例三
+
+将采集数据点位、静态点位、驱动、采集组信息放入 Json 子节点中，可自定义 Json 节点名称。目前自定义数据结构做多支持三层子层级。
+
+```json
+{
+    "timestamp": "${timestamp}",
+    "data": {
+      "child_node": {
+        "node": "${node}",
+        "group": "${group}",
+        "tag_values": "${tag_values}",
+        "static_tag_values": "${static_tag_values}",
+        "tag_error_values": "${tag_error_values}"
+      }
+    }
+}
+```
+
+数据上报的格式为：
+```json
+{
+    "timestamp": 1650006388943,
+    "data": {
+      "child_node": {
+        "node": "modbus",
+        "group": "group",
+        "tag_values": {"tag1": 123, "tag2": 456},
+        "static_tag_values": {"static_tag1": "abc", "static_tag2": "def"},
+        "tag_error_values": {"tag3": 2014, "tag4": 2015}
+      }
+    }
+}
+```
+
+
+## 静态点位
+
+静态点位功能，支持在南向驱动数据上报时，由用户在**北向应用组列表**页面手动配置静态点位，在数据上报时，将静态点位数据一并上报。
+
+静态点位配置，需输入标准JSON格式内容，每个静态点位均为JSON对象中的键值对。静态点位将根据配置的数据上报格式（Values-format、Tags-format、ECP-format）与采集组数据一并上报。
+
+```json
+  {
+      "location": "sh",
+      "sn_number": "123456"
+  }
+
+```
+
+每个南向采集组，可分别配置不同静态点位。表示该采集组代表的物理设备，具有哪些静态属性信息。
+
+静态点位功能支持布尔、整型、浮点型、字符串四种数据类型。复杂数据类型，如数组、结构体等，将以字符串形式上报。
+
+如果添加的静态点位，为 NeuronEX 实例中所有采集组共用，既可以勾选**所有采集组**，添加静态点位，也可以在 Custom 自定义格式中，统一添加静态点位，参考 [自定义格式：示例二](#自定义格式)。
+
+::: tip
+静态点位命名，不能和南向驱动采集的点位名称相同。如相同，则静态点位数据将覆盖南向驱动采集的点位数据。
+:::
 
 ## 读 Tags
 

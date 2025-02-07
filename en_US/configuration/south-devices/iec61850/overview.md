@@ -24,9 +24,38 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **GI Interval** | The interval at which the device sends a general interrogation. Set to 0 to disable general interrogation. Unit: seconds |
 ## Configure Data Groups and Tags
 
-After the plug-in is added and configured, the next step is to establish communication between your device and Neuron by adding groups and tags to the Southbound driver.
+After the plugin is added and configured, the next step is to establish communication between your device and IEC61850 driver by adding groups and tags to the Southbound driver.
 
 The IEC61850 plugin only supports the automatic addition of groups and tags by importing an SCL file. The Report block in the SCL file generates readable data groups, and the points are generated based on the referenced DataSet. Points are generated for data with FC as CO, SP, and SG. Writable points are generated in a separate Control group.
+
+IEC61850 plugin defines a special data reporting structure according to industry standards, with timestamp and quality fields in addition to the point value.
+
+```json
+{
+ "timestamp": 1647497389075,
+ "node": "iec61850",
+ "group": "grp1",
+ "tags": [{
+   "name": "tag1",
+   "value": 123,
+   "q": 3,
+   "t": 129401039041
+  },
+  {
+   "name": "tag2",
+   "value": 123,
+   "q": 3,
+   "t": 129401039088
+  }
+ ]
+}
+```
+
+::: tip 
+
+Since the IEC61850 plugin uses a special data reporting structure, when selecting the data format for the northbound plugin, you need to select the **Tags-format** format.
+
+:::
 
 ## Use Case
 
