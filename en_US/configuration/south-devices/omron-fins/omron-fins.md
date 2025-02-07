@@ -15,11 +15,12 @@ Go to **Configuration -> South Devices**, then click **Add Device** to add the d
 
 After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the northbound application. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
-| Parameter          | Description                   |
-| ------------------ | ----------------------------- |
-| **Equipment Type** | Target PLC Equipment type     |
-| **PLC IP Address** | Target PLC IPv4 address       |
-| **PLC Port**       | Target PLC port, default 9600 |
+| Parameter          | Description                                   |
+| ------------------ | --------------------------------------------- |
+| **Equipment Type** | Target PLC Equipment type                     |
+| **PLC IP Address** | Target PLC IPv4 address                       |
+| **PLC Port**       | Target PLC port, default 9600                 |
+| **Max Size**       | Maximum byte length of the packet, default 64 |
 
 ## Configure Data Groups and Tags
 
