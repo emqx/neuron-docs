@@ -297,7 +297,12 @@ Static tag feature supports **Boolean**, **Integer**, **Float**, and **String** 
 If the static tags added are shared by all collection groups in the NeuronEX instance, you can select **All Collection Groups** to add static tags, or add static tags in the **Custom** custom format, as shown in [Custom Format: Example Two](#example-two).
 
 ::: tip
-Static tag naming cannot be the same as the tag name of the southbound driver collection. If the same, the static tag data will overwrite the tag of the southbound driver.
+Static tag names must not be the same as the tag names collected by the southbound driver.
+
+If the names are the same:
+- When using `Values-format` for data upload, the static tag data will overwrite the tag data collected by the southbound driver.
+- When using `Tags-format`, `ECP-format`, or `Custom` for data upload, both the static tag data and the southbound driver collected tag data will be reported together (resulting in duplicate reporting).
+
 :::
 
 
