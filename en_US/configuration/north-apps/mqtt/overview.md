@@ -33,6 +33,7 @@ See the table below for the configuration parameters.
 | **Driver Status Report**         | Reports status of all the southbound nodes to the specified topic. |
 | **Status Report Topic**      | The topic for status reporting. |
 | **Status Report Interval**   | The time interval for reporting the status of the southbound node, in seconds. The range is 1-3600, default 1. |
+| **Driver Topic Prefix**      | according to the topic prefix to generate a series of topics mainly used for specific functions of the southbound driver. |
 | **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. |
 | **Cache Memory Size**           | In-memory cache limit (MB) in case of communication failure, a required field. Range in [0, 1024]. Should not be larger than *Cache Disk Size*. For details about the cache feature, see [Offline Data Caching](#offline-data-caching) |
 | **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, a required field. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
@@ -110,6 +111,27 @@ Where:
   - `node`：Southbound driver name.
   - `link`：Driver connection status, 0 for disconnected, 1 for connected.
   - `running`：Driver running status, 3 for running, 4 for stopped.
+
+### Driver Topic Prefix
+
+* action/req : Used to receive specific driver commands.
+* action/resp : Used to return the execution result of the driver command.
+
+* flist/req : Used for the driver to receive file list requests.
+* flist/resp : Used to return the file list.
+
+* fup/req : Used for the driver to open the file before uploading the file.
+* fup/resp : Used to return the open file response.
+
+* fupdata/req : Used for the driver to upload the file.
+* fupdata/resp : Used to return the file upload response.
+
+* fdown/req : Used for the driver to open the file before downloading the file.
+* fdown/resp : Used to return the open file response.
+
+* fdowndata/req : Used for the driver to download the file.
+* fdowndata/resp : Used to return the file download response.
+
 
 ### MQTT over SSL
 

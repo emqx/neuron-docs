@@ -64,3 +64,148 @@ You can access the LibIEC61850 server through the Neuron IEC61850 plugin. For sp
 ## Data Monitoring
 
 After completing the point configuration, you can click **Monitoring** -> **Data Monitoring** to view device information and control devices. For details, refer to [Data Monitoring](../../../admin/monitoring.md).
+
+## Trigger GI by MQTT
+
+topic: action/req
+
+```json
+{
+  "uuid": "123456",
+  "node": "iec61850",
+  "action": "GI"
+}
+```
+
+topic: action/resp
+
+```json
+{
+  "uuid": "123456",
+  "error": 0
+}
+```
+
+## Get File List by MQTT
+
+topic: flist/req
+
+```json
+{
+  "uuid": "123456",
+  "node": "iec61850",
+  "path": "path"
+}
+```
+
+topic: flist/resp
+
+```json
+{
+  "uuid": "123456",
+  "error": 0,
+  "files": [
+    {
+      "name": "file1",
+      "size": 123,
+      "t": 1234567890,
+      "type": 1
+    },
+    {
+      "name": "dir1",
+      "size": 456,
+      "t": 1234567890,
+      "type": 2
+    }
+  ]
+}
+```
+
+## Upload File by MQTT
+
+topic: fup/req
+
+```json
+{
+  "uuid": "123456",
+  "node": "iec61850",
+  "path": "path",
+  "size": 123
+}
+```
+
+topic: fup/resp
+
+```json
+{
+  "uuid": "123456",
+  "error": 0,
+  "size": 123
+}
+```
+
+topic: fupdata/req
+
+```json
+{
+  "uuid": "123456",
+  "node": "iec61850",
+  "path": "path"
+}
+```
+
+topic: fupdata/resp
+
+```json
+{
+  "uuid": "123456",
+  "error": 0,
+  "more": true,
+  "data": [1,2,3,4]
+}
+```
+
+## Download File by MQTT
+
+topic: fdown/req
+
+```json
+{
+  "uuid": "123456",
+  "node": "iec61850",
+  "src path": "src path",
+  "dst path": "dst path",
+  "size": 123
+}
+```
+
+topic: fdown/resp
+
+```json
+{
+  "uuid": "123456",
+  "error": 0
+}
+```
+
+topic: fdowndata/req
+
+```json
+{
+  "uuid": "123456",
+  "node": "iec61850",
+  "src path": "src path",
+  "more": true,
+  "data": [1,2,3,4]
+}
+```
+
+topic: fdowndata/resp
+
+```json
+{
+  "uuid": "123456",
+  "node": "iec61850",
+  "path": "path"
+}
+```
