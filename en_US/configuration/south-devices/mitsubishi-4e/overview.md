@@ -1,6 +1,6 @@
 # Mitsubishi 4E
 
-The Mitsubishi 3E plug-in is used to access Mitsubishi's PLCs, including iQ-F Series (SLMP), and iQ-R Series, via Ethernet.
+The Mitsubishi 4E plugin is used to access Mitsubishi's PLCs, including iQ-F Series (SLMP), and iQ-R Series, via Ethernet.
 
 The Mitsubishi 4E is fully compatible with the Mitsubishi SLMP protocol.
 
