@@ -141,6 +141,8 @@ Regardless of whether the **Upload Tag Error Code** parameter is set to **False*
 
 In the custom format, use built-in variables to define the data upload format.
 
+![custom-format](./assets/custom-format-en.png)
+
 #### Variables
 
 | *variable* | *description* |
@@ -279,6 +281,8 @@ The data reporting format is as follows:
 ## Static Tags
 
 The static tag feature supports configuring static tags manually in the **North Application Group List** page, and reporting static tag data together with the collected data.
+
+![static-tags](./assets/static-tags-en.png)
 
 Static tag configuration requires inputting standard JSON format content, where each static tag is a key-value pair in the JSON object. Static tags will be reported together with the collected data according to the configured data reporting format (Values-format, Tags-format, ECP-format).
 
