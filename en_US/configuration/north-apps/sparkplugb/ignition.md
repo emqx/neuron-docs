@@ -43,3 +43,8 @@ This section assumes that the southbound OCP UA plugin has been installed, the g
 
 3. Find **Tag Browser** in the software interface and select **MQTT Engine**, expand **Edge Nodes\Factory1\Neuron1\opcua-kepserver\test** to see the instantly uploaded measurement point data.
 ![ignition4](./assets/ignition4.jpg)
+
+### Device Data Writing
+Modify the corresponding tag value in the **value** column and press Enter. In the pop-up dialog box, select **Write Once** to change the corresponding value in the device.
+![ignition-write1](./assets/ingnition_write1.jpg)
+![ignition-write2](./assets/ingnition_write2.jpg)
