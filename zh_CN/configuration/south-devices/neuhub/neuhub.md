@@ -63,7 +63,7 @@ type 目前支持 OPCDA，SYNTEC CNC 和 MITSUBISHI CNC 三类设备。
  ![right](./assets/right_mouse_menu.png)
 
 
- ### 端口设置
+### 端口设置
  程序默认监听 17889 端口，可以通过 `File->Port` 进行端口设置。
 
 
