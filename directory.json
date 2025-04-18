@@ -464,6 +464,24 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "NEURON HUB",
+          "path": "configuration/south-devices/neuhub/neuhub",
+          "children": [
+            {
+              "title": "OPC DA",
+              "path": "configuration/south-devices/neuhub/opcda"
+            },
+            {
+              "title": "SYNTEC CNC",
+              "path": "configuration/south-devices/neuhub/syntec-cnc"
+            },
+            {
+              "title": "MITSUBISHI CNC",
+              "path": "configuration/south-devices/neuhub/mitsubishi-cnc"
+            }
+          ]
         }
       ]
     },
@@ -1148,6 +1166,24 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "NEURON HUB",
+          "path": "configuration/south-devices/neuhub/neuhub",
+          "children": [
+            {
+              "title": "OPC DA",
+              "path": "configuration/south-devices/neuhub/opcda"
+            },
+            {
+              "title": "SYNTEC CNC",
+              "path": "configuration/south-devices/neuhub/syntec-cnc"
+            },
+            {
+              "title": "MITSUBISHI CNC",
+              "path": "configuration/south-devices/neuhub/mitsubishi-cnc"
+            }
+          ]
         }
       ]
     },
