@@ -40,6 +40,20 @@ In Neuron, each plugin corresponds to an implementation of a protocol. For examp
 * WORD = 16
 * DWORD = 17
 * LWORD = 18
+* ARRAY_CHAR = 22
+* ARRAY_INT8    = 23  
+* ARRAY_UINT8   = 24  
+* ARRAY_INT16   = 25  
+* ARRAY_UINT16  = 26  
+* ARRAY_INT32   = 27  
+* ARRAY_UINT32  = 28  
+* ARRAY_INT64   = 29  
+* ARRAY_UINT64  = 30  
+* ARRAY_FLOAT   = 31  
+* ARRAY_DOUBLE  = 32  
+* ARRAY_BOOL    = 33  
+* ARRAY_STRING  = 34  
+* JSON        = 40 
 
 ## Serial Port
 
