@@ -484,6 +484,10 @@
             {
               "title": "MITSUBISHI CNC",
               "path": "configuration/south-devices/neuhub/mitsubishi-cnc"
+            },
+            {
+              "title": "连接 KEPServerEX 6 OPC DA Server",
+              "path": "configuration/south-devices/neuhub/example/kepware-da"
             }
           ]
         }
@@ -1190,6 +1194,10 @@
             {
               "title": "MITSUBISHI CNC",
               "path": "configuration/south-devices/neuhub/mitsubishi-cnc"
+            },
+            {
+              "title": "Connect to KEPServerEX 6 OPC DA Server",
+              "path": "configuration/south-devices/neuhub/example/kepware-da"
             }
           ]
         }
