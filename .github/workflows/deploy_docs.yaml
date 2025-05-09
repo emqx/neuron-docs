@@ -13,7 +13,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: github.repository_owner == 'emqx'
     steps:
     - name: clone docs
@@ -31,14 +31,19 @@ jobs:
         path: frontend
 
     - name: use node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version-file: 'frontend/.nvmrc'
 
     - name: use pnpm
       uses: pnpm/action-setup@v4
       with:
-        version: 8
+        version: 9
+
+    - name: use python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
 
     - name: set env
       run: |
