@@ -19,11 +19,16 @@ Sparkplug B is an application-based protocol running on top of MQTT, so the setu
 | **Client ID** |  MQTT client ID, a unique identifier for the connection                          |
 | **Group ID**  | The top-level logical grouping in the Sparkplug B protocol, which can represent entities such as factories or workshops     |
 | **Node ID**   | Unique Identification of Edge Nodes in Sparkplug B Protocol                           |
-| **SSL**       | Whether to enable mqtt ssl, default false                                 |
+| **Group Path**   | Use the group name of the southbound device as the starting path of the Metric name. default true |
+| **Offline Data Caching** | Offline caching switch. Cache MQTT messages when offline, and sync cached messages when back online. |
+| **Cache Memory Size (MB)**      |  Max in-memory cache size in megabytes when MQTT connection exception occurs. Should be smaller than cache disk size.  |
+| **Cache Disk Size (MB)**  | Max in-disk cache size in megabytes when MQTT connection exception occurs. Should be larger than cache memory size. If nonzero, cache memory size should also be nonzero. |
+| **Cache Sync Interval (MS)**      | Cache message retransmission interval, unit: milliseconds |
 | **Broker Host**      | MQTT Broker Host                                            |
 | **Broker Port**      | MQTT Broker Port                                           |
 | **Username**  |  Username to use when connecting to Broker                                 |
 | **Password**  |  Password to use when connecting to Broker                                   |
+| **SSL**       | Whether to enable mqtt ssl, default false                                 |
 | **CA**        |  Ca file, enabled only if the ssl value is true                             |
 | **Client Cert**      | Cert file, enabled only if the ssl value is true                           |
 | **Client Key**       | Key file, enabled only if the ssl value is true                           |
@@ -41,6 +46,11 @@ Click the device card or row on the **North Apps** page, then **Add Subscription
 
 - **South device**: Select the southbound device you want to subscribe to, for example, 'modbus-tcp-1'.
 - **Group**: Select a group from the southbound device, for example, 'group-1'.
+
+Add static tags in Json format and report them simultaneously with the southbound data tags:
+``` json
+{"location":"sh","number":"12345613"}
+```
 
 ## Use Case
 
