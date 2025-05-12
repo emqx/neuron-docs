@@ -38,9 +38,13 @@ The Neuron OPC UA plug-in can be used as a client to access KEPServerEX.
 1. Get the PLC measurement point information via the UaExpert software, refer to [UaExpert](./uaexpert.md).
 ![kepware-5_en](./assets/kepware-5_en.jpg)
 
-2. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the **Endpoint URL** of the target Server, fills in the user name/password, adds the certificate/key, and starts the device connection.
+2. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the **Endpoint URL** of the target Server, fills in the user name/password, adds the certificate/key.
 
-3. Add **Groups** and **Tags** based on the measurement point information.
+3. Change the **Update Mode** to Subscribe or Read&Subscribe to obtain data via OPC UA subscription.
+
+4. Starts the device connection.
+
+5. Add **Groups** and **Tags** based on the measurement point information.
 
 ## Test Data List
 

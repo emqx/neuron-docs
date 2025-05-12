@@ -29,9 +29,13 @@
 1. Get the PLC measurement point information via the UaExpert software, refer to [UaExpert](./uaexpert.md).
 ![igs-4_en](./assets/igs-4_en.jpg)
 
-2. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the **Endpoint URL** of the target Server, does not need to fill in the username/password, adds the certificate/key and starts the device connection.
+2. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the **Endpoint URL** of the target Server, does not need to fill in the username/password, adds the certificate/key.
 
-3. Add **Groups** and **Tags** based on the measurement point information.
+3. Change the **Update Mode** to Subscribe or Read&Subscribe to obtain data via OPC UA subscription.
+
+4. Starts the device connection.
+
+5. Add **Groups** and **Tags** based on the measurement point information.
 
 ## Test Data List
 

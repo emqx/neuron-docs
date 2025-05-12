@@ -24,9 +24,9 @@ Ignition by Inductive Automation is an industrial application platform that enab
 1. To view the PLC measurement point information via the UaExpert software, Refer to [UaExpert usage](./uaexpert.md).
 ![ignition-3](./assets/ignition-3.jpg)
 
-2. Neuron adds a new southbound OPC UA device, open **Device Configuration**, fill in the **Endpoint URL** of the target Ignition - **opc.tcp://192.168.10.195:62541/discovery**, **Username** - **opcuauser** (Ignition default), **Password** - **password** (Igniton default) Add the certificate/key, and start the device connection.
+2. Neuron adds a new southbound OPC UA device, open **Device Configuration**, fill in the **Endpoint URL** of the target Ignition - **opc.tcp://192.168.10.195:62541/discovery**, **Username** - **opcuauser** (Ignition default), **Password** - **password** (Igniton default) Add the certificate/key, and start the device connection. Change the **Update Mode** to Subscribe or Read&Subscribe to obtain data via OPC UA subscription.
 
-3. Add **Groups** and **Tags** based on the measurement point information.
+4. Add **Groups** and **Tags** based on the measurement point information.
 
 ## Test Data List
 
