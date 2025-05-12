@@ -575,6 +575,10 @@
         {
           "title": "Monitor",
           "path": "configuration/north-apps/monitor/overview"
+        },
+        {
+          "title": "DataStorage",
+          "path": "configuration/north-apps/DataStorage/DataStorage"
         }
       ]
     },
@@ -1291,6 +1295,10 @@
         {
           "title": "Monitor",
           "path": "configuration/north-apps/monitor/overview"
+        },
+        {
+          "title": "DataStorage",
+          "path": "configuration/north-apps/DataStorage/DataStorage"
         }
       ]
     },
