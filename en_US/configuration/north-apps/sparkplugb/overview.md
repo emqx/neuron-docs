@@ -47,11 +47,6 @@ Click the device card or row on the **North Apps** page, then **Add Subscription
 - **South device**: Select the southbound device you want to subscribe to, for example, 'modbus-tcp-1'.
 - **Group**: Select a group from the southbound device, for example, 'group-1'.
 
-Add static tags in Json format and report them simultaneously with the southbound data tags:
-``` json
-{"location":"sh","number":"12345613"}
-```
-
 ## Use Case
 
 - You can use the Neuron Sparkplug B plugin to report data to EMQX, and decode the complete and accurate data results through the EMQX's encoding and decoding functions. For specific steps, see [Integration with EMQX](sparkplug.md).
