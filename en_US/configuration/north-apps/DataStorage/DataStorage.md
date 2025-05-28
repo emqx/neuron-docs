@@ -17,10 +17,6 @@ The following parameters are available when configuring the DataStorage node:
 | **Username**            | Datalayers username         |
 | **Password**            | Datalayers password           |
 
-:::tip
-When submitting the configuration, the connection to Datalayers will be verified, and if the connection fails, the configuration will be rejected.
-:::
-
 ## Add Subscription
 
 After plugin configuration, data forwarding can be enabled via southbound device subscriptions.
