@@ -1,9 +1,9 @@
 # DataStorage
 
-Neuron DataStorage 插件是一款开源的北向插件，使用 [Arrow Flight SQL](https://arrow.apache.org/docs/format/FlightSql.html#arrow-flight-sql) 写入数据到 [Datalayers](https://docs.datalayers.cn/datalayers/latest/)，它为 neuron 增加了时序数据的存储能力。
+DataStorage 北向插件使用 [Arrow Flight SQL](https://arrow.apache.org/docs/format/FlightSql.html#arrow-flight-sql) 写入数据到 [Datalayers](https://docs.datalayers.cn/datalayers/latest/) 时序数据库，它为 NeuronEX 增加了时序数据的存储能力。
 
-Neuron 会在启动时创建一个 *DataStorage* 单例节点，用户不能直接使用该插件创建或删除节点。
-您可以在仪表板的**北向应用**页签中看到 *DataStorage* 节点。
+NeuronEX 会在启动时创建一个 *DataStorage* 单例节点，用户不能直接使用该插件创建或删除节点。
+您可以在**北向应用**页签中看到 *DataStorage* 节点。
 
 ## 应用配置
 
@@ -18,14 +18,21 @@ Neuron 会在启动时创建一个 *DataStorage* 单例节点，用户不能直�
 
 ## 添加订阅
 
-完成插件的添加和配置后，我们将继续通过订阅南向设备实现数据的转发。
+完成插件的添加和配置后，通过订阅南向设备实现数据的存储。
 
-完成设备配置后，在**北向应用**页，点击设备卡片/设备列进入**组列表**页。点击**添加订阅**，完成南向设备和组的设置。订阅完成后，DataStorage 节点将开始接收南向数据。
+在**北向应用**页，点击设备卡片/设备列进入**组列表**页。点击**添加订阅**，完成南向设备和采集组的添加。订阅完成后，DataStorage 节点将开始接收南向数据，并将数据存储到 Datalayers 时序数据库中。
 
-## 数据上传
+## 数据存储
 
-Neuron DataStorage 在传输过程中使用 Arrow 的列存格式，在数据传输过程将完全避免序列化/反序列化操作，可彻底消除序列化/反序列化带来时间及性能损耗、提升系统的吞吐能力。
+DataStorage 在传输过程中使用 Arrow 的列存格式，在数据传输过程将完全避免序列化/反序列化操作，可彻底消除序列化/反序列化带来时间及性能损耗、提升系统的吞吐能力。
 
 ## 运行与维护
 
 在设备卡片或设备列，您可点击数据统计图表查看及应用运行情况、接受和发送的数据情况。
+
+其中**缓存队列大小**表示，当前 DataStorage 插件数据存储时使用的缓存队列大小值。
+
+其中**最大缓存队列大小**表示，DataStorage 插件数据存储时使用的缓存队列的历史最大值。
+
+其中**丢弃消息数**表示，DataStorage 插件数据存储时，由于数据吞吐量过大，超过了缓存队列的最大值1000时，导致的数据丢失数量。
+
