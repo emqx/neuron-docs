@@ -468,6 +468,28 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "NEURON HUB",
+          "path": "configuration/south-devices/neuhub/neuhub",
+          "children": [
+            {
+              "title": "OPC DA",
+              "path": "configuration/south-devices/neuhub/opcda"
+            },
+            {
+              "title": "SYNTEC CNC",
+              "path": "configuration/south-devices/neuhub/syntec-cnc"
+            },
+            {
+              "title": "MITSUBISHI CNC",
+              "path": "configuration/south-devices/neuhub/mitsubishi-cnc"
+            },
+            {
+              "title": "连接 KEPServerEX 6 OPC DA Server",
+              "path": "configuration/south-devices/neuhub/example/kepware-da"
+            }
+          ]
         }
       ]
     },
@@ -553,6 +575,16 @@
         {
           "title": "Monitor",
           "path": "configuration/north-apps/monitor/overview"
+        },
+        {
+          "title": "DataStorage",
+          "path": "configuration/north-apps/DataStorage/DataStorage",
+          "children": [
+            {
+              "title": "订阅信息查询 API",
+              "path": "configuration/north-apps/DataStorage/api"
+            }
+          ]
         }
       ]
     },
@@ -1156,6 +1188,28 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "NEURON HUB",
+          "path": "configuration/south-devices/neuhub/neuhub",
+          "children": [
+            {
+              "title": "OPC DA",
+              "path": "configuration/south-devices/neuhub/opcda"
+            },
+            {
+              "title": "SYNTEC CNC",
+              "path": "configuration/south-devices/neuhub/syntec-cnc"
+            },
+            {
+              "title": "MITSUBISHI CNC",
+              "path": "configuration/south-devices/neuhub/mitsubishi-cnc"
+            },
+            {
+              "title": "Connect to KEPServerEX 6 OPC DA Server",
+              "path": "configuration/south-devices/neuhub/example/kepware-da"
+            }
+          ]
         }
       ]
     },
@@ -1247,6 +1301,16 @@
         {
           "title": "Monitor",
           "path": "configuration/north-apps/monitor/overview"
+        },
+        {
+          "title": "DataStorage",
+          "path": "configuration/north-apps/DataStorage/DataStorage",
+          "children": [
+            {
+              "title": "Subscription Information Query API",
+              "path": "configuration/north-apps/DataStorage/api"
+            }
+          ]
         }
       ]
     },
