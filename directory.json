@@ -578,7 +578,13 @@
         },
         {
           "title": "DataStorage",
-          "path": "configuration/north-apps/DataStorage/DataStorage"
+          "path": "configuration/north-apps/DataStorage/DataStorage",
+          "children": [
+            {
+              "title": "订阅信息查询 API",
+              "path": "configuration/north-apps/DataStorage/api"
+            }
+          ]
         }
       ]
     },
@@ -1298,7 +1304,13 @@
         },
         {
           "title": "DataStorage",
-          "path": "configuration/north-apps/DataStorage/DataStorage"
+          "path": "configuration/north-apps/DataStorage/DataStorage",
+          "children": [
+            {
+              "title": "Subscription Information Query API",
+              "path": "configuration/north-apps/DataStorage/api"
+            }
+          ]
         }
       ]
     },

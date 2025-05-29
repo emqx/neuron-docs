@@ -126,6 +126,13 @@
 * 4102  读文件失败
 * 4103  写文件失败
 
+## DATALAYERS 错误码
+
+* 4200  datalayers 错误
+* 4201  datalayers 初始化失败
+* 4202  datalayers 连接失败
+* 4203  datalayers 连接为空
+
 ## OPCUA 错误码
 
 * 10001    opcua tag 不存在
