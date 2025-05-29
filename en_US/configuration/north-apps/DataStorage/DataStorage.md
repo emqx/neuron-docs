@@ -1,8 +1,8 @@
 # DataStorage
 
-The Neuron DataStorage plugin is an open-source northbound plugin that writes data to [Datalayers](https://docs.datalayers.cn/datalayers/latest/) using [Arrow Flight SQL](https://arrow.apache.org/docs/format/FlightSql.html#arrow-flight-sql). It extends Neuron's capability to store time-series data.
+DataStorage northbound plugin writes data to [Datalayers](https://docs.datalayers.cn/datalayers/latest/) using [Arrow Flight SQL](https://arrow.apache.org/docs/format/FlightSql.html#arrow-flight-sql). It extends NeuronEX's capability to store time-series data.
 
-Upon startup, Neuron creates a singleton *DataStorage* node automatically. Users cannot manually create or delete this node.
+Upon startup, NeuronEX creates a singleton *DataStorage* node automatically. Users cannot manually create or delete this node.
 
 You can view the *DataStorage* node in the **North Apps** tab throw the dashboard.
 
@@ -19,17 +19,23 @@ The following parameters are available when configuring the DataStorage node:
 
 ## Add Subscription
 
-After plugin configuration, data forwarding can be enabled via southbound device subscriptions.
+After plugin configuration, data storage can be enabled via southbound device subscriptions.
 
-Click the device card or row on the **North Apps** page, then **Add Subscription** on the **Group List** page. And set the following:
+Click DataStorage node on the **North Apps** page, then **Add Subscription** on the **Group List** page. And set the following:
 
 - **South device**: Select the southbound device you want to subscribe to.
-- **Group**: Select a group from the southbound device'.
+- **Group**: Select a group from the southbound device.
 
-## Data Upload
+## Data Storage
 
-Neuron DataStorage uses Arrow's columnar format for data transmission, which eliminates serialization and deserialization during transport. This significantly reduces latency and performance overhead, improving system throughput.
+DataStorage uses Arrow's columnar format for data storage, which eliminates serialization and deserialization during transport. This significantly reduces latency and performance overhead, improving system throughput.
 
 ## Operation & Maintenance
 
-On the device card or device row, you can click on the **Data Statistics** icon to mreview the application's operation status and track the data received and sent.
+You can click on the **Data Statistics** icon to review the application's operation status and track the data received and sent.
+
+Cached Queue Size indicates the value used by the current DataStorage plugin when storing data.
+
+Max Cached Queue Size indicates the historical maximum value used by the DataStorage plugin when storing data.
+
+Discarded Messages indicates the number of data lost when the DataStorage plugin stores data due to excessive data throughput exceeding the maximum value of the cache queue of 1000.
