@@ -1,6 +1,6 @@
 # SYNTEC CNC
 
-Neuron 可以使用 Neuron HUB 驱动和 NEURON HUB Windows 程序，间接访问新代 CNC 系统。以实时采集多种设备运行数据，包括程序名，主轴倍率，运行状态，PLC 点位, 参数，全局变量等。
+Neuron 可以使用 Neuron HUB 驱动和 NeuronHUB Windows 程序，间接访问新代 CNC 系统。以实时采集多种设备运行数据，包括程序名，主轴倍率，运行状态，PLC 点位, 参数，全局变量等。
 
 ## NEURON HUB Windows 程序参数
 

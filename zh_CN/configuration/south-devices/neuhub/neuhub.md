@@ -1,18 +1,18 @@
 # NEURON HUB
 
-Neuron HUB 插件通过 TCP 协议访问安装有 NEURON HUB 程序的主机。
+Neuron HUB 插件通过 TCP 协议访问安装有 NeuronHUB 程序的主机。
 
 ## 设备设置
 
-| 字段           | 说明                        |
-| -------------- | --------------------------- |
-| host           | Neuron HUB IP 地址          |
-| port           | Neuron HUB 端口, 默认 17889 |
-| type           | 节点类型                    |
-| node           | 节点名称                    |
-| batch_size     | 命令批量大小，默认 50       |
-| expires        | 过期时间，默认 2000 ms      |
-| sliding_window | 窗口大小，默认 1            |
+| 字段           | 说明                       |
+| -------------- | -------------------------- |
+| host           | NeuronHUB IP 地址          |
+| port           | NeuronHUB 端口, 默认 17889 |
+| type           | 节点类型                   |
+| node           | 节点名称                   |
+| batch_size     | 命令批量大小，默认 10      |
+| expires        | 过期时间，默认 2000 ms     |
+| sliding_window | 窗口大小，默认 1           |
 
 type 目前支持 OPCDA，SYNTEC CNC 和 MITSUBISHI CNC 三类设备。
 
@@ -47,8 +47,8 @@ type 目前支持 OPCDA，SYNTEC CNC 和 MITSUBISHI CNC 三类设备。
 节点类型不同，地址形式不同，具体查看对应类型设备的文档。
 
 
-## NEURON HUB Windows 程序
-由于一些协议的平台受限，所以需要一个中间转换程序，NEURON HUB 程序就是进行的转换功能。安装包请联系支持人员获取。
+## NeuronHUB Windows 程序
+由于一些协议的平台受限，所以需要一个中间转换程序，NeuronHUB 程序就是进行的转换功能。安装包请联系支持人员获取。
 
 
 ### 安装
