@@ -1,13 +1,13 @@
 # NEURON HUB
 
-The Neuron HUB plugin accesses hosts running the NEURON HUB program via TCP protocol.
+The Neuron HUB plugin accesses hosts running the NeuronHUB program via TCP protocol.
 
 ## Device Settings
 
 | Field          | Description                        |
 | -------------- | ---------------------------------- |
-| host           | Neuron HUB IP address              |
-| port           | Neuron HUB port (default: 17889)   |
+| host           | NeuronHUB IP address               |
+| port           | NeuronHUB port (default: 17889)    |
 | type           | Node type                          |
 | node           | Node name                          |
 | batch_size     | Command batch size (default: 50)   |
@@ -46,8 +46,8 @@ Currently supported node types: OPCDA, SYNTEC CNC, and MITSUBISHI CNC.
 ## Address Format
 The address format varies by node type. Refer to the corresponding device documentation for details.
 
-## NEURON HUB Windows Program
-Due to platform limitations of some protocols, an intermediate conversion program is required. The NEURON HUB program serves this purpose. Contact support to obtain the installation package.
+## NeuronHUB Windows Program
+Due to platform limitations of some protocols, an intermediate conversion program is required. The NeuronHUB program serves this purpose. Contact support to obtain the installation package.
 
 ### Installation
 Double-click to install. It is recommended not to install on the system drive to avoid permission issues when modifying configuration files. The program starts automatically by default.

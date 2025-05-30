@@ -8,6 +8,9 @@ Neuron can use the Neuron HUB driver and NEURON HUB Windows program to indirectl
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | Node Name | Node name, must be unique to distinguish multiple nodes                                                                                   |
 | Host      | Target host identifier (IP or hostname)                                                                                                   |
+| UserName  | user name                                                                                                                                 |
+| PassWrod  | password                                                                                                                                  |
+| Domain    | domain                                                                                                                                    |
 | Server    | DA server name (e.g., `opcda://192.168.10.133/Matrikon.OPC.Simulation`). After filling in Host, click the dropdown to fetch server lists. |
 
 ## Supported Data Types
