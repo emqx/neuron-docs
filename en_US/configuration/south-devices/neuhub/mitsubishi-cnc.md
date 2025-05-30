@@ -1,6 +1,6 @@
 # MITSUBISHI CNC
 
-Neuron can use the Neuron HUB driver and NEURON HUB Windows program to indirectly access Mitsubishi M70/M80 CNC systems, enabling real-time collection of various device operation data, including program names, feed speed, operation status, power consumption, PLC points, global variables, parameters, etc.
+Neuron can use the Neuron HUB driver and NeuronHUB Windows program to indirectly access Mitsubishi M70/M80 CNC systems, enabling real-time collection of various device operation data, including program names, feed speed, operation status, power consumption, PLC points, global variables, parameters, etc.
 
 ## NEURON HUB Windows Program Parameters
 

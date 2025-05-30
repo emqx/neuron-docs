@@ -1,6 +1,6 @@
 # OPCDA
 
-Neuron 可以使用 Neuron HUB 驱动和 NEURON HUB Windows 程序，间接访问运行于 Windows 操作系统的 OPC DA 服务器。远程连接的系统配置参考 [NeuOPC 远程访问](../opc-da/remote.md)。
+Neuron 可以使用 Neuron HUB 驱动和 NeuronHUB Windows 程序，间接访问运行于 Windows 操作系统的 OPC DA 服务器。远程连接的系统配置参考 [NeuOPC 远程访问](../opc-da/remote.md)。
 
 
 ## NEURON HUB Windows 程序参数

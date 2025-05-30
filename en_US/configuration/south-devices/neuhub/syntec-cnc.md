@@ -1,6 +1,6 @@
 # SYNTEC CNC
 
-Neuron can use the Neuron HUB driver and NEURON HUB Windows program to indirectly access the SYNTEC CNC system, enabling real-time collection of various device operation data, including program names, spindle override, operation status, PLC points, parameters, global variables, etc.
+Neuron can use the Neuron HUB driver and NeuronHUB Windows program to indirectly access the SYNTEC CNC system, enabling real-time collection of various device operation data, including program names, spindle override, operation status, PLC points, parameters, global variables, etc.
 
 ## NEURON HUB Windows Program Parameters
 

@@ -1,6 +1,6 @@
 # MITSUBISHI CNC
 
-Neuron 可以使用 Neuron HUB 驱动和 NEURON HUB Windows 程序，间接访问三菱 M70,M80 CNC 系统。以实时采集多种设备运行数据，包括程序名，进给速度，运行状态，功耗, PLC 点位, 全局变量，参数等。
+Neuron 可以使用 Neuron HUB 驱动和 NeuronHUB Windows 程序，间接访问三菱 M70,M80 CNC 系统。以实时采集多种设备运行数据，包括程序名，进给速度，运行状态，功耗, PLC 点位, 全局变量，参数等。
 
 ## NEURON HUB Windows 程序参数
 
