@@ -39,3 +39,23 @@ Cached Queue Size indicates the value used by the current DataStorage plugin whe
 Max Cached Queue Size indicates the historical maximum value used by the DataStorage plugin when storing data.
 
 Discarded Messages indicates the number of data lost when the DataStorage plugin stores data due to excessive data throughput exceeding the maximum value of the cache queue of 1000.
+
+## Performance Metrics
+
+It is recommended that NeuronEX storage does not exceed 10,000 data tags.
+
+### DataStorage Plugin Performance Metrics
+
+| Scenario | Number of Data Tags | Group Interval (ms) | Max CPU Usage (%) | Memory Usage (MB) | Max Cache Queue Length |
+| -------- | --------------------- | ------------------- | ----------------- | ----------------- | ---------------------- |
+| 1        | 3,000                 | 1000                | 10.4              | 79                | 1                      |
+| 2        | 10,000                | 1000                | 35                | 197               | 1                      |
+| 3        | 10,000                | 100                 | 145               | 228               | 1                      |
+
+### Datalayers Database Performance Metrics
+
+| Scenario | Number of Data Tags | Group Interval (ms) | Max CPU Usage (%) | Memory Usage (MB) | Disk Write (MB/s) | Query Response Time (ms) |
+| -------- | --------------------- | ------------------- | ----------------- | ----------------- | ------------------- | ------------------------ |
+| 1        | 3,000                 | 1000                | 2.6               | 157               | 0.093               | 10                       |
+| 2        | 10,000                | 1000                | 4.5               | 217               | 0.314               | 15                       |
+| 3        | 10,000                | 100                 | 145               | 296               | 1.59                | 22                       |
