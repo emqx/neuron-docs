@@ -23,6 +23,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
 | **Connection Mode** | Only for **TCP** mode, When selecting TCP, you can choose Neuron as the TCP client or server. |
+| **8-byte Endianness** | Byte order of tags with 64 bits, with each number representing one byte. |
 | **Maximum Retry Times** | The maximum number of retries after a failed attempt to send a read command. |
 | **Retry Interval** | Resend reading instruction interval(ms) after a failed attempt to send a read command. |
 | **Endianness**    | Byte order of tags with 32 bits, ABCD corresponds to 1234. |
@@ -95,6 +96,14 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #LB | 2,1,4,3 | int32/uint32/float | |
 | #BL | 3,4,1,2 | int32/uint32/float | |
 | #BB | 4,3,2,1 | int32/uint32/float | |
+
+Byte order also applies to int64/uint64/double data types. Each digit represents one byte. See the following table for detailed information.
+| Symbol | Byte Order | Supported Data Types | Note |
+| --- | ------- | ------------------ | ----- |
+| #LL | 12,34,56,78 | int64/uint64/double | Default byte order if not specified |
+| #LB | 21,43,65,87 | int64/uint64/double | |
+| #BL | 78,56,34,12 | int64/uint64/double | |
+| #BB | 87,65,43,21 | int64/uint64/double | |
 
 ::: tip
 The byte order of a tag has a higher priority than the byte order configuration of a node. That is to say, once the byte order is configured for a tag, it follows the configuration of that tag and ignores the node configuration.
