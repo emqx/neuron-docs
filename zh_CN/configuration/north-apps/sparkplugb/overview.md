@@ -36,6 +36,10 @@ Sparkplug B 是运行在 MQTT 之上的应用型协议，所以在 Neuron 中的
 以上参数中只有 **组 ID** 和 **节点 ID** 来源于 Sparkplug B 规范，其余均为 MQTT Broker 的连接参数，可以参阅 [MQTT 概览](../mqtt/overview.md)。
 :::
 
+:::tip
+从 NeuronEX v3.6.0 开始，Sparkplug B 插件只在 NBIRTH 和 DBIRTH 消息中设置 metric 的 name 属性，在后续的 NDATA、DDATA、NCMD 和 DCMD 消息中不会再携带 name 属性，只使用 alias 标识 metric，这可能会影响现有的系统和集成。
+:::
+
 ## 订阅南向数据
 
 采集点位是以组为单位进行数据上传的，订阅选择要上传的点位组。
