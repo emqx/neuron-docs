@@ -38,6 +38,10 @@ Sparkplug B is an application-based protocol running on top of MQTT, so the setu
 Only the `Group ID` and `Node ID` are from the Sparkplug B specification, the rest are connection parameters of the MQTT Broker, see [MQTT Overview](../mqtt/overview.md).
 :::
 
+:::tip
+Starting from NeuronEX v3.6.0, the Sparkplug B plugin will only set the 'name' attribute for metrics in NBIRTH and DBIRTH messages. In subsequent NDATA, DDATA, NCMD, and DCMD messages, the 'name' attribute will no longer be carried, and only the 'alias' will be used to identify metrics, which may impact existing systems and integrations.
+:::
+
 ## Add Subscription
 
 After plugin configuration, data forwarding can be enabled via southbound device subscriptions.
