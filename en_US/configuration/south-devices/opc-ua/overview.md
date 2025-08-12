@@ -15,16 +15,16 @@ Go to **Configuration -> South Devices**, then click **Add Device** to add the d
 
 After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the device. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
-| Parameter        | Description                                                                |
-| ---------------- | -------------------------------------------------------------------------- |
-| **Endpoint URL** | Target OPC UA Server URL, the default value is `opc.tcp://127.0.0.1:4840/` |
-| **Username**     | User name used to connect to the target OPC UA Server                      |
-| **Password**     | Password for connecting to the target OPC UA Server                        |
-| **Cert**         | Client certificate in DER format                                           |
-| **Key**          | The client key in DER format                                               |
-| **Security Mode**  | Set the security policy for the OPC UA connection: None/Sign/Sign&Encrypt, with the default being None. |
-| **Update Mode**    | Set the data acquisition mode for OPC UA: Read/Subscribe/ Read&Subscribe, with the default being Read. |
-| **Publish Interval**  | The minimum interval between two publish operations when configuring OPC UA to collect data in Subscribe/Read&Subscribe mode. |
+| Parameter            | Description                                                                                                                   |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Endpoint URL**     | Target OPC UA Server URL, the default value is `opc.tcp://127.0.0.1:4840/`                                                    |
+| **Username**         | User name used to connect to the target OPC UA Server                                                                         |
+| **Password**         | Password for connecting to the target OPC UA Server                                                                           |
+| **Cert**             | Client certificate in DER format                                                                                              |
+| **Key**              | The client key in DER format                                                                                                  |
+| **Security Mode**    | Set the security policy for the OPC UA connection: None/Sign/Sign&Encrypt, with the default being None.                       |
+| **Update Mode**      | Set the data acquisition mode for OPC UA: Read/Subscribe/ Read&Subscribe, with the default being Read.                        |
+| **Publish Interval** | The minimum interval between two publish operations when configuring OPC UA to collect data in Subscribe/Read&Subscribe mode. |
 
 ## Update Mode
 **Read** mode: The data update method is consistent with the previous version, using the OPC UA standard read interface to obtain data from the Server. This is also the default data update method.
@@ -121,6 +121,7 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 
 ARRAY_CHAR displays and writes in the form of a string.
 JSON displays and writes in the form of a JSON string.
+OPCUA Extension Object supports arrays and nesting.
 
 ### Address Format
 
