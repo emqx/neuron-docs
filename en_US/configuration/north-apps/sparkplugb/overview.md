@@ -19,6 +19,7 @@ Sparkplug B is an application-based protocol running on top of MQTT, so the setu
 | **Client ID** |  MQTT client ID, a unique identifier for the connection                          |
 | **Group ID**  | The top-level logical grouping in the Sparkplug B protocol, which can represent entities such as factories or workshops     |
 | **Node ID**   | Unique Identification of Edge Nodes in Sparkplug B Protocol                           |
+| **Enable Alias**   | Enable Metric alias, set to true to enable, default is off               |
 | **Group Path**   | Use the group name of the southbound device as the starting path of the Metric name. default true |
 | **Offline Data Caching** | Offline caching switch. Cache MQTT messages when offline, and sync cached messages when back online. |
 | **Cache Memory Size (MB)**      |  Max in-memory cache size in megabytes when MQTT connection exception occurs. Should be smaller than cache disk size.  |
