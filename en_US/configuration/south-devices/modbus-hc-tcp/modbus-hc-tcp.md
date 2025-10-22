@@ -22,6 +22,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **PLC IP Address** | The IP address of the device. |
 | **PLC Port** | The port number of the device.|
 | **Connection Timeout** |  The time the system waits for a device to respond to a command. |
+| **8-byte Endianness** | Byte order of tags with 64 bits, with each number representing one byte. |
 
 ## Configure Data Groups and Tags
 
@@ -94,6 +95,14 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #LB | 4,3,2,1 | int32/uint32/float | |
 | #BL | 1,2,3,4 | int32/uint32/float | |
 | #BB | 2,1,4,3 | int32/uint32/float | |
+
+Byte order also applies to int64/uint64/double data types. Each digit represents one byte. See the following table for detailed information.
+| Symbol | Byte Order | Supported Data Types | Note |
+| --- | ------- | ------------------ | ----- |
+| #LL | 12,34,56,78 | int64/uint64/double | Default byte order if not specified |
+| #LB | 21,43,65,87 | int64/uint64/double | |
+| #BL | 78,56,34,12 | int64/uint64/double | |
+| #BB | 87,65,43,21 | int64/uint64/double | |
 
 ::: tip
 Please note, the default byte order for the Inovance plugin is 3,4,1,2. Therefore, the order represented by the byte order symbol does not conform to the common definition.
