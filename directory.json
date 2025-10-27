@@ -585,6 +585,16 @@
               "path": "configuration/north-apps/DataStorage/api"
             }
           ]
+        },
+        {
+          "title": "OPC UA Server",
+          "path": "configuration/north-apps/opcua-server/overview",
+          "children": [
+            {
+              "title": "UaExpert 连接示例",
+              "path": "configuration/north-apps/opcua-server/uaexpert"
+            }
+          ]
         }
       ]
     },
@@ -1309,6 +1319,16 @@
             {
               "title": "Subscription Information Query API",
               "path": "configuration/north-apps/DataStorage/api"
+            }
+          ]
+        },
+        {
+          "title": "OPC UA Server",
+          "path": "configuration/north-apps/opcua-server/overview",
+          "children": [
+            {
+              "title": "Connect to OPC UA Server using UaExpert",
+              "path": "configuration/north-apps/opcua-server/uaexpert"
             }
           ]
         }
