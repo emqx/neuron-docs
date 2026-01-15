@@ -12,6 +12,8 @@ Neuron CODESYS V3 TCP 插件通过 TCP 协议访问基于 CODESYS V3 平台打�
 | username | 设备用户名                           |
 | password | 设备密码                             |
 
+设备如果是匿名登陆，用户名填写 Anonymous，密码为空。
+
 
 ## 支持的数据类型
 
@@ -47,6 +49,8 @@ Neuron CODESYS V3 TCP 插件通过 TCP 协议访问基于 CODESYS V3 平台打�
 > TAG NAME
 
 CODESYS V3 平台导出的符号配置，即为 Nueron 的点位地址。
+
+如果使用包含中文的 TAG NAME， 需要 CODESYS 3.5.20 以上版本，并进行相应的项目配置。
 
 
 ## 地址示例
