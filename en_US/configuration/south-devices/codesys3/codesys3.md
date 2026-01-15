@@ -8,6 +8,9 @@ The Neuron CODESYS V3 TCP plugin enables access to PLCs and motion control syste
 | timeout  | Request send/receive timeout, default is 3000ms |
 | username | Device username                                 |
 | password | Device password                                 |
+
+If the device logs in anonymously, fill in "Anonymous" as the username and leave the password blank.
+
 ## Supported Data Types
 - uint8
 - int8
