@@ -2,7 +2,7 @@
 
 BACnet (Building Automation and Control Networks) is a communication protocol used in smart buildings. It is defined by the International Organization for Standardization (ISO), the American National Standards Institute (ANSI) and the American Society of Heating, Venting, and Air-conditioning Engineers (ASHRAE). BACnet is designed specifically for smart buildings and control systems, and can be used for heating, ventilation, and air conditioning (HVAC), lighting control, access control, fire detection systems, and related equipment. Its advantages include reducing the cost of maintenance systems and making installation simpler than general industrial communication protocols. In addition, BACnet also provides five standard protocols commonly used in the industry, which can prevent equipment and system suppliers from monopolizing the market and increase the scalability and compatibility of future systems. BACnet supports multiple communication methods, including serial ports, IP, Ethernet, and ZigBee.
 
-Neuron supports BACnet IP protocol and can communicate with BACnet devices through UDP protocol.
+Neuron supports BBMD (BACnet Broadcast Management Device) to enable BACnet/IP communication across subnets.
 
 ## Add Device
 
@@ -19,6 +19,8 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 |--------- | ------------------------------------- |
 | **Device IP Address** | BACnet device IP                 |
 | **Device Port** | BACnet device port, default 47808  |
+| **Target Device Network** | The network number of the BACnet network where the target device is located |
+| **Target Device ID** | The device ID of the target device  |
 
 ## Configure Data Groups and Tags
 
