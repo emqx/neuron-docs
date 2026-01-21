@@ -87,6 +87,7 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 * ARRAY_FLOAT
 * ARRAY_DOUBLE
 * ARRAY_BOOL
+* ARRAY_STRING
 * JSON
 
 #### 数据类型转换
@@ -119,6 +120,7 @@ OPC UA  服务端目前支持匿名方式、用户名/密码方式、证书/密�
 | Float  Array            | ARRAY_FLOAT                |
 | Double Array            | ARRAY_DOUBLE               |
 | Boolean Array           | ARRAY_BOOL                 |
+| String Array            | ARRAY_STRING               |
 | OPCUA Exentision Object | JSON                       |
 
 ARRAY_CHAR 展示和写入形式为字符串。
