@@ -1912,3 +1912,128 @@ otherwise returns the error code.
     "error": 0
 }
 ```
+
+
+## Start Simulator
+
+*POST* /api/v2/simulator/start
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+```json
+{"error":0}
+```
+
+
+
+## Stop Simulator
+
+*POST* /api/v2/simulator/stop
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+```json
+{"error":0}
+```
+
+
+## Get Simulator Status
+
+*GET* /api/v2/simulator/status
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response
+
+```json
+{
+    "running":1,"port":502,"tag_count":4,"error":0
+}
+```
+
+
+
+## Export the Simulator's Corresponding Driver Configuration
+
+*GET* /api/v2/simulator/export
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response
+
+Attachment Download
+
+
+## Get configured tags in simulator
+
+*GET* /api/v2/simulator/tags
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response
+
+```json
+{
+  "tags": [
+    {"type":"sine","name":"sine1","address":"1!40001"},
+    {"type":"saw","name":"saw1","address":"1!40003"},
+
+    {"type":"square","name":"square1","address":"1!40004"},
+    {"type":"random","name":"random1","address":"1!40005"}
+  ]
+}
+```
+
+
+
+## Configure simulator tags
+
+*POST* /api/v2/simulator/config
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Body
+
+```json
+{
+  "tags": [
+    {"name":"sine1","address":"1!40001","type":"sine"},
+    {"name":"saw1","address":"1!40003","type":"saw"},
+    {"name":"square1","address":"1!40004","type":"square"},
+    {"name":"random1","address":"1!40005","type":"random"}
+  ]
+}
+```
+### Response
+
+```json
+{"error":0}
+```

@@ -24,6 +24,7 @@ This document describes the errors that neuron will reply to sender when calling
 * 1015    invalid ip address
 * 1016    ip address in use
 * 1017    request body too large
+* 1023    port in use
 
 ## add/del/update node/tag/plugin/group error codes
 
