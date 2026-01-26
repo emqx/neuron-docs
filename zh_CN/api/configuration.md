@@ -2000,3 +2000,33 @@ node 字段选填，不填此字段时 core 不可以为 false，此时仅切换
 ```json
 {"error":0}
 ```
+
+## 导出全部北向节点
+
+*GET* /api/v2/global/apps
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应
+
+附件下载
+
+
+
+## 导入北向节点
+
+*PUT* /api/v2/global/apps
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 请求体
+
+附件

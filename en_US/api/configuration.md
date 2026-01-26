@@ -2037,3 +2037,33 @@ Attachment Download
 ```json
 {"error":0}
 ```
+
+## Export All North Nodes
+
+*GET* /api/v2/global/apps
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Response
+
+Attachment Download
+
+
+
+## Import North Nodes
+
+*PUT* /api/v2/global/apps
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Body
+
+Attachment
