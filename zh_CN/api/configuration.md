@@ -1875,3 +1875,158 @@ node 字段选填，不填此字段时 core 不可以为 false，此时仅切换
     "error": 0
 }
 ```
+
+
+## 启动模拟器
+
+*POST* /api/v2/simulator/start
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应
+
+```json
+{"error":0}
+```
+
+
+
+## 停止模拟器
+
+*POST* /api/v2/simulator/stop
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应
+
+```json
+{"error":0}
+```
+
+
+## 获取模拟器状态
+
+*GET* /api/v2/simulator/status
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应
+
+```json
+{
+    "running":1,"port":502,"tag_count":4,"error":0
+}
+```
+
+
+
+## 导出模拟器对应南向配置
+
+*GET* /api/v2/simulator/export
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应
+
+附件下载
+
+
+## 获取模拟器已配置点位
+
+*GET* /api/v2/simulator/tags
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应
+
+```json
+{
+  "tags": [
+    {"type":"sine","name":"正弦","address":"1!40001"},
+    {"type":"saw","name":"斜波","address":"1!40003"},
+
+    {"type":"square","name":"方波","address":"1!40004"},
+    {"type":"random","name":"随机","address":"1!40005"}
+  ]
+}
+```
+
+
+
+## 配置模拟器点位
+
+*POST* /api/v2/simulator/config
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 请求体
+
+```json
+{
+  "tags": [
+    {"name":"正弦","address":"1!40001","type":"sine"},
+    {"name":"斜波","address":"1!40003","type":"saw"},
+    {"name":"方波","address":"1!40004","type":"square"},
+    {"name":"随机","address":"1!40005","type":"random"}
+  ]
+}
+```
+### 响应
+
+```json
+{"error":0}
+```
+
+## 导出全部北向节点
+
+*GET* /api/v2/global/apps
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 响应
+
+附件下载
+
+
+
+## 导入北向节点
+
+*PUT* /api/v2/global/apps
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 请求体
+
+附件
