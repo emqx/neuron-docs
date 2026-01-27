@@ -115,7 +115,9 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
     //node name
     "name": "modbus-tcp-node",
     //plugin name
-    "plugin": "Modbus TCP"
+    "plugin": "Modbus TCP",
+    // 可选，节点标签，多个标签用逗号分隔
+    "tags": "tag1, tag2, tag3",
     //setting (optional)
     "params": {
         "param1": 1,
@@ -218,7 +220,7 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
 
 **plugin** 可选
 
-**node** 可选
+**node** 可选，按节点名称或标签过滤
 
 ### 请求头部
 
@@ -237,11 +239,15 @@ Neuron 将为 IIoT 平台提供一系列 API 服务，用于查询基本信息�
             //node name
             "name": "sample-driver-adapter",
             //plugin name
-            "plugin": "Modbus TCP"
+            "plugin": "Modbus TCP",
+            //node tags
+            "tags": "tag1, tag2"
         },
         {
             "name": "modbus-tcp-adapter",
-            "plugin": "Modbus TCP"
+            "plugin": "Modbus TCP",
+            // node tags
+            "tags": "tag1, tag2"
         }
     ]
 }
@@ -2030,3 +2036,21 @@ node 字段选填，不填此字段时 core 不可以为 false，此时仅切换
 ### 请求体
 
 附件
+
+## 编辑节点的标签
+
+*PUT*  /api/v2/node/tag
+
+### 请求头部
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### 请求体
+```json
+{
+    "name": "modbus-node", // 节点名称
+    "tags": "tag1, tag2", // 需要编辑的标签名称，多个标签以逗号分隔
+}
+```

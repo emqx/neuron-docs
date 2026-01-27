@@ -115,7 +115,9 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
     //node name
     "name": "modbus-tcp-node",
     //plugin name
-    "plugin": "Modbus TCP"
+    "plugin": "Modbus TCP",
+    // optional, node tags, multiple tags separated by commas
+    "tags": "tag1, tag2, tag3",
     //setting (optional)
     "params": {
         "param1": 1,
@@ -218,7 +220,7 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
 
 **plugin** optional
 
-**node** optional
+**node** optional, filter by node name or tags
 
 ### Request Headers
 
@@ -236,11 +238,13 @@ Neuron provide a series of API services for IIoT platform, to query the basic in
         {
             //node name
             "name": "sample-driver-adapter",
+            "tags": "tag1, tag2",
             //plugin name
             "plugin": "Modbus TCP"
         },
         {
             "name": "modbus-tcp-adapter",
+            "tags": "tag1, tag2",
             "plugin": "Modbus TCP"
         }
     ]
@@ -2067,3 +2071,22 @@ Attachment Download
 ### Body
 
 Attachment
+
+## Edit node tags
+
+*PUT* /api/v2/node/tag
+
+### Request Headers
+
+**Content-Type**  application/json
+
+**Authorization** Bearer \<token\>
+
+### Body
+
+```json
+{
+    "name": "modbus-node",
+    "tags": "tag1, tag2, tag3"
+}
+```
