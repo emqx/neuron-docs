@@ -85,6 +85,7 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 * ARRAY_FLOAT
 * ARRAY_DOUBLE
 * ARRAY_BOOL
+* ARRAY_STRING
 * JSON
 
 ### Data Type Conversion
@@ -117,6 +118,7 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 | Float  Array             | ARRAY_FLOAT                       |
 | Double Array             | ARRAY_DOUBLE                      |
 | Boolean Array            | ARRAY_BOOL                        |
+| String Array             | ARRAY_STRING                      |
 | OPCUA Exentision Object  | JSON                              |
 
 ARRAY_CHAR displays and writes in the form of a string.

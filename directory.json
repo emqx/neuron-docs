@@ -478,6 +478,14 @@
               "path": "configuration/south-devices/neuhub/opcda"
             },
             {
+              "title": "OPC AE",
+              "path": "configuration/south-devices/neuhub/opcae"
+            },
+            {
+              "title": "GE Historian",
+              "path": "configuration/south-devices/neuhub/ge-historian"
+            },
+            {
               "title": "SYNTEC CNC",
               "path": "configuration/south-devices/neuhub/syntec-cnc"
             },
@@ -1206,6 +1214,14 @@
             {
               "title": "OPC DA",
               "path": "configuration/south-devices/neuhub/opcda"
+            },
+            {
+              "title": "OPC AE",
+              "path": "configuration/south-devices/neuhub/opcae"
+            },
+            {
+              "title": "GE Historian",
+              "path": "configuration/south-devices/neuhub/ge-historian"
             },
             {
               "title": "SYNTEC CNC",
