@@ -282,6 +282,10 @@
           ]
         },
         {
+          "title": "SNMP",
+          "path": "configuration/south-devices/snmp/snmp"
+        },
+        {
           "title": "Omron FINS TCP",
           "path": "configuration/south-devices/omron-fins/omron-fins",
           "children": [
@@ -1020,6 +1024,10 @@
               "path": "configuration/south-devices/siemens-mpi/s7300"
             }
           ]
+        },
+        {
+          "title": "SNMP",
+          "path": "configuration/south-devices/snmp/snmp"
         },
         {
           "title": "Omron FINS TCP",
