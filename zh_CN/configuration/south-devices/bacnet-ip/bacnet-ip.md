@@ -2,7 +2,7 @@
 
 BACnet（Building Automation and Control Networks）是一种用于智能建筑的通信协议，它是由国际标准化组织（ISO）、美国国家标准协会（ANSI）和美国采暖、制冷与空调工程师学会（ASHRAE）定义的通信协议。BACnet 是专门为智能建筑及控制系统设计的通信协议，可用于暖通空调系统（HVAC）、照明控制、门禁系统、火警侦测系统以及其相关设备。其优点在于可降低维护系统所需成本，并且安装比一般工业通信协议更为简易。此外，BACnet 还提供了五种业界常用的标准协议，可以防止设备和系统供应商的垄断，从而增加未来系统的扩展性和兼容性。BACnet 协议支持多种通信方式，包括串口、IP、Ethernet、ZigBee 等。
 
-Neuron 支持 BACnet IP 协议，可以通过 UDP 协议与 BACnet 设备进行通讯。
+Neuron 支持通过 BBMD （BACnet Broadcast Management Device）实现跨子网的 BACnet/IP 通信。
 
 ## 添加插件
 
@@ -16,6 +16,8 @@ Neuron 支持 BACnet IP 协议，可以通过 UDP 协议与 BACnet 设备进行�
 |--------- | ------------------------------ |
 | **设备 IP 地址** | BACnet 设备的 IP                |
 | **设备端口** | BACnet 设备的端口号，默认为 47808 |
+| **目标设备网络** |  目标设备所在 BACnet 网络的网络号 |
+| **目标设备ID** | 目标设备的设备ID  |
 
 ## 设置组和点位
 
