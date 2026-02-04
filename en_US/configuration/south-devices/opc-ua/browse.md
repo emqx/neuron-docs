@@ -13,7 +13,7 @@ NeuronEX integrates the Address Space Browser function for OPC UA servers, which
 
 ![browse](./assets/browse2.png)
 
-4. Select one or more data tags in the OPCUA address space and click the **Add Tags to Group** button to add these tags to the collection group. You can choose an existing group or create a new one. Up to 100 tags can be added at a time.
+4. Select one or more data tags in the OPCUA address space and click the **Add Tags to Group** button to add these tags to the collection group. You can choose an existing group or create a new one. Up to 10000 tags can be added at a time.
 
 ![browse](./assets/browse3.png)
 
@@ -21,7 +21,7 @@ NeuronEX integrates the Address Space Browser function for OPC UA servers, which
 
 ![browse](./assets/browse4.png)
 
-6. You can also export the selected data tags to an `.xlsx` file in the **Tag Browser** page and edit them manually. Up to 1000 data tags can be exported at a time.
+6. You can also export the selected data tags to an `.xlsx` file in the **Tag Browser** page and edit them manually. Up to 10000 data tags can be exported at a time.
 
 ![browse](./assets/browse5.png)
 
