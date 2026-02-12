@@ -27,6 +27,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Publish Interval** | The minimum interval between two publish operations when configuring OPC UA to collect data in Subscribe/Read&Subscribe mode. |
 
 ## Update Mode
+
 **Read** mode: The data update method is consistent with the previous version, using the OPC UA standard read interface to obtain data from the Server. This is also the default data update method.
 
 **Subscribe** mode: A new data update method that uses the OPC UA standard subscription interface to get Server data. Upon successful subscription, data is updated in bulk once, and thereafter updates occur only when the Server data changes.
@@ -36,7 +37,13 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 **Publish Interval** defines the fastest rate at which the OPC UA server sends point update values to NeuronEX in a loop when the **Update Mode** is set to Subscribe or Read&Subscribe. If this parameter is set to 0, the fastest publish interval supported by the OPC UA server is used. The interval is expressed in milliseconds. The default value is 500 ms, meaning the fastest point update rate sent by the OPC UA server to NeuronEX is 500 ms.
 
 ::: tip
+
 The **Update Mode** is set in the global parameters of the southbound node and indicates that the southbound node obtains data via OPC UA subscription. Meanwhile, the Subscribe attribute in the NeuronEX tags settings means that when the value of this tag changes, it immediately triggers an upload report to the northbound application. Setting both together allows you to obtain real-time data change reports.  
+
+When the **Update Mode** is set to Subscribe or Read&Subscribe, and the tag attribute is configured as Subscribe, the Interval of the collection group does not take effect for this tag, meaning the tag will not report data periodically.
+
+When the **Update Mode** is set to Subscribe or Read&Subscribe, and the tag attribute is configured as Read and Subscribe, the Interval of the collection group takes effect for this tag, meaning the tag will also report data periodically.
+
 :::
 
 ## Configure Data Groups and Tags
