@@ -213,7 +213,13 @@
         },
         {
           "title": "Allen-Bradley 5000 Serial",
-          "path": "configuration/south-devices/ab-5000/ab-5000"
+          "path": "configuration/south-devices/ab-5000/ab-5000",
+          "children": [
+            {
+              "title": "错误码",
+              "path": "configuration/south-devices/ab-5000/errorcode"
+            }
+          ]
         },
         {
           "title": "Allen-Bradley ControlLogix 5500",
@@ -965,7 +971,13 @@
         },
         {
           "title": "Allen-Bradley 5000 Serial",
-          "path": "configuration/south-devices/ab-5000/ab-5000"
+          "path": "configuration/south-devices/ab-5000/ab-5000",
+          "children": [
+            {
+              "title": "错误码",
+              "path": "configuration/south-devices/ab-5000/errorcode"
+            }
+          ]
         },
         {
           "title": "Allen-Bradley ControlLogix 5500",
