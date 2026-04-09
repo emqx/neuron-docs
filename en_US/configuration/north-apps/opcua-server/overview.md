@@ -22,6 +22,9 @@ When creating an OPC UA Server application, you can configure the following para
 | **Trusted Certificate Authority**        | Upload trusted CA certificates(PEM).                                                                                          |
 | **Trusted Client Certificate**           | Upload client-generated certificates(PEM).                                                                                    |
 
+In actual use, the host needs to be filled in with the actual IP of the running host. If the default 127.0.0.1 is used, the client software may experience connection issues.
+
+
 ### Security and Certificates
 
 OPC UA strongly recommends enabling security policies and message encryption to prevent man-in-the-middle attacks and eavesdropping. Key points:
