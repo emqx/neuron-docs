@@ -4,6 +4,13 @@ OPC UA is a machine-to-machine communication protocol for industrial automation 
 
 The Neuron OPC UA plugin can be used as a client to access KEPServerEX, Industrial Gateway OPC Server, Prosys Simulation Server, Ignition, and other OPC UA servers. You can also directly access the built-in OPC UA Server of hardware equipment, such as the built-in Server of Siemens S7-1200 PLC, the built-in Server of Omron NJ series PLC, etc.
 
+::: tip
+
+OPC UA servers currently support anonymous access, username/password authentication, certificate/key + anonymous access, and certificate/key + username/password authentication. For details, refer to [OPC UA Connection Policy](./policy.md).
+OPC UA Part 9 Conditions and Alarms functionality must be used in Subscribe mode.
+
+:::
+
 ## Add Device
 
 Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
@@ -25,6 +32,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Security Mode**    | Set the security policy for the OPC UA connection: None/Sign/Sign&Encrypt, with the default being None.                       |
 | **Update Mode**      | Set the data acquisition mode for OPC UA: Read/Subscribe/ Read&Subscribe, with the default being Read.                        |
 | **Publish Interval** | The minimum interval between two publish operations when configuring OPC UA to collect data in Subscribe/Read&Subscribe mode. |
+| **Event Root Node**  | The OPC UA event root node for condition subscription (default: `0!2253` representing the Server node)         |
 
 ## Update Mode
 
@@ -134,13 +142,20 @@ OPCUA Extension Object supports arrays and nesting.
 
 ### Address Format
 
-> NS[x,y,z]!NODEID
+> (cond:|alarm:|method:)NS[x,y,z]!NODEID(Method-NS!Method-NODEID)(?para1=type1&para2=type2 ...)
+
+
+**cond:|alarm:|method:** Special node flags for conditions, alarms, and methods.
 
 **NS** Namespace index.
 
 **[x,y,z]** Array index, when the data type is array, you can use the index to get to the value of a specific location, the dimension counts from 0, the dimension is not more than 2. x means one-dimensional index, y means two-dimensional index, z means three-dimensional index.
 
 **NODEID** The node ID, which can be set as a number, a string, or a GUID.
+
+**Method-NS!Method-NODEID** The namespace index and node ID of the method node.
+
+**para1=type1&para2=type2** The parameter names and types required for method invocation. Supported types include Boolean, Sbyte, Byte, Int16, UInt16, Int32, UInt32, Int64, UInt64, Float, Double, String, ByteString, Guid, and LocalizedText.
 
 ### Example Addresses
 
@@ -153,6 +168,10 @@ OPCUA Extension Object supports arrays and nesting.
 | 1[2,3]!array2d[int]                    | INT32     | Access the elements of row 3 and column 4 of the INT32 array; NS is 1, NODEID is array2d[int], one-dimensional index is 2, and two-dimensional index is 3.                          |
 | 1[2,3,4]!array3d[float]                | FLOAT     | Accesses row 3, column 4, and element 5 of the FLOAT array; NS is 1, NODEID is array3d[float], one-dimensional index is 2, two-dimensional index is 3, three-dimensional index is 4 |
 | 0!3D.Point                             | JSON      | Get an extended object representing a 3D position, which contains three member elements: x, y, and z.                                                                               |
+| method:1!TemperatureAlarm(0!9027)?     | JSON      | Method node                                                                                                                                                                          |
+| method:1!TemperatureAlarm(0!9111)?EventId=ByteString&Comment=LocalizedText | JSON     | Method node                                                                                                                                          |
+
+Conditions, alarms, and methods are all of type JSON.
 
 ## Use Case
 
@@ -163,6 +182,7 @@ This chapter also provides practical examples to facilitate a quick start.
 - [Industrial Gateway OPC Server](igs.md)
 - [Ignition](ignition.md)
 - [Prosys Simulation Server](prosys.md)
+- [Conditions and Alarms](conditions.md)
 
 ## Data Monitoring
 
