@@ -180,6 +180,10 @@
               "path": "configuration/south-devices/opc-ua/prosys"
             },
             {
+              "title": "条件和报警",
+              "path": "configuration/south-devices/opc-ua/conditions"
+            },
+            {
               "title": "常见问题",
               "path": "configuration/south-devices/opc-ua/faq"
             }
@@ -936,6 +940,10 @@
             {
               "title": "Connect to Prosys Simulation Server",
               "path": "configuration/south-devices/opc-ua/prosys"
+            },
+            {
+              "title": "Conditions and Alarms",
+              "path": "configuration/south-devices/opc-ua/conditions"
             },
             {
               "title": "FAQ",
