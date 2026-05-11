@@ -1519,6 +1519,43 @@ To update both group name and interval:
 }
 ```
 
+## Get subscribe status of groups
+
+*GET*  /api/v2/subscribes
+
+### Request Params
+
+**app**  required
+
+**name**  optional, substring match driver name or group name
+
+### Request Headers
+
+**Authorization** Bearer \<token\>
+
+### Response Status
+
+* 200
+* 400
+
+### Response
+
+```json
+{
+    "drivers": [
+        {
+            "name": "modbus",
+            "groups": [
+                {
+                    "name": "g3",
+                    "subscribed": true
+                }
+            ]
+        }
+    ]
+}
+```
+
 ## Get Version
 
 *GET*  /api/v2/version

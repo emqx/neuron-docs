@@ -70,6 +70,8 @@ Prosys Simulation Server 是由 Prosys 公司开发的 OPC UA 服务器，用于
 
    - **证书/密钥**：无需添加
 
+   - **更新模式**：可以修改为 Subscribe 或 Read&Subscribe，以 OPC UA 订阅方式获取数据
+
 3. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任。
 4. 根据测点信息添加 **Groups** 和 **Tags**。
 
@@ -92,6 +94,8 @@ Prosys Simulation Server 是由 Prosys 公司开发的 OPC UA 服务器，用于
    - **用户名/密码**：填写用户名和密码
 
    - **证书/密钥**：添加证书和密钥
+
+   - **更新模式**：可以修改为 Subscribe 或 Read&Subscribe，以 OPC UA 订阅方式获取数据
 
 3. Prosys OPC UA Simulation Server 界面中切换到 **Certificates**，将列表中的客户端证书设置为信任。
 

@@ -18,6 +18,7 @@ Ignition 是由 Inductive Automation 公司开发的一种工业应用平台。�
    - **用户名**设为 `opcuauser`（Ignition 默认）
    - **密码**设为 `password`（Igniton 默认）
    - 无需添加证书/密钥，启动设备连接
+   - **更新模式**：可以修改为 Subscribe 或 Read&Subscribe，以 OPC UA 订阅方式获取数据。
 3. 根据测点信息添加 **Groups** 和 **Tags**。
 4. 打开 Ignition 的管理界面 **Config** -> **OPC UA** -> **Security** -> **Server**，将 **Quarantined Certificates** 列表中的 NeuronClient 证书设置为信任。
    ![ignition-2](./assets/ignition-2.jpg)
@@ -43,6 +44,8 @@ Ignition 是由 Inductive Automation 公司开发的一种工业应用平台。�
    - **密码**：设为 `password`（Igniton 默认）
 
    - 添加证书/密钥，启动设备连接。
+
+   - **更新模式**：可以修改为 Subscribe 或 Read&Subscribe，以 OPC UA 订阅方式获取数据。
 
 3. 根据测点信息添加 **Groups** 和 **Tags**。
 

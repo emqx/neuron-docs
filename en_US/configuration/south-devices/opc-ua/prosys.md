@@ -65,7 +65,7 @@ You can refer to the above sections on how to set the Certificate/Key and Userna
 
    ![prosys-5](./assets/prosys-5.jpg)
 
-2. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the **Endpoint URL** of the target Server, fills in the user name/password, adds the certificate/key, and starts the device connection.
+2. Neuron adds a new southbound OPC UA device, opens **Device Configuration**, fills in the **Endpoint URL** of the target Server, fills in the user name/password, adds the certificate/key, and starts the device connection(Change the **Update Mode** to Subscribe or Read&Subscribe to obtain data via OPC UA subscription.).
 
 3. Open the **Certificates** and set the client certificate in the list to Trust.
 

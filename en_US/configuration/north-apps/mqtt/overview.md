@@ -10,6 +10,11 @@ The plugin also supports secure communication with devices, using authentication
 
 [MQTT]: https://mqtt.org
 
+::: tip
+It is not recommended to enable multiple MQTT plugin nodes in the same Neuron instance, as this may lead to performance degradation and resource contention issues.
+To collect and forward data from different southbound devices, it is recommended to add multiple subscriptions within the same MQTT node.
+:::
+
 ## Add Application
 
 To create a northbound MQTT node and connect it to an MQTT Broker to upload data, navigate to **Configuration -> North Apps** and click **Add Application** to add an MQTT client node.

@@ -52,9 +52,13 @@ KEPServerEX 是由 Kepware 公司开发的一款工业自动化设备与应用�
    ![kepware-5](./assets/kepware-5.jpg)
 
 
-2. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 **端点 URL**，填写用户名/密码，添加证书/密钥，启动设备连接；
+2. Neuron 新增南向 OPC UA 设备，打开 **设备配置**，填写目标 Server 的 **端点 URL**，填写用户名/密码，添加证书/密钥。
 
-3. 根据测点信息添加 **Groups** 和 **Tags**。
+3. 可以修改**更新模式**为 Subscribe 或 Read&Subscribe，以 OPC UA 订阅方式获取数据。
+
+4. 启动设备连接；
+
+5. 根据测点信息添加 **Groups** 和 **Tags**。
 
 ## 测试点位
 

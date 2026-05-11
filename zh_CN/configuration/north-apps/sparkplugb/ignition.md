@@ -41,3 +41,8 @@ Ignition 是由 Inductive Automation 公司开发的一款工业应用平台。�
 
 3. 在软件界面中找到 **Tag Browser** 并选择 **MQTT Engine**，展开 **Edge Nodes\Factory1\Neuron1\opcua-kepserver\test** 可以看到即时上传的测点数据。
 ![ignition4](./assets/ignition4.jpg)
+
+### 设备数据写入
+修改 **value** 列中对应的 tag 数值，并回车，在弹出的对话框中选择 **Write Once**, 设备中的对应数值将会被修改。
+![ignition-write1](./assets/ingnition_write1.jpg)
+![ignition-write2](./assets/ingnition_write2.jpg)

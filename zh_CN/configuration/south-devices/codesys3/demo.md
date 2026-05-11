@@ -105,3 +105,10 @@ CODESYS V3 开发环境安装程序，可以去 CODESYS 官网下载。本示例
 
 ![data](./assets/data.png)
   
+
+## CODESYS 支持中文标签配置
+确保 CODESYS 3.5.20 以上版本，并且项目工程中编译选项启用以下选项：
+![setting](./assets/setting.png)
+
+数据显示如下：
+![data1](./assets/data1.png)

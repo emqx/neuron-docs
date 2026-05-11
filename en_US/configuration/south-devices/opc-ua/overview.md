@@ -4,6 +4,13 @@ OPC UA is a machine-to-machine communication protocol for industrial automation 
 
 The Neuron OPC UA plugin can be used as a client to access KEPServerEX, Industrial Gateway OPC Server, Prosys Simulation Server, Ignition, and other OPC UA servers. You can also directly access the built-in OPC UA Server of hardware equipment, such as the built-in Server of Siemens S7-1200 PLC, the built-in Server of Omron NJ series PLC, etc.
 
+::: tip
+
+OPC UA servers currently support anonymous access, username/password authentication, certificate/key + anonymous access, and certificate/key + username/password authentication. For details, refer to [OPC UA Connection Policy](./policy.md).
+OPC UA Part 9 Conditions and Alarms functionality must be used in Subscribe mode.
+
+:::
+
 ## Add Device
 
 Go to **Configuration -> South Devices**, then click **Add Device** to add the driver. Configure the following settings in the popup dialog box.
@@ -15,13 +22,37 @@ Go to **Configuration -> South Devices**, then click **Add Device** to add the d
 
 After clicking **Create**, you will be redirected to the **Device Configuration** page, where we will set up the parameters required for Neuron to establish a connection with the device. You can also click the device configuration icon on the southbound device card to enter the **Device Configuration** interface.
 
-| Parameter        | Description                                                                |
-| ---------------- | -------------------------------------------------------------------------- |
-| **Endpoint URL** | Target OPC UA Server URL, the default value is `opc.tcp://127.0.0.1:4840/` |
-| **Username**     | User name used to connect to the target OPC UA Server                      |
-| **Password**     | Password for connecting to the target OPC UA Server                        |
-| **Cert**         | Client certificate in DER format                                           |
-| **Key**          | The client key in DER format                                               |
+| Parameter            | Description                                                                                                                   |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Endpoint URL**     | Target OPC UA Server URL, the default value is `opc.tcp://127.0.0.1:4840/`                                                    |
+| **Username**         | User name used to connect to the target OPC UA Server                                                                         |
+| **Password**         | Password for connecting to the target OPC UA Server                                                                           |
+| **Cert**             | Client certificate in DER format                                                                                              |
+| **Key**              | The client key in DER format                                                                                                  |
+| **Security Mode**    | Set the security policy for the OPC UA connection: None/Sign/Sign&Encrypt, with the default being None.                       |
+| **Update Mode**      | Set the data acquisition mode for OPC UA: Read/Subscribe/ Read&Subscribe, with the default being Read.                        |
+| **Publish Interval** | The minimum interval between two publish operations when configuring OPC UA to collect data in Subscribe/Read&Subscribe mode. |
+| **Event Root Node**  | The OPC UA event root node for condition subscription (default: `0!2253` representing the Server node)         |
+
+## Update Mode
+
+**Read** mode: The data update method is consistent with the previous version, using the OPC UA standard read interface to obtain data from the Server. This is also the default data update method.
+
+**Subscribe** mode: A new data update method that uses the OPC UA standard subscription interface to get Server data. Upon successful subscription, data is updated in bulk once, and thereafter updates occur only when the Server data changes.
+
+**Read&Subscribe** mode: A new data update method that simultaneously uses both the read interface and the subscription interface to obtain Server data.
+
+**Publish Interval** defines the fastest rate at which the OPC UA server sends point update values to NeuronEX in a loop when the **Update Mode** is set to Subscribe or Read&Subscribe. If this parameter is set to 0, the fastest publish interval supported by the OPC UA server is used. The interval is expressed in milliseconds. The default value is 500 ms, meaning the fastest point update rate sent by the OPC UA server to NeuronEX is 500 ms.
+
+::: tip
+
+The **Update Mode** is set in the global parameters of the southbound node and indicates that the southbound node obtains data via OPC UA subscription. Meanwhile, the Subscribe attribute in the NeuronEX tags settings means that when the value of this tag changes, it immediately triggers an upload report to the northbound application. Setting both together allows you to obtain real-time data change reports.  
+
+When the **Update Mode** is set to Subscribe or Read&Subscribe, and the tag attribute is configured as Subscribe, the Interval of the collection group does not take effect for this tag, meaning the tag will not report data periodically.
+
+When the **Update Mode** is set to Subscribe or Read&Subscribe, and the tag attribute is configured as Read and Subscribe, the Interval of the collection group takes effect for this tag, meaning the tag will also report data periodically.
+
+:::
 
 ## Configure Data Groups and Tags
 
@@ -69,6 +100,7 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 * ARRAY_FLOAT
 * ARRAY_DOUBLE
 * ARRAY_BOOL
+* ARRAY_STRING
 * JSON
 
 ### Data Type Conversion
@@ -101,20 +133,29 @@ You can use UaExpert to view the **Namespace Index** ( `NamespaceIndex`) and is 
 | Float  Array             | ARRAY_FLOAT                       |
 | Double Array             | ARRAY_DOUBLE                      |
 | Boolean Array            | ARRAY_BOOL                        |
+| String Array             | ARRAY_STRING                      |
 | OPCUA Exentision Object  | JSON                              |
 
 ARRAY_CHAR displays and writes in the form of a string.
 JSON displays and writes in the form of a JSON string.
+OPCUA Extension Object supports arrays and nesting.
 
 ### Address Format
 
-> NS[x,y,z]!NODEID
+> (cond:|alarm:|method:)NS[x,y,z]!NODEID(Method-NS!Method-NODEID)(?para1=type1&para2=type2 ...)
+
+
+**cond:|alarm:|method:** Special node flags for conditions, alarms, and methods.
 
 **NS** Namespace index.
 
 **[x,y,z]** Array index, when the data type is array, you can use the index to get to the value of a specific location, the dimension counts from 0, the dimension is not more than 2. x means one-dimensional index, y means two-dimensional index, z means three-dimensional index.
 
 **NODEID** The node ID, which can be set as a number, a string, or a GUID.
+
+**Method-NS!Method-NODEID** The namespace index and node ID of the method node.
+
+**para1=type1&para2=type2** The parameter names and types required for method invocation. Supported types include Boolean, Sbyte, Byte, Int16, UInt16, Int32, UInt32, Int64, UInt64, Float, Double, String, ByteString, Guid, and LocalizedText.
 
 ### Example Addresses
 
@@ -127,6 +168,10 @@ JSON displays and writes in the form of a JSON string.
 | 1[2,3]!array2d[int]                    | INT32     | Access the elements of row 3 and column 4 of the INT32 array; NS is 1, NODEID is array2d[int], one-dimensional index is 2, and two-dimensional index is 3.                          |
 | 1[2,3,4]!array3d[float]                | FLOAT     | Accesses row 3, column 4, and element 5 of the FLOAT array; NS is 1, NODEID is array3d[float], one-dimensional index is 2, two-dimensional index is 3, three-dimensional index is 4 |
 | 0!3D.Point                             | JSON      | Get an extended object representing a 3D position, which contains three member elements: x, y, and z.                                                                               |
+| method:1!TemperatureAlarm(0!9027)?     | JSON      | Method node                                                                                                                                                                          |
+| method:1!TemperatureAlarm(0!9111)?EventId=ByteString&Comment=LocalizedText | JSON     | Method node                                                                                                                                          |
+
+Conditions, alarms, and methods are all of type JSON.
 
 ## Use Case
 
@@ -137,6 +182,7 @@ This chapter also provides practical examples to facilitate a quick start.
 - [Industrial Gateway OPC Server](igs.md)
 - [Ignition](ignition.md)
 - [Prosys Simulation Server](prosys.md)
+- [Conditions and Alarms](conditions.md)
 
 ## Data Monitoring
 

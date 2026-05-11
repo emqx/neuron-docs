@@ -180,6 +180,10 @@
               "path": "configuration/south-devices/opc-ua/prosys"
             },
             {
+              "title": "条件和报警",
+              "path": "configuration/south-devices/opc-ua/conditions"
+            },
+            {
               "title": "常见问题",
               "path": "configuration/south-devices/opc-ua/faq"
             }
@@ -213,7 +217,13 @@
         },
         {
           "title": "Allen-Bradley 5000 Serial",
-          "path": "configuration/south-devices/ab-5000/ab-5000"
+          "path": "configuration/south-devices/ab-5000/ab-5000",
+          "children": [
+            {
+              "title": "错误码",
+              "path": "configuration/south-devices/ab-5000/errorcode"
+            }
+          ]
         },
         {
           "title": "Allen-Bradley ControlLogix 5500",
@@ -280,6 +290,10 @@
               "path": "configuration/south-devices/siemens-mpi/s7300"
             }
           ]
+        },
+        {
+          "title": "SNMP",
+          "path": "configuration/south-devices/snmp/snmp"
         },
         {
           "title": "Omron FINS TCP",
@@ -468,6 +482,36 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "NEURON HUB",
+          "path": "configuration/south-devices/neuhub/neuhub",
+          "children": [
+            {
+              "title": "OPC DA",
+              "path": "configuration/south-devices/neuhub/opcda"
+            },
+            {
+              "title": "OPC AE",
+              "path": "configuration/south-devices/neuhub/opcae"
+            },
+            {
+              "title": "GE Historian",
+              "path": "configuration/south-devices/neuhub/ge-historian"
+            },
+            {
+              "title": "SYNTEC CNC",
+              "path": "configuration/south-devices/neuhub/syntec-cnc"
+            },
+            {
+              "title": "MITSUBISHI CNC",
+              "path": "configuration/south-devices/neuhub/mitsubishi-cnc"
+            },
+            {
+              "title": "连接 KEPServerEX 6 OPC DA Server",
+              "path": "configuration/south-devices/neuhub/example/kepware-da"
+            }
+          ]
         }
       ]
     },
@@ -547,12 +591,36 @@
           ]
         },
         {
+          "title": "Kafka",
+          "path": "configuration/north-apps/kafka/overview"
+        },
+        {
           "title": "WebSocket",
           "path": "configuration/north-apps/websocket/websocket"
         },
         {
           "title": "Monitor",
           "path": "configuration/north-apps/monitor/overview"
+        },
+        {
+          "title": "DataStorage",
+          "path": "configuration/north-apps/DataStorage/DataStorage",
+          "children": [
+            {
+              "title": "订阅信息查询 API",
+              "path": "configuration/north-apps/DataStorage/api"
+            }
+          ]
+        },
+        {
+          "title": "OPC UA Server",
+          "path": "configuration/north-apps/opcua-server/overview",
+          "children": [
+            {
+              "title": "UaExpert 连接示例",
+              "path": "configuration/north-apps/opcua-server/uaexpert"
+            }
+          ]
         }
       ]
     },
@@ -878,6 +946,10 @@
               "path": "configuration/south-devices/opc-ua/prosys"
             },
             {
+              "title": "Conditions and Alarms",
+              "path": "configuration/south-devices/opc-ua/conditions"
+            },
+            {
               "title": "FAQ",
               "path": "configuration/south-devices/opc-ua/faq"
             }
@@ -911,7 +983,13 @@
         },
         {
           "title": "Allen-Bradley 5000 Serial",
-          "path": "configuration/south-devices/ab-5000/ab-5000"
+          "path": "configuration/south-devices/ab-5000/ab-5000",
+          "children": [
+            {
+              "title": "错误码",
+              "path": "configuration/south-devices/ab-5000/errorcode"
+            }
+          ]
         },
         {
           "title": "Allen-Bradley ControlLogix 5500",
@@ -978,6 +1056,10 @@
               "path": "configuration/south-devices/siemens-mpi/s7300"
             }
           ]
+        },
+        {
+          "title": "SNMP",
+          "path": "configuration/south-devices/snmp/snmp"
         },
         {
           "title": "Omron FINS TCP",
@@ -1156,6 +1238,36 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "NEURON HUB",
+          "path": "configuration/south-devices/neuhub/neuhub",
+          "children": [
+            {
+              "title": "OPC DA",
+              "path": "configuration/south-devices/neuhub/opcda"
+            },
+            {
+              "title": "OPC AE",
+              "path": "configuration/south-devices/neuhub/opcae"
+            },
+            {
+              "title": "GE Historian",
+              "path": "configuration/south-devices/neuhub/ge-historian"
+            },
+            {
+              "title": "SYNTEC CNC",
+              "path": "configuration/south-devices/neuhub/syntec-cnc"
+            },
+            {
+              "title": "MITSUBISHI CNC",
+              "path": "configuration/south-devices/neuhub/mitsubishi-cnc"
+            },
+            {
+              "title": "Connect to KEPServerEX 6 OPC DA Server",
+              "path": "configuration/south-devices/neuhub/example/kepware-da"
+            }
+          ]
         }
       ]
     },
@@ -1235,6 +1347,10 @@
           ]
         },
         {
+          "title": "Kafka",
+          "path": "configuration/north-apps/kafka/overview"
+        },
+        {
           "title": "WebSocket",
           "path": "configuration/north-apps/websocket/websocket",
           "children": [
@@ -1247,6 +1363,26 @@
         {
           "title": "Monitor",
           "path": "configuration/north-apps/monitor/overview"
+        },
+        {
+          "title": "DataStorage",
+          "path": "configuration/north-apps/DataStorage/DataStorage",
+          "children": [
+            {
+              "title": "Subscription Information Query API",
+              "path": "configuration/north-apps/DataStorage/api"
+            }
+          ]
+        },
+        {
+          "title": "OPC UA Server",
+          "path": "configuration/north-apps/opcua-server/overview",
+          "children": [
+            {
+              "title": "Connect to OPC UA Server using UaExpert",
+              "path": "configuration/north-apps/opcua-server/uaexpert"
+            }
+          ]
         }
       ]
     },

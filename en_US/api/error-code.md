@@ -120,6 +120,13 @@ This document describes the errors that neuron will reply to sender when calling
 * 4102  file read failure
 * 4103  file write failure
 
+## DATALAYERS error codes
+
+* 4200  datalayers error
+* 4201  datalayers init failed
+* 4202  datalayers connect failed
+* 4203  datalayers client is null
+
 ## OPCUA error codes
 
 * 10001 opcua tag does not exist

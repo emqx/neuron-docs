@@ -42,3 +42,7 @@ This section assumes that the southbound OCP UA plugin has been installed, the g
 
 Click the **View Data** button on the Cogent DataHub main interface to see the test data being uploaded instantly.
   ![cogent3](./assets/cogent3.jpg)
+
+### Device Data Writing
+Expand the tree list on the left one by one, then select the tag that needs to be modified from the list on the right. Next, enter the new value in the Enter new value field at the top and press Enter. This completes the modification of the corresponding value for the device.
+![cogenthub-write1](./assets/cogenthub_write1.png)

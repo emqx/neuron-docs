@@ -18,7 +18,8 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 
 | Parameter                  | Description                                                    |
 | -------------------- | ------------------------------------------------------- |
-| **Endianness** | Byte order of tags with 32 bits, ABCD corresponds to 1234. |
+| **4-byte Endianness**    | Byte order of tags with 32 bits, ABCD corresponds to 1234. |
+| **8-byte Endianness**    | Byte order of tags with 64 bits, with each number representing one byte. |
 | **Send Interval** | The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
 | **PLC IP Address** | The IP address of the device. |
 | **PLC Port** | The port number of the device.|
@@ -119,6 +120,14 @@ Optional, byte order, applicable to data types int16/uint16/int32/uint32/float, 
 | #LB | 4,3,2,1 | int32/uint32/float | |
 | #BL | 1,2,3,4 | int32/uint32/float | |
 | #BB | 2,1,4,3 | int32/uint32/float | |
+
+Byte order also applies to int64/uint64/double data types. Each digit represents one byte. See the following table for detailed information.
+| Symbol | Byte Order | Supported Data Types | Note |
+| --- | ------- | ------------------ | ----- |
+| #LL | 12,34,56,78 | int64/uint64/double | Default byte order if not specified |
+| #LB | 21,43,65,87 | int64/uint64/double | |
+| #BL | 78,56,34,12 | int64/uint64/double | |
+| #BB | 87,65,43,21 | int64/uint64/double | |
 
 ::: tip
 The byte order of a tag has a higher priority than the byte order configuration of a node. That is to say, once the byte order is configured for a tag, it follows the configuration of that tag and ignores the node configuration.

@@ -13,7 +13,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: github.repository_owner == 'emqx'
     steps:
     - name: clone docs
@@ -22,23 +22,36 @@ jobs:
         fetch-depth: 0
         path: docs-files
 
+    - name: Generate GitHub App token
+      id: app-token
+      uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
+      with:
+        app-id: ${{ vars.AUTH_APP_ID }}
+        private-key: ${{ secrets.AUTH_APP_PRIVATE_KEY }}
+        owner: ${{ github.repository_owner }}
+
     - name: clone frontend
       uses: actions/checkout@main
       with:
         repository: 'emqx/docs-emqx-com-frontend'
         ref: next
-        token: ${{ secrets.CI_GIT_TOKEN }}
+        token: ${{ steps.app-token.outputs.token }}
         path: frontend
 
     - name: use node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version-file: 'frontend/.nvmrc'
 
     - name: use pnpm
       uses: pnpm/action-setup@v4
       with:
-        version: 8
+        version: 9
+
+    - name: use python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
 
     - name: set env
       run: |
