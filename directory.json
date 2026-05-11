@@ -587,6 +587,10 @@
           ]
         },
         {
+          "title": "Kafka",
+          "path": "configuration/north-apps/kafka/overview"
+        },
+        {
           "title": "WebSocket",
           "path": "configuration/north-apps/websocket/websocket"
         },
@@ -1333,6 +1337,10 @@
               "path": "configuration/north-apps/sparkplugb/faq"
             }
           ]
+        },
+        {
+          "title": "Kafka",
+          "path": "configuration/north-apps/kafka/overview"
         },
         {
           "title": "WebSocket",
