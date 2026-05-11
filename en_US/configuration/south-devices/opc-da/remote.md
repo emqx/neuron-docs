@@ -66,7 +66,7 @@ In order to remotely access the set remote host, it is also necessary to perform
 
 So far, the local host test environment of OPC DA has been set up.
 
-![client-worked](./assets/client-worked.png)
+<!-- ![client-worked](./assets/client-worked.png)
 
-![client-worked](./assets/client-worked1.png)
+![client-worked](./assets/client-worked1.png) -->
 

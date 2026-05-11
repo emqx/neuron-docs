@@ -1,6 +1,10 @@
 # NEURON HUB
 
-The Neuron HUB plugin accesses hosts running the NeuronHUB program via TCP protocol.
+The **NeuronHUB** desktop application (runs on **Windows**) and the **Neuron HUB** southbound plugin for NeuronEX together form an acquisition relay workflow: **NeuronHUB** connects to upstream protocols and collects data **on an on-site Windows machine** (protocols covered include **OPC DA**, **OPC AE**, **GE Historian**, **SYNTEC CNC**, and **Mitsubishi CNC**); **Neuron HUB** attaches to NeuronEX as its southbound driver plugin to ingest data already acquired on NeuronHUB.
+
+**Why this exists:** NeuronEX is deployed on **Linux**. If acquisition depends on **DCOM** or other Windows-tied mechanisms (such as OPC DA), or only Windows-side gateways and data sources are available, **NeuronEX cannot natively acquire those protocols directly on Linux**.
+
+**Topology:** Install and run NeuronHUB on a Windows host (**contact EMQ business representatives for the NeuronHUB program**). It communicates locally with backends such as **OPC DA, OPC AE, GE Historian, SYNTEC CNC, and Mitsubishi CNC**, and manages acquisition nodes. **NeuronEX** obtains the data already collected by the **NeuronHUB** program through the **Neuron HUB** southbound driver, completing the full acquisition chain.
 
 ## Device Settings
 
@@ -14,7 +18,7 @@ The Neuron HUB plugin accesses hosts running the NeuronHUB program via TCP proto
 | expires        | Expiration time (default: 2000 ms) |
 | sliding_window | Window size (default: 1)           |
 
-Currently supported node types: OPCDA, SYNTEC CNC, and MITSUBISHI CNC.
+On the southbound plugin, `type` must match the node type already created in NeuronHUB. Common examples include **OPCDA**, **OPC AE**, **GE Historian**, **SYNTEC CNC**, and **MITSUBISHI CNC**, subject to NeuronHUB menus and versions in the field.
 
 ## Supported Data Types
 
@@ -47,7 +51,7 @@ Currently supported node types: OPCDA, SYNTEC CNC, and MITSUBISHI CNC.
 The address format varies by node type. Refer to the corresponding device documentation for details.
 
 ## NeuronHUB Windows Program
-Due to platform limitations of some protocols, an intermediate conversion program is required. The NeuronHUB program serves this purpose. Contact support to obtain the installation package.
+NeuronHUB is the Windows program that performs protocol bridging and collection described above (names are similar to the Neuron southbound plugin; mind the deployment context). Contact support for the installer package.
 
 ### Installation
 Double-click to install. It is recommended not to install on the system drive to avoid permission issues when modifying configuration files. The program starts automatically by default.

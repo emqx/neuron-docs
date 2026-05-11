@@ -1,4 +1,4 @@
-# NeuOPC 远程访问
+# DCOM 设置
 
 ## 远程主机 DCOM 设置
 
@@ -64,6 +64,6 @@
 
 至此 OPC DA 的本地主机测试环境已经设置完成。
 
-![client-worked](./assets/client-worked.png)
+<!-- ![client-worked](./assets/client-worked.png)
 
-![client-worked](./assets/client-worked1.png)
+![client-worked](./assets/client-worked1.png) -->
