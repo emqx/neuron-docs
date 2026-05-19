@@ -32,6 +32,10 @@ See the table below for the configuration parameters.
 | **Root CA Certificate**         | CA certificate, required if using X.509 authentication.                |
 | **Device Certificate**          | Device Certificate, required if using X.509 authentication.            |
 | **Private Key**                 | Device Private Key, required if using X.509 authentication.            |
+| **Offline Data Caching**        | Offline data caching switch. Cache MQTT messages when offline, and sync cached messages when back online. |
+| **Cache Memory Size**           | In-memory cache limit (MB) in case of communication failure, a required field. Range in [0, 1024]. Should not be larger than *Cache Disk Size*. |
+| **Cache Disk Size**             | In-disk cache limit (MB) in case of communication failure, a required field. Range in [0, 10240]. If nonzero, *cache-mem-size* should also be nonzero. |
+| **Cache Sync Interval**         | Time interval (MS) between each message to sync when communication restores. Range in [10, 120000].  |
 
 
 ## Add Subscription
