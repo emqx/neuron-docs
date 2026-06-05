@@ -34,6 +34,10 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Publish Interval** | The minimum interval between two publish operations when configuring OPC UA to collect data in Subscribe/Read&Subscribe mode. |
 | **Event Root Node**  | The OPC UA event root node for condition subscription (default: `0!2253` representing the Server node)         |
 
+:::tip
+For details on Security Mode (Sign/Sign&Encrypt), encryption algorithms, and server-side certificate trust configuration, refer to [OPC UA Connection Policy](./policy.md).
+:::
+
 ## Update Mode
 
 **Read** mode: The data update method is consistent with the previous version, using the OPC UA standard read interface to obtain data from the Server. This is also the default data update method.

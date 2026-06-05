@@ -28,6 +28,82 @@ On this page, you'll learn about client certificate and key configuration for co
 
     Neuron OPC UA module adds the corresponding username/password and corresponding client certificate/key.
 
+## Security Mode and Security Policy
+
+When connecting to an OPC UA server using certificate-based authentication, you need to configure the **Security Mode** in Neuron and ensure the server has matching **Security Policies** enabled.
+
+### Security Mode
+
+The Security Mode determines whether OPC UA messages are cryptographically protected during transmission:
+
+| Security Mode  | Description                                                                 |
+| -------------- | --------------------------------------------------------------------------- |
+| **None**       | No security applied. Messages are transmitted in plaintext.                 |
+| **Sign**       | Messages are digitally signed to ensure integrity, but content is not encrypted. |
+| **Sign&Encrypt** | Messages are both signed and encrypted, providing integrity and confidentiality. |
+
+:::tip
+**Sign&Encrypt** is recommended for production environments to prevent both tampering and eavesdropping. **Sign** may be used when encryption overhead is a concern and the network is already secured at the transport layer.
+:::
+
+### Security Policy
+
+The Security Policy defines the specific cryptographic algorithms used for signing and encryption. When Neuron connects to a server with Security Mode set to **Sign** or **Sign&Encrypt**, the client and server negotiate a mutually supported Security Policy. The following policies are commonly supported:
+
+| Security Policy           | Symmetric Encryption | Key Exchange     | Digital Signature | Status      |
+| ------------------------- | -------------------- | ---------------- | ----------------- | ----------- |
+| **Basic128Rsa15**         | AES-128              | RSA-15           | SHA-1             | Deprecated  |
+| **Basic256**              | AES-256              | RSA-OAEP         | SHA-1             | Deprecated  |
+| **Basic256Sha256**        | AES-256              | RSA-OAEP         | SHA-256           | Recommended |
+| **Aes128_Sha256_RsaOaep** | AES-128              | RSA-OAEP         | SHA-256           | Recommended |
+
+:::tip
+- **Basic128Rsa15** and **Basic256** are deprecated in the OPC UA specification due to the use of SHA-1. Avoid using them in new deployments.
+- **Basic256Sha256** and **Aes128_Sha256_RsaOaep** are recommended. **Basic256Sha256** provides the highest security strength with AES-256 encryption.
+- The server must have at least one Security Policy enabled that matches the client's capabilities. If no common policy is found, the connection will fail.
+:::
+
+### How Security Mode and Security Policy Work Together
+
+In Neuron, you only select the **Security Mode** (`None`/`Sign`/`Sign&Encrypt`). You do not choose a specific Security Policy — the selection is handled automatically by the OPC UA driver.
+
+**Client-side initialization:** When Neuron starts the OPC UA connection, it registers all built-in Security Policies supported by the driver:
+- None
+- Basic128Rsa15
+- Basic256
+- Basic256Sha256
+- Aes128Sha256RsaOaep
+- Aes256Sha256RsaPss
+
+The configured Security Mode (`Sign` or `Sign&Encrypt`) is then applied to the client configuration.
+
+:::tip
+If the Security Mode is set to `Sign` or `Sign&Encrypt` but no certificate and key are uploaded, Neuron uses its built-in default certificate and key.
+:::
+
+**Connection negotiation (first-match-wins):** When connecting to the server, the following steps occur:
+
+1. Neuron retrieves the list of all endpoints supported by the server, including each endpoint's Security Mode and Security Policy.
+2. The client iterates through the server's endpoints in the order returned by the server.
+3. For each endpoint, two conditions are checked:
+   - The endpoint's `securityMode` must match the Security Mode configured in Neuron.
+   - The endpoint's `securityPolicyUri` must be in the client's supported policies list.
+4. The **first endpoint that satisfies both conditions is selected** and used for the connection.
+
+This means the server's endpoint ordering effectively determines the priority. For example, if a server returns endpoints in this order:
+
+```
+Endpoint 1: None,     policy=None              → mode mismatch (None ≠ Sign&Encrypt), skipped
+Endpoint 2: Sign,     policy=Basic256Sha256    → mode mismatch (Sign ≠ Sign&Encrypt), skipped
+Endpoint 3: Sign&Encrypt, policy=Aes256Sha256RsaPss → matched! selected
+Endpoint 4: Sign&Encrypt, policy=Aes128Sha256RsaOaep → not reached
+```
+
+:::tip
+- If you need a specific Security Policy to be used, configure the server to return that endpoint first in its `GetEndpoints` response.
+- If no matching endpoint is found, the connection fails. Ensure at least one server endpoint has a Security Mode matching Neuron's configuration and a Security Policy supported by the driver.
+:::
+
 ## Client Certificate Requirements
 
 OPC UA Users can log in to the OPC UA server using a self-signed Certificate. The certificate and Key must meet the following conditions:
@@ -92,6 +168,51 @@ DNS.1 = localhost
 IP.1 = 127.0.0.1
 #IP.2 = 0.0.0.0
 ```
+
+## Server-Side Configuration
+
+When Neuron uses **Sign** or **Sign&Encrypt** mode, the OPC UA server must be configured to:
+1. Enable the required Security Policies.
+2. Trust the client certificate uploaded to Neuron.
+
+The following sections provide step-by-step examples for common OPC UA servers.
+
+### General Configuration Principles
+
+1. **Generate the client certificate** using OpenSSL and upload it to Neuron (refer to [Generate a Client Certificate/Key](#generate-a-client-certificatekey)).
+2. **Enable security policies** on the target server — at minimum, enable **Basic256Sha256** or **Aes128_Sha256_RsaOaep**.
+3. **Import the client certificate** (DER format) into the server's trusted client list.
+4. **Restart the server** or reinitialize the OPC UA service to apply changes.
+
+### Example: Siemens S7-1200 (TIA Portal)
+
+Configure the S7-1200 built-in OPC UA server via TIA Portal:
+
+1. Select the target PLC in TIA Portal, right-click and open **Properties -> General -> OPC UA -> Server**.
+2. Under **Security -> Security policies available on the server**, check the required security policies:
+   - Check **Basic256Sha256** (recommended) or other required policies.
+3. In the **Trusted client** section, configure client certificate trust:
+   - Enable **Automatically accept client certificates during runtime** (convenient for initial setup), or
+   - Manually import the client certificate via the certificate manager.
+4. Disable **Enable guest authentication** and enable **Enable username and password authentication** if using username/password login.
+5. Compile and download the hardware configuration to the PLC.
+
+For more details on S7-1200 configuration, refer to [Connect to Siemens S7-1200](./s71200.md).
+
+### Example: KEPServerEX
+
+Configure the OPC UA server in KEPServerEX:
+
+1. Right-click on the KEPServerEX icon in the system tray, select **OPC UA Configuration -> Server Endpoints**.
+2. Double-click on the endpoint entry (e.g., `opc.tcp://localhost:49320`).
+3. In the **Security Policies** section, check the required policies:
+   - Check **Basic256Sha256** (recommended).
+4. Click **OK** to save the endpoint configuration.
+5. After the client certificate is uploaded to Neuron, right-click the KEPServerEX icon and select **OPC UA Configuration -> Trusted Clients**.
+6. Click **Import**, browse to the Neuron client certificate (DER format), and add it to the trusted list.
+7. Right-click on the KEPServerEX icon and select **Reinitialize** to apply the changes.
+
+For more details on KEPServerEX configuration, refer to [Connect to KEPServerEX](./kepserverex.md).
 
 ## Further Reaching: `localhost.cnf`
 
