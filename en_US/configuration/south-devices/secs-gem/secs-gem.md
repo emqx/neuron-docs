@@ -28,7 +28,7 @@ The SECS GEM HSMS driver supports accessing devices that comply with the SEMI E3
 
 ## ADDRESS
 
-> SxFy([_1][_2][_3][_4])
+> SxFy([_1]...[_10])
 
 ## Streams and Functions
 
