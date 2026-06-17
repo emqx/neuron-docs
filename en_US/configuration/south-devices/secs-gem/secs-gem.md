@@ -28,7 +28,7 @@ The SECS GEM HSMS driver supports accessing devices that comply with the SEMI E3
 
 ## ADDRESS
 
-> SxFy([_1][_2][_3][_4])
+> SxFy([_1]...[_10])
 
 ## Streams and Functions
 
@@ -68,6 +68,7 @@ greater, or even, in the associated secondary reply.
 | S6F15           | Event Report Request (ERR)              |
 | S6F16           | Event Report Data (ERD)                 |
 
+> Due to the special nature of this protocol, points must be created in pairs when adding new tags, however actively reported events can have a single point created, such as S6F3.
 
 ## Special Type Processing
 
@@ -90,7 +91,7 @@ The SECS-II message definition defines the LIST type, which is also supported by
 | 32FLOAT      | `<F4 x>`        |                                                                                                                |
 | 64FLOAT      | `<F8 x>`        |                                                                                                                |
 
-The LIST type supports accessing specific elements using indices, and currently supports nesting of up to four layers of LISTs.
+The LIST type supports accessing specific elements using indices, such as S6F3[1][1][1], and currently supports nesting of up to ten layers of LISTs.
 
 ## Q&A
 * How to fill in the Device ID?
@@ -112,4 +113,4 @@ For points actively reported by the device, such as "S6F11", simply create the c
 For example, "S1F3" requires passing a **LIST** type parameter, and its return value will be returned through "S1F4", which also has **LIST** type. For this point, we need to create two points, with one having address "S1F3" and property configuration **Write**, and type **string**. The other has address "S1F4" and property configuration **Read** or **Sub**, and type **string**. Use the first point to write the parameter, and the second point to obtain the return value.
 
 * How to create a new point for obtaining data without passing parameters?
-For example, "S1F1" does not require passing parameters. Simply create one point, and its return value will be displayed directly on this point.
+For example, "S1F1" does not require passing parameters, but paired points still need to be created. For instance, after "S1F1" sends a Hello message, the device returns data through "S1F2", so both "S1F1" and "S1F2" points must be created.

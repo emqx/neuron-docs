@@ -30,6 +30,11 @@ OPCUA Part9 条件和报警功能，必须在 Subscribe 模式下使用。
 | **更新模式**   | 设置 OPC UA 采集数据的方式，Read/Subscribe/Read&Subscribe，默认为 Read         |
 | **发布间隔**   | 设置 OPC UA 以 Subscribe/Read&Subscribe 模式采集数据时，两次发布之间的最小间隔 |
 | **事件根节点** | 条件订阅的OPC UA事件根节点（默认：0!2253表示Server节点）                       |
+
+:::tip
+安全策略（Sign/Sign&Encrypt）与加密算法的详细说明，以及服务器端证书信任配置，请参考 [OPC UA 连接策略](./policy.md)。
+:::
+
 ## 更新模式
 
 **Read** 模式，数据更新方式与之前版本的方式一致，采用 OPC UA 标准的读取接口获取 Server 端数据，这也是默认的数据更新方式。
