@@ -54,7 +54,7 @@ After plugin configuration, click the device card or row on the **North Apps** p
 
 - **South device**: Select the southbound device to subscribe to.
 - **Group**: Select a group from the southbound device.
-- **Topic** (optional): Specify the Kafka topic for this subscription. If not set, the **Default Topic** from application configuration is used.
+- **Topic**: Specify the Kafka topic for this subscription. If not set, the **Default Topic** from application configuration is used.
 
 Each subscription can specify a different topic, enabling data routing from different devices/groups to different Kafka topics.
 
