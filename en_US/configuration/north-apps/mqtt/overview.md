@@ -85,6 +85,11 @@ The following table gives some statistics on disk space usage for offline cachin
 | 1000             | 12993                     | 100               | 1401                  |
 | 1000             | 12993                     | 1000              | 13427                 |
 
+
+::: tip
+This plugin configuration will automatically subscribe to multiple topics. It is recommended to configure the corresponding permissions for each topic on the MQTT Broker when configuring ACL, to ensure that the plugin can work properly.
+:::
+
 ### Driver Status Report
 
 The driver status reporting feature allows users to report the status of southbound drivers to a specified MQTT topic. To report driver status, set the **Driver Status Report** parameter to `True` and specify the **Status Report Topic** and **Status Report Interval** parameters. The reported data format is as follows:

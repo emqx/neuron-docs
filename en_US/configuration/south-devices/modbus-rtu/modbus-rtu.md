@@ -24,6 +24,7 @@ After clicking **Create**, you will be redirected to the **Device Configuration*
 | **Send Interval** | The waiting time between sending each read/write command. Some serial devices may discard certain commands if they receive consecutive commands in a short period of time. |
 | **4-byte Endianness**    | Byte order of tags with 32 bits, ABCD corresponds to 1234. |
 | **8-byte Endianness**    | Byte order of tags with 64 bits, with each number representing one byte. |
+| **Enable 0x16** | Enable or disable the 0x16 function. |
 | **Start Address** | Address starts from 1 or 0. |
 | **Serial Device** | Only needed in **Serial** mode, the path to the serial device when using a serial connection, e.g., /dev/ttyS0 in Linux systems. |
 | **Stop Bits** | Only for the **Serial** mode, the serial connection parameter. |
