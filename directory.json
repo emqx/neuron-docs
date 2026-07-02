@@ -484,6 +484,10 @@
           "path": "configuration/south-devices/knd/knd"
         },
         {
+          "title": "Brother CNC",
+          "path": "configuration/south-devices/brother-cnc/brother-cnc"
+        },
+        {
           "title": "NEURON HUB",
           "path": "configuration/south-devices/neuhub/neuhub",
           "children": [
@@ -1238,6 +1242,10 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "Brother CNC",
+          "path": "configuration/south-devices/brother-cnc/brother-cnc"
         },
         {
           "title": "NEURON HUB",
