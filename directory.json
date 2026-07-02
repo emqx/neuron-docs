@@ -494,6 +494,16 @@
           ]
         },
         {
+          "title": "Mazak CNC",
+          "path": "configuration/south-devices/mazak-udp/mazak-udp",
+          "children": [
+            {
+              "title": "设备端配置",
+              "path": "configuration/south-devices/mazak-udp/mazak-setup"
+            }
+          ]
+        },
+        {
           "title": "NEURON HUB",
           "path": "configuration/south-devices/neuhub/neuhub",
           "children": [
@@ -1256,6 +1266,16 @@
             {
               "title": "Device-Side Configuration",
               "path": "configuration/south-devices/brother-cnc/brother-cnc-setup"
+            }
+          ]
+        },
+        {
+          "title": "Mazak CNC",
+          "path": "configuration/south-devices/mazak-udp/mazak-udp",
+          "children": [
+            {
+              "title": "Device-Side Configuration",
+              "path": "configuration/south-devices/mazak-udp/mazak-setup"
             }
           ]
         },
