@@ -459,7 +459,13 @@
         },
         {
           "title": "MTConnect",
-          "path": "configuration/south-devices/mtconnect/mtconnect"
+          "path": "configuration/south-devices/mtconnect/mtconnect",
+          "children": [
+            {
+              "title": "接入 DMG MORI 设备",
+              "path": "configuration/south-devices/mtconnect/dmg-mori"
+            }
+          ]
         },
         {
           "title": "CODESYS V3",
@@ -1235,7 +1241,13 @@
         },
         {
           "title": "MTConnect",
-          "path": "configuration/south-devices/mtconnect/mtconnect"
+          "path": "configuration/south-devices/mtconnect/mtconnect",
+          "children": [
+            {
+              "title": "Connect to DMG MORI",
+              "path": "configuration/south-devices/mtconnect/dmg-mori"
+            }
+          ]
         },
         {
           "title": "CODESYS V3",

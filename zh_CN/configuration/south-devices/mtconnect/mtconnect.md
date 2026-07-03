@@ -32,6 +32,15 @@ MTConnect Agent 的安装和使用，详细内容请访问此链接 [cppagent](h
 ## ADDRESS
 插件地址为 XML XPATH 形式.
 
+### node-name: 前缀
+
+对于自闭合标签（元素值由标签名表示，如 CONDITION 类型数据项），可在地址前添加 `node-name:` 前缀。使用此前缀且匹配到的元素无子内容时，插件将提取元素的标签名而非文本内容。
+
+| 地址前缀 | 行为 |
+| ---------- | -------------------------------------- |
+| `node-name:` | 从自闭合标签中提取元素标签名。 |
+| （无前缀） | 提取元素文本内容（默认）。 |
+
 ## 地址示例
 
 | 地址                                                                                                                               | 数据类型 | 说明                |
@@ -39,4 +48,5 @@ MTConnect Agent 的安装和使用，详细内容请访问此链接 [cppagent](h
 | //m:Angle[@dataItemId='Babs']                                                                                                      | float    | 旋转轴 B 绝对值角度 |
 | //m:DeviceStream[@uuid='Mazak']/m:ComponentStream[@componentId='LYI1']/m:Samples/m:Position[@dataItemId='LYI1actm']                | double   | 线性轴 Y 的机械坐标 |
 | //m:DeviceStream[@uuid='Mazak']/m:ComponentStream[@componentId='Lct1']/m:Events/m:InputOutputSignal[@dataItemId='LPlcMonitorIO_1'] | bit      | IO 信号             |
+| node-name://m:*[@dataItemId='DMGlogic1']                                                                                            | string   | 自闭合标签的元素名（如 Normal, Warning, Fault） |
 
