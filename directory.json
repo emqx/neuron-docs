@@ -459,7 +459,13 @@
         },
         {
           "title": "MTConnect",
-          "path": "configuration/south-devices/mtconnect/mtconnect"
+          "path": "configuration/south-devices/mtconnect/mtconnect",
+          "children": [
+            {
+              "title": "接入 DMG MORI 设备",
+              "path": "configuration/south-devices/mtconnect/dmg-mori"
+            }
+          ]
         },
         {
           "title": "CODESYS V3",
@@ -482,6 +488,26 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "Brother CNC",
+          "path": "configuration/south-devices/brother-cnc/brother-cnc",
+          "children": [
+            {
+              "title": "设备端配置",
+              "path": "configuration/south-devices/brother-cnc/brother-cnc-setup"
+            }
+          ]
+        },
+        {
+          "title": "Mazak CNC",
+          "path": "configuration/south-devices/mazak-udp/mazak-udp",
+          "children": [
+            {
+              "title": "设备端配置",
+              "path": "configuration/south-devices/mazak-udp/mazak-setup"
+            }
+          ]
         },
         {
           "title": "NEURON HUB",
@@ -1215,7 +1241,13 @@
         },
         {
           "title": "MTConnect",
-          "path": "configuration/south-devices/mtconnect/mtconnect"
+          "path": "configuration/south-devices/mtconnect/mtconnect",
+          "children": [
+            {
+              "title": "Connect to DMG MORI",
+              "path": "configuration/south-devices/mtconnect/dmg-mori"
+            }
+          ]
         },
         {
           "title": "CODESYS V3",
@@ -1238,6 +1270,26 @@
         {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
+        },
+        {
+          "title": "Brother CNC",
+          "path": "configuration/south-devices/brother-cnc/brother-cnc",
+          "children": [
+            {
+              "title": "Device-Side Configuration",
+              "path": "configuration/south-devices/brother-cnc/brother-cnc-setup"
+            }
+          ]
+        },
+        {
+          "title": "Mazak CNC",
+          "path": "configuration/south-devices/mazak-udp/mazak-udp",
+          "children": [
+            {
+              "title": "Device-Side Configuration",
+              "path": "configuration/south-devices/mazak-udp/mazak-setup"
+            }
+          ]
         },
         {
           "title": "NEURON HUB",
