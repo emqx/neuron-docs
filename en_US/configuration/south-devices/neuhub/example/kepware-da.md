@@ -25,7 +25,7 @@ After successful addition, the newly added OPC DA node, along with its basic inf
 
 ### Exporting Tags  
 
-When the OPC DA node is in a normal connected state, all OPC DA tags can be exported in the format of the Neuron EX tag template file. To do this, hover the mouse over the OPC DA node whose tags need to be exported, right-click, and select `export neuronex tags`.  
+When the OPC DA node is in a normal connected state, all OPC DA tags can be exported in the format of the Neuron EX tag template file. To do this, click the `Export` button in the `Actions` column of the OPC DA node whose tags need to be exported.  
 
  ![export neuronex tags](./assets/export_ex_tags.png)  
 

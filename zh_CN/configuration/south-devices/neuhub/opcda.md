@@ -48,3 +48,6 @@ Neuron HUB 驱动选择 OPCDA 节点类型时，地址格式与 OPCDA 一致，�
 
 
 
+## Tag Browser 功能
+OPCDA 节点支持浏览 OPCDA 服务器功能，点击 `Actions` 中 `Tag Browser` 按钮，弹出浏览界面，节点以树形结构组织。在分支节点右键可以添加到采集组，在叶子节点右键可以添加为采集点。
+ ![file](./assets/da_browser.png)

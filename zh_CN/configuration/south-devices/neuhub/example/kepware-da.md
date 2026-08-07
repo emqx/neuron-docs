@@ -25,7 +25,7 @@ NEURON HUB Windows 程序安装包可以联系技术支持人员获取。获取�
 
 ### 点位导出
 
-OPC DA 节点在正常连接状态下，可以按 Neuron EX 点位模板文件的格式导出 OPC DA 全部点位。具体操作为将鼠标移动到需要导出点位的 OPC DA 节点，鼠标右键菜单，点击 `export neuronex tags`。
+OPC DA 节点在正常连接状态下，可以按 Neuron EX 点位模板文件的格式导出 OPC DA 全部点位。具体操作为点击需要导出点位的 OPC DA 节点的 `Actions` 列的 `Export` 按钮。
  ![export neuronex tags](./assets/export_ex_tags.png)
 
 

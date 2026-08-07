@@ -57,11 +57,11 @@ NeuronHUB is the Windows program that performs protocol bridging and collection 
 Double-click to install. It is recommended not to install on the system drive to avoid permission issues when modifying configuration files. The program starts automatically by default.
 
 ### Create a Node
-Click the `File` menu and select the corresponding submenu item based on the device type to connect. Fill in the connection parameters on the interface and add the node.  
+Click the `+ New` button and select the corresponding submenu item based on the device type to connect. Fill in the connection parameters on the interface and add the node.  
  ![file](./assets/file_menu.png)
 
 ### Node Operations
-In the `Node Tables` interface, right-click a node to access context menu options for starting/stopping nodes, updating parameters, or deleting nodes. OPCDA nodes also support exporting points to NEURON node table files.  
+In the `Node Tables` interface, use the `Actions` column of the node to start/stop nodes, update parameters, or delete nodes. OPCDA nodes also support exporting points to NEURON node table files.  
  ![right](./assets/right_mouse_menu.png)
 
 ### Port Settings

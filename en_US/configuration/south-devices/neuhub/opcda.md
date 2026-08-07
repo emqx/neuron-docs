@@ -42,3 +42,7 @@ Neuron can use the Neuron HUB driver and NeuronHUB Windows program to indirectly
 
 ## Address Format
 When selecting the OPCDA node type in the Neuron HUB driver, the address format matches OPCDA. Alternatively, use the `Export` function to export all point information as a table and import it directly into NEURON.
+
+## Tag Browser
+The OPCDA node supports browsing the OPC DA server. Click the `Tag Browser` button in the `Actions` column to open the browse interface, where nodes are organized in a tree structure. Right-click a branch node to add it to an acquisition group, and right-click a leaf node to add it as an acquisition point.
+ ![file](./assets/da_browser.png)
