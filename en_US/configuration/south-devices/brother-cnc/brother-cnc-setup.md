@@ -22,19 +22,19 @@ Before starting, ensure the following:
 
 On the communication parameter page, configure the following:
 
-| Parameter | Setting | Description |
-| ----------------------- | -------- | ------------------------------------------------ |
-| **Data Rewrite (Slave)** | Yes | Allow external devices to read data from the CNC. |
-| **Remote Operation** | Valid | Enable remote access to the machine. |
+| Parameter                | Setting | Description                                       |
+| ------------------------ | ------- | ------------------------------------------------- |
+| **Data Rewrite (Slave)** | Yes     | Allow external devices to read data from the CNC. |
+| **Remote Operation**     | Valid   | Enable remote access to the machine.              |
 
 ### Step 3: Configure Network Settings
 
 Set the machine's network parameters:
 
-| Parameter | Value |
-| -------------- | ---------------------------------------- |
-| **IP Address** | Enter the desired static IP address. |
-| **Gateway** | Enter the network gateway address. |
+| Parameter       | Value                                        |
+| --------------- | -------------------------------------------- |
+| **IP Address**  | Enter the desired static IP address.         |
+| **Gateway**     | Enter the network gateway address.           |
 | **Subnet Mask** | Enter the subnet mask (e.g., 255.255.255.0). |
 
 ::: tip
@@ -47,8 +47,8 @@ Change the **Restrict Ethernet Access** parameter from **Yes** to **No** to allo
 
 ### Step 5: Save the Settings
 
-1. After modifying all parameters, press **Complete Mode** (完成模式).
-2. Then press **Exit Edit** (退出编辑) to save the configuration.
+1. After modifying all parameters, press **Complete Mode**.
+2. Then press **Exit Edit**  to save the configuration.
 
 ## Verifying Network Connectivity
 
