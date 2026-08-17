@@ -486,6 +486,10 @@
           "path": "configuration/south-devices/df1/df1"
         },
         {
+          "title": "FANUC FOCAS",
+          "path": "configuration/south-devices/fanuc-focas/fanuc-focas"
+        },
+        {
           "title": "KND CNC",
           "path": "configuration/south-devices/knd/knd"
         },
@@ -1266,6 +1270,10 @@
         {
           "title": "DF1",
           "path": "configuration/south-devices/df1/df1"
+        },
+        {
+          "title": "FANUC FOCAS",
+          "path": "configuration/south-devices/fanuc-focas/fanuc-focas"
         },
         {
           "title": "KND CNC",

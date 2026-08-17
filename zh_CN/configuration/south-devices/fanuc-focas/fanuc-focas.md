@@ -80,8 +80,8 @@ address 最多可以支持3个参数，@ 指定 address 所在通道。
 | toolOffsetInfo.m      | 刀偏信息             | int16/uint16        | m 为刀偏类型                                | m=0 内存类型， m=1 可用刀偏数量，n=2 刀偏类型                                                                                             |
 | wkcdsfms.m            | 工件坐标偏移测量值   | int32/uint32        | 轴序号                                      | M 系列不支持                                                                                                                              |
 | wkcdshft.m            | 工件坐标偏移值       | int32/uint32        | 轴序号                                      | M 系列不支持                                                                                                                              |
-| wksftRange.m          | 工件坐标偏移值范围   | int32/uint32        | n 为值变量                                  | m=0 最小值， m=1 最大值， m=2 类型，       M 系列不支持                                                                                   |
-| zofs                  | 工件零点偏移值       | int32/uint32        | -                                           | -                                                                                                                                         |
+| wksftRange.m.n        | 工件坐标偏移值范围   | int32/uint32        | m 为轴序号,n 为值变量                       | n=0 最小值， n=1 最大值， n=2 状态，       M 系列不支持                                                                                   |
+| zofs.m.n              | 工件零点偏移值       | int32/uint32        | m 工件零点偏移编号，n 为轴序号              | -                                                                                                                                         |
 | zofsInfoNum           | 工件零点偏移值数量   | int32/uint32        | -                                           | -                                                                                                                                         |
 | zofsRange.m.n.l       | 件零点偏移设定范围   | int32/uint32        | m 为工件坐标偏移编号，n 为轴号，l 为 值类型 | l=0 最小值 l=1 最大值 l=2状态                                                                                                             |
 | blkCount              | 块计数器             | int32/uint32        | -                                           | -                                                                                                                                         |
@@ -105,7 +105,7 @@ address 最多可以支持3个参数，@ 指定 address 所在通道。
 | ophisno               | 历史操作信息数       | int16/uint16        | -                                           | -                                                                                                                                         |
 | ophistry.m.n          | 历史操作信息内容     | int16/uint16        | m 为序号, n 为 值参数                       | m 从1开始                                                                                                                                 |
 | timer.m.n             | 日期时间             | int16/uint16        | m 为类型, n 为 值参数                       | m=0 日期， n=0 年， n=1 月， n=2 日；m=1 时间， n=0 时， n=1 分， n=2 秒                                                                  |
-| diagdata.m.n          | 诊断数据             | int32/uint32        | m 为诊断号, n 为 值参数                     | n = 0 诊断值，n=1 小数点                                                                                                                  |
+| diagdata.m.n.l        | 诊断数据             | int32/uint32        | m 为诊断号, n为轴序号,l 为 值参数           | l = 0 诊断值，l=1 小数点                                                                                                                  |
 | opmsg.m.n             | 当前操作信息         | int16/uint16/string | m 为序号, n 为 值参数                       | m 从1开始，n = 0 类型，n=1 编号，n=2 内容                                                                                                 |
 | tlGrpinfo.m.n         | 刀具寿命管理信息     | int32/uint32        | m 为刀具组号, n 为 值参数                   | m 从1开始，n = 0 刀具数量，n=1 剩余刀具数量，n=2 刀具寿命，n=3 刀具已使用寿命, n=6， 刀具预警寿命                                         |
 
@@ -134,9 +134,11 @@ address 最多可以支持3个参数，@ 指定 address 所在通道。
 | tool.1.1        | 编号1刀具的已使用次数                      |
 | tool.1.2        | 编号1刀具的总寿命                          |
 | tool.1.3        | 编号1刀具的预警寿命                        |
-| diagdata.1333.3 | 诊断1333号的数据                           |
+| diagdata.1333.1.0 | 诊断1333号轴1的数据                           |
 | tlGrpinfo.1.1   | 刀具寿命组1的剩余刀具寿命                  |
 | toolOffset.1.2  | 刀具编号1的长度磨损                        |
+| wksftRange.1.0  | 轴1工件坐标偏移值范围最小值（M 系列不支持） |
+| zofs.1.1        | 编号1工件零点偏移值轴1                     |
 
 
 
