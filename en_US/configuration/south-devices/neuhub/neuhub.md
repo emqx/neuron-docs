@@ -65,4 +65,4 @@ In the `Node Tables` interface, use the `Actions` column of the node to start/st
  ![right](./assets/right_mouse_menu.png)
 
 ### Port Settings
-The program listens on port 17889 by default. Change the port via `File->Port`.
+The program listens on port 17889 by default. Change the port via `Port Setting`.
