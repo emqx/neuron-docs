@@ -7,7 +7,7 @@ In this tutorial, we show how to upload data collected from south devices to a W
 We use two PCs connected to a local area network in this tutorial. 
 
 - One is a Linux machine with Neuron installed
-- One is a Linux machine with a WebSocket server. Consult the [the installation instruction] on how to install Neuron.
+- One is a Linux machine with a WebSocket server. Consult the the installation instruction on how to install Neuron.
 
 |                  | PC 1              | PC 2                |
 | ---------------- | ----------------- | ------------------- |

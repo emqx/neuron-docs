@@ -6,8 +6,8 @@ In this tutorial, we introduce how to collect data from Beckhoff software PLCs u
 
 We use two PCs connected to a local area network in this tutorial. 
 
-- One is a Linux machine with Neuron installed. Consult the [the installation instruction] on how to install Neuron.
-- The other is a Windows machine with TwinCAT 3 installed. Refer to the [Beckhoff TwinCAT website] to download and install TwinCAT.
+- One is a Linux machine with Neuron installed. Consult the the installation instruction on how to install Neuron.
+- The other is a Windows machine with TwinCAT 3 installed. Refer to the Beckhoff TwinCAT website to download and install TwinCAT.
 
 
 |                  | PC 1              | PC 2                |
