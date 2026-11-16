@@ -38,6 +38,7 @@ Repeat steps 2 and 3 until all necessary drivers, groups, and points are created
 
 1. [Create Northbound Applications](./north-apps/north-apps.md): Choose the relevant northbound plugins to enable seamless data forwarding. Each northbound plugin can connect to a single destination, such as a proxy or application. Currently, Neuron supports the following northbound applications:
    - [MQTT](./north-apps/mqtt/overview.md)
+   - [MQTT V2](./north-apps/mqtt-v2/overview.md)
    - [eKuiper](./north-apps/ekuiper/overview.md)
    - [SparkPlugB](./north-apps/sparkplugb/overview.md)
    - [WebSocket](./north-apps/websocket/websocket.md)

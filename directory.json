@@ -565,6 +565,16 @@
           ]
         },
         {
+          "title": "MQTT V2",
+          "path": "configuration/north-apps/mqtt-v2/overview",
+          "children": [
+            {
+              "title": "数据上下行格式",
+              "path": "configuration/north-apps/mqtt-v2/api"
+            }
+          ]
+        },
+        {
           "title": "AWS IoT",
           "path": "configuration/north-apps/aws-iot/overview",
           "children": [
@@ -1347,6 +1357,16 @@
             {
               "title": "FAQ",
               "path": "configuration/north-apps/mqtt/faq"
+            }
+          ]
+        },
+        {
+          "title": "MQTT V2",
+          "path": "configuration/north-apps/mqtt-v2/overview",
+          "children": [
+            {
+              "title": "Upstream/Downstream Data Format",
+              "path": "configuration/north-apps/mqtt-v2/api"
             }
           ]
         },

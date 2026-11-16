@@ -5,6 +5,7 @@
 Neuron 目前支持以下北向节点：
 
 - **[MQTT](./mqtt/overview.md)**：MQTT 插件允许用户快速构建使用 MQTT 协议的物联网应用程序，可以在设备和云之间进行通讯。
+- **[MQTT V2](./mqtt-v2/overview.md)**：按设备组织数据的 MQTT 插件。每个设备有独立的状态、数据和写入 topic，状态以 retain 消息发布并带上设备属性，数据格式可通过模板自定义。
 - [**eKuiper**](./ekuiper/overview.md)：LF Edge [eKuiper](https://ekuiper.org/) 是轻量级物联网数据分析和流处理引擎，eKuiper 插件使用户能够将收集到的数据转发到 eKuiper 以进一步处理。
 - **[SparkPlugB](./sparkplugb/overview.md)**：Sparkplug B 是一种建立在 MQTT 3.1.1 基础上的工业物联网数据传输规范。Sparkplug B 插件从设备采集到的数据可以通过 Sparkplug B 协议从边缘端传输到 Sparkplug B 应用中，用户也可以从 Sparkplug B 应用程序向 Neuron 发送指令修改设备数据。
 - **[WebSocket](./websocket/websocket.md)**：WebSocket 网络协议支持在单个 TCP 连接上提供双向通信通道。借助 WebSocket 插件，用户可以将采集的数据推送到 WebSocket 服务器。

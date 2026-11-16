@@ -5,6 +5,7 @@ Northbound plugins are used for connecting to IoT platforms or edge stream proce
 Neuron currently supports the following northbound nodes:
 
 - **[MQTT](./mqtt/overview.md)**: The MQTT plugin allows users to quickly build IoT applications using the MQTT protocol for communication between devices and the cloud.
+- **[MQTT V2](./mqtt-v2/overview.md)**: A device-oriented MQTT plugin. Each device has its own state, data and write topics, the state is published as a retained message carrying the device properties, and the data format is customizable with templates.
 - [**eKuiper**](./ekuiper/overview.md): LF Edge [eKuiper](https://ekuiper.org/) is a lightweight IoT data analytics and stream processing engine. The eKuiper plugin enables users to forward collected data to eKuiper for further processing.
 - **[SparkPlugB](./sparkplugb/overview.md)**: SparkPlugB is an industrial IoT data transmission specification built on MQTT 3.1.1. The SparkPlugB plugin allows data collected from devices to be transmitted from the edge to SparkPlugB applications via the SparkPlugB protocol. Users can also send commands from SparkPlugB applications to Neuron to modify device data.
 - **[WebSocket](./websocket/websocket.md)**: The WebSocket protocol provides a two-way communication channel over a single TCP connection. With the WebSocket plugin, users can push collected data to a WebSocket server.
