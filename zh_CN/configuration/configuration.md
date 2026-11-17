@@ -39,6 +39,7 @@ Neuron 支持同时为多个不同通讯协议设备、数十种工业协议进�
 [**创建北向应用**](./north-apps/north-apps.md)：选择需要的北向插件以实现数据的传送。每个北向插件只能连接到一个目的地，如代理或应用程序。目前 Neuron 支持以下北向应用：
 
 - [MQTT](./north-apps/mqtt/overview.md)
+- [MQTT V2](./north-apps/mqtt-v2/overview.md)
 - [eKuiper](./north-apps/ekuiper/overview.md)
 - [SparkPlugB](./north-apps/sparkplugb/overview.md)
 - [WebSocket](./north-apps/websocket/websocket.md)
